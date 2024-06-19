@@ -1,0 +1,1472 @@
+---
+title: "Data Cleaning & Manipulation"
+format: 
+  revealjs:
+        theme: default
+editor: source
+embed-resources: true
+---
+
+```{r setup}
+#| include: false
+#| message: false
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## Monday, April 15
+
+Today we will...
+
++ Comments from Week 2
++ New Material
+  + Introduce the `dplyr` package.
+  + Use `dplyr` verbs to manipulate data.
++ [PA 3: Identify the Mystery College](https://zoerehnberg.github.io/STAT331-S23/practice_activities/PA3.html)
+
+
+## Comments from Week 2
+
++ Read through your .html to make sure it looks correct.
+  + Is any of your code producing errors/warnings/messages?
+  + Are images appearing properly?
+  + Are hyperlinks working properly?
++ Do not install packages in Quarto code chunks!
+  + Remember: **we only install packages once**.
++ Make sure you **cite** external sources.
+  + E.g., many people used `sapply()` to get the variable data types -- this is fine, but where did you find this solution?
+
+
+## Citing Your Sources
+
+When you write code, you will **need** to reference function/package documentation and external resources.
+
++ This is part of being a programmer!
+
+. . .
+
+When you rely on external resources for an assignment in this course, **you must cite your sources**.
+
++ If you use **any** resources outside of the course text, the course slides, and the posted cheatsheets, you **must include a citation**!
++ You will lose points if you do not.
+
+
+## Example Data set --  [Cereal](https://search.r-project.org/CRAN/refmans/liver/html/cereal.html)
+
+```{r}
+#| echo: true
+library(liver)
+data(cereal)
+```
+
+. . .
+
+::: panel-tabset
+
+### Data Structure
+
+```{r}
+#| echo: true
+str(cereal, give.attr = FALSE)
+```
+
+### Head of the Data
+
+```{r}
+#| echo: true
+head(cereal)
+```
+
+### Data Summary
+
+```{r}
+#| echo: true
+summary(cereal)
+```
+
+:::
+
+
+# Data Wrangling with `dplyr`
+
+```{r}
+#| echo: false
+#| fig-cap: "(Allison Horst)"
+knitr::include_graphics("https://raw.githubusercontent.com/allisonhorst/stats-illustrations/main/rstats-artwork/data_cowboy.png")
+```
+
+
+## `dplyr`
+
+`dplyr` is part of the **tidyverse** that provides us with the *Grammar of Data Manipulation*.
+
++ This package gives us the tools to **wrangle, manipulate, and tidy** our data with ease.
++ Check out the `dplyr` [cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/data-transformation.pdf).
+
+```{r}
+#| echo: false
+#| fig-align: center
+knitr::include_graphics("images/dplyr.png")
+
+```
+
+
+## `dplyr` verbs
+
++ `filter()` -- **select rows** based on their values
++ `arrange()` -- **sort rows** based on their values
++ `select()` -- **select columns**
++ `mutate()` -- **add new columns** by transforming other columns
++ `summarize()` -- perform **summary operations** on columns
++ `group_by()` -- facilitate **group-wise operations**
+
+. . .
+
+Use the **pipe operator** (`|>` or `%>%`) to chain together data wrangling operations.
+
+
+# The Pipe Operator
+
+>No matter how complex and polished the individual operations are, it is often the quality of the glue that most directly determines the power of the system.
+>
+>— Hal Abelson
+
+## The Pipe Operator
+
++ With `dplyr`, your code should read **like a sentence**.
+
++ The **data** is the primary object in your sentence, so it should **come first in your code**.
+
+```{r}
+#| out-width: "30%"
+#| fig-align: center
+knitr::include_graphics("images/diagram_sentence.jpg")
+```
+
++ The **pipe operator** is an important part of that readability.
+
+
+## The Pipe Operator
+
++ The pipe specifies a sequence of operations.
++ The output from one operation is passed into the first argument of the next operation.
+
+. . .
+
++ The "original" pipe: `%>%`
+
+  + Loaded with `tidyverse` package (part of `magrittr`).
+
++ The "native" pipe: `|>`
+
+  + Created in `R` version 4.1.0.
+  + `Tools` > `Global Options...` > `Code` > check `Use native pipe operator` box.
+
+
+## The Pipe Operator
+
+```{r}
+#| eval: false
+#| echo: true
+dr_rehnberg |>
+  play_a_sport()
+```
+
+. . .
+
+<br>
+
+```{r}
+#| eval: false
+#| echo: true
+dr_rehnberg |>
+  put_on("cleats") |>
+  play_a_sport(type = "soccer")
+```
+
+
+## Data Comes First!
+
+<font size = "6">
+
++ `filter(.data = cereal, ...)`
++ `select(.data = cereal, ...)`
++ `mutate(.data = cereal, ...)`
+
+</font>
+
+. . .
+
+These are equivalent: 
+
+:::: {.columns}
+::: {.column width="50%"}
+
+```{r}
+#| echo: true
+#| eval: false
+summary(.data = cereal)
+```
+
+:::
+::: {.column width="50%"}
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  summary()
+```
+
+:::
+::::
+. . .
+
+<br>
+
+**The pipe operator is your friend!**
+
+You can also pipe manipulated data or summaries directly into your `ggplot2` code for plotting.
+
+
+# `filter()`
+
+```{r}
+#| fig-align: center
+#| fig-cap: "(Allison Horst)"
+knitr::include_graphics("https://github.com/allisonhorst/stats-illustrations/raw/main/rstats-artwork/dplyr_filter.jpg")
+```
+
+
+## `filter()`
+
+We **filter** to the rows (observations) we would like to **keep** in the data.
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  filter(sugars < 5)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+cereal |> 
+  filter(sugars < 5) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "400px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+## `filter()`
+
+We can add **multiple filters** to our data, to get a more specific subset.
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  filter(sugars < 5,
+         type == "hot")
+```
+
+```{r}
+#| echo: false
+#| eval: true
+cereal |> 
+  filter(sugars < 5,
+         type == "hot") |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "400px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+## `filter()`: Handy Helpers!
+
++ `>` -- greater than
++ `<` -- less than
++ `==` -- equal to
++ `!` -- not
++ `%in%` -- checks if an element belongs to a vector
++ `is.na()` -- binary evaluation of missing values
+
+. . .
+
++ `&` and `,` -- and
++ `|` -- or
+
+## `filter()`: `|`
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  filter(sugars < 5,
+         type == "hot")
+```
+
+```{r}
+#| echo: false
+#| eval: true
+cereal |> 
+  filter(sugars < 5,
+         type == "hot") |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "250px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+. . .
+
+What if I wanted **either** non-sugary cereals **or** hot cereals...
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-fold: true
+cereal |> 
+  filter(sugars < 5 |
+           type == "hot")
+```
+
+
+## `filter()`: `%in%`
+
+Are you interested in observations with values in a list of levels?
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  filter(name %in% c("Cheerios", "Cinnamon Toast Crunch", "Raisin Bran", "Cracklin' Oat Bran"))
+```
+
+```{r}
+#| echo: false
+#| eval: true
+cereal |> 
+  filter(name %in% c("Cheerios", "Cinnamon Toast Crunch", "Raisin Bran", "Cracklin' Oat Bran")) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "400px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+## `filter()`: Related Functions
+
+These functions select rows by **row number**.
+
++ `slice()` -- select rows with the specified indicies
++ `slice_head()` -- select the first `n` rows
++ `slice_tail()` -- select the last `n` rows
++ `slice_sample()` -- randomly select `n` rows
+
+
+## How do we "filter" in base `R`?
+
+You can use the `subset()` function!
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  subset(name %in% c("Cheerios", "Cinnamon Toast Crunch", "Raisin Bran", "Cracklin' Oat Bran"))
+```
+
+```{r}
+#| echo: false
+#| eval: true
+subset(cereal, name %in% c("Cheerios", "Cinnamon Toast Crunch", "Raisin Bran", "Cracklin' Oat Bran")) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "200px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  subset(sugars < 5 & type == "hot")
+```
+
+```{r}
+#| echo: false
+#| eval: true
+subset(cereal, sugars < 5 & type == "hot") |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "200px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+# `arrange()`
+
+
+## `arrange()`
+
+We **arrange** the rows of the data in order of a particular variable.
+
+. . .
+
+<br> 
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  arrange(sodium)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+cereal |> 
+  arrange(sodium) |>
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "300px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+## `arrange()`
+
+We can arrange by **multiple** variables.
+
+. . .
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1-2"
+cereal |> 
+  arrange(sodium, sugars) |>
+  select(c(1:3,7, 10))
+```
+
+```{r}
+#| echo: false
+#| eval: true
+cereal |> 
+  arrange(sodium, sugars) |>
+  select(c(1:3,7, 10)) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "300px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+## `arrange()`: Descending Order
+
+Default is ascending order...
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  arrange(sodium)
+```
+
+<br>
+
+...but can add `desc()` to get descending order! 
+
+```{r, eval = FALSE}
+#| echo: true
+cereal |> 
+  arrange(desc(sodium))
+```
+
+
+## `arrange()`: Related Functions
+
+These functions implicitly arrange the data before slicing it (selecting rows).
+
++ `slice_min()` -- select rows with the lowest value(s) of a variable
++ `slice_max()` -- select rows with the highest value(s) of a variable
+
+
+## `slice_max()`
+
+Selects the `n` rows with the maximum values of the specified variable.
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  slice_max(order_by = sugars, n = 3)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+cereal |> 
+  slice_max(order_by = sugars, n = 3) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "300px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  slice_max(order_by = sugars, n = 3, with_ties = FALSE)
+```
+
+
+## How do we "arrange" in base `R`?
+
+You can use the `order()` function!
+
+```{r}
+#| echo: true
+#| eval: false
+cereal[order(cereal$sodium),]
+```
+
+```{r}
+#| echo: false
+#| eval: true
+cereal[order(cereal$sodium),] |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "200px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+cereal[order(cereal$sodium, cereal$sugars),]
+```
+
+```{r}
+#| echo: false
+#| eval: true
+cereal[order(cereal$sodium, cereal$sugars),] |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "200px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+# `select()`
+
+
+## `select()`
+
+We **select** which variables we would like to remain in the data.
+
+. . .
+
+```{r}
+#| eval: false
+#| echo: true
+cereal |> 
+  select(name, manuf, calories, cups)
+```
+
+```{r}
+#| echo: false
+cereal |> 
+  select(name, manuf, calories, cups)  |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "400px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+## `select()`
+
+You can use `:` to select a sequence of columns.
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  select(name:calories)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+cereal |> 
+  select(name:calories)  |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "250px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+. . .
+
+You can **remove** columns from the dataset using a `-`. 
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  select(-rating)
+```
+
+## `select()`: Reordering
+
+You can reorder columns inside of `select()`.
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  select(name, rating, manuf, type, calories, cups, weight,
+         everything())
+```
+
+```{r}
+#| echo: false
+cereal |> 
+  select(name, rating, manuf, type, calories, cups, weight,
+         everything()) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "400px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+## `select()`: Handy Helpers!
+
+- `everything()` -- selects all columns **that you have not already specified**
+- `starts_with()` -- selects columns with names that **start with** the specified string
+- `ends_with()` -- selects columns with names that **end with** the specified string
+- `contains()` -- selects columns with names that **contain** the specified string
+
+
+## `rename()`
+
+- You can rename columns with `select()`, but all columns not specified will be dropped.
+  * Using the `rename()` function is easier! 
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  rename(temp = type)
+```
+
+```{r}
+#| echo: false
+cereal |> 
+    rename(temp = type) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "300px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+## How do we "select" in base `R`?
+
+You don't really use a specific function!
+
+```{r}
+#| echo: true
+#| eval: false
+cereal[,c("name", "manuf", "calories", "cups")]
+```
+
+```{r}
+#| echo: false
+#| eval: true
+cereal[,c("name", "manuf", "calories", "cups")]|> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "200px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  subset(select = -c(rating))
+```
+
+. . .
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: false
+colnames(cereal)[2:4] <- c("maker","temp","cals")
+```
+
+
+# `mutate()`
+
+```{r}
+#| fig-align: center
+#| fig-cap: "(Allison Horst)"
+knitr::include_graphics("https://github.com/allisonhorst/stats-illustrations/raw/main/rstats-artwork/dplyr_mutate.png")
+```
+
+
+## `mutate()`
+
+The dataset gets **mutated** to either **include a new variable**...
+
+```{r}
+#| eval: false
+#| echo: true
+cereal |> 
+  mutate(potass_per_cup = potass / cups)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+cereal |> 
+  mutate(potass_per_cup = potass / cups)  |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "200px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+. . .
+
+...OR **revise an existing variable**.
+
+```{r}
+#| eval: false
+#| echo: true
+cereal |> 
+  mutate(shelf = as.factor(shelf))
+```
+
+## `mutate()`: Handy Helpers!
+
++ `if_else()` or `case_when()` -- shortcut for `if-else` loop
++ `as.factor()`, `as.numeric()`, etc. -- change variable type
++ `+`, `-`, `*`, `/` -- basic mathematical operations
++ `%%` -- modulo (returns the remainder when doing division)
+
+
+## How do we "mutate" in base `R`?
+
+You can define new columns...
+
+```{r}
+#| echo: true
+#| eval: false
+cereal$potass_per_cup <- cereal$potass / cereal$cups
+```
+
+```{r}
+#| echo: false
+#| eval: true
+tmp <- cereal
+tmp$potass_per_cup <- tmp$potass / tmp$cups
+tmp |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "300px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+. . .
+
+...OR overwrite old ones!
+
+```{r}
+#| echo: true
+#| eval: false
+cereal$shelf <- as.factor(cereal$shelf)
+```
+
+
+# `group_by()`
+
+```{r}
+#| fig-align: center
+#| fig-cap: "(Allison Horst)"
+knitr::include_graphics("https://raw.githubusercontent.com/allisonhorst/stats-illustrations/main/rstats-blanks/ungroup_blank.png")
+```
+
+
+## `group_by()`
+
+**Separate** the data into different groups based on a **categorical** variable.
+
+. . .
+
+* The data gets grouped, but nothing happens externally.
+
+```{r}
+#| echo: true
+cereal |> 
+  group_by(type)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+cereal |> 
+    group_by(type)  |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "100px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+## `ungroup()`
+
+The `ungroup()` function will remove the internal grouping in your data.
+
++ This is not something that you always need to do, but if you are getting unexpected output downstream from a `group_by()` statement, try ungrouping your data!
+
+
+# `summarize()`
+
+`group_by()` is almost always paired with `summarize()`!
+
+## `summarize()`
+
+We can calculate **summaries** of variables in the data.
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: true
+cereal |> 
+  summarise(mean_fiber = mean(fiber))
+```
+
+. . .
+
+Or **multiple** summaries at the same time.
+
+```{r}
+#| echo: true
+cereal |> 
+summarise(mean_fiber = mean(fiber),
+          num_cereals = n(),
+          mean_sugar = mean(sugars))
+```
+
+. . .
+
+::: callout-note
+`summarize()` and `summarise()` are synonyms!
+:::
+
+
+## `summarize()`: Handy Helpers!
+
+- `mean()`, `median()`, `sd()`, `sum()`
+- `min()`, `max()`
+- `n()`, `n_distinct()` -- counts the number of (distinct) elements
+- `first()`, `last()`, `nth()` -- extract the first, last, or nth element
+- `across()` -- apply a function **across** columns
+
+
+## `group_by() + summarize()`!
+
+1. `group_by` a variable (or multiple variables)
+2. `summarize` a variable (or multiple variables) **within** the groups
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  group_by(manuf) |> 
+  summarise(mean_sugar = mean(sugars))
+```
+
+```{r}
+#| eval: true
+#| echo: false
+cereal |> 
+  group_by(manuf) |> 
+  summarise(mean_sugar = mean(sugars))  |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "300px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+## `group_by() + mutate()`!
+
+1. `group_by` a variable (or multiple variables)
+2. `mutate` a variable (or multiple variables) **within** the groups
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  group_by(manuf) |> 
+  mutate(mean_sugar = mean(sugars))
+```
+
+```{r}
+#| eval: true
+#| echo: false
+cereal |> 
+  group_by(manuf) |> 
+  mutate(mean_sugar = mean(sugars))  |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "300px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+
+## The Difference?
+
+`group_by() + summarize()` **collapses** the data.
+
++ You will only have **one row per group** remaining.
+
+<br>
+
+`group_by() + mutate()` does not.
+
++ You will have the **full number of rows** remaining.
+
+
+## How do we "group" and "summarize" in base `R`?
+
+You can use the `aggregate()` function.
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  aggregate(sugars ~ manuf, FUN = mean)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+cereal |> 
+  aggregate(sugars ~ manuf, FUN = mean) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "300px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+## Glue it all together!
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  filter(type == "cold") |> 
+  mutate(potass_per_cup = potass / cups) |> 
+  group_by(manuf) |> 
+  summarise(mean_potass_per_cup = mean(potass_per_cup))
+```
+
+```{r}
+#| eval: true
+#| echo: false
+cereal |> 
+  filter(type == "cold") |> 
+  mutate(potass_per_cup = potass / cups) |> 
+  group_by(manuf) |> 
+  summarise(mean_potass_per_cup = mean(potass_per_cup)) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "400px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+## Save your changes!
+
+When you manipulate your data, make sure you assign your new dataset to a variable.
+
+```{r}
+#| code-line-numbers: '1'
+#| echo: true
+#| eval: false
+cereal_summary <- cereal |> 
+  filter(type == "cold") |> 
+  mutate(potass_per_cup = potas / cups) |> 
+  group_by(manuf) |> 
+  summarise(mean_potass_per_cup = mean(potass_per_cup))
+```
+
+
+## Code Formatting
+
+Similar to the `+` formatting in `ggplot`, **do not** continue a line after writing a `|>`!
+
+::: panel-tabset
+
+### Bad Practice
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> group_by(type) |> summarise(mean_fiber = mean(fiber), num_cereals = n(), mean_sugar = mean(sugars))
+```
+
+### Good Practice
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  group_by(type) |> 
+  summarise(mean_fiber = mean(fiber), 
+            num_cereals = n(),
+            mean_sugar = mean(sugars))
+```
+
+:::
+
+
+## [PA 3: Identify the Mystery College](https://zoerehnberg.github.io/STAT331-S23/practice_activities/PA3.html)
+
+Today you will use the `dplyr` package to clean some data and then use that cleaned data to figure out what college Margaret has been accepted to.
+
+> Submit the full name of the college Margaret will attend to the Canvas Quiz.
+
+
+## To do...
+
++ **PA 3: Identify the Mystery College**
+  + Due Wednesday 4/17 at 10:00am
+
+
+## Wednesday, April 17
+
+Today we will...
+
++ New Material
+  + Extend `dplyr` verbs to have more functionality.
+  + Think about data ethics.
++ [Lab 3: Teacher Evaluations](https://zoerehnberg.github.io/STAT331-S23/lab_assignments/lab3/LA3_dplyr.html)
+
+
+# Extending `dplyr` verbs
+
+## Example Data set --  [Cereal](https://search.r-project.org/CRAN/refmans/liver/html/cereal.html)
+
+```{r}
+#| echo: true
+library(liver)
+data(cereal)
+head(cereal)
+```
+
+
+## Count with `count()`
+
+How many cereals does each `manuf` have in this dataset?
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  group_by(manuf) |> 
+  count()
+```
+
+```{r}
+#| eval: true
+#| echo: false
+cereal |> 
+  group_by(manuf) |> 
+  count() |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "400px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+## Summarize multiple columns with `across()`
+
+For each `type` of cereal, calculate the `mean` nutrient levels.
+
+. . .
+
+**Within** the `summarize()` function, we use the `across()` function, with three arguments:
+
++ `.cols` -- to specify the **columns** to apply functions to.
++ `.fns` -- to specify the **functions** to apply.
++ `.x` -- as a placeholder for the variables being passed into the function.
+
+. . .
+
+We use **lambda functions**: `~ <FUN_NAME>(.x, <ARGS>)`
+
+
+## Summarize multiple columns with `across()`
+
+For each `type` of cereal, calculate the `mean` nutrient levels.
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  group_by(type) |> 
+  summarise(across(.cols = calories:potass, .fns = ~ mean(.x)))
+```
+
+```{r}
+#| eval: true
+#| echo: false
+cereal |> 
+  group_by(type) |> 
+  summarise(across(.cols = calories:potass, .fns = mean)) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "130px") |> 
+  kableExtra::kable_styling(font_size = 23)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  group_by(type) |> 
+  summarise(across(.cols = calories:potass,
+                   .fns = ~ mean(.x, trim = 0.1)))
+```
+
+```{r}
+#| eval: true
+#| echo: false
+cereal |> 
+  group_by(type) |> 
+  summarise(across(.cols = calories:potass,
+                   .fns = ~ mean(.x, trim = 0.1))) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "130px") |> 
+  kableExtra::kable_styling(font_size = 23)
+```
+
+
+## Discretize with `if_else()`
+
+For each cereal, label the `potass` as "high" or "low".
+
+. . .
+
+One `if-else` statement:
+
+<font size = 6>
+
++ `if_else(<CONDITION>, <TRUE OUTPUT>, <FALSE OUTPUT>)`
+
+</font>
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  mutate(po_category = if_else(potass <= 100, "low", "high"),
+         .after = potass)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+cereal |> 
+  mutate(po_category = if_else(potass <= 100, "low", "high"),
+         .after = potass) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "200px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+`.after` -- specifies the location of the newly created column
+
+
+## Re-level with `case_when()`
+
+For each manufacturer, change the `manuf` code to the name.
+
+. . .
+
+A **series** of `if-else` statements.
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  mutate(manuf = case_when(manuf == "A" ~ "American Home Food Products", 
+                           manuf == "G" ~ "General Mills", 
+                           manuf == "K" ~ "Kelloggs", 
+                           manuf == "N" ~ "Nabisco", 
+                           manuf == "P" ~ "Post", 
+                           manuf == "Q" ~ "Quaker Oats", 
+                           manuf == "R" ~ "Ralston Purina"))
+```
+
+```{r}
+#| eval: true
+#| echo: false
+cereal |> 
+  mutate(manuf = case_when(manuf == "A" ~ "American Home Food Products", 
+                           manuf == "G" ~ "General Mills", 
+                           manuf == "K" ~ "Kelloggs", 
+                           manuf == "N" ~ "Nabisco", 
+                           manuf == "P" ~ "Post", 
+                           manuf == "Q" ~ "Quaker Oats", 
+                           manuf == "R" ~ "Ralston Purina")) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "250px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+## `group_by()` + `slice()`
+
+For each `manuf`, find the cereal with the most `fiber`.
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  group_by(manuf) |> 
+  slice_max(order_by = fiber)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+cereal |> 
+  group_by(manuf) |> 
+  slice_max(order_by = fiber) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "400px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+## Multiple Variables in `slice()`
+
+Find the **3** cereals with the highest `fiber` and `potass`.
+
+. . .
+
++ If you are ordering by multiple variables, wrap them in a data.frame!
+
+```{r}
+#| echo: true
+#| eval: false
+cereal |> 
+  slice_max(order_by = data.frame(fiber, potass),
+            n = 3)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+cereal |> 
+  slice_max(order_by = data.frame(fiber, potass),
+            n = 3) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "250px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+## Piping into `ggplot()`
+
+Plot the `mean` `protein` per `cup` for each `manuf`.
+
+. . .
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: '1-12'
+#| fig-align: center
+cereal |> 
+  mutate(manuf = case_when(manuf == "A" ~ "American Home Food Products", 
+                           manuf == "G" ~ "General Mills", 
+                           manuf == "K" ~ "Kelloggs", 
+                           manuf == "N" ~ "Nabisco", 
+                           manuf == "P" ~ "Post", 
+                           manuf == "Q" ~ "Quaker Oats", 
+                           manuf == "R" ~ "Ralston Purina")) |> 
+  filter(type == "cold") |> 
+  mutate(pro_per_cup = protein / cups) |> 
+  group_by(manuf) |> 
+  summarise(mean_pro_per_cup = mean(pro_per_cup)) |> 
+  ggplot(aes(x = manuf, 
+             y = mean_pro_per_cup, 
+             shape = manuf)) +
+  geom_point(show.legend = FALSE,
+             size = 6) +
+  labs(x = "Manufacturer",
+       subtitle = "Mean Protein per Cup") +
+  theme_bw() +
+  theme(axis.title.y = element_blank(),
+        axis.title.x  = element_text(size = 30),
+        plot.subtitle = element_text(size = 32),
+        axis.text = element_text(size = 22),
+        axis.text.x = element_text(angle = 13)) +
+  scale_y_continuous(limits = c(75,225))
+```
+
+
+## Piping into `ggplot()`
+
+Plot the `mean` `protein` per `cup` for each `manuf`.
+
+```{r}
+#| output-location: slide
+#| echo: true
+#| code-line-numbers: '13-26'
+#| fig-align: center
+cereal |> 
+  mutate(manuf = case_when(manuf == "A" ~ "American Home Food Products", 
+                           manuf == "G" ~ "General Mills", 
+                           manuf == "K" ~ "Kelloggs", 
+                           manuf == "N" ~ "Nabisco", 
+                           manuf == "P" ~ "Post", 
+                           manuf == "Q" ~ "Quaker Oats", 
+                           manuf == "R" ~ "Ralston Purina")) |> 
+  filter(type == "cold") |> 
+  mutate(pro_per_cup = protein / cups) |> 
+  group_by(manuf) |> 
+  summarise(mean_pro_per_cup = mean(pro_per_cup)) |> 
+  ggplot(aes(x = manuf, 
+             y = mean_pro_per_cup, 
+             shape = manuf)) +
+  geom_point(show.legend = FALSE,
+             size = 6) +
+  labs(x = "Manufacturer",
+       subtitle = "Mean Protein per Cup") +
+  theme_bw() +
+  theme(axis.title.y = element_blank(),
+        axis.title.x  = element_text(size = 30),
+        plot.subtitle = element_text(size = 32),
+        axis.text = element_text(size = 22),
+        axis.text.x = element_text(angle = 13)) +
+  scale_y_continuous(limits = c(0,6))
+```
+
+
+# Creating a Game Plan
+
+
+## Creating a Game Plan
+
+Just like when creating graphics with `ggplot`, wrangling data with `dplyr` involves thinking through many steps and writing many *layers* of code.
+
++ To help us think through a wrangling problem, we are going to create a game plan **before** we start writing code.
+
+This might involve...
+
++ a sketch or flowchart.
++ a list of `dplyr` verbs and variable names.
++ annotating the `head` of the dataframe.
+
+
+## Creating a Game Plan
+
+::: panel-tabset
+
+### The Question
+
+What is the `median` grams of `sugars`per `shelf` and the number of cereals per `shelf`, when we drop the missing values (coded as `sugars = -1`)?
+
+<br>
+
+**The person with the nearest birthday**: explain **out loud** to your neighbor how you would do this manipulation.
+
+### The Code
+
+```{r}
+#| echo: true
+cereal |> 
+  select(sugars, shelf) |> 
+  filter(sugars != -1) |> 
+  group_by(shelf) |> 
+  summarise(med_sugars = median(sugars),
+            num_shelf = n())
+```
+
+:::
+
+
+
+# Thinking about Data Ethics
+
+
+## Data Ethics
+
+**1. What do we mean by *data ethics*?**
+
+<br>
+
+<br>
+
+<br>
+
+**2. Why do we (as statisticians, data scientists, folks working with data) need to think about *data ethics*?**
+
+
+
+## Data Ethics
+
+**1. What do we mean by *data ethics*?**
+
++ The process of evaluating data collection, processing, analysis, and dissemination practices for their adverse impacts on individuals, systems, and society.
+
+**2. Why do we (as statisticians, data scientists, folks working with data) need to think about *data ethics*?**
+
++ We have a lot of power to declare **truth and fact**, hiding behind the *black box* of data science methods.
+
+
+## Data Science Oath
+
++ I will not be ashamed to say, **“I know not,”** nor will I fail to call in my colleagues when the skills of another are needed.
++ I will respect the **privacy** of my data subjects, for their data are not disclosed to me that the world may know.
++ I will remember that my data are not just numbers without meaning or context, but represent **real people and situations**, and that my work may lead to unintended societal consequences, such as inequality, poverty, and disparities due to algorithmic bias.
+
+
+## ASA Ethical Guidelines
+
++ The American Statistical Association’s Ethical Guidelines for Statistical Practice are intended to help statistics practitioners make decisions ethically.
++ They aim to promote accountability by informing those who rely on statistics of the standards they should expect.
+
+. . .
+
+>Visit [Ethical Guidelines for Statistical Practice](https://www.amstat.org/your-career/ethical-guidelines-for-statistical-practice) and discuss one of the guidelines with your neighbor.
+>
+> + What surprises you? What did you learn? 
+> + In what scenario might this come into play?
+
+
+
+## [Lab 3: Teacher Evaluations](https://zoerehnberg.github.io/STAT331-S23//lab_assignments/lab3/LA3_dplyr.html)
+
+
+## To do...
+
++ **Lab 3: Teacher Evaluations**
+  + Due Saturday, 4/20 at 11:59pm
+  
++ **Read Chapter 4: Data Joins and Transformations**
+  + **Check-in 4.1 + 4.2** due Monday 4/22 at 10:00am
+  

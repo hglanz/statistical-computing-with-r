@@ -1,0 +1,56 @@
+---
+title: "Challenge 9: Formatting Nice Tables"
+format: 
+  html:
+    self-contained: true
+    code-tools: true
+    toc: true
+    number-sections: true
+editor: source
+execute: 
+  error: true
+  echo: true
+  message: false
+  warning: false
+---
+
+```{r setup}
+#| include: false
+library(tidyverse)
+```
+
+For this Challenge you will explore how to generate nice looking tables for HTML documents. There are many packages for generating tables, but I prefer the `kable()` function from the `knitr` package for *simple* tables and the `datatable()` function from the `DT` package for *more sophisticated* tables.
+
+I want you to think of tables just like the visualizations you've been making. **We want all aspects of our tables to be clear to the reader.** Tables are also a great avenue to display creativity! In fact, there is a yearly [Posit table contest](https://www.rstudio.com/blog/rstudio-table-contest-2022/), and [here](https://community.rstudio.com/c/table-gallery/64) is a gallery of the award winning tables.
+
+## Formatting Basic Tables
+
+Use the `kable()` function from the [kable package](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html) to create a nice, basic HTML version of the tables in both **Q1** and **Q12** in Lab 9.
+
+::: callout-warning
+Similar to axis labels in visualizations, **every** column name in a table should describe what it contains. For example, a column of `n` is less explanatory than `Frequency of Babies`.
+:::
+
+```{r}
+# Code for Q1
+```
+
+## Formatting Nicer Tables
+
+There are two options for creating nicer tables:
+
+  + [kableExtra package](https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html)
+  + [DT package](https://rstudio.github.io/DT/).
+  
+Use either the `DT` or `kableExtra` packages to spice up **both** your tables. You should add different features to the two tables.
+
+Some ideas on how to "spice up" a table:
+
++ Change the font and / or font size.
++ Add striping and / or cell borders.
++ Create custom formatting of columns.
++ Allow the user to interact with the table (e.g., filtering columns, editing cells).
+    
+```{r}
+# Code for Q2
+```
