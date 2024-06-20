@@ -1,0 +1,104 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - "*.docx"
+
+website:
+  page-navigation: true
+  title: "Introduction to Statistical Computing in R"
+  description: "Homepage for STAT 331 at Cal Poly"
+  site-url: "https://atheobold.github.io/stat-331-website"
+  repo-url: https://github.com/atheobold/stat-3331-website
+  repo-actions: [issue]
+
+  page-footer:
+    right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+    left: "&copy; Copyright 2024, Allison Theobold & Judith Canner"
+    background: "#D9E3E4"
+
+  sidebar:
+    background: "#D9E3E4"
+    logo: "images/r-flowers.png"
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/atheobold/stat-331-website
+        text: "GitHub organization"
+      - icon: cloud-fill
+        href: https://posit.cloud/
+        aria-label: Posit Cloud
+      - icon: person-fill
+        href: https://canvas.calpoly.edu
+        text: "Cal Poly Canvas"
+
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - section: "Course information"
+        contents:
+          - href: course-materials/course-overview.qmd
+            text: Overview
+          - href: course-materials/course-syllabus.qmd
+            text: Syllabus
+          - href: course-materials/course-support.qmd
+            text: Support
+          - href: course-materials/course-team.qmd
+            text: Teaching team
+          - href: index.qmd
+            text: Schedule
+      # - section: "Computing"
+      #   contents:
+      #     - href: computing-access.qmd
+      #       text: Access
+      # - section: "R Resources"
+      #   contents:
+      #     - href: course_resources.qmd
+      #       text: R Resources
+      # - section: "Portfolio"
+      #   contents:
+      #     - href: project/midterm-project/midterm-project-directions.qmd
+      #       text: Midterm Project Description
+      #     - href: project/final-project/final-project-directions.qmd
+      #       text: Final Project Description
+      - section: "Weekly materials"
+        contents:
+          # - href: weeks/week-0.qmd
+          #   text: "Week 0"
+          # - href: weeks/week-1.qmd
+          #   text: "Week 1"
+          # - href: weeks/week-2.qmd
+          #   text: "Week 2"
+          # - href: weeks/week-3.qmd
+          #   text: "Week 3"
+          # - href: weeks/week-4.qmd
+          #   text: "Week 4"
+          # - href: weeks/week-5.qmd
+          #   text: "Week 5"
+          # - href: weeks/week-6.qmd
+          #   text: "Week 6"
+          # - href: weeks/week-7.qmd
+          #   text: "Week 7"
+          # - href: weeks/week-8.qmd
+          #   text: "Week 8"
+          # - href: weeks/week-9.qmd
+          #   text: "Week 9"
+          # - href: weeks/week-10.qmd
+          #   text: "Week 10"
+
+format:
+  html:
+    theme:
+      - cosmo
+      - theme.scss
+    mainfont: "Atkinson Hyperlegible"
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+
+execute:
+  freeze: auto
+
+editor: visual
