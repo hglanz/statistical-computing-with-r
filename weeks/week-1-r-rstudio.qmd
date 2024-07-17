@@ -1,5 +1,6 @@
 ---
 title: "Week 1, Part 1: R & RStudio"
+editor: source
 ---
 
 ```{r}
@@ -38,7 +39,7 @@ If you already have `R` downloaded, you need to confirm that you have the most u
 -   Step 1: Open RStudio
 -   Step 2: At the top of the the Console it will say what version of R you are using
 
-![](images/r-version.png)
+![](images/week-1/r-version.png){fig-alt = "A screenshot of what version of R should appear when you open RStudio. The version reads 'R version 4.4.1 (2024-06-14) -- 'Race for Your Life'."}
 
 If the version **is not** 4.4.1 (like the image above), you need to update your version of R! The simplest way to do this is to follow the instructions below to install R.
 
@@ -72,12 +73,12 @@ To do this you need to:
 -   Search for or scroll down to R
 -   Find the older version of R
 
-![](images/multiple-versions-of-r.png){fig-alt="A screenshot of a PC with two different versions of R installed---version 4.3.1 and version 4.4.1."}
+![](images/week-1/multiple-versions-of-r.png){fig-alt="A screenshot of a PC with two different versions of R installed---version 4.3.1 and version 4.4.1."}
 
 -   Click on the `...` on the right side
 -   Select "Uninstall"
 
-![](images/uninstall-old-r-version.png){fig-alt="A screenshot of selecting the (...) option to uninstall the older version of R."}
+![](images/week-1/uninstall-old-r-version.png){fig-alt="A screenshot of selecting the (...) option to uninstall the older version of R."}
 :::
 
 ### If you are *macOS* user:
@@ -128,7 +129,7 @@ If you've never downloaded RStudio before, the link below will navigate you to w
 
 # Let's start working in `R`! 🥳
 
-![](images/typing_R.gif){fig-alt="A video of Hadley Wickham (author of many R packages) pretending to type and saying 'just typing R code'."}
+![](images/week-1/typing_R.gif){fig-alt="A video of Hadley Wickham (author of many R packages) pretending to type and saying 'just typing R code'."}
 
 # Introduction to R
 
@@ -173,7 +174,7 @@ If you would like to learn more about the history of R, here is an [excellent ar
 
 Includes the text editor. This is where you'll do most of your work.
 
-![](images/Rstudio-editor-pane-buttons.png)
+![](images/week-1/Rstudio-editor-pane-buttons.png)
 
 The logo on the script file indicates the file type. When an R file is open, there are Run and Source buttons on the top which allow you to run selected lines of code (Run) or source (run) the entire file. Code line numbers are provided on the left (this is a handy way to see where in the code the errors occur), and you can see line:character numbers at the bottom left. At the bottom right, there is another indicator of what type of file Rstudio thinks this is.
 
@@ -185,28 +186,27 @@ In the top right, you'll find the environment, history, and connections tabs. Th
 
 On the bottom left is the console. There are also other tabs to give you a terminal (command line) prompt, and a jobs tab to monitor progress of long-running jobs. In this class we'll primarily use the console tab.
 
-![](images/Rstudio-terminal-R.png)
+![](images/week-1/Rstudio-terminal-R.png)
 
 ## Bottom-right
 
 On the bottom right, there are a set of tabs:
 
-+ **files** (to give you an idea of where you are working, and what files are present),
+-   **files** (to give you an idea of where you are working, and what files are present),
 
-![](images/Rstudio-file-tab.png)
-    
-+ **plots** (which will be self-explanatory),
+![](images/week-1/Rstudio-file-tab.png)
 
-+ **packages** (which extensions to R are installed and loaded),
+-   **plots** (which will be self-explanatory),
 
-![](images/Rstudio-packages-tab.png)
+-   **packages** (which extensions to R are installed and loaded),
 
-+ the **help** tab (where documentation will show up), and
+![](images/week-1/Rstudio-packages-tab.png)
 
-![](images/Rstudio-help-tab.png)
+-   the **help** tab (where documentation will show up), and
 
-+ the **viewer** window, which is used for interactive graphics or previewing HTML documents.
+![](images/week-1/Rstudio-help-tab.png)
 
+-   the **viewer** window, which is used for interactive graphics or previewing HTML documents.
 :::
 
 # Installing Packages
@@ -262,26 +262,23 @@ b)  An alternate universe where everyone is an R programmer.
 c)  A collection of packages that work well together and provide tools for common data science tasks.
 d)  A code style that reads like poetry.
 
-**Question 4**: New objects in R are created using which symbol(s)? 
+**Question 4**: New objects in R are created using which symbol(s)?
 
-a) `==`
-b) `<-`
-c) `->`
-d) `=`
+a)  `==`
+b)  `<-`
+c)  `->`
+d)  `=`
 
 **Question 5**: A code comment in R is declared using what symbol?
 
-a) `#`
-b) `|`
-c) `&`
-d) `!`
+a)  `#`
+b)  `|`
+c)  `&`
+d)  `!`
 
 **Question 6**: Which of the following object names is an example of "snake case"?
 
-a) `data.only.february`
-b) `dataOnlyFebruary`
-c) `data_only_february`
-d) `Data_only.FEBRUARY`
-
-
-
+a)  `data.only.february`
+b)  `dataOnlyFebruary`
+c)  `data_only_february`
+d)  `Data_only.FEBRUARY`
