@@ -1,3 +1,11 @@
 ---
 title: "Week 1, Part 3: Version Control with Git and GitHub"
 ---
+
+## R Projects
+
+## 📖 [Required Reading: Workflow (R Projects)](https://r4ds.hadley.nz/workflow-scripts.html#projects)
+
+<!-- update video -->
+<!-- ## 📽️ [Required Video: Directories, Paths, Projects (15 minutes)](http://somup.com/c3QDczUaCa) -->
+
