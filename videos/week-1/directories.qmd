@@ -1,0 +1,181 @@
+---
+title: "Directories & Scientific Reproducibility"
+format: revealjs
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+```
+
+## Principles of Reproducibility
+
+The idea:  You should be able to send your project to someone else, and they can
+jump in and start working right away.
+
+<!-- Sufficiency: The documentation for a project should contain everything necessary to reproduce the results. -->
+
+<!-- Soup-to-nuts: The documentation should include scripts that reproduce all the computations required for both (i) the steps of processing necessary to prepare the data for analysis, and (ii) the analysis or procedures performed with the processed data that generate the results. -->
+
+<!-- Portability: Any user should be able to run the scripts on their own computer or workspace. -->
+
+<!-- (Almost) one-click reproducibility: Reproducing all the computations required to generate the results of a study should require (almost) nothing other than executing a single Master Script. -->
+
+1. Files are organized and well-named.
+
+2. References to data and code work for everyone.
+
+3. Package dependency is clear.
+
+4. Code will run the same every time, even if data values change.
+
+5. Analysis process is well-explained and easy to read.
+
+```{r, include = FALSE}
+library(tidyverse)
+```
+
+---
+
+# Dealing with Directories
+
+</br>
+
+## What is a directory?
+
+- A **directory** is just a fancy name for a folder.
+
+- Your **working directory** is the folder that `R` "thinks" it lives in at the
+moment.
+
+```{r getwd}
+getwd()
+```
+
+- If you save things you have created, they save to your working directory by
+default.
+
+---
+
+class: middle 
+
+## Paths
+
+- A **path** describes where a certain file or directory lives.
+
+```{r getwd2}
+getwd()
+```
+
+This file lives in my user files `Users/`, 
+
+on my account `atheobol/` 
+
+in my Documents `Documents` 
+
+in a series of organized folders
+
+---
+
+class: center, middle
+
+# Manage your Class Directory
+
+Is it in a place you can easily find it?
+
+--
+
+Does it have an informative name?
+
+--
+
+Are the files inside it well-organized?
+
+---
+
+## The Beauty of R Projects
+
+.pull-left[ An **R Project** is basically a "flag" planted in a certain
+directory.
+
+When you double click a **.Rproj** file, it does two things:
+
+1. Open RStudio
+
+2. Set the working directory to be wherever the .Rproj file lives.
+
+3. Link to GitHub, if setup (more on that later!)]
+
+.pull-right[
+![](images/project_flag.jpg)
+]
+
+---
+
+class: center
+
+# RStudio Projects & Reproducibility
+
+</br> 
+
+.bitlarger[This is great for reproducibility!]
+
+</br>
+
+.bitlarger[You can send anyone your folder with your .Rproj file and they will
+be able to run your code on their computer.]
+
+---
+
+class: middle
+
+# Setting up an RStudio Project
+
+---
+
+class: middle 
+
+# Good practice
+
+- Organize your folders carefully, and name them meaningfully:
+  * `/User/atheobold/Stat331/lab1/` rather than `Desktop/stuff/`
+    
+- Use **R Projects** liberally - put one in the "main" folder for each project
+
+    * I have a project for every class I teach.
+    * I have a project for every data analysis I do.
+    * I **never** work in RStudio, except in a project.
+
+---
+
+# Bad practice
+
+If you put something like this at the top of your .Rmd file, I will set your 
+computer on fire:
+
+```{r setwd, eval = FALSE}
+setwd("/User/reginageorge/Desktop/R_Class/Lab_1/")
+```
+
+- Setting working directory by hand = BAD!  
+
+--
+
+- That directory is specific to you!
+
+--
+
+- R Markdown and Quarto ignore this code when knitting! 
+
+---
+
+class: middle, center
+
+# Do this right now:
+</br>
+### 1. Create a R Project in your class directory.
+</br>
+### 2. Add a folder to the directory called "Week 1" or "Lab 1"
+</br>
+### 3. Click on your STAT331 R Project to open up RStudio
+</br>
+### 4. Use `getwd()` to find the **path** to your class directory.

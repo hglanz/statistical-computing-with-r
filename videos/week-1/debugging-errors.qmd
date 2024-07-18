@@ -1,0 +1,280 @@
+---
+title: "Debugging Errors!"
+format: revealjs
+---
+
+
+```{r}
+#| label: setup
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(flair)
+```
+
+.huge\[Syntax Errors\]
+
+------------------------------------------------------------------------
+
+class: center, middle
+
+.larger\[Did you leave off a parenthesis?\]
+
+```{r, echo = FALSE}
+decorate('seq(from = 1, to = 10, by = 1', eval = FALSE) %>%
+  flair("(")
+```
+
+```{r, echo = FALSE, error = TRUE}
+
+seq(from = 1, to = 10, by = 1
+
+```
+
+------------------------------------------------------------------------
+
+class: center, middle
+
+.larger\[Did you leave off a comma?\]
+
+```{r, echo = FALSE, error = TRUE}
+decorate('seq(from = 1, to = 10 by = 1)', eval = FALSE) %>%
+  flair("by")
+```
+
+```{r, echo = FALSE, error = TRUE}
+
+seq(from = 1, to = 10 by = 1)
+
+```
+
+------------------------------------------------------------------------
+
+class: center, middle
+
+.larger\[Did you make a typo? Are you using the right names?\]
+
+```{r, echo = FALSE}
+decorate('sequence(from = 1, to = 10, by = 1)', eval = FALSE) %>%
+  flair("sequence")
+```
+
+```{r, echo = FALSE, error = TRUE}
+
+sequence(from = 1, to = 10, by = 1)
+
+```
+
+------------------------------------------------------------------------
+
+class: center, middle
+
+.larger\[Object type errors\]
+
+**Are you using the right *input* that the function expects?**
+
+--
+
+```{r, echo = FALSE}
+decorate("sqrt('1')", eval = FALSE) %>%
+  flair("'1'")
+```
+
+```{r, echo = FALSE, error = TRUE}
+
+sqrt('1')
+
+```
+
+------------------------------------------------------------------------
+
+class: center, middle
+
+.larger\[Object type errors\]
+
+**Are you expecting the right *output* of the function?**
+
+--
+
+```{r closure, echo = FALSE, error = TRUE, eval = FALSE}
+
+my_obj <- seq(from = 1, to = 10, by = 1)
+
+my_obj(5)
+
+```
+
+```{r, echo = FALSE}
+decorate("closure", error = TRUE) %>%
+  flair("my_obj(5)")
+```
+
+------------------------------------------------------------------------
+
+class: center, middle, inverse
+
+.huge\[Errors, warnings, and messages\]
+
+------------------------------------------------------------------------
+
+class: center, middle
+
+.larger\[Messages\]
+
+--
+
+Just because you see scary red text, this does **not** mean something went wrong! This is just **R** communicating with you.
+
+--
+
+For example, you often see:
+
+```{r, message = TRUE}
+library(tidyverse)
+```
+
+------------------------------------------------------------------------
+
+class: center, middle
+
+.larger\[Warnings\]
+
+--
+
+Often, **R** will give you a **warning**.
+
+--
+
+This means that your code *did* run...
+
+--
+
+...but you probably want to make sure it succeeded.
+
+------------------------------------------------------------------------
+
+class: center, middle
+
+.larger\[Does this look right?\]
+
+```{r}
+my_vec <- c("a", "b", "c")
+
+my_new_vec <- as.integer(my_vec)
+```
+
+--
+
+```{r}
+my_new_vec
+```
+
+------------------------------------------------------------------------
+
+class: center, middle
+
+.larger\[Errors\]
+
+If the word **Error** appears in your message from **R**, then you have a problem.
+
+--
+
+This means your code **could not run**!
+
+--
+
+```{r, error = TRUE}
+my_vec <- c("a", "b", "c")
+
+my_new_vec <- my_vec + 1
+```
+
+------------------------------------------------------------------------
+
+class: center, middle, inverse
+
+.huge\[Parlez-vous ERROR?\]
+
+------------------------------------------------------------------------
+
+.larger\[**R** says...\]
+
+> Error: Object `some_obj` not found.
+
+It *probably* means...
+
+> You haven't run the code to create `some_obj` OR you have a typo in the name!
+
+--
+
+```{r, error = TRUE}
+some_ojb <- 1:10
+
+mean(some_obj)
+```
+
+------------------------------------------------------------------------
+
+.larger\[**R** says...\]
+
+> Error: Object of type 'closure' is not subsettable.
+
+It *probably* means...
+
+> Oops, you tried to use square brackets on a function
+
+--
+
+```{r, error = TRUE}
+mean[1, 2]
+```
+
+------------------------------------------------------------------------
+
+.larger\[**R** says...\]
+
+> Error: Non-numeric argument to binary operator
+
+It *probably* means...
+
+> You tried to do math on data that isn't numeric.
+
+--
+
+```{r, error = TRUE}
+"a" + 2
+```
+
+------------------------------------------------------------------------
+
+.larger\[What if none of these solved my error?\]
+
+--
+
+Look at the help file for the function!
+
+--
+
+When all else fails, **Google** your error message.
+
+--
+
+-   Leave out the specifics.
+
+-   Include the function you are using.
+
+------------------------------------------------------------------------
+
+class: center, middle
+
+.larger\[Try it...\]
+
+**What's wrong here?**
+
+</br>
+
+```{r, error = TRUE}
+matrix(c("a", "b", "c", "d"), num_row = 2)
+```

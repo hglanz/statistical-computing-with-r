@@ -1,0 +1,122 @@
+---
+title: "Reproducible Deliverables"
+format: revealjs
+execute: 
+  eval: false
+---
+
+## Principles of Reproducibile Documents
+
+1.  Document is easy to find and organize.
+
+2.  References to data and code work for everyone.
+
+3.  Package dependency is clear.
+
+4.  Code will run the same every time, even if data values change.
+
+5.  Analysis process is well-explained and easy to read.
+
+# Quarto Documents
+
+## Setup Steps
+
+::: {.incremental}
+-   In the YAML, choose a good title.
+
+-   Add your name! 
+
+-   Save your `.qmd` file, and name it something meaningful (match the title!)
+
+:::
+
+. . .
+
+-   Your first code chunk should look like this:
+
+```{r}
+#| label: setup
+#| echo: fenced
+
+library(tidyverse)
+```
+
+## Good organization
+
+::: {.incremental}
+-   Use `#` to make section (and sub-section) headings.
+
+-   Each code chunk is **one** unified thought.
+
+-   Text before and after each code chunk motivate your code and explain the output.
+
+-   Make deliberate decisions about what to display!
+
+    -   Does the reader need to see data loading step?
+    -   Does the reader need to see your code?
+    -   Does the reader need to see the output?
+:::
+
+## Naming code chunks
+
+Code chunks should have **explanatory** labels:
+
+```{r}
+#| label: data-read
+#| echo: fenced
+
+my_data <- read_csv(here::here("data", 
+                               "penguins.csv")
+                    )
+```
+
+::: {.incremental}
+-   Lets you jump between chunks.
+
+-   Helps you troubleshoot what code chunk is causing render errors.
+
+-   Careful with copy-pasting, duplicate names are not allowed!
+:::
+
+## Setting chunk options
+
+All code chunk options are specified after a `#|` symbol. 
+
+. . .
+
+-   `echo`: Should this code be **shown** (echoed)?
+
+-   `eval`: Should this code be **run** (evaluated)?
+
+-   `include`: Should this code be neither shown nor run?
+
+-   `error`: If there is an error, should that display rather than breaking the
+document's ability to render?
+
+-   `warning`: If there is a warning, should that be displayed?
+
+-   `message`: If there is a message, should that be displayed?
+
+## Setting global options for ALL chunks
+
+The `execute` option of the YAML allows you to declare code chunk options that 
+will hold for **every** code chunk. 
+
+</br>
+
+````
+---
+title: "Lab 1"
+author: "Allison Theobold"
+date: "September 31, 2024"
+format: html
+execute: 
+  error: true
+  message: false
+---
+````
+. . .
+
+</br> 
+
+(you can always override these for individual chunks)
