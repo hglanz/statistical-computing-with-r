@@ -19,11 +19,11 @@ library(kableExtra)
 library(tidyverse)
 ```
 
-### 📖 Reading: 60 minutes
+### 📖 Reading: 60-75 minutes
 
 ### 📽️  Videos: 0 minute(s)
 
-### ✅ Check-ins: 2
+### ✅ Check-ins: 4
 
 
 ## Objectives
@@ -91,6 +91,9 @@ paper is being tracked by git---you can always go back and get that paragraph
 you cut out if you need to. You also don't have to rename files---you can
 confidently save over your old files, so long as you remember to commit
 frequently. 
+
+### 📖 Required Reading: [Install Git](https://happygitwithr.com/install-git)
+
 :::
 
 ::: {.column width="5%"}
@@ -101,7 +104,6 @@ frequently.
 :::
 :::
 
-### 📖 Required Reading: [Install Git](https://happygitwithr.com/install-git)
 
 ### ✅ Check-in: Install Git
 
@@ -168,19 +170,114 @@ Write your information down somewhere safe.
 
 # Introducing Yourself to Git
 
+Now that you have git downloaded and have a GitHub account, it is time to 
+introduce yourself to git! 
 
 ### 📖 Required Reading: [Introduce Yourself to Git](https://happygitwithr.com/hello-git)
 
-### ✅ Check-in: 
+Rather than using the terminal on your computer (like they do in the chapter
+above), let's get familiar with the **usethis** package in R. 
 
+1. Open RStudio.
+2. Run the following code **in your console** (bottom left), substituting your 
+name for `"Jane Doe"` and the email associated with your GitHub account with 
+`"jane@example.org"`. 
 
-# Using Version Control (with RStudio)
+```{r}
+#| label: introducing-yourself-to-git
+#| eval: false
 
-In class this week, we will connect git/GitHub to RStudio so you can use version control for your code. We will then see what a typical git/GitHub workflow looks like.
+install.packages("usethis")
+
+library(usethis)
+
+# Change this to use your name and your GitHub email address! 
+use_git_config(user.name = "Jane Doe", 
+               user.email = "jane@example.org")
+```
+
+### ✅ Check-in: Introduce Yourself to git
+
+Follow the instructions for introducing yourself to git by running the code 
+in your console. Once you've run the code, take a screenshot of the output in 
+your console. 
+
+# Connecting Git, GitHub, and RStudio
+
+In order to interact with a remote Git server (e.g., GitHub), we need to include
+our credentials. The credentials proves to GitHub who we are and that we are
+allowed to do what we are trying to do. There are a few ways to setup your 
+credential, but we will specifically be using **P**ersonal **A**ccess **T**okens
+or PATs. 
+
+::: {.callout-warning}
+# No support for username & password credentials 
+
+Let it be known that the password that you use to login to GitHub’s website is
+NOT an acceptable credential when talking to GitHub as a Git server. 
+:::
+
+### 📖 Required Reading: [Personal Access Tokens for HTTPS](https://happygitwithr.com/hello-git)
 
 ::: {.callout-note}
-## Learn More {-}
+# Skip Section 9.2
 
+We're not using SSH, so feel free to skip that section!
+:::
+
+### ✅ Check-in: PAT
+
+Follow the instructions for setting up your own personal access token. When
+selecting an expiration either choose one of the options that will allow your
+PAT to last the entire quarter (90 days, No expiration, or use Custom and input
+a date after the end of the quarter). 
+
+```{r}
+#| label: PAT
+#| eval: false
+
+usethis::create_github_token()
+gitcreds::gitcreds_set()
+```
+
+Once you've completed this process, run the following code **in your console** 
+and take a screenshot of the output you get. I've included the output I get 
+when I run this, so you have an idea of how your output should look. 
+
+```{r}
+#| label: git-sit-rep
+#| eval: false
+
+usethis::git_sitrep()
+```
+
+```
+── Git global (user) 
+• Name: 'Allison Theobold'
+• Email: 'atheobol@calpoly.edu'
+• Global (user-level) gitignore file: '~/.gitignore'
+• Vaccinated: FALSE
+ℹ See `?git_vaccinate` to learn more
+• Default Git protocol: 'https'
+• Default initial branch name: 'main'
+
+── GitHub user 
+• Default GitHub host: 'https://github.com'
+• Personal access token for 'https://github.com': '<discovered>'
+• GitHub user: 'atheobold'
+• Token scopes: 'admin:org, admin:public_key, delete:packages, delete_repo, gist, notifications, repo, user, workflow, write:packages'
+• Email(s): 'atheobol@calpoly.edu (primary)', 'theobold.allison970@gmail.com', '12439090+atheobold@users.noreply.github.com'
+ℹ No active usethis project
+```
+
+# Getting Started with GitHub
+
+Now you are setup and ready to get started working with GitHub and RStudio for 
+this week's lab! 
+
+# Learn More
+
+::: {.callout-note}
 ### Extra Resources
 
 - [Git "Hello World" Tutorial on GitHub](https://guides.github.com/activities/hello-world/)
