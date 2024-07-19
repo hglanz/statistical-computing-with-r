@@ -1,11 +1,175 @@
 ---
 title: "Week 1, Part 3: Version Control with Git and GitHub"
+execute:
+  freeze: auto  # re-render only when source changes
+  warning: false
+  message: false
+bibliography: references.bib
+number-sections: true
+number-depth: 2
+editor: source
 ---
 
-## R Projects
+```{r}
+#| include: false
+#| label: set-up
 
-## 📖 [Required Reading: Workflow (R Projects)](https://r4ds.hadley.nz/workflow-scripts.html#projects)
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+```
 
-<!-- update video -->
-<!-- ## 📽️ [Required Video: Directories, Paths, Projects (15 minutes)](http://somup.com/c3QDczUaCa) -->
+### 📖 Reading: 60 minutes
 
+### 📽️  Videos: 0 minute(s)
+
+### ✅ Check-ins: 2
+
+
+## Objectives
+
+Most of this section is either heavily inspired by Happy Git and Github for the
+UseR [@bryanHappyGitGitHub2021] or directly links to that book. 
+
++ Recognize the benefits of using version control to improve your coding
+practices and workflow.
++ Identify git / GitHub as a version control platform (and helper).
++ Install git onto your computer and register for a GitHub account
++ Start applying version control practices to your workflow.
+
+# What is Version Control?
+
+Version control is a system that (1) allows you to store your files in the
+cloud, (2) track change in those files over time, and (3) share your files with
+others.
+
+### 📖 Required Reading: [Big Picture](https://happygitwithr.com/big-picture)
+
+# Git
+
+::: columns
+::: {.column width="40%"}
+Git is a **version control system** - a structured way for tracking changes to
+files over the course of a project that may also make it easy to have multiple
+people working on the same files at the same time. Git manages a collection of
+files in a structured way---like "track changes" in Microsoft Word or version
+history in Google Docs, but much more powerful.
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+![](https://www.phdcomics.com/comics/archive/phd101212s.gif){width="50%" fig-alt=""}
+
+:::
+:::
+
+If you are working alone, you will benefit from adopting version control because
+it removes the need to add `_final.qmd` or `_final_finalforreal.qmd` to the end
+of your file names. However, most of us work in collaboration with other people
+(or will have to work with others eventually), so one of the goals of this
+program is to teach you how to use git because it is a useful tool that will
+make you a better collaborator. 
+
+In data science programming, we use git for a similar, but slightly different
+purpose. We use it to keep track of changes not only to code files, but to data
+files, figures, reports, and other essential bits of information. 
+
+### Git Basics
+
+::: columns
+::: {.column width="50%"}
+Git tracks changes to each file that it is told to monitor, and as the files
+change, you provide short labels describing what the changes were and why they
+exist (called "**commits**"). The log of these changes (along with the file
+history) is called your **commit history**. 
+
+When writing papers, this means you can cut material out freely, so long as the
+paper is being tracked by git---you can always go back and get that paragraph
+you cut out if you need to. You also don't have to rename files---you can
+confidently save over your old files, so long as you remember to commit
+frequently. 
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+![](images/week-1/git.png){fig-alt="Person 1: 'This is GIT. It tracks collaborative work on projects through a beautiful distributed graph theory tree model'. Person 2: 'Cool, How do we use it?' Person 1: 'No Idea. Just memorize these shell commands and type them to sync up. If you get errors, save your work elsewhere, delete the project, and download a fresh copy.'"}
+:::
+:::
+
+### 📖 Required Reading: [Install Git](https://happygitwithr.com/install-git)
+
+### ✅ Check-in: Install Git
+
+We will be working with Git/GitHub every week for the next 10 weeks, starting 
+this week! To be prepared for class, follow the instructions in the above
+reading to install Git onto your computer. 
+
+<!-- Change to a screenshot they need to submit -->
+Once you have installed Git, tell me "yes" in the Canvas Quiz.
+
+# GitHub
+
+Git itself is nice enough, but where git really becomes amazing is when you combine it with GitHub - an online service that makes it easy to use git across many computers, share information with collaborators, publish to the web, and more. Git is great, but GitHub is ... essential.
+
+Git is a program that runs on your machine and keeps track of changes to files that you tell it to monitor. GitHub is a website that hosts people's git repositories. You can use git without GitHub, but you can't use GitHub without git. 
+
+If you want, you can hook Git up to GitHub, and make a copy of your local git repository that lives in the cloud. Then, if you configure things correctly, your local repository will talk to GitHub without too much trouble. Using Github with Git allows you to **easily make a cloud backup of your important code**, so that even if your  computer suddenly catches on fire, all of your important code files exist somewhere else. 
+
+Remember: any data you don't have in 3 different places is data you don't care about.^[Yes, I'm aware that this sounds paranoid. It's been a very rare occasion that I've needed to restore something from another backup. You don't want to take chances.]
+
+### 📖 Required Reading: [Register for a GitHub Account](https://happygitwithr.com/github-acct)
+
+### ✅ Check-in: Show me your GitHub Account
+
+Follow the instructions in [Registering a GitHub Account](https://happygitwithr.com/github-acct.html) to create a **free** GitHub account.
+
+Copy and paste the link to your GitHub profile into the Canvas assignment.
+
++ Your GitHub profile link should look like -- https://github.com/USERNAME
++ Here is mine! [https://github.com/atheobold](https://github.com/atheobold)
+
+(Optional) You may want to check out [GitHub Education](https://education.github.com/) and sign up for the [GitHub Student Developer Pack](https://education.github.com/pack).
+
+::: {.callout-caution}
+### Save your login information!
+
+Make sure you remember your username and password so you don't have to try to hack into your own account during class this week.
+
+Write your information down somewhere safe.
+:::
+
+### 📖 Required Reading: [Introduce Yourself to Git](https://happygitwithr.com/hello-git)
+
+### ✅ Check-in: 
+
+
+# Using Version Control (with RStudio)
+
+This course will briefly introduced working with GitHub, but will not provide you with extensive practice using version control. By using version control, you will learn better habits for programming, and you'll get access to a platform for collaboration, hosting your work online, keeping track of features and necessary changes, and more. 
+
+In class this week, we will connect git/GitHub to RStudio so you can use version control for your code. We will then see what a typical git/GitHub workflow looks like.
+
+::: {.callout-note}
+## Learn More {-}
+
+### Extra Resources {-}
+
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/index.html) - Guide to using git, R, and RStudio together. [@bryanHappyGitGitHub2021]
+
+- [Git "Hello World" Tutorial on GitHub](https://guides.github.com/activities/hello-world/)
+
+- [Crash course on git](https://www.youtube.com/watch?v=SWYqp7iY_Tc) (30 minute YouTube video) [@traversymediaGitGitHubCrash2017]
+
+- [Git and GitHub for poets](https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV) YouTube playlist (this is supposed to be the best introduction to Git out there...) [@thecodingtrainIntroductionGitGitHub2016]
+
+- [More advanced git concepts, in comic form](https://dev.to/erikaheidi/stage-commit-push-a-git-story-comic-a37), by Erika Heidi [@ericaheidiStageCommitPush2020]
+
+- [A quick guide to the command line (Terminal)](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955) [@weiQuickGuideUsing2019]
+:::
+
+### References {-}
