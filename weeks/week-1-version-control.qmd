@@ -114,34 +114,60 @@ Once you have installed Git, tell me "yes" in the Canvas Quiz.
 
 # GitHub
 
-Git itself is nice enough, but where git really becomes amazing is when you combine it with GitHub - an online service that makes it easy to use git across many computers, share information with collaborators, publish to the web, and more. Git is great, but GitHub is ... essential.
+Git by itself is nice enough, but where git really becomes amazing is when you
+combine it with GitHub---an online service that makes it easy to use git across
+many computers, share information with collaborators, publish to the web, and
+more. Git is great, but GitHub is ... essential.
 
-Git is a program that runs on your machine and keeps track of changes to files that you tell it to monitor. GitHub is a website that hosts people's git repositories. You can use git without GitHub, but you can't use GitHub without git. 
+Similar to the differences between R and RStudio, git is a program that runs on
+your machine which includes a language for monitoring changes to specific 
+files (similar to a programming language like R). GitHub is a website that hosts
+people's git repositories (similar to a IDE like RStudio). You can use git
+without GitHub (like using R without RStudio), but you can't use GitHub without
+git. 
 
-If you want, you can hook Git up to GitHub, and make a copy of your local git repository that lives in the cloud. Then, if you configure things correctly, your local repository will talk to GitHub without too much trouble. Using Github with Git allows you to **easily make a cloud backup of your important code**, so that even if your  computer suddenly catches on fire, all of your important code files exist somewhere else. 
-
-Remember: any data you don't have in 3 different places is data you don't care about.^[Yes, I'm aware that this sounds paranoid. It's been a very rare occasion that I've needed to restore something from another backup. You don't want to take chances.]
+If you want, you can hook git up to GitHub, and make a copy of your local git
+repository that lives in the cloud. Then, if you configure things correctly,
+your local repository will talk to GitHub without too much trouble. Using
+Github with git allows you to **easily make a cloud backup of your important
+code**, so that even if your computer suddenly catches on fire, all your
+important code files exist somewhere else. Any data you don't have in three
+different places is data you don't care about.^[Yes, I'm aware that this sounds
+paranoid. It's been a very rare occasion that I've needed to restore something
+from another backup. You don't want to take chances.]
 
 ### 📖 Required Reading: [Register for a GitHub Account](https://happygitwithr.com/github-acct)
 
 ### ✅ Check-in: Show me your GitHub Account
 
-Follow the instructions in [Registering a GitHub Account](https://happygitwithr.com/github-acct.html) to create a **free** GitHub account.
+Follow the instructions in [Registering a GitHub Account](https://happygitwithr.com/github-acct.html) to create a **free**
+GitHub account.
 
-Copy and paste the link to your GitHub profile into the Canvas assignment.
+Copy and paste the link to your GitHub profile into the Canvas quiz. 
 
 + Your GitHub profile link should look like -- https://github.com/USERNAME
 + Here is mine! [https://github.com/atheobold](https://github.com/atheobold)
 
-(Optional) You may want to check out [GitHub Education](https://education.github.com/) and sign up for the [GitHub Student Developer Pack](https://education.github.com/pack).
+::: {.callout-tip}
+# (Optional) Register for the Student Developer Pack 
+
+I would highly recommend checking out 
+[GitHub Education](https://education.github.com/) and signing up for the
+[GitHub Student Developer Pack](https://education.github.com/pack). Signing 
+up gets you unlimited private repositories among other perks. 
+:::
 
 ::: {.callout-caution}
 ### Save your login information!
 
-Make sure you remember your username and password so you don't have to try to hack into your own account during class this week.
+Make sure you remember your username and password so you don't have to try to
+hack into your own account during class this week.
 
 Write your information down somewhere safe.
 :::
+
+# Introducing Yourself to Git
+
 
 ### 📖 Required Reading: [Introduce Yourself to Git](https://happygitwithr.com/hello-git)
 
@@ -150,16 +176,12 @@ Write your information down somewhere safe.
 
 # Using Version Control (with RStudio)
 
-This course will briefly introduced working with GitHub, but will not provide you with extensive practice using version control. By using version control, you will learn better habits for programming, and you'll get access to a platform for collaboration, hosting your work online, keeping track of features and necessary changes, and more. 
-
 In class this week, we will connect git/GitHub to RStudio so you can use version control for your code. We will then see what a typical git/GitHub workflow looks like.
 
 ::: {.callout-note}
 ## Learn More {-}
 
-### Extra Resources {-}
-
-- [Happy Git and GitHub for the useR](https://happygitwithr.com/index.html) - Guide to using git, R, and RStudio together. [@bryanHappyGitGitHub2021]
+### Extra Resources
 
 - [Git "Hello World" Tutorial on GitHub](https://guides.github.com/activities/hello-world/)
 
