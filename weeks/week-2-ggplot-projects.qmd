@@ -1,0 +1,13 @@
+---
+title: "ggplot2 & R Projects"
+---
+
+
+## R Projects
+
+## 📖 [Required Reading: Workflow (R Projects)](https://r4ds.hadley.nz/workflow-scripts.html#projects)
+
+<!-- update video -->
+
+<!-- ## 📽️ [Required Video: Directories, Paths, Projects (15 minutes)](http://somup.com/c3QDczUaCa) -->
+
