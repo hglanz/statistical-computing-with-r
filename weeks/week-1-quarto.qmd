@@ -19,11 +19,26 @@ The theme of this lesson is good management of your files and data. In part two 
 
 ## File Management
 
-As boring as it sounds, file management is arguably one of the most important skills a data scientist should have. The reproducibility of a project depends just as much on the way in which the project was stored as the computing tools used. While using R and Quarto make an important step in creating a reproducible analysis, there are other pieces that are arguably just as important---such as file management.
+As boring as it sounds, file management is arguably one of the most important
+skills a data scientist should have. The reproducibility of a project depends
+just as much on the way in which the project was stored as the computing tools
+used. While using R and Quarto make an important step in creating a reproducible
+analysis, there are other pieces that are arguably just as important---such as 
+file management.
 
-Believe it or not, your computer has **multiple** locations\*\* where files can be stored. There has been a bit of a generational shift as computers have evolved: the "file system" metaphor itself is outdated because no one uses physical files anymore. \[This article\]((https://futurism.com/the-byte/gen-z-kids-file-systems) makes the argument that with modern search capabilities, most people use their computers as a laundry hamper instead of as a nice, organized filing cabinet. However, the laundry hamper approach doesn't play nicely with working in R and creating Quarto documents.
+Believe it or not, your computer has **multiple** locations\*\* where files can
+be stored. There has been a bit of a generational shift as computers have
+evolved: the "file system" metaphor itself is outdated because no one uses
+physical files anymore. 
+[This article]((https://futurism.com/the-byte/gen-z-kids-file-systems) makes the
+argument that with modern search capabilities, most people use their computers
+as a laundry hamper instead of as a nice, organized filing cabinet. However, the
+laundry hamper approach doesn't play nicely with working in R and creating
+Quarto documents.
 
-In this class, we will store files according to the [Project TIER protocol](https://www.projecttier.org/tier-protocol/protocol-4-0/). More specifically, you will have:
+In this class, we will store files according to the 
+[Project TIER protocol](https://www.projecttier.org/tier-protocol/protocol-4-0/). 
+More specifically, you will have:
 
 -   a "Stat 331" folder in your Documents folder, containing **all** your materials associated with STAT 331
 -   a sub-folder for each week (e.g., Week 1, Week 2)
@@ -35,13 +50,30 @@ For example, if you come to my office for help on your lab assignment for Week 2
 ::: panel-tabset
 ## File Storage on Windows
 
-<!-- Insert picture of file storage (331 > Week 1 > Lab > data + analysis w/ R Project) -->
+![](images/week-1/pc-save-to-documents.png){width="50%" fig-alt="A screenshot of the folders included in the Documents on Dr. Theobold's PC. The image shows six folders, including a folder titled 'STAT 331'."}
+
+I have six total folders in my Documents, one of which is a folder named "STAT 331." 
+
+![](images/week-1/pc-file-path.png){width="50%" fig-alt="A screenshot of the folders included in the Documents on Dr. Theobold's Mac. The image shows six folders, with the subfolder structure highlighted for the folder named 'STAT 331'."}
+
+Inside my STAT 331 folder is a sub-folder named "Week 1," which also has a sub-folder (a sub-sub-folder) named "Lab 1." You can tell what folders Lab 1 lives inside based on the information included at the top of the screen. This is called a "file path," which tells your computer where a folder / file lives on the computer. 
+
+On a PC, every file lives on the C Drive, so the "full path" to get to my Lab 1 folder would be:
+
+`C://Documents/STAT 331/Week 1/Lab 1`
+
+<!-- Double check if this is correct -->
 
 ## File Storage on a Mac
 
 ![](images/week-1/file-save-mac.png){width="50%" fig-alt="A screenshot of the folders included in the Documents on Dr. Theobold's Mac. The image shows six folders, with the subfolder structure highlighted for the folder named 'STAT 331'."}
 
 I have six total folders in my Documents, one of which is a folder named "STAT 331." Inside this folder is a sub-folder named "Week 1," which also has a sub-folder (a sub-sub-folder) named "Lab 1."
+
+On a MaC, every file lives on the hard drive (it doesn't have letters like a PC), so the "full path" to get to my Lab 1 folder would be:
+
+`/Users/atheobold/Documents/STAT 331/Week 1/Lab 1`
+
 :::
 
 ## ✅ Check-in: Stat 331 Folder
