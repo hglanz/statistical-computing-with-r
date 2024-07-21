@@ -1,0 +1,17 @@
+{
+  "hash": "80048257e250a02580b670fe98e7f0a2",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Lab 1: Introduction to Quarto\"\nauthor: \"Your name goes here!\"\ndate: \"Insert the date here!\"\nformat: html\neditor: source\nembed-resources: true\nexecute:\n  echo: false\n---\n\n\n# Part Two: Exploring Quarto Documents\n\n## Specifying Global Execute Options\n\nExecution options specify how the R code in your Quarto document should be\ndisplayed. This [guide](https://quarto.org/docs/computations/execution-options.html)\nprovides descriptions on the options you can specify in a document's execution.\n\n**Question 1** -- Add your name and the date to the YAML. \n\n**Question 2** -- Add an `execute` line to your YAML that includes the following\noptions, (1) your source code is always output on the page, and (2) your\ndocument will render even if there are errors.\n\n## Running the Provided Code\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n:::\n\n\n**Question 3** -- Let's spice this code up a bit. Delete `1 + 1` from the code\nchunk and paste in the code provided in the Lab 1 instructions. \n\n### Check the Data Documentation\n\n**Question 4** -- In your **console** (*not* in the Quarto document), type\n`?ToothGrowth` (or alternatively `help(ToothGrowth)`.Use the information that\npops up in the *Help* pane in RStudio to fill in the blanks below. \n\n*This dataset investigates the effect of _____ on tooth growth in ____.*\n\n*The two supplement delivery methods include OJ (____) and VC (____).*\n\n*`ToothGrowth` is a data frame with ___observations and ____ variables.*\n\n**Question 5** -- *Before* the code chunk, change the \"Running the Provided\nCode\" section header to a header that better describes the contents of this\nsection (e.g., Tooth Growth Dataset).\n\n## Creating a Plot\n\n**Question 6** -- Replace the `plot(pressure)` code with the code provided in the Lab 1 instructions.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(pressure)\n```\n\n::: {.cell-output-display}\n![](lab1-intro-quarto_files/figure-html/creating-a-plot-1.png){width=672}\n:::\n:::\n\n\nNow, run this code chunk! You should see two side-by-side boxplots, one plot\ncomparing tooth length between the two supplement delivery methods and one plot\ncomparing tooth length between the three different dosages uses. \n\n**Question 7** -- Read over the [Quarto documentation on figure options](https://quarto.org/docs/authoring/figures.html#computations)\nand add an option (`#|`) to the above code chunk to make the figures print\nside-by-side (i.e., in one row) in the rendered HTML file. \n\n**Question 8** -- Specify in the code chunk options that these boxplots \nshould be **center aligned**.\n\n**Question 9** -- Specify a **figure caption** for the boxplots (using a\ncode-chunk option).\n\n",
+    "supporting": [
+      "lab1-intro-quarto_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
