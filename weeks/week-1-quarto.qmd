@@ -138,6 +138,8 @@ computer, you need to download Quarto: <https://quarto.org/docs/download/>
 
 ### 📖 [Required Reading: Intro to Quarto](https://r4ds.hadley.nz/quarto.html)
 
+### HTML Documents
+
 We will exclusively use HTML documents in this course. If you are interested in
 learning more about formatting options for Quarto HTML documents, I would
 recommend checking out:
