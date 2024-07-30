@@ -7,7 +7,7 @@ editor: source
 
 The theme of this lesson is good management of your files and data. In part two
 of this week's coursework you will learn how to identify **folders** and
-**paths**, use **R Projects**, and create **Quarto documents**.
+**paths**, and create **Quarto documents**.
 
 ##### 📖 Readings: 45 minutes
 
@@ -47,7 +47,8 @@ materials associated with STAT 331
 -   a sub-folder for each week (e.g., Week 1, Week 2)
 -   separate folders within each week for each assignment (e.g., Practice
 Activity, Lab)
--   a separate R Studio Project (and GitHub repository) associated with each assignment
+-   a separate R Studio Project (and GitHub repository) associated with each
+assignment
 
 For example, if you come to my office for help on your lab assignment for Week
 2, I would expect your files to look like this:
@@ -75,7 +76,7 @@ I have six total folders in my Documents, one of which is a folder named "STAT
 331." Inside this folder is a sub-folder named "Week 1," which also has a
 sub-folder (a sub-sub-folder) named "Lab 1."
 
-On a MaC, every file lives on the hard drive (it doesn't have letters like a
+On a Mac, every file lives on the hard drive (it doesn't have letters like a
 PC), so the "full path" to get to my Lab 1 folder would be:
 
 `/Users/atheobold/Documents/STAT 331/Week 1/Lab 1`
@@ -93,8 +94,8 @@ Take a screenshot of your class directory, showing:
 ::: callout-caution
 # Your folder cannot synch with anything online! 
 
-Your RStudio project **cannot** be in a folder stored on OneDrive or iCloud!
-Storing your project in this location will cause your code to periodically not
+Your STAT 331 folder **cannot** be in a folder stored on OneDrive or iCloud!
+Storing your folder in this location will cause your code to periodically not
 run and I cannot help you fix it.
 :::
 

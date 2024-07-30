@@ -1,0 +1,74 @@
+---
+title: "R Projects"
+editor: source
+format: 
+  revealjs:
+    theme: ../style.scss
+---
+
+## The Beauty of R Projects
+
+.pull-left\[ An **R Project** is basically a "flag" planted in a certain directory.
+
+When you double click a **.Rproj** file, it does two things:
+
+1.  Open RStudio
+
+2.  Set the working directory to be wherever the .Rproj file lives.
+
+3.  Link to GitHub, if setup (more on that later!)\]
+
+.pull-right\[ ![](images/project_flag.jpg)\]
+
+------------------------------------------------------------------------
+
+class: center
+
+# RStudio Projects & Reproducibility
+
+</br>
+
+.bitlarger\[This is great for reproducibility!\]
+
+</br>
+
+.bitlarger\[You can send anyone your folder with your .Rproj file and they will be able to run your code on their computer.\]
+
+------------------------------------------------------------------------
+
+class: middle
+
+# Setting up an RStudio Project
+
+------------------------------------------------------------------------
+
+class: middle
+
+# Good practice
+
+-   Organize your folders carefully, and name them meaningfully:
+
+    -   `/User/atheobold/Stat331/lab1/` rather than `Desktop/stuff/`
+
+-   Use **R Projects** liberally - put one in the "main" folder for each project
+
+    -   I have a project for every class I teach.
+    -   I have a project for every data analysis I do.
+    -   I **never** work in RStudio, except in a project.
+
+------------------------------------------------------------------------
+
+# Bad practice
+
+If you put something like this at the top of your .Rmd file, I will set your computer on fire:
+
+```{r setwd, eval = FALSE}
+setwd("/User/reginageorge/Desktop/R_Class/Lab_1/")
+```
+
+-   Setting working directory by hand = BAD!
+
+--
+
+-   That directory is specific to you!
+

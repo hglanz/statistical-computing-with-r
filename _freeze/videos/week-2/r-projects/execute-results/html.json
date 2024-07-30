@@ -1,0 +1,15 @@
+{
+  "hash": "83cd08d5619af9d23bc95a673bf9de99",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"R Projects\"\neditor: source\nformat: \n  revealjs:\n    theme: ../style.scss\n---\n\n\n\n## The Beauty of R Projects\n\n.pull-left\\[ An **R Project** is basically a \"flag\" planted in a certain directory.\n\nWhen you double click a **.Rproj** file, it does two things:\n\n1.  Open RStudio\n\n2.  Set the working directory to be wherever the .Rproj file lives.\n\n3.  Link to GitHub, if setup (more on that later!)\\]\n\n.pull-right\\[ ![](images/project_flag.jpg)\\]\n\n------------------------------------------------------------------------\n\nclass: center\n\n# RStudio Projects & Reproducibility\n\n</br>\n\n.bitlarger\\[This is great for reproducibility!\\]\n\n</br>\n\n.bitlarger\\[You can send anyone your folder with your .Rproj file and they will be able to run your code on their computer.\\]\n\n------------------------------------------------------------------------\n\nclass: middle\n\n# Setting up an RStudio Project\n\n------------------------------------------------------------------------\n\nclass: middle\n\n# Good practice\n\n-   Organize your folders carefully, and name them meaningfully:\n\n    -   `/User/atheobold/Stat331/lab1/` rather than `Desktop/stuff/`\n\n-   Use **R Projects** liberally - put one in the \"main\" folder for each project\n\n    -   I have a project for every class I teach.\n    -   I have a project for every data analysis I do.\n    -   I **never** work in RStudio, except in a project.\n\n------------------------------------------------------------------------\n\n# Bad practice\n\nIf you put something like this at the top of your .Rmd file, I will set your computer on fire:\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsetwd(\"/User/reginageorge/Desktop/R_Class/Lab_1/\")\n```\n:::\n\n\n\n-   Setting working directory by hand = BAD!\n\n--\n\n-   That directory is specific to you!\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
