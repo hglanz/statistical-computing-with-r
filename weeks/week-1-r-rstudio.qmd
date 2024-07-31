@@ -64,7 +64,10 @@ Download and install R by going to <https://cloud.r-project.org/>. Here, you
 will find three options for installing R---click on the option for your
 computer's operating system.
 
-If you would like a video tutorial on installing R, here is one: <https://www.youtube.com/watch?v=YrEe2TLr3MI> (from 0:47 to 1:53)
+::: {.column-margin}
+{{< video https://www.youtube.com/watch?v=YrEe2TLr3MI >}}
+:::
+
 
 ### If you are a *Windows* user:
 
@@ -161,6 +164,12 @@ download the most recent version of RStudio desktop.
 
 ## Installing RStudio
 
+::: {.column-margin}
+{{< video https://www.youtube.com/watch?v=YrEe2TLr3MI >}}
+
+{{< video https://www.youtube.com/watch?v=n8kP7c_QbLA >}}
+:::
+
 Downloading the most recent version of RStudio works the same way regardless of
 whether you've never downloaded RStudio before or if you just need to update
 your version of RStudio. 
@@ -175,8 +184,6 @@ Clicking the button will begin installing RStudio. Once the download has
 completed, you will need to open the application file (on a Mac this is a `.dmg`
 file, on Windows this is an `exe` file). 
 
-If you would like a video tutorial on installing R, [here is one for Windows (from 1:58 to 2:32)](https://www.youtube.com/watch?v=YrEe2TLr3MI) and [here is one for Mac (2:10 to 3:10)](https://www.youtube.com/watch?v=n8kP7c_QbLA). 
-
 ------------------------------------------------------------------------
 
 # Let's start working in `R`! 🥳
@@ -184,10 +191,6 @@ If you would like a video tutorial on installing R, [here is one for Windows (fr
 ![](images/week-1/typing_R.gif){fig-alt="A video of Hadley Wickham (author of many R packages) pretending to type and saying 'just typing R code'."}
 
 # Introduction to R
-
-<!-- Update / shorten video -->
-
-<!-- 📽️ [Required Video: Introduction to `R` (18 minutes)](http://somup.com/creuribzT2) -->
 
 R is a statistical programming language. Unlike more general-purpose languages,
 R is optimized for working with data and doing statistics. R was created by Ross

@@ -36,8 +36,7 @@ library(tidyverse)
 . . .
 
 - **One-click Reproducibility**
-  + [Reproducing all the computations required to generate the results of a study
-  should require (almost) nothing other than executing a single main script file.]{.small}
+  + [Reproducing all the computations should require (almost) nothing other than executing a single main script file.]{.small}
 
 
 # How can a script I write run on someone else's computer???

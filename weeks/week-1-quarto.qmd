@@ -11,13 +11,17 @@ of this week's coursework you will learn how to identify **folders** and
 
 ##### 📖 Readings: 45 minutes
 
-##### 📽 Watch Video: 30 min
+##### 📽 Watch Videos: 30 min
 
 ##### 💻 Activities: 5-10 min
 
 ##### ✅ Check-ins: 2
 
 # Principles of Reproducibility
+
+::: {.column-margin}
+{{< video https://youtu.be/wiPjz3yf3bA >}}
+:::
 
 ## File Management
 
