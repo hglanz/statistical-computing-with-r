@@ -1,0 +1,19 @@
+---
+title: "Broken Circles"
+---
+
+For the first week, it's important to establish the ideas of cooperation and to guide students in having discussions around what it means to work productively in groups and why that's important. It's important that the activities given in that first week according to Lotan and Cohen are not too complex. Otherwise the students won't be able to focus on learning about group work.
+
+Therefore, I propose that the first activity we have students engage in to begin the establishment of group norms is the broken circles activity from Appendix A of Designing Groupwork. The broken circles activity allows them to see what happens when they do not cooperate while also learning the skills around cooperation. In order for the norms to be internalized, we need to not only make sure they are aware of what the desired behaviors are, but also reinforce them /enforce them. These norms include dependence on each other responsibility for group behaviors and products Learn to ask for others opinions Listen to others Give others a chance to talk
+
+The broken circles activity is not complex and even though it's not coding related, it should help students to learn how to work together. After the broken circles activity is completed. The following questions should be asked through discussion. What made successful and unsuccessful cooperation in the activity How could the group have cooperated more fully What are some new behaviors they observed or could be implemented in the future to make cooperation easier It is important to draw direct links between the norms and behaviors that we see because the desired behaviors we are training the students for really do need to be specific and not broad. For example. We can't just say “you need to work together”, we need to say “you work together by…”
+
+We need to identify the cooperative behaviors needed for paired programming. Here are a few that I came up with Not doing the task for another person Not just giving an answer but an explanation Providing concise sharing/description of what is being done and reasoning for why it's being done And we need to identify higher levels of discourse and instruct students to engage in such. For example, they need to start by discussing a strategy and agreeing on it before moving forward or getting caught in the weeds. They shouldn't just barrel through the assignment but should think about the assignment and come up with a plan. It is important to identify the goals and behaviors of the activity when it comes to cooperation because we need the behaviors to be specific and directly relevant to the goal of the group, not broad and generic.
+
+As we're thinking about equal participation training procedures, here are some norms we might want to focus on Say your own ideas Listen to others. Give everyone a chance to talk Ask others for their ideas Give reasons for your ideas and discuss any different ideas and many different ideas
+
+We evaluation questions to ask themselves to help them understand if they are engaging in the behaviors specified for group work including Is everyone talking? Are you listening to each other? Are you asking questions? What could you ask to find out someone's ideas? Are you giving reasons for your ideas? How do you ask for reasons from others?
+
+If guessing ideas and strategies that they make a consensus and not go by majority rule. This will help them learn conflict resolution.
+
+The activity itself should be preface for why cooperation is so important, especially in the field of data science. Perhaps we can find an article that talks about the need for collaboration or effective collaboration in data science projects and potentially look into team science protocols and ideas.
