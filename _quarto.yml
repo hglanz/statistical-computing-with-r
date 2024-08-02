@@ -9,7 +9,7 @@ website:
   title: "Introduction to Statistical Computing in R"
   description: "Homepage for STAT 331 at Cal Poly"
   site-url: "https://atheobold.github.io/stat-331-website"
-  repo-url: https://github.com/atheobold/stat-3331-website
+  repo-url: https://github.com/atheobold/stat-331-website
   repo-actions: [issue]
 
   page-footer:
