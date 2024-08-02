@@ -92,7 +92,6 @@ format:
   html:
     theme:
       - cosmo
-      - theme.scss
     mainfont: "Atkinson Hyperlegible"
     code-copy: true
     code-overflow: wrap
