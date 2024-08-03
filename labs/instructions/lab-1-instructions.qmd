@@ -1,7 +1,6 @@
 ---
 title: "Lab 1: Introduction to Quarto"
 format: html
-embed-resources: true
 number-sections: true
 number-depth: 2
 execute:
@@ -12,72 +11,57 @@ execute:
 
 ## Step 1: Making a Copy from GitHub
 
-You can find the Lab 1 materials in the
-[Lab 1 repository on GitHub](https://github.com/atheobold/stat-331-lab-1). When 
-you click on the provided link, you will end up on the landing page for the 
-repository. 
+You can find the Lab 1 materials in the [Lab 1 repository on GitHub](https://github.com/atheobold/stat-331-lab-1). When you click on the provided link, you will end up on the landing page for the repository.
 
-To make a copy of the project you need to carry out the following 
-steps:
+To make a copy of the project you need to carry out the following steps:
 
-1. Click on icon that says ![](images/fork.png){width=15%}, to create your own
-copy of **my** repository
+1.  Click on icon that says ![](images/fork.png){width="15%"}, to create your own copy of **my** repository
 
-2. Once you've forked the repository, your copy should open. 
+2.  Once you've forked the repository, your copy should open.
 
-3. Click on the big green button that says "<> Code".
+3.  Click on the big green button that says "\<\> Code".
 
-4. Copy the URL to your clipboard (you should be copying the HTTPS URL).
+4.  Copy the URL to your clipboard (you should be copying the HTTPS URL).
 
-5. Open RStudio
+5.  Open RStudio
 
-6. Open a new project by selecting "File" and then clicking on "New Project..."
+6.  Open a new project by selecting "File" and then clicking on "New Project..."
 
-7. In the box that opens, select "Version Control".
+7.  In the box that opens, select "Version Control".
 
-8. In the next screen, select "Git". 
+8.  In the next screen, select "Git".
 
-9. In the "repository URL" paste the URL of your new GitHub repository. 
+9.  In the "repository URL" paste the URL of your new GitHub repository.
 
 10. In the "Create project as a subdirectory of" option, click on "Browse".
 
-11. Navigate to the "Lab 1" folder you made in the Week 1 folder of your STAT
-331 folder. Once you get there, click "Open".
+11. Navigate to the "Lab 1" folder you made in the Week 1 folder of your STAT 331 folder. Once you get there, click "Open".
 
 12. Click "Create Project".
 
-## Step 2: Inspecting the Lab 
+## Step 2: Inspecting the Lab
 
-Once you complete these steps, a dialogue box will open with messages about 
-cloning (making a copy) of your lab 1 repository. When the messages are
-finished, you should have a new RStudio session open. You should notice a few 
-things: 
+Once you complete these steps, a dialogue box will open with messages about cloning (making a copy) of your lab 1 repository. When the messages are finished, you should have a new RStudio session open. You should notice a few things:
 
-- In the upper right corner you should see a blue R cube with `stat-331-lab-1` written next to it ![](images/new-r-project.png){width=15%},
-this tells you that you are working in an R Project (we'll learn more about
-these next week).
-- In the "Files" pane, you should see a list of all the files included in the 
-`lab-1` repository you copied.
-- In the upper right pane, you should see a tab labeled "Git". 
-- Every file included in the repository should be listed with a question mark
-symbol next to it, that's okay! This just means these files are not currently 
-being tracked. 
+-   In the upper right corner you should see a blue R cube with `stat-331-lab-1` written next to it ![](images/new-r-project.png){width="15%"}, this tells you that you are working in an R Project (we'll learn more about these next week).
+-   In the "Files" pane, you should see a list of all the files included in the `lab-1` repository you copied.
+-   In the upper right pane, you should see a tab labeled "Git".
+-   Every file included in the repository should be listed with a question mark symbol next to it, that's okay! This just means these files are not currently being tracked.
 
 ## Step 3: Pushing Your Lab to GitHub
 
-Now for our last step, we need to [commit the files to our repo](https://happygitwithr.com/existing-github-first#stage-and-commit). 
+Now for our last step, we need to [commit the files to our repo](https://happygitwithr.com/existing-github-first#stage-and-commit).
 
-- Click the "Git" tab in upper right pane
-- Check the "Staged" box for every file listed
-- Click "Commit"
-- In the box that opens, type a message in "Commit message", such as 
-"Initialize lab 1".
-- Click "Commit".
-- Click the green "Push" button to send your local changes to GitHub. 
+-   Click the "Git" tab in upper right pane
+-   Check the "Staged" box for every file listed
+-   Click "Commit"
+-   In the box that opens, type a message in "Commit message", such as "Initialize lab 1".
+-   Click "Commit".
+-   Click the green "Push" button to send your local changes to GitHub.
 
 RStudio will display something like:
 
-```
+```         
 >>> /usr/bin/git push origin HEAD:refs/heads/main
 To https://github.com/atheobold/stat-331-lab-1.git
    3a2171f..6d58539  HEAD -> main
@@ -85,27 +69,21 @@ To https://github.com/atheobold/stat-331-lab-1.git
 
 ## Step 4: Verifying Your Changes
 
-Go back to your browser. I assume you're still viewing the GitHub repo you just
-cloned. Refresh the page. You should see all the project files you committed
-there. If you click on "commits", you should see one with the message you used,
-e.g. "Initialize lab 1". 
+Go back to your browser. I assume you're still viewing the GitHub repo you just cloned. Refresh the page. You should see all the project files you committed there. If you click on "commits", you should see one with the message you used, e.g. "Initialize lab 1".
 
 ## Step 5: Let's get started working with Quarto!
 
-In the Files pane, click on `lab-1.qmd` to open the Quarto file you will be 
-working in for Lab 1. 
+In the Files pane, click on `lab-1.qmd` to open the Quarto file you will be working in for Lab 1.
 
 # Part Two: Exploring Quarto Documents
 
 ## Specifying Global Execute Options
 
-Execution options specify how the R code in your Quarto document should be
-displayed. This [guide](https://quarto.org/docs/computations/execution-options.html) 
-provides descriptions on the options you can specify in a document's execution.
+Execution options specify how the R code in your Quarto document should be displayed. This [guide](https://quarto.org/docs/computations/execution-options.html) provides descriptions on the options you can specify in a document's execution.
 
 To start, your YAML should look something like this:
 
-```
+```         
 ---
 title: "Lab 1: Introduction to Quarto"
 author: "Your name goes here!"
@@ -116,22 +94,15 @@ editor: source
 ---
 ```
 
-**Question 1** -- Add your name and the date to the YAML. 
+**Question 1** -- Add your name and the date to the YAML.
 
-**Question 2** -- Add an `execute` line to your YAML that includes the following
-options, (1) your source code is always output on the page, and (2) your
-document will render even if there are errors.
+**Question 2** -- Add an `execute` line to your YAML that includes the following options, (1) your source code is always output on the page, and (2) your document will render even if there are errors.
 
 ## Running the Provided Code
 
-Next, click on the "Play" button on the right of the first auto-populated code
-chunk. Alternatively, you can highlight (or simply put your cursor on the line
-of) the code you want to run and hit <kbd>ctrl</kbd> + <kbd>Enter</kbd> (for PCs) or
-<kbd>⌘</kbd> + <kbd>Enter</kbd> (for Macs).
+Next, click on the "Play" button on the right of the first auto-populated code chunk. Alternatively, you can highlight (or simply put your cursor on the line of) the code you want to run and hit <kbd>ctrl</kbd> + <kbd>Enter</kbd> (for PCs) or <kbd>⌘</kbd> + <kbd>Enter</kbd> (for Macs).
 
-You should see the code appear in the console, as well as the result of the code
-(`2`). Keep in mind the `[1]` before the `2` is vector notation. This means the
-result is a *vector* of length 1, whose first element is `2`. 
+You should see the code appear in the console, as well as the result of the code (`2`). Keep in mind the `[1]` before the `2` is vector notation. This means the result is a *vector* of length 1, whose first element is `2`.
 
 **Question 3** -- Let's spice this code up a bit. Delete `1 + 1` from the code chunk and paste in the following code:
 
@@ -147,17 +118,11 @@ data(ToothGrowth)
 summary(ToothGrowth)
 ```
 
-Now run this code. You should see a six-number summary of the variables `len`
-and `dose` included in the `ToothGrowth` dataset, as well as the frequency of
-the levels contained in the `supp` variable. Further, if you inspect the
-Environment tab, the `ToothGrowth` dataset should appear. You can click on the
-dataset name (not the blue play button!) to look at the data.
+Now run this code. You should see a six-number summary of the variables `len` and `dose` included in the `ToothGrowth` dataset, as well as the frequency of the levels contained in the `supp` variable. Further, if you inspect the Environment tab, the `ToothGrowth` dataset should appear. You can click on the dataset name (not the blue play button!) to look at the data.
 
 ### Check the Data Documentation
 
-**Question 4** -- In your **console** (*not* in the Quarto document), type
-`?ToothGrowth` (or alternatively `help(ToothGrowth)`). Use the information that
-pops up in the *Help* pane in RStudio to fill in the blanks below. 
+**Question 4** -- In your **console** (*not* in the Quarto document), type `?ToothGrowth` (or alternatively `help(ToothGrowth)`). Use the information that pops up in the *Help* pane in RStudio to fill in the blanks below.
 
 *This dataset investigates the effect of \_\_\_\_\_\_\_\_\_\_ on tooth growth in \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.*
 
@@ -165,17 +130,13 @@ pops up in the *Help* pane in RStudio to fill in the blanks below.
 
 *`ToothGrowth` is a data frame with \_\_\_\_ observations and \_\_\_\_ variables.*
 
-**Question 5** -- *Before* the code chunk, change the "Running the Provided
-Code" section header to a header that better describes the contents of this
-section (e.g., Tooth Growth Dataset).
+**Question 5** -- *Before* the code chunk, change the "Running the Provided Code" section header to a header that better describes the contents of this section (e.g., Tooth Growth Dataset).
 
 ## Creating a Plot
 
-Your second code chunk is just as boring as your first, so
-let's spice it up!
+Your second code chunk is just as boring as your first, so let's spice it up!
 
-**Question 6** -- Replace the `plot(pressure)` code with the following (we will
-talk about graphics next week!):
+**Question 6** -- Replace the `plot(pressure)` code with the following (we will talk about graphics next week!):
 
 ```{r}
 #| echo: true
@@ -199,137 +160,89 @@ ToothGrowth %>%
 
 ```
 
-Now, run this code chunk! You should see two side-by-side boxplots, one plot
-comparing tooth length between the two supplement delivery methods and one plot
-comparing tooth length between the three different dosages uses. 
+Now, run this code chunk! You should see two side-by-side boxplots, one plot comparing tooth length between the two supplement delivery methods and one plot comparing tooth length between the three different dosages uses.
 
-**Question 7** -- Read over the [Quarto documentation on figure options](https://quarto.org/docs/authoring/figures.html#computations)
-and add an option (`#|`) to the above code chunk to make the figures print
-side-by-side (i.e., in one row) in the rendered HTML file. 
+**Question 7** -- Read over the [Quarto documentation on figure options](https://quarto.org/docs/authoring/figures.html#computations) and add an option (`#|`) to the above code chunk to make the figures print side-by-side (i.e., in one row) in the rendered HTML file.
 
-**Question 8** -- Specify in the code chunk options that these boxplots 
-should be **center aligned**.
+**Question 8** -- Specify in the code chunk options that these boxplots should be **center aligned**.
 
-**Question 9** -- Specify a **figure caption** for the boxplots (using a
-code-chunk option).
+**Question 9** -- Specify a **figure caption** for the boxplots (using a code-chunk option).
 
 ## Inserting a New Code Chunk
 
-Navigate to the last sentence of your the Quarto document. We're now going to
-insert a new `R` code chunk at the bottom of the document.
+Navigate to the last sentence of your the Quarto document. We're now going to insert a new `R` code chunk at the bottom of the document.
 
 There are four different ways to do this:
 
-1.  Type <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>i</kbd> (on a PC) or
-<kbd>⌘</kbd> + <kbd>⌥</kbd> + <kbd>i</kbd> (on a Mac). 
+1.  Type <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>i</kbd> (on a PC) or <kbd>⌘</kbd> + <kbd>⌥</kbd> + <kbd>i</kbd> (on a Mac).
 
-2.  Click on the ![](images/insert_code.png){width=5%} symbol. This should
-automatically default to R code, but if you have a Python compiler on your
-computer, you might need to select "R" from the options.
+2.  Click on the ![](images/insert_code.png){width="5%"} symbol. This should automatically default to R code, but if you have a Python compiler on your computer, you might need to select "R" from the options.
 
-3.  If you are using the Visual editor, click on the "Insert" button, then
-select "Code Chunk", and finally select "R".
+3.  If you are using the Visual editor, click on the "Insert" button, then select "Code Chunk", and finally select "R".
 
-4.  Manually add the code chunk by typing ```` ```{r} ````. Make sure to close
-your code chunk with ```` ``` ````.
+4.  Manually add the code chunk by typing ```` ```{r} ````. Make sure to close your code chunk with ```` ``` ````.
 
-## Conducting a t-test for Two Independent Samples 
+## Conducting a t-test for Two Independent Samples
 
-In this section, we are going to conduct a two-sample independent t-test to
-compare tooth length between the two supplement methods in the `ToothGrowth`
-dataset. I have outlined the null and alternative hypotheses we will be testing:
+In this section, we are going to conduct a two-sample independent t-test to compare tooth length between the two supplement methods in the `ToothGrowth` dataset. I have outlined the null and alternative hypotheses we will be testing:
 
-$H_0$: The treatment mean tooth length for the OJ supplement delivery method 
-**is the same** as the treatment mean tooth length for the VC supplement
-delivery method.
+$H_0$: The treatment mean tooth length for the OJ supplement delivery method **is the same** as the treatment mean tooth length for the VC supplement delivery method.
 
-$H_A$: The treatment mean tooth length for the OJ supplement delivery method
-**is different** from the treatment mean tooth length for the VC supplement
-delivery method.
+$H_A$: The treatment mean tooth length for the OJ supplement delivery method **is different** from the treatment mean tooth length for the VC supplement delivery method.
 
-While a second course in statistics is a pre-requisite for this class, you may
-want to go [here](https://openintro-ims.netlify.app/inference-two-means) for a
-refresher on conducting two-sample independent t-tests.
+While a second course in statistics is a pre-requisite for this class, you may want to go [here](https://openintro-ims.netlify.app/inference-two-means) for a refresher on conducting two-sample independent t-tests.
 
 Carry out the following steps:
 
-**Question 10** -- Using the `t.test()` function, write code to carry out the
-analysis. You can assume unequal variances and a two-sided alternative.
+**Question 10** -- Using the `t.test()` function, write code to carry out the analysis. You can assume unequal variances and a two-sided alternative.
 
-::: {.callout-tip}
+::: callout-tip
 # Function Documentation
 
-Look up the help documentation for `t.test()` for directions on how your 
-inputs should look. Hint: specifically look at the examples at the bottom
-for comparing `extra` across groups in the `sleep` dataset.
+Look up the help documentation for `t.test()` for directions on how your inputs should look. Hint: specifically look at the examples at the bottom for comparing `extra` across groups in the `sleep` dataset.
 :::
 
-**Question 11** -- Run your code chunk to obtain the output for your statistical
-test.
+**Question 11** -- Run your code chunk to obtain the output for your statistical test.
 
 **Question 12** -- Create a numbered list containing:
 
 -   Your conclusion (in the context of these data) based on the p-value.
--   An interpretation of the confidence interval (make sure to read what
-confidence level is used by default).
+-   An interpretation of the confidence interval (make sure to read what confidence level is used by default).
 
-**Question 13** -- Create another section header, describing the contents of
-this section.
+**Question 13** -- Create another section header, describing the contents of this section.
 
 ## Render Your Document
 
-Render your document as an **html** file. Use the "Render" button (the blue
-arrow!) at the top of your screen.
+Render your document as an **html** file. Use the "Render" button (the blue arrow!) at the top of your screen.
 
-If you run into trouble rendering your document, try restarting R and running
-your code chunks in order, and see if you can find the problem.
+If you run into trouble rendering your document, try restarting R and running your code chunks in order, and see if you can find the problem.
 
-Another common issue is deleting the tick marks (```` ``` ````) that surround
-your code chunks. If you notice that the code chunks are not showing a "Play"
-button (![](images/code-play-button.png){width=5%}), or that they are not
-highlighted in gray, double check your tick marks!
+Another common issue is deleting the tick marks (```` ``` ````) that surround your code chunks. If you notice that the code chunks are not showing a "Play" button (![](images/code-play-button.png){width="5%"}), or that they are not highlighted in gray, double check your tick marks!
 
-Recall we included `error: true` in our YAML execution options. This means that
-your document will still render even if there are errors. Make sure you are
-double checking your work!
+Recall we included `error: true` in our YAML execution options. This means that your document will still render even if there are errors. Make sure you are double checking your work!
 
-You will notice that there is auto-generated text that is unrelated to the work
-that you completed. It is always a good idea to delete this extra text!
+You will notice that there is auto-generated text that is unrelated to the work that you completed. It is always a good idea to delete this extra text!
 
 # Challenge 1: Styling your Quarto Document
 
-You can find a list of every option you can use to format an HTML document
-[here](https://quarto.org/docs/output-formats/html-basics.html) and
-[here](https://quarto.org/docs/reference/cells/cells-knitr.html). Further,
-[here](https://quarto.org/docs/output-formats/html-themes.html) are lists of
-different themes you can specify in your YAML to produce differently styled
-outputs.
+You can find a list of every option you can use to format an HTML document [here](https://quarto.org/docs/output-formats/html-basics.html) and [here](https://quarto.org/docs/reference/cells/cells-knitr.html). Further, [here](https://quarto.org/docs/output-formats/html-themes.html) are lists of different themes you can specify in your YAML to produce differently styled outputs.
 
 Make the following changes to your document:
 
-1. Specify **"code-folding"** in your YAML document options.
+1.  Specify **"code-folding"** in your YAML document options.
 
-2. Add a **table of contents** to your document. 
+2.  Add a **table of contents** to your document.
 
-3. Add a color theme to your document. 
+3.  Add a color theme to your document.
 
 ## Render again!
 
-Notice that when you render the document, all of the code reruns again,
-producing the same output as before, but with your changes---this is called
-reproducibility!
+Notice that when you render the document, all of the code reruns again, producing the same output as before, but with your changes---this is called reproducibility!
 
-You should render **often** while completing your practice activities and lab
-assignments. Make small changes, then make sure the file still renders rather
-than making a bunch of big changes and then realizing something is wrong.
+You should render **often** while completing your practice activities and lab assignments. Make small changes, then make sure the file still renders rather than making a bunch of big changes and then realizing something is wrong.
 
 ## Turn it in!
 
-Open the .html file on your computer to make sure it looks as you expected. Then
-upload the rendered (.html extension) document to Canvas!
+Open the .html file on your computer to make sure it looks as you expected. Then upload the rendered (.html extension) document to Canvas!
 
-> You'll be doing this same process for all your future Lab Assignments. Each of
-these will involve a Quarto file. Some weeks, I may have a template for you to
-copy like you had here, while other weeks you will generate your own Quarto file
-from scratch. 
-
+> You'll be doing this same process for all your future Lab Assignments. Each of these will involve a Quarto file. Some weeks, I may have a template for you to copy like you had here, while other weeks you will generate your own Quarto file from scratch.
