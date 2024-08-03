@@ -1,8 +1,6 @@
 project:
   type: website
   output-dir: docs
-  resources:
-    - "*.docx"
 
 website:
   page-navigation: true
@@ -96,8 +94,5 @@ format:
     code-copy: true
     code-overflow: wrap
     toc: true
-
-execute:
-  freeze: auto
 
 editor: visual
