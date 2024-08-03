@@ -1,0 +1,655 @@
+[
+  {
+    "objectID": "group-activities/week-1/data/data_dictionary.html",
+    "href": "group-activities/week-1/data/data_dictionary.html",
+    "title": "Introduction to Statistical Computing in R",
+    "section": "",
+    "text": "Column\nDescription\n\n\n\n\nwork_year\nThe year the salary was paid.\n\n\nexperience_level\nThe experience level in the job during the year with the following possible values: EN Entry-level / Junior MI Mid-level / Intermediate SE Senior-level / Expert EX Executive-level / Director\n\n\nemployment_type\nThe type of employement for the role: PT Part-time FT Full-time CT Contract FL Freelance\n\n\njob_title\nThe role worked in during the year.\n\n\nsalary\nThe total gross salary amount paid.\n\n\nsalary_currency\nThe currency of the salary paid as an ISO 4217 currency code. salary_in_usd\n\n\nremote_ratio\nThe overall amount of work done remotely, possible values are as follows: 0 No remote work (less than 20%) 50 Partially remote 100 Fully remote (more than 80%)\n\n\ncompany_location\nThe country of the employer027s main office or contracting branch as an ISO 3166 country code.\n\n\ncompany_size\nThe average number of people that worked for the company during the year: S less than 50 employees (small) M 50 to 250 employees (medium) L more than 250 employees (large)"
+  },
+  {
+    "objectID": "group-activities/week-1/data_cleaning_viz_steps.html#view-original-data",
+    "href": "group-activities/week-1/data_cleaning_viz_steps.html#view-original-data",
+    "title": "Master Script Data Processing",
+    "section": "View Original Data",
+    "text": "View Original Data"
+  },
+  {
+    "objectID": "group-activities/week-1/data_cleaning_viz_steps.html#filter-just-us-based-jobs",
+    "href": "group-activities/week-1/data_cleaning_viz_steps.html#filter-just-us-based-jobs",
+    "title": "Master Script Data Processing",
+    "section": "Filter Just US Based Jobs",
+    "text": "Filter Just US Based Jobs"
+  },
+  {
+    "objectID": "group-activities/week-1/data_cleaning_viz_steps.html#filter-out-entry-level-jobs-only",
+    "href": "group-activities/week-1/data_cleaning_viz_steps.html#filter-out-entry-level-jobs-only",
+    "title": "Master Script Data Processing",
+    "section": "Filter out entry level jobs only",
+    "text": "Filter out entry level jobs only"
+  },
+  {
+    "objectID": "group-activities/week-1/data_cleaning_viz_steps.html#count-of-positions-by-remote-work-and-company-size",
+    "href": "group-activities/week-1/data_cleaning_viz_steps.html#count-of-positions-by-remote-work-and-company-size",
+    "title": "Master Script Data Processing",
+    "section": "Count of positions by Remote Work and Company Size",
+    "text": "Count of positions by Remote Work and Company Size"
+  },
+  {
+    "objectID": "group-activities/week-1/data_cleaning_viz_steps.html#graph-of-remote-work-and-company-size",
+    "href": "group-activities/week-1/data_cleaning_viz_steps.html#graph-of-remote-work-and-company-size",
+    "title": "Master Script Data Processing",
+    "section": "Graph of Remote Work and Company Size",
+    "text": "Graph of Remote Work and Company Size"
+  },
+  {
+    "objectID": "group-activities/week-1/data_cleaning_viz_steps.html#group-and-calculate-average-salary-by-year",
+    "href": "group-activities/week-1/data_cleaning_viz_steps.html#group-and-calculate-average-salary-by-year",
+    "title": "Master Script Data Processing",
+    "section": "Group and Calculate Average Salary by year",
+    "text": "Group and Calculate Average Salary by year"
+  },
+  {
+    "objectID": "course-materials/course-support.html",
+    "href": "course-materials/course-support.html",
+    "title": "Course support",
+    "section": "",
+    "text": "Most of you will need help at some point and we want to make sure you can identify when that is without getting too frustrated and feel comfortable seeking help.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-support.html#lectures-and-labs",
+    "href": "course-materials/course-support.html#lectures-and-labs",
+    "title": "Course support",
+    "section": "Lectures and labs",
+    "text": "Lectures and labs\nIf you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-support.html#student-hours",
+    "href": "course-materials/course-support.html#student-hours",
+    "title": "Course support",
+    "section": "Student Hours",
+    "text": "Student Hours\nA lot of questions are most effectively answered in-person, and student hours are the best place to come ask me questions! I encourage each and every one of you to take advantage of this resource! Make a pledge to stop by office hours at least once during the first three weeks of class. If you truly have no questions to ask, just stop by and say hi and introduce yourself.\n\n\n\nTuesdays\n2:10 pm – 3:00 pm (in-person)\n\n\nThursdays\n2:10 pm - 3:00 pm (in-person)",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-support.html#discord",
+    "href": "course-materials/course-support.html#discord",
+    "title": "Course support",
+    "section": "Discord",
+    "text": "Discord\nWe will use Discord to manage questions and responses regarding course content. There are channels for the different components of each week (e.g., Week 1 Lab Assignment). Please do not send an email about homework questions or questions about the course material. It is incredibly helpful for others in the course to see the questions you have and the responses to those questions. I will try to answer any questions posted to Discord within 3-4 hours (unless it is posted at midnight). If you think you can answer another student’s question, please respond!",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-support.html#email",
+    "href": "course-materials/course-support.html#email",
+    "title": "Course support",
+    "section": "Email",
+    "text": "Email\nPlease refrain from emailing any course content questions (those should be posted to Discord), and only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, accommodations, etc.). For such matters, you may email Dr. Allison Theobold at atheobol@calpoly.edu.\nI do my best to reply to emails promptly and helpfully. However, I receive a lot of emails. To help both you and me, here are some specific expectations about emails:\n\nPlease tell me what course and section (by time or number) you are in!\nIf you email me between 9am and 4pm on Monday through Friday, I’ll try my best to reply to you on the same day.\nIf you email me outside of those hours, I will do my best to respond to you by the next working day. For my own mental health, I do not work on weekends. Thus, if you send an email after 4pm on Friday or during the weekend, you will not receive a response until Monday morning.\nIf your question is much easier to discuss face-to-face, I may ask you to meet with me in my office or on Discord (at a time that works for both of us) rather than answering directly in an email.\nInclude any relevant photos / screenshots / error messages / PDFs / links with your email.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-support.html#well-being-access-and-accommodations",
+    "href": "course-materials/course-support.html#well-being-access-and-accommodations",
+    "title": "Course support",
+    "section": "Well-being, Access, and Accommodations",
+    "text": "Well-being, Access, and Accommodations\n\nWhat if I have accommodations or feel that accommodations would be beneficial to my learning?\nI enthusiastically support the mission of Disability Resource Center to make education accessible to all. I design all my courses with accessibility at the forefront of my thinking, but if you have any suggestions for ways I can make things more accessible, please let me know. Come talk to me if you need accommodation for your disabilities. I honor self-diagnosis: let’s talk to each other about how we can make the course as accessible as possible. See also the standard syllabus statements, which include more information about formal processes.\n\n\nI’m having difficulty paying for food and rent, what can I do?\nIf you have difficulty affording groceries or accessing sufficient food to eat every day, or if you lack a safe and stable place to live, and you believe this may affect your performance in the course, I urge you to contact the Dean of Students for support. Furthermore, please notify me if you are comfortable in doing so. This will enable me to advocate for you and to connect you with other campus resources.\n\n\nMy mental health is impairing my ability to engage in my classes, what should I do?\nNational surveys of college students have consistently found that stress, sleep problems, anxiety, depression, interpersonal concerns, death of a significant other and alcohol use are among the top ten health impediments to academic performance. If you are experiencing any mental health issues, I and Cal Poly are here to help you. Cal Poly’s Counseling Services (805-756-2511) is a free and confidential resource for assistance, support and advocacy.\n\n\nSomeone is threatening me, what can I do?\nI will listen and believe you if someone is threatening you. I will help you get the help you need. I commit to changing campus culture that responds poorly to dating violence and stalking.\n\n\nWhat if I can’t arrange for childcare?\nIf you are responsible for childcare on short notice, you are welcome to bring children to class with you. If you are a lactating parent, you many take breaks to feed your infant or express milk as needed. If I can support yo in navigating parenting, coursework, and other obligations in any way, please let me know.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-support.html#technology-accommodations",
+    "href": "course-materials/course-support.html#technology-accommodations",
+    "title": "Course support",
+    "section": "Technology accommodations",
+    "text": "Technology accommodations\nStudents with demonstrated high financial need who have limited access to computers may request assistance in the form of loaner laptops. For technology assistance requests, please go here. Please note that supplies are limited.\nNote that we will be using Duke’s computational resources in this course. These resources are freely available to you. As long as your computer can connect to the internet and open a browser window, you can perform the necessary computing for this course. All software we use is open-source and/or freely available.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-support.html#course-materials-costs",
+    "href": "course-materials/course-support.html#course-materials-costs",
+    "title": "Course support",
+    "section": "Course materials costs",
+    "text": "Course materials costs\nThere are no costs associated with this course. All readings will come from freely available, open resources (open-source textbooks, journal articles, etc.).",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-overview.html",
+    "href": "course-materials/course-overview.html",
+    "title": "Statistical Computing with R",
+    "section": "",
+    "text": "Have you ever wondered…\n\n…how are the visualizations you see in the media made?\n…how do people cut down large datasets to address a specific question?\n…how the applet simulations in your statistics classes work? \n\nWe’ll answer these questions and more by studying the principles of “statistical computing” methods in the programming language called R. There is not an expectation that you have seen R before, only that you have some experiences with computing (writing code and executing code). For those who have not seen R before, it is an open-source programming language developed by Statisticians, and is one of the main “languages” you will find people use when doing statistics in the wild.\nIn this course, we will learn the foundational skills for programming in R and a variety of skills for working with data. We will then build on these skills to consider how to write programs which are more efficient.\n\n\n\nArtwork by @allison_horst.",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-materials/course_resources.html",
+    "href": "course-materials/course_resources.html",
+    "title": "R Resources",
+    "section": "",
+    "text": "Tip\n\n\n\nClick on the link to access the R Cheatsheet related to a specific topic / package!\n\n\n\nWeekly R Cheatsheets\nWeek 1\n\nRStudion IDE\nQuarto\nBase R\nGit & GitHub\n\nWeek 2\n\nData Visualization with ggplot2\nData Import with readr\n\nWeek 3\n\nData Wrangling with dplyr\n\nWeek 4\n\nData Tidying with tidyr\nFactors with forcats\n\nWeek 5\n\nDates with lubridate\nStrings with stringr\nRegular Expressions\n\nWeek 7\n\nTidy Evaluation\n\nWeek 8\n\nIteration with purrr"
+  },
+  {
+    "objectID": "videos/week-1/directories.html#principles-of-reproducibility",
+    "href": "videos/week-1/directories.html#principles-of-reproducibility",
+    "title": "Directories & Scientific Reproducibility",
+    "section": "Principles of Reproducibility",
+    "text": "Principles of Reproducibility\n\nNuts and bolts\n\nThe documentation for a project should contain everything necessary (e.g., scripts, Quarto files) to reproduce the results.\n\n\n\n\nPortability\n\nAny user should be able to run the scripts on their own computer or workspace.\n\n\n\n\n\nOne-click Reproducibility\n\nReproducing all the computations should require (almost) nothing other than executing a single main script file."
+  },
+  {
+    "objectID": "videos/week-1/directories.html#what-is-a-directory",
+    "href": "videos/week-1/directories.html#what-is-a-directory",
+    "title": "Directories & Scientific Reproducibility",
+    "section": "What is a directory?",
+    "text": "What is a directory?\n\nA directory is just a fancy name for a folder.\n\n\n\nYour working directory is the folder that R “thinks” it lives in at the moment.\n\n\ngetwd()\n\n\"/Users/allisontheobold/Documents/STAT 331/videos/week-1\""
+  },
+  {
+    "objectID": "videos/week-1/directories.html#paths",
+    "href": "videos/week-1/directories.html#paths",
+    "title": "Directories & Scientific Reproducibility",
+    "section": "Paths",
+    "text": "Paths\n\nA path describes where a certain file or directory lives.\n\n\n\ngetwd()\n\n\"/Users/allisontheobold/Documents/STAT 331/videos/week-1\"\n\n\n\nThis file lives on my computer in my user files (/Users/),\n\n\non my account (/allisontheobold/),\n\n\nin my Documents (/Documents),\n\n\nin a series of organized folders (STAT 331/videos/week-1)."
+  },
+  {
+    "objectID": "videos/week-1/directories.html#file-management-check-in",
+    "href": "videos/week-1/directories.html#file-management-check-in",
+    "title": "Directories & Scientific Reproducibility",
+    "section": "File Management Check-in",
+    "text": "File Management Check-in\n\n\nYour STAT 331 folder should live in your Documents.\nIt should have a Week 1 sub-folder.\nInside the Week 1 folder, there should be a Lab 1 sub-folder.\n\n\n\n\n\n\n\n\n\nYour folder cannot synch with anything online!\n\n\nYour STAT 331 folder cannot be in a folder stored on OneDrive or iCloud! Storing your project in this location will cause your code to periodically not run and I cannot help you fix it."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Statistical Computing in R",
+    "section": "",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nLecture Slides\nPractice Activity\nLab & Challenge\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n1\nTues, 9/24\nIntroduction to R & RStudio\nIntroduction to Quarto\n📽️ | Broken Circles | | | | | | | | | | | | | | | | | | | |\n\n\n\n\n\nThurs, 9/26\nIntroduction to Version Control\n📽️ | | Lab 1 | | | | | | |\n\n\n\n\n\nSun, 9/29\n\n\n\nLab 1 & Challenge 1 Due\n\n\n2\nTues, 10/1\nData Visualization with ggplot2 & R Projects\n📽️| | | | | | |\n\n\n\n\n\nWed, 10/2\n\n\nPA 2 Due\n\n\n\n\nThurs, 10/3\n\n📽️| | | | | | |\n\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\n📽 | | |\n\n\n\n\n\nWed, 10/9\n\n\nPA 3 Due\n\n\n\n\nThurs, 10/10\n\n📽 | | |\n\n\n\n\n\nSun, 10/13\n\n\n\nLab 3 & Challenge 3 Due\n\n\n4\nTues, 10/15\nData Organization & Relational Data with tidyr\n📽 | | |\n\n\n\n\n\nWed, 10/16\n\n\nPA 4 Due\n\n\n\n\nThurs, 10/17\n\n📽 | | |\n\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due\n\n\n5\nTues, 10/22\nWorking with Strings\n📽 | | |\n\n\n\n\n\nWed, 10/23\n\n\nPA 5 Due\n\n\n\n\nThurs, 10/24\nWorking with Dates\n📽 | | |\n\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n📽 | | |\n\n\n\n\n\nWed, 10/30\n\n\nPA 6 Due\n\n\n\n\nThurs, 10/31\nPortfolio Party\n📽 | | |\n\n\n\n\n\nSun, 11/3\nWeek 6 Reflections & Midterm Portfolio Due\n\n\n\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n📽 | | |\n\n\n\n\n\nWed, 11/6\n\n\nPA 7 Due\n\n\n\n\nThurs, 11/7\n\n📽 | | |\n\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n📽 | | |\n\n\n\n\n\nWed, 11/13\n\n\nPA 8 Due\n\n\n\n\nThurs, 11/14\n\n📽 | | |\n\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due\n\n\n9\nTues, 11/19\nWebscraping\n📽 | | |\n\n\n\n\n\nWed, 11/20\n\n\nPA 9 Due\n\n\n\n\nThurs, 11/21\n\n📽 | | |\n\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due\n\n\n10\nNo Classes\nFall Break\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n📽 | | |\n\n\n\n\n\nWed, 12/4\n\n\nPA 10 Due\n\n\n\n\nThurs, 12/5\nPortfolio Party\n📽 | | |\n\n\n\n\n\nSat, 12/7\nFinal Portfolio Due\n\n\n\n\n\nFinals Week\nMon, Dec 9 10:10am - 1pm\nPortfolio Conferences\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCol1\nCol2\nCol3",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1-r-rstudio.html",
+    "href": "weeks/week-1-r-rstudio.html",
+    "title": "Week 1, Part 1: R & RStudio",
+    "section": "",
+    "text": "For the first portion of this week’s coursework, we are going to learn about / refresh our memory on R and RStudio. This course is all about you learning skills for working with data in R, so you will need to have local installations of both R and RStudio on your computer."
+  },
+  {
+    "objectID": "weeks/week-1-r-rstudio.html#updating-your-version-of-r",
+    "href": "weeks/week-1-r-rstudio.html#updating-your-version-of-r",
+    "title": "Week 1, Part 1: R & RStudio",
+    "section": "1.1 Updating Your Version of R",
+    "text": "1.1 Updating Your Version of R\nIf you already have R downloaded, you need to confirm that you have the most up to date version of R. Do not ignore these instructions. If you neglect to update your version of R, you may find that updating a package will make it so your code will not run.\n\nStep 1: Open RStudio\nStep 2: At the top of the the Console it will say what version of R you are using\n\n{fig-alt = “A screenshot of what version of R should appear when you open RStudio. The version reads ‘R version 4.4.1 (2024-06-14) – ’Race for Your Life’.”}\nIf the version is not 4.4.1 (like the image above), you need to update your version of R! The simplest way to do this is to follow the instructions below to install R."
+  },
+  {
+    "objectID": "weeks/week-1-r-rstudio.html#installing-r",
+    "href": "weeks/week-1-r-rstudio.html#installing-r",
+    "title": "Week 1, Part 1: R & RStudio",
+    "section": "1.2 Installing R",
+    "text": "1.2 Installing R\nDownload and install R by going to https://cloud.r-project.org/. Here, you will find three options for installing R—click on the option for your computer’s operating system.\n\n\n\n\nIf you are a Windows user:\n\nClick on “Download R for Windows”\nClick on “base”\nClick on the Download link.\nWhen you open the execution file (.exe) you will be prompted with a variety of questions about installing R. Feel free to use the default features / settings that come with R (continue to click “Ok” until the download starts).\n\n\n\n\n\n\n\nMultiple Versions of R\n\n\n\nBeware that if you had a previous version of R downloaded on your PC, that old version will not be deleted when you download the most recent version of R. We do not want to have two versions of R installed, as your computer can get confused what version of R to use. So, you need to remove the old version of R.\nTo do this you need to:\n\nNavigate to your computer’s settings\nClick on the “Apps” option on the left-hand panel\nSearch for or scroll down to R\nFind the older version of R\n\n\n\nClick on the ... on the right side\nSelect “Uninstall”\n\n\n\n\n\n\nIf you are macOS user:\n\nClick on “Download R for (Mac) OS X”\nUnder “Latest release:” click on R-X.X.X.pkg, where R-X.X.X is the version number. For example, the latest version of R as of July 1, 2024 was R-4.4.1 (Race for Your Life).\nWhen installing, use the default features / settings that come with R (click Ok until the download starts).\n\n\n\n\n\n\n\nTroubleshooting for Macs\n\n\n\nFirst, identify which version of OSx you are running. How-to\nNext, find out which version of R your computer can run. Link\nIf this version is 3.6 or later, download the latest version that your computer can handle.\nIf this version is 3.4 or earlier, you’re going to run in to some trouble. I recommend updating your version of OSx, if you are willing. If you can’t, then you can use Posit Cloud to run R and RStudio on a free server. However, I recommend strongly against this option; your files will not be saved indefinitely, you will have limited hours to complete your work, your computing power will be limited, and you will need an internet connection at all times to do your work.\n\n\n\n\nIf you are a Linux user:\nClick on “Download R for Linux” and choose your distribution for more information on installing R for your setup."
+  },
+  {
+    "objectID": "weeks/week-1-r-rstudio.html#updating-your-version-of-rstudio",
+    "href": "weeks/week-1-r-rstudio.html#updating-your-version-of-rstudio",
+    "title": "Week 1, Part 1: R & RStudio",
+    "section": "2.1 Updating Your Version of RStudio",
+    "text": "2.1 Updating Your Version of RStudio\nIf you already have RStudio, you need to double check if you have the most recent version. You will not have access to the newest features for Quarto documents unless you have the most recent version of RStudio.\n\nStep 1: Open RStudio\nStep 2: Click on “Help” in the upper menu\nStep 3: Click on “Check for Updates”\n\nIf there are no updates to RStudio since you installed it, you are good to go! If you need to update RStudio, you will be sent to Posit (the parent company) to download the most recent version of RStudio desktop."
+  },
+  {
+    "objectID": "weeks/week-1-r-rstudio.html#installing-rstudio",
+    "href": "weeks/week-1-r-rstudio.html#installing-rstudio",
+    "title": "Week 1, Part 1: R & RStudio",
+    "section": "2.2 Installing RStudio",
+    "text": "2.2 Installing RStudio\n\n\n\n\nDownloading the most recent version of RStudio works the same way regardless of whether you’ve never downloaded RStudio before or if you just need to update your version of RStudio.\nWhen you navigate to the RStudio download page (https://rstudio.com/products/rstudio/download/), the website should automatically detect your computer’s operating system. So, you should be able to simply click the blue “Download RStudio Desktop for [insert operating system here]” button.\nClicking the button will begin installing RStudio. Once the download has completed, you will need to open the application file (on a Mac this is a .dmg file, on Windows this is an exe file)."
+  },
+  {
+    "objectID": "weeks/week-1-version-control.html#objectives",
+    "href": "weeks/week-1-version-control.html#objectives",
+    "title": "Week 1, Part 3: Version Control with Git and GitHub",
+    "section": "0.1 Objectives",
+    "text": "0.1 Objectives\nMost of this section is either heavily inspired by Happy Git and Github for the UseR (Bryan, Hester, and The Stat 545 TAs 2021) or directly links to that book.\n\nRecognize the benefits of using version control to improve your coding practices and workflow.\nIdentify git / GitHub as a version control platform (and helper).\nInstall git onto your computer and register for a GitHub account\nStart applying version control practices to your workflow."
+  },
+  {
+    "objectID": "weeks/week-1-version-control.html#footnotes",
+    "href": "weeks/week-1-version-control.html#footnotes",
+    "title": "Week 1, Part 3: Version Control with Git and GitHub",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nYes, I’m aware that this sounds paranoid. It’s been a very rare occasion that I’ve needed to restore something from another backup. You don’t want to take chances.↩︎"
+  },
+  {
+    "objectID": "labs/student/lab1-intro-quarto.html",
+    "href": "labs/student/lab1-intro-quarto.html",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "",
+    "text": "Execution options specify how the R code in your Quarto document should be displayed. This guide provides descriptions on the options you can specify in a document’s execution.\nQuestion 1 – Add your name and the date to the YAML.\nQuestion 2 – Add an execute line to your YAML that includes the following options, (1) your source code is always output on the page, and (2) your document will render even if there are errors.\n\n\n\n\n1 + 1\n\nQuestion 3 – Let’s spice this code up a bit. Delete 1 + 1 from the code chunk and paste in the code provided in the Lab 1 instructions.\n\n\nQuestion 4 – In your console (not in the Quarto document), type ?ToothGrowth (or alternatively help(ToothGrowth).Use the information that pops up in the Help pane in RStudio to fill in the blanks below.\nThis dataset investigates the effect of _____ on tooth growth in ____.\nThe two supplement delivery methods include OJ (____) and VC (____).\nToothGrowth is a data frame with observations and _ variables.\nQuestion 5 – Before the code chunk, change the “Running the Provided Code” section header to a header that better describes the contents of this section (e.g., Tooth Growth Dataset).\n\n\n\n\nQuestion 6 – Replace the plot(pressure) code with the code provided in the Lab 1 instructions.\n\nplot(pressure)\n\n\n\n\n\n\n\n\nNow, run this code chunk! You should see two side-by-side boxplots, one plot comparing tooth length between the two supplement delivery methods and one plot comparing tooth length between the three different dosages uses.\nQuestion 7 – Read over the Quarto documentation on figure options and add an option (#|) to the above code chunk to make the figures print side-by-side (i.e., in one row) in the rendered HTML file.\nQuestion 8 – Specify in the code chunk options that these boxplots should be center aligned.\nQuestion 9 – Specify a figure caption for the boxplots (using a code-chunk option)."
+  },
+  {
+    "objectID": "labs/student/lab1-intro-quarto.html#specifying-global-execute-options",
+    "href": "labs/student/lab1-intro-quarto.html#specifying-global-execute-options",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "",
+    "text": "Execution options specify how the R code in your Quarto document should be displayed. This guide provides descriptions on the options you can specify in a document’s execution.\nQuestion 1 – Add your name and the date to the YAML.\nQuestion 2 – Add an execute line to your YAML that includes the following options, (1) your source code is always output on the page, and (2) your document will render even if there are errors."
+  },
+  {
+    "objectID": "labs/student/lab1-intro-quarto.html#running-the-provided-code",
+    "href": "labs/student/lab1-intro-quarto.html#running-the-provided-code",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "",
+    "text": "1 + 1\n\nQuestion 3 – Let’s spice this code up a bit. Delete 1 + 1 from the code chunk and paste in the code provided in the Lab 1 instructions.\n\n\nQuestion 4 – In your console (not in the Quarto document), type ?ToothGrowth (or alternatively help(ToothGrowth).Use the information that pops up in the Help pane in RStudio to fill in the blanks below.\nThis dataset investigates the effect of _____ on tooth growth in ____.\nThe two supplement delivery methods include OJ (____) and VC (____).\nToothGrowth is a data frame with observations and _ variables.\nQuestion 5 – Before the code chunk, change the “Running the Provided Code” section header to a header that better describes the contents of this section (e.g., Tooth Growth Dataset)."
+  },
+  {
+    "objectID": "labs/student/lab1-intro-quarto.html#creating-a-plot",
+    "href": "labs/student/lab1-intro-quarto.html#creating-a-plot",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "",
+    "text": "Question 6 – Replace the plot(pressure) code with the code provided in the Lab 1 instructions.\n\nplot(pressure)\n\n\n\n\n\n\n\n\nNow, run this code chunk! You should see two side-by-side boxplots, one plot comparing tooth length between the two supplement delivery methods and one plot comparing tooth length between the three different dosages uses.\nQuestion 7 – Read over the Quarto documentation on figure options and add an option (#|) to the above code chunk to make the figures print side-by-side (i.e., in one row) in the rendered HTML file.\nQuestion 8 – Specify in the code chunk options that these boxplots should be center aligned.\nQuestion 9 – Specify a figure caption for the boxplots (using a code-chunk option)."
+  },
+  {
+    "objectID": "labs/instructions/lab-1-instructions.html",
+    "href": "labs/instructions/lab-1-instructions.html",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "",
+    "text": "You can find the Lab 1 materials in the Lab 1 repository on GitHub. When you click on the provided link, you will end up on the landing page for the repository.\nTo make a copy of the project you need to carry out the following steps:\n\nClick on icon that says , to create your own copy of my repository\nOnce you’ve forked the repository, your copy should open.\nClick on the big green button that says “&lt;&gt; Code”.\nCopy the URL to your clipboard (you should be copying the HTTPS URL).\nOpen RStudio\nOpen a new project by selecting “File” and then clicking on “New Project…”\nIn the box that opens, select “Version Control”.\nIn the next screen, select “Git”.\nIn the “repository URL” paste the URL of your new GitHub repository.\nIn the “Create project as a subdirectory of” option, click on “Browse”.\nNavigate to the “Lab 1” folder you made in the Week 1 folder of your STAT 331 folder. Once you get there, click “Open”.\nClick “Create Project”.\n\n\n\n\nOnce you complete these steps, a dialogue box will open with messages about cloning (making a copy) of your lab 1 repository. When the messages are finished, you should have a new RStudio session open. You should notice a few things:\n\nIn the upper right corner you should see a blue R cube with stat-331-lab-1 written next to it , this tells you that you are working in an R Project (we’ll learn more about these next week).\nIn the “Files” pane, you should see a list of all the files included in the lab-1 repository you copied.\nIn the upper right pane, you should see a tab labeled “Git”.\nEvery file included in the repository should be listed with a question mark symbol next to it, that’s okay! This just means these files are not currently being tracked.\n\n\n\n\nNow for our last step, we need to commit the files to our repo.\n\nClick the “Git” tab in upper right pane\nCheck the “Staged” box for every file listed\nClick “Commit”\nIn the box that opens, type a message in “Commit message”, such as “Initialize lab 1”.\nClick “Commit”.\nClick the green “Push” button to send your local changes to GitHub.\n\nRStudio will display something like:\n&gt;&gt;&gt; /usr/bin/git push origin HEAD:refs/heads/main\nTo https://github.com/atheobold/stat-331-lab-1.git\n   3a2171f..6d58539  HEAD -&gt; main\n\n\n\nGo back to your browser. I assume you’re still viewing the GitHub repo you just cloned. Refresh the page. You should see all the project files you committed there. If you click on “commits”, you should see one with the message you used, e.g. “Initialize lab 1”.\n\n\n\nIn the Files pane, click on lab-1.qmd to open the Quarto file you will be working in for Lab 1."
+  },
+  {
+    "objectID": "labs/instructions/lab-1-instructions.html#step-1-making-a-copy-from-github",
+    "href": "labs/instructions/lab-1-instructions.html#step-1-making-a-copy-from-github",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "",
+    "text": "You can find the Lab 1 materials in the Lab 1 repository on GitHub. When you click on the provided link, you will end up on the landing page for the repository.\nTo make a copy of the project you need to carry out the following steps:\n\nClick on icon that says , to create your own copy of my repository\nOnce you’ve forked the repository, your copy should open.\nClick on the big green button that says “&lt;&gt; Code”.\nCopy the URL to your clipboard (you should be copying the HTTPS URL).\nOpen RStudio\nOpen a new project by selecting “File” and then clicking on “New Project…”\nIn the box that opens, select “Version Control”.\nIn the next screen, select “Git”.\nIn the “repository URL” paste the URL of your new GitHub repository.\nIn the “Create project as a subdirectory of” option, click on “Browse”.\nNavigate to the “Lab 1” folder you made in the Week 1 folder of your STAT 331 folder. Once you get there, click “Open”.\nClick “Create Project”."
+  },
+  {
+    "objectID": "labs/instructions/lab-1-instructions.html#step-2-inspecting-the-lab",
+    "href": "labs/instructions/lab-1-instructions.html#step-2-inspecting-the-lab",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "",
+    "text": "Once you complete these steps, a dialogue box will open with messages about cloning (making a copy) of your lab 1 repository. When the messages are finished, you should have a new RStudio session open. You should notice a few things:\n\nIn the upper right corner you should see a blue R cube with stat-331-lab-1 written next to it , this tells you that you are working in an R Project (we’ll learn more about these next week).\nIn the “Files” pane, you should see a list of all the files included in the lab-1 repository you copied.\nIn the upper right pane, you should see a tab labeled “Git”.\nEvery file included in the repository should be listed with a question mark symbol next to it, that’s okay! This just means these files are not currently being tracked."
+  },
+  {
+    "objectID": "labs/instructions/lab-1-instructions.html#step-3-pushing-your-lab-to-github",
+    "href": "labs/instructions/lab-1-instructions.html#step-3-pushing-your-lab-to-github",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "",
+    "text": "Now for our last step, we need to commit the files to our repo.\n\nClick the “Git” tab in upper right pane\nCheck the “Staged” box for every file listed\nClick “Commit”\nIn the box that opens, type a message in “Commit message”, such as “Initialize lab 1”.\nClick “Commit”.\nClick the green “Push” button to send your local changes to GitHub.\n\nRStudio will display something like:\n&gt;&gt;&gt; /usr/bin/git push origin HEAD:refs/heads/main\nTo https://github.com/atheobold/stat-331-lab-1.git\n   3a2171f..6d58539  HEAD -&gt; main"
+  },
+  {
+    "objectID": "labs/instructions/lab-1-instructions.html#step-4-verifying-your-changes",
+    "href": "labs/instructions/lab-1-instructions.html#step-4-verifying-your-changes",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "",
+    "text": "Go back to your browser. I assume you’re still viewing the GitHub repo you just cloned. Refresh the page. You should see all the project files you committed there. If you click on “commits”, you should see one with the message you used, e.g. “Initialize lab 1”."
+  },
+  {
+    "objectID": "labs/instructions/lab-1-instructions.html#step-5-lets-get-started-working-with-quarto",
+    "href": "labs/instructions/lab-1-instructions.html#step-5-lets-get-started-working-with-quarto",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "",
+    "text": "In the Files pane, click on lab-1.qmd to open the Quarto file you will be working in for Lab 1."
+  },
+  {
+    "objectID": "labs/instructions/lab-1-instructions.html#specifying-global-execute-options",
+    "href": "labs/instructions/lab-1-instructions.html#specifying-global-execute-options",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "2.1 Specifying Global Execute Options",
+    "text": "2.1 Specifying Global Execute Options\nExecution options specify how the R code in your Quarto document should be displayed. This guide provides descriptions on the options you can specify in a document’s execution.\nTo start, your YAML should look something like this:\n---\ntitle: \"Lab 1: Introduction to Quarto\"\nauthor: \"Your name goes here!\"\ndate: \"Insert the date here!\"\nformat: html\nself-contained: true\neditor: source\n---\nQuestion 1 – Add your name and the date to the YAML.\nQuestion 2 – Add an execute line to your YAML that includes the following options, (1) your source code is always output on the page, and (2) your document will render even if there are errors."
+  },
+  {
+    "objectID": "labs/instructions/lab-1-instructions.html#running-the-provided-code",
+    "href": "labs/instructions/lab-1-instructions.html#running-the-provided-code",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "2.2 Running the Provided Code",
+    "text": "2.2 Running the Provided Code\nNext, click on the “Play” button on the right of the first auto-populated code chunk. Alternatively, you can highlight (or simply put your cursor on the line of) the code you want to run and hit ctrl + Enter (for PCs) or ⌘ + Enter (for Macs).\nYou should see the code appear in the console, as well as the result of the code (2). Keep in mind the [1] before the 2 is vector notation. This means the result is a vector of length 1, whose first element is 2.\nQuestion 3 – Let’s spice this code up a bit. Delete 1 + 1 from the code chunk and paste in the following code:\n\n# Load a dataset into the R Environment.\ndata(ToothGrowth)\n\n# Look at the summary of the variables in the dataset.\nsummary(ToothGrowth)\n\nNow run this code. You should see a six-number summary of the variables len and dose included in the ToothGrowth dataset, as well as the frequency of the levels contained in the supp variable. Further, if you inspect the Environment tab, the ToothGrowth dataset should appear. You can click on the dataset name (not the blue play button!) to look at the data.\n\nCheck the Data Documentation\nQuestion 4 – In your console (not in the Quarto document), type ?ToothGrowth (or alternatively help(ToothGrowth)). Use the information that pops up in the Help pane in RStudio to fill in the blanks below.\nThis dataset investigates the effect of __________ on tooth growth in _________________.\nThe two supplement delivery methods include OJ (______________) and VC (_______________).\nToothGrowth is a data frame with ____ observations and ____ variables.\nQuestion 5 – Before the code chunk, change the “Running the Provided Code” section header to a header that better describes the contents of this section (e.g., Tooth Growth Dataset)."
+  },
+  {
+    "objectID": "labs/instructions/lab-1-instructions.html#creating-a-plot",
+    "href": "labs/instructions/lab-1-instructions.html#creating-a-plot",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "2.3 Creating a Plot",
+    "text": "2.3 Creating a Plot\nYour second code chunk is just as boring as your first, so let’s spice it up!\nQuestion 6 – Replace the plot(pressure) code with the following (we will talk about graphics next week!):\n\nlibrary(tidyverse)\n\nggplot(data = ToothGrowth, \n       mapping = aes(x = supp, y = len)) +\n  geom_boxplot() +\n  labs(x = \"Supplement\", y = \"Length of Teeth (mm)\")\n\nToothGrowth %&gt;% \n  mutate(dose = as.factor(dose)) %&gt;% \n  ggplot(mapping = aes(x = as.factor(dose), y = len)) +\n  geom_boxplot() +\n  labs(x = \"Dose of Supplement (mg/day)\", y = \"Length of Teeth (mm)\")\n\nNow, run this code chunk! You should see two side-by-side boxplots, one plot comparing tooth length between the two supplement delivery methods and one plot comparing tooth length between the three different dosages uses.\nQuestion 7 – Read over the Quarto documentation on figure options and add an option (#|) to the above code chunk to make the figures print side-by-side (i.e., in one row) in the rendered HTML file.\nQuestion 8 – Specify in the code chunk options that these boxplots should be center aligned.\nQuestion 9 – Specify a figure caption for the boxplots (using a code-chunk option)."
+  },
+  {
+    "objectID": "labs/instructions/lab-1-instructions.html#inserting-a-new-code-chunk",
+    "href": "labs/instructions/lab-1-instructions.html#inserting-a-new-code-chunk",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "2.4 Inserting a New Code Chunk",
+    "text": "2.4 Inserting a New Code Chunk\nNavigate to the last sentence of your the Quarto document. We’re now going to insert a new R code chunk at the bottom of the document.\nThere are four different ways to do this:\n\nType ctrl + alt + i (on a PC) or ⌘ + ⌥ + i (on a Mac).\nClick on the  symbol. This should automatically default to R code, but if you have a Python compiler on your computer, you might need to select “R” from the options.\nIf you are using the Visual editor, click on the “Insert” button, then select “Code Chunk”, and finally select “R”.\nManually add the code chunk by typing ```{r}. Make sure to close your code chunk with ```."
+  },
+  {
+    "objectID": "labs/instructions/lab-1-instructions.html#conducting-a-t-test-for-two-independent-samples",
+    "href": "labs/instructions/lab-1-instructions.html#conducting-a-t-test-for-two-independent-samples",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "2.5 Conducting a t-test for Two Independent Samples",
+    "text": "2.5 Conducting a t-test for Two Independent Samples\nIn this section, we are going to conduct a two-sample independent t-test to compare tooth length between the two supplement methods in the ToothGrowth dataset. I have outlined the null and alternative hypotheses we will be testing:\n\\(H_0\\): The treatment mean tooth length for the OJ supplement delivery method is the same as the treatment mean tooth length for the VC supplement delivery method.\n\\(H_A\\): The treatment mean tooth length for the OJ supplement delivery method is different from the treatment mean tooth length for the VC supplement delivery method.\nWhile a second course in statistics is a pre-requisite for this class, you may want to go here for a refresher on conducting two-sample independent t-tests.\nCarry out the following steps:\nQuestion 10 – Using the t.test() function, write code to carry out the analysis. You can assume unequal variances and a two-sided alternative.\n\n\n\n\n\n\nFunction Documentation\n\n\n\nLook up the help documentation for t.test() for directions on how your inputs should look. Hint: specifically look at the examples at the bottom for comparing extra across groups in the sleep dataset.\n\n\nQuestion 11 – Run your code chunk to obtain the output for your statistical test.\nQuestion 12 – Create a numbered list containing:\n\nYour conclusion (in the context of these data) based on the p-value.\nAn interpretation of the confidence interval (make sure to read what confidence level is used by default).\n\nQuestion 13 – Create another section header, describing the contents of this section."
+  },
+  {
+    "objectID": "labs/instructions/lab-1-instructions.html#render-your-document",
+    "href": "labs/instructions/lab-1-instructions.html#render-your-document",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "2.6 Render Your Document",
+    "text": "2.6 Render Your Document\nRender your document as an html file. Use the “Render” button (the blue arrow!) at the top of your screen.\nIf you run into trouble rendering your document, try restarting R and running your code chunks in order, and see if you can find the problem.\nAnother common issue is deleting the tick marks (```) that surround your code chunks. If you notice that the code chunks are not showing a “Play” button (), or that they are not highlighted in gray, double check your tick marks!\nRecall we included error: true in our YAML execution options. This means that your document will still render even if there are errors. Make sure you are double checking your work!\nYou will notice that there is auto-generated text that is unrelated to the work that you completed. It is always a good idea to delete this extra text!"
+  },
+  {
+    "objectID": "labs/instructions/lab-1-instructions.html#render-again",
+    "href": "labs/instructions/lab-1-instructions.html#render-again",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "3.1 Render again!",
+    "text": "3.1 Render again!\nNotice that when you render the document, all of the code reruns again, producing the same output as before, but with your changes—this is called reproducibility!\nYou should render often while completing your practice activities and lab assignments. Make small changes, then make sure the file still renders rather than making a bunch of big changes and then realizing something is wrong."
+  },
+  {
+    "objectID": "labs/instructions/lab-1-instructions.html#turn-it-in",
+    "href": "labs/instructions/lab-1-instructions.html#turn-it-in",
+    "title": "Lab 1: Introduction to Quarto",
+    "section": "3.2 Turn it in!",
+    "text": "3.2 Turn it in!\nOpen the .html file on your computer to make sure it looks as you expected. Then upload the rendered (.html extension) document to Canvas!\n\nYou’ll be doing this same process for all your future Lab Assignments. Each of these will involve a Quarto file. Some weeks, I may have a template for you to copy like you had here, while other weeks you will generate your own Quarto file from scratch."
+  },
+  {
+    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
+    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\nA. reproduce and Share the Licensed Material, in whole or in part; and\nB. produce, reproduce, and Share Adapted Material.\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\nB. Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\nA. retain the following if it is supplied by the Licensor with the Licensed Material:\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\nB. indicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nC. indicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” The text of the Creative Commons public licenses is dedicated to the public domain under the CC0 Public Domain Dedication. Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org."
+  },
+  {
+    "objectID": "weeks/week-2-ggplot-projects.html#required-reading-workflow-r-projects",
+    "href": "weeks/week-2-ggplot-projects.html#required-reading-workflow-r-projects",
+    "title": "ggplot2 & R Projects",
+    "section": "📖 Required Reading: Workflow (R Projects)",
+    "text": "📖 Required Reading: Workflow (R Projects)"
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html",
+    "href": "weeks/week-1-quarto.html",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "",
+    "text": "The theme of this lesson is good management of your files and data. In part two of this week’s coursework you will learn how to identify folders and paths, and create Quarto documents."
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#file-management",
+    "href": "weeks/week-1-quarto.html#file-management",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "1.1 File Management",
+    "text": "1.1 File Management\nAs boring as it sounds, file management is arguably one of the most important skills a data scientist should have. The reproducibility of a project depends just as much on the way in which the project was stored as the computing tools used. While using R and Quarto make an important step in creating a reproducible analysis, there are other pieces that are arguably just as important—such as file management.\nBelieve it or not, your computer has multiple locations** where files can be stored. There has been a bit of a generational shift as computers have evolved: the “file system” metaphor itself is outdated because no one uses physical files anymore. [This article]((https://futurism.com/the-byte/gen-z-kids-file-systems) makes the argument that with modern search capabilities, most people use their computers as a laundry hamper instead of as a nice, organized filing cabinet. However, the laundry hamper approach doesn’t play nicely with working in R and creating Quarto documents.\nIn this class, we will store files according to the Project TIER protocol. More specifically, you will have:\n\na “Stat 331” folder in your Documents folder, containing all your materials associated with STAT 331\na sub-folder for each week (e.g., Week 1, Week 2)\nseparate folders within each week for each assignment (e.g., Practice Activity, Lab)\na separate R Studio Project (and GitHub repository) associated with each assignment\n\nFor example, if you come to my office for help on your lab assignment for Week 2, I would expect your files to look like this:\n\nFile Storage on WindowsFile Storage on a Mac\n\n\n\nI have six total folders in my Documents, one of which is a folder named “STAT 331.”\n\nInside my STAT 331 folder is a sub-folder named “Week 1,” which also has a sub-folder (a sub-sub-folder) named “Lab 1.” You can tell what folders Lab 1 lives inside based on the information included at the top of the screen. This is called a “file path,” which tells your computer where a folder / file lives on the computer.\nOn a PC, every file lives on the C Drive, so the “full path” to get to my Lab 1 folder would be:\nC:/Users/atheobold/Documents/STAT 331/Week 1/Lab 1\n\n\n\nI have six total folders in my Documents, one of which is a folder named “STAT 331.” Inside this folder is a sub-folder named “Week 1,” which also has a sub-folder (a sub-sub-folder) named “Lab 1.”\nOn a Mac, every file lives on the hard drive (it doesn’t have letters like a PC), so the “full path” to get to my Lab 1 folder would be:\n/Users/atheobold/Documents/STAT 331/Week 1/Lab 1"
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#check-in-stat-331-folder",
+    "href": "weeks/week-1-quarto.html#check-in-stat-331-folder",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "1.2 ✅ Check-in: Stat 331 Folder",
+    "text": "1.2 ✅ Check-in: Stat 331 Folder\nTake a screenshot of your class directory, showing:\n\nthe location of your Stat 331 folder\na Week 1 sub-folder\na Lab 1 sub-sub-folder (inside the Week 1 folder)\n\n\n\n\n\n\n\nYour folder cannot synch with anything online!\n\n\n\nYour STAT 331 folder cannot be in a folder stored on OneDrive or iCloud! Storing your folder in this location will cause your code to periodically not run and I cannot help you fix it."
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#downloading-quarto",
+    "href": "weeks/week-1-quarto.html#downloading-quarto",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "2.1 Downloading Quarto",
+    "text": "2.1 Downloading Quarto\nThe software associated with Quarto is automatically downloaded with the newest versions of RStudio. So, if you are using the most up to date version of RStudio (as instructed in Part 1 of this week’s coursework), you should already have Quarto installed on your computer. But, let’s test it out.\nTo ensure you have Quarto installed, carry out the following process:\n\nOpen RStudio\nClick on “File” (in the upper navigation bar)\nSelect “New File” (in the dropdown options)\nSelect “Quarto Document…” (in the dropdown option)\n\n \nIf you have Quarto installed, you should be prompted with the following menu:\n\nIf, instead, you receive a message saying Quarto is not installed on your computer, you need to download Quarto: https://quarto.org/docs/download/"
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#introduction-to-quarto",
+    "href": "weeks/week-1-quarto.html#introduction-to-quarto",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "2.2 Introduction to Quarto",
+    "text": "2.2 Introduction to Quarto\n\n📖 Required Reading: Intro to Quarto\n\n\nHTML Documents\nWe will exclusively use HTML documents in this course. If you are interested in learning more about formatting options for Quarto HTML documents, I would recommend checking out:\n\na discussion of the basics of formatting HTML documents in Quarto\nthe list of all HTML Ffrmatting pptions for Quarto documents"
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#check-in-quarto-documents",
+    "href": "weeks/week-1-quarto.html#check-in-quarto-documents",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "2.3 ✅ Check-in: Quarto Documents",
+    "text": "2.3 ✅ Check-in: Quarto Documents\nQuestion 1: What are the options at the top of a Quarto document (between the --- and --- symbols) called?\n\nXML\nYAML\nREML\nTOML\n\nQuestion 2: What symbols create an R code chunk?\n\n```\n{r}\n```{r}\n`{r}`\n\nQuestion 3: What symbol defines a heading?\n\n$\n_\n*\n#\n\nQuestion 4: When working in a Quarto document, the [visual / source] editor will display the raw Quarto document, whereas the [visual / source] will display the document as it will appear when it is rendered.\nQuestion 5: To produce an HTML report from your Quarto document, you need to click the ____ button.\n\nVisual\nRender\nRender on Save\nSave"
+  },
+  {
+    "objectID": "videos/week-2/r-projects.html#the-beauty-of-r-projects",
+    "href": "videos/week-2/r-projects.html#the-beauty-of-r-projects",
+    "title": "R Projects",
+    "section": "The Beauty of R Projects",
+    "text": "The Beauty of R Projects\n.pull-left[ An R Project is basically a “flag” planted in a certain directory.\nWhen you double click a .Rproj file, it does two things:\n\nOpen RStudio\nSet the working directory to be wherever the .Rproj file lives.\nLink to GitHub, if setup (more on that later!)]\n\n.pull-right[ ]"
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html#did-you-leave-off-a-parenthesis",
+    "href": "videos/week-1/debugging-errors.html#did-you-leave-off-a-parenthesis",
+    "title": "Debugging Errors!",
+    "section": "Did you leave off a parenthesis?",
+    "text": "Did you leave off a parenthesis?\n\n\n\n\n\n\n\nError: &lt;text&gt;:4:0: unexpected end of input\n2: seq(from = 1, to = 10, by = 1\n3: \n  ^"
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html#did-you-leave-off-a-comma",
+    "href": "videos/week-1/debugging-errors.html#did-you-leave-off-a-comma",
+    "title": "Debugging Errors!",
+    "section": "Did you leave off a comma?",
+    "text": "Did you leave off a comma?\n\n\n\n\n\n\n\nError: &lt;text&gt;:2:23: unexpected symbol\n1: \n2: seq(from = 1, to = 10 by\n                         ^"
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html#did-you-make-a-typo-are-you-using-the-right-names",
+    "href": "videos/week-1/debugging-errors.html#did-you-make-a-typo-are-you-using-the-right-names",
+    "title": "Debugging Errors!",
+    "section": "Did you make a typo? Are you using the right names?",
+    "text": "Did you make a typo? Are you using the right names?\n\n\n\n\n\n\n\nError in sequence.default(from = 1, to = 10, by = 1): argument \"nvec\" is missing, with no default"
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html#object-type-errors",
+    "href": "videos/week-1/debugging-errors.html#object-type-errors",
+    "title": "Debugging Errors!",
+    "section": "Object type errors",
+    "text": "Object type errors\nAre you using the right input that the function expects?\n–\n\n\n\n\n\n\n\nError in sqrt(\"1\"): non-numeric argument to mathematical function"
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html#object-type-errors-1",
+    "href": "videos/week-1/debugging-errors.html#object-type-errors-1",
+    "title": "Debugging Errors!",
+    "section": "Object type errors",
+    "text": "Object type errors\nAre you expecting the right output of the function?\n–"
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html#messages",
+    "href": "videos/week-1/debugging-errors.html#messages",
+    "title": "Debugging Errors!",
+    "section": "Messages",
+    "text": "Messages\nJust because you see scary red text, this does not mean something went wrong! This is just R communicating with you.\n\nFor example, you often see:"
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html#warnings",
+    "href": "videos/week-1/debugging-errors.html#warnings",
+    "title": "Debugging Errors!",
+    "section": "Warnings",
+    "text": "Warnings\n–\nOften, R will give you a warning.\n–\nThis means that your code did run…\n–\n…but you probably want to make sure it succeeded."
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html#does-this-look-right",
+    "href": "videos/week-1/debugging-errors.html#does-this-look-right",
+    "title": "Debugging Errors!",
+    "section": "Does this look right?",
+    "text": "Does this look right?\n–\n\n\n[1] NA NA NA"
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html#errors",
+    "href": "videos/week-1/debugging-errors.html#errors",
+    "title": "Debugging Errors!",
+    "section": "Errors",
+    "text": "Errors\nIf the word Error appears in your message from R, then you have a problem.\n–\nThis means your code could not run!\n–\n\n\nError in my_vec + 1: non-numeric argument to binary operator"
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html#r-says",
+    "href": "videos/week-1/debugging-errors.html#r-says",
+    "title": "Debugging Errors!",
+    "section": "R says…",
+    "text": "R says…\n\nError: Object some_obj not found.\n\nIt probably means…\n\nYou haven’t run the code to create some_obj OR you have a typo in the name!\n\n\n\n\nError in eval(expr, envir, enclos): object 'some_obj' not found"
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html#r-says-1",
+    "href": "videos/week-1/debugging-errors.html#r-says-1",
+    "title": "Debugging Errors!",
+    "section": "R says…",
+    "text": "R says…\n\nError: Object of type ‘closure’ is not subsettable.\n\nIt probably means…\n\nOops, you tried to use square brackets on a function\n\n\n\n\nError in mean[1, 2]: object of type 'closure' is not subsettable"
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html#r-says-2",
+    "href": "videos/week-1/debugging-errors.html#r-says-2",
+    "title": "Debugging Errors!",
+    "section": "R says…",
+    "text": "R says…\n\nError: Non-numeric argument to binary operator\n\nIt probably means…\n\nYou tried to do math on data that isn’t numeric.\n\n\n\n\nError in \"a\" + 2: non-numeric argument to binary operator"
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html#what-if-none-of-these-solved-my-error",
+    "href": "videos/week-1/debugging-errors.html#what-if-none-of-these-solved-my-error",
+    "title": "Debugging Errors!",
+    "section": "What if none of these solved my error?",
+    "text": "What if none of these solved my error?\n\nLook at the help file for the function!\n\n\nWhen all else fails, Google your error message.\n\n\n\nLeave out the specifics.\nInclude the function you are using."
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html#try-it",
+    "href": "videos/week-1/debugging-errors.html#try-it",
+    "title": "Debugging Errors!",
+    "section": "Try it…",
+    "text": "Try it…\nWhat’s wrong here?\n\n\n\nError in matrix(c(\"a\", \"b\", \"c\", \"d\"), num_row = 2): unused argument (num_row = 2)"
+  },
+  {
+    "objectID": "course-materials/computing-access.html",
+    "href": "course-materials/computing-access.html",
+    "title": "Computing access",
+    "section": "",
+    "text": "This course focuses on teaching you to program in R, so you will need to locally install R & RStudio to be able to complete the coursework for this class."
+  },
+  {
+    "objectID": "course-materials/computing-access.html#equipment",
+    "href": "course-materials/computing-access.html#equipment",
+    "title": "Computing access",
+    "section": "Equipment",
+    "text": "Equipment\nThe Statistics Studio was recently remodeled and there are no longer desktop computers in the Studio for you to use. There are monitors you can plug a laptop into, but you are required to bring a laptop to class.\n\n\n\n\n\n\nChromebooks and iPads\n\n\n\nThese devices will not be sufficient to use R. If this requirement is limiting for you, please contact me ASAP."
+  },
+  {
+    "objectID": "course-materials/computing-access.html#statistical-software-r-and-rstudio",
+    "href": "course-materials/computing-access.html#statistical-software-r-and-rstudio",
+    "title": "Computing access",
+    "section": "Statistical Software: R and RStudio",
+    "text": "Statistical Software: R and RStudio\nWe will (obviously) be using the R statistical software throughout this course. In addition, you are required to use RStudio, a companion integrated developer environment (IDE). Both R and R Studio are freely available.\n\nYou can download the most recent version of R here: https://cran.r-project.org/\nYou can download the most recent version of RStudio here: https://posit.co/download/rstudio-desktop/\n\n\n\n\n\n\n\nFree Quarto Install\n\n\n\nWhen you update / install RStudio, the IDE now automatically installs Quarto. So, you do not need to also install Quarto."
+  },
+  {
+    "objectID": "course-materials/computing-access.html#version-control",
+    "href": "course-materials/computing-access.html#version-control",
+    "title": "Computing access",
+    "section": "Version Control",
+    "text": "Version Control\nWe will also be using version control in this course. This requires you to do the following:\n\ninstall Git (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)\ncreate a GitHub account (https://github.com/)"
+  },
+  {
+    "objectID": "course-materials/course-team.html",
+    "href": "course-materials/course-team.html",
+    "title": "Course Instructors",
+    "section": "",
+    "text": "Dr. Allison Theobold (she / they) is an Assistant Professor of Statistics at Cal Poly in beautiful San Luis Obispo, California. Allison received her doctorate in Statistics, with an emphasis in Statistics Education, from Montana State University. Allison’s work focuses on innovation in statistics and data science education, with an emphasis on equitable pedagogy and learning trajectories. Allison is also interested in exploring pedagogical approaches for enhancing retention of under-represented students in STEM, including creating inclusive discoursive spaces and equitable group collaborations.\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Judith Canner (she / her) is a Professor Statistics and Department Chair of the Deparmtent of Mathematics & Statistics at CSU Monterey Bay.",
+    "crumbs": [
+      "Course information",
+      "Teaching team"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-syllabus.html",
+    "href": "course-materials/course-syllabus.html",
+    "title": "STAT 331, Fall 2024",
+    "section": "",
+    "text": "Statistical Computing with R1\n\nTR 12:10pm - 2:00pm\nTextbook:\nhttps://r4ds.hadley.nz/\n\n\n\n\n\n\nImage by Alison Horst\nWebsite:\nhttps://canvas.calpoly.edu",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-syllabus.html#revisions",
+    "href": "course-materials/course-syllabus.html#revisions",
+    "title": "STAT 331, Fall 2024",
+    "section": "3.1 Revisions",
+    "text": "3.1 Revisions\nThe grading system for this class encourages you to submit revisions on Lab and Challenge problems you were not initially successful with. When I grade your Lab and Challenge assignments, I will mark each problem with an S, a G, or an N. You will have the option to retry any Learning Targets for which you scored a G or an N on. When you complete revisions, you will submit a new HTML containing your revisions, alongside written reflections of how your understanding changed from when you first attempted the problem. These reflections are expected to be written immediately below the problem which you revised.\nIt’s not enough to say “[x] was wrong, so I fixed it”—I need you to talk about why you got [x] wrong in the first place and what you learned that changed your mind. What do you know now that you didn’t know before? Who or what helped you learn?\n\nIf your revision does not include reflections, I’ll ask you to add them.\nIf your revisions do not include reflections by the deadline, your revisions are not eligible to be regraded.\nSee some examples of really good reflections here – they’re (mostly) from my STAT 313 course, but I think you’ll get the idea.\nSubmit your revision to the same assignment box on Canvas as your original. This helps me keep track of any outstanding revisions each person has.\n\nIt is my goal to have your lab and challenge assignments (which are due on Sunday night) back to you no later than Thursday, so we can spend time talking about the revisions during class. You will then have until the following Friday to complete your revisions on the problems you received a G or an N on.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-syllabus.html#accomplishment-of-learning-targets",
+    "href": "course-materials/course-syllabus.html#accomplishment-of-learning-targets",
+    "title": "STAT 331, Fall 2024",
+    "section": "4.1 Accomplishment of Learning Targets",
+    "text": "4.1 Accomplishment of Learning Targets\nEach week, a set of learning targets will be outlined. These learning targets will not exist solely within a given week. You will find that the skills you learn early in the course will be used throughout the course. Whereas, some skills, learned later in the course, will not be used as often. You can demonstrate proficiency with these skills through three main avenues: Group-based Practice Activities Lab Assignments Challenge Assignments\nHowever, evidence of continued learning can only be demonstrated within individual lab assignments. You can keep track of your progress yourself using this Interactive Checklist.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-syllabus.html#evidence-of-continued-learning",
+    "href": "course-materials/course-syllabus.html#evidence-of-continued-learning",
+    "title": "STAT 331, Fall 2024",
+    "section": "4.2 Evidence of Continued Learning",
+    "text": "4.2 Evidence of Continued Learning\nEach week, you will be required to complete a Lab and Challenge assignment where you demonstrate your understanding of that week’s learning targets in the context of a new dataset. These assignments provide two different perspectives of your continued learning.\n\nThey demonstrate your ability to extend your thinking beyond what you’ve learned in class.\nThey demonstrate your ability to revise your thinking.\n\n\nExtend Your Thinking\nEach Lab Assignment will have a Challenge Problem which asks you to extend the skills you’ve learned in class in a new way. You will often have the choice of what direction you would like to expand your knowledge. There are no specific requirements for how you extend your skills, only that you extend your thinking in some (measurable) way.\n\n\nRevise Your Thinking\nFor the problems in each Lab Assignment, I will give copious written feedback, but I’ll also summarize my feedback with a letter on the SGN scale (as discussed previously). To demonstrate your ability to revise your thinking, I encourage you to revise and resubmit any problems marked G or N.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-syllabus.html#growth-as-a-team-member",
+    "href": "course-materials/course-syllabus.html#growth-as-a-team-member",
+    "title": "STAT 331, Fall 2024",
+    "section": "4.3 Growth as a Team Member",
+    "text": "4.3 Growth as a Team Member\nThere are two ways you will evaluate your growth as a team member. The first is through your collaboration with your team members. The second is through the code reviews you provide your peers. \n\nCollaborative Group Work\nThis course uses collaborative learning to provide a supportive community when initially exploring the concepts associated with each week. On Tuesdays, you will collaborate in assigned teams to complete a Practice Activity. Collaborating on the Practice Activity is more than independently coding each task and asking someone a question when you get stuck. Collaborating is working together with your team to accomplish each question. \n\nMany people are uncomfortable working in a team for a variety of reasons, such as fearing looking dumb, being rejected, or being disrespected. It is my hope that our weekly collaborations will offer opportunities for you to grow as a group member, by becoming more aware of how you interact with others. \nDuring the first week of class, each of you will be placed in a group with one other student. During Weeks 2-5, you will work with this person on the Practice Activities we complete during class on Tuesdays. To make group collaborations more equitable, I expect for you and your partner to alternative between two “roles”—recorder and listener. We will discuss these roles in class, but here are some rough descriptions of the scope of each role:\n\n\n\nPeer Code Review\nOne of my favorite sayings is “Programs must be written for people to read, and only incidentally for machines to execute.” Code review has two major benefits, (1) you get feedback on the readability, tidiness, and efficiency of your code, and (2) by reviewing someone else’s code you learn more about your own code!\nHere are some guidelines and examples of what you should be looking for and how to phrase your peer code reviews.\nYou hopefully noticed that writing “tidy” and “efficient” code are two of the Learning Targets for this course. To demonstrate proficiency in these targets, you will earn badges from your peers. For each lab assignment, everyone in the class will provide an anonymous review of someone’s code. The reviewer will provide feedback on the tidiness and efficiency of the code they are reviewing. I will provide some examples of helpful and unhelpful feedback, to guide your feedback. It’s easy to be a jerk when making comments; don’t. Think about the comments you would like to receive that would help you improve your code! Be good to each other.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-syllabus.html#attention-to-personal-goals",
+    "href": "course-materials/course-syllabus.html#attention-to-personal-goals",
+    "title": "STAT 331, Fall 2024",
+    "section": "4.4 Attention to Personal Goals",
+    "text": "4.4 Attention to Personal Goals\nDuring Week 1 of this course, you will be asked to write down at least three measurable things you hope to get out of this class. There is no specific requirement regarding the “size” of the things you write, just that you are able to “measure” your progress toward accomplishing these goals throughout the course. You will hopefully find that some of your goals align with or build off of other aspects of this course!",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-materials/course-syllabus.html#how-do-you-define-plagiarism-in-a-programming-class",
+    "href": "course-materials/course-syllabus.html#how-do-you-define-plagiarism-in-a-programming-class",
+    "title": "STAT 331, Fall 2024",
+    "section": "12.1 How do you define plagiarism in a programming class?",
+    "text": "12.1 How do you define plagiarism in a programming class?\nParaphrasing or quoting another’s work without citing the source is a form of academic misconduct. This included the R code produced by someone else! Writing code is like writing a paper, it is obvious if you copied-and-pasted a sentence from someone else into your paper because the way each person writes is different.\nIn this class the assumed knowledge is the course materials, including the course textbook, coursework pages, and course slides. Any functions / code used outside of these materials require direct references. This includes any functions learned through R documentation for functions we have learned. Meaning, if you look up the help file for mutate() and you learn about a function not covered in the course materials, you are required to cite the documentation when using that function.\nEven inadvertent or unintentional misuse or appropriation of another’s work (such as relying heavily on source material that is not expressly acknowledged) is considered plagiarism. If you are struggling with writing the R code for an assignment, please reach out to me. I would prefer that I get to help you rather than you spending hours Googling things and get nowhere!\nAny incident of dishonesty, copying or plagiarism will be reported to the Office of Student Rights and Responsibilities. Cheating or plagiarism will earn you a grade of 0 on the assignment and will remove your ability to submit revisions for that assignment.\nIf you have any questions about using and citing sources, you are expected to ask for clarification.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "group-activities/week-1/broken-circles.html",
+    "href": "group-activities/week-1/broken-circles.html",
+    "title": "Broken Circles",
+    "section": "",
+    "text": "For the first week, it’s important to establish the ideas of cooperation and to guide students in having discussions around what it means to work productively in groups and why that’s important. It’s important that the activities given in that first week according to Lotan and Cohen are not too complex. Otherwise the students won’t be able to focus on learning about group work.\nTherefore, I propose that the first activity we have students engage in to begin the establishment of group norms is the broken circles activity from Appendix A of Designing Groupwork. The broken circles activity allows them to see what happens when they do not cooperate while also learning the skills around cooperation. In order for the norms to be internalized, we need to not only make sure they are aware of what the desired behaviors are, but also reinforce them /enforce them. These norms include dependence on each other responsibility for group behaviors and products Learn to ask for others opinions Listen to others Give others a chance to talk\nThe broken circles activity is not complex and even though it’s not coding related, it should help students to learn how to work together. After the broken circles activity is completed. The following questions should be asked through discussion. What made successful and unsuccessful cooperation in the activity How could the group have cooperated more fully What are some new behaviors they observed or could be implemented in the future to make cooperation easier It is important to draw direct links between the norms and behaviors that we see because the desired behaviors we are training the students for really do need to be specific and not broad. For example. We can’t just say “you need to work together”, we need to say “you work together by…”\nWe need to identify the cooperative behaviors needed for paired programming. Here are a few that I came up with Not doing the task for another person Not just giving an answer but an explanation Providing concise sharing/description of what is being done and reasoning for why it’s being done And we need to identify higher levels of discourse and instruct students to engage in such. For example, they need to start by discussing a strategy and agreeing on it before moving forward or getting caught in the weeds. They shouldn’t just barrel through the assignment but should think about the assignment and come up with a plan. It is important to identify the goals and behaviors of the activity when it comes to cooperation because we need the behaviors to be specific and directly relevant to the goal of the group, not broad and generic.\nAs we’re thinking about equal participation training procedures, here are some norms we might want to focus on Say your own ideas Listen to others. Give everyone a chance to talk Ask others for their ideas Give reasons for your ideas and discuss any different ideas and many different ideas\nWe evaluation questions to ask themselves to help them understand if they are engaging in the behaviors specified for group work including Is everyone talking? Are you listening to each other? Are you asking questions? What could you ask to find out someone’s ideas? Are you giving reasons for your ideas? How do you ask for reasons from others?\nIf guessing ideas and strategies that they make a consensus and not go by majority rule. This will help them learn conflict resolution.\nThe activity itself should be preface for why cooperation is so important, especially in the field of data science. Perhaps we can find an article that talks about the need for collaboration or effective collaboration in data science projects and potentially look into team science protocols and ideas."
+  }
+]
