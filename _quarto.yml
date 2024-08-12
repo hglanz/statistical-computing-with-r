@@ -47,12 +47,8 @@ website:
             text: Teaching team
           - href: index.qmd
             text: Schedule
-      - section: "Computing"
-        contents:
           - href: course-materials/computing-access.qmd
             text: Access
-      - section: "R Resources"
-        contents:
           - href: course-materials/course_resources.qmd
             text: R Resources
       # - section: "Portfolio"
@@ -65,11 +61,15 @@ website:
         contents:
           # - href: weeks/week-0.qmd
           #   text: "Week 0"
-          # - href: weeks/week-1.qmd
-          #   text: "Week 1"
-          # - href: weeks/week-2.qmd
-          #   text: "Week 2"
-          # - href: weeks/week-3.qmd
+          - href: weeks/week-1-r-rstudio.qmd
+            text: "Week 1, Part 1"
+          - href: weeks/week-1-quarto.qmd
+            text: "Week 1, Part 2"
+          - href: weeks/week-1-version-control.qmd
+            text: "Week 1, Part 3"
+          - href: weeks/week-2-ggplot-projects.qmd
+            text: "Week 2"
+          #- href: weeks/week-3.qmd
           #   text: "Week 3"
           # - href: weeks/week-4.qmd
           #   text: "Week 4"
