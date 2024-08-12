@@ -47,14 +47,14 @@ website:
             text: Teaching team
           - href: index.qmd
             text: Schedule
-      # - section: "Computing"
-      #   contents:
-      #     - href: computing-access.qmd
-      #       text: Access
-      # - section: "R Resources"
-      #   contents:
-      #     - href: course_resources.qmd
-      #       text: R Resources
+      - section: "Computing"
+        contents:
+          - href: course-materials/computing-access.qmd
+            text: Access
+      - section: "R Resources"
+        contents:
+          - href: course-materials/course_resources.qmd
+            text: R Resources
       # - section: "Portfolio"
       #   contents:
       #     - href: project/midterm-project/midterm-project-directions.qmd
