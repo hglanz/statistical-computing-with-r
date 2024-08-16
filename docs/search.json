@@ -776,5 +776,33 @@
     "title": "Broken Circles",
     "section": "Discussion",
     "text": "Discussion\n\nWhat do you think this game was about? What was its purpose?\nWhat did your group did that made you cooperate more successfully?\nWhat did your group did that made cooperation harder?\nWhat are some behaviors that could be implemented in the future to make cooperation easier?"
+  },
+  {
+    "objectID": "group-activities/pair-programming-norms.html",
+    "href": "group-activities/pair-programming-norms.html",
+    "title": "Pair Programming Roles",
+    "section": "",
+    "text": "During our in-class activities, you will be paired with another student. When completing the activity, you will rotate between the following roles every 2-3 minutes:"
+  },
+  {
+    "objectID": "group-activities/pair-programming-norms.html#group-norms",
+    "href": "group-activities/pair-programming-norms.html#group-norms",
+    "title": "Pair Programming Roles",
+    "section": "Group Norms",
+    "text": "Group Norms\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nNo cross-talk with other groups."
+  },
+  {
+    "objectID": "group-activities/pair-programming-norms.html#completing-the-task",
+    "href": "group-activities/pair-programming-norms.html#completing-the-task",
+    "title": "Pair Programming Roles",
+    "section": "Completing the Task",
+    "text": "Completing the Task\nWorking with your partner, complete the Practice Activity in the Quarto document provided. In your roles—Listener and Problem Solver—use the prompts below to help guide the completion of your activity.\n\n\nProblem Solver\nI am looking for…\nI am confused by…\nI notice…\nWhat might be true is…\nWhat’s important is…\nI predict…\nThis reminds me of…\nI could try…\nI am thinking about…\nA line of code I could write is…\n\n\n\nListener\nWhat are you focusing on? What are you thinking now? Could you tell me more? What are you doing (or writing) now? Please elaborate.\nI can’t follow that, run that by me again."
+  },
+  {
+    "objectID": "group-activities/pair-programming-norms.html#once-youre-finished",
+    "href": "group-activities/pair-programming-norms.html#once-youre-finished",
+    "title": "Pair Programming Roles",
+    "section": "Once You’re Finished",
+    "text": "Once You’re Finished\nAt the end of the task, your group will have one completed Quarto document and one rendered HTML, containing your groups’ worked-out solutions and justifications. Everyone must take turns writing the final product (as described above) and everyone must be able to explain every line of code in your final document."
   }
 ]
