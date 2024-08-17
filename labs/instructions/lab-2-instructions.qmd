@@ -7,6 +7,7 @@ embed-resources: true
 code-tools: true
 execute:
   echo: true
+  eval: false
   message: false
   warning: false
   error: true
@@ -24,7 +25,6 @@ Additionally, you are permitted and encouraged to work with your peers as you co
 
 [Download the data - `surveys.csv` - file here.](surveys.csv)
 
-
 # Lab Instructions
 
 The questions in this lab are noted with numbers and boldface. Each question will require you to produce code, whether it is one line or multiple lines.
@@ -32,9 +32,7 @@ The questions in this lab are noted with numbers and boldface. Each question wil
 This document is quite plain, meaning it does not have any special formatting. As part of your demonstration of working with Quarto documents, I would encourage you to spice your documents up (e.g., declaring execution options, specifying how your figures should be output, formatting your code output, etc.).
 
 ::: callout-tip
-
 Remember to make small changes and **render often**!
-
 :::
 
 # Setup
@@ -51,8 +49,8 @@ The Portal Project is a long-term ecological study being conducted near Portal, 
 
 We will be investigating the animal species diversity and weights found within plots at the Portal study site. The data are stored as a comma separated value (CSV) file. Each row holds information for a single animal, and the columns represent:
 
-| Column          | Description                        |
-|-----------------|------------------------------------|
+| Column            | Description                        |
+|-------------------|------------------------------------|
 | `record_id`       | Unique ID for the observation      |
 | `month`           | month of observation               |
 | `day`             | day of observation                 |
@@ -75,7 +73,7 @@ We will be investigating the animal species diversity and weights found within p
 # Code for question 1!
 ```
 
-**2. What are the dimensions (# of rows and columns) of these data?** 
+**2. What are the dimensions (# of rows and columns) of these data?**
 
 <!-- You can either write code here or in the code chunk for #1, but I **must** see the code you used to address this question!  -->
 
@@ -104,7 +102,7 @@ Let's get started!
 # Scatterplot code for question s 4-8! 
 ```
 
-**4. First, let's create a scatterplot of the relationship between `weight` (on the $x$-axis) and `hindfoot_length` (on the $y$-axis).**
+**4. First, let's create a scatterplot of the relationship between `weight` (on the** $x$-axis) and `hindfoot_length` (on the $y$-axis).
 
 We can see there are **a lot** of points plotted on top of each other. Let's try and modify this plot to extract more information from it.
 
@@ -118,14 +116,13 @@ Despite our best efforts there is still a substantial amount of overplotting occ
 
 It takes a larger cognitive load to read text that is rotated. It is common practice in many journals and media outlets to move the $y$-axis label to the top of the graph under the title.
 
-**8. Specify your $y$-axis label to be empty and move the $y$-axis label into the subtitle. You may overwrite your code from Q7.**
-
+**8. Specify your** $y$-axis label to be empty and move the $y$-axis label into the subtitle. You may overwrite your code from Q7.
 
 ## Boxplots
 
-**9. Sketch out (by hand or using [Excalidraw](<https://excalidraw.com/>)) a game plan for creating side-by-side boxplots to visualize the distribution of weight within each species. Include an image of your game plan.** This can take on your own flavor! The ideas is that you are *thinking before coding*. I recommend saving this in the same folder as your .qmd file.
+**9. Sketch out (by hand or using [Excalidraw](https://excalidraw.com/)) a game plan for creating side-by-side boxplots to visualize the distribution of weight within each species. Include an image of your game plan.** This can take on your own flavor! The ideas is that you are *thinking before coding*. I recommend saving this in the same folder as your .qmd file.
 
-![]()   <!-- Put the file path of your saved game plan in the parentheses! -->
+![]() <!-- Put the file path of your saved game plan in the parentheses! -->
 
 ```{r boxplot}
 # Boxplot code for question 10 - 15!
@@ -143,7 +140,7 @@ Alright, this should look less than optimal. Your points should appear rather st
 
 That should look a bit better! But its really hard to see the points when everything is black.
 
-**13. Set the `color` aesthetic in `geom_jitter()` to change the color of the points and add set the `alpha` aesthetic to add transparency.** 
+**13. Set the `color` aesthetic in `geom_jitter()` to change the color of the points and add set the `alpha` aesthetic to add transparency.**
 
 ::: callout-note
 You are welcome to use whatever color you wish! Some of my favorites are "orange3" and "steelblue".
@@ -155,7 +152,7 @@ Great! Now that you can see the points, you should notice something odd: there a
 
 Some small changes can make **big** differences to plots. One of these changes are better labels for a plot's axes and legend.
 
-**15. Modify the $x$-axis and $y$-axis labels to describe what is being plotted. Be sure to include any necessary units! You might also be getting overlap in the species names -- use `theme(axis.text.x = ____)` or `theme(axis.text.y = ____)` to turn the species axis labels 45 degrees.**
+**15. Modify the** $x$-axis and $y$-axis labels to describe what is being plotted. Be sure to include any necessary units! You might also be getting overlap in the species names -- use `theme(axis.text.x = ____)` or `theme(axis.text.y = ____)` to turn the species axis labels 45 degrees.
 
 Some people (and journals) prefer for boxplots to be stacked with a specific orientation! Let's practice changing the orientation of our boxplots.
 
@@ -167,7 +164,6 @@ Some people (and journals) prefer for boxplots to be stacked with a specific ori
 
 Notice how vertically stacked boxplots make the species labels more readable than horizontally stacked boxplots. This is good practice!
 
-
 # Conducting Statistical Analyses
 
 Exploratory Data Analysis (EDA) is always a great start to investigating a dataset. Can we see a relationship between rodent weight and hindfoot length? How does rodent weight differ between species? After performing EDA, we can then conduct appropriate statistical analyses to formally investigate what we have seen.
@@ -175,30 +171,23 @@ Exploratory Data Analysis (EDA) is always a great start to investigating a datas
 In this section, we are going to conduct a one-way analysis of variance (ANOVA) to compare mean weight between the fourteen species.
 
 ::: callout-tip
-
 ## Refresher on one-way ANOVA
 
 While a second course in statistics is a pre-requisite for this class, you may want a [refresher](https://openintro-ims.netlify.app/inference-many-means) on conducting a one-way ANOVA.
-
 :::
 
 I have outlined the null and alternative hypotheses we will be testing:
 
-
-::: {.callout-note icon=false}
-
+::: {.callout-note icon="false"}
 ## Null
 
 The population mean weight is the same between **all** fourteen rodent species.
-
 :::
 
-::: {.callout-note icon=false}
-
+::: {.callout-note icon="false"}
 ## Alternative
 
 At least one rodent species has a different population mean weight.
-
 :::
 
 Look up the help documentation for `aov()`.
@@ -233,7 +222,6 @@ species_estimates
 # carry out pairwise comparisons between species.
 ```
 
-
 # Use Your Graphics Skills for Evil
 
 **21. Create the *ugliest version* of the scatterplot you created in Q4 above. Then, explain why you made the decisions you did, and which principles of good graphics you’ve intentionally violated.**
@@ -246,6 +234,6 @@ Ugliness is subjective, so the goal here is for you to explore the different way
 
 ### Useful References
 
- + [Customizing ggplot2 graphics](http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.html)
- + [Ugly graphics from a previous class](https://docs.google.com/presentation/d/19bi4KyrpKrjntKtpcKZiZgsVf-cr4X2i2MnQ6hYln7Y/edit?usp=sharing)
- + [A group-created slideshow of awful graphics](https://docs.google.com/presentation/d/1ixRsGI8BWgT2zA5AbB61eMLUbJgObvBCZt-OnZDzvX4/edit#slide=id.p)
+-   [Customizing ggplot2 graphics](http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.html)
+-   [Ugly graphics from a previous class](https://docs.google.com/presentation/d/19bi4KyrpKrjntKtpcKZiZgsVf-cr4X2i2MnQ6hYln7Y/edit?usp=sharing)
+-   [A group-created slideshow of awful graphics](https://docs.google.com/presentation/d/1ixRsGI8BWgT2zA5AbB61eMLUbJgObvBCZt-OnZDzvX4/edit#slide=id.p)
