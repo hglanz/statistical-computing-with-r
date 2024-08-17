@@ -1,0 +1,178 @@
+---
+title: "R Projects & Reading Data"
+format: 
+  html: 
+    fontsize: 1em
+    mainfont: sans-serif
+    number-sections: true
+    number-depth: 2
+    code-block-bg: "#76b5c5"
+    highlight-style: monochrome
+editor: source
+resources: 
+  - data_import_practice.qmd
+  - Ages_Data.zip
+---
+
+## Learning Objectives
+
+-   Describe what an R Project is
+-   Outline how an R Project affects the file paths used to read in data  
+-   Read in data from common formats into R
+
+`r emo::ji("play button")` Watch Videos: 14 minutes
+
+`r emo::ji("book")` Readings: 15-20 minutes
+
+`r emo::ji("computer")` Activities: 30 minutes
+
+`r emo::ji("check")` Check-ins: 1
+
+
+# Directories, Paths, and Projects 
+
+Last week, we learned how to organize our personal files and locate them using
+absolute and relative file paths. The idea of a "base folder" or starting place
+was introduced as a **working directory**. In `R`, there are two ways to set up
+your file path and file system organization:
+
+<!-- update video -->
+
+<!-- ::: column-margin -->
+<!-- {{< video http://somup.com/c3QDczUaCa >}}  -->
+<!-- ::: -->
+
+1.  Set your working directory in `R` (do not recommend)
+2.  Use RProjects (preferred!)
+
+## Working Directories in `R`
+
+To find where your working directory is in `R`, you can either look at the top
+of your console or type `getwd()` into your console.
+
+```{r}
+#| label: get-wd
+getwd()
+```
+
+Although it is not recommended, you can set your working directory in `R` with
+`setwd()`:
+
+```{r}
+#| eval: false
+#| label: setting-full-path
+#| echo: true
+
+setwd("/path/to/my/assignment/folder")
+```
+
+::: {.callout-caution}
+### File Paths in `R`
+
+A quick warning on file paths is that Mac / Linux and Windows differ in the
+direction of their backslash to separate folder locations. Mac/Linux use `/` 
+(e.g. `STAT331/Week1`) while Window's uses `\` (e.g. `STAT331\Week1`).
+:::
+
+## Rprojects
+
+## 📖 [Required Reading: Workflow (R Projects)](https://r4ds.hadley.nz/workflow-scripts.html#projects)
+
+::: {.callout-note}
+# Only read Section 6.2!
+:::
+
+If you open up your folder from Lab 1, you will notice that you have a blue 
+cube (an RProject) living in this folder! The RProject lives in this folder for
+two reasons, (1) when you copied the Lab 1 GitHub repository you told RStudio 
+you wanted to make a new RProject, and (2) in order for RStudio to talk with
+GitHub you need to use an RProject. 
+
+However, if you look at your STAT331 folder, you **should not** see a blue 
+cube since we never created an RProject in this folder. Let's do that now!
+
+To add a Rproject to an existing folder on your computer (e.g., you already
+created a folder for this class), first open RStudio on your computer and click
+`File > New Project`, then:
+
+![Navigation prompt for creating a new RProject in an existing directory](images/week-2/create-existing-rproj-step-1.png){width=50% fig-align="center" fig-alt="Screenshot of navigation box that appears when you select 'File' and 'New Project'. The 'Existing Directory' option is highlighted in blue."}
+
+Then, browse on your computer to where you saved your STAT331 folder last week. 
+This should be in your Documents folder, similar to where mine is saved!
+
+![Navigation prompt for selecting which existing folder in which the RProject should be created.](images/week-2/create-existing-rproj-step-2.png){width=50% fig-align="center" fig-alt="Screenshot of navigation box that appears when you select 'Existing Directory' from the previous navigation menue. By clicking on the 'Browse' button you can navigate to the existing folder where you would like to insert the RProject. In the image, I've navigated to my STAT331 folder which lives in my Documents."}
+
+Once you click "Create Project", your existing folder, `STAT331` should now
+contain a `STAT331.Rproj` file. This is your new "home" base for this class -
+whenever you refer to a file with a relative path it will begin to look for it
+here.
+
+## `r emo::ji("check")` Check-in 2.2: RStudio Projects
+
+Take a screenshot of your class directory, showing the **RProject** living 
+inside your STAT331 folder. 
+
+---
+
+# Loading Data Into R
+
+## Where does my data live?
+
+`r emo::ji("play button")` [Required Video: Data Locations and the {here} package (8 minutes)](https://www.youtube.com/watch?v=jvWwrELLEw8)
+
+## How do I load my data?
+
+`r emo::ji("book")` [Required Reading: Data Import](https://r4ds.hadley.nz/data-import.html)
+
+<!-- Needed? -->
+<!-- `r emo::ji("play button")` [Required Video: Loading Data (6 minutes)](https://www.youtube.com/watch?v=Kp4tJYCAvUs) -->
+
+## `r emo::ji("check")` Check-in 2.3: Loading Data
+
+For this check-in you are asked to work through reading in different data sets. You can download the Quarto template for 
+your investigation here:
+[data-import-practice.qmd](data-import-practice.qmd)
+
+The folder Age_Data contains several data sets with the names and ages of five individuals. The data sets are stored as different file types. [Download Ages_data.zip here](Ages_Data.zip), make sure to unzip the folder, save these in
+a reasonable place (e.g., `STAT331 > Week 2 > Checkin` or
+`STAT331 > Checkins > Week 2`). 
+
+::: callout-tip
+## Extracting zip folders
+
+You will need to **extract** the contents of the `ages.zip` file, that means you
+will need to uncompress the files from the folder for RStudio to know where to
+get the data from.
+:::
+
+Once you have the data saved (and extracted) in your STAT 331 folder, use the
+`readr` and `readxl` packages to complete the following and fill in the "gap"
+code in the Canvas quiz:
+
+1. Load the appropriate packages for reading in data.
+2. Read in the data set *ages.csv*
+3. Read in the data set *ages_tab.txt*
+4. Read in the data set *ages_mystery.txt*
+5. Read in the data set *ages.xlsx*
+6. Find a way to use `read_csv()` to read *ages.csv* with the variable "Name" as a factor data type and "Age" as a character data type.
+
+<!-- **Question 1** -- Which functions could you use to load in the ages.csv dataset? -->
+
+<!-- -   `read_csv()` -->
+<!-- -   `read_delim()` -->
+<!-- -   `read_tsv()` -->
+
+<!-- **Question 2** -- Which functions could you use to load in the ages_tab.txt dataset? -->
+
+<!-- -   `read_tsv()` -->
+<!-- -   `read_csv()` -->
+<!-- -   `read_delim()` -->
+
+<!-- **Question 3** -- What `delim` option do you need to declare to load in the ages_mystery.txt dataset? -->
+
+<!-- -   `delim = " "` -->
+<!-- -   `delim = "|"` -->
+<!-- -   `delim = "\t"` -->
+
+<!-- **Question 4** -- **True or False** -- The `read_csv()` function automatically converts strings (character variables) to factors -->
+
