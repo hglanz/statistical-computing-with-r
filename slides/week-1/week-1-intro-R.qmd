@@ -1,0 +1,550 @@
+---
+title: "Intro to STAT 331 / 531 + Intro to R"
+format: 
+  revealjs:
+    theme: [../style.scss]
+editor: source
+---
+
+# Week 1 Day 1
+
+## Tuesday, September 24
+
+Today we will...
+
+-   Welcome to Stat 331 / 531: Statistical Computing in R
+-   Introductions (Me + You)
+-   Course Layout
+-   Basics of R
+-   [Practice Activity 1: Find the Mistakes](../group-activities/base-r.qmd)
+
+# Introductions
+
+## Hi, I'm Dr. Theobold!
+
+::: columns
+::: {.column width="50%"}
+-   I am originally from Colorado, but went to grad school in Montana!
+
+-   My favorite things are being outside, drinking coffee, and watching womens basketball.
+
+-   I love cats!
+
+-   I absolutely love teaching this course!
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+![](images/yoesmite.jpeg){fig-alt="A picture of my wife and I backpacking in Yosemite. We are standing in front of a large blue lake (called Thousand Islands Lake), with some snow covered, scraggly peaks in the background."} ![](images/kitties.jpg){fig-alt="A picture of my two kitties, snuggling on the couch. Both kitties are facing each other, with their noses touching."}
+:::
+:::
+
+## On a personal note...
+
+::: columns
+::: {.column width="50%"}
+I prefer you refer to me as "Dr. Theobold" or "Dr. T."
+
+Please don't call me "Allison" or "Professor."
+
+</br>
+
+::: fragment
+I use they / them pronouns. If you are not sure what this means, I'd encourage you to [read more about gender identity and pronouns](https://www.npr.org/2021/06/02/996319297/gender-identity-pronouns-expression-guide-lgbtq). 🙂
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+![](images/rainbow-smoothie.jpg){fig-alt="A picture of a very pink fruit smoothie, with sprinkles on top."}
+:::
+:::
+
+## Our Classroom Learning Assistant!
+
+We will be joined in class by Jasmine.
+
+. . .
+
+Jasmine is...
+
+-   A forth-year Statistics major pursuing a Data Science minor.
+
+<!-- + Originally from San Ramon in the East Bay Area. -->
+
+<!-- + A golfer, dancer, and crocheter! -->
+
+## You!
+
+I am looking forward to reading your introductions on Discord!
+
+</br>
+
+Please read the intros of your classmates so you can discover who you will be learning with this quarter!
+
+# Course Layout
+
+## Beginning of the Week
+
+::: panel-tabset
+## Before Tuesday's Class
+
+-   Look over the coursework page
+-   Read the required chapter(s)
+-   Watch the required video(s)
+-   Complete the [**Preview Activities**]{style="color: #b76352;"}
+
+## During Class on Tuesday
+
+-   Review chapter content
+-   Ask clarifying questions
+-   Discuss example analyses
+-   Work in pairs to complete the [**Practice Activity**]{style="color: #34605f;"}
+
+## After Tuesday's Class
+
+-   Finish whatever remains of the [**Practice Activity**]{style="color: #0F4C81;"}
+-   Complete any additional reading / videos / [**Preview Activities**]{style="color: #b76352;"}
+:::
+
+## End of the Week
+
+::: panel-tabset
+## During Class on Thursday
+
+-   Debrief [**Practice Activity**]{style="color: #0F4C81;"}
+-   Warm-up review
+-   Start [**Lab Assignment**]{style="color: #D4D4D4;"}
+
+## After Thursday's Class
+
+-   Finish remaining problems of the [**Lab Assignment**]{style="color: #D4D4D4;"}
+-   Complete [**Challenge Assignment**]{style="color: #e28743;"}
+
+::: callout-note
+# Labs & Challenges Due Sunday by Midnight
+
+To keep everyone on track with the coursework, your Lab and Challenges are due by midnight every Sunday. You are permitted to request **up to four (4)** deadline extensions by filling out the [deadline extension form](https://forms.gle/acaTcG3uEajvNaAK8).
+:::
+:::
+
+# R Basics
+
+## Data Types
+
+-   A **value** is a basic unit of stuff that a program works with.
+
+-   Values are allowed to have different *data types*:
+
+. . .
+
+1.  **logical / boolean**: FALSE / TRUE or 0 / 1 values.
+
+. . .
+
+2.  **integer**: whole numbers.
+
+. . .
+
+3.  **double / float / numeric**: decimal numbers.
+
+. . .
+
+4.  **character / string** - text values.
+
+## Variables
+
+> are names that refer to values.
+
+::: incremental
+::: small
+-   A variable is like a container that holds something - when you refer to the container, you get whatever is stored inside.
+
+-   We assign values to variables using the syntax `object_name <- value`.
+
+    -   This can be read as “object name gets value.”
+:::
+:::
+
+. . .
+
+```{r}
+#| echo: true
+#| label: example-object-creation
+#| code-line-numbers: false
+
+message <- "So long and thanks for all the fish"
+year <- 2025
+the_answer <- 42.5
+earth_demolished <- FALSE
+```
+
+## Data Structures
+
+::: panel-tabset
+## Homogeneous
+
+> every element has the same data type
+
+-   **Vector**: a one-dimensional column of homogeneous data.
+
+-   **Matrix**: the next step after a vector - it’s a set of homogenous data arranged in a two-dimensional, rectangular format.
+
+## Heterogeneous
+
+> elements can be of different types
+
+-   **List**: a one-dimensional column of heterogeneous data[^1].
+
+-   **Dataframe**: a two-dimensional set of heterogeneous data arranged in a rectangular format.
+:::
+
+[^1]: This is similar to a dictionary in Python!
+
+## Indexing
+
+We use **square brackets** (`[]`) to access elements within data structures.
+
+-   In R, we start indexing from 1.
+
+::: {.panel-tabset}
+
+## Vector
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+#| label: vector-elements
+
+vec[4]    # 4th element
+vec[1:3]  # first 3 elements
+```
+
+## Matrix
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+#| label: matrix-elements
+
+mat[2, 6]  # element in row 2, col 6
+mat[ , 3]   # all elements in col 3
+```
+
+## List
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+#| label: list-elements
+
+li[[5]]    # 5th element
+li$elementName # all elements in "elementName"
+```
+
+
+## Dataframe
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+#| label: df-elements
+
+df[1, 2]     # element in row 1, col 2
+df[17, ]     # all elements in row 17
+df$colName  # all elements in the col named "colName"
+```
+
+:::
+
+## Logic
+
+We can combine logical statements using and, or, and not.
+
+-   (X AND Y) requires that **both** X and Y are true.
+
+-   (X OR Y) requires that **one** of X or Y is true.
+
+-   (NOT X) is true if X is false, and false if X is true.
+
+. . .
+
+```{r}
+#| echo: true
+#| label: logic-test
+#| code-line-numbers: false
+
+x <- c(TRUE, FALSE, TRUE, FALSE)
+y <- c(TRUE, TRUE, FALSE, FALSE)
+```
+
+::: {.panel-tabset}
+## And
+
+```{r}
+#| echo: true
+#| label: and
+x & y
+```
+
+## Or 
+
+```{r}
+#| echo: true
+#| label: or
+x | y
+```
+
+## Not 
+```{r}
+#| echo: true
+#| label: not
+
+!x
+```
+:::
+
+## [PA 1: Find the Mistakes](../group-activities/week-1/base-r.qmd)
+
+The components of the Practice Activity are described below:
+
+::: {.panel-tabset}
+## Part One
+
+This file has many mistakes in the code. Some are errors that will prevent the
+file from knitting; some are mistakes that do NOT result in an error.
+
+Fix all the problems in the code chunks.
+
+## Part Two
+
+Follow the instructions in the file to uncover a secret message.
+
+Submit the name of the poem as the answer to the Week 1 Practice Activity Canvas
+quiz.
+
+:::
+
+## Before class on Thursday...
+
+- Complete [Version Control coursework](../weeks/week-1-version-control.qmd)
+
+-   **Check-ins 1.3 & 1.4**
+
+    -   Due Thursday (9/26) by the start of class
+
+- Introduce yourself on Discord!
+
+-   **PA 1: Find the Mistakes**
+
+  -   Due Wednesday (9/25) by 5pm
+
+# Week 1 Day 2
+
+## Thursday, September 26
+
+Today we will...
+
+-   Answer Clarifying Questions:
+    -   Syllabus?
+    -   Chapter 1 Reading?
+    -   PA 1: Find the Mistakes?
+-   New Material
+    -   Scripts + Notebooks
+-   Lab 1: Introduction to Quarto
+-   Challenge 1: Modifying your Quarto Document
+
+# Scripts + Notebooks
+
+## Scripts
+
+-   **Scripts** (`File > New File > R Script`) are files of code that are meant to be run on their own.
+
+. . .
+
+-   Scripts can be run in RStudio by clicking the `Run` button at the top of the editor window when the script is open.
+
+-   You can also run code interactively in a script by:
+
+    -   highlighting lines of code and hitting run.
+
+    -   placing your cursor on a line of code and hitting run.
+
+    -   placing your cursor on a line of code and hitting `ctrl + enter` or `command + enter`.
+
+## Notebooks
+
+Notebooks are an implementation of **literate programming**.
+
+-   They allow you to integrate code, output, text, images, etc. into a single document.
+
+-   E.g.,
+
+    -   R Markdown notebook
+    -   **Quarto notebook**
+    -   Jupyter notebook
+
+We love notebooks because they help us produce a reproducible analysis! 
+
+## What is Markdown?
+
+**Markdown** is a *markup language*.
+
+-   It uses special symbols and formatting to make pretty documents.
+
+. . .
+
+-   *italics* -- makes italics
+-   **bold** -- makes bold text
+-   \# -- makes headers
+-   \![ ]( ) -- includes images or HTML links
+-   < > -- embeds URLs
+
+. . .
+
+-   Markdown files have the **.md** extension.
+
+## What is Quarto?
+
+Quarto **unifies** and **extends** the R Markdown ecosystem.
+
+-   Quarto files have the **.qmd** extension.
+
+```{r}
+#| echo: false
+#| out-width: "50%"
+#| fig-align: center
+knitr::include_graphics("images/rmd_ecosystem.png")
+```
+
+- Quarto is the next generation R Markdown.
+
+## Highlights of Quarto
+
+-   Consistent implementation of attractive and handy features across outputs:
+
+    -   E.g., tabsets, code-folding, syntax highlighting, etc.
+
+-   More accessible defaults and better support for accessibility.
+
+-   Guardrails that are helpful when learning:
+
+    -   E.g., YAML completion, informative syntax errors, etc.
+
+-   Support for other languages like Python, Julia, Observable, and more.
+
+## Quarto Formats
+
+Quarto makes moving between outputs straightforward.
+
+-   All that needs to change between these formats is a few lines in the front matter (YAML)!
+
+::: columns
+::: {.column width="50%"}
+**Document**
+
+``` yaml
+title: "Lesson 1"
+format: html
+```
+
+**Presentation**
+
+``` yaml
+title: "Lesson 1"
+format: revealjs
+```
+:::
+
+::: {.column width="50%"}
+**Website**
+
+``` yaml
+project:
+  type: website
+
+website: 
+  navbar: 
+    left:
+      - lesson-1.qmd
+```
+:::
+:::
+
+## Quarto Components
+
+![](images/quarto_sections.jpeg){width="80%"}
+
+## R Code Options in Quarto
+
+**R code chunk** options are included at the top of each code chunk, prefaced with a `#|` (hashpipe).
+
+-   These options control how the following code is run and reported in the final Quarto document.
+-   Some R code options can also be included in the front matter (YAML) which would be applied globally to the entire document.
+
+## R Code Options in Quarto
+
+<center>![](images/code_options.png)</center>
+
+## YAML Completion in Quarto
+
+<center>![](images/quarto_code_options.png)</center>
+
+## Rendering your Quarto Document
+
+To take your *.qmd* file and make it look pretty, you have to **render** it.
+
+<center>
+
+![](images/render.png)
+
+![](images/render_on_save.png)
+
+</center>
+
+## Rendering your Quarto Document
+
+Quarto CLI (command line interface) orchestrates each step of rendering:
+
+1.  Process the executable code chunks with either `knitr` or `jupyter`.
+2.  Convert the resulting Markdown file to the desired output.
+
+```{r, echo = F, fig.align='center'}
+knitr::include_graphics("images/horst_qmd_render_schema.png")
+```
+
+<!-- The main difference is that with R Markdown, the R package rmarkdown does the heavy lifting of going from the source Rmd file to the the output, using knitr for evaluating the code chunks. -->
+
+## Rendering your Quarto Document
+
+When you click **Render**:
+
+::: {.incremental}
+1.    Your file is saved.
+2.    The R code written in your *.qmd* file gets run **in order**.
+
+  -   It starts from scratch, even if you previously ran some of the code in RStudio.
+3.    A new file is created.
+
+  -   If your Quarto file is called "Lab1.qmd", then a file called "Lab1.html" will be created.
+  -   This will be saved in the same folder as "Lab1.qmd".
+:::
+
+# [Lab 1: Introduction to Quarto + Challenge 1: Modifying your Quarto Document](../../labs/instructions/lab-1-instructions.qmd)
+
+## To do...
+
+-   **Lab 1: Introduction to Quarto**
+    -   Due Sunday (9/29) at 11:59pm
+-   **Challenge 1: Modifying Your Quarto Document**
+    -   Due Sunday (9/29) at 11:59pm
+-   **Read Chapter 2: Importing Data + Basics of Graphics**
+    -   **Check-in 2.1 + 2.2** due Tuesday (10/1) by the start of class
