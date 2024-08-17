@@ -804,5 +804,257 @@
     "title": "Pair Programming Roles",
     "section": "Once You’re Finished",
     "text": "Once You’re Finished\nAt the end of the task, your group will have one completed Quarto document and one rendered HTML, containing your groups’ worked-out solutions and justifications. Everyone must take turns writing the final product (as described above) and everyone must be able to explain every line of code in your final document."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#tuesday-september-24",
+    "href": "slides/week-1/week-1-intro-R.html#tuesday-september-24",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Tuesday, September 24",
+    "text": "Tuesday, September 24\nToday we will…\n\nWelcome to Stat 331 / 531: Statistical Computing in R\nIntroductions (Me + You)\nCourse Layout\nBasics of R\nPractice Activity 1: Find the Mistakes"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#me",
+    "href": "slides/week-1/week-1-intro-R.html#me",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Me!",
+    "text": "Me!\nHi, I’m Dr. Theobold!\n\n\n\nI am originally from Colorado, but went to grad school in Montana!\nMy favorite things are being outside, drinking cofee, and watching women’s basketball.\nI absolutely love teaching this course!"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#on-a-personal-note",
+    "href": "slides/week-1/week-1-intro-R.html#on-a-personal-note",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "On a personal note…",
+    "text": "On a personal note…\n\n\nI prefer you refer to me as “Dr. Theobold” or “Dr. T.”\nPlease don’t call me “Allison” or “Professor.”\n\n\nI use they / them pronouns. If you are not sure what this means, I’d encourage you to read more about gender identity and pronouns. 🙂"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#our-classroom-learning-assistant",
+    "href": "slides/week-1/week-1-intro-R.html#our-classroom-learning-assistant",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Our Classroom Learning Assistant!",
+    "text": "Our Classroom Learning Assistant!\nWe will be joined in class by Jasmine.\n\nJasmine is…\n\nA forth-year Statistics major pursuing a Data Science minor."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#you",
+    "href": "slides/week-1/week-1-intro-R.html#you",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "You!",
+    "text": "You!\nI am looking forward to reading your introductions on Discord!\n\nPlease read the intros of your classmates so you can discover who you will be learning with this quarter!"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#data-types",
+    "href": "slides/week-1/week-1-intro-R.html#data-types",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Data Types",
+    "text": "Data Types\n\nA value is a basic unit of stuff that a program works with.\nValues are allowed to have different data types:\n\n\n\nlogical / boolean: FALSE / TRUE or 0 / 1 values.\n\n\n\n\ninteger: whole numbers.\n\n\n\n\ndouble / float / numeric: decimal numbers.\n\n\n\n\ncharacter / string - text values."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#variables",
+    "href": "slides/week-1/week-1-intro-R.html#variables",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Variables",
+    "text": "Variables\n\nare names that refer to values.\n\n\n\n\nA variable is like a container that holds something - when you refer to the container, you get whatever is stored inside.\nWe assign values to variables using the syntax object_name &lt;- value.\n\nThis can be read as “object name gets value.”\n\n\n\n\n\n\nmessage &lt;- \"So long and thanks for all the fish\"\nyear &lt;- 2025\nthe_answer &lt;- 42.5\nearth_demolished &lt;- FALSE"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#data-structures",
+    "href": "slides/week-1/week-1-intro-R.html#data-structures",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Data Structures",
+    "text": "Data Structures\n\nHomogeneousHeterogeneous\n\n\n\nevery element has the same data type\n\n\nVector: a one-dimensional column of homogeneous data.\nMatrix: the next step after a vector - it’s a set of homogenous data arranged in a two-dimensional, rectangular format.\n\n\n\n\nelements can be of different types\n\n\nList: a one-dimensional column of heterogeneous data1.\nDataframe: a two-dimensional set of heterogeneous data arranged in a rectangular format.\n\n\n\n\nThis is similar to a dictionary in Python!"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#indexing",
+    "href": "slides/week-1/week-1-intro-R.html#indexing",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Indexing",
+    "text": "Indexing\nWe use square brackets ([]) to access elements within data structures.\n\nIn R, we start indexing from 1.\n\n\nVectorMatrixListDataframe\n\n\n\nvec[4]    # 4th element\nvec[1:3]  # first 3 elements\n\n\n\n\nmat[2, 6]  # element in row 2, col 6\nmat[ , 3]   # all elements in col 3\n\n\n\n\nli[[5]]    # 5th element\nli$elementName # all elements in \"elementName\"\n\n\n\n\ndf[1, 2]     # element in row 1, col 2\ndf[17, ]     # all elements in row 17\ndf$colName  # all elements in the col named \"colName\""
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#logic",
+    "href": "slides/week-1/week-1-intro-R.html#logic",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Logic",
+    "text": "Logic\nWe can combine logical statements using and, or, and not.\n\n(X AND Y) requires that both X and Y are true.\n(X OR Y) requires that one of X or Y is true.\n(NOT X) is true if X is false, and false if X is true.\n\n\n\nx &lt;- c(TRUE, FALSE, TRUE, FALSE)\ny &lt;- c(TRUE, TRUE, FALSE, FALSE)\n\n\nAndOrNot\n\n\n\nx & y\n\n[1]  TRUE FALSE FALSE FALSE\n\n\n\n\n\nx | y\n\n[1]  TRUE  TRUE  TRUE FALSE\n\n\n\n\n\n!x\n\n[1] FALSE  TRUE FALSE  TRUE"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#pa-1-find-the-mistakes",
+    "href": "slides/week-1/week-1-intro-R.html#pa-1-find-the-mistakes",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "PA 1: Find the Mistakes",
+    "text": "PA 1: Find the Mistakes\nThe components of the Practice Activity are described below:\n\nPart OnePart Two\n\n\nThis file has many mistakes in the code. Some are errors that will prevent the file from knitting; some are mistakes that do NOT result in an error.\nFix all the problems in the code chunks.\n\n\nFollow the instructions in the file to uncover a secret message.\nSubmit the name of the poem as the answer to the Week 1 Practice Activity Canvas quiz."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#to-do",
+    "href": "slides/week-1/week-1-intro-R.html#to-do",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "To do…",
+    "text": "To do…\n\nLab 1: Introduction to Quarto\n\nDue Sunday (9/29) at 11:59pm\n\nChallenge 1: Modifying Your Quarto Document\n\nDue Sunday (9/29) at 11:59pm\n\nRead Chapter 2: Importing Data + Basics of Graphics\n\nCheck-in 2.1 + 2.2 due Tuesday (10/1) by the start of class"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#thursday-september-26",
+    "href": "slides/week-1/week-1-intro-R.html#thursday-september-26",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Thursday, September 26",
+    "text": "Thursday, September 26\nToday we will…\n\nAnswer Clarifying Questions:\n\nSyllabus?\nChapter 1 Reading?\nPA 1: Find the Mistakes?\n\nNew Material\n\nScripts + Notebooks\n\nLab 1: Introduction to Quarto\nChallenge 1: Modifying your Quarto Document"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#scripts",
+    "href": "slides/week-1/week-1-intro-R.html#scripts",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Scripts",
+    "text": "Scripts\n\nScripts (File &gt; New File &gt; R Script) are files of code that are meant to be run on their own.\n\n\n\nScripts can be run in RStudio by clicking the Run button at the top of the editor window when the script is open.\nYou can also run code interactively in a script by:\n\nhighlighting lines of code and hitting run.\nplacing your cursor on a line of code and hitting run.\nplacing your cursor on a line of code and hitting ctrl + enter or command + enter."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#notebooks",
+    "href": "slides/week-1/week-1-intro-R.html#notebooks",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Notebooks",
+    "text": "Notebooks\nNotebooks are an implementation of literate programming.\n\nThey allow you to integrate code, output, text, images, etc. into a single document.\nE.g.,\n\nR Markdown notebook\nQuarto notebook\nJupyter notebook\n\n\nWe love notebooks because they help us produce a reproducible analysis!"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#what-is-markdown",
+    "href": "slides/week-1/week-1-intro-R.html#what-is-markdown",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "What is Markdown?",
+    "text": "What is Markdown?\nMarkdown is a markup language.\n\nIt uses special symbols and formatting to make pretty documents.\n\n\n\nitalics – makes italics\nbold – makes bold text\n# – makes headers\n! – includes images or HTML links\n&lt; &gt; – embeds URLs\n\n\n\n\nMarkdown files have the .md extension."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#what-is-quarto",
+    "href": "slides/week-1/week-1-intro-R.html#what-is-quarto",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "What is Quarto?",
+    "text": "What is Quarto?\nQuarto unifies and extends the R Markdown ecosystem.\n\nQuarto files have the .qmd extension.\n\n\n\nQuarto is the next generation R Markdown."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#highlights-of-quarto",
+    "href": "slides/week-1/week-1-intro-R.html#highlights-of-quarto",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Highlights of Quarto",
+    "text": "Highlights of Quarto\n\nConsistent implementation of attractive and handy features across outputs:\n\nE.g., tabsets, code-folding, syntax highlighting, etc.\n\nMore accessible defaults and better support for accessibility.\nGuardrails that are helpful when learning:\n\nE.g., YAML completion, informative syntax errors, etc.\n\nSupport for other languages like Python, Julia, Observable, and more."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#quarto-formats",
+    "href": "slides/week-1/week-1-intro-R.html#quarto-formats",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Quarto Formats",
+    "text": "Quarto Formats\nQuarto makes moving between outputs straightforward.\n\nAll that needs to change between these formats is a few lines in the front matter (YAML)!\n\n\n\nDocument\ntitle: \"Lesson 1\"\nformat: html\nPresentation\ntitle: \"Lesson 1\"\nformat: revealjs\n\nWebsite\nproject:\n  type: website\n\nwebsite: \n  navbar: \n    left:\n      - lesson-1.qmd"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#quarto-components",
+    "href": "slides/week-1/week-1-intro-R.html#quarto-components",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Quarto Components",
+    "text": "Quarto Components"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#markdown-in-quarto",
+    "href": "slides/week-1/week-1-intro-R.html#markdown-in-quarto",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Markdown in Quarto",
+    "text": "Markdown in Quarto\nA few useful tips for formatting the Markdown text in your document:\n\n*text* – makes italics\n**text** – makes bold text\n# – makes headers\n![ ]( ) – includes images or HTML links\n&lt; &gt; – embeds URLs"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#r-code-options-in-quarto",
+    "href": "slides/week-1/week-1-intro-R.html#r-code-options-in-quarto",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "R Code Options in Quarto",
+    "text": "R Code Options in Quarto\nR code chunk options are included at the top of each code chunk, prefaced with a #| (hashpipe).\n\nThese options control how the following code is run and reported in the final Quarto document.\nSome R code options can also be included in the front matter (YAML) which would be applied globally to the entire document."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#rendering-your-quarto-document",
+    "href": "slides/week-1/week-1-intro-R.html#rendering-your-quarto-document",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Rendering your Quarto Document",
+    "text": "Rendering your Quarto Document\nTo take your .qmd file and make it look pretty, you have to render it."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#rendering-your-quarto-document-1",
+    "href": "slides/week-1/week-1-intro-R.html#rendering-your-quarto-document-1",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Rendering your Quarto Document",
+    "text": "Rendering your Quarto Document\nQuarto CLI (command line interface) orchestrates each step of rendering:\n\nProcess the executable code chunks with either knitr or jupyter.\nConvert the resulting Markdown file to the desired output."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#rendering-your-quarto-document-2",
+    "href": "slides/week-1/week-1-intro-R.html#rendering-your-quarto-document-2",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Rendering your Quarto Document",
+    "text": "Rendering your Quarto Document\nWhen you click Render:\n\n\nYour file is saved.\nThe R code written in your .qmd file gets run in order.\n\n\nIt starts from scratch, even if you previously ran some of the code in RStudio.\n\n\nA new file is created.\n\n\nIf your Quarto file is called “Lab1.qmd”, then a file called “Lab1.html” will be created.\nThis will be saved in the same folder as “Lab1.qmd”."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#lab-1-introduction-to-quarto-challenge-1-modifying-your-quarto-document",
+    "href": "slides/week-1/week-1-intro-R.html#lab-1-introduction-to-quarto-challenge-1-modifying-your-quarto-document",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Lab 1: Introduction to Quarto + Challenge 1: Modifying your Quarto Document",
+    "text": "Lab 1: Introduction to Quarto + Challenge 1: Modifying your Quarto Document"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#to-do-1",
+    "href": "slides/week-1/week-1-intro-R.html#to-do-1",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "To do…",
+    "text": "To do…\n\nLab 1: Introduction to Quarto\n\nDue Friday (4/7) at 11:59pm\n\nChallenge 1: Modifying Your Quarto Document (+10)\n\nDue Saturday (4/8) at 11:59pm\n\nRead Chapter 2: Importing Data + Basics of Graphics\n\nCheck-in 2.1 + 2.2 due Monday (4/10) at 8:00am\n\nBonus Challenge: FizzBuzz (+5)\n\nDue Saturday (4/15) at 11:59pm"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#hi-im-dr.-theobold",
+    "href": "slides/week-1/week-1-intro-R.html#hi-im-dr.-theobold",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Hi, I’m Dr. Theobold!",
+    "text": "Hi, I’m Dr. Theobold!\n\n\n\nI am originally from Colorado, but went to grad school in Montana!\nMy favorite things are being outside, drinking coffee, and watching womens basketball.\nI love cats!\nI absolutely love teaching this course!"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#before-class-on-thursday",
+    "href": "slides/week-1/week-1-intro-R.html#before-class-on-thursday",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Before class on Thursday…",
+    "text": "Before class on Thursday…\n\nComplete Version Control coursework\nCheck-ins 1.3 & 1.4\n\nDue Thursday (9/26) by the start of class\n\nIntroduce yourself on Discord!\nPA 1: Find the Mistakes\nDue Wednesday (9/25) by 5pm"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#beginning-of-the-week",
+    "href": "slides/week-1/week-1-intro-R.html#beginning-of-the-week",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Beginning of the Week",
+    "text": "Beginning of the Week\n\nBefore Tuesday’s ClassDuring Class on TuesdayAfter Tuesday’s Class\n\n\n\nLook over the coursework page\nRead the required chapter(s)\nWatch the required video(s)\nComplete the Preview Activities\n\n\n\n\nReview chapter content\nAsk clarifying questions\nDiscuss example analyses\nWork in pairs to complete the Practice Activity\n\n\n\n\nFinish whatever remains of the Practice Activity\nComplete any additional reading / videos / Preview Activities"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#end-of-the-week",
+    "href": "slides/week-1/week-1-intro-R.html#end-of-the-week",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "End of the Week",
+    "text": "End of the Week\n\nDuring Class on ThursdayAfter Thursday’s Class\n\n\n\nDebrief Practice Activity\nWarm-up review\nStart Lab Assignment\n\n\n\n\nFinish remaining problems of the Lab Assignment\nComplete Challenge Assignment\n\n\n\n\n\n\n\nLabs & Challenges Due Sunday by Midnight\n\n\nTo keep everyone on track with the coursework, your Lab and Challenges are due by midnight every Sunday. You are permitted to request up to four (4) deadline extensions by filling out the deadline extension form."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#or",
+    "href": "slides/week-1/week-1-intro-R.html#or",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Or",
+    "text": "Or\n\nx | y\n\n[1]  TRUE  TRUE  TRUE FALSE\n\n\n\n!x\n\n[1] FALSE  TRUE FALSE  TRUE"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#r-code-options-in-quarto-1",
+    "href": "slides/week-1/week-1-intro-R.html#r-code-options-in-quarto-1",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "R Code Options in Quarto",
+    "text": "R Code Options in Quarto"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#yaml-completion-in-quarto",
+    "href": "slides/week-1/week-1-intro-R.html#yaml-completion-in-quarto",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "YAML Completion in Quarto",
+    "text": "YAML Completion in Quarto"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html",
+    "href": "slides/week-1/week-1-intro-R.html",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "",
+    "text": "Today we will…\n\nWelcome to Stat 331 / 531: Statistical Computing in R\nIntroductions (Me + You)\nCourse Layout\nBasics of R\nPractice Activity 1: Find the Mistakes"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#footnotes",
+    "href": "slides/week-1/week-1-intro-R.html#footnotes",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is similar to a dictionary in Python!↩︎"
   }
 ]
