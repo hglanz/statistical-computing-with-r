@@ -67,8 +67,10 @@ website:
             text: "Week 1, Part 2"
           - href: weeks/week-1-version-control.qmd
             text: "Week 1, Part 3"
-          - href: weeks/week-2-ggplot-projects.qmd
-            text: "Week 2"
+          - href: weeks/week-2-ggplot.qmd
+            text: "Week 2, Part 1"
+          - href: weeks/week-2-projects-data-import.qmd
+            text: "Week 2, Part 2"
           #- href: weeks/week-3.qmd
           #   text: "Week 3"
           # - href: weeks/week-4.qmd
