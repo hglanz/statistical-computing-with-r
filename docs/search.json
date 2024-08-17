@@ -184,43 +184,43 @@
     "objectID": "videos/week-1/debugging-errors.html#did-you-leave-off-a-parenthesis",
     "href": "videos/week-1/debugging-errors.html#did-you-leave-off-a-parenthesis",
     "title": "Debugging Errors!",
-    "section": "Did you leave off a parenthesis?",
-    "text": "Did you leave off a parenthesis?\n\n\n\n\n\n\n\nError: &lt;text&gt;:4:0: unexpected end of input\n2: seq(from = 1, to = 10, by = 1\n3: \n  ^"
+    "section": "",
+    "text": "Error: &lt;text&gt;:4:0: unexpected end of input\n2: seq(from = 1, to = 10, by = 1\n3: \n  ^"
   },
   {
     "objectID": "videos/week-1/debugging-errors.html#did-you-leave-off-a-comma",
     "href": "videos/week-1/debugging-errors.html#did-you-leave-off-a-comma",
     "title": "Debugging Errors!",
-    "section": "Did you leave off a comma?",
-    "text": "Did you leave off a comma?\n\n\n\n\n\n\n\nError: &lt;text&gt;:2:23: unexpected symbol\n1: \n2: seq(from = 1, to = 10 by\n                         ^"
+    "section": "",
+    "text": "Error: &lt;text&gt;:2:23: unexpected symbol\n1: \n2: seq(from = 1, to = 10 by\n                         ^"
   },
   {
     "objectID": "videos/week-1/debugging-errors.html#did-you-make-a-typo-are-you-using-the-right-names",
     "href": "videos/week-1/debugging-errors.html#did-you-make-a-typo-are-you-using-the-right-names",
     "title": "Debugging Errors!",
-    "section": "Did you make a typo? Are you using the right names?",
-    "text": "Did you make a typo? Are you using the right names?\n\n\n\n\n\n\n\nError in sequence.default(from = 1, to = 10, by = 1): argument \"nvec\" is missing, with no default"
+    "section": "",
+    "text": "Error in sequence.default(from = 1, to = 10, by = 1): argument \"nvec\" is missing, with no default"
   },
   {
     "objectID": "videos/week-1/debugging-errors.html#object-type-errors",
     "href": "videos/week-1/debugging-errors.html#object-type-errors",
     "title": "Debugging Errors!",
-    "section": "Object type errors",
-    "text": "Object type errors\nAre you using the right input that the function expects?\n–\n\n\n\n\n\n\n\nError in sqrt(\"1\"): non-numeric argument to mathematical function"
+    "section": "",
+    "text": "Are you using the right input that the function expects?\n–\n\n\n\n\n\n\n\nError in sqrt(\"1\"): non-numeric argument to mathematical function"
   },
   {
     "objectID": "videos/week-1/debugging-errors.html#object-type-errors-1",
     "href": "videos/week-1/debugging-errors.html#object-type-errors-1",
     "title": "Debugging Errors!",
-    "section": "Object type errors",
-    "text": "Object type errors\nAre you expecting the right output of the function?\n–"
+    "section": "",
+    "text": "Are you expecting the right output of the function?\n–"
   },
   {
     "objectID": "videos/week-1/debugging-errors.html#messages",
     "href": "videos/week-1/debugging-errors.html#messages",
     "title": "Debugging Errors!",
     "section": "Messages",
-    "text": "Messages\nJust because you see scary red text, this does not mean something went wrong! This is just R communicating with you.\n\nFor example, you often see:"
+    "text": "Messages\nJust because you see scary red text, this does not mean something went wrong! This is just R communicating with you.\n. . .\nFor example, you often see:"
   },
   {
     "objectID": "videos/week-1/debugging-errors.html#warnings",
@@ -248,28 +248,28 @@
     "href": "videos/week-1/debugging-errors.html#r-says",
     "title": "Debugging Errors!",
     "section": "R says…",
-    "text": "R says…\n\nError: Object some_obj not found.\n\nIt probably means…\n\nYou haven’t run the code to create some_obj OR you have a typo in the name!\n\n\n\n\nError in eval(expr, envir, enclos): object 'some_obj' not found"
+    "text": "R says…\n\nError: Object some_obj not found.\n\nIt probably means…\n\nYou haven’t run the code to create some_obj OR you have a typo in the name!\n\n. . .\n\n\nError in eval(expr, envir, enclos): object 'some_obj' not found"
   },
   {
     "objectID": "videos/week-1/debugging-errors.html#r-says-1",
     "href": "videos/week-1/debugging-errors.html#r-says-1",
     "title": "Debugging Errors!",
     "section": "R says…",
-    "text": "R says…\n\nError: Object of type ‘closure’ is not subsettable.\n\nIt probably means…\n\nOops, you tried to use square brackets on a function\n\n\n\n\nError in mean[1, 2]: object of type 'closure' is not subsettable"
+    "text": "R says…\n\nError: Object of type ‘closure’ is not subsettable.\n\nIt probably means…\n\nOops, you tried to use square brackets on a function\n\n. . .\n\n\nError in mean[1, 2]: object of type 'closure' is not subsettable"
   },
   {
     "objectID": "videos/week-1/debugging-errors.html#r-says-2",
     "href": "videos/week-1/debugging-errors.html#r-says-2",
     "title": "Debugging Errors!",
     "section": "R says…",
-    "text": "R says…\n\nError: Non-numeric argument to binary operator\n\nIt probably means…\n\nYou tried to do math on data that isn’t numeric.\n\n\n\n\nError in \"a\" + 2: non-numeric argument to binary operator"
+    "text": "R says…\n\nError: Non-numeric argument to binary operator\n\nIt probably means…\n\nYou tried to do math on data that isn’t numeric.\n\n. . .\n\n\nError in \"a\" + 2: non-numeric argument to binary operator"
   },
   {
     "objectID": "videos/week-1/debugging-errors.html#what-if-none-of-these-solved-my-error",
     "href": "videos/week-1/debugging-errors.html#what-if-none-of-these-solved-my-error",
     "title": "Debugging Errors!",
     "section": "What if none of these solved my error?",
-    "text": "What if none of these solved my error?\n\nLook at the help file for the function!\n\n\nWhen all else fails, Google your error message.\n\n\n\nLeave out the specifics.\nInclude the function you are using."
+    "text": "What if none of these solved my error?\n. . .\nLook at the help file for the function!\n. . .\nWhen all else fails, Google your error message.\n. . .\n\nLeave out the specifics.\nInclude the function you are using."
   },
   {
     "objectID": "videos/week-1/debugging-errors.html#try-it",
@@ -282,8 +282,8 @@
     "objectID": "videos/week-2/r-projects.html#the-beauty-of-r-projects",
     "href": "videos/week-2/r-projects.html#the-beauty-of-r-projects",
     "title": "R Projects",
-    "section": "The Beauty of R Projects",
-    "text": "The Beauty of R Projects\n.pull-left[ An R Project is basically a “flag” planted in a certain directory.\nWhen you double click a .Rproj file, it does two things:\n\nOpen RStudio\nSet the working directory to be wherever the .Rproj file lives.\nLink to GitHub, if setup (more on that later!)]\n\n.pull-right[ ]"
+    "section": "",
+    "text": ".pull-left[ An R Project is basically a “flag” planted in a certain directory.\nWhen you double click a .Rproj file, it does two things:\n\nOpen RStudio\nSet the working directory to be wherever the .Rproj file lives.\nLink to GitHub, if setup (more on that later!)]\n\n.pull-right[ ]\n\nclass: center"
   },
   {
     "objectID": "weeks/week-1-quarto.html",
@@ -577,7 +577,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\n\nBroken Circles Group Warm-up\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\n\n\nLab 1 & Challenge 1  (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2 & R Projects\n\nExpert Designer Group Warm-up\n\n\n\n\n\nThurs, 10/3\n\n\n\nLab 2 & Challenge 2  (due 10/6)\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\n\n\n\n\n\n\n\nThurs, 10/10\n\n\n\nLab 3 & Challenge 3  (due 10/13)\n\n\n\n4\nTues, 10/15\nData Organization & Relational Data with tidyr\n\n\n\n\n\n\n\nThurs, 10/17\n\n\n\nLab 4 & Challenge 4  (due 10/20)\n\n\n\n5\nTues, 10/22\nWorking with Strings\n\n\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\n\n\nLab 5 & Challenge 5  (due 10/27)\n\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 10/31\nPortfolio Party\n\n\n\nWeek 6 Reflections & Midterm Portfolio  (due 11/3)\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n\n\n\n\n\n\n\nThurs, 11/7\n\n\n\nLab 7 & Challenge 7  (due 11/10)\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 & Challenge 8  (due 11/17)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 & Challenge 9  (due 11/24)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\n\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\n\nBroken Circles Group Warm-up\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\n\n\nLab 1 & Challenge 1  (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\n\nExpert Designer Group Warm-up\n\n\n\n\n\nThurs, 10/3\n\n\n\nLab 2 & Challenge 2  (due 10/6)\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\n\n\n\n\n\n\n\nThurs, 10/10\n\n\n\nLab 3 & Challenge 3  (due 10/13)\n\n\n\n4\nTues, 10/15\nData Organization & Relational Data with tidyr\n\n\n\n\n\n\n\nThurs, 10/17\n\n\n\nLab 4 & Challenge 4  (due 10/20)\n\n\n\n5\nTues, 10/22\nWorking with Strings\n\n\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\n\n\nLab 5 & Challenge 5  (due 10/27)\n\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 10/31\nPortfolio Party\n\n\n\nWeek 6 Reflections & Midterm Portfolio  (due 11/3)\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n\n\n\n\n\n\n\nThurs, 11/7\n\n\n\nLab 7 & Challenge 7  (due 11/10)\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 & Challenge 8  (due 11/17)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 & Challenge 9  (due 11/24)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\n\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -588,28 +588,28 @@
     "href": "videos/week-1/directories.html#principles-of-reproducibility",
     "title": "Directories & Scientific Reproducibility",
     "section": "Principles of Reproducibility",
-    "text": "Principles of Reproducibility\n\nNuts and bolts\n\nThe documentation for a project should contain everything necessary (e.g., scripts, Quarto files) to reproduce the results.\n\n\n\n\nPortability\n\nAny user should be able to run the scripts on their own computer or workspace.\n\n\n\n\n\nOne-click Reproducibility\n\nReproducing all the computations should require (almost) nothing other than executing a single main script file."
+    "text": "Principles of Reproducibility\n\nNuts and bolts\n\nThe documentation for a project should contain everything necessary (e.g., scripts, Quarto files) to reproduce the results.\n\n\n. . .\n\nPortability\n\nAny user should be able to run the scripts on their own computer or workspace.\n\n\n. . .\n\nOne-click Reproducibility\n\nReproducing all the computations should require (almost) nothing other than executing a single main script file."
   },
   {
     "objectID": "videos/week-1/directories.html#what-is-a-directory",
     "href": "videos/week-1/directories.html#what-is-a-directory",
     "title": "Directories & Scientific Reproducibility",
     "section": "What is a directory?",
-    "text": "What is a directory?\n\nA directory is just a fancy name for a folder.\n\n\n\nYour working directory is the folder that R “thinks” it lives in at the moment.\n\n\ngetwd()\n\n\"/Users/allisontheobold/Documents/STAT 331/videos/week-1\""
+    "text": "What is a directory?\n\nA directory is just a fancy name for a folder.\n\n. . .\n\nYour working directory is the folder that R “thinks” it lives in at the moment.\n\n\ngetwd()\n\n\"/Users/allisontheobold/Documents/STAT 331/videos/week-1\""
   },
   {
     "objectID": "videos/week-1/directories.html#paths",
     "href": "videos/week-1/directories.html#paths",
     "title": "Directories & Scientific Reproducibility",
     "section": "Paths",
-    "text": "Paths\n\nA path describes where a certain file or directory lives.\n\n\n\ngetwd()\n\n\"/Users/allisontheobold/Documents/STAT 331/videos/week-1\"\n\n\n\nThis file lives on my computer in my user files (/Users/),\n\n\non my account (/allisontheobold/),\n\n\nin my Documents (/Documents),\n\n\nin a series of organized folders (STAT 331/videos/week-1)."
+    "text": "Paths\n\nA path describes where a certain file or directory lives.\n\n. . .\n\ngetwd()\n\n\"/Users/allisontheobold/Documents/STAT 331/videos/week-1\"\n\n. . .\nThis file lives on my computer in my user files (/Users/),\n. . .\non my account (/allisontheobold/),\n. . .\nin my Documents (/Documents),\n. . .\nin a series of organized folders (STAT 331/videos/week-1)."
   },
   {
     "objectID": "videos/week-1/directories.html#file-management-check-in",
     "href": "videos/week-1/directories.html#file-management-check-in",
     "title": "Directories & Scientific Reproducibility",
     "section": "File Management Check-in",
-    "text": "File Management Check-in\n\n\nYour STAT 331 folder should live in your Documents.\nIt should have a Week 1 sub-folder.\nInside the Week 1 folder, there should be a Lab 1 sub-folder.\n\n\n\n\n\n\n\n\n\nYour folder cannot synch with anything online!\n\n\nYour STAT 331 folder cannot be in a folder stored on OneDrive or iCloud! Storing your project in this location will cause your code to periodically not run and I cannot help you fix it."
+    "text": "File Management Check-in\n\n\nYour STAT 331 folder should live in your Documents.\nIt should have a Week 1 sub-folder.\nInside the Week 1 folder, there should be a Lab 1 sub-folder.\n\n\n. . .\n\n\n\n\n\n\nYour folder cannot synch with anything online!\n\n\n\nYour STAT 331 folder cannot be in a folder stored on OneDrive or iCloud! Storing your project in this location will cause your code to periodically not run and I cannot help you fix it."
   },
   {
     "objectID": "course-materials/course_resources.html",
@@ -809,8 +809,8 @@
     "objectID": "slides/week-1/week-1-intro-R.html#tuesday-september-24",
     "href": "slides/week-1/week-1-intro-R.html#tuesday-september-24",
     "title": "Intro to STAT 331 / 531 + Intro to R",
-    "section": "Tuesday, September 24",
-    "text": "Tuesday, September 24\nToday we will…\n\nWelcome to Stat 331 / 531: Statistical Computing in R\nIntroductions (Me + You)\nCourse Layout\nBasics of R\nPractice Activity 1: Find the Mistakes"
+    "section": "",
+    "text": "Today we will…\n\nWelcome to Stat 331 / 531: Statistical Computing in R\nIntroductions (Me + You)\nCourse Layout\nBasics of R\nPractice Activity 1: Find the Mistakes"
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#me",
@@ -831,7 +831,7 @@
     "href": "slides/week-1/week-1-intro-R.html#our-classroom-learning-assistant",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "Our Classroom Learning Assistant!",
-    "text": "Our Classroom Learning Assistant!\nWe will be joined in class by Jasmine.\n\nJasmine is…\n\nA forth-year Statistics major pursuing a Data Science minor."
+    "text": "Our Classroom Learning Assistant!\nWe will be joined in class by Jasmine.\n. . .\nJasmine is…\n\nA forth-year Statistics major pursuing a Data Science minor."
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#you",
@@ -845,21 +845,21 @@
     "href": "slides/week-1/week-1-intro-R.html#data-types",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "Data Types",
-    "text": "Data Types\n\nA value is a basic unit of stuff that a program works with.\nValues are allowed to have different data types:\n\n\n\nlogical / boolean: FALSE / TRUE or 0 / 1 values.\n\n\n\n\ninteger: whole numbers.\n\n\n\n\ndouble / float / numeric: decimal numbers.\n\n\n\n\ncharacter / string - text values."
+    "text": "Data Types\n\nA value is a basic unit of stuff that a program works with.\nValues are allowed to have different data types:\n\n. . .\n\nlogical / boolean: FALSE / TRUE or 0 / 1 values.\n\n. . .\n\ninteger: whole numbers.\n\n. . .\n\ndouble / float / numeric: decimal numbers.\n\n. . .\n\ncharacter / string - text values."
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#variables",
     "href": "slides/week-1/week-1-intro-R.html#variables",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "Variables",
-    "text": "Variables\n\nare names that refer to values.\n\n\n\n\nA variable is like a container that holds something - when you refer to the container, you get whatever is stored inside.\nWe assign values to variables using the syntax object_name &lt;- value.\n\nThis can be read as “object name gets value.”\n\n\n\n\n\n\nmessage &lt;- \"So long and thanks for all the fish\"\nyear &lt;- 2025\nthe_answer &lt;- 42.5\nearth_demolished &lt;- FALSE"
+    "text": "Variables\n\nare names that refer to values.\n\n\n\n\nA variable is like a container that holds something - when you refer to the container, you get whatever is stored inside.\nWe assign values to variables using the syntax object_name &lt;- value.\n\nThis can be read as “object name gets value.”\n\n\n\n\n. . .\n\nmessage &lt;- \"So long and thanks for all the fish\"\nyear &lt;- 2025\nthe_answer &lt;- 42.5\nearth_demolished &lt;- FALSE"
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#data-structures",
     "href": "slides/week-1/week-1-intro-R.html#data-structures",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "Data Structures",
-    "text": "Data Structures\n\nHomogeneousHeterogeneous\n\n\n\nevery element has the same data type\n\n\nVector: a one-dimensional column of homogeneous data.\nMatrix: the next step after a vector - it’s a set of homogenous data arranged in a two-dimensional, rectangular format.\n\n\n\n\nelements can be of different types\n\n\nList: a one-dimensional column of heterogeneous data1.\nDataframe: a two-dimensional set of heterogeneous data arranged in a rectangular format.\n\n\n\n\nThis is similar to a dictionary in Python!"
+    "text": "Data Structures\n\nHomogeneousHeterogeneous\n\n\n\nevery element has the same data type\n\n\nVector: a one-dimensional column of homogeneous data.\nMatrix: the next step after a vector - it’s a set of homogenous data arranged in a two-dimensional, rectangular format.\n\n\n\n\nelements can be of different types\n\n\nList: a one-dimensional column of heterogeneous data1.\nDataframe: a two-dimensional set of heterogeneous data arranged in a rectangular format."
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#indexing",
@@ -873,7 +873,7 @@
     "href": "slides/week-1/week-1-intro-R.html#logic",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "Logic",
-    "text": "Logic\nWe can combine logical statements using and, or, and not.\n\n(X AND Y) requires that both X and Y are true.\n(X OR Y) requires that one of X or Y is true.\n(NOT X) is true if X is false, and false if X is true.\n\n\n\nx &lt;- c(TRUE, FALSE, TRUE, FALSE)\ny &lt;- c(TRUE, TRUE, FALSE, FALSE)\n\n\nAndOrNot\n\n\n\nx & y\n\n[1]  TRUE FALSE FALSE FALSE\n\n\n\n\n\nx | y\n\n[1]  TRUE  TRUE  TRUE FALSE\n\n\n\n\n\n!x\n\n[1] FALSE  TRUE FALSE  TRUE"
+    "text": "Logic\nWe can combine logical statements using and, or, and not.\n\n(X AND Y) requires that both X and Y are true.\n(X OR Y) requires that one of X or Y is true.\n(NOT X) is true if X is false, and false if X is true.\n\n. . .\n\nx &lt;- c(TRUE, FALSE, TRUE, FALSE)\ny &lt;- c(TRUE, TRUE, FALSE, FALSE)\n\n\nAndOrNot\n\n\n\nx & y\n\n[1]  TRUE FALSE FALSE FALSE\n\n\n\n\n\nx | y\n\n[1]  TRUE  TRUE  TRUE FALSE\n\n\n\n\n\n!x\n\n[1] FALSE  TRUE FALSE  TRUE"
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#pa-1-find-the-mistakes",
@@ -901,7 +901,7 @@
     "href": "slides/week-1/week-1-intro-R.html#scripts",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "Scripts",
-    "text": "Scripts\n\nScripts (File &gt; New File &gt; R Script) are files of code that are meant to be run on their own.\n\n\n\nScripts can be run in RStudio by clicking the Run button at the top of the editor window when the script is open.\nYou can also run code interactively in a script by:\n\nhighlighting lines of code and hitting run.\nplacing your cursor on a line of code and hitting run.\nplacing your cursor on a line of code and hitting ctrl + enter or command + enter."
+    "text": "Scripts\n\nScripts (File &gt; New File &gt; R Script) are files of code that are meant to be run on their own.\n\n. . .\n\nScripts can be run in RStudio by clicking the Run button at the top of the editor window when the script is open.\nYou can also run code interactively in a script by:\n\nhighlighting lines of code and hitting run.\nplacing your cursor on a line of code and hitting run.\nplacing your cursor on a line of code and hitting ctrl + enter or command + enter."
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#notebooks",
@@ -915,14 +915,14 @@
     "href": "slides/week-1/week-1-intro-R.html#what-is-markdown",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "What is Markdown?",
-    "text": "What is Markdown?\nMarkdown is a markup language.\n\nIt uses special symbols and formatting to make pretty documents.\n\n\n\nitalics – makes italics\nbold – makes bold text\n# – makes headers\n! – includes images or HTML links\n&lt; &gt; – embeds URLs\n\n\n\n\nMarkdown files have the .md extension."
+    "text": "What is Markdown?\nMarkdown is a markup language.\n\nIt uses special symbols and formatting to make pretty documents.\n\n. . .\n\nitalics – makes italics\nbold – makes bold text\n# – makes headers\n! – includes images or HTML links\n&lt; &gt; – embeds URLs\n\n. . .\n\nMarkdown files have the .md extension."
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#what-is-quarto",
     "href": "slides/week-1/week-1-intro-R.html#what-is-quarto",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "What is Quarto?",
-    "text": "What is Quarto?\nQuarto unifies and extends the R Markdown ecosystem.\n\nQuarto files have the .qmd extension.\n\n\n\nQuarto is the next generation R Markdown."
+    "text": "What is Quarto?\nQuarto unifies and extends the R Markdown ecosystem.\n\nQuarto files have the .qmd extension.\n\n\n\n\n\n\n\n\n\n\n\nQuarto is the next generation R Markdown."
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#highlights-of-quarto",
@@ -1020,7 +1020,7 @@
     "href": "slides/week-1/week-1-intro-R.html#end-of-the-week",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "End of the Week",
-    "text": "End of the Week\n\nDuring Class on ThursdayAfter Thursday’s Class\n\n\n\nDebrief Practice Activity\nWarm-up review\nStart Lab Assignment\n\n\n\n\nFinish remaining problems of the Lab Assignment\nComplete Challenge Assignment\n\n\n\n\n\n\n\nLabs & Challenges Due Sunday by Midnight\n\n\nTo keep everyone on track with the coursework, your Lab and Challenges are due by midnight every Sunday. You are permitted to request up to four (4) deadline extensions by filling out the deadline extension form."
+    "text": "End of the Week\n\nDuring Class on ThursdayAfter Thursday’s Class\n\n\n\nDebrief Practice Activity\nWarm-up review\nStart Lab Assignment\n\n\n\n\nFinish remaining problems of the Lab Assignment\nComplete Challenge Assignment\n\n\n\n\n\n\n\nLabs & Challenges Due Sunday by Midnight\n\n\n\nTo keep everyone on track with the coursework, your Lab and Challenges are due by midnight every Sunday. You are permitted to request up to four (4) deadline extensions by filling out the deadline extension form."
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#or",
@@ -1056,5 +1056,705 @@
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThis is similar to a dictionary in Python!↩︎"
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-load.html",
+    "href": "weeks/week-2-projects-data-load.html",
+    "title": "R Projects & Reading Data",
+    "section": "",
+    "text": "Describe what an R Project is\nOutline how an R Project affects the file paths used to read in data\n\nRead in data from common formats into R\n\n▶️ Watch Videos: 14 minutes\n📖 Readings: 15-20 minutes\n💻 Activities: 30 minutes\n✅ Check-ins: 1"
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-load.html#learning-objectives",
+    "href": "weeks/week-2-projects-data-load.html#learning-objectives",
+    "title": "R Projects & Reading Data",
+    "section": "",
+    "text": "Describe what an R Project is\nOutline how an R Project affects the file paths used to read in data\n\nRead in data from common formats into R\n\n▶️ Watch Videos: 14 minutes\n📖 Readings: 15-20 minutes\n💻 Activities: 30 minutes\n✅ Check-ins: 1"
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-load.html#directories-paths-and-projects",
+    "href": "weeks/week-2-projects-data-load.html#directories-paths-and-projects",
+    "title": "R Projects & Reading Data",
+    "section": "0.2 Directories, Paths, and Projects",
+    "text": "0.2 Directories, Paths, and Projects\nLast week, we learned how to organize our personal files and locate them using absolute and relative file paths. The idea of a “base folder” or starting place was introduced as a working directory. In R, there are two ways to set up your file path and file system organization:\n\n\n\n\n\nSet your working directory in R (do not reccommend)\nUse RProjects (preferred!)\n\n\nWorking Directories in R\nTo find where your working directory is in R, you can either look at the top of your console or type getwd() into your console.\n\ngetwd()\n\n[1] \"/Users/atheobol/Documents/Current Research/IUSE/groupworthy-data-science/weeks\"\n\n\nAlthough it is not recommended, you can set your working directory in R with setwd():\n\nsetwd(\"/path/to/my/assignment/folder\")\n\n\n\n\n\n\n\nFile Paths in R\n\n\n\nA quick warning on file paths is that Mac / Linux and Windows differ in the direction of their backslash to separate folder locations. Mac/Linux use / (e.g. STAT331/Week1) while Window’s uses \\ (e.g. STAT331\\Week1).\n\n\n\n\nRprojects"
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-load.html#required-reading-workflow-r-projects",
+    "href": "weeks/week-2-projects-data-load.html#required-reading-workflow-r-projects",
+    "title": "R Projects & Reading Data",
+    "section": "1.3 📖 Required Reading: Workflow (R Projects)",
+    "text": "1.3 📖 Required Reading: Workflow (R Projects)\n\n\n\n\n\n\nOnly read Section 6.2!\n\n\n\n\n\n\nIf you open up your folder from Lab 1, you will notice that you have a blue cube (an RProject) living in this folder! The RProject lives in this folder for two reasons, (1) when you copied the Lab 1 GitHub repository you told RStudio you wanted to make a new RProject, and (2) in order for RStudio to talk with GitHub you need to use an RProject.\nHowever, if you look at your STAT331 folder, you should not see a blue cube since we never created an RProject in this folder. Let’s do that now!\nTo add a Rproject to an existing folder on your computer (e.g., you already created a folder for this class), first open RStudio on your computer and click File &gt; New Project, then:\n\n\n\nNavigation prompt for creating a new RProject in an existing directory\n\n\nThen, browse on your computer to where you saved your STAT331 folder last week. This should be in your Documents folder, similar to where mine is saved!\n\n\n\nNavigation prompt for selecting which existing folder in which the RProject should be created.\n\n\nOnce you click “Create Project”, your existing folder, STAT331 should now contain a STAT331.Rproj file. This is your new “home” base for this class - whenever you refer to a file with a relative path it will begin to look for it here."
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-load.html#check-in-2.2-rstudio-projects",
+    "href": "weeks/week-2-projects-data-load.html#check-in-2.2-rstudio-projects",
+    "title": "R Projects & Reading Data",
+    "section": "1.4 ✅ Check-in 2.2: RStudio Projects",
+    "text": "1.4 ✅ Check-in 2.2: RStudio Projects\nTake a screenshot of your class directory, showing the RProject living inside your STAT331 folder."
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-load.html#where-does-my-data-live",
+    "href": "weeks/week-2-projects-data-load.html#where-does-my-data-live",
+    "title": "R Projects & Reading Data",
+    "section": "2.1 Where does my data live?",
+    "text": "2.1 Where does my data live?\n▶️ Required Video: Data Locations and the {here} package (8 minutes)"
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-load.html#how-do-i-load-my-data",
+    "href": "weeks/week-2-projects-data-load.html#how-do-i-load-my-data",
+    "title": "R Projects & Reading Data",
+    "section": "2.2 How do I load my data?",
+    "text": "2.2 How do I load my data?\n📖 Required Reading: Data Import"
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-load.html#check-in-2.3-loading-data",
+    "href": "weeks/week-2-projects-data-load.html#check-in-2.3-loading-data",
+    "title": "R Projects & Reading Data",
+    "section": "2.3 ✅ Check-in 2.3: Loading Data",
+    "text": "2.3 ✅ Check-in 2.3: Loading Data\nFor this check-in you are asked to work through reading in different data sets. You can download the Quarto template for your investigation here: data-import-practice.qmd\nThe folder Age_Data contains several data sets with the names and ages of five individuals. The data sets are stored as different file types. Download Ages_data.zip here, make sure to unzip the folder, save these in a reasonable place (e.g., STAT331 &gt; Week 2 &gt; Checkin or STAT331 &gt; Checkins &gt; Week 2).\n\n\n\n\n\n\nExtracting zip folders\n\n\n\nYou will need to extract the contents of the ages.zip file, that means you will need to uncompress the files from the folder for RStudio to know where to get the data from.\n\n\nOnce you have the data saved (and extracted) in your STAT 331 folder, use the readr and readxl packages to complete the following and fill in the “gap” code in the Canvas quiz:\n\nLoad the appropriate packages for reading in data.\nRead in the data set ages.csv\nRead in the data set ages_tab.txt\nRead in the data set ages_mystery.txt\nRead in the data set ages.xlsx\nFind a way to use read_csv() to read ages.csv with the variable “Name” as a factor data type and “Age” as a character data type."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html",
+    "href": "slides/week-1/week-1-intro-version-control.html",
+    "title": "Version Control",
+    "section": "",
+    "text": "Today we will…\n\nOpen-Ended Analysis from Week 5\nQuestions about Midterm?\nFinal Project Group Formation\nNew Material\n\ngit/GitHub\nConnect GitHub to RStudio\n\nPA 6: Merge Conflicts – Collaborating within a GitHub Repo"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#monday-may-6",
+    "href": "slides/week-1/week-1-intro-version-control.html#monday-may-6",
+    "title": "Version Control",
+    "section": "",
+    "text": "Today we will…\n\nOpen-Ended Analysis from Week 5\nQuestions about Midterm?\nFinal Project Group Formation\nNew Material\n\ngit/GitHub\nConnect GitHub to RStudio\n\nPA 6: Merge Conflicts – Collaborating within a GitHub Repo"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#open-ended-analysis-from-week-5",
+    "href": "slides/week-1/week-1-intro-version-control.html#open-ended-analysis-from-week-5",
+    "title": "Version Control",
+    "section": "Open-Ended Analysis from Week 5",
+    "text": "Open-Ended Analysis from Week 5\nWritten Description\n\nStart with an intro to the data and topic.\nIntersperse written description and table / plot output!\nDo not use variable names or R function names in your written text.\nBreaking up sections with headers can help with organization and flow.\nDo not print out the data!"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#open-ended-analysis-from-week-5-1",
+    "href": "slides/week-1/week-1-intro-version-control.html#open-ended-analysis-from-week-5-1",
+    "title": "Version Control",
+    "section": "Open-Ended Analysis from Week 5",
+    "text": "Open-Ended Analysis from Week 5\n“Table of Summary Statistics”\n\nNot asking for inferential statistics!\nE.g., We can construct a table of the mean amount of protein per manufacturer and shelf.\n\n\n\nCode\ncereal |&gt; \n  group_by(manuf, shelf) |&gt; \n  summarize(mean_protein = mean(protein)) |&gt; \n  arrange(shelf) |&gt; \n  pivot_wider(id_cols = manuf,\n              names_from = shelf,\n              values_from = mean_protein,\n              names_prefix = \"Shelf_\")\n\n\n`summarise()` has grouped output by 'manuf'. You can override using the\n`.groups` argument.\n\n\n# A tibble: 7 × 4\n# Groups:   manuf [7]\n  manuf Shelf_1 Shelf_2 Shelf_3\n  &lt;fct&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1 G        3       1.29    2.67\n2 K        2.75    2.14    2.92\n3 N        2.67    2.5     4   \n4 P        1.5     1       3   \n5 Q        5       2       2.5 \n6 R        2      NA       3   \n7 A       NA       4      NA"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#open-ended-analysis-from-week-5-2",
+    "href": "slides/week-1/week-1-intro-version-control.html#open-ended-analysis-from-week-5-2",
+    "title": "Version Control",
+    "section": "Open-Ended Analysis from Week 5",
+    "text": "Open-Ended Analysis from Week 5\nTable Design\n\nThink about the number of rows/columns – is it readable?\nChange row/column names to be understandable.\n\nPlot Design\n\nWhat type of plot will best display the data?\nWhat order of elements will best display the comparison you want to make?\nThink about: colors, order of categories, if a legend is needed, etc."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#final-project-group-formation",
+    "href": "slides/week-1/week-1-intro-version-control.html#final-project-group-formation",
+    "title": "Version Control",
+    "section": "Final Project Group Formation",
+    "text": "Final Project Group Formation\nYou will be completing a final project in teams of four.\n\nGroup Formation Survey due Monday, 5/13 at 11:59pm\n\nHelp me gather information about your preferences and work styles to facilitate team formation.\nYour team does not all need to be in the same section, but you might find it useful for in-class work time.\n\nGroup Contracts (5/20)\nProject Proposal (5/28)\nLinear Regression (6/3)\nFinal Deliverable (6/12)"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#what-is-version-control",
+    "href": "slides/week-1/week-1-intro-version-control.html#what-is-version-control",
+    "title": "Version Control",
+    "section": "What is version control?",
+    "text": "What is version control?\n\nA process of tracking changes to a file or set of files over time so that you can recall specific versions later."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#git-vs-github",
+    "href": "slides/week-1/week-1-intro-version-control.html#git-vs-github",
+    "title": "Version Control",
+    "section": "Git vs GitHub",
+    "text": "Git vs GitHub\n\n\n\nknitr::include_graphics(\"https://bornsql.ca/wp-content/uploads/2022/03/Git-Logo-2Color.png\") \n\n\n\n\n\n\n\n\n\nA system for version control that manages a collection of files in a structured way.\nUses the command line or a GUI.\nGit is local."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#git-vs-github-1",
+    "href": "slides/week-1/week-1-intro-version-control.html#git-vs-github-1",
+    "title": "Version Control",
+    "section": "Git vs GitHub",
+    "text": "Git vs GitHub\n\n\n\nknitr::include_graphics(\"https://bornsql.ca/wp-content/uploads/2022/03/Git-Logo-2Color.png\") \n\n\n\n\n\n\n\n\n\nA system for version control that manages a collection of files in a structured way.\nUses the command line or a GUI.\nGit is local.\n\n\n\nknitr::include_graphics(\"https://pngimg.com/d/github_PNG65.png\") \n\n\n\n\n\n\n\n\n\nA cloud-based service that lets you use git across many computers.\nBasic services are free, advanced services are paid (like RStudio!).\nGitHub is remote."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#why-learn-github",
+    "href": "slides/week-1/week-1-intro-version-control.html#why-learn-github",
+    "title": "Version Control",
+    "section": "Why Learn GitHub?",
+    "text": "Why Learn GitHub?\n\nGitHub provides a structured way for tracking changes to files over the course of a project.\n\n\nThink Google Docs or Dropbox history, but more structured and powerful!\n\n\nGitHub makes it easy to have multiple people working on the same files at the same time.\nYou can host a URL of fun things (like the class text, these slides, a personal website, etc.) with GitHub pages."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#git-repositories",
+    "href": "slides/week-1/week-1-intro-version-control.html#git-repositories",
+    "title": "Version Control",
+    "section": "Git Repositories",
+    "text": "Git Repositories\nGit is based on repositories.\n\n\n\nThink of a repository (repo) as a directory (folder) for a single project.\n\nThis directory will likely contain code, documentation, data, to do lists, etc. associated with the project.\nYou can link a local repo with a remote copy.\n\n\n\n\nknitr::include_graphics(\"https://miro.medium.com/max/512/1*w07Er4gPg8H2Ew-P0HhxNA.png\")\n\n\n\n\n\n\n\n\n\n\n\nTo create a repository, you can start with your local computer or you can start with the remote copy."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#gitignore",
+    "href": "slides/week-1/week-1-intro-version-control.html#gitignore",
+    "title": "Version Control",
+    "section": ".gitignore",
+    "text": ".gitignore\nSometimes there are files that you do not want to track.\n\nA .gitignore file specifies the files that git should intentionally ignore.\nOften these are machine generated files (e.g., /bin, .DS_Store) or files/directories that you do not want to be shared (e.g., solutions/).\nWe want to ignore .Rproj files!"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#cloning-a-repo",
+    "href": "slides/week-1/week-1-intro-version-control.html#cloning-a-repo",
+    "title": "Version Control",
+    "section": "Cloning a Repo",
+    "text": "Cloning a Repo\n\n\n\nCreate an exact copy of a remote repo on your local machine.\n\n\nknitr::include_graphics(\"images/git_clone_diagram.png\")"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#committing-changes",
+    "href": "slides/week-1/week-1-intro-version-control.html#committing-changes",
+    "title": "Version Control",
+    "section": "Committing Changes",
+    "text": "Committing Changes\nTell git you have made changes you want to add to the repo.\n\nAlso provide a commit message – a short label describing what the changes are and why they exist.\n\n\n\nThe red line is a change we commit (add) to the repo.\n\n\nknitr::include_graphics(\"images/git-commit.png\")\n\n\n\n\n\n\n\n\n\n\n. . .\nThe log of these changes (and the file history) is called your git commit history.\n\nYou can always go back to old copies!"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#commit-tips",
+    "href": "slides/week-1/week-1-intro-version-control.html#commit-tips",
+    "title": "Version Control",
+    "section": "Commit Tips",
+    "text": "Commit Tips\n\nUse short, but informative commit messages.\nCommit small blocks of changes – commit every time you accomplish a small task.\n\nYou’ll have a set of bite-sized changes (with description) to serve as a record of what you’ve done.\nWith frequent commits, its easier to find the issue when you mess up!"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#pushing-changes",
+    "href": "slides/week-1/week-1-intro-version-control.html#pushing-changes",
+    "title": "Version Control",
+    "section": "Pushing Changes",
+    "text": "Pushing Changes\n\n\n\nUpdate the copy of your repo on GitHub so it has the most recent changes you’ve made on your machine.\n\n\nknitr::include_graphics(\"images/git_push_diagram.png\")"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#pulling-changes",
+    "href": "slides/week-1/week-1-intro-version-control.html#pulling-changes",
+    "title": "Version Control",
+    "section": "Pulling Changes",
+    "text": "Pulling Changes\n\n\n\nUpdate the local copy of your repo (the copy on your computer) with the version on GitHub.\n\n\nknitr::include_graphics(\"images/git_pull_diagram.png\")"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#pushing-and-pulling",
+    "href": "slides/week-1/week-1-intro-version-control.html#pushing-and-pulling",
+    "title": "Version Control",
+    "section": "Pushing and Pulling",
+    "text": "Pushing and Pulling\n\nknitr::include_graphics(\"images/pushing-and-pulling.jpg\")"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#workflow",
+    "href": "slides/week-1/week-1-intro-version-control.html#workflow",
+    "title": "Version Control",
+    "section": "Workflow",
+    "text": "Workflow\nWhen you have an existing local repo:\n\n\nPull the repo (especially if collaborating).\nMake some changes locally.\nCommit the changes to git.\nPull any changes from the remote repository (again!).\nResolve any merge conflicts.\nPush your changes to GitHub."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#merge-conflicts",
+    "href": "slides/week-1/week-1-intro-version-control.html#merge-conflicts",
+    "title": "Version Control",
+    "section": "Merge Conflicts",
+    "text": "Merge Conflicts\nThese occur when git encounters conflicting changes."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#merge-conflicts-1",
+    "href": "slides/week-1/week-1-intro-version-control.html#merge-conflicts-1",
+    "title": "Version Control",
+    "section": "Merge Conflicts",
+    "text": "Merge Conflicts\n\nMaybe you are working in real time on the same line of code or text as a collaborator.\nMaybe you forgot to push your changes the last time you finished working.\nMaybe you forgot to pull your changes before you started working this time."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#merge-conflicts-2",
+    "href": "slides/week-1/week-1-intro-version-control.html#merge-conflicts-2",
+    "title": "Version Control",
+    "section": "Merge Conflicts",
+    "text": "Merge Conflicts\nWe will work on resolving merge conflicts today!\n\n. . .\nBut when all else fails…\n\nburn your local repo to the ground and clone again.\n\n\nknitr::include_graphics(\"https://t3.ftcdn.net/jpg/00/60/10/14/240_F_60101445_pT7VV0oc1OZHeyb4bjzsavtJbPk07kWn.jpg\")"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#tips-for-avoiding-merge-conflicts",
+    "href": "slides/week-1/week-1-intro-version-control.html#tips-for-avoiding-merge-conflicts",
+    "title": "Version Control",
+    "section": "Tips for Avoiding Merge Conflicts",
+    "text": "Tips for Avoiding Merge Conflicts\n\nAlways pull before you start working and always push after you are done working!\n\nIf you do this, you will only have problems if two people are making local changes to the same line in the same file at the same time.\n\n\n. . .\n\nIf you are working with collaborators in real time, pull, commit, and push often.\n\n. . .\n\nGit commits lines – lines of code, lines of text, etc.\n\nPractice good code format – no overly long lines!"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#install-load-r-packages",
+    "href": "slides/week-1/week-1-intro-version-control.html#install-load-r-packages",
+    "title": "Version Control",
+    "section": "Install + Load R Packages",
+    "text": "Install + Load R Packages\nWork in your console or an Rscript for this.\n\nInstall and load the usethis package.\n\n\ninstall.packages(\"usethis\")\nlibrary(usethis)\n\n\nInstall and load the gitcreds Package.\n\n\ninstall.packages(\"gitcreds\")\nlibrary(gitcreds)"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#configure-git",
+    "href": "slides/week-1/week-1-intro-version-control.html#configure-git",
+    "title": "Version Control",
+    "section": "Configure git",
+    "text": "Configure git\n\nTell git your email and GitHub username.\n\n\nuse_git_config(user.name = \"JaneDoe2\", user.email = \"jane@example.org\")\n\n(Nothing should happen.)"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#generate-your-personal-access-token",
+    "href": "slides/week-1/week-1-intro-version-control.html#generate-your-personal-access-token",
+    "title": "Version Control",
+    "section": "Generate your Personal Access Token",
+    "text": "Generate your Personal Access Token\n\nGenerate a PAT.\n\n\ncreate_github_token()\n\n\nThis will open GitHub and ask you to log in.\nFill in a Note and an Expiration (AT LEAST 60 days from now).\nClick Generate Token.\n\n\nknitr::include_graphics(\"images/pat-generate.png\")"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#store-your-pat",
+    "href": "slides/week-1/week-1-intro-version-control.html#store-your-pat",
+    "title": "Version Control",
+    "section": "Store your PAT",
+    "text": "Store your PAT\n\nCopy your PAT.\n\n\nknitr::include_graphics(\"images/pat-copy.jpg\")\n\n\n\n\n\n\n\n\n\nRun the following code.\n\n\ngitcreds_set()\n\nWhen prompted to Enter password or token:, paste your PAT."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#verify-your-pat",
+    "href": "slides/week-1/week-1-intro-version-control.html#verify-your-pat",
+    "title": "Version Control",
+    "section": "Verify your PAT",
+    "text": "Verify your PAT\n\nLet’s verify.\n\n\ngit_sitrep()\n\n\nknitr::include_graphics(\"images/pat-verify.png\")"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#pa-6-merge-conflicts",
+    "href": "slides/week-1/week-1-intro-version-control.html#pa-6-merge-conflicts",
+    "title": "Version Control",
+    "section": "PA 6: Merge Conflicts",
+    "text": "PA 6: Merge Conflicts\nYou will be completing this activity in groups of 4.\n\n\n\n\n\n\nIMPORTANT\n\n\n\nThis activity will only work if you follow the directions in the exact order that I have specified them. Do not work ahead of your group members!"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#to-do",
+    "href": "slides/week-1/week-1-intro-version-control.html#to-do",
+    "title": "Version Control",
+    "section": "To do…",
+    "text": "To do…\n\nPA 6: Merge Conflicts\n\nDue Monday, 5/6 at 11:59pm – TODAY.\n\nMidterm Exam\n\nWednesday, 5/8 + 24 hours.\n\nFinal Project Group Formation Survey\n\nDue Monday, 5/13 at 11:59pm\n\n\n\n\n\n\n\n\nOffice Hours\n\n\n\nTuesday from 1:00-2:00pm and Wednesday 10:30-11:30am. None on Thursday or Friday."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#wednesday-may-8-midterm-exam",
+    "href": "slides/week-1/week-1-intro-version-control.html#wednesday-may-8-midterm-exam",
+    "title": "Version Control",
+    "section": "Wednesday, May 8 – Midterm Exam",
+    "text": "Wednesday, May 8 – Midterm Exam\n\nPlease grab separators from the sides of the room as you enter.\nI will pass out a hard copy of the exam.\nCanvas will unlock the .qmd template at the beginning of class."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#wednesday-may-8-midterm-exam-1",
+    "href": "slides/week-1/week-1-intro-version-control.html#wednesday-may-8-midterm-exam-1",
+    "title": "Version Control",
+    "section": "Wednesday, May 8 – Midterm Exam",
+    "text": "Wednesday, May 8 – Midterm Exam\nSection 1: General Questions\n\nCannot work on Section 2 until submit Section 1.\n\nSection 2: Short Answer\n\nDownload .qmd template from Canvas.\nSubmit .qmd and .html files on Canvas by the end of class.\n\nSection 3: Open-Ended Analysis\n\nCreate your own .qmd file.\nSubmit .qmd and .html file 24-hours after the end of class."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#to-do-1",
+    "href": "slides/week-1/week-1-intro-version-control.html#to-do-1",
+    "title": "Version Control",
+    "section": "To do…",
+    "text": "To do…\n\nRead Chapter 7: Writing Functions\n\nCheck-in 7.1 due Monday, 5/13 at 10:00am\n\nFinal Project Group Formation\n\nDue Monday, 5/13 at 11:59pm"
+  },
+  {
+    "objectID": "videos/week-2/r-projects.html",
+    "href": "videos/week-2/r-projects.html",
+    "title": "R Projects",
+    "section": "",
+    "text": ".pull-left[ An R Project is basically a “flag” planted in a certain directory.\nWhen you double click a .Rproj file, it does two things:\n\nOpen RStudio\nSet the working directory to be wherever the .Rproj file lives.\nLink to GitHub, if setup (more on that later!)]\n\n.pull-right[ ]\n\nclass: center"
+  },
+  {
+    "objectID": "videos/week-1/debugging-errors.html",
+    "href": "videos/week-1/debugging-errors.html",
+    "title": "Debugging Errors!",
+    "section": "",
+    "text": "Error: &lt;text&gt;:4:0: unexpected end of input\n2: seq(from = 1, to = 10, by = 1\n3: \n  ^\n\n\n\n\n\n\n\n\n\n\n\n\nError: &lt;text&gt;:2:23: unexpected symbol\n1: \n2: seq(from = 1, to = 10 by\n                         ^\n\n\n\n\n\n\n\n\n\n\n\n\nError in sequence.default(from = 1, to = 10, by = 1): argument \"nvec\" is missing, with no default\n\n\n\n\n\nAre you using the right input that the function expects?\n–\n\n\n\n\n\n\n\nError in sqrt(\"1\"): non-numeric argument to mathematical function\n\n\n\n\n\nAre you expecting the right output of the function?\n–"
+  },
+  {
+    "objectID": "group-activities/week-2/ggplot-activity.html",
+    "href": "group-activities/week-2/ggplot-activity.html",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "",
+    "text": "Download the .qmd template and save it in a reasonable location.\nToday you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.\nSome advice:"
+  },
+  {
+    "objectID": "group-activities/week-2/ggplot-activity.html#getting-started",
+    "href": "group-activities/week-2/ggplot-activity.html#getting-started",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Getting Started",
+    "text": "Getting Started\nWe will be creating visualizations using the ggplot2 package.\nFor this activity, we will be exploring the penguins data from the palmerpenguins package, which has fantastic documentation with really awesome artwork. So, you will need to install the palmerpenguins package.\ninstall.packages(\"palmerpenguins\")\n\n\n\n\n\n\ninstall.packages() in the console NOT in your .qmd file!\n\n\n\nYou should type this into your console and NOT include it in a code chunk in your .qmd file. Recall that we only have to install a package once, but load it each time we open R. Each time you render your .qmd file, ALLthe code chunks are run. Therefore, installing a package in a code chunk would cause R to unnecessarily install the package over and over again. Not good."
+  },
+  {
+    "objectID": "group-activities/week-2/ggplot-activity.html#creating-a-setup-code-chunk",
+    "href": "group-activities/week-2/ggplot-activity.html#creating-a-setup-code-chunk",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Creating a Setup Code Chunk",
+    "text": "Creating a Setup Code Chunk\n\nInsert a code chunk at the beginning of your document (directly under the YAML).\nName the code chunk setup.\nUse the hashpipe #| to specify a code chunk option that prevents any messages (e.g., from loading in packages) from appearing.\nLoad in the tidyverse or ggplot2 package.\nLoad in the palmerpenguins package.\n\n\n\n\n\n\n\nCode chunk name: setup\n\n\n\nNaming your code chunk “setup” has special properties in a .qmd - specifically, this code chunk will run automatically when you try to run a subsequent code chunk. This ensures all packages and any other specifications for your document are loaded and will not cause you errors or messages."
+  },
+  {
+    "objectID": "group-activities/week-2/ggplot-activity.html#dataset-penguins",
+    "href": "group-activities/week-2/ggplot-activity.html#dataset-penguins",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Dataset: penguins",
+    "text": "Dataset: penguins\nI like to start by seeing the dataset I will be working with, so I am going to pull the penguins data into my R environment. Do you see it in the top right Environment tab?\n\ndata(penguins)\n\nWarning in data(penguins): data set 'penguins' not found\n\n\n\nGet to know your data. What are the variables and what units are they measured in? What does each row represent?"
+  },
+  {
+    "objectID": "group-activities/week-2/ggplot-activity.html#graphics",
+    "href": "group-activities/week-2/ggplot-activity.html#graphics",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Graphics",
+    "text": "Graphics\n\n\n\n\n\n\nNote\n\n\n\nMake sure to give your plots reader friendly axes labels!\n\n\n\n\n\n\n\n\nNote\n\n\n\nMake sure your final report does not display any wanrings or messages from RStudio!\n\n\n\nUse https://excalidraw.com/ (or pen and paper, a tablet, etc.) to create a game plan for a barchart of species, where species is mapped to the fill color of the barchart. Save or take a screenshot of your game plan – you will be uploading this to Canvas with your practice activity submission.\nUse ggplot2 to create the barchart you outlined above.\n\n\nUse ggplot2 to create a scatterplot of the relationship between the bill length (bill_length_mm) and bill depth (bill_depth_mm).\n\n\nBuilding on your code from (9), add an aesthetic to differentiate the species by color.\n\n\nBuilding on your code from (10), add the location of the penguins (island) to your visualization. There us more than one method to address this, however, one method will more easily address the questions below, so you might want to read those questions first!"
+  },
+  {
+    "objectID": "group-activities/week-2/ggplot-activity.html#canvas-quiz",
+    "href": "group-activities/week-2/ggplot-activity.html#canvas-quiz",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Canvas Quiz",
+    "text": "Canvas Quiz\n\n\n\n\n\n\nUse the plots you created to answer the following questions on Canvas.\n\n\n\n\nWhich species of penguins is represented least in the Palmer Penguins data set?\nWhich species of penguins are found on every island?\nWhich species of penguins are found only on Dream Island?\nWhich species of penguins are found only on Biscoe Island?\nColor deficiencies can make differentiating groups difficult - which aesthetic could you add to your plot to double encode species?"
+  },
+  {
+    "objectID": "group-activities/week-1/base-r.html",
+    "href": "group-activities/week-1/base-r.html",
+    "title": "Practice Activity 1: Find the Mistakes",
+    "section": "",
+    "text": "Today you will be creating and manipulating vectors, lists, and data frames to uncover a top secret message.\nSome advice:"
+  },
+  {
+    "objectID": "group-activities/week-1/base-r.html#part-one-setup",
+    "href": "group-activities/week-1/base-r.html#part-one-setup",
+    "title": "Practice Activity 1: Find the Mistakes",
+    "section": "Part One: Setup",
+    "text": "Part One: Setup\nEach of the following R chunks will cause an error and / or do the desired task incorrectly. Find the mistake, and correct it to complete the intended action.\n\nCreate vectors containing the upper case letters, lower case letters, and some punctuation marks.\n\n\nlower_case &lt;- c(\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\",\n                \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\")\n\nupper_case &lt;- c(\"A\", \"B\", \"C\", \"D\", \"E\", \"F\", \"G\", \"H\" \"I\", \"J\", \"K\", \"L\", \"M\",\n                \"N\", \"O\", \"P\", \"Q\", \"R\", \"S\", \"T\", \"U\", \"V\", \"W\", \"X\", \"Y\", \"Z\")\n\npunctuation &lt;- c(\".\", \",\", \"!\", \"?\", \"'\", \"\"\", \"(\", \")\", \" \", \"-\", \";\", \":\")\n\n\nMake one long vector containing all the symbols.\n\n\nmy_symbols &lt;- cbind(lower_case, upper_case, punctuation)\n\n\nTurn the my_symbols vector into a data frame, with one column named “Symbol”.\n\n\nmy_symbols &lt;- dataframe(Symbol = my_symbols)\n\n\nFind the total number of symbols we have in our data frame.\n\n\nlen &lt;- length(my_symbols)\n\n\nCreate a new variable in your dataframe that assigns a number to each symbol.\n\n\nmy_symbols%Num &lt;- 1:len"
+  },
+  {
+    "objectID": "group-activities/week-1/base-r.html#part-two-decoding-the-secret-message.",
+    "href": "group-activities/week-1/base-r.html#part-two-decoding-the-secret-message.",
+    "title": "Practice Activity 1: Find the Mistakes",
+    "section": "Part Two: Decoding the secret message.",
+    "text": "Part Two: Decoding the secret message.\nThis chunk will load up the encoded secret message as a vector:\n\ntop_secret &lt;- read_csv(\"https://www.dropbox.com/s/k72h1zewk4gtqep/PA_Secret_Code?dl=1\", \n                       col_names = FALSE)$X1\n\nBy altering this top secret set of numbers, you will be able to create a message. Write your own code to complete the steps, in the order given below.\n\nAdd 14 to every number.\nMultiply every number by 18, then subtract 257.\nUse the exp() function to exponentiate every number.\nSquare every number.\n\nHint: To update a vector after performing an operation, you overwrite the existing object with its updated counterpart. This looks something like this:\nx &lt;- x + 12,\nwhere the original value(s) in x have had 12 added to them, and the resulting values are put back in to the object named x.\n\n## Code to carry out steps 6-9 \n\nCheckpoint: Headquarters has informed you that at this stage of decoding, there should be 352 numbers in the secret message that are below 17. Write the code to verify that this is true for your top_secret object!\nHint: This is what is called a “relational” comparison, where you compare an object to a number and R will give you a vector of TRUEs and FALSEs based on whether the comparison is / is not met. You can then use these TRUEs and FALSEs as numbers, since TRUE = 1 and FALSE = 0 in R land.\n\n# Write code to verify that there are 352 numbers with values **below** 17\n\nNext, carry out the following steps:\n\nTurn your vector of numbers into a matrix with 5 columns.\nSeparately from your top secret numbers, create a vector of all the even numbers between 1 and 382. Name it “evens”. That is, “evens” should contain 2, 4, 6, 8 …, 382.\nSubtract the “evens” vector from the first column of your secret message matrix.\nSubtract 100 from all numbers 18-24th rows of the 3rd column.\nMultiply all numbers in the 4th and 5th column by 2.\nTurn your matrix back into a vector.\n\n\n## Code to carry out steps 10-15\n\nCheckpoint: Headquarters has informed you that at this stage of decoding, all numbers in indices 500 and beyond are below 100. Write the code to verify that this is true for your top_secret object!\nHint: Use a relational comparison similar to what you used in the last checkpoint, but here you will need to subset values from your vector!\n\n# Write code to verify that indices 500 and beyond have values **below** 100\n\n\nTake the square root of all numbers in indices 38 to 465.\nUse the round() function to round all numbers to the nearest whole number.\nReplace all instances of the number 39 with 20.\n\nHint: Step 18 requires another relational comparison, but this time it is equality. Equality in R is checked with a double equal sign rather than a single equal sign!\n\n# Code for steps 16-18\n\nCheckpoint: Headquarters has informed you that your final message should have 344 even numbers.\nHint: Checking for divisibility is an interesting operation that isn’t done much in R. Modulus is the operation you are interested in, where you are checking for whether the numbers are divisible by 2, with no remainder. See what you can find about modulus in R!\n\n# Code to verify how many even numbers are in your top_secret vector"
+  },
+  {
+    "objectID": "group-activities/week-1/base-r.html#part-3-the-secret-message",
+    "href": "group-activities/week-1/base-r.html#part-3-the-secret-message",
+    "title": "Practice Activity 1: Find the Mistakes",
+    "section": "Part 3: The secret message!",
+    "text": "Part 3: The secret message!\nUse your final vector of numbers as indices for my_symbols to discover the final message, by running the following code:\n\nstringr::str_c(my_symbols$Symbol[top_secret], collapse = \"\")\n\nGoogle the first line of this message, if you do not recognize it, to see what poem it is."
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-load.html#working-directories-in-r",
+    "href": "weeks/week-2-projects-data-load.html#working-directories-in-r",
+    "title": "R Projects & Reading Data",
+    "section": "1.1 Working Directories in R",
+    "text": "1.1 Working Directories in R\nTo find where your working directory is in R, you can either look at the top of your console or type getwd() into your console.\n\ngetwd()\n\n[1] \"/Users/atheobol/Documents/Current Research/IUSE/groupworthy-data-science/weeks\"\n\n\nAlthough it is not recommended, you can set your working directory in R with setwd():\n\nsetwd(\"/path/to/my/assignment/folder\")\n\n\n\n\n\n\n\nFile Paths in R\n\n\n\nA quick warning on file paths is that Mac / Linux and Windows differ in the direction of their backslash to separate folder locations. Mac/Linux use / (e.g. STAT331/Week1) while Window’s uses \\ (e.g. STAT331\\Week1)."
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-load.html#rprojects",
+    "href": "weeks/week-2-projects-data-load.html#rprojects",
+    "title": "R Projects & Reading Data",
+    "section": "1.2 Rprojects",
+    "text": "1.2 Rprojects"
+  },
+  {
+    "objectID": "weeks/data-import-practice.html",
+    "href": "weeks/data-import-practice.html",
+    "title": "Data Import Practice",
+    "section": "",
+    "text": "# Code to read in the ages.csv data goes here!"
+  },
+  {
+    "objectID": "weeks/data-import-practice.html#step-1-read-in-the-dataset-ages.csv.",
+    "href": "weeks/data-import-practice.html#step-1-read-in-the-dataset-ages.csv.",
+    "title": "Data Import Practice",
+    "section": "",
+    "text": "# Code to read in the ages.csv data goes here!"
+  },
+  {
+    "objectID": "weeks/data-import-practice.html#step-2-read-in-the-dataset-ages_tab.txt",
+    "href": "weeks/data-import-practice.html#step-2-read-in-the-dataset-ages_tab.txt",
+    "title": "Data Import Practice",
+    "section": "Step 2: Read in the dataset ages_tab.txt",
+    "text": "Step 2: Read in the dataset ages_tab.txt\n\n# Code to read in the ages_tab.txt data goes here!"
+  },
+  {
+    "objectID": "weeks/data-import-practice.html#step-3-read-in-the-dataset-ages_mystery.txt",
+    "href": "weeks/data-import-practice.html#step-3-read-in-the-dataset-ages_mystery.txt",
+    "title": "Data Import Practice",
+    "section": "Step 3: Read in the dataset ages_mystery.txt",
+    "text": "Step 3: Read in the dataset ages_mystery.txt\n\n# Code to read in the ages_mystery.txt data goes here!"
+  },
+  {
+    "objectID": "weeks/data-import-practice.html#step-4-read-in-the-dataset-ages.xlsx",
+    "href": "weeks/data-import-practice.html#step-4-read-in-the-dataset-ages.xlsx",
+    "title": "Data Import Practice",
+    "section": "Step 4: Read in the dataset ages.xlsx",
+    "text": "Step 4: Read in the dataset ages.xlsx\n\n# Code to read in the ages.xlsx data goes here!"
+  },
+  {
+    "objectID": "weeks/data-import-practice.html#step-5-both-read.csv-and-read.table-have-an-optional-argument-called-stringsasfactors.-figure-out-what-this-does.",
+    "href": "weeks/data-import-practice.html#step-5-both-read.csv-and-read.table-have-an-optional-argument-called-stringsasfactors.-figure-out-what-this-does.",
+    "title": "Data Import Practice",
+    "section": "Step 5: Both read.csv and read.table have an optional argument called stringsAsFactors. Figure out what this does.",
+    "text": "Step 5: Both read.csv and read.table have an optional argument called stringsAsFactors. Figure out what this does."
+  },
+  {
+    "objectID": "weeks/data-import-practice.html#step-6-find-a-way-to-use-read_csv-to-read-ages.csv-with-the-variable-name-as-a-factor-and-age-as-a-character.",
+    "href": "weeks/data-import-practice.html#step-6-find-a-way-to-use-read_csv-to-read-ages.csv-with-the-variable-name-as-a-factor-and-age-as-a-character.",
+    "title": "Data Import Practice",
+    "section": "Step 6: Find a way to use read_csv() to read ages.csv with the variable “Name” as a factor and “Age” as a character.",
+    "text": "Step 6: Find a way to use read_csv() to read ages.csv with the variable “Name” as a factor and “Age” as a character.\n\n# Code to read in the ages.csv with \"Name\" as a factor and \"Age\" as a character goes here!"
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html",
+    "href": "weeks/week-2-ggplot.html",
+    "title": "Introduction to ggplot",
+    "section": "",
+    "text": "The greatest possibilities of visual display lie in vividness and inescapability of the intended message. A visual display can stop your mental flow in its tracks and make you think. A visual display can force you to notice what you never expected to see. (“Why, that scatter diagram has a hole in the middle!”) – John Tukey, Data Based Graphics: Visual Display in the Decades to Come",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#learning-objectives",
+    "href": "weeks/week-2-ggplot.html#learning-objectives",
+    "title": "Introduction to ggplot",
+    "section": "0.1 Learning Objectives",
+    "text": "0.1 Learning Objectives\n\nDescribe charts using the grammar of graphics\nCreate layered graphics that highlight multiple aspects of the data\nEvaluate existing charts and develop new versions that improve accessibility and readability",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#loading-in-the-ggplot2-package",
+    "href": "weeks/week-2-ggplot.html#loading-in-the-ggplot2-package",
+    "title": "Introduction to ggplot",
+    "section": "0.2 Loading in the ggplot2 Package",
+    "text": "0.2 Loading in the ggplot2 Package\nIn this class, we’re going to use the ggplot2 package to create graphics in R. This package is already installed as part of the tidyverse, but can be installed:\n\ninstall.packages(\"ggplot2\")\n\nand/or loaded:\n\nlibrary(\"ggplot2\")\n\n# alternatively\nlibrary(\"tidyverse\") # (my preference!)\n\n\n\n\n\n\nBuilding a masterpiece, by Allison Horst",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#data-visualization-with-ggplot2",
+    "href": "weeks/week-2-ggplot.html#data-visualization-with-ggplot2",
+    "title": "Introduction to ggplot",
+    "section": "3 Data Visualization with ggplot2",
+    "text": "3 Data Visualization with ggplot2\nThis coursework will walk you through the different sections of Chapter Nine in R for Data Science.\n📖 Required Reading: Layers.\n\n3.1 The Grammar of Graphics\nThe grammar of graphics is an approach first introduced in Leland Wilkinson’s book (Wilkinson 2005). Unlike other graphics classification schemes, the grammar of graphics makes an attempt to describe how the data set itself relates to the components of the chart.\nThis has a few advantages:\n\nIt’s relatively easy to represent the same data set with different types of plots (and to find their strengths and weaknesses)\nGrammar leads to a concise description of the plot and its contents\nWe can add layers to modify the graphics, each with their own basic grammar (just like we combine sentences and clauses to build a rich, descriptive paragraph)\n\n\n\n\nA pyramid view of the major components of the grammar of graphics, with data as the base, aesthetics building on data, scales building on aesthetics, geometric objects, statistics, facets, and the coordinate system at the top of the pyramid. Source: (Sarkar 2018)\n\n\n\n\n3.2 Making Your First ggplot\n▶️ Required Video: ggplot2 First Steps (4 minutes)\n💻 Required Tutorials\n\nBar Charts\nHistograms\nScatterplots\nLine Plots\n\n\n✅ Check-in\nQuestion 1 – With the mpg dataset (included in the ggplot2 package), make a scatterplot of hwy versus cty. Which of these correctly describe the relationship seen in the plot?\n\npositive\nstrong\nnegative\nweak\nlinear\nnon-linear\n\nQuestion 2 – What specifically does the code ggplot(data = mpg) do?\n\nCreates a blank plot\nMakes a scatterplot of the first two variables in the mpg dataset\nCreates a ggplot with the mpg dataset\n\n\n\n\n3.3 Aesthetics\n▶️ Required Video: What is an aesthetic? (7 minutes)\n\n✅ Check-in\n\nggplot(data = mpg) +\n  geom_point(mapping = aes(x = displ, y = hwy), color = \"blue\")\n\nQuestion 3: What aesthetics does this plot contain?\n\nx\ny\ncolor\ndata\n\nQuestion 4: Which of following changes would color the points based on the number of cylinders the car has (4, 5, 6, 8)?\nggplot(data = mpg) +\ngeom_point(mapping = aes(x = displ, y = hwy, \n           color = blue))\n\nggplot(data = mpg) +\ngeom_point(mapping = aes(x = displ, y = hwy) \n           color = \"blue\")\n\nggplot(data = mpg, mapping = aes(color = \"blue)) +\ngeom_point(mapping = aes(x = displ, y = hwy))\n\n\n\n3.4 geoms\n▶️ Required Video: What is a geometric object?\n\nWhat type of chart to use?\nIt can be hard to know what type of chart to use for a particular type of data. I recommend figuring out what you want to show first, and then thinking about how to show that data with an appropriate plot type. Consider the following factors:\n\nWhat type of variable is x? Categorical? Continuous? Discrete?\nWhat type of variable is y?\nHow many observations do I have for each x / y variable?\nAre there any important moderating variables?\nDo I have data that might be best shown in small multiples? E.g. a categorical moderating variable and a lot of data, where the categorical variable might be important for showing different features of the data?\n\nOnce you’ve thought through this, take a look through cataloges like the R Graph Gallery to see what visualizations match your data and use-case.\n\n\n✅ Check-in\nQuestion 4: Match each plot with the geom_XXX() function used to create it!\n\n\n\nLine Chart\nBoxplot\nHistogram\nArea Chart\n\n\n\ngeom_point()\ngeom_line()\ngeom_histogram()\ngeom_area()"
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#getting-a-bit-fancier",
+    "href": "weeks/week-2-ggplot.html#getting-a-bit-fancier",
+    "title": "Introduction to ggplot",
+    "section": "1.5 Getting a Bit Fancier",
+    "text": "1.5 Getting a Bit Fancier\nIn this section we dig a bit deeper into how we can make our code more efficient and other ways we can add additional variables to our plots.\n\n1.5.1 Global vs. local aesthetics\n▶️ Required Video: Global vs. local aesthetics (4 minutes)\n\n\n1.5.2 ✅ Check-in 2.1\nQuestion 5: Match the code to the type of aesthetics that are being used:\n\n\nGlobal\nLocal\n\nggplot(data = mpg, mapping = aes(x = mpg, y = hwy)) + geom_point()\n\nggplot(data = mpg) + geom_point(mapping = aes(x = mpg, y = hwy))",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#watch-videos-50-minutes",
+    "href": "weeks/week-2-ggplot.html#watch-videos-50-minutes",
+    "title": "Introduction to ggplot",
+    "section": "1 ▶️ Watch Videos: 50 minutes",
+    "text": "1 ▶️ Watch Videos: 50 minutes\n\nI’ve broken the videos up into smaller ~5 minute increments!"
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#readings-45-minutes",
+    "href": "weeks/week-2-ggplot.html#readings-45-minutes",
+    "title": "Introduction to ggplot",
+    "section": "2 📖 Readings: 45 minutes",
+    "text": "2 📖 Readings: 45 minutes\n\nI’ve added an optional video on how to take notes in a programming textbook here."
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#activities-45-60-minutes",
+    "href": "weeks/week-2-ggplot.html#activities-45-60-minutes",
+    "title": "Introduction to ggplot",
+    "section": "3 💻 Activities: 45-60 minutes",
+    "text": "3 💻 Activities: 45-60 minutes\n\nYou’ll be working through a series of tutorials helping you practice making plots with ggplot."
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#check-ins-1-broken-out-by-sections",
+    "href": "weeks/week-2-ggplot.html#check-ins-1-broken-out-by-sections",
+    "title": "Introduction to ggplot",
+    "section": "4 ✅ Check-ins: 1 (broken out by sections)",
+    "text": "4 ✅ Check-ins: 1 (broken out by sections)"
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#the-grammar-of-graphics",
+    "href": "weeks/week-2-ggplot.html#the-grammar-of-graphics",
+    "title": "Introduction to ggplot",
+    "section": "1.1 The Grammar of Graphics",
+    "text": "1.1 The Grammar of Graphics\nThe grammar of graphics is an approach first introduced in Leland Wilkinson’s book (Wilkinson 2005). Unlike other graphics classification schemes, the grammar of graphics makes an attempt to describe how the data set itself relates to the components of the chart.\nThis has a few advantages:\n\nIt’s relatively easy to represent the same data set with different types of plots (and to find their strengths and weaknesses)\nGrammar leads to a concise description of the plot and its contents\nWe can add layers to modify the graphics, each with their own basic grammar (just like we combine sentences and clauses to build a rich, descriptive paragraph)\n\n\n\n\nA pyramid view of the major components of the grammar of graphics, with data as the base, aesthetics building on data, scales building on aesthetics, geometric objects, statistics, facets, and the coordinate system at the top of the pyramid. Source: (Sarkar 2018)",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#making-your-first-ggplot",
+    "href": "weeks/week-2-ggplot.html#making-your-first-ggplot",
+    "title": "Introduction to ggplot",
+    "section": "1.2 Making Your First ggplot",
+    "text": "1.2 Making Your First ggplot\n▶️ Required Video: ggplot2 First Steps (4 minutes)\n💻 Required Tutorials\n\nBar Charts\nHistograms\nScatterplots\nLine Plots\n\n\n1.2.1 ✅ Check-in 2.1\nQuestion 1 – With the mpg dataset (included in the ggplot2 package), make a scatterplot of hwy versus cty. Which of these correctly describe the relationship seen in the plot?\n\npositive\nstrong\nnegative\nweak\nlinear\nnon-linear\n\nQuestion 2 – What specifically does the code ggplot(data = mpg) do?\n\nCreates a blank plot\nMakes a scatterplot of the first two variables in the mpg dataset\nCreates a ggplot with the mpg dataset",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#aesthetics",
+    "href": "weeks/week-2-ggplot.html#aesthetics",
+    "title": "Introduction to ggplot",
+    "section": "1.3 Aesthetics",
+    "text": "1.3 Aesthetics\n▶️ Required Video: What is an aesthetic? (7 minutes)\n\n1.3.1 ✅ Check-in 2.1\n\nggplot(data = mpg) +\n  geom_point(mapping = aes(x = displ, y = hwy), color = \"blue\")\n\nQuestion 3: What aesthetics does this plot contain?\n\nx\ny\ncolor\ndata\n\nQuestion 4: Which of following changes would color the points based on the number of cylinders the car has (4, 5, 6, 8)?\nggplot(data = mpg) +\ngeom_point(mapping = aes(x = displ, y = hwy, \n           color = blue))\n\nggplot(data = mpg) +\ngeom_point(mapping = aes(x = displ, y = hwy) \n           color = \"blue\")\n\nggplot(data = mpg, mapping = aes(color = \"blue)) +\ngeom_point(mapping = aes(x = displ, y = hwy))",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#geoms",
+    "href": "weeks/week-2-ggplot.html#geoms",
+    "title": "Introduction to ggplot",
+    "section": "1.4 geoms",
+    "text": "1.4 geoms\n▶️ Required Video: What is a geometric object?\n\n1.4.1 What type of chart to use?\nIt can be hard to know what type of chart to use for a particular type of data. I recommend figuring out what you want to show first, and then thinking about how to show that data with an appropriate plot type. Consider the following factors:\n\nWhat type of variable is x? Categorical? Continuous? Discrete?\nWhat type of variable is y?\nHow many observations do I have for each x / y variable?\nAre there any important moderating variables?\nDo I have data that might be best shown in small multiples? E.g. a categorical moderating variable and a lot of data, where the categorical variable might be important for showing different features of the data?\n\nOnce you’ve thought through this, take a look through catalogs like the R Graph Gallery to see what visualizations match your data and use-case.\n\n\n1.4.2 ✅ Check-in 2.1\nQuestion 4: Match each plot with the geom_XXX() function used to create it!\n\n\n\nLine Chart\nBoxplot\nHistogram\nArea Chart\n\n\n\ngeom_point()\ngeom_line()\ngeom_histogram()\ngeom_area()",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#facets",
+    "href": "weeks/week-2-ggplot.html#facets",
+    "title": "Introduction to ggplot",
+    "section": "1.6 Facets",
+    "text": "1.6 Facets\n▶️ Required Video: Adding a third variable with facets",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#data-transformations",
+    "href": "weeks/week-2-ggplot.html#data-transformations",
+    "title": "Introduction to ggplot",
+    "section": "1.7 Data transformations",
+    "text": "1.7 Data transformations\n▶️ Required Video: What is being plotted? (6 minutes)\n\n1.7.1 ✅ Check-in 2.1\nQuestion 6: Match the stat function with its associated geom function.\n\n\n\nstat_count()\nstat_identity()\n\n\n\ngeom_bar()\ngeom_col()",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#changing-the-positions-of-bars",
+    "href": "weeks/week-2-ggplot.html#changing-the-positions-of-bars",
+    "title": "Introduction to ggplot",
+    "section": "1.8 Changing the positions of bars",
+    "text": "1.8 Changing the positions of bars\n▶️ Required Video: How do I change positions?\n\n1.8.1 ✅ Check-in 2.1\nQuestion 7: What arguments for geom_jitter() control the amount of jittering?\n\nwidth\nheight\nstat\nposition\nna.rm\nshow.legend\ndata\nmapping",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-ggplot.html#plot-customizations",
+    "href": "weeks/week-2-ggplot.html#plot-customizations",
+    "title": "Introduction to ggplot",
+    "section": "1.9 Plot Customizations",
+    "text": "1.9 Plot Customizations\n📖 Required Reading: Communication\n\n\n1.9.1 ✅ Check-in 2.1\nQuestion 8: What can the labs() function do? Select all that apply.\n\nCustomize the x-axis label\nCustomize the y-axis label\nCustomize the legend label\nCustomize the plot title\nAdd a caption to the plot",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-import.html",
+    "href": "weeks/week-2-projects-data-import.html",
+    "title": "R Projects & Reading Data",
+    "section": "",
+    "text": "Describe what an R Project is\nOutline how an R Project affects the file paths used to read in data\n\nRead in data from common formats into R\n\n▶️ Watch Videos: 14 minutes\n📖 Readings: 15-20 minutes\n💻 Activities: 30 minutes\n✅ Check-ins: 1",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-import.html#learning-objectives",
+    "href": "weeks/week-2-projects-data-import.html#learning-objectives",
+    "title": "R Projects & Reading Data",
+    "section": "",
+    "text": "Describe what an R Project is\nOutline how an R Project affects the file paths used to read in data\n\nRead in data from common formats into R\n\n▶️ Watch Videos: 14 minutes\n📖 Readings: 15-20 minutes\n💻 Activities: 30 minutes\n✅ Check-ins: 1",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-import.html#working-directories-in-r",
+    "href": "weeks/week-2-projects-data-import.html#working-directories-in-r",
+    "title": "R Projects & Reading Data",
+    "section": "1.1 Working Directories in R",
+    "text": "1.1 Working Directories in R\nTo find where your working directory is in R, you can either look at the top of your console or type getwd() into your console.\n\ngetwd()\n\n[1] \"/Users/atheobol/Documents/Current Research/IUSE/groupworthy-data-science/weeks\"\n\n\nAlthough it is not recommended, you can set your working directory in R with setwd():\n\nsetwd(\"/path/to/my/assignment/folder\")\n\n\n\n\n\n\n\nFile Paths in R\n\n\n\nA quick warning on file paths is that Mac / Linux and Windows differ in the direction of their backslash to separate folder locations. Mac/Linux use / (e.g. STAT331/Week1) while Window’s uses \\ (e.g. STAT331\\Week1).",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-import.html#rprojects",
+    "href": "weeks/week-2-projects-data-import.html#rprojects",
+    "title": "R Projects & Reading Data",
+    "section": "1.2 Rprojects",
+    "text": "1.2 Rprojects",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-import.html#required-reading-workflow-r-projects",
+    "href": "weeks/week-2-projects-data-import.html#required-reading-workflow-r-projects",
+    "title": "R Projects & Reading Data",
+    "section": "1.3 📖 Required Reading: Workflow (R Projects)",
+    "text": "1.3 📖 Required Reading: Workflow (R Projects)\n\n\n\n\n\n\nOnly read Section 6.2!\n\n\n\n\n\n\nIf you open up your folder from Lab 1, you will notice that you have a blue cube (an RProject) living in this folder! The RProject lives in this folder for two reasons, (1) when you copied the Lab 1 GitHub repository you told RStudio you wanted to make a new RProject, and (2) in order for RStudio to talk with GitHub you need to use an RProject.\nHowever, if you look at your STAT331 folder, you should not see a blue cube since we never created an RProject in this folder. Let’s do that now!\nTo add a Rproject to an existing folder on your computer (e.g., you already created a folder for this class), first open RStudio on your computer and click File &gt; New Project, then:\n\n\n\nNavigation prompt for creating a new RProject in an existing directory\n\n\nThen, browse on your computer to where you saved your STAT331 folder last week. This should be in your Documents folder, similar to where mine is saved!\n\n\n\nNavigation prompt for selecting which existing folder in which the RProject should be created.\n\n\nOnce you click “Create Project”, your existing folder, STAT331 should now contain a STAT331.Rproj file. This is your new “home” base for this class - whenever you refer to a file with a relative path it will begin to look for it here.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-import.html#check-in-2.2-rstudio-projects",
+    "href": "weeks/week-2-projects-data-import.html#check-in-2.2-rstudio-projects",
+    "title": "R Projects & Reading Data",
+    "section": "1.4 ✅ Check-in 2.2: RStudio Projects",
+    "text": "1.4 ✅ Check-in 2.2: RStudio Projects\nTake a screenshot of your class directory, showing the RProject living inside your STAT331 folder.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-import.html#where-does-my-data-live",
+    "href": "weeks/week-2-projects-data-import.html#where-does-my-data-live",
+    "title": "R Projects & Reading Data",
+    "section": "2.1 Where does my data live?",
+    "text": "2.1 Where does my data live?\n▶️ Required Video: Data Locations and the {here} package (8 minutes)",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-import.html#how-do-i-load-my-data",
+    "href": "weeks/week-2-projects-data-import.html#how-do-i-load-my-data",
+    "title": "R Projects & Reading Data",
+    "section": "2.2 How do I load my data?",
+    "text": "2.2 How do I load my data?\n📖 Required Reading: Data Import",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-import.html#check-in-2.3-loading-data",
+    "href": "weeks/week-2-projects-data-import.html#check-in-2.3-loading-data",
+    "title": "R Projects & Reading Data",
+    "section": "2.3 ✅ Check-in 2.3: Loading Data",
+    "text": "2.3 ✅ Check-in 2.3: Loading Data\nFor this check-in you are asked to work through reading in different data sets. You can download the Quarto template for your investigation here: data-import-practice.qmd\nThe folder Age_Data contains several data sets with the names and ages of five individuals. The data sets are stored as different file types. Download Ages_data.zip here, make sure to unzip the folder, save these in a reasonable place (e.g., STAT331 &gt; Week 2 &gt; Checkin or STAT331 &gt; Checkins &gt; Week 2).\n\n\n\n\n\n\nExtracting zip folders\n\n\n\nYou will need to extract the contents of the ages.zip file, that means you will need to uncompress the files from the folder for RStudio to know where to get the data from.\n\n\nOnce you have the data saved (and extracted) in your STAT 331 folder, use the readr and readxl packages to complete the following and fill in the “gap” code in the Canvas quiz:\n\nLoad the appropriate packages for reading in data.\nRead in the data set ages.csv\nRead in the data set ages_tab.txt\nRead in the data set ages_mystery.txt\nRead in the data set ages.xlsx\nFind a way to use read_csv() to read ages.csv with the variable “Name” as a factor data type and “Age” as a character data type.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 2"
+    ]
   }
 ]
