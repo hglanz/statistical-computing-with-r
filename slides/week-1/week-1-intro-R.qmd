@@ -360,37 +360,9 @@ Let's start by dividing the class into groups of 3-4 students.
 - What are some behaviors that could be implemented in the future to make
 cooperation easier?
 
-# Practice Activity 
+# A Data Puzzle
 
-## [Find the Mistakes](../group-activities/week-1/base-r.qmd)
-
-The components of the Practice Activity are described below:
-
-::: {.panel-tabset}
-## Part One
-
-This file has many mistakes in the code. Some are errors that will prevent the
-file from knitting; some are mistakes that do NOT result in an error.
-
-Fix all the problems in the code chunks.
-
-## Part Two
-
-Follow the instructions in the file to uncover a secret message.
-
-Submit the name of the poem as the answer to the Week 1 Practice Activity Canvas
-quiz.
-
-:::
-
-## Accessing the Practice Activity
-
-<!-- Blurb about Posit Cloud -->
-
-## Some words about ChatGPT...
-
-<!-- insert course policy -->
-
+<!-- add in activity on data steps -->
 
 # Before class on Thursday...
 
