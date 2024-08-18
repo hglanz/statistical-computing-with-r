@@ -1,8 +1,8 @@
 ---
-title: "Version Control"
+title: "Scripts, Notebooks & Version Control"
 format: 
   revealjs:
-    theme: default
+    theme: [../style.scss]
     auto-stretch: false
 editor: source
 embed-resources: true
@@ -16,90 +16,205 @@ library(liver)
 data(cereal)
 ```
 
-## Monday, May 6
+## Thursday, September 26
 
 Today we will...
 
-+ Open-Ended Analysis from Week 5
-+ Questions about Midterm?
-+ Final Project Group Formation
-+ New Material
-  + git/GitHub
-  + Connect GitHub to RStudio
-+ [PA 6: Merge Conflicts](https://zoerehnberg.github.io/STAT331-S23/practice_activities/PA6.html) -- Collaborating within a GitHub Repo
+::: {.small}
+-   Answer Clarifying Questions:
+    -   Syllabus?
+    -   Questions from the reading?
+    -   PA 1: Find the Mistakes?
+-   New Material
+    -   Scripts + Notebooks
+    -   Version Control
+-   Lab 1: Introduction to Quarto
+-   Challenge 1: Modifying your Quarto Document
+:::
 
+# Questions about the syllabus
 
-## Open-Ended Analysis from Week 5
+# Questions from the reading
 
-**Written Description**
+# Questions from PA 1
 
-+ Start with an intro to the data and topic.
-+ Intersperse written description and table / plot output!
-+ Do not use variable names or R function names in your written text.
-+ Breaking up sections with headers can help with organization and flow.
-+ Do not print out the data!
+# Scripts + Notebooks
 
+## Scripts
 
-## Open-Ended Analysis from Week 5
+-   **Scripts** (`File > New File > R Script`) are files of code that are meant to be run on their own.
 
-**"Table of Summary Statistics"**
+. . .
 
-+ **Not asking for inferential statistics!**
-+ E.g., We can construct a table of the mean amount of protein per manufacturer and shelf.
+-   Scripts can be run in RStudio by clicking the `Run` button at the top of the editor window when the script is open.
+
+-   You can also run code interactively in a script by:
+
+    -   highlighting lines of code and hitting run.
+
+    -   placing your cursor on a line of code and hitting run.
+
+    -   placing your cursor on a line of code and hitting `ctrl + enter` or `command + enter`.
+
+## Notebooks
+
+Notebooks are an implementation of **literate programming**.
+
+-   They allow you to integrate code, output, text, images, etc. into a single document.
+
+-   E.g.,
+
+    -   **Quarto notebook**
+    -   R Markdown notebook
+    -   Jupyter notebook
+
+We love notebooks because they help us produce a reproducible analysis! 
+
+## What is Markdown?
+
+**Markdown** is a *markup language*.
+
+It uses special symbols and formatting to make pretty documents.
+
+. . .
+
+-   \*italics\* -- makes italics
+-   \*\*bold\*\* -- makes bold text
+-   \# -- makes headers
+-   \![ ]( ) -- includes images or HTML links
+-   < > -- embeds URLs
+
+. . .
+
+Markdown files have the **.md** extension.
+
+## What is Quarto?
+
+Quarto **unifies** and **extends** the R Markdown ecosystem.
 
 ```{r}
-#| echo: true
-#| code-fold: true
+#| echo: false
+#| out-width: "50%"
 #| fig-align: center
-cereal |> 
-  group_by(manuf, shelf) |> 
-  summarize(mean_protein = mean(protein)) |> 
-  arrange(shelf) |> 
-  pivot_wider(id_cols = manuf,
-              names_from = shelf,
-              values_from = mean_protein,
-              names_prefix = "Shelf_")
+knitr::include_graphics("images/rmd_ecosystem.png")
 ```
 
+Quarto files have the **.qmd** extension.
 
-## Open-Ended Analysis from Week 5
+## Highlights of Quarto
 
-**Table Design**
+-   Consistent implementation of attractive and handy features across outputs:
 
-+ Think about the number of rows/columns -- is it readable?
-+ Change row/column names to be understandable.
+    -   E.g., tabsets, code-folding, syntax highlighting, etc.
 
-**Plot Design**
+-   More accessible defaults and better support for accessibility.
 
-+ What type of plot will best display the data?
-+ What order of elements will best display the comparison you want to make?
-+ Think about: colors, order of categories, if a legend is needed, etc.
+-   Guardrails that are helpful when learning:
+
+    -   E.g., YAML completion, informative syntax errors, etc.
+
+-   Support for other languages like Python, Julia, Observable, and more.
+
+## Quarto Formats
+
+Quarto makes moving between outputs straightforward.
+
+-   All that needs to change between these formats is a few lines in the front matter (YAML)!
+
+::: columns
+::: {.column width="50%"}
+**Document**
+
+``` yaml
+title: "Lesson 1"
+format: html
+```
+
+**Presentation**
+
+``` yaml
+title: "Lesson 1"
+format: revealjs
+```
+:::
+
+::: {.column width="50%"}
+**Website**
+
+``` yaml
+project:
+  type: website
+
+website: 
+  navbar: 
+    left:
+      - lesson-1.qmd
+```
+:::
+:::
+
+## Quarto Components
+
+![](images/quarto_sections.jpeg){width="80%"}
+
+## R Code Options in Quarto
+
+**R code chunk** options are included at the top of each code chunk, prefaced with a `#|` (hashpipe).
+
+-   These options control how the following code is run and reported in the final Quarto document.
+-   Some R code options can also be included in the front matter (YAML) which would be applied globally to the entire document.
+
+## R Code Options in Quarto
+
+<center>![](images/code_options.png)</center>
+
+## YAML Completion in Quarto
+
+<center>![](images/quarto_code_options.png)</center>
+
+## Rendering your Quarto Document
+
+To take your *.qmd* file and make it look pretty, you have to **render** it.
+
+<center>
+
+![](images/render.png)
+
+![](images/render_on_save.png)
+
+</center>
+
+## Rendering your Quarto Document
+
+Quarto CLI (command line interface) orchestrates each step of rendering:
+
+1.  Process the executable code chunks with either `knitr` or `jupyter`.
+2.  Convert the resulting Markdown file to the desired output.
+
+![](images/horst_qmd_render_schema.png){fig-alt="A diagram of the proecess of rendering a Quarto document. First the qmd is passed to knitr or jupyter, then it is passed to markdown, finally it's passed to pandoc, resulting in a PDF, Word, or HTML output file." width="50%" fig-align="center"}
 
 
-# Questions about Midterm Exam?
+## Rendering your Quarto Document
 
+When you click **Render**:
 
-## Final Project Group Formation
+::: {.incremental}
+1.    Your file is saved.
+2.    The R code written in your *.qmd* file gets run **in order**.
 
-You will be completing a final project in teams of four.
+  -   It starts from scratch, even if you previously ran some of the code in RStudio.
+3.    A new file is created.
 
-+ **Group Formation Survey** due **Monday, 5/13 at 11:59pm**
-  + Help me gather information about your preferences and work styles to facilitate team formation.
-  + Your team does not all need to be in the same section, but you might find it useful for in-class work time.
-+ Group Contracts (5/20)
-+ Project Proposal (5/28)
-+ Linear Regression (6/3)
-+ Final Deliverable (6/12)
+  -   If your Quarto file is called "Lab1.qmd", then a file called "Lab1.html" will be created.
+  -   This will be saved in the same folder as "Lab1.qmd".
+:::
 
+# Version Control
 
-## What is version control?
+# Version Control
 
-<br>
-
-A process of **tracking changes** to a file or set of files over time so that you can **recall specific versions later**.
-
-
-# git/GitHub Basics
+> A process of **tracking changes** to a file or set of files over time so that
+you can **recall specific versions later**.
 
 
 ## Git vs GitHub
@@ -130,11 +245,7 @@ knitr::include_graphics("https://bornsql.ca/wp-content/uploads/2022/03/Git-Logo-
 :::: columns
 ::: column
 
-```{r}
-#| fig-align: center
-#| out-width: 50%
-knitr::include_graphics("https://bornsql.ca/wp-content/uploads/2022/03/Git-Logo-2Color.png") 
-```
+![](https://bornsql.ca/wp-content/uploads/2022/03/Git-Logo-2Color.png){fig-align="center" width="50%" fig-alt="git's logo, a red diamond, with two 'branches', one large branch and one smaller branch stemming from the main branch."}
 
 + A system for version control that manages a collection of files in a structured way.
 + Uses the command line or a GUI.
@@ -143,11 +254,7 @@ knitr::include_graphics("https://bornsql.ca/wp-content/uploads/2022/03/Git-Logo-
 :::
 ::: column
 
-```{r}
-#| fig-align: center
-#| out-width: 50%
-knitr::include_graphics("https://pngimg.com/d/github_PNG65.png") 
-```
+![](https://pngimg.com/d/github_PNG65.png){fig-align="center" width="60%" fig-alt="GitHub's logo, a black circle, with the outline of a cat in white. The cat seems to have a snake-like tail."}
 
 + A cloud-based service that lets you use git across many computers.
 + Basic services are free, advanced services are paid (like RStudio!). 
@@ -181,29 +288,23 @@ Git is based on **repositories**.
 :::
 ::: {.column width="20%"}
 
-```{r}
-#| fig-align: center
-knitr::include_graphics("https://miro.medium.com/max/512/1*w07Er4gPg8H2Ew-P0HhxNA.png")
-```
+![](https://miro.medium.com/max/512/1*w07Er4gPg8H2Ew-P0HhxNA.png){fig-align="center" fig-alt="A red file folder, with the git logo on it (one large branch with one smaller branch stemming off of it)."}
+
+
 
 :::
 ::::
 
-+ To create a repository, you can start with your local computer **or** you can start with the remote copy.
+<!-- ## `.gitignore` -->
 
+<!-- Sometimes there are files that you **do not** want to track. -->
 
-
-## `.gitignore`
-
-Sometimes there are files that you **do not** want to track.
-
-+ A `.gitignore` file specifies the files that git should intentionally ignore.
-+ Often these are machine generated files (e.g., `/bin`, `.DS_Store`) or files/directories that you do not want to be shared (e.g., `solutions/`).
-+ **We want to ignore `.Rproj` files!**
+<!-- + A `.gitignore` file specifies the files that git should intentionally ignore. -->
+<!-- + Often these are machine generated files (e.g., `/bin`, `.DS_Store`) or files/directories that you do not want to be shared (e.g., `solutions/`). -->
+<!-- + **We want to ignore `.Rproj` files!** -->
 
 
 # Actions in Git
-
 
 ## Cloning a Repo
 
@@ -216,11 +317,7 @@ Create an exact copy of a remote repo on your local machine.
 
 :::
 ::: column
-```{r}
-#| fig-align: center
-#| out-width: 50%
-knitr::include_graphics("images/git_clone_diagram.png")
-```
+![](images/git_clone_diagram.png){fig-align="center" fig-alt="A diagram of the process of cloning a repository. At the top of the picture, there is a cloud (representing the internet), with a pink box labeled 'remote' symbolizing the remote GitHub repository. There is a down arrow connecting the cloud to a laptop, mimicking the process of cloning a remote repository onto a local computer. The laptop has a greeen box labeled 'local' symbolizing the local copy of the remote GitHub repository." width="50%"}
 :::
 ::::
 
@@ -239,17 +336,14 @@ The red line is a change we commit (add) to the repo.
 :::
 ::: {.column width="40%"}
 
-```{r}
-#| fig-align: center
-knitr::include_graphics("images/git-commit.png")
-```
+![](images/git-commit.png){fig-align="center" fig-alt="A diagram of the process of committing changes that were made to a document. On the left is a document with four lines of text. The third line is colored red, to symbolize where a change was made, while the other lines are colored black. There is a right arrow connecting the document to a laptop, with the phrase 'git commit' printed above the arrow. The arrow terminates at a green box labeled 'local' on the laptop, symbolizing committing changes made to the document to the local repository."}
 
 :::
 ::::
 
 . . .
 
-The log of these changes (and the file history) is called your *git commit history*.
+The log of these changes is called your *commit history*.
 
 + You can always go back to old copies!
 
@@ -258,9 +352,9 @@ The log of these changes (and the file history) is called your *git commit histo
 ## Commit Tips
 
 + Use short, but informative commit messages.
-+ Commit small blocks of changes -- commit every time you accomplish a small task. 
++ Commit small blocks of changes -- commit every time you accomplish a small task (e.g., one problem in the lab). 
   + You’ll have a set of bite-sized changes (with description) to serve as a record of what you’ve done.
-  + With frequent commits, its easier to find the issue when you mess up!
+  + With frequent commits, its easier to find the issue if / when you mess up!
 
 
 ## Pushing Changes
@@ -274,11 +368,8 @@ Update the copy of your repo on GitHub so it has the most recent changes you’v
 
 :::
 ::: column
-```{r}
-#| fig-align: center
-#| out-width: 75%
-knitr::include_graphics("images/git_push_diagram.png")
-```
+
+![](images/git_push_diagram.png){fig-align="center" width="75%" fig-alt="A diagram of the process of pushing local changes to the remote repository. There is a laptop with a green box labeled 'local' symbolizing the local copy of the GitHub repository. Above the laptop is cloud with a pink box labeled 'remote' symbolizing the remote GitHub repository (that lives on the internet). There is an arrow pointing from the laptop to the cloud with the phrase 'git push' next to the arrow, symbolizing the action of pushing the local changes (that have been committed) up to the remote repository."}
 :::
 ::::
 
@@ -294,22 +385,10 @@ Update the local copy of your repo (the copy on your computer) with the version 
 
 :::
 ::: column
-```{r}
-#| fig-align: center
-#| out-width: 75%
-knitr::include_graphics("images/git_pull_diagram.png")
-```
+
+![](images/git_pull_diagram.png){fig-align="center" fig-alt="A diagram of the process of pulling from the remote repository to update the local repository. There is a laptop with a green box labeled 'local' symbolizing the local copy of the GitHub repository. Above the laptop is cloud with a pink box labeled 'remote' symbolizing the remote GitHub repository (that lives on the internet). There is an arrow pointing from the cloud to the laptop with the phrase 'git pull' next to the arrow, symbolizing the action of pull the changes that exist on the remote repository (possibly from a different computer) to update the local repository." width="75%"}
 :::
 ::::
-
-
-## Pushing and Pulling
-
-```{r}
-#| fig-align: center
-#| out-width: 75%
-knitr::include_graphics("images/pushing-and-pulling.jpg")
-```
 
 
 ## Workflow
@@ -317,71 +396,17 @@ knitr::include_graphics("images/pushing-and-pulling.jpg")
 **When you have an existing local repo:**
 
 ::: incremental
-1. Pull the repo (especially if collaborating).
+1. Pull the repo to make sure you have the most up to date version (especially if you are working on different computers).
 2. Make some changes locally.
-4. Commit the changes to git.
-5. Pull any changes from the remote repository (again!).
-6. Resolve any merge conflicts.
-7. Push your changes to GitHub.
-
+3. Commit the changes to git.
+4. Push your changes to GitHub.
 :::
-
-
-## Merge Conflicts
-
-These occur when git encounters conflicting changes.
-
-</br>
-
-![](images/same-conflict-pull.jpg)
-
-## Merge Conflicts
-
-1. Maybe you are working in real time on the same line of code or text as a collaborator.
-2. Maybe you forgot to push your changes the last time you finished working.
-3. Maybe you forgot to pull your changes before you started working this time.
-
-
-## Merge Conflicts
-
-**We will work on resolving merge conflicts today!**
-
-</br>
-
-. . .
-
-But when all else fails...
-
-<center>
-**burn your local repo to the ground and clone again.**
-</center>
-
-```{r}
-#| fig-align: center
-#| out-width: 100%
-knitr::include_graphics("https://t3.ftcdn.net/jpg/00/60/10/14/240_F_60101445_pT7VV0oc1OZHeyb4bjzsavtJbPk07kWn.jpg")
-```
-
-
-## Tips for Avoiding Merge Conflicts
-
-+ Always **pull** before you start working and always **push** after you are done working!
-  + If you do this, you will only have problems if two people are making local changes to **the same line in the same file at the same time**.
-
-. . .
-
-+ If you are working with collaborators in real time, **pull**, **commit**, and **push** often.
-
-. . .
-
-+ Git commits **lines** -- lines of code, lines of text, etc.
-  + Practice good code format -- no overly long lines!
-
-
 
 # Connect GitHub to RStudio
 
+## Verifying Your Connection
 
+You were asked to 
 ## Install + Load `R` Packages
 
 Work in your console or an Rscript for this.
@@ -412,7 +437,7 @@ library(gitcreds)
 ```{r}
 #| eval: false
 #| echo: true
-use_git_config(user.name = "JaneDoe2", user.email = "jane@example.org")
+usethis::use_git_config(user.name = "JaneDoe2", user.email = "jane@example.org")
 ```
 
 (Nothing should happen.)
@@ -428,38 +453,6 @@ use_git_config(user.name = "JaneDoe2", user.email = "jane@example.org")
 create_github_token()
 ```
 
-+ This will open GitHub and ask you to log in.
-+ Fill in a Note and an Expiration (AT LEAST 60 days from now).
-+ Click `Generate Token`.
-
-```{r}
-#| fig-align: center
-#| out-width: 50%
-knitr::include_graphics("images/pat-generate.png")
-```
-
-
-## Store your PAT
-
-5. Copy your PAT.
-
-```{r}
-#| fig-align: center
-#| out-width: 65%
-knitr::include_graphics("images/pat-copy.jpg")
-```
-
-6. Run the following code.
-
-```{r}
-#| eval: false
-#| echo: true
-gitcreds_set()
-```
-
-When prompted to **Enter password or token:**, paste your PAT.
-
-
 ## Verify your PAT
 
 7. Let's verify.
@@ -470,77 +463,40 @@ When prompted to **Enter password or token:**, paste your PAT.
 git_sitrep()
 ```
 
-```{r}
-#| out-width: 90%
-knitr::include_graphics("images/pat-verify.png")
-```
+# Accessing Lab 1 
 
+# Accessing Lab 1 
 
-## [PA 6: Merge Conflicts](https://zoerehnberg.github.io/STAT331-S23/practice_activities/PA6.html)
+Step 1: Fork the [Lab 1 repository](https://github.com/atheobold/stat-331-lab-1)
 
-You will be completing this activity in groups of 4.
+add screenshot of forking the repo
 
-::: callout-warning
+# Once You've Forked the Repo 
 
-##    **IMPORTANT**
+# Once You've Forked the Repo 
 
-This activity will only work if you follow the directions **in the exact order** that I have specified them. **Do not work ahead of your group members!**
+Step 2: Clone your Lab 1 repository to your computer
 
-:::
+Step 3: Open the `lab-1.qmd` file
 
+Step 4: Change your name 
 
-## To do...
+Step 5: Commit your change (with a nice message!)
 
-+ **PA 6: Merge Conflicts**
-  + Due **Monday, 5/6** at 11:59pm -- **TODAY**.
+Step 6: Push your change
 
-+ **Midterm Exam**
-  + Wednesday, 5/8 + 24 hours.
-  
-+ **Final Project Group Formation Survey**
-  + Due Monday, 5/13 at 11:59pm
+# [Lab 1 Instructions](../../labs/instructions/lab-1-instructions.qmd)
 
+## Some words about ChatGPT...
 
-::: callout-note
-
-## Office Hours
-
-Tuesday from 1:00-2:00pm and Wednesday 10:30-11:30am. None on Thursday or Friday.
-:::
-  
-
-## Wednesday, May 8 -- Midterm Exam
-
-+ Please grab separators from the sides of the room as you enter.
-
-+ I will pass out a hard copy of the exam.
-
-+ Canvas will unlock the **.qmd** template at the beginning of class.
-
-
-## Wednesday, May 8 -- Midterm Exam
-
-**Section 1: General Questions**
-
-+ Cannot work on Section 2 until submit Section 1.
-
-**Section 2: Short Answer**
-
-+ Download `.qmd` template from Canvas.
-+ Submit `.qmd` and `.html` files on Canvas by the end of class.
-
-**Section 3: Open-Ended Analysis**
-
-+ Create your own `.qmd` file.
-+ Submit `.qmd` and `.html` file **24-hours** after the end of class.
-
+<!-- insert course policy -->
 
 ## To do...
 
-+ Read **Chapter 7: Writing Functions**
-  + Check-in 7.1 due Monday, 5/13 at 10:00am
-
-+ **Final Project Group Formation**
-  + Due Monday, 5/13 at 11:59pm
-  
+-   **Lab 1: Introduction to Quarto**
+    -   Due Sunday (9/29) at 11:59pm
+-   **Challenge 1: Modifying Your Quarto Document**
+    -   Due Sunday (9/29) at 11:59pm
+-   **Complete the Week 2 Coursework**
+    -   **Check-ins 2.1 + 2.2** due Tuesday (10/1) by the start of class
   
