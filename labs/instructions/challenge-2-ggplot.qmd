@@ -6,6 +6,7 @@ self-contained: true
 toc: true
 execute:
   echo: false
+  eval: false
   message: false
   warning: false
   error: true
@@ -22,7 +23,7 @@ For this week's Challenge, you will have three different options to explore. I'v
 This is a great place to let your creativity show! Make sure to indicate what additional touches you added, and provide any online references you used.
 
 ::: callout-tip
-You should create a new Quarto document for this Challenge (make sure to specify `self-contained: true`, `echo: true`, and any other formatting specifics you desire in the YAML). 
+You should create a new Quarto document for this Challenge (make sure to specify `self-contained: true`, `echo: true`, and any other formatting specifics you desire in the YAML).
 
 Then, create a setup code chunk to load the packages and read in the [surveys.csv](../lab_assignments/lab2/surveys.csv) file like you did in Lab 2.
 
@@ -33,9 +34,9 @@ Alternatively, you can create a copy of your Lab2.qmd file and **delete the unne
 
 # `r emojifont::emoji("hot_pepper")` Medium: Ridge Plots
 
-In Lab 2, you used side-by-side **boxplots** to visualize the distribution of weight within each species of rodent. Boxplots have [substantial flaws](https://www.data-to-viz.com/caveat/boxplot.html), namely that they disguise distributions with multiple modes. 
+In Lab 2, you used side-by-side **boxplots** to visualize the distribution of weight within each species of rodent. Boxplots have [substantial flaws](https://www.data-to-viz.com/caveat/boxplot.html), namely that they disguise distributions with multiple modes.
 
-A "superior" alternative is the density plot. However, `ggplot2` does not allow for side-by-side density plots using `geom_density()`. Instead, we will need to make use of the `ggridges` package to create side-by-side density (ridge) plots. 
+A "superior" alternative is the density plot. However, `ggplot2` does not allow for side-by-side density plots using `geom_density()`. Instead, we will need to make use of the `ggridges` package to create side-by-side density (ridge) plots.
 
 > **For this challenge you are to change your boxplots to ridge plots. You will need to install the `ggridges` package and explore the `geom_density_ridges()` function.**
 
@@ -43,17 +44,15 @@ A "superior" alternative is the density plot. However, `ggplot2` does not allow 
 
 The built-in `ggplot()` color scheme may not include the colors you were looking for. Don't worry -- there are many other color palettes available to use!
 
-You can change the colors used by `ggplot()` in a few different ways.  
+You can change the colors used by `ggplot()` in a few different ways.
 
-### Manual Specification 
+### Manual Specification
 
-Add the `scale_color_manual()` or `scale_fill_manual()` functions to your 
-plot and directly specify the colors you want to use. You can either:  
+Add the `scale_color_manual()` or `scale_fill_manual()` functions to your plot and directly specify the colors you want to use. You can either:
 
-1. define a vector of colors within the `scale` functions (e.g. `values = c("blue", "black", "red", "green")`)  OR
+1.  define a vector of colors within the `scale` functions (e.g. `values = c("blue", "black", "red", "green")`) OR
 
-2. create a vector of colors using hex numbers and store that vector as a variable. Then, call that vector in the `scale_color_manual()` function.
-
+2.  create a vector of colors using hex numbers and store that vector as a variable. Then, call that vector in the `scale_color_manual()` function.
 
 Here are some exaplme hex color schemes:
 
@@ -67,9 +66,9 @@ cdPalette_blk <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072
 ```
 
 ::: callout-note
-If you are interested in using specific hex colors, I like the [image color picker app](https://imagecolorpicker.com/en) to find the colors I want. 
+If you are interested in using specific hex colors, I like the [image color picker app](https://imagecolorpicker.com/en) to find the colors I want.
 :::
-                   
+
 ```{r}
 #| include: false
 surveys |> 
@@ -79,25 +78,25 @@ surveys |>
   labs(x = "Weight (g)", y = "", subtitle = "Species", legend = "Genus")
 ```
 
-### Package Specification 
+### Package Specification
 
-Install a package and use its available color `scale`. Popular options include:  
+Install a package and use its available color `scale`. Popular options include:
 
-- `RColorBrewer` -- change colors by using `scale_fill_brewer()` or `scale_colour_brewer()`.
+-   `RColorBrewer` -- change colors by using `scale_fill_brewer()` or `scale_colour_brewer()`.
 
-- `viridis` -- change colors by using `scale_colour_viridis_d()` for discrete data, `scale_colour_viridis_c()` for continuous data.
+-   `viridis` -- change colors by using `scale_colour_viridis_d()` for discrete data, `scale_colour_viridis_c()` for continuous data.
 
-- `ggsci` -- change colors by using `scale_color_<PALNAME>()` or `scale_fill_<PALNAME>()`, where you specify the name of the palette you wish to use (e.g. `scale_color_aaas()`).
+-   `ggsci` -- change colors by using `scale_color_<PALNAME>()` or `scale_fill_<PALNAME>()`, where you specify the name of the palette you wish to use (e.g. `scale_color_aaas()`).
 
 ::: callout-note
-[This website](https://github.com/EmilHvitfeldt/r-color-palettes) provides an exhaustive list of color themes available through various packages. 
+[This website](https://github.com/EmilHvitfeldt/r-color-palettes) provides an exhaustive list of color themes available through various packages.
 :::
 
-> **In this challenge you are expected to use this information to modify the boxplots you created Lab 2. First, you are to color the boxplots based on the variable `genus`. Next, you are to change the colors used for `genus` using either manual color specification or any of the packages listed here (or others!).** 
+> **In this challenge you are expected to use this information to modify the boxplots you created Lab 2. First, you are to color the boxplots based on the variable `genus`. Next, you are to change the colors used for `genus` using either manual color specification or any of the packages listed here (or others!).**
 
 # `r emojifont::emoji("hot_pepper")` `r emojifont::emoji("hot_pepper")` `r emojifont::emoji("hot_pepper")` Hot: Exploring `ggplot2` Annotation
 
-Some data scientists advocate that we should try to eliminate legends from our plots to make them more clear. Instead of legends, we should use **annotation**. 
+Some data scientists advocate that we should try to eliminate legends from our plots to make them more clear. Instead of legends, we should use **annotation**.
 
 We can add annotation to a `ggplot()` using the `annotate()` function.
 
@@ -117,6 +116,6 @@ ggplot(data = surveys,
        title = "Rodent Weight by Species")
 ```
 
-Note that I've labeled the "Sigmodon" and "Perognathus" genera, so the reader can tell that these boxplots are associated with their respective genus. 
+Note that I've labeled the "Sigmodon" and "Perognathus" genera, so the reader can tell that these boxplots are associated with their respective genus.
 
 > **In this challenge you are expected to use this information to modify the boxplots you created in Lab 2. First, you are to color the boxplots based on the variable `genus`. Next, you are to add annotations for each genus next to the boxplot(s) associated with that genus. Finally, you are expected to use the `theme()` function to remove the color legend from the plot, since it is no longer needed!**
