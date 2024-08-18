@@ -24,20 +24,39 @@ Today we will...
 
 ::: columns
 ::: {.column width="50%"}
--   I am originally from Colorado, but went to grad school in Montana!
+::: {.small}
+-   I am originally from Colorado, but went to grad school in Montana.
 
--   My favorite things are being outside, drinking coffee, and watching womens basketball.
-
--   I love cats!
-
--   I absolutely love teaching this course!
+-   My favorite things are being outside, drinking coffee, and watching women's basketball.
+:::
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="45%"}
-![](images/yoesmite.jpeg){fig-alt="A picture of my wife and I backpacking in Yosemite. We are standing in front of a large blue lake (called Thousand Islands Lake), with some snow covered, scraggly peaks in the background."} ![](images/kitties.jpg){fig-alt="A picture of my two kitties, snuggling on the couch. Both kitties are facing each other, with their noses touching."}
+![](images/yoesmite.jpeg){fig-alt="A picture of my wife and I backpacking in Yosemite. We are standing in front of a large blue lake (called Thousand Islands Lake), with some snow covered, scraggly peaks in the background." width="85%"} 
+:::
+:::
+
+. . .
+
+::: columns
+::: {.column width="50%"}
+::: {.small}
+-   I love cats!
+
+-   I've been programming in R since 2014! 
+
+-   I absolutely love teaching this course!
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+![](images/kitties.jpg){fig-alt="A picture of my two kitties, snuggling on the couch. Both kitties are facing each other, with their noses touching." width="85%"}
 :::
 :::
 
@@ -312,7 +331,38 @@ x | y
 ```
 :::
 
-## [PA 1: Find the Mistakes](../group-activities/week-1/base-r.qmd)
+# Group Programming Warm-up 
+
+## [Broken Circles](../../group-activities/week-1/broken-circles.qmd)
+::: columns
+::: {.column width="40%"}
+::: {.small}
+To set the stage for your future group collaborations, we will complete an 
+activity that explores how working in groups can be more / less successful. 
+
+Let's start by dividing the class into groups of 3-4 students. 
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+![](images/broken-circles.JPG){fig-alt="An image of whit e circles with slices cut out. The pieces are labeled A, B, C, D, and E to indicate how they should be assembled to create a complete circle."}
+:::
+:::
+
+## Discussion 
+
+- What do you think this game was about? What was its purpose?
+- What did your group did that made you cooperate more successfully?
+- What did your group did that made cooperation harder?
+- What are some behaviors that could be implemented in the future to make
+cooperation easier?
+
+# Practice Activity 
+
+## [Find the Mistakes](../group-activities/week-1/base-r.qmd)
 
 The components of the Practice Activity are described below:
 
@@ -333,7 +383,18 @@ quiz.
 
 :::
 
-## Before class on Thursday...
+## Accessing the Practice Activity
+
+<!-- Blurb about Posit Cloud -->
+
+## Some words about ChatGPT...
+
+<!-- insert course policy -->
+
+
+# Before class on Thursday...
+
+## 
 
 - Complete [Version Control coursework](../weeks/week-1-version-control.qmd)
 
@@ -343,208 +404,8 @@ quiz.
 
 - Introduce yourself on Discord!
 
+    - Due by the end of the week
+
 -   **PA 1: Find the Mistakes**
 
-  -   Due Wednesday (9/25) by 5pm
-
-# Week 1 Day 2
-
-## Thursday, September 26
-
-Today we will...
-
--   Answer Clarifying Questions:
-    -   Syllabus?
-    -   Chapter 1 Reading?
-    -   PA 1: Find the Mistakes?
--   New Material
-    -   Scripts + Notebooks
--   Lab 1: Introduction to Quarto
--   Challenge 1: Modifying your Quarto Document
-
-# Scripts + Notebooks
-
-## Scripts
-
--   **Scripts** (`File > New File > R Script`) are files of code that are meant to be run on their own.
-
-. . .
-
--   Scripts can be run in RStudio by clicking the `Run` button at the top of the editor window when the script is open.
-
--   You can also run code interactively in a script by:
-
-    -   highlighting lines of code and hitting run.
-
-    -   placing your cursor on a line of code and hitting run.
-
-    -   placing your cursor on a line of code and hitting `ctrl + enter` or `command + enter`.
-
-## Notebooks
-
-Notebooks are an implementation of **literate programming**.
-
--   They allow you to integrate code, output, text, images, etc. into a single document.
-
--   E.g.,
-
-    -   R Markdown notebook
-    -   **Quarto notebook**
-    -   Jupyter notebook
-
-We love notebooks because they help us produce a reproducible analysis! 
-
-## What is Markdown?
-
-**Markdown** is a *markup language*.
-
--   It uses special symbols and formatting to make pretty documents.
-
-. . .
-
--   *italics* -- makes italics
--   **bold** -- makes bold text
--   \# -- makes headers
--   \![ ]( ) -- includes images or HTML links
--   < > -- embeds URLs
-
-. . .
-
--   Markdown files have the **.md** extension.
-
-## What is Quarto?
-
-Quarto **unifies** and **extends** the R Markdown ecosystem.
-
--   Quarto files have the **.qmd** extension.
-
-```{r}
-#| echo: false
-#| out-width: "50%"
-#| fig-align: center
-knitr::include_graphics("images/rmd_ecosystem.png")
-```
-
-- Quarto is the next generation R Markdown.
-
-## Highlights of Quarto
-
--   Consistent implementation of attractive and handy features across outputs:
-
-    -   E.g., tabsets, code-folding, syntax highlighting, etc.
-
--   More accessible defaults and better support for accessibility.
-
--   Guardrails that are helpful when learning:
-
-    -   E.g., YAML completion, informative syntax errors, etc.
-
--   Support for other languages like Python, Julia, Observable, and more.
-
-## Quarto Formats
-
-Quarto makes moving between outputs straightforward.
-
--   All that needs to change between these formats is a few lines in the front matter (YAML)!
-
-::: columns
-::: {.column width="50%"}
-**Document**
-
-``` yaml
-title: "Lesson 1"
-format: html
-```
-
-**Presentation**
-
-``` yaml
-title: "Lesson 1"
-format: revealjs
-```
-:::
-
-::: {.column width="50%"}
-**Website**
-
-``` yaml
-project:
-  type: website
-
-website: 
-  navbar: 
-    left:
-      - lesson-1.qmd
-```
-:::
-:::
-
-## Quarto Components
-
-![](images/quarto_sections.jpeg){width="80%"}
-
-## R Code Options in Quarto
-
-**R code chunk** options are included at the top of each code chunk, prefaced with a `#|` (hashpipe).
-
--   These options control how the following code is run and reported in the final Quarto document.
--   Some R code options can also be included in the front matter (YAML) which would be applied globally to the entire document.
-
-## R Code Options in Quarto
-
-<center>![](images/code_options.png)</center>
-
-## YAML Completion in Quarto
-
-<center>![](images/quarto_code_options.png)</center>
-
-## Rendering your Quarto Document
-
-To take your *.qmd* file and make it look pretty, you have to **render** it.
-
-<center>
-
-![](images/render.png)
-
-![](images/render_on_save.png)
-
-</center>
-
-## Rendering your Quarto Document
-
-Quarto CLI (command line interface) orchestrates each step of rendering:
-
-1.  Process the executable code chunks with either `knitr` or `jupyter`.
-2.  Convert the resulting Markdown file to the desired output.
-
-```{r, echo = F, fig.align='center'}
-knitr::include_graphics("images/horst_qmd_render_schema.png")
-```
-
-<!-- The main difference is that with R Markdown, the R package rmarkdown does the heavy lifting of going from the source Rmd file to the the output, using knitr for evaluating the code chunks. -->
-
-## Rendering your Quarto Document
-
-When you click **Render**:
-
-::: {.incremental}
-1.    Your file is saved.
-2.    The R code written in your *.qmd* file gets run **in order**.
-
-  -   It starts from scratch, even if you previously ran some of the code in RStudio.
-3.    A new file is created.
-
-  -   If your Quarto file is called "Lab1.qmd", then a file called "Lab1.html" will be created.
-  -   This will be saved in the same folder as "Lab1.qmd".
-:::
-
-# [Lab 1: Introduction to Quarto + Challenge 1: Modifying your Quarto Document](../../labs/instructions/lab-1-instructions.qmd)
-
-## To do...
-
--   **Lab 1: Introduction to Quarto**
-    -   Due Sunday (9/29) at 11:59pm
--   **Challenge 1: Modifying Your Quarto Document**
-    -   Due Sunday (9/29) at 11:59pm
--   **Read Chapter 2: Importing Data + Basics of Graphics**
-    -   **Check-in 2.1 + 2.2** due Tuesday (10/1) by the start of class
+    -   Due Wednesday (9/25) by 5pm
