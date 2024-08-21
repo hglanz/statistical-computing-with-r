@@ -9,13 +9,13 @@ The theme of this lesson is good management of your files and data. In part two
 of this week's coursework you will learn how to identify **folders** and
 **paths**, and create **Quarto documents**.
 
-##### 📖 Readings: 45 minutes
+#### 📖 Readings: 45 minutes
 
-##### 📽 Watch Videos: 30 min
+#### 📽 Watch Videos: 30 min
 
-##### 💻 Activities: 5-10 min
+#### 💻 Activities: 5-10 min
 
-##### ✅ Check-ins: 2
+#### ✅ Check-ins: 2
 
 # Principles of Reproducibility
 
