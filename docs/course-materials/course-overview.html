@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -92,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../images/r-flowers.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -235,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>We’ll answer these questions and more by studying the principles of “statistical computing” methods in the programming language called R. There is not an expectation that you have seen R before, only that you have some experiences with computing (writing code and executing code). For those who have not seen R before, it is an open-source programming language <a href="https://en.wikipedia.org/wiki/R_(programming_language)">developed by Statisticians</a>, and is one of the main “languages” you will find people use when doing statistics in the wild.</p>
 <p>In this course, we will learn the foundational skills for programming in R and a variety of skills for working with data. We will then build on these skills to consider how to write programs which are more efficient.</p>
-<div class="quarto-figure quarto-figure-center">
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/r-sad-happy.png" class="img-fluid figure-img" alt="A digital cartoon with two illustrations: the top shows the R-logo with a scary face, and a small scared little fuzzy monster holding up a white flag in surrender while under a dark storm cloud. The text above says “at first I was like…” The lower cartoon is a friendly, smiling R-logo jumping up to give a happy fuzzy monster a high-five under a smiling sun and next to colorful flowers. The text above the bottom illustration reads “but now it’s like…”"></p>
 <figcaption>Artwork by <a href="https://allisonhorst.com/allison-horst">@allison_horst</a>.</figcaption>
@@ -406,12 +406,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {
