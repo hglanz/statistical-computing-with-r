@@ -1,8 +1,6 @@
 ---
 title: "Practice Activity 1: Find the Mistakes"
-format: 
-  html:
-    self-contained: true
+format: html
 editor: visual
 execute: 
   echo: true
@@ -21,9 +19,16 @@ Some advice:
 
 -   Work with those around you
 
--   Google is your friend! If an error is confusing, copy it into Google and see what other people are saying. If you don't know how to do something, search for it.
+-   Google and ChatGPT can be your friend! If an error is confusing, copy it
+into Google (or ChatGPT) and see what other people are saying. 
 
--   Just because there is no error message doesn't mean everything went smoothly. Use the console to check each step and make sure you have accomplished what you wanted to accomplish.
+-   Just because there is no error message doesn't mean everything went
+smoothly! Use the **console** (lower left pane) to check each step and make sure
+you have accomplished what you wanted to accomplish.
+
+## Part Zero: Accessing the Practice Activity
+
+<!-- Blurb on how to get to Posit Cloud.  -->
 
 ## Part One: Setup
 
