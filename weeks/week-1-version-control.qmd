@@ -18,11 +18,11 @@ library(kableExtra)
 library(tidyverse)
 ```
 
-### 📖 Reading: 60-75 minutes
+#### 📖 Reading: 60-75 minutes
 
-### 📽️  Videos: 0 minute(s)
+#### 📽️  Videos: 0 minute(s)
 
-### ✅ Check-ins: 4
+#### ✅ Check-ins: 4
 
 
 ## Objectives
