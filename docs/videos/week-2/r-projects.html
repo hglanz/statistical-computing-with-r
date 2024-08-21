@@ -8,7 +8,7 @@
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.533">
 
   <title>Introduction to Statistical Computing in R - R Projects</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -333,76 +398,90 @@
 </section>
 <section id="the-beauty-of-r-projects" class="slide level2">
 <h2>The Beauty of R Projects</h2>
-<p>.pull-left[ An <strong>R Project</strong> is basically a “flag” planted in a certain directory.</p>
-<p>When you double click a <strong>.Rproj</strong> file, it does two things:</p>
+<ul>
+<li><p>An <strong>R Project</strong> is basically a “flag” planted in a certain directory.</p></li>
+<li><p>When you double click an <strong>.Rproj</strong> file, it:</p></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ol type="1">
-<li><p>Open RStudio</p></li>
-<li><p>Set the working directory to be wherever the .Rproj file lives.</p></li>
-<li><p>Link to GitHub, if setup (more on that later!)]</p></li>
+<li><p>Opens RStudio</p></li>
+<li><p>Sets the working directory to be wherever the .Rproj file lives.</p></li>
+<li><p>Links to GitHub, if set up (more on that later!)</p></li>
 </ol>
-<p>.pull-right[ <img data-src="images/project_flag.jpg">]</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/project_flag.jpg" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="A picture with two layers. The top image is a moutain peak with a red flag at the top of the peak. The bottom image is a translucent blue cube with an R in the middle (symbolizing an RProject) witht the file name 'stat331.RProj' displayed under the cube."></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section class="slide level2">
-
-<p>class: center</p>
+<section id="r-projects-reproducibility" class="slide level2">
+<h2>R Projects &amp; Reproducibility</h2>
+<p>RStudio Projects are great for <strong>reproducibility</strong>!</p>
+<p>You can send anyone your folder with your .Rproj file and they will be able to run your code on their computer!</p>
 </section>
-<section>
-<section id="rstudio-projects-reproducibility" class="title-slide slide level1 center">
-<h1>RStudio Projects &amp; Reproducibility</h1>
-<p><br></p>
-<p>.bitlarger[This is great for reproducibility!]</p>
-<p><br></p>
-<p>.bitlarger[You can send anyone your folder with your .Rproj file and they will be able to run your code on their computer.]</p>
+<section id="principles-of-reproducibility" class="slide level2">
+<h2>Principles of Reproducibility</h2>
+<p>You can to send your project to someone else, and they can jump in and start working right away.</p>
+<p>This means:</p>
+<ol type="1">
+<li><p>Files are organized and well-named.</p></li>
+<li><p>References to data and code work for everyone.</p></li>
+<li><p>Package dependency is clear.</p></li>
+<li><p>Code will run the same every time, even if data values change.</p></li>
+<li><p>Analysis process is well-explained and easy to read.</p></li>
+</ol>
 </section>
-<section class="slide level2">
-
-<p>class: middle</p>
-</section></section>
-<section>
 <section id="setting-up-an-rstudio-project" class="title-slide slide level1 center">
 <h1>Setting up an RStudio Project</h1>
 
 </section>
-<section class="slide level2">
 
-<p>class: middle</p>
-</section></section>
+<section id="setting-up-an-rstudio-project-1" class="title-slide slide level1 center">
+<h1>Setting up an RStudio Project</h1>
+<p>From an already existing directory (a folder you already have)</p>
+<!-- Create scribe video of making an R Project -->
+
+<img data-src="../images/existing-directory-rproj.png" class="quarto-figure quarto-figure-center r-stretch" alt="A picture of the option you would select when making a new R Project for a folder that already exists on your computer. The image has a manilla folder in the background with a translucent blue cube with an R in the center in the font. The text next to the folder says 'Existing Directory' with a description saying 'Associate a project with an existing working directory'."></section>
+
 <section>
-<section id="good-practice" class="title-slide slide level1 center">
-<h1>Good practice</h1>
+<section id="setting-up-an-rstudio-project-2" class="title-slide slide level1 center">
+<h1>Setting up an RStudio Project</h1>
+<p>Creating a new directory (a folder you <strong>do not</strong> already have)</p>
+<!-- Create scribe video of making an R Project -->
+
+<img data-src="../images/new-directory-rproj.png" class="quarto-figure quarto-figure-center r-stretch" alt="A picture of the option you would select when making a new R Project for a folder that DOES NOT already exist on your computer. The image has a translucent blue cube with an R. The text next to the cube says 'New Directory' with a description saying 'Start a project in a brand new working directory'."></section>
+<section id="good-practice" class="slide level2">
+<h2>Good practice</h2>
 <ul>
-<li><p>Organize your folders carefully, and name them meaningfully:</p>
+<li>Organize your folders carefully, and name them meaningfully:
 <ul>
 <li><code>/User/atheobold/Stat331/lab1/</code> rather than <code>Desktop/stuff/</code></li>
 </ul></li>
-<li><p>Use <strong>R Projects</strong> liberally - put one in the “main” folder for each project</p>
-<ul>
-<li>I have a project for every class I teach.</li>
-<li>I have a project for every data analysis I do.</li>
-<li>I <strong>never</strong> work in RStudio, except in a project.</li>
-</ul></li>
+<li>Use <strong>R Projects</strong> liberally - put one in the “main” folder for each project</li>
 </ul>
 </section>
-<section class="slide level2">
-
-</section></section>
-<section id="bad-practice" class="title-slide slide level1 center">
-<h1>Bad practice</h1>
-<p>If you put something like this at the top of your .Rmd file, I will set your computer on fire:</p>
+<section id="bad-practice" class="slide level2">
+<h2>Bad practice</h2>
+<p>If you put something like this at the top of your .qmd file, I will set your computer on fire:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"/User/reginageorge/Desktop/R_Class/Lab_1/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ul>
-<li>Setting working directory by hand = BAD!</li>
-</ul>
-<p>–</p>
-<ul>
-<li>That directory is specific to you!</li>
+<li><p>Setting working directory by hand = BAD!</p></li>
+<li><p>That directory is specific to you!</p></li>
+<li><p>Quarto will ignore this code when rendering!</p></li>
 </ul>
 
-<div class="quarto-auto-generated-content">
+
+</section><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div>
-</section>
+</div></section>
     </div>
   </div>
 

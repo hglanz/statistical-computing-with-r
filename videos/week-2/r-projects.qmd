@@ -1,87 +1,94 @@
 ---
 title: "R Projects"
 format: revealjs
+execute:
+  eval: false
 ---
-
 
 ## The Beauty of R Projects
 
-+ An **R Project** is basically a "flag" planted in a certain directory.
+-   An **R Project** is basically a "flag" planted in a certain directory.
 
-+ When you double click an **.Rproj** file, it:
+-   When you double click an **.Rproj** file, it:
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
+1.  Opens RStudio
 
-1. Opens RStudio
+2.  Sets the working directory to be wherever the .Rproj file lives.
 
-2. Sets the working directory to be wherever the .Rproj file lives.
-
-3. Links to GitHub, if set up (more on that later!)
+3.  Links to GitHub, if set up (more on that later!)
 :::
 
 ::: {.column width="50%"}
-```{r, out.width = "70%", fig.align='center', echo = F}
-knitr::include_graphics("images/project_flag.jpg")
-```
+![](../images/project_flag.jpg){width="70%" fig-align="center" fig-alt="A picture with two layers. The top image is a moutain peak with a red flag at the top of the peak. The bottom image is a translucent blue cube with an R in the middle (symbolizing an RProject) witht the file name 'stat331.RProj' displayed under the cube."}
+:::
 :::
 
-::::
-
-
-## RStudio Projects & Reproducibility
+## R Projects & Reproducibility
 
 RStudio Projects are great for **reproducibility**!
 
-+ You can send anyone your folder with your .Rproj file and they will be able to run your code on their computer.
-
-+ We will be using RStudio Projects throughout this course.
-
+You can send anyone your folder with your .Rproj file and they will be able
+to run your code on their computer!
 
 ## Principles of Reproducibility
 
-You can to send your project to someone else, and they can
-jump in and start working right away.
+You can to send your project to someone else, and they can jump in and start
+working right away.
 
-+ This means:
+This means:
 
-  1. Files are organized and well-named.
+1.  Files are organized and well-named.
 
-  2. References to data and code work for everyone.
+2.  References to data and code work for everyone.
 
-  3. Package dependency is clear.
+3.  Package dependency is clear.
 
-  4. Code will run the same every time, even if data values change.
+4.  Code will run the same every time, even if data values change.
 
-  5. Analysis process is well-explained and easy to read.
+5.  Analysis process is well-explained and easy to read.
 
+# Setting up an RStudio Project 
 
-# [Setting up an RStudio Project](https://earobinson95.github.io/stat331-calpoly-text/01-introduction.html#rprojects)
+# Setting up an RStudio Project 
 
+From an already existing directory (a folder you already have)
+
+<!-- Create scribe video of making an R Project -->
+
+![](../images/existing-directory-rproj.png){fig-align="center" fig-alt="A picture of the option you would select when making a new R Project for a folder that already exists on your computer. The image has a manilla folder in the background with a translucent blue cube with an R in the center in the font. The text next to the folder says 'Existing Directory' with a description saying 'Associate a project with an existing working directory'."}
+
+# Setting up an RStudio Project 
+
+Creating a new directory (a folder you **do not** already have)
+
+<!-- Create scribe video of making an R Project -->
+
+![](../images/new-directory-rproj.png){fig-align="center" fig-alt="A picture of the option you would select when making a new R Project for a folder that DOES NOT already exist on your computer. The image has a translucent blue cube with an R. The text next to the cube says 'New Directory' with a description saying 'Start a project in a brand new working directory'."}
 
 ## Good practice
 
-- Organize your folders carefully, and name them meaningfully:
-  * `/User/zrehnber/Stat331/lab1/` rather than `Desktop/stuff/`
-    
-- Use **R Projects** liberally - put one in the "main" folder for each project
-
+-   Organize your folders carefully, and name them meaningfully:
+    -   `/User/atheobold/Stat331/lab1/` rather than `Desktop/stuff/`
+-   Use **R Projects** liberally - put one in the "main" folder for each project
 
 ## Bad practice
 
-If you put something like this at the top of your .qmd file (more on Quarto later), I will set your 
+If you put something like this at the top of your .qmd file, I will set your
 computer on fire:
 
 ```{r}
 #| echo: true
 #| eval: false
 #| code-line-numbers: false
+#| label: get-wd
+
 setwd("/User/reginageorge/Desktop/R_Class/Lab_1/")
 ```
 
-- Setting working directory by hand = BAD!  
+-   Setting working directory by hand = BAD!
 
-- That directory is specific to you!
+-   That directory is specific to you!
 
-- R Markdown and Quarto (more on these later) ignore this code when knitting! 
+-   Quarto will ignore this code when rendering!
