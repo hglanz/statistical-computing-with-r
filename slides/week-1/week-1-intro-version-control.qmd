@@ -404,64 +404,61 @@ Update the local copy of your repo (the copy on your computer) with the version 
 
 # Connect GitHub to RStudio
 
+## Previous Steps
+
+You were asked to complete the following steps **before** coming to class today:
+
+1. Create a GitHub account
+2. Introduce yourself to git (in RStudio)
+3. Generate a Personal Access Token (PAT)
+4. Store your PAT in RStudio
+
 ## Verifying Your Connection
 
-You were asked to 
-## Install + Load `R` Packages
+::: columns
+::: {.column width="45%"}
+Open RStudio and run the following code in your console (lower left pane):
+:::
 
-Work in your console or an Rscript for this.
+::: {.column width="5%"}
+:::
 
-1. Install and load the `usethis` package.
-
-```{r}
-#| eval: false
-#| echo: true
-install.packages("usethis")
-library(usethis)
-```
-
-2. Install and load the `gitcreds` Package.
+::: {.column width="50%"}
+</br>
 
 ```{r}
-#| eval: false
-#| echo: true
-install.packages("gitcreds")
-library(gitcreds)
-```
-
-
-## Configure git
-
-3. Tell git your email and GitHub username.
-
-```{r}
-#| eval: false
-#| echo: true
-usethis::use_git_config(user.name = "JaneDoe2", user.email = "jane@example.org")
-```
-
-(Nothing should happen.)
-
-
-## Generate your Personal Access Token
-
-4. Generate a PAT.
-
-```{r}
-#| eval: false
-#| echo: true
-create_github_token()
-```
-
-## Verify your PAT
-
-7. Let's verify.
-
-```{r}
+#| label: sit-rep
 #| echo: true
 #| eval: false
-git_sitrep()
+#| code-line-numbers: false
+
+usethis::git_sitrep()
+
 ```
+:::
+:::
+
+. . .
+
+</br> 
+
+You should see something like:
+
+::: {.small}
+```
+── GitHub user 
+• Default GitHub host: 'https://github.com'
+• Personal access token for 'https://github.com': '<discovered>'
+• GitHub user: 'atheobold'
+• Token scopes: 'admin:org, admin:public_key, delete:packages, delete_repo, gist, notifications, repo, user, workflow, write:packages'
+• Email(s): 'atheobol@calpoly.edu (primary)', 'theobold.allison970@gmail.com', '12439090+atheobold@users.noreply.github.com'
+ℹ No active usethis project
+```
+:::
+
+. . .
+
+If that is not the case, Dr. Theobold will help you troubleshoot in 5-minutes!
 
 # Accessing Lab 1 
 
@@ -469,13 +466,12 @@ git_sitrep()
 
 Step 1: Fork the [Lab 1 repository](https://github.com/atheobold/stat-331-lab-1)
 
-add screenshot of forking the repo
-
-# Once You've Forked the Repo 
-
-# Once You've Forked the Repo 
-
 Step 2: Clone your Lab 1 repository to your computer
+
+Here are step by step directions: [Forking and cloning a repo in 10 steps](https://scribehow.com/embed/How_to_Fork_a_GitHub_Repository__85zc-pWwSAin-RPejYY66A)
+
+
+## Once You've Cloned the Repo
 
 Step 3: Open the `lab-1.qmd` file
 
