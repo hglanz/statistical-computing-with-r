@@ -3,7 +3,6 @@ title: "Lab 2: Exploring Rodents with `ggplot2`"
 author: "Your name here!"
 format: html
 toc: true
-embed-resources: true
 code-tools: true
 execute:
   echo: true
@@ -15,14 +14,13 @@ execute:
 
 ## Accessing the Lab
 
-GitHub Repository: 
+GitHub Repository:
 
 ## Seeking Help
 
 Part of learning to program is learning from a variety of resources. Thus, I expect you will use resources that you find on the internet. There is, however, an important balance between copying someone else's code and *using their code to learn*. Therefore, if you use external resources, I want to know about it. You can "inform" me of any resources you used by **pasting the link to the resource in a code comment next to where you used that resource**.
 
 Additionally, you are permitted and encouraged to work with your peers as you complete lab assignments, but **you are expected to do your own work**. Copying from each other is cheating, and letting people copy from you is also cheating. Please don't do either of those things.
-
 
 # Lab Instructions
 
