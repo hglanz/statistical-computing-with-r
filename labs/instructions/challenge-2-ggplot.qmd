@@ -32,7 +32,7 @@ Create another code chunk and paste in your code from Question 14 or Question 15
 Alternatively, you can create a copy of your Lab2.qmd file and **delete the unnecessary parts**.
 :::
 
-# `r emojifont::emoji("hot_pepper")` Medium: Ridge Plots
+# `r emo::ji("hot_pepper")` Medium: Ridge Plots
 
 In Lab 2, you used side-by-side **boxplots** to visualize the distribution of weight within each species of rodent. Boxplots have [substantial flaws](https://www.data-to-viz.com/caveat/boxplot.html), namely that they disguise distributions with multiple modes.
 
@@ -40,7 +40,7 @@ A "superior" alternative is the density plot. However, `ggplot2` does not allow 
 
 > **For this challenge you are to change your boxplots to ridge plots. You will need to install the `ggridges` package and explore the `geom_density_ridges()` function.**
 
-# `r emojifont::emoji("hot_pepper")` `r emojifont::emoji("hot_pepper")` Spicy: Exploring Color Themes
+# `r emo::ji("hot_pepper")` `r emo::ji("hot_pepper")` Spicy: Exploring Color Themes
 
 The built-in `ggplot()` color scheme may not include the colors you were looking for. Don't worry -- there are many other color palettes available to use!
 
@@ -94,7 +94,7 @@ Install a package and use its available color `scale`. Popular options include:
 
 > **In this challenge you are expected to use this information to modify the boxplots you created Lab 2. First, you are to color the boxplots based on the variable `genus`. Next, you are to change the colors used for `genus` using either manual color specification or any of the packages listed here (or others!).**
 
-# `r emojifont::emoji("hot_pepper")` `r emojifont::emoji("hot_pepper")` `r emojifont::emoji("hot_pepper")` Hot: Exploring `ggplot2` Annotation
+# `r emo::ji("hot_pepper")` `r emo::ji("hot_pepper")` `r emo::ji("hot_pepper")` Hot: Exploring `ggplot2` Annotation
 
 Some data scientists advocate that we should try to eliminate legends from our plots to make them more clear. Instead of legends, we should use **annotation**.
 
