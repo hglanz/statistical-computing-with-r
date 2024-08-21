@@ -390,15 +390,43 @@ In summary: Be good to each other.
 
 ## How do you define plagiarism in a programming class?
 
-Paraphrasing or quoting another’s work without citing the source is a form of academic misconduct. This included the R code produced by someone else! Writing code is like writing a paper, it is obvious if you copied-and-pasted a sentence from someone else into your paper because the way each person writes is different.
+Paraphrasing or quoting another’s work without citing the source is a form of
+academic misconduct. This included the R code produced by someone else! Writing
+code is like writing a paper, it is obvious if you copied-and-pasted a sentence
+from someone else into your paper because the way each person writes is
+different.
 
-In this class the assumed knowledge is the course materials, including the course textbook, coursework pages, and course slides. Any functions / code used outside of these materials require direct references. This includes any functions learned through R documentation for functions we have learned. Meaning, if you look up the help file for `mutate()` and you learn about a function not covered in the course materials, you are required to cite the documentation when using that function.
+In this class the assumed knowledge is the course materials, including the
+course textbook, coursework pages, and course slides. Any functions / code used
+outside of these materials require direct references. This includes any
+functions learned through R documentation for functions we have learned.
+Meaning, if you look up the help file for `mutate()` and you learn about a
+function not covered in the course materials, you are required to cite the
+documentation when using that function.
 
-Even inadvertent or unintentional misuse or appropriation of another's work (such as relying heavily on source material that is not expressly acknowledged) is considered plagiarism. If you are struggling with writing the R code for an assignment, please reach out to me. I would prefer that I get to help you rather than you spending hours Googling things and get nowhere!
+Even inadvertent or unintentional misuse or appropriation of another's work
+(such as relying heavily on source material that is not expressly acknowledged)
+is considered plagiarism. If you use external resources such as Google or 
+ChatGPT, I expect you to indicate this in your assignment. 
 
-Any incident of dishonesty, copying or plagiarism will be reported to the Office of Student Rights and Responsibilities. Cheating or plagiarism will earn you a grade of 0 on the assignment and will remove your ability to submit revisions for that assignment.
+- If you used Google, you are expected to "inform" me of any resources you used
+by **pasting the link to the resource in a code comment next to where you used
+that resource**.
 
-If you have any questions about using and citing sources, you are expected to ask for clarification.
+- If you used ChatGPT, you are expected to "inform" me of the assistance you
+received by (1) indicating somewhere in the problem that you used ChatGPT 
+(e.g., below the question prompt or as a code comment), and (2) downloading and
+attaching the `.txt` file containing your **entire** conversation with ChatGPT.
+
+It is both good professional practice and academic integrity to cite any 
+resources you used during your work. The first incident of failing to cite your
+resources, will result in a warning. The second incident of failing to cite your
+resources will result in a 0 on the assignment, meaning you will not be able to
+include **any** code from that Lab or Challenge in your Final Portfolio. You
+will also be reported to the Office of Student Rights and Responsibilities. 
+
+If you have any questions about using and citing sources, you are expected to 
+ask for clarification.
 
 # I’m having difficulty paying for food and rent, what can I do?
 
