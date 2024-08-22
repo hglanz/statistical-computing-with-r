@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -155,7 +155,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../../index.html" class="sidebar-logo-link">
       <img src="../../images/r-flowers.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -254,8 +254,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-2-ggplot-projects.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 2</span></a>
+  <a href="../../weeks/week-2-ggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2, Part 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-2-projects-data-import.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2, Part 2</span></a>
   </div>
 </li>
       </ul>
@@ -272,6 +278,7 @@ window.Quarto = {
   <ul>
   <li><a href="#accessing-the-lab" id="toc-accessing-the-lab" class="nav-link active" data-scroll-target="#accessing-the-lab">Accessing the Lab</a></li>
   <li><a href="#seeking-help" id="toc-seeking-help" class="nav-link" data-scroll-target="#seeking-help">Seeking Help</a></li>
+  <li><a href="#download-the-data---surveys.csv---file-here." id="toc-download-the-data---surveys.csv---file-here." class="nav-link" data-scroll-target="#download-the-data---surveys.csv---file-here.">Download the data - <code>surveys.csv</code> - file here.</a></li>
   <li><a href="#lab-instructions" id="toc-lab-instructions" class="nav-link" data-scroll-target="#lab-instructions">Lab Instructions</a></li>
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
   <li><a href="#data-context" id="toc-data-context" class="nav-link" data-scroll-target="#data-context">Data Context</a></li>
@@ -324,7 +331,26 @@ window.Quarto = {
 <section id="seeking-help" class="level2">
 <h2 class="anchored" data-anchor-id="seeking-help">Seeking Help</h2>
 <p>Part of learning to program is learning from a variety of resources. Thus, I expect you will use resources that you find on the internet. There is, however, an important balance between copying someone else’s code and <em>using their code to learn</em>. Therefore, if you use external resources, I want to know about it. You can “inform” me of any resources you used by <strong>pasting the link to the resource in a code comment next to where you used that resource</strong>.</p>
-<p>Additionally, you are permitted and encouraged to work with your peers as you complete lab assignments, but <strong>you are expected to do your own work</strong>. Copying from each other is cheating, and letting people copy from you is also cheating. Please don’t do either of those things.</p>
+<p>Additionally, you are permitted and encouraged to work with your peers as you complete lab assignments, but <strong>you are expected to do your own work</strong>. Copying from each other is cheating, and letting people copy from you is also cheating. Please don’t do either of those things. &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:labs/instructions/lab-2-instructions.qmd :::</p>
+<p><a href="LA2_ggplot.qmd">Download starter .qmd file here.</a></p>
+</section>
+<section id="download-the-data---surveys.csv---file-here." class="level1">
+<h1><a href="surveys.csv">Download the data - <code>surveys.csv</code> - file here.</a></h1>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>812871df4da3bef35a71c2b36d29ed23e9fd227a:labs/instructions/lab-2-ggplot.qmd</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 </section>
 <section id="lab-instructions" class="level1">
 <h1>Lab Instructions</h1>
@@ -792,7 +818,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -1036,219 +1067,227 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>Part of learning to program is learning from a variety of resources. Thus, I expect you will use resources that you find on the internet. There is, however, an important balance between copying someone else's code and *using their code to learn*. Therefore, if you use external resources, I want to know about it. You can "inform" me of any resources you used by **pasting the link to the resource in a code comment next to where you used that resource**.</span>
 <span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>Additionally, you are permitted and encouraged to work with your peers as you complete lab assignments, but **you are expected to do your own work**. Copying from each other is cheating, and letting people copy from you is also cheating. Please don't do either of those things.</span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lab Instructions</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:labs/instructions/lab-2-instructions.qmd</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>The questions in this lab are noted with numbers and boldface. Each question will require you to produce code, whether it is one line or multiple lines.</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Download starter .qmd file here.</span><span class="co">](LA2_ggplot.qmd)</span></span>
 <span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>This document is quite plain, meaning it does not have any special formatting. As part of your demonstration of working with Quarto documents, I would encourage you to spice your documents up (e.g., declaring execution options, specifying how your figures should be output, formatting your code output, etc.).</span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>Remember to make small changes and **render often**!</span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Download the data - `surveys.csv` - file here.</span><span class="co">](surveys.csv)</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="fu">=======</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;&gt;&gt;&gt;&gt;&gt;&gt; 812871df4da3bef35a71c2b36d29ed23e9fd227a:labs/instructions/lab-2-ggplot.qmd</span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lab Instructions</span></span>
 <span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="fu"># Setup</span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>The questions in this lab are noted with numbers and boldface. Each question will require you to produce code, whether it is one line or multiple lines.</span>
 <span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>In the code chunk below, load in the packages necessary for your analysis. You should only need the <span class="in">`tidyverse`</span> package for this analysis.</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>This document is quite plain, meaning it does not have any special formatting. As part of your demonstration of working with Quarto documents, I would encourage you to spice your documents up (e.g., declaring execution options, specifying how your figures should be output, formatting your code output, etc.).</span>
 <span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a><span class="in"># code for loading packages goes here!</span></span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>Remember to make small changes and **render often**!</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data Context</span></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="fu"># Setup</span></span>
 <span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>The Portal Project is a long-term ecological study being conducted near Portal, AZ. Since 1977, the site has been used to study the interactions among rodents, ants, and plants, as well as their respective responses to climate. To study the interactions among organisms, researchers experimentally manipulated access to 24 study plots. This study has produced over 100 scientific papers and is one of the longest running ecological studies in the U.S.</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>In the code chunk below, load in the packages necessary for your analysis. You should only need the <span class="in">`tidyverse`</span> package for this analysis.</span>
 <span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>We will be investigating the animal species diversity and weights found within plots at the Portal study site. The data are stored as a comma separated value (CSV) file. Each row holds information for a single animal, and the columns represent:</span>
-<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>| Column            | Description                        |</span>
-<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>|-------------------|------------------------------------|</span>
-<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>| <span class="in">`record_id`</span>       | Unique ID for the observation      |</span>
-<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>| <span class="in">`month`</span>           | month of observation               |</span>
-<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>| <span class="in">`day`</span>             | day of observation                 |</span>
-<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>| <span class="in">`year`</span>            | year of observation                |</span>
-<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>| <span class="in">`plot_id`</span>         | ID of a particular plot            |</span>
-<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>| <span class="in">`species_id`</span>      | 2-letter code                      |</span>
-<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>| <span class="in">`sex`</span>             | sex of animal ("M", "F")           |</span>
-<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>| <span class="in">`hindfoot_length`</span> | length of the hindfoot in mm       |</span>
-<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>| <span class="in">`weight`</span>          | weight of the animal in grams      |</span>
-<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>| <span class="in">`genus`</span>           | genus of animal                    |</span>
-<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>| <span class="in">`species`</span>         | species of animal                  |</span>
-<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>| <span class="in">`taxon`</span>           | e.g. Rodent, Reptile, Bird, Rabbit |</span>
-<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>| <span class="in">`plot_type`</span>       | type of plot                       |</span>
-<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a><span class="fu"># Reading the Data into `R`</span></span>
-<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a>**1. Using the `read_csv()` function, write the code necessary to load in the `surveys.csv` dataset. For simplicity, name the data `surveys`.**</span>
-<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{r data}</span></span>
-<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a><span class="in"># Code for question 1!</span></span>
-<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a><span class="in"># code for loading packages goes here!</span></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data Context</span></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>The Portal Project is a long-term ecological study being conducted near Portal, AZ. Since 1977, the site has been used to study the interactions among rodents, ants, and plants, as well as their respective responses to climate. To study the interactions among organisms, researchers experimentally manipulated access to 24 study plots. This study has produced over 100 scientific papers and is one of the longest running ecological studies in the U.S.</span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>We will be investigating the animal species diversity and weights found within plots at the Portal study site. The data are stored as a comma separated value (CSV) file. Each row holds information for a single animal, and the columns represent:</span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>| Column            | Description                        |</span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>|-------------------|------------------------------------|</span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>| <span class="in">`record_id`</span>       | Unique ID for the observation      |</span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>| <span class="in">`month`</span>           | month of observation               |</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>| <span class="in">`day`</span>             | day of observation                 |</span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>| <span class="in">`year`</span>            | year of observation                |</span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>| <span class="in">`plot_id`</span>         | ID of a particular plot            |</span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>| <span class="in">`species_id`</span>      | 2-letter code                      |</span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a>| <span class="in">`sex`</span>             | sex of animal ("M", "F")           |</span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a>| <span class="in">`hindfoot_length`</span> | length of the hindfoot in mm       |</span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a>| <span class="in">`weight`</span>          | weight of the animal in grams      |</span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a>| <span class="in">`genus`</span>           | genus of animal                    |</span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a>| <span class="in">`species`</span>         | species of animal                  |</span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a>| <span class="in">`taxon`</span>           | e.g. Rodent, Reptile, Bird, Rabbit |</span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a>| <span class="in">`plot_type`</span>       | type of plot                       |</span>
 <span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a>**2. What are the dimensions (# of rows and columns) of these data?**</span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a><span class="fu"># Reading the Data into `R`</span></span>
 <span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- You can either write code here or in the code chunk for #1, but I **must** see the code you used to address this question!  --&gt;</span></span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a>**1. Using the `read_csv()` function, write the code necessary to load in the `surveys.csv` dataset. For simplicity, name the data `surveys`.**</span>
 <span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a>**3. What are the data types of the variables in this dataset?**</span>
-<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- You can either write code here or in the code chunk for #1, but I **must** see the code you used to address this question!  --&gt;</span></span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a><span class="in">```{r data}</span></span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a><span class="in"># Code for question 1!</span></span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exploratory Data Analysis with **`ggplot2`**</span></span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a>**2. What are the dimensions (# of rows and columns) of these data?**</span>
 <span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a><span class="in">`ggplot()`</span> graphics are built step by step by adding new elements. Adding layers in this fashion allows for extensive flexibility and customization of plots.</span>
+<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- You can either write code here or in the code chunk for #1, but I **must** see the code you used to address this question!  --&gt;</span></span>
 <span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a>To build a <span class="in">`ggplot()`</span>, we will use the following basic template that can be used for different types of plots:</span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a>**3. What are the data types of the variables in this dataset?**</span>
 <span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="sc">&lt;</span>DATA<span class="sc">&gt;</span>,</span>
-<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="sc">&lt;</span>VARIABLE MAPPINGS<span class="sc">&gt;</span>)) <span class="sc">+</span></span>
-<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a>  <span class="er">&lt;</span>GEOM_FUNCTION<span class="sc">&gt;</span>()</span>
-<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a>Let's get started!</span>
-<span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scatterplot</span></span>
-<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a><span class="in">```{r scatterplot}</span></span>
-<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a><span class="in"># Scatterplot code for question s 4-8! </span></span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- You can either write code here or in the code chunk for #1, but I **must** see the code you used to address this question!  --&gt;</span></span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exploratory Data Analysis with **`ggplot2`**</span></span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a><span class="in">`ggplot()`</span> graphics are built step by step by adding new elements. Adding layers in this fashion allows for extensive flexibility and customization of plots.</span>
+<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a>To build a <span class="in">`ggplot()`</span>, we will use the following basic template that can be used for different types of plots:</span>
+<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="sc">&lt;</span>DATA<span class="sc">&gt;</span>,</span>
+<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="sc">&lt;</span>VARIABLE MAPPINGS<span class="sc">&gt;</span>)) <span class="sc">+</span></span>
+<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a>  <span class="er">&lt;</span>GEOM_FUNCTION<span class="sc">&gt;</span>()</span>
 <span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a>**4. First, let's create a scatterplot of the relationship between `weight` (on the** $x$-axis) and <span class="in">`hindfoot_length`</span> (on the $y$-axis).</span>
+<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a>Let's get started!</span>
 <span id="cb12-105"><a href="#cb12-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a>We can see there are **a lot** of points plotted on top of each other. Let's try and modify this plot to extract more information from it.</span>
+<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scatterplot</span></span>
 <span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a>**5. Let's add transparency (`alpha`) to the points, to make the points more transparent and (possibly) easier to see.**</span>
-<span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a>Despite our best efforts there is still a substantial amount of overplotting occurring in our scatterplot. Let's try splitting the dataset into smaller subsets and see if that allows for us to see the trends a bit better.</span>
+<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a><span class="in">```{r scatterplot}</span></span>
+<span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a><span class="in"># Scatterplot code for question s 4-8! </span></span>
+<span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a>**6. Facet your scatterplot by `species`.**</span>
+<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a>**4. First, let's create a scatterplot of the relationship between `weight` (on the** $x$-axis) and <span class="in">`hindfoot_length`</span> (on the $y$-axis).</span>
 <span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a>**7. No plot is complete without axis labels and a title. Include reader friendly labels and a title to your plot.**</span>
+<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a>We can see there are **a lot** of points plotted on top of each other. Let's try and modify this plot to extract more information from it.</span>
 <span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a>It takes a larger cognitive load to read text that is rotated. It is common practice in many journals and media outlets to move the $y$-axis label to the top of the graph under the title.</span>
+<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a>**5. Let's add transparency (`alpha`) to the points, to make the points more transparent and (possibly) easier to see.**</span>
 <span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a>**8. Specify your** $y$-axis label to be empty and move the $y$-axis label into the subtitle. You may overwrite your code from Q7.</span>
+<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a>Despite our best efforts there is still a substantial amount of overplotting occurring in our scatterplot. Let's try splitting the dataset into smaller subsets and see if that allows for us to see the trends a bit better.</span>
 <span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a><span class="fu">## Boxplots</span></span>
+<span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a>**6. Facet your scatterplot by `species`.**</span>
 <span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a>**9. Sketch out (by hand or using [Excalidraw](https://excalidraw.com/)) a game plan for creating side-by-side boxplots to visualize the distribution of weight within each species. Include an image of your game plan.** This can take on your own flavor! The ideas is that you are *thinking before coding*. I recommend saving this in the same folder as your .qmd file.</span>
+<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a>**7. No plot is complete without axis labels and a title. Include reader friendly labels and a title to your plot.**</span>
 <span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a><span class="al">![]()</span> <span class="co">&lt;!-- Put the file path of your saved game plan in the parentheses! --&gt;</span></span>
+<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a>It takes a larger cognitive load to read text that is rotated. It is common practice in many journals and media outlets to move the $y$-axis label to the top of the graph under the title.</span>
 <span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r boxplot}</span></span>
-<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a><span class="in"># Boxplot code for question 10 - 15!</span></span>
-<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a>**8. Specify your** $y$-axis label to be empty and move the $y$-axis label into the subtitle. You may overwrite your code from Q7.</span>
+<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a><span class="fu">## Boxplots</span></span>
 <span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-130"><a href="#cb12-130" aria-hidden="true" tabindex="-1"></a>**10. Implement your game plan to create side-by-side boxplots to visualize the distribution of weight within each species.**</span>
+<span id="cb12-130"><a href="#cb12-130" aria-hidden="true" tabindex="-1"></a>**9. Sketch out (by hand or using [Excalidraw](https://excalidraw.com/)) a game plan for creating side-by-side boxplots to visualize the distribution of weight within each species. Include an image of your game plan.** This can take on your own flavor! The ideas is that you are *thinking before coding*. I recommend saving this in the same folder as your .qmd file.</span>
 <span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-132"><a href="#cb12-132" aria-hidden="true" tabindex="-1"></a>A fundamental complaint of boxplots is that they do not plot the raw data. However, with **ggplot** we can add the raw points on top of the boxplots!</span>
+<span id="cb12-132"><a href="#cb12-132" aria-hidden="true" tabindex="-1"></a><span class="al">![]()</span> <span class="co">&lt;!-- Put the file path of your saved game plan in the parentheses! --&gt;</span></span>
 <span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a>**11. Add another layer to your previous plot that plots each observation.**</span>
-<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a>Alright, this should look less than optimal. Your points should appear rather stacked on top of each other. To make them less stacked, we need to jitter them a bit, using <span class="in">`geom_jitter()`</span>.</span>
+<span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a><span class="in">```{r boxplot}</span></span>
+<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a><span class="in"># Boxplot code for question 10 - 15!</span></span>
+<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-138"><a href="#cb12-138" aria-hidden="true" tabindex="-1"></a>**12. Remove the previous layer and include a `geom_jitter()` layer instead.**</span>
+<span id="cb12-138"><a href="#cb12-138" aria-hidden="true" tabindex="-1"></a>**10. Implement your game plan to create side-by-side boxplots to visualize the distribution of weight within each species.**</span>
 <span id="cb12-139"><a href="#cb12-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-140"><a href="#cb12-140" aria-hidden="true" tabindex="-1"></a>That should look a bit better! But its really hard to see the points when everything is black.</span>
+<span id="cb12-140"><a href="#cb12-140" aria-hidden="true" tabindex="-1"></a>A fundamental complaint of boxplots is that they do not plot the raw data. However, with **ggplot** we can add the raw points on top of the boxplots!</span>
 <span id="cb12-141"><a href="#cb12-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-142"><a href="#cb12-142" aria-hidden="true" tabindex="-1"></a>**13. Set the `color` aesthetic in `geom_jitter()` to change the color of the points and add set the `alpha` aesthetic to add transparency.**</span>
+<span id="cb12-142"><a href="#cb12-142" aria-hidden="true" tabindex="-1"></a>**11. Add another layer to your previous plot that plots each observation.**</span>
 <span id="cb12-143"><a href="#cb12-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-144"><a href="#cb12-144" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb12-145"><a href="#cb12-145" aria-hidden="true" tabindex="-1"></a>You are welcome to use whatever color you wish! Some of my favorites are "orange3" and "steelblue".</span>
-<span id="cb12-146"><a href="#cb12-146" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb12-144"><a href="#cb12-144" aria-hidden="true" tabindex="-1"></a>Alright, this should look less than optimal. Your points should appear rather stacked on top of each other. To make them less stacked, we need to jitter them a bit, using <span class="in">`geom_jitter()`</span>.</span>
+<span id="cb12-145"><a href="#cb12-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-146"><a href="#cb12-146" aria-hidden="true" tabindex="-1"></a>**12. Remove the previous layer and include a `geom_jitter()` layer instead.**</span>
 <span id="cb12-147"><a href="#cb12-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-148"><a href="#cb12-148" aria-hidden="true" tabindex="-1"></a>Great! Now that you can see the points, you should notice something odd: there are two colors of points still being plotted. Some of the observations are being plotted twice, once from <span class="in">`geom_boxplot()`</span> as outliers and again from <span class="in">`geom_jitter()`</span>!</span>
+<span id="cb12-148"><a href="#cb12-148" aria-hidden="true" tabindex="-1"></a>That should look a bit better! But its really hard to see the points when everything is black.</span>
 <span id="cb12-149"><a href="#cb12-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-150"><a href="#cb12-150" aria-hidden="true" tabindex="-1"></a>**14. Inspect the help file for `geom_boxplot()` and see how you can remove the outliers from being plotted by `geom_boxplot()`. Make this change in your code!**</span>
+<span id="cb12-150"><a href="#cb12-150" aria-hidden="true" tabindex="-1"></a>**13. Set the `color` aesthetic in `geom_jitter()` to change the color of the points and add set the `alpha` aesthetic to add transparency.**</span>
 <span id="cb12-151"><a href="#cb12-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-152"><a href="#cb12-152" aria-hidden="true" tabindex="-1"></a>Some small changes can make **big** differences to plots. One of these changes are better labels for a plot's axes and legend.</span>
-<span id="cb12-153"><a href="#cb12-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-154"><a href="#cb12-154" aria-hidden="true" tabindex="-1"></a>**15. Modify the** $x$-axis and $y$-axis labels to describe what is being plotted. Be sure to include any necessary units! You might also be getting overlap in the species names -- use <span class="in">`theme(axis.text.x = ____)`</span> or <span class="in">`theme(axis.text.y = ____)`</span> to turn the species axis labels 45 degrees.</span>
+<span id="cb12-152"><a href="#cb12-152" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb12-153"><a href="#cb12-153" aria-hidden="true" tabindex="-1"></a>You are welcome to use whatever color you wish! Some of my favorites are "orange3" and "steelblue".</span>
+<span id="cb12-154"><a href="#cb12-154" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb12-155"><a href="#cb12-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-156"><a href="#cb12-156" aria-hidden="true" tabindex="-1"></a>Some people (and journals) prefer for boxplots to be stacked with a specific orientation! Let's practice changing the orientation of our boxplots.</span>
+<span id="cb12-156"><a href="#cb12-156" aria-hidden="true" tabindex="-1"></a>Great! Now that you can see the points, you should notice something odd: there are two colors of points still being plotted. Some of the observations are being plotted twice, once from <span class="in">`geom_boxplot()`</span> as outliers and again from <span class="in">`geom_jitter()`</span>!</span>
 <span id="cb12-157"><a href="#cb12-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-158"><a href="#cb12-158" aria-hidden="true" tabindex="-1"></a>**16. Copy-paste your boxplot code from above. Flip the orientation of your boxplots. If you created horizontally stacked boxplots, your boxplots should now be stacked vertically. If you had vertically stacked boxplots, you should now stack your boxplots horizontally!**</span>
+<span id="cb12-158"><a href="#cb12-158" aria-hidden="true" tabindex="-1"></a>**14. Inspect the help file for `geom_boxplot()` and see how you can remove the outliers from being plotted by `geom_boxplot()`. Make this change in your code!**</span>
 <span id="cb12-159"><a href="#cb12-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-162"><a href="#cb12-162" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-163"><a href="#cb12-163" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy-paste boxplot code. Then modify for question 16!</span></span>
-<span id="cb12-164"><a href="#cb12-164" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-160"><a href="#cb12-160" aria-hidden="true" tabindex="-1"></a>Some small changes can make **big** differences to plots. One of these changes are better labels for a plot's axes and legend.</span>
+<span id="cb12-161"><a href="#cb12-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-162"><a href="#cb12-162" aria-hidden="true" tabindex="-1"></a>**15. Modify the** $x$-axis and $y$-axis labels to describe what is being plotted. Be sure to include any necessary units! You might also be getting overlap in the species names -- use <span class="in">`theme(axis.text.x = ____)`</span> or <span class="in">`theme(axis.text.y = ____)`</span> to turn the species axis labels 45 degrees.</span>
+<span id="cb12-163"><a href="#cb12-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-164"><a href="#cb12-164" aria-hidden="true" tabindex="-1"></a>Some people (and journals) prefer for boxplots to be stacked with a specific orientation! Let's practice changing the orientation of our boxplots.</span>
 <span id="cb12-165"><a href="#cb12-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-166"><a href="#cb12-166" aria-hidden="true" tabindex="-1"></a>Notice how vertically stacked boxplots make the species labels more readable than horizontally stacked boxplots. This is good practice!</span>
+<span id="cb12-166"><a href="#cb12-166" aria-hidden="true" tabindex="-1"></a>**16. Copy-paste your boxplot code from above. Flip the orientation of your boxplots. If you created horizontally stacked boxplots, your boxplots should now be stacked vertically. If you had vertically stacked boxplots, you should now stack your boxplots horizontally!**</span>
 <span id="cb12-167"><a href="#cb12-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-168"><a href="#cb12-168" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conducting Statistical Analyses</span></span>
-<span id="cb12-169"><a href="#cb12-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-170"><a href="#cb12-170" aria-hidden="true" tabindex="-1"></a>Exploratory Data Analysis (EDA) is always a great start to investigating a dataset. Can we see a relationship between rodent weight and hindfoot length? How does rodent weight differ between species? After performing EDA, we can then conduct appropriate statistical analyses to formally investigate what we have seen.</span>
-<span id="cb12-171"><a href="#cb12-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-172"><a href="#cb12-172" aria-hidden="true" tabindex="-1"></a>In this section, we are going to conduct a one-way analysis of variance (ANOVA) to compare mean weight between the fourteen species.</span>
+<span id="cb12-170"><a href="#cb12-170" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-171"><a href="#cb12-171" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy-paste boxplot code. Then modify for question 16!</span></span>
+<span id="cb12-172"><a href="#cb12-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-173"><a href="#cb12-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-174"><a href="#cb12-174" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb12-175"><a href="#cb12-175" aria-hidden="true" tabindex="-1"></a><span class="fu">## Refresher on one-way ANOVA</span></span>
-<span id="cb12-176"><a href="#cb12-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-177"><a href="#cb12-177" aria-hidden="true" tabindex="-1"></a>While a second course in statistics is a pre-requisite for this class, you may want a <span class="co">[</span><span class="ot">refresher</span><span class="co">](https://openintro-ims.netlify.app/inference-many-means)</span> on conducting a one-way ANOVA.</span>
-<span id="cb12-178"><a href="#cb12-178" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb12-174"><a href="#cb12-174" aria-hidden="true" tabindex="-1"></a>Notice how vertically stacked boxplots make the species labels more readable than horizontally stacked boxplots. This is good practice!</span>
+<span id="cb12-175"><a href="#cb12-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-176"><a href="#cb12-176" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conducting Statistical Analyses</span></span>
+<span id="cb12-177"><a href="#cb12-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-178"><a href="#cb12-178" aria-hidden="true" tabindex="-1"></a>Exploratory Data Analysis (EDA) is always a great start to investigating a dataset. Can we see a relationship between rodent weight and hindfoot length? How does rodent weight differ between species? After performing EDA, we can then conduct appropriate statistical analyses to formally investigate what we have seen.</span>
 <span id="cb12-179"><a href="#cb12-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-180"><a href="#cb12-180" aria-hidden="true" tabindex="-1"></a>I have outlined the null and alternative hypotheses we will be testing:</span>
+<span id="cb12-180"><a href="#cb12-180" aria-hidden="true" tabindex="-1"></a>In this section, we are going to conduct a one-way analysis of variance (ANOVA) to compare mean weight between the fourteen species.</span>
 <span id="cb12-181"><a href="#cb12-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-182"><a href="#cb12-182" aria-hidden="true" tabindex="-1"></a>::: {.callout-note icon="false"}</span>
-<span id="cb12-183"><a href="#cb12-183" aria-hidden="true" tabindex="-1"></a><span class="fu">## Null</span></span>
+<span id="cb12-182"><a href="#cb12-182" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb12-183"><a href="#cb12-183" aria-hidden="true" tabindex="-1"></a><span class="fu">## Refresher on one-way ANOVA</span></span>
 <span id="cb12-184"><a href="#cb12-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-185"><a href="#cb12-185" aria-hidden="true" tabindex="-1"></a>The population mean weight is the same between **all** fourteen rodent species.</span>
+<span id="cb12-185"><a href="#cb12-185" aria-hidden="true" tabindex="-1"></a>While a second course in statistics is a pre-requisite for this class, you may want a <span class="co">[</span><span class="ot">refresher</span><span class="co">](https://openintro-ims.netlify.app/inference-many-means)</span> on conducting a one-way ANOVA.</span>
 <span id="cb12-186"><a href="#cb12-186" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb12-187"><a href="#cb12-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-188"><a href="#cb12-188" aria-hidden="true" tabindex="-1"></a>::: {.callout-note icon="false"}</span>
-<span id="cb12-189"><a href="#cb12-189" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alternative</span></span>
-<span id="cb12-190"><a href="#cb12-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-191"><a href="#cb12-191" aria-hidden="true" tabindex="-1"></a>At least one rodent species has a different population mean weight.</span>
-<span id="cb12-192"><a href="#cb12-192" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb12-193"><a href="#cb12-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-194"><a href="#cb12-194" aria-hidden="true" tabindex="-1"></a>Look up the help documentation for <span class="in">`aov()`</span>.</span>
+<span id="cb12-188"><a href="#cb12-188" aria-hidden="true" tabindex="-1"></a>I have outlined the null and alternative hypotheses we will be testing:</span>
+<span id="cb12-189"><a href="#cb12-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-190"><a href="#cb12-190" aria-hidden="true" tabindex="-1"></a>::: {.callout-note icon="false"}</span>
+<span id="cb12-191"><a href="#cb12-191" aria-hidden="true" tabindex="-1"></a><span class="fu">## Null</span></span>
+<span id="cb12-192"><a href="#cb12-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-193"><a href="#cb12-193" aria-hidden="true" tabindex="-1"></a>The population mean weight is the same between **all** fourteen rodent species.</span>
+<span id="cb12-194"><a href="#cb12-194" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb12-195"><a href="#cb12-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-196"><a href="#cb12-196" aria-hidden="true" tabindex="-1"></a>**17. Using `aov()`, complete the code below to carry out the analysis.**</span>
-<span id="cb12-197"><a href="#cb12-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-200"><a href="#cb12-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-201"><a href="#cb12-201" aria-hidden="true" tabindex="-1"></a>species_mod <span class="ot">&lt;-</span> <span class="fu">aov</span>()</span>
-<span id="cb12-202"><a href="#cb12-202" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(species_mod)</span>
-<span id="cb12-203"><a href="#cb12-203" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-204"><a href="#cb12-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-205"><a href="#cb12-205" aria-hidden="true" tabindex="-1"></a>**18. Based on the results of the ANOVA F-test, draw a conclusion in context of the hypotheses. Make sure to cite appropriate output from above.**</span>
-<span id="cb12-206"><a href="#cb12-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-207"><a href="#cb12-207" aria-hidden="true" tabindex="-1"></a>But wait, the <span class="in">`aov()`</span> output doesn’t actually tell us **which** species differ! Install the <span class="in">`emmeans`</span> package by running <span class="in">`install.packages("emmeans")`</span> in your console (NOT in the .qmd file). Then, run the code chunk below to load the package.</span>
-<span id="cb12-208"><a href="#cb12-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-211"><a href="#cb12-211" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-212"><a href="#cb12-212" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
-<span id="cb12-213"><a href="#cb12-213" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-196"><a href="#cb12-196" aria-hidden="true" tabindex="-1"></a>::: {.callout-note icon="false"}</span>
+<span id="cb12-197"><a href="#cb12-197" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alternative</span></span>
+<span id="cb12-198"><a href="#cb12-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-199"><a href="#cb12-199" aria-hidden="true" tabindex="-1"></a>At least one rodent species has a different population mean weight.</span>
+<span id="cb12-200"><a href="#cb12-200" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb12-201"><a href="#cb12-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-202"><a href="#cb12-202" aria-hidden="true" tabindex="-1"></a>Look up the help documentation for <span class="in">`aov()`</span>.</span>
+<span id="cb12-203"><a href="#cb12-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-204"><a href="#cb12-204" aria-hidden="true" tabindex="-1"></a>**17. Using `aov()`, complete the code below to carry out the analysis.**</span>
+<span id="cb12-205"><a href="#cb12-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-208"><a href="#cb12-208" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-209"><a href="#cb12-209" aria-hidden="true" tabindex="-1"></a>species_mod <span class="ot">&lt;-</span> <span class="fu">aov</span>()</span>
+<span id="cb12-210"><a href="#cb12-210" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(species_mod)</span>
+<span id="cb12-211"><a href="#cb12-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-212"><a href="#cb12-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-213"><a href="#cb12-213" aria-hidden="true" tabindex="-1"></a>**18. Based on the results of the ANOVA F-test, draw a conclusion in context of the hypotheses. Make sure to cite appropriate output from above.**</span>
 <span id="cb12-214"><a href="#cb12-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-215"><a href="#cb12-215" aria-hidden="true" tabindex="-1"></a>Look up the help documentation for <span class="in">`emmeans()`</span>. This one might take a bit of Google-ing. Note that we conducted a *one-factor model*.</span>
+<span id="cb12-215"><a href="#cb12-215" aria-hidden="true" tabindex="-1"></a>But wait, the <span class="in">`aov()`</span> output doesn’t actually tell us **which** species differ! Install the <span class="in">`emmeans`</span> package by running <span class="in">`install.packages("emmeans")`</span> in your console (NOT in the .qmd file). Then, run the code chunk below to load the package.</span>
 <span id="cb12-216"><a href="#cb12-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-217"><a href="#cb12-217" aria-hidden="true" tabindex="-1"></a>**19. Using the `species_mod` from above and the `emmeans()` function, complete the code below to obtain estimated model mean rodent weights for each species**</span>
-<span id="cb12-218"><a href="#cb12-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-221"><a href="#cb12-221" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-222"><a href="#cb12-222" aria-hidden="true" tabindex="-1"></a>species_estimates <span class="ot">&lt;-</span> <span class="fu">emmeans</span>()</span>
-<span id="cb12-223"><a href="#cb12-223" aria-hidden="true" tabindex="-1"></a>species_estimates</span>
-<span id="cb12-224"><a href="#cb12-224" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-225"><a href="#cb12-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-226"><a href="#cb12-226" aria-hidden="true" tabindex="-1"></a>**20. Now that you have obtained the estimated model mean rodent weights, conduct pairwise comparisons using the `pairs()` function from the `emmeans` package.**</span>
-<span id="cb12-227"><a href="#cb12-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-230"><a href="#cb12-230" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-231"><a href="#cb12-231" aria-hidden="true" tabindex="-1"></a><span class="co"># carry out pairwise comparisons between species.</span></span>
+<span id="cb12-219"><a href="#cb12-219" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-220"><a href="#cb12-220" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb12-221"><a href="#cb12-221" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-222"><a href="#cb12-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-223"><a href="#cb12-223" aria-hidden="true" tabindex="-1"></a>Look up the help documentation for <span class="in">`emmeans()`</span>. This one might take a bit of Google-ing. Note that we conducted a *one-factor model*.</span>
+<span id="cb12-224"><a href="#cb12-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-225"><a href="#cb12-225" aria-hidden="true" tabindex="-1"></a>**19. Using the `species_mod` from above and the `emmeans()` function, complete the code below to obtain estimated model mean rodent weights for each species**</span>
+<span id="cb12-226"><a href="#cb12-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-229"><a href="#cb12-229" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-230"><a href="#cb12-230" aria-hidden="true" tabindex="-1"></a>species_estimates <span class="ot">&lt;-</span> <span class="fu">emmeans</span>()</span>
+<span id="cb12-231"><a href="#cb12-231" aria-hidden="true" tabindex="-1"></a>species_estimates</span>
 <span id="cb12-232"><a href="#cb12-232" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-233"><a href="#cb12-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-234"><a href="#cb12-234" aria-hidden="true" tabindex="-1"></a><span class="fu"># Use Your Graphics Skills for Evil</span></span>
+<span id="cb12-234"><a href="#cb12-234" aria-hidden="true" tabindex="-1"></a>**20. Now that you have obtained the estimated model mean rodent weights, conduct pairwise comparisons using the `pairs()` function from the `emmeans` package.**</span>
 <span id="cb12-235"><a href="#cb12-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-236"><a href="#cb12-236" aria-hidden="true" tabindex="-1"></a>**21. Create the *ugliest version* of the scatterplot you created in Q4 above. Then, explain why you made the decisions you did, and which principles of good graphics you’ve intentionally violated.**</span>
-<span id="cb12-237"><a href="#cb12-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-238"><a href="#cb12-238" aria-hidden="true" tabindex="-1"></a>Ugliness is subjective, so the goal here is for you to explore the different ways you can customize the finer details of graphics. Make sure your finished masterpiece has appropriate axis labels and a title (after all, even ugly plots need to be correctly labeled!). You are free to add additional variables and layers, modify the aesthetics used, and leverage other packages. Let your creativity shine through!</span>
-<span id="cb12-239"><a href="#cb12-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-240"><a href="#cb12-240" aria-hidden="true" tabindex="-1"></a><span class="in">```{r ugly-graphic}</span></span>
-<span id="cb12-241"><a href="#cb12-241" aria-hidden="true" tabindex="-1"></a><span class="in"># Make your ugly graphic here!</span></span>
-<span id="cb12-242"><a href="#cb12-242" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-238"><a href="#cb12-238" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-239"><a href="#cb12-239" aria-hidden="true" tabindex="-1"></a><span class="co"># carry out pairwise comparisons between species.</span></span>
+<span id="cb12-240"><a href="#cb12-240" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-241"><a href="#cb12-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-242"><a href="#cb12-242" aria-hidden="true" tabindex="-1"></a><span class="fu"># Use Your Graphics Skills for Evil</span></span>
 <span id="cb12-243"><a href="#cb12-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-244"><a href="#cb12-244" aria-hidden="true" tabindex="-1"></a><span class="fu">### Useful References</span></span>
+<span id="cb12-244"><a href="#cb12-244" aria-hidden="true" tabindex="-1"></a>**21. Create the *ugliest version* of the scatterplot you created in Q4 above. Then, explain why you made the decisions you did, and which principles of good graphics you’ve intentionally violated.**</span>
 <span id="cb12-245"><a href="#cb12-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-246"><a href="#cb12-246" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Customizing ggplot2 graphics</span><span class="co">](http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.html)</span></span>
-<span id="cb12-247"><a href="#cb12-247" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Ugly graphics from a previous class</span><span class="co">](https://docs.google.com/presentation/d/19bi4KyrpKrjntKtpcKZiZgsVf-cr4X2i2MnQ6hYln7Y/edit?usp=sharing)</span></span>
-<span id="cb12-248"><a href="#cb12-248" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">A group-created slideshow of awful graphics</span><span class="co">](https://docs.google.com/presentation/d/1ixRsGI8BWgT2zA5AbB61eMLUbJgObvBCZt-OnZDzvX4/edit#slide=id.p)</span></span>
+<span id="cb12-246"><a href="#cb12-246" aria-hidden="true" tabindex="-1"></a>Ugliness is subjective, so the goal here is for you to explore the different ways you can customize the finer details of graphics. Make sure your finished masterpiece has appropriate axis labels and a title (after all, even ugly plots need to be correctly labeled!). You are free to add additional variables and layers, modify the aesthetics used, and leverage other packages. Let your creativity shine through!</span>
+<span id="cb12-247"><a href="#cb12-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-248"><a href="#cb12-248" aria-hidden="true" tabindex="-1"></a><span class="in">```{r ugly-graphic}</span></span>
+<span id="cb12-249"><a href="#cb12-249" aria-hidden="true" tabindex="-1"></a><span class="in"># Make your ugly graphic here!</span></span>
+<span id="cb12-250"><a href="#cb12-250" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-251"><a href="#cb12-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-252"><a href="#cb12-252" aria-hidden="true" tabindex="-1"></a><span class="fu">### Useful References</span></span>
+<span id="cb12-253"><a href="#cb12-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-254"><a href="#cb12-254" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Customizing ggplot2 graphics</span><span class="co">](http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.html)</span></span>
+<span id="cb12-255"><a href="#cb12-255" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Ugly graphics from a previous class</span><span class="co">](https://docs.google.com/presentation/d/19bi4KyrpKrjntKtpcKZiZgsVf-cr4X2i2MnQ6hYln7Y/edit?usp=sharing)</span></span>
+<span id="cb12-256"><a href="#cb12-256" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">A group-created slideshow of awful graphics</span><span class="co">](https://docs.google.com/presentation/d/1ixRsGI8BWgT2zA5AbB61eMLUbJgObvBCZt-OnZDzvX4/edit#slide=id.p)</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
