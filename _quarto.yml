@@ -19,7 +19,7 @@ website:
     background: "#D9E3E4"
 
   sidebar:
-    background: "#D9E3E4"
+    background: "#5D737E"
     logo: "images/r-flowers.png"
     pinned: true
     align: center
