@@ -3,6 +3,7 @@ title: "Lab 1: Introduction to Quarto"
 format: html
 number-sections: true
 number-depth: 2
+editor: source
 execute:
   echo: false
 ---
