@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  render: 
+    - "!labs/student/"
 
 website:
   page-navigation: true
@@ -51,12 +53,6 @@ website:
             text: Access
           - href: course-materials/course_resources.qmd
             text: R Resources
-      # - section: "Portfolio"
-      #   contents:
-      #     - href: project/midterm-project/midterm-project-directions.qmd
-      #       text: Midterm Project Description
-      #     - href: project/final-project/final-project-directions.qmd
-      #       text: Final Project Description
       - section: "Weekly materials"
         contents:
           # - href: weeks/week-0.qmd
@@ -87,6 +83,19 @@ website:
           #   text: "Week 9"
           # - href: weeks/week-10.qmd
           #   text: "Week 10"
+      - section: "Labs"
+        contents:
+          - href: labs/instructions/lab-1-instructions.qmd
+            text: Lab 1
+          - href: labs/instructions/lab-2-instructions.qmd
+            text: Lab 2
+      # - section: "Portfolio"
+      #   contents:
+      #     - href: portfolio/midterm-project/midterm-project-directions.qmd
+      #       text: Midterm Portfolio Check-in
+      #     - href: portfolio/final-portfolio-instructions.qmd
+      #       text: Final Portfolio Instructions
+      
 
 format:
   html:
