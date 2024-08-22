@@ -6,20 +6,6 @@ editor: source
 embed-resources: true
 ---
 
-```{r}
-#| include: false
-#| label: set-up
-
-library(tidyverse)
-
-surveys <- read_csv(
-  here::here("labs",
-             "student", 
-             "data", 
-             "surveys.csv")
-  )
-```
-
 For this week's Challenge, you will have three different options to explore.
 I've arranged these options in terms of their "spiciness," or the difficulty of 
 completing the task. **You are only required to complete one task, but if you are interested in exploring more than one, feel free!**
@@ -27,23 +13,20 @@ completing the task. **You are only required to complete one task, but if you ar
 This is a great place to let your creativity show! Make sure to indicate what
 additional touches you added, and provide any online references you used.
 
-::: callout-tip
-You will be working in the `challenge-2.qmd` file, found in the repository you
-cloned for Lab 2.  Within this document, make sure to specify that your plots
-are contained in your document (`self-contained: true`) and that your code is 
-visible to the reader (`echo: true`). If there are other formatting specifics
+# Getting Set-up 
+
+Within this document, make sure to specify that your plots are contained in
+your document (`self-contained: true`) and that your code is visible to the reader (`echo: true`). If there are other formatting specifics
 you would like to include, feel free to toss those in the YAML, too!
 
-Then, create a setup code chunk to load the packages and read in the
+Next, create a setup code chunk to load the packages and read in the
 `surveys.csv` data file exactly how you did in Lab 2.
 
-Create another code chunk and paste in your code from Question 14 or Question 15
-in Lab 2 -- we will be modifying the box plot of weights by species!
-:::
+Finally, create another code chunk and paste in your code from Question 14 or Question 15 in Lab 2 -- we will be modifying the box plot of weights by species!
 
-# `r emo::ji("hot_pepper")` Medium: Ridge Plots
+# Medium: Ridge Plots
 
-In Lab 2, you used side-by-side **boxplots** to visualize the distribution of
+In Lab 2, you used side-by-side **boxplots** to visualize the distribution of 
 weight within each species of rodent. Boxplots have [substantial flaws](https://www.data-to-viz.com/caveat/boxplot.html), namely that they
 disguise distributions with multiple modes.
 
@@ -53,7 +36,7 @@ make use of the `ggridges` package to create side-by-side density (ridge) plots.
 
 > **For this challenge you are to change your boxplots to ridge plots. You will need to install the `ggridges` package and explore the `geom_density_ridges()` function.**
 
-# `r emo::ji("hot_pepper")` `r emo::ji("hot_pepper")` Spicy: Exploring Color Themes
+# Spicy: Exploring Color Themes
 
 The built-in `ggplot()` color scheme may not include the colors you were looking
 for. Don't worry -- there are many other color palettes available to use!
@@ -118,7 +101,7 @@ use (e.g. `scale_color_aaas()`).
 
 > **In this challenge you are expected to use this information to modify the boxplots you created Lab 2. First, you are to color the boxplots based on the variable `genus`. Next, you are to change the colors used for `genus` using either manual color specification or any of the packages listed here (or others!).**
 
-# `r emo::ji("hot_pepper")` `r emo::ji("hot_pepper")` `r emo::ji("hot_pepper")` Hot: Exploring `ggplot2` Annotation
+# Hot: Exploring `ggplot2` Annotation
 
 Some data scientists advocate that we should try to eliminate legends from our
 plots to make them more clear. Instead of using legends, which cause the 
