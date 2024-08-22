@@ -16,7 +16,9 @@ Today we will...
 -   Introductions (Me + You)
 -   Course Layout
 -   Basics of R
--   [Practice Activity 1: Find the Mistakes](../group-activities/base-r.qmd)
+-   [Group collaboration warm-up](../../group-activities/week-1/data-cleaning-viz-steps.qmd)
+-   [Data wrangling / visualization puzzle](../../group-activities/week-1/broken-circles.qmd)
+
 
 # Introductions
 
