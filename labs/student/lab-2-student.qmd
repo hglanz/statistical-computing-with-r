@@ -3,14 +3,7 @@ title: "Lab 2: Exploring Rodents with `ggplot2`"
 author: "Your name here!"
 format: html
 editor: source
-toc: true
-code-tools: true
-execute:
-  echo: true
-  eval: false
-  message: false
-  warning: false
-  error: true
+embed-resources: true
 ---
 
 # Part 1: GitHub Workflow
