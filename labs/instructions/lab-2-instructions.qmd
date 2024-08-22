@@ -1,6 +1,5 @@
 ---
 title: "Lab 2: Exploring Rodents with `ggplot2`"
-author: "Your name here!"
 format: html
 editor: source
 toc: true
