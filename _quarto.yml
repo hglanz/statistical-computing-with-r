@@ -2,7 +2,8 @@ project:
   type: website
   output-dir: docs
   render: 
-    - "!labs/student/"
+    - "*.qmd"
+    - "!/labs/student/"
 
 website:
   page-navigation: true
@@ -100,10 +101,13 @@ website:
 format:
   html:
     theme:
-      - cosmo
+      light: [cosmo, style/stat331.scss]
+      dark: [cosmo, style/stat331.scss, style/dark.scss]
     mainfont: "Atkinson Hyperlegible"
     code-copy: true
     code-overflow: wrap
     toc: true
+    linkcolor: "#5D737E"
+    highlight-style: a11y-dark
 
 editor: visual
