@@ -52,6 +52,25 @@ own copy of **my** repository
 12. Click "Create Project".
 :::
 
+Now that you have a copy of the repository, we need to [commit the files to our repo](https://happygitwithr.com/existing-github-first#stage-and-commit). To do 
+this, follow the steps below:
+
+::: {.callout-tip collapse="true"}
+# First Commit
+
+-   Click the "Git" tab in upper right pane
+-   Check the "Staged" box for every file listed
+-   Click "Commit"
+-   In the box that opens, type a message in "Commit message", such as "Initialize lab 1".
+-   Click "Commit".
+-   Click the green "Push" button to send your local changes to GitHub.
+:::
+
+Now you are ready to go! Remember, as you are going through the lab I would 
+strongly recommend rendering your HTML and committing your after **every** 
+question! 
+
+
 ## Seeking Help
 
 Part of learning to program is learning from a variety of resources. Thus, I
@@ -85,14 +104,10 @@ I would encourage you to spice your documents up (e.g., declaring execution
 options, specifying how your figures should be output, formatting your code
 output, etc.).
 
-::: callout-tip
-Remember to make small changes, render often, and **commit every time you
-complete a question**!
-:::
-
 # Setup
 
-In the code chunk below, load in the packages necessary for your analysis. You should only need the `tidyverse` package for this analysis.
+In the code chunk below, load in the packages necessary for your analysis. You
+should only need the `tidyverse` package for this analysis.
 
 ```{r}
 #| label: setup
