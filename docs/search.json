@@ -119,7 +119,7 @@
     "href": "course-materials/course-syllabus.html#how-do-you-define-plagiarism-in-a-programming-class",
     "title": "STAT 331, Fall 2024",
     "section": "12.1 How do you define plagiarism in a programming class?",
-    "text": "12.1 How do you define plagiarism in a programming class?\nParaphrasing or quoting another’s work without citing the source is a form of academic misconduct. This included the R code produced by someone else! Writing code is like writing a paper, it is obvious if you copied-and-pasted a sentence from someone else into your paper because the way each person writes is different.\nIn this class the assumed knowledge is the course materials, including the course textbook, coursework pages, and course slides. Any functions / code used outside of these materials require direct references. This includes any functions learned through R documentation for functions we have learned. Meaning, if you look up the help file for mutate() and you learn about a function not covered in the course materials, you are required to cite the documentation when using that function.\nEven inadvertent or unintentional misuse or appropriation of another’s work (such as relying heavily on source material that is not expressly acknowledged) is considered plagiarism. If you are struggling with writing the R code for an assignment, please reach out to me. I would prefer that I get to help you rather than you spending hours Googling things and get nowhere!\nAny incident of dishonesty, copying or plagiarism will be reported to the Office of Student Rights and Responsibilities. Cheating or plagiarism will earn you a grade of 0 on the assignment and will remove your ability to submit revisions for that assignment.\nIf you have any questions about using and citing sources, you are expected to ask for clarification.",
+    "text": "12.1 How do you define plagiarism in a programming class?\nParaphrasing or quoting another’s work without citing the source is a form of academic misconduct. This included the R code produced by someone else! Writing code is like writing a paper, it is obvious if you copied-and-pasted a sentence from someone else into your paper because the way each person writes is different.\nIn this class the assumed knowledge is the course materials, including the course textbook, coursework pages, and course slides. Any functions / code used outside of these materials require direct references. This includes any functions learned through R documentation for functions we have learned. Meaning, if you look up the help file for mutate() and you learn about a function not covered in the course materials, you are required to cite the documentation when using that function.\nEven inadvertent or unintentional misuse or appropriation of another’s work (such as relying heavily on source material that is not expressly acknowledged) is considered plagiarism. If you use external resources such as Google or ChatGPT, I expect you to indicate this in your assignment.\n\nIf you used Google, you are expected to “inform” me of any resources you used by pasting the link to the resource in a code comment next to where you used that resource.\nIf you used ChatGPT, you are expected to “inform” me of the assistance you received by (1) indicating somewhere in the problem that you used ChatGPT (e.g., below the question prompt or as a code comment), and (2) downloading and attaching the .txt file containing your entire conversation with ChatGPT.\n\nIt is both good professional practice and academic integrity to cite any resources you used during your work. The first incident of failing to cite your resources, will result in a warning. The second incident of failing to cite your resources will result in a 0 on the assignment, meaning you will not be able to include any code from that Lab or Challenge in your Final Portfolio. You will also be reported to the Office of Student Rights and Responsibilities.\nIf you have any questions about using and citing sources, you are expected to ask for clarification.",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -577,7 +577,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\n\nBroken Circles Group Warm-up\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\n\n\nLab 1 & Challenge 1  (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\n\nExpert Designer Group Warm-up\n\n\n\n\n\nThurs, 10/3\n\n\n\nLab 2 & Challenge 2  (due 10/6)\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\n\n\n\n\n\n\n\nThurs, 10/10\n\n\n\nLab 3 & Challenge 3  (due 10/13)\n\n\n\n4\nTues, 10/15\nData Organization & Relational Data with tidyr\n\n\n\n\n\n\n\nThurs, 10/17\n\n\n\nLab 4 & Challenge 4  (due 10/20)\n\n\n\n5\nTues, 10/22\nWorking with Strings\n\n\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\n\n\nLab 5 & Challenge 5  (due 10/27)\n\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 10/31\nPortfolio Party\n\n\n\nWeek 6 Reflections & Midterm Portfolio  (due 11/3)\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n\n\n\n\n\n\n\nThurs, 11/7\n\n\n\nLab 7 & Challenge 7  (due 11/10)\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 & Challenge 8  (due 11/17)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 & Challenge 9  (due 11/24)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\n\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\n\nBroken Circles Group Warm-up\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\n\n\nLab 1 & Challenge 1  (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2 & R Projects\n\nExpert Designer Group Warm-up\n\n\n\n\n\nThurs, 10/3\n\n\n\nLab 2 & Challenge 2  (due 10/6)\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\n\n\n\n\n\n\n\nThurs, 10/10\n\n\n\nLab 3 & Challenge 3  (due 10/13)\n\n\n\n4\nTues, 10/15\nData Organization & Relational Data with tidyr\n\n\n\n\n\n\n\nThurs, 10/17\n\n\n\nLab 4 & Challenge 4  (due 10/20)\n\n\n\n5\nTues, 10/22\nWorking with Strings\n\n\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\n\n\nLab 5 & Challenge 5  (due 10/27)\n\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 10/31\nPortfolio Party\n\n\n\nWeek 6 Reflections & Midterm Portfolio  (due 11/3)\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n\n\n\n\n\n\n\nThurs, 11/7\n\n\n\nLab 7 & Challenge 7  (due 11/10)\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 & Challenge 8  (due 11/17)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 & Challenge 9  (due 11/24)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\n\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -1536,7 +1536,7 @@
     "href": "weeks/week-2-ggplot.html#getting-a-bit-fancier",
     "title": "Introduction to ggplot",
     "section": "1.5 Getting a Bit Fancier",
-    "text": "1.5 Getting a Bit Fancier\nIn this section we dig a bit deeper into how we can make our code more efficient and other ways we can add additional variables to our plots.\n\n1.5.1 Global vs. local aesthetics\n▶️ Required Video: Global vs. local aesthetics (4 minutes)\n\n\n1.5.2 ✅ Check-in 2.1\nQuestion 5: Match the code to the type of aesthetics that are being used:\n\n\nGlobal\nLocal\n\nggplot(data = mpg, mapping = aes(x = mpg, y = hwy)) + geom_point()\n\nggplot(data = mpg) + geom_point(mapping = aes(x = mpg, y = hwy))",
+    "text": "1.5 Getting a Bit Fancier\nIn this section we dig a bit deeper into how we can make our code more efficient and other ways we can add additional variables to our plots.\n\nGlobal vs. local aesthetics\n▶️ Required Video: Global vs. local aesthetics (4 minutes)\n\n\n✅ Check-in 2.1\nQuestion 5: Match the code to the type of aesthetics that are being used:\n\n\n\nGlobal\n \nLocal\n\n\nggplot(data = mpg, \n       mapping = aes(x = mpg, y = hwy)\n       ) + \n  geom_point()\n\n\nggplot(data = mpg) + \n  geom_point(mapping = aes(x = mpg, y = hwy))",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 1"
@@ -1586,7 +1586,7 @@
     "href": "weeks/week-2-ggplot.html#making-your-first-ggplot",
     "title": "Introduction to ggplot",
     "section": "1.2 Making Your First ggplot",
-    "text": "1.2 Making Your First ggplot\n▶️ Required Video: ggplot2 First Steps (4 minutes)\n💻 Required Tutorials\n\nBar Charts\nHistograms\nScatterplots\nLine Plots\n\n\n1.2.1 ✅ Check-in 2.1\nQuestion 1 – With the mpg dataset (included in the ggplot2 package), make a scatterplot of hwy versus cty. Which of these correctly describe the relationship seen in the plot?\n\npositive\nstrong\nnegative\nweak\nlinear\nnon-linear\n\nQuestion 2 – What specifically does the code ggplot(data = mpg) do?\n\nCreates a blank plot\nMakes a scatterplot of the first two variables in the mpg dataset\nCreates a ggplot with the mpg dataset",
+    "text": "1.2 Making Your First ggplot\n▶️ Required Video: ggplot2 First Steps (4 minutes)\n💻 Required Tutorials\n\nBar Charts\nHistograms\nScatterplots\nLine Plots\n\n\n✅ Check-in 2.1\nQuestion 1 – With the mpg dataset (included in the ggplot2 package), make a scatterplot of hwy versus cty. Which of these correctly describe the relationship seen in the plot?\n\npositive\nstrong\nnegative\nweak\nlinear\nnon-linear\n\nQuestion 2 – What specifically does the code ggplot(data = mpg) do?\n\nCreates a blank plot\nMakes a scatterplot of the first two variables in the mpg dataset\nCreates a ggplot with the mpg dataset",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 1"
@@ -1597,7 +1597,7 @@
     "href": "weeks/week-2-ggplot.html#aesthetics",
     "title": "Introduction to ggplot",
     "section": "1.3 Aesthetics",
-    "text": "1.3 Aesthetics\n▶️ Required Video: What is an aesthetic? (7 minutes)\n\n1.3.1 ✅ Check-in 2.1\n\nggplot(data = mpg) +\n  geom_point(mapping = aes(x = displ, y = hwy), color = \"blue\")\n\nQuestion 3: What aesthetics does this plot contain?\n\nx\ny\ncolor\ndata\n\nQuestion 4: Which of following changes would color the points based on the number of cylinders the car has (4, 5, 6, 8)?\nggplot(data = mpg) +\ngeom_point(mapping = aes(x = displ, y = hwy, \n           color = blue))\n\nggplot(data = mpg) +\ngeom_point(mapping = aes(x = displ, y = hwy) \n           color = \"blue\")\n\nggplot(data = mpg, mapping = aes(color = \"blue)) +\ngeom_point(mapping = aes(x = displ, y = hwy))",
+    "text": "1.3 Aesthetics\n▶️ Required Video: What is an aesthetic? (7 minutes)\n\n✅ Check-in 2.1\n\nggplot(data = mpg) +\n  geom_point(mapping = aes(x = displ, y = hwy), color = \"blue\")\n\nQuestion 3: What aesthetics does this plot contain?\n\nx\ny\ncolor\ndata\n\nQuestion 4: Which of following changes would color the points based on the number of cylinders (cyl) the car has (4, 5, 6, 8)? Select all that apply.\n\n## Option A\nggplot(data = mpg) +\ngeom_point(\n  mapping = aes(x = displ, \n                y = hwy, \n                color = cyl)\n  )\n\n## Option B\nggplot(data = mpg) +\ngeom_point(\n  mapping = aes(x = displ, \n                y = hwy), \n  color = cyl\n  )\n\n## Option C\nggplot(data = mpg, \n       mapping = aes(color = cyl)\n       ) +\ngeom_point(\n  mapping = aes(x = displ, \n                y = hwy)\n  )",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 1"
@@ -1608,7 +1608,7 @@
     "href": "weeks/week-2-ggplot.html#geoms",
     "title": "Introduction to ggplot",
     "section": "1.4 geoms",
-    "text": "1.4 geoms\n▶️ Required Video: What is a geometric object?\n\n1.4.1 What type of chart to use?\nIt can be hard to know what type of chart to use for a particular type of data. I recommend figuring out what you want to show first, and then thinking about how to show that data with an appropriate plot type. Consider the following factors:\n\nWhat type of variable is x? Categorical? Continuous? Discrete?\nWhat type of variable is y?\nHow many observations do I have for each x / y variable?\nAre there any important moderating variables?\nDo I have data that might be best shown in small multiples? E.g. a categorical moderating variable and a lot of data, where the categorical variable might be important for showing different features of the data?\n\nOnce you’ve thought through this, take a look through catalogs like the R Graph Gallery to see what visualizations match your data and use-case.\n\n\n1.4.2 ✅ Check-in 2.1\nQuestion 4: Match each plot with the geom_XXX() function used to create it!\n\n\n\nLine Chart\nBoxplot\nHistogram\nArea Chart\n\n\n\ngeom_point()\ngeom_line()\ngeom_histogram()\ngeom_area()",
+    "text": "1.4 geoms\n▶️ Required Video: What is a geometric object?\n\nWhat type of chart to use?\nIt can be hard to know what type of chart to use for a particular type of data. I recommend figuring out what you want to show first, and then thinking about how to show that data with an appropriate plot type. Consider the following factors:\n\nWhat type of variable is x? Categorical? Continuous? Discrete?\nWhat type of variable is y?\nHow many observations do I have for each x / y variable?\nAre there any important moderating variables?\nDo I have data that might be best shown in small multiples? E.g. a categorical moderating variable and a lot of data, where the categorical variable might be important for showing different features of the data?\n\nOnce you’ve thought through this, take a look through catalogs like the R Graph Gallery to see what visualizations match your data and use-case.\n\n\n✅ Check-in 2.1\nQuestion 4: Match each plot with the geom_XXX() function used to create it!\n\n\n\nLine Chart\nBoxplot\nHistogram\nArea Chart\n\n\n\ngeom_boxplot()\ngeom_point()\ngeom_area()\ngeom_line()\ngeom_histogram()",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 1"
@@ -1630,7 +1630,7 @@
     "href": "weeks/week-2-ggplot.html#data-transformations",
     "title": "Introduction to ggplot",
     "section": "1.7 Data transformations",
-    "text": "1.7 Data transformations\n▶️ Required Video: What is being plotted? (6 minutes)\n\n1.7.1 ✅ Check-in 2.1\nQuestion 6: Match the stat function with its associated geom function.\n\n\n\nstat_count()\nstat_identity()\n\n\n\ngeom_bar()\ngeom_col()",
+    "text": "1.7 Data transformations\n▶️ Required Video: What is being plotted? (6 minutes)\n\n✅ Check-in 2.1\nQuestion 6: Match the stat function with its associated geom function.\n\n\n\nstat_count()\nstat_identity()\n\n\n\ngeom_bar()\ngeom_col()",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 1"
@@ -1641,7 +1641,7 @@
     "href": "weeks/week-2-ggplot.html#changing-the-positions-of-bars",
     "title": "Introduction to ggplot",
     "section": "1.8 Changing the positions of bars",
-    "text": "1.8 Changing the positions of bars\n▶️ Required Video: How do I change positions?\n\n1.8.1 ✅ Check-in 2.1\nQuestion 7: What arguments for geom_jitter() control the amount of jittering?\n\nwidth\nheight\nstat\nposition\nna.rm\nshow.legend\ndata\nmapping",
+    "text": "1.8 Changing the positions of bars\n▶️ Required Video: How do I change positions?\n\n✅ Check-in 2.1\nQuestion 7: What arguments for geom_jitter() control the amount of jittering?\n\nwidth\nheight\nstat\nposition\nna.rm\nshow.legend\ndata\nmapping",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 1"
@@ -1652,7 +1652,7 @@
     "href": "weeks/week-2-ggplot.html#plot-customizations",
     "title": "Introduction to ggplot",
     "section": "1.9 Plot Customizations",
-    "text": "1.9 Plot Customizations\n📖 Required Reading: Communication\n\n\n1.9.1 ✅ Check-in 2.1\nQuestion 8: What can the labs() function do? Select all that apply.\n\nCustomize the x-axis label\nCustomize the y-axis label\nCustomize the legend label\nCustomize the plot title\nAdd a caption to the plot",
+    "text": "1.9 Plot Customizations\n📖 Required Reading: Communication\n\n\n✅ Check-in 2.1\nQuestion 8: What can the labs() function do? Select all that apply.\n\nCustomize the x-axis label\nCustomize the y-axis label\nCustomize the legend label\nCustomize the plot title\nAdd a caption to the plot",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 1"
@@ -1663,7 +1663,7 @@
     "href": "weeks/week-2-projects-data-import.html",
     "title": "R Projects & Reading Data",
     "section": "",
-    "text": "Describe what an R Project is\nOutline how an R Project affects the file paths used to read in data\n\nRead in data from common formats into R\n\n▶️ Watch Videos: 14 minutes\n📖 Readings: 15-20 minutes\n💻 Activities: 30 minutes\n✅ Check-ins: 1",
+    "text": "Describe what an R Project is\nOutline how an R Project affects the file paths used to read in data\n\nRead in data from common formats into R",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 2"
@@ -1674,7 +1674,7 @@
     "href": "weeks/week-2-projects-data-import.html#learning-objectives",
     "title": "R Projects & Reading Data",
     "section": "",
-    "text": "Describe what an R Project is\nOutline how an R Project affects the file paths used to read in data\n\nRead in data from common formats into R\n\n▶️ Watch Videos: 14 minutes\n📖 Readings: 15-20 minutes\n💻 Activities: 30 minutes\n✅ Check-ins: 1",
+    "text": "Describe what an R Project is\nOutline how an R Project affects the file paths used to read in data\n\nRead in data from common formats into R",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 2"
@@ -1685,7 +1685,7 @@
     "href": "weeks/week-2-projects-data-import.html#working-directories-in-r",
     "title": "R Projects & Reading Data",
     "section": "1.1 Working Directories in R",
-    "text": "1.1 Working Directories in R\nTo find where your working directory is in R, you can either look at the top of your console or type getwd() into your console.\n\ngetwd()\n\n[1] \"/Users/atheobol/Documents/Current Research/IUSE/groupworthy-data-science/weeks\"\n\n\nAlthough it is not recommended, you can set your working directory in R with setwd():\n\nsetwd(\"/path/to/my/assignment/folder\")\n\n\n\n\n\n\n\nFile Paths in R\n\n\n\nA quick warning on file paths is that Mac / Linux and Windows differ in the direction of their backslash to separate folder locations. Mac/Linux use / (e.g. STAT331/Week1) while Window’s uses \\ (e.g. STAT331\\Week1).",
+    "text": "1.1 Working Directories in R\nTo find where your working directory is in R, you can either look at the top of your console or type getwd() into your console.\n\ngetwd()\n\nAlthough it is not recommended, you can set your working directory in R with setwd():\n\nsetwd(\"/path/to/my/assignment/folder\")\n\n\n\n\n\n\n\nFile Paths in R\n\n\n\nA quick warning on file paths is that Mac / Linux and Windows differ in the direction of their backslash to separate folder locations. Mac/Linux use / (e.g. STAT331/Week1) while Window’s uses \\ (e.g. STAT331\\Week1).",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 2"
@@ -1707,7 +1707,7 @@
     "href": "weeks/week-2-projects-data-import.html#required-reading-workflow-r-projects",
     "title": "R Projects & Reading Data",
     "section": "1.3 📖 Required Reading: Workflow (R Projects)",
-    "text": "1.3 📖 Required Reading: Workflow (R Projects)\n\n\n\n\n\n\nOnly read Section 6.2!\n\n\n\n\n\n\nIf you open up your folder from Lab 1, you will notice that you have a blue cube (an RProject) living in this folder! The RProject lives in this folder for two reasons, (1) when you copied the Lab 1 GitHub repository you told RStudio you wanted to make a new RProject, and (2) in order for RStudio to talk with GitHub you need to use an RProject.\nHowever, if you look at your STAT331 folder, you should not see a blue cube since we never created an RProject in this folder. Let’s do that now!\nTo add a Rproject to an existing folder on your computer (e.g., you already created a folder for this class), first open RStudio on your computer and click File &gt; New Project, then:\n\n\n\nNavigation prompt for creating a new RProject in an existing directory\n\n\nThen, browse on your computer to where you saved your STAT331 folder last week. This should be in your Documents folder, similar to where mine is saved!\n\n\n\nNavigation prompt for selecting which existing folder in which the RProject should be created.\n\n\nOnce you click “Create Project”, your existing folder, STAT331 should now contain a STAT331.Rproj file. This is your new “home” base for this class - whenever you refer to a file with a relative path it will begin to look for it here.",
+    "text": "1.3 📖 Required Reading: Workflow (R Projects)\n\n\n\n\n\n\nOnly read Section 6.2!\n\n\n\n\n\n\nIf you open up your folder from Lab 1, you will notice that you have a blue cube (an R Project) living in this folder! The R Project lives in this folder for two reasons, (1) when you copied the Lab 1 GitHub repository you told RStudio you wanted to make a new R Project, and (2) in order for RStudio to talk with GitHub you need to use an R Project.\nHowever, if you look at your STAT331 folder (the one that lives in your Documents folder), you should not see a blue cube since we never created an R Project in this folder. Let’s do that now!\nTo add a R Project to an existing folder on your computer (e.g., you already created a folder for this class), first open RStudio on your computer and click File &gt; New Project, then:\n\n\n\nNavigation prompt for creating a new R Project in an existing directory\n\n\nThen, browse on your computer to where you saved your STAT331 folder last week. This should be in your Documents folder, similar to where mine is saved!\n\n\n\nNavigation prompt for selecting which existing folder in which the R Project should be created.\n\n\nOnce you click “Create Project”, your existing folder, STAT331 should now contain a STAT331.Rproj file. This is your new “home” base for this class - whenever you refer to a file with a relative path it will begin to look for it here.",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 2"
@@ -1718,7 +1718,7 @@
     "href": "weeks/week-2-projects-data-import.html#check-in-2.2-rstudio-projects",
     "title": "R Projects & Reading Data",
     "section": "1.4 ✅ Check-in 2.2: RStudio Projects",
-    "text": "1.4 ✅ Check-in 2.2: RStudio Projects\nTake a screenshot of your class directory, showing the RProject living inside your STAT331 folder.",
+    "text": "1.4 ✅ Check-in 2.2: RStudio Projects\nTake a screenshot of your class directory, showing the R Project living inside your STAT331 folder.",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 2"
@@ -1729,7 +1729,7 @@
     "href": "weeks/week-2-projects-data-import.html#where-does-my-data-live",
     "title": "R Projects & Reading Data",
     "section": "2.1 Where does my data live?",
-    "text": "2.1 Where does my data live?\n▶️ Required Video: Data Locations and the {here} package (8 minutes)",
+    "text": "2.1 Where does my data live?\n\n▶️ Required Video: Data Locations and the {here} package (8 minutes)",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 2"
@@ -1751,10 +1751,252 @@
     "href": "weeks/week-2-projects-data-import.html#check-in-2.3-loading-data",
     "title": "R Projects & Reading Data",
     "section": "2.3 ✅ Check-in 2.3: Loading Data",
-    "text": "2.3 ✅ Check-in 2.3: Loading Data\nFor this check-in you are asked to work through reading in different data sets. You can download the Quarto template for your investigation here: data-import-practice.qmd\nThe folder Age_Data contains several data sets with the names and ages of five individuals. The data sets are stored as different file types. Download Ages_data.zip here, make sure to unzip the folder, save these in a reasonable place (e.g., STAT331 &gt; Week 2 &gt; Checkin or STAT331 &gt; Checkins &gt; Week 2).\n\n\n\n\n\n\nExtracting zip folders\n\n\n\nYou will need to extract the contents of the ages.zip file, that means you will need to uncompress the files from the folder for RStudio to know where to get the data from.\n\n\nOnce you have the data saved (and extracted) in your STAT 331 folder, use the readr and readxl packages to complete the following and fill in the “gap” code in the Canvas quiz:\n\nLoad the appropriate packages for reading in data.\nRead in the data set ages.csv\nRead in the data set ages_tab.txt\nRead in the data set ages_mystery.txt\nRead in the data set ages.xlsx\nFind a way to use read_csv() to read ages.csv with the variable “Name” as a factor data type and “Age” as a character data type.",
+    "text": "2.3 ✅ Check-in 2.3: Loading Data\nFor this check-in you are asked to work through reading in different data sets. You can download the Quarto template for your investigation here: data-import-practice.qmd\n\nThe folder Age_Data contains several data sets with the names and ages of five individuals. The data sets are stored as different file types. Download Ages_data.zip here, make sure to unzip the folder, save these in a reasonable place (e.g., STAT331 &gt; Week 2 &gt; Checkin or STAT331 &gt; Checkins &gt; Week 2).\n\n\n\n\n\n\nExtracting zip folders\n\n\n\nYou will need to extract the contents of the ages.zip file, that means you will need to uncompress the files from the folder for RStudio to know where to get the data from.\n\n\nOnce you have the data saved (and extracted) in your STAT 331 folder, use the readr and readxl packages to complete the following and fill in the “gap” code in the Canvas quiz:\n\nLoad the appropriate packages for reading in data.\nRead in the data set ages.csv\nRead in the data set ages_tab.txt\nRead in the data set ages_mystery.txt\nRead in the data set ages.xlsx\nFind a way to use read_csv() to read ages.csv with the variable “Name” as a factor data type and “Age” as a character data type.",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 2"
     ]
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-palmer-penguins.html",
+    "href": "group-activities/week-2/PA2-ggplot-palmer-penguins.html",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "",
+    "text": "Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.\nSome advice:"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#groupwork-protocols",
+    "href": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#groupwork-protocols",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Groupwork Protocols",
+    "text": "Groupwork Protocols\nInsert blurb on how students are expected to collaborate."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-1-install-the-palmerpenguins-package",
+    "href": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-1-install-the-palmerpenguins-package",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 1: Install the palmerpenguins Package",
+    "text": "Step 1: Install the palmerpenguins Package\nWe will be creating visualizations using the ggplot2 package.\nFor this activity, we will be exploring the penguins data from the palmerpenguins package, which has fantastic documentation with really awesome artwork. So, you will need to install the palmerpenguins package. Run the following code in your console:\ninstall.packages(\"palmerpenguins\")"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-2-create-a-set-up-code-chunk",
+    "href": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-2-create-a-set-up-code-chunk",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 2: Create a Set-up Code Chunk",
+    "text": "Step 2: Create a Set-up Code Chunk\n\nLocate the code chunk at the beginning of your document (directly under the YAML).\nName the code chunk setup (with the hashpipe #|)\nSpecify the code chunk options (with the hashpipe #|) that the messages from loading in the packages should not be included.\nLoad in the tidyverse or ggplot2 package.\nLoad in the palmerpenguins package."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-3-accessing-the-penguins-dataset",
+    "href": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-3-accessing-the-penguins-dataset",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 3: Accessing the penguins Dataset",
+    "text": "Step 3: Accessing the penguins Dataset\nI like to tangibly see the data set I will be working with so let’s pull the penguins data into the R environment. Run the code below and you should see the penguins data appear in the top right Environment tab.\n\ndata(penguins)\n\nWarning in data(penguins): data set 'penguins' not found"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-4-get-to-know-the-data",
+    "href": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-4-get-to-know-the-data",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 4: Get to Know the Data",
+    "text": "Step 4: Get to Know the Data\n\nWhat variables are included in these data? What units are the variables measured in? What does each row represent?"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-5-barchart",
+    "href": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-5-barchart",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 5: Barchart",
+    "text": "Step 5: Barchart\nUse ggplot2 to draw a barchart of different species included in the dataset."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-6-scatterplot",
+    "href": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-6-scatterplot",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 6: Scatterplot",
+    "text": "Step 6: Scatterplot\nUse ggplot2 to create a scatterplot of the relationship between the bill length (bill_length_mm) and bill depth (bill_depth_mm)."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-7-adding-a-categorical-variable",
+    "href": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-7-adding-a-categorical-variable",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 7: Adding A Categorical Variable",
+    "text": "Step 7: Adding A Categorical Variable\nBuilding off of the plot you made in Step 6, add an aesthetic to differentiate the species of the penguins in the scatterplot by color."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-8-adding-another-categorical-variable",
+    "href": "group-activities/week-2/PA2-ggplot-palmer-penguins.html#step-8-adding-another-categorical-variable",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 8: Adding Another Categorical Variable",
+    "text": "Step 8: Adding Another Categorical Variable\n\nBuilding off of the plot you made in Step 7, add the location of the penguins ( island) to your visualization. There may be more than one method to address this, however, one method will more easily allow you to address the questions below."
+  },
+  {
+    "objectID": "labs/instructions/challenge-2-ggplot.html",
+    "href": "labs/instructions/challenge-2-ggplot.html",
+    "title": "Challenge 2: Spicing things up with ggplot2",
+    "section": "",
+    "text": "For this week’s Challenge, you will have three different options to explore. I’ve arranged these options in terms of their “spiciness,” or the difficulty of completing the task. You are only required to complete one task, but if you are interested in exploring more than one, feel free!\nThis is a great place to let your creativity show! Make sure to indicate what additional touches you added, and provide any online references you used.\n\n\n\n\n\n\nTip\n\n\n\nYou should create a new Quarto document for this Challenge (make sure to specify self-contained: true, echo: true, and any other formatting specifics you desire in the YAML).\nThen, create a setup code chunk to load the packages and read in the surveys.csv file like you did in Lab 2.\nCreate another code chunk and paste in your code from Question 14 or Question 15 in Lab 2 – we will be modifying the box plot of weights by species!\nAlternatively, you can create a copy of your Lab2.qmd file and delete the unnecessary parts.\n\n\n\n🌶 Medium: Ridge Plots\nIn Lab 2, you used side-by-side boxplots to visualize the distribution of weight within each species of rodent. Boxplots have substantial flaws, namely that they disguise distributions with multiple modes.\nA “superior” alternative is the density plot. However, ggplot2 does not allow for side-by-side density plots using geom_density(). Instead, we will need to make use of the ggridges package to create side-by-side density (ridge) plots.\n\nFor this challenge you are to change your boxplots to ridge plots. You will need to install the ggridges package and explore the geom_density_ridges() function.\n\n\n\n🌶 🌶 Spicy: Exploring Color Themes\nThe built-in ggplot() color scheme may not include the colors you were looking for. Don’t worry – there are many other color palettes available to use!\nYou can change the colors used by ggplot() in a few different ways.\n\nManual Specification\nAdd the scale_color_manual() or scale_fill_manual() functions to your plot and directly specify the colors you want to use. You can either:\n\ndefine a vector of colors within the scale functions (e.g. values = c(\"blue\", \"black\", \"red\", \"green\")) OR\ncreate a vector of colors using hex numbers and store that vector as a variable. Then, call that vector in the scale_color_manual() function.\n\nHere are some exaplme hex color schemes:\n\n# A vector of a color deficient friendly palette with gray:\ncdPalette_grey &lt;- c(\"#999999\", \"#E69F00\", \"#56B4E9\", \"#009E73\", \"#F0E442\", \"#0072B2\", \"#D55E00\", \"#CC79A7\")\n\n# A vector of a color deficient friendly palette with black:\ncdPalette_blk &lt;- c(\"#000000\", \"#E69F00\", \"#56B4E9\", \"#009E73\", \"#F0E442\", \"#0072B2\", \"#D55E00\", \"#CC79A7\")\n\n\n\n\n\n\n\nNote\n\n\n\nIf you are interested in using specific hex colors, I like the image color picker app to find the colors I want.\n\n\n\n\nPackage Specification\nInstall a package and use its available color scale. Popular options include:\n\nRColorBrewer – change colors by using scale_fill_brewer() or scale_colour_brewer().\nviridis – change colors by using scale_colour_viridis_d() for discrete data, scale_colour_viridis_c() for continuous data.\nggsci – change colors by using scale_color_&lt;PALNAME&gt;() or scale_fill_&lt;PALNAME&gt;(), where you specify the name of the palette you wish to use (e.g. scale_color_aaas()).\n\n\n\n\n\n\n\nNote\n\n\n\nThis website provides an exhaustive list of color themes available through various packages.\n\n\n\nIn this challenge you are expected to use this information to modify the boxplots you created Lab 2. First, you are to color the boxplots based on the variable genus. Next, you are to change the colors used for genus using either manual color specification or any of the packages listed here (or others!).\n\n\n\n\n🌶 🌶 🌶 Hot: Exploring ggplot2 Annotation\nSome data scientists advocate that we should try to eliminate legends from our plots to make them more clear. Instead of legends, we should use annotation.\nWe can add annotation to a ggplot() using the annotate() function.\nNote that I’ve labeled the “Sigmodon” and “Perognathus” genera, so the reader can tell that these boxplots are associated with their respective genus.\n\nIn this challenge you are expected to use this information to modify the boxplots you created in Lab 2. First, you are to color the boxplots based on the variable genus. Next, you are to add annotations for each genus next to the boxplot(s) associated with that genus. Finally, you are expected to use the theme() function to remove the color legend from the plot, since it is no longer needed!"
+  },
+  {
+    "objectID": "labs/instructions/lab-2-ggplot.html",
+    "href": "labs/instructions/lab-2-ggplot.html",
+    "title": "Lab 2: Exploring Rodents with ggplot2",
+    "section": "",
+    "text": "GitHub Repository:"
+  },
+  {
+    "objectID": "labs/instructions/lab-2-ggplot.html#accessing-the-lab",
+    "href": "labs/instructions/lab-2-ggplot.html#accessing-the-lab",
+    "title": "Lab 2: Exploring Rodents with ggplot2",
+    "section": "",
+    "text": "GitHub Repository:"
+  },
+  {
+    "objectID": "labs/instructions/lab-2-ggplot.html#seeking-help",
+    "href": "labs/instructions/lab-2-ggplot.html#seeking-help",
+    "title": "Lab 2: Exploring Rodents with ggplot2",
+    "section": "Seeking Help",
+    "text": "Seeking Help\nPart of learning to program is learning from a variety of resources. Thus, I expect you will use resources that you find on the internet. There is, however, an important balance between copying someone else’s code and using their code to learn. Therefore, if you use external resources, I want to know about it. You can “inform” me of any resources you used by pasting the link to the resource in a code comment next to where you used that resource.\nAdditionally, you are permitted and encouraged to work with your peers as you complete lab assignments, but you are expected to do your own work. Copying from each other is cheating, and letting people copy from you is also cheating. Please don’t do either of those things. &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:labs/instructions/lab-2-instructions.qmd :::\nDownload starter .qmd file here."
+  },
+  {
+    "objectID": "labs/instructions/lab-2-ggplot.html#scatterplot",
+    "href": "labs/instructions/lab-2-ggplot.html#scatterplot",
+    "title": "Lab 2: Exploring Rodents with ggplot2",
+    "section": "Scatterplot",
+    "text": "Scatterplot\n\n# Scatterplot code for question s 4-8! \n\n4. First, let’s create a scatterplot of the relationship between weight (on the \\(x\\)-axis) and hindfoot_length (on the \\(y\\)-axis).\nWe can see there are a lot of points plotted on top of each other. Let’s try and modify this plot to extract more information from it.\n5. Let’s add transparency (alpha) to the points, to make the points more transparent and (possibly) easier to see.\nDespite our best efforts there is still a substantial amount of overplotting occurring in our scatterplot. Let’s try splitting the dataset into smaller subsets and see if that allows for us to see the trends a bit better.\n6. Facet your scatterplot by species.\n7. No plot is complete without axis labels and a title. Include reader friendly labels and a title to your plot.\nIt takes a larger cognitive load to read text that is rotated. It is common practice in many journals and media outlets to move the \\(y\\)-axis label to the top of the graph under the title.\n8. Specify your \\(y\\)-axis label to be empty and move the \\(y\\)-axis label into the subtitle. You may overwrite your code from Q7."
+  },
+  {
+    "objectID": "labs/instructions/lab-2-ggplot.html#boxplots",
+    "href": "labs/instructions/lab-2-ggplot.html#boxplots",
+    "title": "Lab 2: Exploring Rodents with ggplot2",
+    "section": "Boxplots",
+    "text": "Boxplots\n9. Sketch out (by hand or using Excalidraw) a game plan for creating side-by-side boxplots to visualize the distribution of weight within each species. Include an image of your game plan. This can take on your own flavor! The ideas is that you are thinking before coding. I recommend saving this in the same folder as your .qmd file.\n \n\n# Boxplot code for question 10 - 15!\n\n10. Implement your game plan to create side-by-side boxplots to visualize the distribution of weight within each species.\nA fundamental complaint of boxplots is that they do not plot the raw data. However, with ggplot we can add the raw points on top of the boxplots!\n11. Add another layer to your previous plot that plots each observation.\nAlright, this should look less than optimal. Your points should appear rather stacked on top of each other. To make them less stacked, we need to jitter them a bit, using geom_jitter().\n12. Remove the previous layer and include a geom_jitter() layer instead.\nThat should look a bit better! But its really hard to see the points when everything is black.\n13. Set the color aesthetic in geom_jitter() to change the color of the points and add set the alpha aesthetic to add transparency.\n\n\n\n\n\n\nNote\n\n\n\nYou are welcome to use whatever color you wish! Some of my favorites are “orange3” and “steelblue”.\n\n\nGreat! Now that you can see the points, you should notice something odd: there are two colors of points still being plotted. Some of the observations are being plotted twice, once from geom_boxplot() as outliers and again from geom_jitter()!\n14. Inspect the help file for geom_boxplot() and see how you can remove the outliers from being plotted by geom_boxplot(). Make this change in your code!\nSome small changes can make big differences to plots. One of these changes are better labels for a plot’s axes and legend.\n15. Modify the \\(x\\)-axis and \\(y\\)-axis labels to describe what is being plotted. Be sure to include any necessary units! You might also be getting overlap in the species names – use theme(axis.text.x = ____) or theme(axis.text.y = ____) to turn the species axis labels 45 degrees.\nSome people (and journals) prefer for boxplots to be stacked with a specific orientation! Let’s practice changing the orientation of our boxplots.\n16. Copy-paste your boxplot code from above. Flip the orientation of your boxplots. If you created horizontally stacked boxplots, your boxplots should now be stacked vertically. If you had vertically stacked boxplots, you should now stack your boxplots horizontally!\n\n# Copy-paste boxplot code. Then modify for question 16!\n\nNotice how vertically stacked boxplots make the species labels more readable than horizontally stacked boxplots. This is good practice!"
+  },
+  {
+    "objectID": "labs/instructions/lab-2-instructions.html",
+    "href": "labs/instructions/lab-2-instructions.html",
+    "title": "Lab 2: Exploring Rodents with ggplot2",
+    "section": "",
+    "text": "You can find the Lab 1 materials in the Lab 2 repository on GitHub. When you click on the provided link, you will end up on the landing page for the repository.\nWe’re going to follow the same steps as last week to make your own copy of this repository:\n\n\n\n\n\n\nCopying the Repository\n\n\n\n\n\n\nClick on icon that says , to create your own copy of my repository\nOnce you’ve forked the repository, your copy should open.\nClick on the big green button that says “&lt;&gt; Code”.\nCopy the URL to your clipboard (you should be copying the HTTPS URL).\nOpen RStudio\nOpen a new project by selecting “File” and then clicking on “New Project…”\nIn the box that opens, select “Version Control”.\nIn the next screen, select “Git”.\nIn the “repository URL” paste the URL of your new GitHub repository.\nIn the “Create project as a subdirectory of” option, click on “Browse”.\nNavigate (or create) a “Lab 2” folder, included in your Week 2 folder in your STAT 331 folder. Once you get there, click “Open”.\nClick “Create Project”.\n\n\n\n\n\n\n\nPart of learning to program is learning from a variety of resources. Thus, I expect you will use resources that you find on the internet. There is, however, an important balance between copying someone else’s code and using their code to learn. Therefore, if you use external resources, I want to know about it.\n\nIf you used Google, you are expected to “inform” me of any resources you used by pasting the link to the resource in a code comment next to where you used that resource.\nIf you used ChatGPT, you are expected to “inform” me of the assistance you received by (1) indicating somewhere in the problem that you used ChatGPT (e.g., below the question prompt or as a code comment), and (2) downloading and attaching the .txt file containing your entire conversation with ChatGPT.\n\nAdditionally, you are permitted and encouraged to work with your peers as you complete lab assignments, but you are expected to do your own work. Copying from each other is cheating, and letting people copy from you is also cheating. Please don’t do either of those things."
+  },
+  {
+    "objectID": "labs/instructions/lab-2-instructions.html#accessing-the-lab",
+    "href": "labs/instructions/lab-2-instructions.html#accessing-the-lab",
+    "title": "Lab 2: Exploring Rodents with ggplot2",
+    "section": "",
+    "text": "GitHub Repository:"
+  },
+  {
+    "objectID": "labs/instructions/lab-2-instructions.html#seeking-help",
+    "href": "labs/instructions/lab-2-instructions.html#seeking-help",
+    "title": "Lab 2: Exploring Rodents with ggplot2",
+    "section": "",
+    "text": "Part of learning to program is learning from a variety of resources. Thus, I expect you will use resources that you find on the internet. There is, however, an important balance between copying someone else’s code and using their code to learn. Therefore, if you use external resources, I want to know about it.\n\nIf you used Google, you are expected to “inform” me of any resources you used by pasting the link to the resource in a code comment next to where you used that resource.\nIf you used ChatGPT, you are expected to “inform” me of the assistance you received by (1) indicating somewhere in the problem that you used ChatGPT (e.g., below the question prompt or as a code comment), and (2) downloading and attaching the .txt file containing your entire conversation with ChatGPT.\n\nAdditionally, you are permitted and encouraged to work with your peers as you complete lab assignments, but you are expected to do your own work. Copying from each other is cheating, and letting people copy from you is also cheating. Please don’t do either of those things."
+  },
+  {
+    "objectID": "labs/instructions/lab-2-instructions.html#scatterplot",
+    "href": "labs/instructions/lab-2-instructions.html#scatterplot",
+    "title": "Lab 2: Exploring Rodents with ggplot2",
+    "section": "Scatterplot",
+    "text": "Scatterplot\n4. First, let’s create a scatterplot of the relationship between weight (on the \\(x\\)-axis) and hindfoot_length (on the \\(y\\)-axis).\nWe can see there are a lot of points plotted on top of each other. Let’s try and modify this plot to extract more information from it.\n5. Let’s add transparency (alpha) to the points, to make the points more transparent and (possibly) easier to see.\n\nDespite our best efforts there is still a substantial amount of overplotting occurring in our scatterplot. Let’s try splitting the dataset into smaller subsets and see if that allows for us to see the trends a bit better.\n6. Facet your scatterplot by species.\n\n7. No plot is complete without axis labels and a title. Include reader friendly labels and a title to your plot.\n\nIt takes a larger cognitive load to read text that is rotated. It is common practice in many journals and media outlets to move the \\(y\\)-axis label to the top of the graph under the title.\n8. Specify your \\(y\\)-axis label to be empty and move the \\(y\\)-axis label into the subtitle."
+  },
+  {
+    "objectID": "labs/instructions/lab-2-instructions.html#boxplots",
+    "href": "labs/instructions/lab-2-instructions.html#boxplots",
+    "title": "Lab 2: Exploring Rodents with ggplot2",
+    "section": "Boxplots",
+    "text": "Boxplots\n10. Create side-by-side boxplots to visualize the distribution of weight within each species.\nA fundamental complaint of boxplots is that they do not plot the raw data. However, with ggplot we can add the raw points on top of the boxplots!\n11. Add another layer to your previous plot that plots each observation.\n\nAlright, this should look less than optimal. Your points should appear rather stacked on top of each other. To make them less stacked, we need to jitter them a bit, using geom_jitter().\n12. Remove the previous layer and include a geom_jitter() layer instead.\n\nThat should look a bit better! But its really hard to see the points when everything is black.\n13. Set the color aesthetic in geom_jitter() to change the color of the points and add set the alpha aesthetic to add transparency.\n\n\n\n\n\n\n\nNote\n\n\n\nYou are welcome to use whatever color you wish! Some of my favorites are “orange3” and “steelblue”.\n\n\nGreat! Now that you can see the points, you should notice something odd: there are two colors of points still being plotted. Some of the observations are being plotted twice, once from geom_boxplot() as outliers and again from geom_jitter()!\n14. Inspect the help file for geom_boxplot() and see how you can remove the outliers from being plotted by geom_boxplot(). Make this change in your code!\n\nSome small changes can make big differences to plots. One of these changes are better labels for a plot’s axes and legend.\n15. Modify the \\(x\\)-axis and \\(y\\)-axis labels to describe what is being plotted. Be sure to include any necessary units! You might also be getting overlap in the species names – use theme(axis.text.x = ____) or theme(axis.text.y = ____) to turn the species axis labels 45 degrees.\n\nSome people (and journals) prefer for boxplots to be stacked with a specific orientation! Let’s practice changing the orientation of our boxplots.\n16. Now copy-paste your boxplot code you’ve been adding to above. Flip the orientation of your boxplots. If you created horizontally stacked boxplots, your boxplots should now be stacked vertically. If you had vertically stacked boxplots, you should now stack your boxplots horizontally!\nNotice how vertically stacked boxplots make the species labels more readable than horizontally stacked boxplots (even when the axis labels are rotated). This is good practice!"
+  },
+  {
+    "objectID": "labs/instructions/challenge-2-instructions.html",
+    "href": "labs/instructions/challenge-2-instructions.html",
+    "title": "Challenge 2: Spicing things up with ggplot2",
+    "section": "",
+    "text": "For this week’s Challenge, you will have three different options to explore. I’ve arranged these options in terms of their “spiciness,” or the difficulty of completing the task. You are only required to complete one task, but if you are interested in exploring more than one, feel free!\nThis is a great place to let your creativity show! Make sure to indicate what additional touches you added, and provide any online references you used.\n\n\n\n\n\n\nTip\n\n\n\nYou should create a new Quarto document for this Challenge (make sure to specify self-contained: true, echo: true, and any other formatting specifics you desire in the YAML).\nThen, create a setup code chunk to load the packages and read in the surveys.csv file like you did in Lab 2.\nCreate another code chunk and paste in your code from Question 14 or Question 15 in Lab 2 – we will be modifying the box plot of weights by species!\nAlternatively, you can create a copy of your Lab2.qmd file and delete the unnecessary parts.\n\n\n\n🌶 Medium: Ridge Plots\nIn Lab 2, you used side-by-side boxplots to visualize the distribution of weight within each species of rodent. Boxplots have substantial flaws, namely that they disguise distributions with multiple modes.\nA “superior” alternative is the density plot. However, ggplot2 does not allow for side-by-side density plots using geom_density(). Instead, we will need to make use of the ggridges package to create side-by-side density (ridge) plots.\n\nFor this challenge you are to change your boxplots to ridge plots. You will need to install the ggridges package and explore the geom_density_ridges() function.\n\n\n\n🌶 🌶 Spicy: Exploring Color Themes\nThe built-in ggplot() color scheme may not include the colors you were looking for. Don’t worry – there are many other color palettes available to use!\nYou can change the colors used by ggplot() in a few different ways.\n\nManual Specification\nAdd the scale_color_manual() or scale_fill_manual() functions to your plot and directly specify the colors you want to use. You can either:\n\ndefine a vector of colors within the scale functions (e.g. values = c(\"blue\", \"black\", \"red\", \"green\")) OR\ncreate a vector of colors using hex numbers and store that vector as a variable. Then, call that vector in the scale_color_manual() function.\n\nHere are some exaplme hex color schemes:\n\n# A vector of a color deficient friendly palette with gray:\ncdPalette_grey &lt;- c(\"#999999\", \"#E69F00\", \"#56B4E9\", \"#009E73\", \"#F0E442\", \"#0072B2\", \"#D55E00\", \"#CC79A7\")\n\n# A vector of a color deficient friendly palette with black:\ncdPalette_blk &lt;- c(\"#000000\", \"#E69F00\", \"#56B4E9\", \"#009E73\", \"#F0E442\", \"#0072B2\", \"#D55E00\", \"#CC79A7\")\n\n\n\n\n\n\n\nNote\n\n\n\nIf you are interested in using specific hex colors, I like the image color picker app to find the colors I want.\n\n\n\n\nPackage Specification\nInstall a package and use its available color scale. Popular options include:\n\nRColorBrewer – change colors by using scale_fill_brewer() or scale_colour_brewer().\nviridis – change colors by using scale_colour_viridis_d() for discrete data, scale_colour_viridis_c() for continuous data.\nggsci – change colors by using scale_color_&lt;PALNAME&gt;() or scale_fill_&lt;PALNAME&gt;(), where you specify the name of the palette you wish to use (e.g. scale_color_aaas()).\n\n\n\n\n\n\n\nNote\n\n\n\nThis website provides an exhaustive list of color themes available through various packages.\n\n\n\nIn this challenge you are expected to use this information to modify the boxplots you created Lab 2. First, you are to color the boxplots based on the variable genus. Next, you are to change the colors used for genus using either manual color specification or any of the packages listed here (or others!).\n\n\n\n\n🌶 🌶 🌶 Hot: Exploring ggplot2 Annotation\nSome data scientists advocate that we should try to eliminate legends from our plots to make them more clear. Instead of legends, we should use annotation.\nWe can add annotation to a ggplot() using the annotate() function.\nNote that I’ve labeled the “Sigmodon” and “Perognathus” genera, so the reader can tell that these boxplots are associated with their respective genus.\n\nIn this challenge you are expected to use this information to modify the boxplots you created in Lab 2. First, you are to color the boxplots based on the variable genus. Next, you are to add annotations for each genus next to the boxplot(s) associated with that genus. Finally, you are expected to use the theme() function to remove the color legend from the plot, since it is no longer needed!"
+  },
+  {
+    "objectID": "weeks/week-2-projects-data-import.html#r-projects",
+    "href": "weeks/week-2-projects-data-import.html#r-projects",
+    "title": "R Projects & Reading Data",
+    "section": "1.2 R Projects",
+    "text": "1.2 R Projects",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2, Part 2"
+    ]
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot.html",
+    "href": "group-activities/week-2/PA2-ggplot.html",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "",
+    "text": "Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.\nSome advice:"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot.html#groupwork-protocols",
+    "href": "group-activities/week-2/PA2-ggplot.html#groupwork-protocols",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Groupwork Protocols",
+    "text": "Groupwork Protocols\nInsert blurb on how students are expected to collaborate."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot.html#step-1-install-the-palmerpenguins-package",
+    "href": "group-activities/week-2/PA2-ggplot.html#step-1-install-the-palmerpenguins-package",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 1: Install the palmerpenguins Package",
+    "text": "Step 1: Install the palmerpenguins Package\nWe will be creating visualizations using the ggplot2 package.\nFor this activity, we will be exploring the penguins data from the palmerpenguins package, which has fantastic documentation with really awesome artwork. So, you will need to install the palmerpenguins package. Run the following code in your console:\ninstall.packages(\"palmerpenguins\")"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot.html#step-2-create-a-set-up-code-chunk",
+    "href": "group-activities/week-2/PA2-ggplot.html#step-2-create-a-set-up-code-chunk",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 2: Create a Set-up Code Chunk",
+    "text": "Step 2: Create a Set-up Code Chunk\n\nLocate the code chunk at the beginning of your document (directly under the YAML).\nName the code chunk setup (with the hashpipe #|)\nSpecify the code chunk options (with the hashpipe #|) that the messages from loading in the packages should not be included.\nLoad in the tidyverse or ggplot2 package.\nLoad in the palmerpenguins package."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot.html#step-3-accessing-the-penguins-dataset",
+    "href": "group-activities/week-2/PA2-ggplot.html#step-3-accessing-the-penguins-dataset",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 3: Accessing the penguins Dataset",
+    "text": "Step 3: Accessing the penguins Dataset\nI like to tangibly see the data set I will be working with so let’s pull the penguins data into the R environment. Run the code below and you should see the penguins data appear in the top right Environment tab.\n\ndata(penguins)\n\nWarning in data(penguins): data set 'penguins' not found"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot.html#step-4-get-to-know-the-data",
+    "href": "group-activities/week-2/PA2-ggplot.html#step-4-get-to-know-the-data",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 4: Get to Know the Data",
+    "text": "Step 4: Get to Know the Data\n\n\nWhat variables are included in these data? What units are the variables measured in? What does each row represent?"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot.html#step-5-barchart",
+    "href": "group-activities/week-2/PA2-ggplot.html#step-5-barchart",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 5: Barchart",
+    "text": "Step 5: Barchart\nUse ggplot2 to draw a barchart of different species included in the dataset."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot.html#step-6-scatterplot",
+    "href": "group-activities/week-2/PA2-ggplot.html#step-6-scatterplot",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 6: Scatterplot",
+    "text": "Step 6: Scatterplot\nUse ggplot2 to create a scatterplot of the relationship between the bill length (bill_length_mm) and bill depth (bill_depth_mm)."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot.html#step-7-adding-a-categorical-variable",
+    "href": "group-activities/week-2/PA2-ggplot.html#step-7-adding-a-categorical-variable",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 7: Adding A Categorical Variable",
+    "text": "Step 7: Adding A Categorical Variable\n\nBuilding off of the plot you made in Step 6, add an aesthetic to differentiate the species of the penguins in the scatterplot by color."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot.html#step-8-adding-another-categorical-variable",
+    "href": "group-activities/week-2/PA2-ggplot.html#step-8-adding-another-categorical-variable",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 8: Adding Another Categorical Variable",
+    "text": "Step 8: Adding Another Categorical Variable\n\nBuilding off of the plot you made in Step 7, add the location of the penguins ( island) to your visualization. There may be more than one method to address this, however, one method will more easily allow you to address the questions below."
+  },
+  {
+    "objectID": "labs/instructions/lab-2-instructions.html#step-1-accessing-making-a-copy-from-github",
+    "href": "labs/instructions/lab-2-instructions.html#step-1-accessing-making-a-copy-from-github",
+    "title": "Lab 2: Exploring Rodents with ggplot2",
+    "section": "",
+    "text": "You can find the Lab 1 materials in the Lab 2 repository on GitHub. When you click on the provided link, you will end up on the landing page for the repository.\nWe’re going to follow the same steps as last week to make your own copy of this repository:\n\n\n\n\n\n\nCopying the Repository\n\n\n\n\n\n\nClick on icon that says , to create your own copy of my repository\nOnce you’ve forked the repository, your copy should open.\nClick on the big green button that says “&lt;&gt; Code”.\nCopy the URL to your clipboard (you should be copying the HTTPS URL).\nOpen RStudio\nOpen a new project by selecting “File” and then clicking on “New Project…”\nIn the box that opens, select “Version Control”.\nIn the next screen, select “Git”.\nIn the “repository URL” paste the URL of your new GitHub repository.\nIn the “Create project as a subdirectory of” option, click on “Browse”.\nNavigate (or create) a “Lab 2” folder, included in your Week 2 folder in your STAT 331 folder. Once you get there, click “Open”.\nClick “Create Project”."
   }
 ]
