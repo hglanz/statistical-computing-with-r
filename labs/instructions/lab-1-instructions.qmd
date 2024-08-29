@@ -10,19 +10,25 @@ execute:
 
 # Part One: Workflow for GitHub
 
-## Step 1: Making a Copy from GitHub
+## Step 1: Making a Copy from GitHub Classroom
 
-You can find the Lab 1 materials in the [Lab 1 repository on GitHub](https://github.com/atheobold/stat-331-lab-1). When you click on the provided link, you will end up on the landing page for the repository.
+For the first few weeks of the quarter, we will use GitHub Classroom to create
+our lab repositories. GitHub Classroom is a wonderful tool, as it makes it
+**incredibly** simple to copy the contents of a repository. 
 
-To make a copy of the project you need to carry out the following steps:
+Use the steps below to make a copy of the Lab 1 repository: [Copying the Lab Assignment with GitHub Classroom](https://scribehow.com/shared/Copying_the_Lab_Assignment_with_GitHub_Classroom__jKUfxzJUQjOQ2lqJy2UPoQ) 
 
-1.  Click on icon that says ![](images/fork.png){width="15%"}, to create your own copy of **my** repository
+<!-- You can find the Lab 1 materials in the [Lab 1 repository on GitHub](https://github.com/atheobold/stat-331-lab-1). When you click on the provided link, you will end up on the landing page for the repository. -->
 
-2.  Once you've forked the repository, your copy should open.
+<!-- To make a copy of the project you need to carry out the following steps: -->
 
-3.  Click on the big green button that says "\<\> Code".
+<!-- 1.  Click on icon that says ![](images/fork.png){width="15%"}, to create your own copy of **my** repository -->
 
-4.  Copy the URL to your clipboard (you should be copying the HTTPS URL).
+<!-- 2.  Once you've forked the repository, your copy should open. -->
+
+<!-- 3.  Click on the big green button that says "\<\> Code". -->
+
+<!-- 4.  Copy the URL to your clipboard (you should be copying the HTTPS URL). -->
 
 5.  Open RStudio
 
