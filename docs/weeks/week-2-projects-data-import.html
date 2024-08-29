@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -131,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../images/r-flowers.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -392,14 +392,14 @@ Only read Section 6.2!
 <p>If you open up your folder from Lab 1, you will notice that you have a blue cube (an R Project) living in this folder! The R Project lives in this folder for two reasons, (1) when you copied the Lab 1 GitHub repository you told RStudio you wanted to make a new R Project, and (2) in order for RStudio to talk with GitHub you need to use an R Project.</p>
 <p>However, if you look at your STAT331 folder (the one that lives in your Documents folder), you <strong>should not</strong> see a blue cube since we never created an R Project in this folder. Let’s do that now!</p>
 <p>To add a R Project to an existing folder on your computer (e.g., you already created a folder for this class), first open RStudio on your computer and click <code>File &gt; New Project</code>, then:</p>
-<div class="quarto-figure quarto-figure-center">
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/week-2/create-existing-rproj-step-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screenshot of navigation box that appears when you select 'File' and 'New Project'. The 'Existing Directory' option is highlighted in blue."></p>
 <figcaption>Navigation prompt for creating a new R Project in an existing directory</figcaption>
 </figure>
 </div>
 <p>Then, browse on your computer to where you saved your STAT331 folder last week. This should be in your Documents folder, similar to where mine is saved!</p>
-<div class="quarto-figure quarto-figure-center">
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/week-2/create-existing-rproj-step-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screenshot of navigation box that appears when you select 'Existing Directory' from the previous navigation menue. By clicking on the 'Browse' button you can navigate to the existing folder where you would like to insert the R Project. In the image, I've navigated to my STAT331 folder which lives in my Documents."></p>
 <figcaption>Navigation prompt for selecting which existing folder in which the R Project should be created.</figcaption>
@@ -777,12 +777,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {
