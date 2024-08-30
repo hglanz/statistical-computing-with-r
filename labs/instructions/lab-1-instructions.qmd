@@ -16,7 +16,7 @@ For the first few weeks of the quarter, we will use GitHub Classroom to create
 our lab repositories. GitHub Classroom is a wonderful tool, as it makes it
 **incredibly** simple to copy the contents of a repository. 
 
-Use these 11 steps to make a copy of the Lab 1 repository: [List of Steps to Copy the Lab Assignment from GitHub Classroom](https://scribehow.com/shared/Copying_the_Lab_Assignment_with_GitHub_Classroom__jKUfxzJUQjOQ2lqJy2UPoQ) 
+Use these steps to make a copy of the Lab 1 repository: [List of Steps to Copy the Lab Assignment from GitHub Classroom](https://scribehow.com/shared/Copying_the_Lab_Assignment_with_GitHub_Classroom__jKUfxzJUQjOQ2lqJy2UPoQ) 
 
 ## Step 2: Inspecting the Lab
 
