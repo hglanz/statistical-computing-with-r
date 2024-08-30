@@ -56,8 +56,8 @@ website:
             text: R Resources
       - section: "Weekly materials"
         contents:
-          # - href: weeks/week-0.qmd
-          #   text: "Week 0"
+          - href: weeks/week-0-discord.qmd
+            text: "Week 0, Course Set-up"
           - href: weeks/week-1-r-rstudio.qmd
             text: "Week 1, Part 1"
           - href: weeks/week-1-quarto.qmd
