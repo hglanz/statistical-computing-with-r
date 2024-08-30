@@ -358,29 +358,27 @@ window.Quarto = {
 <section id="step-1-making-a-copy-from-github-classroom" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="step-1-making-a-copy-from-github-classroom"><span class="header-section-number">1.1</span> Step 1: Making a Copy from GitHub Classroom</h2>
 <p>For the first few weeks of the quarter, we will use GitHub Classroom to create our lab repositories. GitHub Classroom is a wonderful tool, as it makes it <strong>incredibly</strong> simple to copy the contents of a repository.</p>
-<p>Use the steps below to make a copy of the Lab 1 repository: <a href="https://scribehow.com/shared/Copying_the_Lab_Assignment_with_GitHub_Classroom__jKUfxzJUQjOQ2lqJy2UPoQ">Copying the Lab Assignment with GitHub Classroom</a></p>
+<p>Use these 11 steps to make a copy of the Lab 1 repository: <a href="https://scribehow.com/shared/Copying_the_Lab_Assignment_with_GitHub_Classroom__jKUfxzJUQjOQ2lqJy2UPoQ">List of Steps to Copy the Lab Assignment from GitHub Classroom</a></p>
 <!-- You can find the Lab 1 materials in the [Lab 1 repository on GitHub](https://github.com/atheobold/stat-331-lab-1). When you click on the provided link, you will end up on the landing page for the repository. -->
 <!-- To make a copy of the project you need to carry out the following steps: -->
 <!-- 1.  Click on icon that says ![](images/fork.png){width="15%"}, to create your own copy of **my** repository -->
 <!-- 2.  Once you've forked the repository, your copy should open. -->
 <!-- 3.  Click on the big green button that says "\<\> Code". -->
 <!-- 4.  Copy the URL to your clipboard (you should be copying the HTTPS URL). -->
-<ol start="5" type="1">
-<li><p>Open RStudio</p></li>
-<li><p>Open a new project by selecting “File” and then clicking on “New Project…”</p></li>
-<li><p>In the box that opens, select “Version Control”.</p></li>
-<li><p>In the next screen, select “Git”.</p></li>
-<li><p>In the “repository URL” paste the URL of your new GitHub repository.</p></li>
-<li><p>In the “Create project as a subdirectory of” option, click on “Browse”.</p></li>
-<li><p>Navigate to the “Lab 1” folder you made in the Week 1 folder of your STAT 331 folder. Once you get there, click “Open”.</p></li>
-<li><p>Click “Create Project”.</p></li>
-</ol>
+<!-- 5.  Open RStudio -->
+<!-- 6.  Open a new project by selecting "File" and then clicking on "New Project..." -->
+<!-- 7.  In the box that opens, select "Version Control". -->
+<!-- 8.  In the next screen, select "Git". -->
+<!-- 9.  In the "repository URL" paste the URL of your new GitHub repository. -->
+<!-- 10. In the "Create project as a subdirectory of" option, click on "Browse". -->
+<!-- 11. Navigate to the "Lab 1" folder you made in the Week 1 folder of your STAT 331 folder. Once you get there, click "Open". -->
+<!-- 12. Click "Create Project". -->
 </section>
 <section id="step-2-inspecting-the-lab" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="step-2-inspecting-the-lab"><span class="header-section-number">1.2</span> Step 2: Inspecting the Lab</h2>
-<p>Once you complete these steps, a dialogue box will open with messages about cloning (making a copy) of your lab 1 repository. When the messages are finished, you should have a new RStudio session open. You should notice a few things:</p>
+<p>Once you complete these steps, a dialogue box will open with messages about cloning (making a copy) of your Lab 1 repository. When the messages are finished, you should have a new RStudio session open. You should notice a few things:</p>
 <ul>
-<li>In the upper right corner you should see a blue R cube with <code>stat-331-lab-1</code> written next to it <img src="images/new-r-project.png" class="img-fluid" style="width:15.0%">, this tells you that you are working in an R Project (we’ll learn more about these next week).</li>
+<li>In the upper right corner you should see a blue R cube with <code>introdcution-to-quarto</code> written next to it <img src="images/r-project.png" class="img-fluid" style="width:15.0%" alt="A picture of a blue cube with an R inside, next to the text 'introduction-to-quarto-allison-theobold'">, this tells you that you are working in an R Project (we’ll learn more about these next week).</li>
 <li>In the “Files” pane, you should see a list of all the files included in the <code>lab-1</code> repository you copied.</li>
 <li>In the upper right pane, you should see a tab labeled “Git”.</li>
 <li>Every file included in the repository should be listed with a question mark symbol next to it, that’s okay! This just means these files are not currently being tracked.</li>
@@ -399,7 +397,7 @@ window.Quarto = {
 </ul>
 <p>RStudio will display something like:</p>
 <pre><code>&gt;&gt;&gt; /usr/bin/git push origin HEAD:refs/heads/main
-To https://github.com/atheobold/stat-331-lab-1.git
+To https://github.com/atheobold/introduction-to-quarto-allison-theobold.git
    3a2171f..6d58539  HEAD -&gt; main</code></pre>
 </section>
 <section id="step-4-verifying-your-changes" class="level2" data-number="1.4">
@@ -408,7 +406,7 @@ To https://github.com/atheobold/stat-331-lab-1.git
 </section>
 <section id="step-5-lets-get-started-working-with-quarto" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="step-5-lets-get-started-working-with-quarto"><span class="header-section-number">1.5</span> Step 5: Let’s get started working with Quarto!</h2>
-<p>In the Files pane, click on <code>lab-1.qmd</code> to open the Quarto file you will be working in for Lab 1.</p>
+<p>In the Files pane, click on <code>lab-1-student.qmd</code> to open the Quarto file you will be working in for Lab 1.</p>
 </section>
 </section>
 <section id="part-two-exploring-quarto-documents" class="level1" data-number="2">
@@ -464,7 +462,7 @@ editor: source
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> </span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dose =</span> <span class="fu">as.factor</span>(dose)) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(dose), <span class="at">y =</span> len)) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len)) <span class="sc">+</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Dose of Supplement (mg/day)"</span>, <span class="at">y =</span> <span class="st">"Length of Teeth (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
