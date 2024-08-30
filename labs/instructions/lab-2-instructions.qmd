@@ -2,6 +2,8 @@
 title: "Lab 2: Exploring Rodents with `ggplot2`"
 format: html
 editor: source
+number-sections: true
+number-depth: 2
 toc: true
 code-tools: true
 execute:
@@ -14,7 +16,7 @@ execute:
 
 # Part 1: GitHub Workflow
 
-## Step 1: Accessing Making a Copy from GitHub
+## Step 1: Making a Copy from GitHub Classroom
 
 You can access the Lab 2 materials through the [Lab 2 assignment on GitHub Classroom](https://classroom.github.com/a/4e-4Et4D). We're going to follow the same steps as last week to make your own copy of this repository:
 
@@ -23,6 +25,8 @@ You can access the Lab 2 materials through the [Lab 2 assignment on GitHub Class
 
 Use these steps to make a copy of the Lab 2 repository: [List of Steps to Copy the Lab Assignment from GitHub Classroom](https://scribehow.com/shared/RStudio_and_Google_Chrome_Workflow__ATprsf2MTYmuPP86Xna1Eg)
 :::
+
+## Step 2: Pushing Your Lab to GitHub
 
 Now that you have a copy of the repository, we need to [commit the files to our repo](https://happygitwithr.com/existing-github-first#stage-and-commit). To do 
 this, follow the steps below:
@@ -42,8 +46,7 @@ Now you are ready to go! Remember, as you are going through the lab I would
 strongly recommend rendering your HTML and committing your after **every** 
 question! 
 
-
-## Seeking Help
+## Step 3: Let's get started making some plots!
 
 Part of learning to program is learning from a variety of resources. Thus, I
 expect you will use resources that you find on the internet. There is, however,
@@ -65,7 +68,7 @@ complete lab assignments, but **you are expected to do your own work**. Copying
 from each other is cheating, and letting people copy from you is also cheating.
 Please don't do either of those things.
 
-# Lab Instructions
+# Part Two: Data Context
 
 The questions in this lab are noted with numbers and boldface. Each question
 will require you to produce code, whether it is one line or multiple lines.
@@ -76,7 +79,7 @@ I would encourage you to spice your documents up (e.g., declaring execution
 options, specifying how your figures should be output, formatting your code
 output, etc.).
 
-# Setup
+## Setup
 
 In the code chunk below, load in the packages necessary for your analysis. You
 should only need the `tidyverse` package for this analysis.
@@ -86,7 +89,7 @@ should only need the `tidyverse` package for this analysis.
 
 ```
 
-# Data Context
+## Data Context
 
 The Portal Project is a long-term ecological study being conducted near Portal, 
 AZ. Since 1977, the site has been used to study the interactions among rodents,
@@ -116,7 +119,7 @@ represent:
 | `taxon`           | e.g. Rodent, Reptile, Bird, Rabbit |
 | `plot_type`       | type of plot                       |
 
-# Reading the Data into `R`
+## Reading the Data into `R`
 
 **1. Using the `read_csv()` function, write the code necessary to load in the `surveys.csv` dataset (stored in the data folder). For simplicity, name the data `surveys`.**
 
@@ -246,7 +249,7 @@ Notice how vertically stacked boxplots make the species labels more readable
 than horizontally stacked boxplots (even when the axis labels are rotated). 
 This is good practice!
 
-# Conducting Statistical Analyses
+# Conecting Visualizations with Statistical Analyses
 
 Exploratory Data Analysis (EDA) is always a great start to investigating a 
 dataset. Can we see a relationship between rodent weight and hindfoot length?
