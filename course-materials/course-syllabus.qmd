@@ -573,11 +573,11 @@ Program Efficiency
 -   **PE-4**: I can use modern tools[^5] when carrying out my analysis.
 
 ::: {style="font-size: 1.5em; color: #34605f;"}
-Extra Topics?
+Data Simulation & Statistical Models
 :::
 
-- simulation 
-- webscraping
+- **DSSM-1**: I can simulate data from a variety of distributions
+- **DSSM-2**: I can conduct common statistical analyses in R
 :::
 :::
 
