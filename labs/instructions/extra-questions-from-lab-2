@@ -1,0 +1,27 @@
+
+But wait, the `aov()` output doesn’t actually tell us **which** species differ! Install the `emmeans` package by running `install.packages("emmeans")` in your console (NOT in the .qmd file). Then, run the code chunk below to load the package.
+
+```{r}
+#| label: mcp-package
+
+library(emmeans)
+```
+
+Look up the help documentation for `emmeans()`. This one might take a bit of Google-ing. Note that we conducted a *one-factor model*.
+
+**19. Using the `species_mod` from above and the `emmeans()` function, complete the code below to obtain estimated model mean rodent weights for each species**
+
+```{r}
+#| label: mean-weights-by-species
+
+species_estimates <- emmeans()
+
+species_estimates
+```
+
+**20. Now that you have obtained the estimated model mean rodent weights, conduct pairwise comparisons using the `pairs()` function from the `emmeans` package.**
+
+```{r}
+#| label: pairwise-comparisons
+  
+```

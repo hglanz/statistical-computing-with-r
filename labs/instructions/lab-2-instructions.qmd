@@ -16,39 +16,12 @@ execute:
 
 ## Step 1: Accessing Making a Copy from GitHub
 
-You can find the Lab 1 materials in the [Lab 2 repository on GitHub](https://github.com/atheobold/stat-331-lab-2). When you click on the
-provided link, you will end up on the landing page for the repository.
-
-We're going to follow the same steps as last week to make your own copy of this
-repository:
+You can access the Lab 2 materials through the [Lab 2 assignment on GitHub Classroom](https://classroom.github.com/a/4e-4Et4D). We're going to follow the same steps as last week to make your own copy of this repository:
 
 ::: {.callout-tip collapse="true"}
-# Copying the Repository
+# Same process as last week!
 
-1.  Click on icon that says ![](images/fork.png){width="15%"}, to create your
-own copy of **my** repository
-
-2.  Once you've forked the repository, your copy should open.
-
-3.  Click on the big green button that says "\<\> Code".
-
-4.  Copy the URL to your clipboard (you should be copying the HTTPS URL).
-
-5.  Open RStudio
-
-6.  Open a new project by selecting "File" and then clicking on "New Project..."
-
-7.  In the box that opens, select "Version Control".
-
-8.  In the next screen, select "Git".
-
-9.  In the "repository URL" paste the URL of your new GitHub repository.
-
-10. In the "Create project as a subdirectory of" option, click on "Browse".
-
-11. Navigate (or create) a "Lab 2" folder, included in your Week 2 folder in your STAT 331 folder. Once you get there, click "Open".
-
-12. Click "Create Project".
+Use these steps to make a copy of the Lab 2 repository: [List of Steps to Copy the Lab Assignment from GitHub Classroom](https://scribehow.com/shared/RStudio_and_Google_Chrome_Workflow__ATprsf2MTYmuPP86Xna1Eg)
 :::
 
 Now that you have a copy of the repository, we need to [commit the files to our repo](https://happygitwithr.com/existing-github-first#stage-and-commit). To do 
@@ -329,30 +302,3 @@ summary(species_mod)
 ```
 
 **18. Based on the results of the ANOVA F-test, draw a conclusion in context of the hypotheses. Make sure to cite appropriate output from above.**
-
-But wait, the `aov()` output doesn’t actually tell us **which** species differ! Install the `emmeans` package by running `install.packages("emmeans")` in your console (NOT in the .qmd file). Then, run the code chunk below to load the package.
-
-```{r}
-#| label: mcp-package
-
-library(emmeans)
-```
-
-Look up the help documentation for `emmeans()`. This one might take a bit of Google-ing. Note that we conducted a *one-factor model*.
-
-**19. Using the `species_mod` from above and the `emmeans()` function, complete the code below to obtain estimated model mean rodent weights for each species**
-
-```{r}
-#| label: mean-weights-by-species
-
-species_estimates <- emmeans()
-
-species_estimates
-```
-
-**20. Now that you have obtained the estimated model mean rodent weights, conduct pairwise comparisons using the `pairs()` function from the `emmeans` package.**
-
-```{r}
-#| label: pairwise-comparisons
-  
-```
