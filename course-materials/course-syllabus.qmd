@@ -2,15 +2,10 @@
 title: '**STAT 331**, Fall 2024'
 format: 
   html: 
-    self-contained: true
-    fontsize: 1em
-    mainfont: sans-serif
     number-sections: true
     number-depth: 2
     table-of-contents: true
     section-divs: true
-    code-block-bg: "#76b5c5"
-    highlight-style: monochrome
     reference-location: section
     footnotes-hover: true
 editor: source
@@ -33,7 +28,7 @@ TR 12:10pm - 2:00pm
 :::
 
 ::: {.column width="40%"}
-![Image by Alison Horst](/images/r-flowers.png){fig-alt="Two round creatures painting and decorating the R logo with flowers."}
+![Image by Alison Horst](../images/r-flowers.png){fig-alt="Two round creatures painting and decorating the R logo with flowers."}
 :::
 :::
 
@@ -56,7 +51,7 @@ TR 12:10pm - 2:00pm
 |                                                                 |                                                 |
 | **Office:** Building 25, Office 105                             |                                                 |
 |                                                                 |                                                 |
-| **Office Hours:** Tue & Thu: 2:10  - 3:00 pm                    |                                                 |
+| **Student Hours:** Tue & Thu: 2:10 - 3:00 pm                    |                                                 |
 |                                                                 |                                                 |
 | **Email:** [atheobol\@calpoly.edu](mailto:atheobol@calpoly.edu) |                                                 |
 +-----------------------------------------------------------------+-------------------------------------------------+
@@ -195,16 +190,15 @@ This course utilizes a system called "ungrading," where you will be the arbiter 
 \
 The goal of ungrading is to remove marks from the picture, so you are able to focus your attention on the work itself and engage in the feedback loop. I am removing distractions ([marks are distractors](https://gradingforgrowth.com/p/words-numbers-or-nothing)) to help you build metacognition and self-evaluation skills, and grow in your learning over time.
 
-One of the four pillars of this grading system is having clearly identified standards, so you know what is expected of you. In this course, there are four dimensions where you will assess your progress against the goals stated for you, these are: 
+One of the four pillars of this grading system is having clearly identified standards, so you know what is expected of you. In this course, there are three dimensions where you will assess your progress against the goals stated for you, these are:
 
 1.  Accomplishment of Learning Targets
 2.  Evidence of Continued Learning
 3.  Growth as a Team Member
-4.  Attention to Personal Goals
 
 You will work on each of these dimensions throughout the course. Periodically, you will be asked to reflect on your learning and discuss how you have grown in each area. Accompanying each reflection will be an estimation of the grade you have earned in the course. You will be provided feedback on each reflection, letting you know if I agree with your assessment, and, if not, where the discrepancies lie. I want you to view your grade as a conversation between you and me.
 
-Let's unpack how you are expected to evaluate yourself in these four dimensions.
+Let's unpack how you are expected to evaluate yourself in these three dimensions.
 
 ## Accomplishment of Learning Targets
 
@@ -229,14 +223,13 @@ For the problems in each Lab Assignment, I will give copious written feedback, b
 
 ## **Growth as a Team Member**
 
-There are two ways you will evaluate your growth as a team member. The first is through your collaboration with your team members. The second is through the code reviews you provide your peers. 
+There are two ways you will evaluate your growth as a team member. The first is through your collaboration with your team members. The second is through the code reviews you provide your peers.
 
 ### Collaborative Group Work
 
-This course uses collaborative learning to provide a supportive community when initially exploring the concepts associated with each week. On Tuesdays, you will collaborate in assigned teams to complete a Practice Activity. Collaborating on the Practice Activity is more than independently coding each task and asking someone a question when you get stuck. Collaborating is working together with your team to accomplish each question. 
+This course uses collaborative learning to provide a supportive community when initially exploring the concepts associated with each week. On Tuesdays, you will collaborate in assigned teams to complete a Practice Activity. Collaborating on the Practice Activity is more than independently coding each task and asking someone a question when you get stuck. Collaborating is working together with your team to accomplish each question.
 
-\
-Many people are uncomfortable working in a team for a variety of reasons, such as fearing looking dumb, being rejected, or being disrespected. It is my hope that our weekly collaborations will offer opportunities for you to grow as a group member, by becoming more aware of how you interact with others. 
+Many people are uncomfortable working in a team for a variety of reasons, such as fearing looking dumb, being rejected, or being disrespected. It is my hope that our weekly collaborations will offer opportunities for you to grow as a group member, by becoming more aware of how you interact with others.
 
 During the first week of class, each of you will be placed in a group with one other student. During Weeks 2-5, you will work with this person on the Practice Activities we complete during class on Tuesdays. To make group collaborations more equitable, I expect for you and your partner to alternative between two "roles"—recorder and listener. We will discuss these roles in class, but here are some rough descriptions of the scope of each role:
 
@@ -250,15 +243,15 @@ One of my favorite sayings is "Programs must be written for people to read, and 
 
 You hopefully noticed that writing "tidy" and "efficient" code are two of the Learning Targets for this course. To demonstrate proficiency in these targets, you will earn badges from your peers. For each lab assignment, everyone in the class will provide an anonymous review of someone's code. The reviewer will provide feedback on the tidiness and efficiency of the code they are reviewing. I will provide some examples of helpful and unhelpful feedback, to guide your feedback. It's easy to be a jerk when making comments; don't. Think about the comments you would like to receive that would help you improve your code! **Be good to each other.**
 
-## **Attention to Personal Goals**
+<!-- ## **Attention to Personal Goals** -->
 
-During Week 1 of this course, you will be asked to write down at least three measurable things you hope to get out of this class. There is no specific requirement regarding the "size" of the things you write, just that you are able to "measure" your progress toward accomplishing these goals throughout the course. You will hopefully find that some of your goals align with or build off of other aspects of this course!
+<!-- During Week 1 of this course, you will be asked to write down at least three measurable things you hope to get out of this class. There is no specific requirement regarding the "size" of the things you write, just that you are able to "measure" your progress toward accomplishing these goals throughout the course. You will hopefully find that some of your goals align with or build off of other aspects of this course! -->
 
 # **When will I work on my portfolio?**
 
 I encourage you to work on your portfolio every week, inserting snippets of code which satisfy the learning objectives. However, I know that life gets busy and sometimes other things will come before your portfolio. So, I have scheduled a mid-quarter portfolio check-in.
 
-At the end of Week 6, you will submit your first reflection and your draft portfolio. See @sec-portfolio below for a description of what should be included in your portfolio. At the end of your portfolio, you will include a proposal for the grade you've earned in the course. Your portfolio acts as the "data" to support your proposed grade. 
+At the end of Week 6, you will submit your first reflection and your draft portfolio. See @sec-portfolio below for a description of what should be included in your portfolio. At the end of your portfolio, you will include a proposal for the grade you've earned in the course. Your portfolio acts as the "data" to support your proposed grade.
 
 We will have an in-person, 5-minute meeting during Week 7 to discuss your proposed grade. 
 
@@ -290,59 +283,59 @@ At the end of the term, **you're going to tell me how you did and thus what grad
 
 We will generate the descriptions / expectations of these grades together after you've had the chance to see how this course looks. Specifically, we will dedicate a portion of class during Week 3 to writing these expectations together.
 
-+--------------------------+-----------------------------------------+
-| Letter Grade             | Description of Work and Participation   |
-+==========================+=========================================+
-| **A**\                   | **Learning Targets:**\                  |
-| (Superior Achievement)   | \                                       |
-|                          | **Revising Thinking:\                   |
-|                          | \                                       |
-|                          | Extending Thinking:\                    |
-|                          | \                                       |
-|                          | Collaborative Group Member:\            |
-|                          | \                                       |
-|                          | Peer-Code Review:**                     |
-+--------------------------+-----------------------------------------+
-| **B**\                   | **Learning Targets:**\                  |
-| (Good Achievement)       | \                                       |
-|                          | **Revising Thinking:\                   |
-|                          | \                                       |
-|                          | Extending Thinking:\                    |
-|                          | \                                       |
-|                          | Collaborative Group Member:\            |
-|                          | \                                       |
-|                          | Peer-Code Review:**                     |
-+--------------------------+-----------------------------------------+
-| **C**\                   | **Learning Targets:**\                  |
-| (Acceptable Achievement) | \                                       |
-|                          | **Revising Thinking:\                   |
-|                          | \                                       |
-|                          | Extending Thinking:\                    |
-|                          | \                                       |
-|                          | Collaborative Group Member:\            |
-|                          | \                                       |
-|                          | Peer-Code Review:**                     |
-+--------------------------+-----------------------------------------+
-| **D**                    | **Learning Targets:**\                  |
-|                          | \                                       |
-|                          | **Revising Thinking:\                   |
-|                          | \                                       |
-|                          | Extending Thinking:\                    |
-|                          | \                                       |
-|                          | Collaborative Group Member:\            |
-|                          | \                                       |
-|                          | Peer-Code Review:**                     |
-+--------------------------+-----------------------------------------+
-| **F**                    | **Learning Targets:**\                  |
-|                          | \                                       |
-|                          | **Revising Thinking:\                   |
-|                          | \                                       |
-|                          | Extending Thinking:\                    |
-|                          | \                                       |
-|                          | Collaborative Group Member:\            |
-|                          | \                                       |
-|                          | Peer-Code Review:**                     |
-+--------------------------+-----------------------------------------+
++--------------------------+----------------------------------------+
+| Letter Grade             | Description of Work and Participation  |
++==========================+========================================+
+| **A**\                   | **Learning Targets:**\                 |
+| (Superior Achievement)   | \                                      |
+|                          | **Revising Thinking:\                  |
+|                          | \                                      |
+|                          | Extending Thinking:\                   |
+|                          | \                                      |
+|                          | Collaborative Group Member:\           |
+|                          | \                                      |
+|                          | Peer-Code Review:**                    |
++--------------------------+----------------------------------------+
+| **B**\                   | **Learning Targets:**\                 |
+| (Good Achievement)       | \                                      |
+|                          | **Revising Thinking:\                  |
+|                          | \                                      |
+|                          | Extending Thinking:\                   |
+|                          | \                                      |
+|                          | Collaborative Group Member:\           |
+|                          | \                                      |
+|                          | Peer-Code Review:**                    |
++--------------------------+----------------------------------------+
+| **C**\                   | **Learning Targets:**\                 |
+| (Acceptable Achievement) | \                                      |
+|                          | **Revising Thinking:\                  |
+|                          | \                                      |
+|                          | Extending Thinking:\                   |
+|                          | \                                      |
+|                          | Collaborative Group Member:\           |
+|                          | \                                      |
+|                          | Peer-Code Review:**                    |
++--------------------------+----------------------------------------+
+| **D**                    | **Learning Targets:**\                 |
+|                          | \                                      |
+|                          | **Revising Thinking:\                  |
+|                          | \                                      |
+|                          | Extending Thinking:\                   |
+|                          | \                                      |
+|                          | Collaborative Group Member:\           |
+|                          | \                                      |
+|                          | Peer-Code Review:**                    |
++--------------------------+----------------------------------------+
+| **F**                    | **Learning Targets:**\                 |
+|                          | \                                      |
+|                          | **Revising Thinking:\                  |
+|                          | \                                      |
+|                          | Extending Thinking:\                   |
+|                          | \                                      |
+|                          | Collaborative Group Member:\           |
+|                          | \                                      |
+|                          | Peer-Code Review:**                    |
++--------------------------+----------------------------------------+
 
 # What if I need to miss class?
 
@@ -390,43 +383,19 @@ In summary: Be good to each other.
 
 ## How do you define plagiarism in a programming class?
 
-Paraphrasing or quoting another’s work without citing the source is a form of
-academic misconduct. This included the R code produced by someone else! Writing
-code is like writing a paper, it is obvious if you copied-and-pasted a sentence
-from someone else into your paper because the way each person writes is
-different.
+Paraphrasing or quoting another’s work without citing the source is a form of academic misconduct. This included the R code produced by someone else! Writing code is like writing a paper, it is obvious if you copied-and-pasted a sentence from someone else into your paper because the way each person writes is different.
 
-In this class the assumed knowledge is the course materials, including the
-course textbook, coursework pages, and course slides. Any functions / code used
-outside of these materials require direct references. This includes any
-functions learned through R documentation for functions we have learned.
-Meaning, if you look up the help file for `mutate()` and you learn about a
-function not covered in the course materials, you are required to cite the
-documentation when using that function.
+In this class the assumed knowledge is the course materials, including the course textbook, coursework pages, and course slides. Any functions / code used outside of these materials require direct references. This includes any functions learned through R documentation for functions we have learned. Meaning, if you look up the help file for `mutate()` and you learn about a function not covered in the course materials, you are required to cite the documentation when using that function.
 
-Even inadvertent or unintentional misuse or appropriation of another's work
-(such as relying heavily on source material that is not expressly acknowledged)
-is considered plagiarism. If you use external resources such as Google or 
-ChatGPT, I expect you to indicate this in your assignment. 
+Even inadvertent or unintentional misuse or appropriation of another's work (such as relying heavily on source material that is not expressly acknowledged) is considered plagiarism. If you use external resources such as Google or ChatGPT, I expect you to indicate this in your assignment.
 
-- If you used Google, you are expected to "inform" me of any resources you used
-by **pasting the link to the resource in a code comment next to where you used
-that resource**.
+-   If you used Google, you are expected to "inform" me of any resources you used by **pasting the link to the resource in a code comment next to where you used that resource**.
 
-- If you used ChatGPT, you are expected to "inform" me of the assistance you
-received by (1) indicating somewhere in the problem that you used ChatGPT 
-(e.g., below the question prompt or as a code comment), and (2) downloading and
-attaching the `.txt` file containing your **entire** conversation with ChatGPT.
+-   If you used ChatGPT, you are expected to "inform" me of the assistance you received by (1) indicating somewhere in the problem that you used ChatGPT (e.g., below the question prompt or as a code comment), and (2) downloading and attaching the `.txt` file containing your **entire** conversation with ChatGPT.
 
-It is both good professional practice and academic integrity to cite any 
-resources you used during your work. The first incident of failing to cite your
-resources, will result in a warning. The second incident of failing to cite your
-resources will result in a 0 on the assignment, meaning you will not be able to
-include **any** code from that Lab or Challenge in your Final Portfolio. You
-will also be reported to the Office of Student Rights and Responsibilities. 
+It is both good professional practice and academic integrity to cite any resources you used during your work. The first incident of failing to cite your resources, will result in a warning. The second incident of failing to cite your resources will result in a 0 on the assignment, meaning you will not be able to include **any** code from that Lab or Challenge in your Final Portfolio. You will also be reported to the Office of Student Rights and Responsibilities.
 
-If you have any questions about using and citing sources, you are expected to 
-ask for clarification.
+If you have any questions about using and citing sources, you are expected to ask for clarification.
 
 # I’m having difficulty paying for food and rent, what can I do?
 
@@ -576,8 +545,8 @@ Program Efficiency
 Data Simulation & Statistical Models
 :::
 
-- **DSSM-1**: I can simulate data from a variety of distributions
-- **DSSM-2**: I can conduct common statistical analyses in R
+-   **DSSM-1**: I can simulate data from a variety of distributions
+-   **DSSM-2**: I can conduct common statistical analyses in R
 :::
 :::
 
