@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -95,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./images/r-flowers.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -316,7 +316,8 @@ ul.task-list li input[type="checkbox"] {
 <td><a href="./weeks/week-1-version-control.html">Intro to Version Control</a></td>
 <td><a href="./slides/week-1/week-1-intro-version-control.html" title="Intro to Quarto &amp; Version Control">Intro to Quarto &amp; Version Control</a></td>
 <td></td>
-<td><a href="./labs/instructions/lab-1-instructions.html">Lab 1 &amp; Challenge 1</a> <br> (due 9/29)</td>
+<td><p><a href="./labs/instructions/lab-1-instructions.html">Lab 1 &amp; Challenge 1 Instructions</a> <br></p>
+<p><a href="https://classroom.github.com/a/j-bckA7U" title="Lab 1 &amp; Challenge 1 Assignment on GitHub Classroom">Link to Assignment on GitHub Classroom</a> (due 9/29)</p></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -325,7 +326,8 @@ ul.task-list li input[type="checkbox"] {
 <td><p><a href="./weeks/week-2-ggplot.html" title="Data Visualization with ggplot2">Data Visualization with ggplot2</a></p>
 <p><a href="./weeks/week-2-projects-data-import.html" title="Data Import &amp; R Projects">Data Import &amp; R Projects</a></p></td>
 <td></td>
-<td><a href="./group-activities/week-2/expert-designer.html" title="Expert Designer Group Warm-up">Expert Designer Group Warm-up</a></td>
+<td><p><a href="./group-activities/week-2/expert-designer.html" title="Expert Designer Group Warm-up">Expert Designer Group Warm-up</a></p>
+<p><a href="https://posit.cloud/spaces/546280/content/8635027" title="PA 2 (link to Posit Cloud)">PA 2 (link to Posit Cloud)</a> (due 10/2)</p></td>
 <td></td>
 <td></td>
 </tr>
@@ -335,7 +337,8 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 <td></td>
-<td><a href="./labs/instructions/lab-2-instructions.html" title="Lab 2 Instructions">Lab 2 Instructions</a> &amp; <a href="./labs/instructions/challenge-2-instructions.html" title="Challenge 2 Instructions">Challenge 2 Instructions</a> <br> (due 10/6)</td>
+<td><p><a href="./labs/instructions/lab-2-instructions.html" title="Lab 2 Instructions">Lab 2 Instructions</a> &amp; <a href="./labs/instructions/challenge-2-instructions.html" title="Challenge 2 Instructions">Challenge 2 Instructions</a> <br></p>
+<p><a href="https://classroom.github.com/a/4e-4Et4D" title="Lab 2 &amp; Challenge 2 Assignment on GitHub Classroom">Link to Assignment on GitHub Classroom</a> (due 10/6)</p></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -820,12 +823,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {
