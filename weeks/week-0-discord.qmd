@@ -186,37 +186,81 @@ Challenges will be submitted on Canvas. All revisions to Challenges will be subm
 
 ## `r emo::ji("check")` Check-in 2: Syllabus Quiz
 
-**Question 1:** Where are student hours held?
+**Question 1:** Where can you visit me for student hours?
 
-**Question 2:** What materials and technology are required for this course?
+- In person
+- Zoom
+- Discord
+- Canvas
 
-**Question 3:** In this course, Preview Activities are due by 12pm every \_\_\_\_. Practice Activities are due by midnight every \_\_\_\_. Lab Assignments and Challenges are due by midnight every \_\_\_\_.
+**Question 2:** In this course, Preview Activities are due by 12pm every
+\_\_\_\_. Practice Activities are due by 12pm every \_\_\_\_. Lab
+Assignments and Challenges are due by midnight every \_\_\_\_.
 
-**Question 4:** If you receive a "Growing" on a Lab Assignment problem, what 
+**Question 3:** If you have a question about the course content, what is the
+best first step?
+
+- Post your question on Discord in the appropriate channel
+- Send Dr. Theobold an email
+- Go to student hours on Tuesday or Thursday
+- Google it
+
+**Question 4:** You are permitted to submit up to \_\_\_\_ assignments late. 
+
+**Question 5:** If you need to submit an assignment late, you must do which of 
+the following?
+
+- email Dr. Theobold to request a deadline extension
+- submit a deadline extension request to the Google Form linked in the syllabus
+(and on Canvas)
+- request an extension before the deadline has passed
+- complete the assignment no later than 3-days after the original deadline
+
+**Question 6:** If you receive a "Growing" on a Lab Assignment problem, what 
 should you do?
 
-**Question 5:** You have finished the week's Practice Assignment, and you want 
-to know if you did it right. You ask your friend, and she says, "Oh, I got 
-*Luke Skywalker* as my answer." This is a violation of the Academic Honesty
-policy.
+- read the comments and complete revisions on the problems receiving a "Growing"
+- complete revisions on the problems receiving a "Growing"
+- read the comments and complete revisions on the entire assignment
+- nothing
 
-**Question 6:** You and a friend have been working on Lab 1 together. You finish
-up and want to go to bed, but she is still a little confused. You email her your
-file, and say, "Don't copy this, just look how I did it so you can figure it
-out." Have you violated Academic Honesty policies?
+**Question 7:** For revisions on Lab Assignments and Challenges to be eligible 
+for a regrade they need to be turned in with:
 
-**Question 7:** You have been working on Challenge 1 for what feels like forever
-and it seems like you are making little to no progress. You type the prompt into
+- your new answers
+- your original answers
+- reflections on how your learning progressed from your initial attempt
+- nothing
+
+**Question 8:** You have finished the week's Practice Assignment, and you want
+to know if you did it right. You ask your friend, and they say, "Oh, I got Luke
+Skywalker as my answer." This is a violation of Academic Honesty policy.
+
+**Question 9:** You have been working on Lab 3 for what feels like forever and
+it seems like you are making little to no progress. You type the prompt into
 Google and "Wham!" the first result is a Stack Overflow page with a solution.
 You copy-and-paste the solution from the Stack Overflow page into your Challenge
-submission and do not reference that you used an outside source. You have
+submission and do not reference that you used an outside source. You have 
 violated the Academic Honesty policy.
 
-**Question 8:** Name one of the course learning targets that makes you excited.
+**Question 10:** You have been getting frustrated with finding an error in your
+code for hours and finally decide to paste your own generated code into ChatGPT
+and ask it to help you debug. ChatGPT immediately finds a missing parenthesis.
+You have violated the Academic Honesty policy.
 
-**Question 9:** Name one of the course learning targets that makes you nervous.
+**Question 11** You have been studying for another class, the deadline for Lab 2
+is in an hour and you haven't even started. Instead of using a "grace day", you
+choose to copy the assignment into ChatGPT and ask it to write code to accomplish
+the tasks. ChatGPT spits out code with a style/format different from what we
+learned in class; you copy it into your Quarto code chunks and it runs so you
+render your assignment and turn it in anyway. You have violated the Academic
+Honesty policy.
 
-**Question 10:** Why are you taking this class? What do you hope to learn?
+**Question 12:** Name one of the course learning targets that makes you excited.
+
+**Question 13:** Name one of the course learning targets that makes you nervous.
+
+**Question 14:** Why are you taking this class? What do you hope to learn?
 
 ------------------------------------------------------------------------
 
