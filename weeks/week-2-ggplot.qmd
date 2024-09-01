@@ -91,16 +91,7 @@ This has a few advantages:
 
 ### `r emo::ji("check")` Check-in 2.1
 
-**Question 1** -- With the `mpg` dataset (included in the ggplot2 package), make a scatterplot of `hwy` versus `cty`. Which of these correctly describe the relationship seen in the plot?
-
--   positive
--   strong
--   negative
--   weak
--   linear
--   non-linear
-
-**Question 2** -- What specifically does the code `ggplot(data = mpg)` do?
+**Question 1** -- What specifically does the code `ggplot(data = mpg)` do?
 
 -   Creates a blank plot
 -   Makes a scatterplot of the first two variables in the `mpg` dataset
@@ -117,14 +108,15 @@ ggplot(data = mpg) +
   geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
 ```
 
-**Question 3:** What aesthetics does this plot contain?
+**Question 2:** What aesthetics does this plot contain?
 
 -   x
 -   y
 -   color
 -   data
 
-**Question 4:** Which of following changes would color the points based on the number of cylinders (`cyl`) the car has (4, 5, 6, 8)? Select all that apply.
+**Question 3:** Which of the following changes would set the color of the points
+to be blue?
 
 ```{r}
 #| eval: false
@@ -135,7 +127,7 @@ ggplot(data = mpg) +
 geom_point(
   mapping = aes(x = displ, 
                 y = hwy, 
-                color = cyl)
+                color = blue)
   )
 
 ## Option B
@@ -143,12 +135,12 @@ ggplot(data = mpg) +
 geom_point(
   mapping = aes(x = displ, 
                 y = hwy), 
-  color = cyl
+  color = "blue"
   )
 
 ## Option C
 ggplot(data = mpg, 
-       mapping = aes(color = cyl)
+       mapping = aes(color = "blue")
        ) +
 geom_point(
   mapping = aes(x = displ, 
@@ -190,6 +182,10 @@ Once you've thought through this, take a look through catalogs like the [R Graph
 
 ::: {.column width="50"}
 -   `geom_boxplot()`
+-   `geom_point()`
+-   `geom_hist()`
+-   `geom_bar()`
+-   `geom_smooth()`
 -   `geom_point()`
 -   `geom_area()`
 -   `geom_line()`
@@ -250,29 +246,13 @@ ggplot(data = mpg) +
 
 `r emo::ji("play button")` [Required Video: What is being plotted? (6 minutes)](http://somup.com/crffb8bH1x)
 
-### `r emo::ji("check")` Check-in 2.1
-
-**Question 6:** Match the stat function with its associated geom function.
-
-::: columns
-::: {.column width="50%"}
--   `stat_count()`
--   `stat_identity()`
-:::
-
-::: {.column width="50%"}
--   `geom_bar()`
--   `geom_col()`
-:::
-:::
-
 ## Changing the positions of bars
 
 `r emo::ji("play button")` [Required Video: How do I change positions?](http://somup.com/crffFibH1R)
 
 ### `r emo::ji("check")` Check-in 2.1
 
-**Question 7:** What arguments for `geom_jitter()` control the amount of jittering?
+**Question 6:** What arguments for `geom_jitter()` control the amount of jittering?
 
 -   width
 -   height
@@ -293,7 +273,7 @@ ggplot(data = mpg) +
 
 ### `r emo::ji("check")` Check-in 2.1
 
-**Question 8:** What can the `labs()` function do? Select all that apply.
+**Question 7:** What can the `labs()` function do? Select all that apply.
 
 -   Customize the x-axis label
 -   Customize the y-axis label
