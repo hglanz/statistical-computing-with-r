@@ -62,7 +62,7 @@
     "href": "weeks/week-2-ggplot.html#making-your-first-ggplot",
     "title": "Introduction to ggplot",
     "section": "1.2 Making Your First ggplot",
-    "text": "1.2 Making Your First ggplot\n▶️ Required Video: ggplot2 First Steps (4 minutes)\n💻 Required Tutorials\n\nBar Charts\nHistograms\nScatterplots\nLine Plots\n\n\n✅ Check-in 2.1\nQuestion 1 – With the mpg dataset (included in the ggplot2 package), make a scatterplot of hwy versus cty. Which of these correctly describe the relationship seen in the plot?\n\npositive\nstrong\nnegative\nweak\nlinear\nnon-linear\n\nQuestion 2 – What specifically does the code ggplot(data = mpg) do?\n\nCreates a blank plot\nMakes a scatterplot of the first two variables in the mpg dataset\nCreates a ggplot with the mpg dataset",
+    "text": "1.2 Making Your First ggplot\n▶️ Required Video: ggplot2 First Steps (4 minutes)\n💻 Required Tutorials\n\nBar Charts\nHistograms\nScatterplots\nLine Plots\n\n\n✅ Check-in 2.1\nQuestion 1 – What specifically does the code ggplot(data = mpg) do?\n\nCreates a blank plot\nMakes a scatterplot of the first two variables in the mpg dataset\nCreates a ggplot with the mpg dataset",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 1"
@@ -73,7 +73,7 @@
     "href": "weeks/week-2-ggplot.html#aesthetics",
     "title": "Introduction to ggplot",
     "section": "1.3 Aesthetics",
-    "text": "1.3 Aesthetics\n▶️ Required Video: What is an aesthetic? (7 minutes)\n\n✅ Check-in 2.1\n\nggplot(data = mpg) +\n  geom_point(mapping = aes(x = displ, y = hwy), color = \"blue\")\n\nQuestion 3: What aesthetics does this plot contain?\n\nx\ny\ncolor\ndata\n\nQuestion 4: Which of following changes would color the points based on the number of cylinders (cyl) the car has (4, 5, 6, 8)? Select all that apply.\n\n## Option A\nggplot(data = mpg) +\ngeom_point(\n  mapping = aes(x = displ, \n                y = hwy, \n                color = cyl)\n  )\n\n## Option B\nggplot(data = mpg) +\ngeom_point(\n  mapping = aes(x = displ, \n                y = hwy), \n  color = cyl\n  )\n\n## Option C\nggplot(data = mpg, \n       mapping = aes(color = cyl)\n       ) +\ngeom_point(\n  mapping = aes(x = displ, \n                y = hwy)\n  )",
+    "text": "1.3 Aesthetics\n▶️ Required Video: What is an aesthetic? (7 minutes)\n\n✅ Check-in 2.1\n\nggplot(data = mpg) +\n  geom_point(mapping = aes(x = displ, y = hwy), color = \"blue\")\n\nQuestion 2: What aesthetics does this plot contain?\n\nx\ny\ncolor\ndata\n\nQuestion 3: Which of the following changes would set the color of the points to be blue?\n\n## Option A\nggplot(data = mpg) +\ngeom_point(\n  mapping = aes(x = displ, \n                y = hwy, \n                color = blue)\n  )\n\n## Option B\nggplot(data = mpg) +\ngeom_point(\n  mapping = aes(x = displ, \n                y = hwy), \n  color = \"blue\"\n  )\n\n## Option C\nggplot(data = mpg, \n       mapping = aes(color = \"blue\")\n       ) +\ngeom_point(\n  mapping = aes(x = displ, \n                y = hwy)\n  )",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 1"
@@ -84,7 +84,7 @@
     "href": "weeks/week-2-ggplot.html#geoms",
     "title": "Introduction to ggplot",
     "section": "1.4 geoms",
-    "text": "1.4 geoms\n▶️ Required Video: What is a geometric object?\n\nWhat type of chart to use?\nIt can be hard to know what type of chart to use for a particular type of data. I recommend figuring out what you want to show first, and then thinking about how to show that data with an appropriate plot type. Consider the following factors:\n\nWhat type of variable is x? Categorical? Continuous? Discrete?\nWhat type of variable is y?\nHow many observations do I have for each x / y variable?\nAre there any important moderating variables?\nDo I have data that might be best shown in small multiples? E.g. a categorical moderating variable and a lot of data, where the categorical variable might be important for showing different features of the data?\n\nOnce you’ve thought through this, take a look through catalogs like the R Graph Gallery to see what visualizations match your data and use-case.\n\n\n✅ Check-in 2.1\nQuestion 4: Match each plot with the geom_XXX() function used to create it!\n\n\n\nLine Chart\nBoxplot\nHistogram\nArea Chart\n\n\n\ngeom_boxplot()\ngeom_point()\ngeom_area()\ngeom_line()\ngeom_histogram()",
+    "text": "1.4 geoms\n▶️ Required Video: What is a geometric object?\n\nWhat type of chart to use?\nIt can be hard to know what type of chart to use for a particular type of data. I recommend figuring out what you want to show first, and then thinking about how to show that data with an appropriate plot type. Consider the following factors:\n\nWhat type of variable is x? Categorical? Continuous? Discrete?\nWhat type of variable is y?\nHow many observations do I have for each x / y variable?\nAre there any important moderating variables?\nDo I have data that might be best shown in small multiples? E.g. a categorical moderating variable and a lot of data, where the categorical variable might be important for showing different features of the data?\n\nOnce you’ve thought through this, take a look through catalogs like the R Graph Gallery to see what visualizations match your data and use-case.\n\n\n✅ Check-in 2.1\nQuestion 4: Match each plot with the geom_XXX() function used to create it!\n\n\n\nLine Chart\nBoxplot\nHistogram\nArea Chart\n\n\n\ngeom_boxplot()\ngeom_point()\ngeom_hist()\ngeom_bar()\ngeom_smooth()\ngeom_point()\ngeom_area()\ngeom_line()\ngeom_histogram()",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 1"
@@ -117,7 +117,7 @@
     "href": "weeks/week-2-ggplot.html#data-transformations",
     "title": "Introduction to ggplot",
     "section": "1.7 Data transformations",
-    "text": "1.7 Data transformations\n▶️ Required Video: What is being plotted? (6 minutes)\n\n✅ Check-in 2.1\nQuestion 6: Match the stat function with its associated geom function.\n\n\n\nstat_count()\nstat_identity()\n\n\n\ngeom_bar()\ngeom_col()",
+    "text": "1.7 Data transformations\n▶️ Required Video: What is being plotted? (6 minutes)",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 1"
@@ -128,7 +128,7 @@
     "href": "weeks/week-2-ggplot.html#changing-the-positions-of-bars",
     "title": "Introduction to ggplot",
     "section": "1.8 Changing the positions of bars",
-    "text": "1.8 Changing the positions of bars\n▶️ Required Video: How do I change positions?\n\n✅ Check-in 2.1\nQuestion 7: What arguments for geom_jitter() control the amount of jittering?\n\nwidth\nheight\nstat\nposition\nna.rm\nshow.legend\ndata\nmapping",
+    "text": "1.8 Changing the positions of bars\n▶️ Required Video: How do I change positions?\n\n✅ Check-in 2.1\nQuestion 6: What arguments for geom_jitter() control the amount of jittering?\n\nwidth\nheight\nstat\nposition\nna.rm\nshow.legend\ndata\nmapping",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 1"
@@ -139,7 +139,7 @@
     "href": "weeks/week-2-ggplot.html#plot-customizations",
     "title": "Introduction to ggplot",
     "section": "1.9 Plot Customizations",
-    "text": "1.9 Plot Customizations\n📖 Required Reading: Communication\n\n\n✅ Check-in 2.1\nQuestion 8: What can the labs() function do? Select all that apply.\n\nCustomize the x-axis label\nCustomize the y-axis label\nCustomize the legend label\nCustomize the plot title\nAdd a caption to the plot",
+    "text": "1.9 Plot Customizations\n📖 Required Reading: Communication\n\n\n✅ Check-in 2.1\nQuestion 7: What can the labs() function do? Select all that apply.\n\nCustomize the x-axis label\nCustomize the y-axis label\nCustomize the legend label\nCustomize the plot title\nAdd a caption to the plot",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 1"
@@ -1502,7 +1502,7 @@
   {
     "objectID": "weeks/week-2-projects-data-import.html",
     "href": "weeks/week-2-projects-data-import.html",
-    "title": "R Projects & Reading Data",
+    "title": "R Projects & Importing Data",
     "section": "",
     "text": "Describe what an R Project is\nOutline how an R Project affects the file paths used to read in data\n\nRead in data from common formats into R",
     "crumbs": [
@@ -1513,7 +1513,7 @@
   {
     "objectID": "weeks/week-2-projects-data-import.html#learning-objectives",
     "href": "weeks/week-2-projects-data-import.html#learning-objectives",
-    "title": "R Projects & Reading Data",
+    "title": "R Projects & Importing Data",
     "section": "",
     "text": "Describe what an R Project is\nOutline how an R Project affects the file paths used to read in data\n\nRead in data from common formats into R",
     "crumbs": [
@@ -1524,7 +1524,7 @@
   {
     "objectID": "weeks/week-2-projects-data-import.html#working-directories-in-r",
     "href": "weeks/week-2-projects-data-import.html#working-directories-in-r",
-    "title": "R Projects & Reading Data",
+    "title": "R Projects & Importing Data",
     "section": "1.1 Working Directories in R",
     "text": "1.1 Working Directories in R\nTo find where your working directory is in R, you can either look at the top of your console or type getwd() into your console.\n\ngetwd()\n\nAlthough it is not recommended, you can set your working directory in R with setwd():\n\nsetwd(\"/path/to/my/assignment/folder\")\n\n\n\n\n\n\n\nFile Paths in R\n\n\n\nA quick warning on file paths is that Mac / Linux and Windows differ in the direction of their backslash to separate folder locations. Mac/Linux use / (e.g. STAT331/Week1) while Window’s uses \\ (e.g. STAT331\\Week1).",
     "crumbs": [
@@ -1535,7 +1535,7 @@
   {
     "objectID": "weeks/week-2-projects-data-import.html#r-projects",
     "href": "weeks/week-2-projects-data-import.html#r-projects",
-    "title": "R Projects & Reading Data",
+    "title": "R Projects & Importing Data",
     "section": "1.2 R Projects",
     "text": "1.2 R Projects",
     "crumbs": [
@@ -1546,7 +1546,7 @@
   {
     "objectID": "weeks/week-2-projects-data-import.html#required-reading-workflow-r-projects",
     "href": "weeks/week-2-projects-data-import.html#required-reading-workflow-r-projects",
-    "title": "R Projects & Reading Data",
+    "title": "R Projects & Importing Data",
     "section": "1.3 📖 Required Reading: Workflow (R Projects)",
     "text": "1.3 📖 Required Reading: Workflow (R Projects)\n\n\n\n\n\n\nOnly read Section 6.2!\n\n\n\n\n\n\nIf you open up your folder from Lab 1, you will notice that you have a blue cube (an R Project) living in this folder! The R Project lives in this folder for two reasons, (1) when you copied the Lab 1 GitHub repository you told RStudio you wanted to make a new R Project, and (2) in order for RStudio to talk with GitHub you need to use an R Project.\nHowever, if you look at your STAT331 folder (the one that lives in your Documents folder), you should not see a blue cube since we never created an R Project in this folder. Let’s do that now!\nTo add a R Project to an existing folder on your computer (e.g., you already created a folder for this class), first open RStudio on your computer and click File &gt; New Project, then:\n\n\n\nNavigation prompt for creating a new R Project in an existing directory\n\n\nThen, browse on your computer to where you saved your STAT331 folder last week. This should be in your Documents folder, similar to where mine is saved!\n\n\n\nNavigation prompt for selecting which existing folder in which the R Project should be created.\n\n\nOnce you click “Create Project”, your existing folder, STAT331 should now contain a STAT331.Rproj file. This is your new “home” base for this class - whenever you refer to a file with a relative path it will begin to look for it here.",
     "crumbs": [
@@ -1557,7 +1557,7 @@
   {
     "objectID": "weeks/week-2-projects-data-import.html#check-in-2.2-rstudio-projects",
     "href": "weeks/week-2-projects-data-import.html#check-in-2.2-rstudio-projects",
-    "title": "R Projects & Reading Data",
+    "title": "R Projects & Importing Data",
     "section": "1.4 ✅ Check-in 2.2: RStudio Projects",
     "text": "1.4 ✅ Check-in 2.2: RStudio Projects\nTake a screenshot of your class directory, showing the R Project living inside your STAT331 folder.",
     "crumbs": [
@@ -1568,7 +1568,7 @@
   {
     "objectID": "weeks/week-2-projects-data-import.html#where-does-my-data-live",
     "href": "weeks/week-2-projects-data-import.html#where-does-my-data-live",
-    "title": "R Projects & Reading Data",
+    "title": "R Projects & Importing Data",
     "section": "2.1 Where does my data live?",
     "text": "2.1 Where does my data live?\n\n▶️ Required Video: Data Locations and the {here} package (8 minutes)",
     "crumbs": [
@@ -1579,7 +1579,7 @@
   {
     "objectID": "weeks/week-2-projects-data-import.html#how-do-i-load-my-data",
     "href": "weeks/week-2-projects-data-import.html#how-do-i-load-my-data",
-    "title": "R Projects & Reading Data",
+    "title": "R Projects & Importing Data",
     "section": "2.2 How do I load my data?",
     "text": "2.2 How do I load my data?\n📖 Required Reading: Data Import",
     "crumbs": [
@@ -1590,9 +1590,9 @@
   {
     "objectID": "weeks/week-2-projects-data-import.html#check-in-2.3-loading-data",
     "href": "weeks/week-2-projects-data-import.html#check-in-2.3-loading-data",
-    "title": "R Projects & Reading Data",
+    "title": "R Projects & Importing Data",
     "section": "2.3 ✅ Check-in 2.3: Loading Data",
-    "text": "2.3 ✅ Check-in 2.3: Loading Data\nFor this check-in you are asked to work through reading in different data sets. You can download the Quarto template for your investigation here: data-import-practice.qmd\n\nThe folder Age_Data contains several data sets with the names and ages of five individuals. The data sets are stored as different file types. Download Ages_data.zip here, make sure to unzip the folder, save these in a reasonable place (e.g., STAT331 &gt; Week 2 &gt; Checkin or STAT331 &gt; Checkins &gt; Week 2).\n\n\n\n\n\n\nExtracting zip folders\n\n\n\nYou will need to extract the contents of the ages.zip file, that means you will need to uncompress the files from the folder for RStudio to know where to get the data from.\n\n\nOnce you have the data saved (and extracted) in your STAT 331 folder, use the readr and readxl packages to complete the following and fill in the “gap” code in the Canvas quiz:\n\nLoad the appropriate packages for reading in data.\nRead in the data set ages.csv\nRead in the data set ages_tab.txt\nRead in the data set ages_mystery.txt\nRead in the data set ages.xlsx\nFind a way to use read_csv() to read ages.csv with the variable “Name” as a factor data type and “Age” as a character data type.",
+    "text": "2.3 ✅ Check-in 2.3: Loading Data\nFor this check-in you are asked to work through reading in different data sets. You can download the Quarto template for your investigation here: data-import-practice.qmd\n\nThe folder Age_Data contains several data sets with the names and ages of five individuals. The data sets are stored as different file types. Download Ages_Data.zip here, make sure to unzip the folder, save these in a reasonable place (e.g., STAT331 &gt; Week 2 &gt; Checkins or STAT331 &gt; Checkins &gt; Week 2).\n\n\n\n\n\n\nExtracting zip folders\n\n\n\nYou will need to extract the contents of the ages.zip file, that means you will need to uncompress the files from the folder for RStudio to know where to get the data from.\n\n\nOnce you have the data saved (and extracted) in your STAT 331 folder, preferably in the Week 2 subfolder, use the readr and readxl packages to complete the following exercises.\n\nLoad the appropriate packages for reading in data.\nRead in the data set ages.csv\nRead in the data set ages_tab.txt\nRead in the data set ages_mystery.txt\nRead in the data set ages.xlsx\nFind a way to use read_csv() to read ages.csv with the variable “Name” as a factor data type and “Age” as a character data type.\n\nOnce you’ve finished coding these exercises, head over to Canvas and fill in the “gap” code I’ve provided. For reference, I would recommend you store the Ages_Data similar to how I have:",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 2"
