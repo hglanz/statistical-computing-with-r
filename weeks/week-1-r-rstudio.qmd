@@ -325,7 +325,7 @@ tidyverse_update()
 
 Then follow the instructions that print out to update a few of your tidyverse packages.
 
-# ✅ Check-in: Introduction to R & RStudio
+# ✅ Check-in 1.2: Introduction to R & RStudio
 
 **Question 1:** What does it mean for R to be **"open-source"**?
 

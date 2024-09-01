@@ -132,7 +132,7 @@ Last but not least - for the teams you are a part of, you may want to use Discor
 
 ## See you at the Party!
 
-## `r emo::ji("check")` Check-in 1: Discord Server
+## `r emo::ji("check")` Check-in 1.4: Discord Server
 
 Introduce yourself in the "Introductions" channel of the Discord Server.
 
@@ -184,7 +184,7 @@ Although you may discuss ideas with your classmates and seek help from the usual
 
 Challenges will be submitted on Canvas. All revisions to Challenges will be submitted to the **same** Canvas portal as the original assignment.
 
-## `r emo::ji("check")` Check-in 2: Syllabus Quiz
+## `r emo::ji("check")` Check-in 1.1: Syllabus Quiz
 
 **Question 1:** Where can you visit me for student hours?
 
