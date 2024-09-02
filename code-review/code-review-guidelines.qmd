@@ -52,33 +52,54 @@ In general, when I give feedback I like to start off with praise for something t
 
 ### Example Reviews
 
-    ggplot(data=mpg) + geom_point(mapping=aes(x=displ,y=hwy,color="blue"))
+</br>
+
+```{r}
+#| eval: false
+#| echo: true
+
+ggplot(data=mpg) + geom_point(mapping=aes(x=displ,y=hwy,color="blue"))
+```
 
 [*My Review*]{.underline}
 
 "I really appreciate your use of named arguments, it makes it clear what each input is being used for. Your code would be much easier to read if you used spaces before and after your `=` signs and after each comma. I would also recommend hitting enter / return after each `+` sign, so that each"layer" of your plot has its own line. This makes it easier to digest what is happening at each stage of your plot."\
 
-    penguins %>% mutate(mass_flipper_ratio = body_mass_g/flipper_length_mm) %>%   group_by(species) %>% summarize(avg_mass_flipper_ratio = median(mass_flipper_ratio)) %>% arrange(avg_mass_flipper_ratio)
+---
+
+```{r}
+#| eval: false
+#| echo: true
+
+penguins %>% mutate(mass_flipper_ratio = body_mass_g/flipper_length_mm) %>%   group_by(species) %>% summarize(avg_mass_flipper_ratio = median(mass_flipper_ratio)) %>% arrange(avg_mass_flipper_ratio)
+```
 
 [*My Review*]{.underline}
 
 "I really appreciate how you use spaces before and after each `=` sign, that makes it easier to read how each `=` sign is being used. I also have a suggestion for your code formatting which would make your code easier to read. If you use a return / new line after each `%>%` sign, each step of your pipeline is on its own line and it is easier to understand the process you are implementing."
 
-    colleges_clean %>%
-      filter(REGION == 7,
-             ADM_RATE > region_median,
-             TUITION_DIFF != 0) %>%
-      mutate(
-        SAT_odd = SAT_AVG %% 2 != 0
-      ) %>%
-      filter(SAT_odd == TRUE,
-             STABBR != "ID") %>%
-      mutate(
-        freshman = as.numeric(UGDS) / 4, 
-        applications = freshman / ADM_RATE
-      ) %>%
-      filter(applications < 1000, 
-             STABBR != "MT")
+---
+
+```{r}
+#| eval: false
+#| echo: true
+
+colleges_clean %>%
+  filter(REGION == 7,
+         ADM_RATE > region_median,
+         TUITION_DIFF != 0) %>%
+  mutate(
+    SAT_odd = SAT_AVG %% 2 != 0
+  ) %>%
+  filter(SAT_odd == TRUE,
+         STABBR != "ID") %>%
+  mutate(
+    freshman = as.numeric(UGDS) / 4, 
+    applications = freshman / ADM_RATE
+  ) %>%
+  filter(applications < 1000, 
+         STABBR != "MT")
+```
 
 [*My Review*]{.underline}
 
