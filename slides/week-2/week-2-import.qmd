@@ -1,0 +1,568 @@
+---
+title: "Tidy Data & Importing Data"
+format: 
+  revealjs:
+    theme: ../style.scss
+editor: source
+---
+
+```{r}
+#| include: false
+#| message: false
+#| label: setup
+
+library(tidyverse)
+```
+
+## Tuesday, October 1
+
+Today we will...
+
++ New Material
+  + Tidy Data
+  + Load External Data
++ [Lab 2: Exploring Rodents with ggplot2](https://classroom.github.com/a/4e-4Et4D)
+
+<!-- Be sure to update with new GH Classroom assignment link! -->
+
+# Tidy Data
+
+## Tidy Data
+
+![Artwork by Allison Horst](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/85520b8f-4629-4763-8a2a-9ceff27458bf_rw_1920.jpg?h=21007b20ac00cf37318dca645c215453)
+
+
+## Same Data, Different Formats
+
+Different formats of the data are **tidy** in different ways.
+
+```{r tidy-data}
+#| echo: false
+bb_tidy_data <- tibble(Team     = c("A", "B", "C", "D"),
+                       Points   = c(88, 91, 99, 94),
+                       Assists  = c(12, 17, 24, 28),
+                       Rebounds = c(22, 28, 30, 31)
+                       )
+```
+
+::: panel-tabset
+### Option 1
+
+```{r}
+#| echo: false
+bb_tidy_data |> 
+  knitr::kable()
+```
+
+### Option 2
+
+```{r}
+#| echo: false
+bb_tidy_data |> 
+  pivot_longer(cols      = c(Points, Assists, Rebounds),
+               names_to  = "Statistic",
+               values_to = "Value"
+               ) |> 
+  knitr::kable()
+```
+
+:::
+
+
+## Tidy Data
+
+![Artwork by Allison Horst](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/40488240-4609-4dc3-8920-693e078b55ce_rw_1920.jpg?h=2e96a7e21e19c43867546498da026649)
+
+
+# Working with External Data
+
+
+## Common Types of Data Files
+
+Look at the **file extension** for the type of data file.
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+`.csv` :  "comma-separated values"
+
+:::
+
+::: {.column width="30%"}
+```
+Name, Age
+Bob, 49
+Joe, 40
+```
+:::
+
+::::
+
+. . .
+
+`.xls, .xlsx`:  Microsoft Excel spreadsheet
+
+  + Common approach: save as `.csv`
+  + Nicer approach:  use the `readxl` package
+
+. . .
+
+`.txt`:  plain text
+
+  + Could have any sort of delimiter...
+  + Need to let R know what to look for!
+
+
+## Common Types of Data Files
+
+::: panel-tabset
+### File A
+
+![](images/csv_file.png)
+
+### File B
+
+![](images/tsv_file.png)
+
+### File C
+
+![](images/pipe_file.png)
+
+### Sources
+
++ [File A](https://people.sc.fsu.edu/~jburkardt/data/csv/csv.html)
++ [File B](https://github.com/ccusa/Disaster_Vulnerability_Map/blob/master/sample-data.tsv)
++ [File C](https://chadbaldwin.net/2021/03/24/quick-parse-csv-file.html)
+
+:::
+
+
+## Loading External Data
+
+Using **base** `R` functions:
+
+- `read.csv()` is for reading in `.csv` files.
+
+- `read.table()` and `read.delim()` are for any data with "columns" (you specify the separator).
+
+
+## Loading External Data
+
+The **tidyverse** has some cleaned-up versions in the `readr` and `readxl` packages: 
+
+- `read_csv()` is for comma-separated data.
+
+- `read_tsv()` is for tab-separated data.
+
+- `read_table()` is for white-space-separated data.
+
+- `read_delim()` is any data with "columns" (you specify the separator). The above are special cases.
+
+- `read_excel()` is specifically for dealing with Excel files.
+
+Remember to load the `readr` and `readxl` packages first!
+
+
+##
+
+<center>
+
+![](images/read.csv_doc.png)
+
+![](images/read_csv_doc.png)
+
+</center>
+
+
+## Wednesday, April 10
+
+Today we will...
+
++ New Material
+  + What makes a good graphic?
+  + Gestalt Principles
+  + Color
++ Lab 2: Exploring Rodents with ggplot2
+
+
+## On Grading....
+
+I post skeleton rubrics for lab activities on Canvas (on Thursdays) to share the general structure of how you will be graded.
+
+  + Grading will be on a scale of *Master* to *Practitioner* to *Novice* to *No Effort*.
+  + If you make a meaningful error in your code, you cannot earn *Master* for that question.
+  + Your labs **will** have an appearance/workflow/code format portion. Check out the [guidelines](https://canvas.calpoly.edu/courses/98835/pages/lab-appearance-workflow-and-code-format).
+  
+
+## Graphics
+
+Graphics consist of:
+
++ **Structure:** boxplot, scatterplot, etc.
+
++ **Aesthetics:** features such as color, shape, and size that map other variables to structural features.
+
+**Both** the structure and aesthetics should help viewers interpret the information.
+
+
+## What makes bad graphics bad?
+
++ BAD DATA.
++ Too much "chartjunk" -- superfluous details (Tufte).
++ Design choices that are difficult for the human brain to process, including:
+
+:::: {.columns}
+::: {.column width="10%"}
+
+:::
+::: {.column width="50%"}
+
+  + Colors
+  + Orientation
+  + Organization
+
+:::
+::: {.column width="40%"}
+
+![](images/bad_graphic.png){.absolute width="300"}
+
+:::
+::::
+
+## What makes good graphics good?
+
+Edward R. Tufte is a well-known critic of visualizations, and his definition of **graphical excellence** consists of:
+
+  + communicating complex ideas with **clarity, precision, and efficiency**.
+  + maximizing the **data-to-ink** ratio.
+  + using multivariate displays.
+  + telling the truth about the data.
+
+
+## Graphics
+
+When creating graphics, we need to think carefully about how we make structure and aesthetic decisions.
+
+
+# Gestalt Principles
+
+
+## Gestalt Principles
+
+Our brains have an amazing ability to create and perceive structure among visual objects.
+
++ This is commonly referred to as the Gestalt principles of visual perception.
++ This framework can help us think about how to create the most expressive and effective data visualizations:
+
+
+## Gestalt Principles
+
+::: panel-tabset
+
+### Similarity
+
+Objects with the **same visual properties** are assumed to be similar and are grouped together.
+
+:::: {.columns}
+::: {.column width="65%"}
+
+<br>
+
+Use design elements such as **shape and color** to indicate groupings of the data.
+:::
+::: {.column width="35%"}
+
+```{r}
+knitr::include_graphics("images/similarity.png")
+```
+
+:::
+::::
+
+### Proximity
+
+Objects that are **close together** are perceived as a group.
+
+:::: {.columns}
+::: {.column width="50%"}
+
+Since physical distance connotes similarity, grouping bars on a chart can indicate similarities among their data.
+
+:::
+::: {.column width="50%"}
+  
+```{r}
+knitr::include_graphics("images/proximity.png")
+```
+
+:::
+::::
+### Continuity
+
+Elements that are **aligned** (on the same line, curve, or plane) are perceived to be more closely related to each other than to other elements.
+
+:::: {.columns}
+::: {.column width="60%"}
+
+It is often easier for us to perceive the groupings if the shapes are curves, rather than lines with sharp edges.
+
+:::
+::: {.column width="40%"}
+  
+```{r}
+knitr::include_graphics("images/continuity.png")
+```
+
+:::
+::::
+  
+
+### Enclosure
+
+Objects that appear to have a **boundary around them** are perceived as being related.
+
+  + Add line boundaries or shading to group objects.
+
+### Connection
+
+Objects that are **connected**, such as by a line, are perceived as a group.
+
+  + Connect data together to indicate a relationship.
+  + This connectedness is highly effective and often overrides other principles for group perception.
+  + Every line plot is an example of connectedness.
+  
+### Closure
+
+Complex arrangements of visual elements are perceived as a **single, recognizable pattern**.
+
+```{r}
+#| out-width: 25%
+#| fig-align: center
+knitr::include_graphics("images/closure.png")
+```
+
+### Figure and Ground
+
+Objects are perceived as either standing out prominently in the **foreground** of an image or receding into the **background**.
+
+  + Shading or color blocking can be employed to distinguish between the more important figure and less important ground features of an image.
+  + Place elements of the most importance in the foreground figure.
+  
+### Focal Point
+
+Whatever **stands out visually** is perceived as the most important. It will grab our attention first and hold it for the longest.
+
+  + Use design elements selectively to draw attention to the most important features of the data.
+
+:::
+
+
+## Gestalt Principles
+
+Gestalt Hierarchy	| Graphical Feature
+------------------| ------------------
+1. Enclosure	    | Facets
+2. Connection     |	Lines
+3. Proximitiy	    | White Space
+4. Similarity	    | Color/Shape
+
+. . .
+
+Implications for practice:
+
++ Know that we perceive some groups before others.
++ Design to facilitate and emphasize the most important comparisons.
+
+# Pre-attentive Features
+
+## Pre-attentive Features
+
+<br>
+
+The next slide will have one point that is not like the others.
+
+<br>
+
+Raise your hand when you notice it.
+
+## Pre-attentive Features
+
+```{r}
+#| fig-align: center
+knitr::include_graphics("images/pre-atten1.png")
+```
+
+## Pre-attentive Features
+
+```{r}
+#| fig-align: center
+knitr::include_graphics("images/pre-atten2.png")
+```
+
+## Pre-attentive Features
+
+**Pre-attentive features** are features that we see and perceive before we even think about it.
+
++ They will jump out at us in less than 250 ms.
+
++ E.g., color, form, movement, spatial location.
+
+There is a **hierarchy** of features:
+
++ Color is stronger than shape.
++ Combinations of pre-attentive features may **not** be pre-attentive due to interference.
+
+
+## Double Encoding
+```{r}
+#| fig-align: center
+knitr::include_graphics("images/double.png")
+```
+
+## No Double Encoding
+```{r}
+#| fig-align: center
+knitr::include_graphics("images/no_double.png")
+```
+
+# [Color](https://www.youtube.com/watch?v=zALBl5f1ib4)
+
+## Color
+
++ Color, hue, and intensity are pre-attentive features, and bigger contrasts lead to faster detection.
+  + **Hue**: main color family (red, orange, yellow...)
+  + **Intensity**: amount of color
+
+:::: {.columns}
+::: {.column width="30%"}
+
+```{r}
+#| out-width: 90%
+knitr::include_graphics("images/hue.png")
+```
+
+:::
+::: {.column width="70%"}
+  
+```{r}
+knitr::include_graphics("images/intensity.png")
+```
+
+:::
+::::
+  
+## Color Guidelines
+
++ Do not use rainbow color gradients!
+
++ Be conscious of what certain colors “mean”.
+  + Good idea to use red for "good" and green for "bad"?
+
+```{r}
+#| fig-align: center
+#| layout-ncol: 2
+#| out-width: 70%
+knitr::include_graphics("images/rainbow.png")
+knitr::include_graphics("images/red_green.png")
+```
+
+
+## Color Guidelines
+  
++ For **categorical** data, try not to use more than 7 colors:
+
+```{r}
+#| fig-align: center
+#| out-width: 30%
+knitr::include_graphics("images/small_gradient.png")
+```
+
+Can use `colorRampPalette()` from the `RColorBrewer` package to produce larger palettes:
+
+```{r}
+#| fig-align: center
+knitr::include_graphics("images/big_gradient.png")
+```
+
+
+## Color Guidelines
+
++ For **quantitative** data, use mappings from data to color that are **numerically and perceptually uniform**.
+  + Relative discriminability of two colors should be proportional to the difference between the corresponding data values.
+
+
+## Color Guidelines
+
+**To colorblind-proof a graphic...**
+  
++ use **double encoding** - when you use color, **also** use another aesthetic (line type, shape, etc.).
+
+```{r}
+#| fig-align: center
+#| out-width: 50%
+knitr::include_graphics("images/double.png")
+```
+
+## Color Guidelines
+
+**To colorblind-proof a graphic...**
+  
++ with a unidirectional scale (e.g., all + values), use a **monochromatic** color gradient.
+
+```{r}
+#| fig-align: center
+#| out-width: 50%
+knitr::include_graphics("images/blues.png")
+```
+
++ with a bidirectional scale (e.g., + and - values), use a **purple-white-orange** color gradient. Transition through white!
+
+```{r}
+#| fig-align: center
+#| out-width: 70%
+knitr::include_graphics("images/PuOr.png")
+```
+
+
+## Color Guidelines
+
+**To colorblind-proof a graphic...**
+
++ print your chart out in black and white -- if you can still read it, it will be safe for all users.
+
+```{r}
+#| fig-align: center
+#| layout-ncol: 2
+knitr::include_graphics("images/nyt_color.png")
+knitr::include_graphics("images/nyt_bw.png")
+```
+
+
+
+## Color in ggplot2
+
+There are several packages with color scheme options:
+
++ Rcolorbrewer
++ ggsci
++ viridis
++ wesanderson
+
+These packages have color palettes hthatare aesthetically pleasing and, in many cases, colorblind friendly.
+
+You can also take a look at other [ways to find nice color palettes](https://lisacharlottemuth.com/2016/04/22/Colors-for-DataVis/).
+
+
+## [Lab 2: Exploring Rodents with ggplot2](https://zoerehnberg.github.io/STAT331-S23/lab_assignments/lab2/LA2_ggplot.html)
+
+
+## To do...
+
++ **Lab 2: Exploring Rodents with ggplot2**
+  + due Saturday, 4/13 at 11:59pm
+  
++ **Read Chapter 3: Data Cleaning and Manipulation**
+  + **Check-in 3.1** due Monday 4/15 at 10:00am
