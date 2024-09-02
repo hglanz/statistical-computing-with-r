@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -127,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../../index.html" class="sidebar-logo-link">
       <img src="../../images/r-flowers.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -209,6 +209,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-0-discord.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 0, Course Set-up</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../weeks/week-1-r-rstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1, Part 1</span></a>
   </div>
@@ -272,7 +278,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#groupwork-protocols" id="toc-groupwork-protocols" class="nav-link active" data-scroll-target="#groupwork-protocols">Groupwork Protocols</a></li>
+  <li><a href="#groupwork-protocols" id="toc-groupwork-protocols" class="nav-link active" data-scroll-target="#groupwork-protocols">Groupwork Protocols</a>
+  <ul class="collapse">
+  <li><a href="#group-norms" id="toc-group-norms" class="nav-link" data-scroll-target="#group-norms">Group Norms</a></li>
+  </ul></li>
   <li><a href="#getting-set-up" id="toc-getting-set-up" class="nav-link" data-scroll-target="#getting-set-up">Getting Set-up</a>
   <ul class="collapse">
   <li><a href="#step-1-install-the-palmerpenguins-package" id="toc-step-1-install-the-palmerpenguins-package" class="nav-link" data-scroll-target="#step-1-install-the-palmerpenguins-package">Step 1: Install the <code>palmerpenguins</code> Package</a></li>
@@ -314,19 +323,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.</p>
-<p><em>This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.</em></p>
+<p><strong><em>This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.</em></strong></p>
 <p>Some advice:</p>
 <ul>
-<li><p>If you aren’t sure how to make a specific plot or how to customize a look over the class text for this week and make use of the <a href="">R graphics cheat sheets</a>.</p></li>
+<li><p>If you aren’t sure how to make a specific plot or how to customize a look over the class text for this week and make use of the <a href="https://rstudio.github.io/cheatsheets/html/data-visualization.html?_gl=1*1u8zjpq*_ga*MTM4Nzk4ODMyOC4xNzA2NzU3MjEx*_ga_2C0WZ1JHG0*MTcxODkxNjU5Ny43LjAuMTcxODkxNjU5Ny4wLjAuMA">ggplot2 cheatsheet</a>.</p></li>
 <li><p>Google and ChatGPT are your friend! If you aren’t sure how to accomplish a certain type what you are trying to accomplish into Google and see what other people are saying. Generally, adding <code>ggplot</code> to the end of your search will help make your search results more relevant!</p></li>
 </ul>
 <section id="groupwork-protocols" class="level2">
 <h2 class="anchored" data-anchor-id="groupwork-protocols">Groupwork Protocols</h2>
-<p>Insert blurb on how students are expected to collaborate.</p>
+<p>During the Practice Activity, you and your partner will alternate between two roles—listener and problem solver.</p>
+<p>When you are the <strong>Listener</strong>, you will type into the Quarto document in RStudio. However, you <strong>do not</strong> type your own ideas. Instead, you type what the Problem Solver tells you to type. You are permitted to ask the Problem Solver clarifying questions, and, if both of you have a question, you are permitted to ask the professor.</p>
+<p>When you are the <strong>Problem Solver</strong>, you are responsible for reading the instructions / prompts and directing the Listener what to type in the Quarto document. You are also responsible for instructing the Listener what comments to insert in the Quarto document to help the group understand the code later.</p>
+<section id="group-norms" class="level3">
+<h3 class="anchored" data-anchor-id="group-norms">Group Norms</h3>
+<p>Remember, your group is expected to adhere to the following norms:</p>
+<ol type="1">
+<li>Think and work together. Do not divide the work.</li>
+<li>You are smarter together.</li>
+<li>No cross-talk with other groups.</li>
+</ol>
+</section>
 </section>
 <section id="getting-set-up" class="level1">
 <h1>Getting Set-up</h1>
-<!-- The partner whose family name starts first alphabetically starts as the listener (typing and listening to instructions from the problem solver)! -->
+<!-- The partner whose family name starts first alphabetically starts as the Listener (typing and listening to instructions from the Problem Solver)! -->
 <section id="step-1-install-the-palmerpenguins-package" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-install-the-palmerpenguins-package">Step 1: Install the <code>palmerpenguins</code> Package</h2>
 <p>We will be creating visualizations using the <code>ggplot2</code> package.</p>
@@ -704,12 +724,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {

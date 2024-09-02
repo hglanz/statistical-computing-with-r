@@ -13,24 +13,41 @@ execute:
 
 Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.
 
-*This task is complex. It requires many different types of abilities. Everyone 
-will be good at some of these abilities but nobody will be good at all of them. 
-In order to produce the best product possible, you will need to use the skills 
-of each member of your group.*
+***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.***
 
 Some advice:
 
--   If you aren't sure how to make a specific plot or how to customize a look over the class text for this week and make use of the [R graphics cheat sheets]().
+-   If you aren't sure how to make a specific plot or how to customize a look over the class text for this week and make use of the [ggplot2 cheatsheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html?_gl=1*1u8zjpq*_ga*MTM4Nzk4ODMyOC4xNzA2NzU3MjEx*_ga_2C0WZ1JHG0*MTcxODkxNjU5Ny43LjAuMTcxODkxNjU5Ny4wLjAuMA).
 
 -   Google and ChatGPT are your friend! If you aren't sure how to accomplish a certain type what you are trying to accomplish into Google and see what other people are saying. Generally, adding `ggplot` to the end of your search will help make your search results more relevant!
 
 ## Groupwork Protocols
 
-Insert blurb on how students are expected to collaborate.
+During the Practice Activity, you and your partner will alternate between two
+roles---listener and problem solver. 
+
+When you are the **Listener**, you will type into the Quarto document in
+RStudio. However, you **do not** type your own ideas. Instead, you type what 
+the Problem Solver tells you to type. You are permitted to ask the Problem 
+Solver clarifying questions, and, if both of you have a question, you are 
+permitted to ask the professor. 
+
+When you are the **Problem Solver**, you are responsible for reading the 
+instructions / prompts and directing the Listener what to type in the Quarto
+document. You are also responsible for instructing the Listener what comments to
+insert in the Quarto document to help the group understand the code later. 
+
+### Group Norms
+
+Remember, your group is expected to adhere to the following norms:
+
+1.  Think and work together. Do not divide the work.
+2.  You are smarter together.
+3.  No cross-talk with other groups.
 
 # Getting Set-up
 
-<!-- The partner whose family name starts first alphabetically starts as the listener (typing and listening to instructions from the problem solver)! -->
+<!-- The partner whose family name starts first alphabetically starts as the Listener (typing and listening to instructions from the Problem Solver)! -->
 
 ## Step 1: Install the `palmerpenguins` Package
 
