@@ -908,7 +908,7 @@
     "href": "group-activities/pair-programming-norms.html#completing-the-task",
     "title": "Pair Programming Roles",
     "section": "Completing the Task",
-    "text": "Completing the Task\nWorking with your partner, complete the Practice Activity in the Quarto document provided. In your roles—Listener and Problem Solver—use the prompts below to help guide the completion of your activity.\n\n\nProblem Solver\nI am looking for…\nI am confused by…\nI notice…\nWhat might be true is…\nWhat’s important is…\nI predict…\nThis reminds me of…\nI could try…\nI am thinking about…\nA line of code I could write is…\n\n\n\nListener\nWhat are you focusing on? What are you thinking now? Could you tell me more? What are you doing (or writing) now? Please elaborate.\nI can’t follow that, run that by me again."
+    "text": "Completing the Task\nWorking with your partner, complete the Practice Activity in the Quarto document provided. In your roles—Listener and Problem Solver—use the prompts below to help guide the completion of your activity.\n\n\nProblem Solver\nI am looking for…\nI am confused by…\nI notice…\nWhat might be true is…\nWhat’s important is…\nI predict…\nThis reminds me of…\nI could try…\nI am thinking about…\nA line of code I could write is…\n\n\n\nListener\nWhat are you focusing on?\nWhat are you thinking now?\nCould you tell me more?\nWhat are you doing (or writing) now? Please elaborate.\nI can’t follow that, run that by me again."
   },
   {
     "objectID": "group-activities/pair-programming-norms.html#once-youre-finished",
@@ -957,7 +957,7 @@
     "href": "group-activities/week-2/PA2-ggplot.html#groupwork-protocols",
     "title": "PA 2: Using Data Visualization to Find the Penguins",
     "section": "Groupwork Protocols",
-    "text": "Groupwork Protocols\nInsert blurb on how students are expected to collaborate."
+    "text": "Groupwork Protocols\nDuring the Practice Activity, you and your partner will alternate between two roles—listener and problem solver.\nWhen you are the Listener, you will type into the Quarto document in RStudio. However, you do not type your own ideas. Instead, you type what the Problem Solver tells you to type. You are permitted to ask the Problem Solver clarifying questions, and, if both of you have a question, you are permitted to ask the professor.\nWhen you are the Problem Solver, you are responsible for reading the instructions / prompts and directing the Listener what to type in the Quarto document. You are also responsible for instructing the Listener what comments to insert in the Quarto document to help the group understand the code later.\n\nGroup Norms\nRemember, your group is expected to adhere to the following norms:\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nNo cross-talk with other groups."
   },
   {
     "objectID": "group-activities/week-2/PA2-ggplot.html#step-1-install-the-palmerpenguins-package",
@@ -1864,5 +1864,68 @@
       "Weekly materials",
       "Week 0, Course Set-up"
     ]
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-solution.html",
+    "href": "group-activities/week-2/PA2-ggplot-solution.html",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "",
+    "text": "```{r}\n#| message: false\n#| label: set-up\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n```"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-solution.html#step-1-install-the-palmerpenguins-package",
+    "href": "group-activities/week-2/PA2-ggplot-solution.html#step-1-install-the-palmerpenguins-package",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 1: Install the palmerpenguins Package",
+    "text": "Step 1: Install the palmerpenguins Package\nWe will be creating visualizations using the ggplot2 package.\nFor this activity, we will be exploring the penguins data from the palmerpenguins package, which has fantastic documentation with really awesome artwork. So, you will need to install the palmerpenguins package. Run the following code in your console:\ninstall.packages(\"palmerpenguins\")"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-solution.html#step-2-create-a-set-up-code-chunk",
+    "href": "group-activities/week-2/PA2-ggplot-solution.html#step-2-create-a-set-up-code-chunk",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 2: Create a Set-up Code Chunk",
+    "text": "Step 2: Create a Set-up Code Chunk\n\nLocate the code chunk at the beginning of your document (directly under the YAML).\nName the code chunk setup (with the hashpipe #|)\nSpecify the code chunk options (with the hashpipe #|) that the messages from loading in the packages should not be included.\nLoad in the tidyverse or ggplot2 package.\nLoad in the palmerpenguins package."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-solution.html#step-3-accessing-the-penguins-dataset",
+    "href": "group-activities/week-2/PA2-ggplot-solution.html#step-3-accessing-the-penguins-dataset",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 3: Accessing the penguins Dataset",
+    "text": "Step 3: Accessing the penguins Dataset\nI like to tangibly see the data set I will be working with so let’s pull the penguins data into the R environment. Run the code below and you should see the penguins data appear in the top right Environment tab.\n\n```{r}\n#| label: load-data\n\ndata(penguins)\n```"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-solution.html#step-4-get-to-know-the-data",
+    "href": "group-activities/week-2/PA2-ggplot-solution.html#step-4-get-to-know-the-data",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 4: Get to Know the Data",
+    "text": "Step 4: Get to Know the Data\n\n\nWhat variables are included in these data? What units are the variables measured in? What does each row represent?\n\nEach row is a penguin who was captured during the study. The columns are the variables measured on each penguin. Fortunately, the units for the measurements are encoded in the variable names (e.g., bill_length_mm, body_mass_g)."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-solution.html#step-5-barchart",
+    "href": "group-activities/week-2/PA2-ggplot-solution.html#step-5-barchart",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 5: Barchart",
+    "text": "Step 5: Barchart\nUse ggplot2 to draw a barchart of different species included in the dataset.\n\n```{r}\n#| label: barchart\n\nggplot(data = penguins, \n       mapping = aes(x = species)\n       ) + \n  geom_bar() + \n  labs(\n    x = \"Species of Penguin\", \n    title = \"Frequency of Penguin Species Captured on Palmer Archipelago\"\n    )\n```"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-solution.html#step-6-scatterplot",
+    "href": "group-activities/week-2/PA2-ggplot-solution.html#step-6-scatterplot",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 6: Scatterplot",
+    "text": "Step 6: Scatterplot\nUse ggplot2 to create a scatterplot of the relationship between the bill length (bill_length_mm) and bill depth (bill_depth_mm).\n\n```{r}\n#| label: scatterplot\n#| warning: false\n\nggplot(data = penguins, \n       mapping = aes(\n         x = bill_length_mm, \n         y = bill_depth_mm\n         )\n       ) + \n  geom_point() + \n  labs(\n    x = \"Bill Length (mm)\", \n    y = \"Bill Depth (mm)\"\n    )\n```\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nNotice I set #| warning: false in the above code option. I did this because ggplot() outputs warning messages when it omits missing values (NAs) from a plot. I didn’t want these messages to be output on the page, so I turned them off!"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-solution.html#step-7-adding-a-categorical-variable",
+    "href": "group-activities/week-2/PA2-ggplot-solution.html#step-7-adding-a-categorical-variable",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 7: Adding A Categorical Variable",
+    "text": "Step 7: Adding A Categorical Variable\n\nBuilding off of the plot you made in Step 6, add an aesthetic to differentiate the species of the penguins in the scatterplot by color.\n\n```{r}\n#| label: scatterplot-with-one-categorical-variable\n#| warning: false\n\nggplot(data = penguins, \n       mapping = aes(\n         x = bill_length_mm, \n         y = bill_depth_mm, \n         color = species\n         )\n       ) + \n  geom_point() + \n  labs(\n    x = \"Bill Length (mm)\", \n    y = \"Bill Depth (mm)\", \n    color = \"Penguin Species\"\n    )\n```\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nNotice how I’m using a new line for each argument of aes()? I’m doing this because it make my code easier to read! The general guideline is that each line of your code should not be over 80 characters long."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-ggplot-solution.html#step-8-adding-another-categorical-variable",
+    "href": "group-activities/week-2/PA2-ggplot-solution.html#step-8-adding-another-categorical-variable",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 8: Adding Another Categorical Variable",
+    "text": "Step 8: Adding Another Categorical Variable\n\nBuilding off of the plot you made in Step 7, add the location of the penguins ( island) to your visualization. There may be more than one method to address this, however, one method will more easily allow you to address the questions below.\n\n\n```{r}\n#| label: scatterplot-with-two-categorical-variables\n#| warning: false\n\nggplot(data = penguins, \n       mapping = aes(x = bill_length_mm, \n                     y = bill_depth_mm, \n                     color = species\n                     )\n       ) + \n  geom_point() +\n  facet_wrap(~ island) + \n  labs(x = \"Bill Length (mm)\", \n       y = \"Bill Depth (mm)\", \n       color = \"Penguin Species\"\n       )\n```"
   }
 ]
