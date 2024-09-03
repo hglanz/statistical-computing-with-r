@@ -1,5 +1,6 @@
 ---
 title: "Pair Programming Roles"
+editor: source
 ---
 
 ::: columns
@@ -61,7 +62,8 @@ What might be true is...\
 What’s important is...\
 I predict...\
 This reminds me of...\
-I could try...\
+What if we...\
+We could try...\
 I am thinking about...\
 A line of code I could write is...
 :::
@@ -72,11 +74,19 @@ A line of code I could write is...
 ::: {.column width="45%"}
 **Listener**
 
+<!-- Facilitator -->
+Do you understand what we need to do?  
+What's the question we have for Dr. Theobold? Can we answer the 
+question ourselves?  
 What are you focusing on?  
 What are you thinking now?  
 Could you tell me more?  
 What are you doing (or writing) now? Please elaborate.  
-I can’t follow that, run that by me again.
+I can’t follow that, run that by me again.  
+<!-- Resource Manager -->
+What other sources of information do we need?  
+Which words should I look up?  
+What else do we need to complete this problem?  
 :::
 :::
 
