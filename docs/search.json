@@ -1020,7 +1020,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nExpert Designer Group Warm-up\nPA 2 (link to Posit Cloud)\n\n\n\n\n\nThurs, 10/3\n\n\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\n\n\n\n\n\n\n\nThurs, 10/10\n\n\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Organization & Relational Data with tidyr\n\n\n\n\n\n\n\nThurs, 10/17\n\n\nPA4 Due by 12pm\nLab 4 Instructions\nChallenge 4 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\n\n\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\n\nPA5 Due by 12pm\nLab 5 Instructions\nChallenge 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 10/31\nPortfolio Party\n\n\n\nMidterm Portfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n\n\n\n\n\n\n\nThurs, 11/7\n\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 Instructions\nChallenge 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nExpert Designer Group Warm-up\nPA 2 (link to Posit Cloud)\n\n\n\n\n\nThurs, 10/3\n\n\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\n\n\n\n\n\n\n\nThurs, 10/10\n\n\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Organization & Relational Data with tidyr\n\n\n\n\n\n\n\nThurs, 10/17\n\n\nPA4 Due by 12pm\nLab 4 Instructions\nChallenge 4 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\n\n\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\n\nPA5 Due by 12pm\nLab 5 Instructions\nChallenge 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 10/31\nPortfolio Party\n\n\n\nMidterm Portfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n\n\n\n\n\n\n\nThurs, 11/7\n\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 Instructions\nChallenge 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -2640,14 +2640,14 @@
     "href": "weeks/week-3-dplyr.html",
     "title": "Data Wrangling with dplyr",
     "section": "",
-    "text": "In this lesson, you’ll learn\n\nMore about packages in R\nMore about the differences between lists, data.frames, and tibbles\nHow to wrangle data using the dplyr package in the tidyverse\n\nWhen you are finished with the readings and videos, you should be able to…\n\nDescribe to someone what a function conflict is\nDescribe to someone the similarities and differences between a list, a data.frame, and a tibble\nIdentify the structure of an object\nIdentify the data type(s) of an object\nDescribe to someone what the tidyverse is\nUse the five main dplyr verbs:\n\nfilter()\narrange()\nselect()\nmutate()\nsummarize()\n\nUse group_by() to perform groupwise operations\nUse the pipe operator (|&gt; or |&gt;) to chain together data wrangling operations"
+    "text": "When you are finished with the readings and videos, you should be able to…\n\nDescribe to someone what a function conflict is\nDescribe to someone the similarities and differences between a list, a data.frame, and a tibble\nIdentify the structure of an object\nIdentify the data type(s) of an object\nDescribe to someone what the tidyverse is\nUse the five main dplyr verbs:\n\nfilter()\narrange()\nselect()\nmutate()\nsummarize()\n\nUse group_by() to perform groupwise operations\nUse the pipe operator (|&gt; or |&gt;) to chain together data wrangling operations"
   },
   {
     "objectID": "weeks/week-3-dplyr.html#learning-targets",
     "href": "weeks/week-3-dplyr.html#learning-targets",
     "title": "Data Wrangling with dplyr",
     "section": "",
-    "text": "In this lesson, you’ll learn\n\nMore about packages in R\nMore about the differences between lists, data.frames, and tibbles\nHow to wrangle data using the dplyr package in the tidyverse\n\nWhen you are finished with the readings and videos, you should be able to…\n\nDescribe to someone what a function conflict is\nDescribe to someone the similarities and differences between a list, a data.frame, and a tibble\nIdentify the structure of an object\nIdentify the data type(s) of an object\nDescribe to someone what the tidyverse is\nUse the five main dplyr verbs:\n\nfilter()\narrange()\nselect()\nmutate()\nsummarize()\n\nUse group_by() to perform groupwise operations\nUse the pipe operator (|&gt; or |&gt;) to chain together data wrangling operations"
+    "text": "When you are finished with the readings and videos, you should be able to…\n\nDescribe to someone what a function conflict is\nDescribe to someone the similarities and differences between a list, a data.frame, and a tibble\nIdentify the structure of an object\nIdentify the data type(s) of an object\nDescribe to someone what the tidyverse is\nUse the five main dplyr verbs:\n\nfilter()\narrange()\nselect()\nmutate()\nsummarize()\n\nUse group_by() to perform groupwise operations\nUse the pipe operator (|&gt; or |&gt;) to chain together data wrangling operations"
   },
   {
     "objectID": "weeks/week-3-dplyr.html#learning-more-about-packages-in-r",
@@ -2661,7 +2661,7 @@
     "href": "weeks/week-3-dplyr.html#learning-more-about-data-types-objects-in-r",
     "title": "Data Wrangling with dplyr",
     "section": "1.2 Learning More about Data Types & Objects in R",
-    "text": "1.2 Learning More about Data Types & Objects in R\n▶️ Required Video: Learning More about Data Types – 11 minutes\n▶️ Required Video: A Bit More on Object Structures – 8 minutes\n📖 Required Reading: Tibbles"
+    "text": "1.2 Learning More about Data Types & Objects in R\nChoose one of these two options:\n\n\n▶️ Watch a Video: Data Types in R\n\n📖 Read a Textbook: Data Types in R\n\n\nIn addition, read the following section from the first edition of R for DS:\n📖 Required Reading: Tibbles"
   },
   {
     "objectID": "weeks/week-3-dplyr.html#preview-activity-6-data-structures",
@@ -2675,7 +2675,7 @@
     "href": "weeks/week-3-dplyr.html#introduction-to-dplyr",
     "title": "Data Wrangling with dplyr",
     "section": "2.1 Introduction to dplyr",
-    "text": "2.1 Introduction to dplyr\n▶️ Required Video: Intro to the tidyverse & dplyr – 8 minutes\n📖 Required Reading: Data Transformation"
+    "text": "2.1 Introduction to dplyr\n📖 Required Reading: Data Transformation"
   },
   {
     "objectID": "weeks/week-3-dplyr.html#dplyr-verbs",
@@ -3200,7 +3200,7 @@
     "href": "weeks/week-3-dplyr.html#check-in-3.1-data-structures",
     "title": "Data Wrangling with dplyr",
     "section": "1.3 ✅ Check-in 3.1: Data Structures",
-    "text": "1.3 ✅ Check-in 3.1: Data Structures\nQuestion 1\nThese materials did not explicitly discuss the important structure of data.frames. That’s because, in essence, a data.frame is simply a special list - with a few extra restrictions on the list format.\nThink about the datasets you have already worked with. Which of the following restrictions on a list do you think are needed for the list to be a data.frame? (Select all that apply)\n\nThe elements of the list must all be vectors of the same length.\nThe elements of the list must all be the same data type.\nThe elements of the list must all have no missing values.\nThe elements of the list must all have names.\n\nQuestion 2\nTibbles are described as “opinionated” dataframes. Which of the following are true about a tibble’s behavior? (Select all that apply)\n\ntibbles only print the first 10 rows of a dataset\ntibbles allow for non-syntactic variable names, like :)\ntibbles never convert strings to factors\ntibbles create row names"
+    "text": "1.3 ✅ Check-in 3.1: Data Structures\nQuestion 1\nIn essence, a data.frame is simply a special list - with a few extra restrictions on the list format.\nThink about the datasets you have already worked with. Which of the following restrictions on a list do you think are needed for the list to be a data.frame? (Select all that apply)\n\nThe elements of the list must all be vectors of the same length.\nThe elements of the list must all be the same data type.\nThe elements of the list must all have no missing values.\nThe elements of the list must all have names.\n\nQuestion 2\nTibbles are described as “opinionated” dataframes. Which of the following are true about a tibble’s behavior? (Select all that apply)\n\ntibbles only print the first 10 rows of a dataset\ntibbles allow for non-syntactic variable names, like :)\ntibbles never convert strings to factors\ntibbles create row names"
   },
   {
     "objectID": "weeks/week-3-dplyr.html#check-in-3.2-data-wrangling",
@@ -3208,5 +3208,54 @@
     "title": "Data Wrangling with dplyr",
     "section": "2.5 ✅ Check-in 3.2: Data Wrangling",
     "text": "2.5 ✅ Check-in 3.2: Data Wrangling\nQuestion 1: Suppose we would like to study how the ratio of penguin body mass to flipper size differs across the species. Arrange the following steps into an order that accomplishes this goal (assuming the steps are connected with a |&gt; or a |&gt;).\n\n# a\narrange(med_mass_flipper_ratio)\n\n\n# b\ngroup_by(species)\n\n\n# c\npenguins \n  \n\n# d\nsummarize(\n  med_mass_flipper_ratio = median(mass_flipper_ratio)\n)\n\n  \n# e\nmutate(\n  mass_flipper_ratio = body_mass_g / flipper_length_mm\n)\n\n\n\n\n\n\n\nTry running the code!\n\n\n\nYou can check your answers using the penguins data from the palmerpenguins R package!\n\n\nQuestion 2:\nConsider the base R code below.\n\nmean(penguins[penguins$species == \"Adelie\", ]$body_mass_g)\n\n\nFor each of the following dplyr pipelines, indicate which of the following is true:\n\nIt returns the exact same thing as the (above) base R code\nIt returns the correct information, but the wrong object type\nIt returns incorrect information\nIt returns an error\n\n\n# Part a\npenguins |&gt;\n  filter(\"body_mass_g\") |&gt;\n  pull(\"Adelie\") |&gt;\n  mean()\n\n\n# Part b\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  select(body_mass_g) |&gt;\n  summarize(mean(body_mass_g))\n\n\n# Part c\npenguins |&gt;\n  pull(body_mass_g) |&gt;\n  filter(species == \"Adelie\") |&gt;\n  mean()\n\n\n# Part d\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  select(body_mass_g) |&gt;\n  mean()\n\n\n# Part e\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  pull(body_mass_g) |&gt;\n  mean()\n\n\n# Part f\npenguins |&gt;\n  select(species == \"Adelie\") |&gt;\n  filter(body_mass_g) |&gt;\n  summarize(mean(body_mass_g))\n\n\n\n\n\n\n\nTry running the code!\n\n\n\nYou can check your answers using the penguins data from the palmerpenguins R package!"
+  },
+  {
+    "objectID": "videos/week-3/history-of-tidyverse.html#the-tidyverse",
+    "href": "videos/week-3/history-of-tidyverse.html#the-tidyverse",
+    "title": "An Introduction to the tidyverse & dplyr",
+    "section": "The tidyverse",
+    "text": "The tidyverse\nThe tidyverse is a collection of packages that follow a (somewhat) consistent philosophy and structure.\nThe term base R is sometimes used as an alternative, to refer to only R’s built-in packages."
+  },
+  {
+    "objectID": "videos/week-3/history-of-tidyverse.html#a-brief-history",
+    "href": "videos/week-3/history-of-tidyverse.html#a-brief-history",
+    "title": "An Introduction to the tidyverse & dplyr",
+    "section": "A brief history",
+    "text": "A brief history\n. . .\n2008: plyr and ggplot released as part of Hadley Wickham’s doctoral dissertation.\n. . .\n2012: The pipe (%&gt;%) is created.\n(While the pipe itself is not technically tidyverse, the tidyverse is built around its use.)\n. . .\n2014: dplyr released; Wickham hired as Chief Scientist at RStudio\n. . .\n\nToday: A paid team of 20-ish developers maintains a huge number of packages. (https://www.tidyverse.org/)"
+  },
+  {
+    "objectID": "videos/week-3/history-of-tidyverse.html#the-philosophy-of-the-tidyverse",
+    "href": "videos/week-3/history-of-tidyverse.html#the-philosophy-of-the-tidyverse",
+    "title": "An Introduction to the tidyverse & dplyr",
+    "section": "The Philosophy of the tidyverse",
+    "text": "The Philosophy of the tidyverse\n\nKeep functions as simple as possible\n\nEach function should do one thing well\n\n\n. . .\n\nFunction names should be verbs\n\nWhen many functions use the same verb, focus on noun (ggplot2)\nFavor explicit, lengthy names, over short, implicit, names\n\n\n. . .\n\nBuild pipe-friendly functions"
+  },
+  {
+    "objectID": "videos/week-3/history-of-tidyverse.html#section",
+    "href": "videos/week-3/history-of-tidyverse.html#section",
+    "title": "An Introduction to the tidyverse & dplyr",
+    "section": "",
+    "text": "Programs must be written for people to read, and only incidentally for machines to execute.\n— Hal Abelson\n\n\n\npenguins %&gt;%\n  filter(species == \"Adelie\")\n\n\npenguins[penguins$species == \"Adelie\",]"
+  },
+  {
+    "objectID": "videos/week-3/history-of-tidyverse.html#the-tidyverse-pros",
+    "href": "videos/week-3/history-of-tidyverse.html#the-tidyverse-pros",
+    "title": "An Introduction to the tidyverse & dplyr",
+    "section": "The tidyverse: Pros",
+    "text": "The tidyverse: Pros\n\nFairly consistent behavior of functions\n\nPredictable input and output types\n“opinionated”\nMore on this later\n\n\n. . .\n\nSemi-guaranteed maintenance of packages (because RStudio pays developers!)\n\n. . .\n\nMore available and polished documentation and tutorials\n\n. . .\n\nWelcoming community"
+  },
+  {
+    "objectID": "videos/week-3/history-of-tidyverse.html#the-tidyverse-cons",
+    "href": "videos/week-3/history-of-tidyverse.html#the-tidyverse-cons",
+    "title": "An Introduction to the tidyverse & dplyr",
+    "section": "The tidyverse: Cons",
+    "text": "The tidyverse: Cons\n\n\nSometimes less flexible for complex tasks\nGenerally slower, especially on big data\nUpdates frequently -&gt; sometimes this makes your old code unrunnable.\nSome people object to RStudio’s strong influence over an open-source community."
+  },
+  {
+    "objectID": "videos/week-3/history-of-tidyverse.html#should-you-use-the-tidyverse",
+    "href": "videos/week-3/history-of-tidyverse.html#should-you-use-the-tidyverse",
+    "title": "An Introduction to the tidyverse & dplyr",
+    "section": "Should you use the tidyverse???",
+    "text": "Should you use the tidyverse???\n. . .\nEven the most die-hard tidyverse fanatics use base R and other packages quite frequently.\n. . .\nAbove all, the best code approach is the one you enjoy the most and that gets the job done!\n. . .\nIn this class, you must demonstrate an understanding of the packages we have learned.\n. . .\nHowever, after this class you are free to use whatever package(s) you want!"
   }
 ]
