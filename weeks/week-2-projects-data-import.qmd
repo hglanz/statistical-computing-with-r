@@ -76,7 +76,7 @@ direction of their backslash to separate folder locations. Mac/Linux use `/`
 
 ## R Projects
 
-## 📖 [Required Reading: Workflow (R Projects)](https://r4ds.hadley.nz/workflow-scripts.html#projects)
+📖 [Required Reading: Workflow (R Projects)](https://r4ds.hadley.nz/workflow-scripts.html#projects)
 
 ::: {.callout-note}
 # Only read Section 6.2!

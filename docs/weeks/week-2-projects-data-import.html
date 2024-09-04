@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R Projects &amp; Importing Data – Introduction to Statistical Computing in R</title>
+<title>Introduction to Statistical Computing in R - R Projects &amp; Importing Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -115,13 +115,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-0-discord.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week-2-projects-data-import.html">Week 2, Part 2</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -151,9 +151,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -204,9 +204,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">Weekly materials</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -251,9 +251,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Labs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -287,8 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#working-directories-in-r" id="toc-working-directories-in-r" class="nav-link" data-scroll-target="#working-directories-in-r"><span class="header-section-number">1.1</span> Working Directories in <code>R</code></a></li>
   <li><a href="#r-projects" id="toc-r-projects" class="nav-link" data-scroll-target="#r-projects"><span class="header-section-number">1.2</span> R Projects</a></li>
-  <li><a href="#required-reading-workflow-r-projects" id="toc-required-reading-workflow-r-projects" class="nav-link" data-scroll-target="#required-reading-workflow-r-projects"><span class="header-section-number">1.3</span> 📖 Required Reading: Workflow (R Projects)</a></li>
-  <li><a href="#check-in-2.2-rstudio-projects" id="toc-check-in-2.2-rstudio-projects" class="nav-link" data-scroll-target="#check-in-2.2-rstudio-projects"><span class="header-section-number">1.4</span> ✅ Check-in 2.2: RStudio Projects</a></li>
+  <li><a href="#check-in-2.2-rstudio-projects" id="toc-check-in-2.2-rstudio-projects" class="nav-link" data-scroll-target="#check-in-2.2-rstudio-projects"><span class="header-section-number">1.3</span> ✅ Check-in 2.2: RStudio Projects</a></li>
   </ul></li>
   <li><a href="#loading-data-into-r" id="toc-loading-data-into-r" class="nav-link" data-scroll-target="#loading-data-into-r"><span class="header-section-number">2</span> Loading Data Into R</a>
   <ul class="collapse">
@@ -379,9 +378,7 @@ File Paths in <code>R</code>
 </section>
 <section id="r-projects" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="r-projects"><span class="header-section-number">1.2</span> R Projects</h2>
-</section>
-<section id="required-reading-workflow-r-projects" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="required-reading-workflow-r-projects"><span class="header-section-number">1.3</span> 📖 <a href="https://r4ds.hadley.nz/workflow-scripts.html#projects">Required Reading: Workflow (R Projects)</a></h2>
+<p>📖 <a href="https://r4ds.hadley.nz/workflow-scripts.html#projects">Required Reading: Workflow (R Projects)</a></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -398,23 +395,23 @@ Only read Section 6.2!
 <p>If you open up your folder from Lab 1, you will notice that you have a blue cube (an R Project) living in this folder! The R Project lives in this folder for two reasons, (1) when you copied the Lab 1 GitHub repository you told RStudio you wanted to make a new R Project, and (2) in order for RStudio to talk with GitHub you need to use an R Project.</p>
 <p>However, if you look at your STAT331 folder (the one that lives in your Documents folder), you <strong>should not</strong> see a blue cube since we never created an R Project in this folder. Let’s do that now!</p>
 <p>To add a R Project to an existing folder on your computer (e.g., you already created a folder for this class), first open RStudio on your computer and click <code>File &gt; New Project</code>, then:</p>
-<div class="quarto-figure quarto-figure-center">
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/week-2/create-existing-rproj-step-1.png" class="img-fluid figure-img" style="width:50.0%" alt="Screenshot of navigation box that appears when you select 'File' and 'New Project'. The 'Existing Directory' option is highlighted in blue."></p>
+<p><img src="images/week-2/create-existing-rproj-step-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screenshot of navigation box that appears when you select 'File' and 'New Project'. The 'Existing Directory' option is highlighted in blue."></p>
 <figcaption>Navigation prompt for creating a new R Project in an existing directory</figcaption>
 </figure>
 </div>
 <p>Then, browse on your computer to where you saved your STAT331 folder last week. This should be in your Documents folder, similar to where mine is saved!</p>
-<div class="quarto-figure quarto-figure-center">
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/week-2/create-existing-rproj-step-2.png" class="img-fluid figure-img" style="width:50.0%" alt="Screenshot of navigation box that appears when you select 'Existing Directory' from the previous navigation menue. By clicking on the 'Browse' button you can navigate to the existing folder where you would like to insert the R Project. In the image, I've navigated to my STAT331 folder which lives in my Documents."></p>
+<p><img src="images/week-2/create-existing-rproj-step-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screenshot of navigation box that appears when you select 'Existing Directory' from the previous navigation menue. By clicking on the 'Browse' button you can navigate to the existing folder where you would like to insert the R Project. In the image, I've navigated to my STAT331 folder which lives in my Documents."></p>
 <figcaption>Navigation prompt for selecting which existing folder in which the R Project should be created.</figcaption>
 </figure>
 </div>
 <p>Once you click “Create Project”, your existing folder, <code>STAT331</code> should now contain a <code>STAT331.Rproj</code> file. This is your new “home” base for this class - whenever you refer to a file with a relative path it will begin to look for it here.</p>
 </section>
-<section id="check-in-2.2-rstudio-projects" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="check-in-2.2-rstudio-projects"><span class="header-section-number">1.4</span> ✅ Check-in 2.2: RStudio Projects</h2>
+<section id="check-in-2.2-rstudio-projects" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="check-in-2.2-rstudio-projects"><span class="header-section-number">1.3</span> ✅ Check-in 2.2: RStudio Projects</h2>
 <p>Take a screenshot of your class directory, showing the <strong>R Project</strong> living inside your STAT331 folder.</p>
 <hr>
 </section>
@@ -434,8 +431,7 @@ Only read Section 6.2!
 </section>
 <section id="check-in-2.3-loading-data" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="check-in-2.3-loading-data"><span class="header-section-number">2.3</span> ✅ Check-in 2.3: Loading Data</h2>
-<p>For this check-in you are asked to work through reading in different data sets. You can download the Quarto template for your investigation here: <a href="../weeks/data-import-practice.html">data-import-practice.qmd</a></p>
-<!-- How can I get the download to work? -->
+<p>For this check-in you are asked to work through reading in different data sets. You are expected to create your own Quarto document to complete this activity.</p>
 <p>The folder Age_Data contains several data sets with the names and ages of five individuals. The data sets are stored as different file types. <a href="Ages_Data.zip">Download Ages_Data.zip here</a>, make sure to unzip the folder, save these in a reasonable place (e.g., <code>STAT331 &gt; Week 2 &gt; Checkins</code> or <code>STAT331 &gt; Checkins &gt; Week 2</code>).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -646,7 +642,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -678,47 +685,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/atheobold\.github\.io\/stat-331-website");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -753,11 +720,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -805,12 +768,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -1033,7 +991,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../weeks/week-2-ggplot.html" class="pagination-link" aria-label="Week 2, Part 1">
+      <a href="../weeks/week-2-ggplot.html" class="pagination-link  aria-label=" week="" 2,="" part="" 1"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 2, Part 1</span>
       </a>          
   </div>
