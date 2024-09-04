@@ -28,7 +28,7 @@ website:
         href: https://github.com/atheobold/stat-331-website
         text: "GitHub organization"
       - icon: cloud-fill
-        href: https://posit.cloud/
+        href: https://posit.cloud/spaces/546280/join?access_code=N-bhlJ_sTPDIaalm5SqgEzb9DnAcr67mFzQ0YcYT
         aria-label: Posit Cloud
       - icon: person-fill
         href: https://canvas.calpoly.edu
@@ -57,20 +57,20 @@ website:
       - section: "Weekly materials"
         contents:
           - href: weeks/week-0-discord.qmd
-            text: "Week 0, Course Set-up"
+            text: "Week 0 - Course Set-up"
           - href: weeks/week-1-r-rstudio.qmd
-            text: "Week 1, Part 1"
+            text: "Week 1, Part 1 - R & RStudio"
           - href: weeks/week-1-quarto.qmd
-            text: "Week 1, Part 2"
+            text: "Week 1, Part 2 - Quarto"
           - href: weeks/week-1-version-control.qmd
-            text: "Week 1, Part 3"
+            text: "Week 1, Part 3 - Version Control"
           - href: weeks/week-2-ggplot.qmd
-            text: "Week 2, Part 1"
+            text: "Week 2, Part 1 - ggplot"
           - href: weeks/week-2-projects-data-import.qmd
-            text: "Week 2, Part 2"
-          #- href: weeks/week-3.qmd
-          #   text: "Week 3"
-          # - href: weeks/week-4.qmd
+            text: "Week 2, Part 2 - Data Import"
+          - href: weeks/week-3-dplyr.qmd
+            text: "Week 3 - dplyr"
+          - href: weeks/week-4.qmd
           #   text: "Week 4"
           # - href: weeks/week-5.qmd
           #   text: "Week 5"
