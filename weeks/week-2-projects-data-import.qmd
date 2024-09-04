@@ -132,11 +132,8 @@ inside your STAT331 folder.
 
 ## `r emo::ji("check")` Check-in 2.3: Loading Data
 
-For this check-in you are asked to work through reading in different data sets. You can download the Quarto template for 
-your investigation here:
-[data-import-practice.qmd](data-import-practice.qmd)
-
-<!-- How can I get the download to work? -->
+For this check-in you are asked to work through reading in different data sets. 
+You are expected to create your own Quarto document to complete this activity. 
 
 The folder Age_Data contains several data sets with the names and ages of five
 individuals. The data sets are stored as different file types. 
