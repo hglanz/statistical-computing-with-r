@@ -5,6 +5,9 @@ editor: source
 
 ::: columns
 ::: {.column width="40%"}
+
+</br>
+
 During our in-class activities, you will be paired with another student. When completing the activity, you will rotate between the following roles every 2-3 minutes:
 :::
 
