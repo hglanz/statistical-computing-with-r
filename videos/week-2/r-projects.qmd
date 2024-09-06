@@ -1,7 +1,8 @@
 ---
 title: "RStudio Projects"
-format: revealjs
-theme: [../style.scss]
+format: 
+  revealjs:
+    theme: [../../slides/style.scss]
 execute:
   eval: false
 ---
@@ -14,8 +15,8 @@ An **RStudio Project** is basically a "flag" planted in a certain directory.
 
 </br>
 
-::: {.fragment}
-::: {.small}
+::: fragment
+::: small
 When you double click an **.Rproj** file, it:
 
 1.  Opens RStudio
@@ -62,8 +63,7 @@ This means:
 
 [From an already existing directory (a folder you already have)](https://scribehow.com/shared/Creating_a_Project_in_an_Existing_Directory__7NTs-4d2RtO1octP6rrBTQ)
 
-![](../images/existing-directory-rproj.png){fig-align="center" fig-alt="A picture of the option you would select when making a new RStudio Project for a folder that already exists on your computer. The image has a manilla folder in the background with a translucent blue cube with an R in the center in the font. The text next to the folder says 'Existing Directory' with a description saying 'Associate a project with an existing working directory'."}
-[*This is what you're doing in this week's coursework!]{.small}
+![](../images/existing-directory-rproj.png){fig-align="center" fig-alt="A picture of the option you would select when making a new RStudio Project for a folder that already exists on your computer. The image has a manilla folder in the background with a translucent blue cube with an R in the center in the font. The text next to the folder says 'Existing Directory' with a description saying 'Associate a project with an existing working directory'."} [\*This is what you're doing in this week's coursework!]{.small}
 
 # Setting up an RStudio Project
 
@@ -71,7 +71,7 @@ Creating a new directory (a folder you **do not** already have)
 
 ![](../images/new-directory-rproj.png){fig-align="center" fig-alt="A picture of the option you would select when making a new RStudio Project for a folder that DOES NOT already exist on your computer. The image has a translucent blue cube with an R. The text next to the cube says 'New Directory' with a description saying 'Start a project in a brand new working directory'."}
 
-[*This is what you do when you copy the Lab assignment each week!]{.small}
+[\*This is what you do when you copy the Lab assignment each week!]{.small}
 
 ## Bad practice
 
@@ -90,9 +90,7 @@ setwd("/User/reginageorge/Desktop/R_Class/Lab_1/")
 
 </br>
 
--   Setting working directory by hand = BAD!
-
--   That directory is specific to you!
+-   This directory is specific to you!
 
 -   Quarto will ignore this code when rendering!
 
@@ -106,8 +104,7 @@ Use the **here** package to load in your data!
 #| code-line-numbers: false
 #| label: using-here
 
-read_csv(here::here("Lab2",
-                    "data", 
+read_csv(here::here("data", 
                     "rodents.csv")
          )
 ```
@@ -116,5 +113,4 @@ read_csv(here::here("Lab2",
 
 </br>
 
-This path is *relative* to where your RStudio Project lives, which
-can be reproduced if you send your project to someone else. 
+This path is *relative* to where your RStudio Project lives, which can be reproduced if you send your project to someone else.

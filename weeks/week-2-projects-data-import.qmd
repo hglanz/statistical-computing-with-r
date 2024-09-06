@@ -36,11 +36,9 @@ absolute and relative file paths. The idea of a "base folder" or starting place
 was introduced as a **working directory**. In `R`, there are two ways to set up
 your file path and file system organization:
 
-<!-- update video -->
-
-<!-- ::: column-margin -->
-<!-- {{< video http://somup.com/c3QDczUaCa >}}  -->
-<!-- ::: -->
+::: column-margin
+{{< video https://youtu.be/fnAiYAOHAww?si=lPZIX0MeG4C3jxLb >}}
+:::
 
 1.  Set your working directory in `R` (do not recommend)
 2.  Use R Projects (preferred!)
@@ -108,6 +106,9 @@ contain a `STAT331.Rproj` file. This is your new "home" base for this class -
 whenever you refer to a file with a relative path it will begin to look for it
 here.
 
+If you would like a list of step-by-step instructions for this process, feel 
+free to look at this file: [Creating a Project in an Existing Directory](https://scribehow.com/shared/Creating_a_Project_in_an_Existing_Directory__7NTs-4d2RtO1octP6rrBTQ)
+
 ## `r emo::ji("check")` Check-in 2.2: RStudio Projects
 
 Take a screenshot of your class directory, showing the **R Project** living 
@@ -117,18 +118,13 @@ inside your STAT331 folder.
 
 # Loading Data Into R
 
-## Where does my data live?
-
-<!-- Update video based on new pacing of projects & make a bit shorter! -->
-
-`r emo::ji("play button")` [Required Video: Data Locations and the {here} package (8 minutes)](https://www.youtube.com/watch?v=jvWwrELLEw8)
-
 ## How do I load my data?
 
 `r emo::ji("book")` [Required Reading: Data Import](https://r4ds.hadley.nz/data-import.html)
 
-<!-- Needed? -->
-<!-- `r emo::ji("play button")` [Required Video: Loading Data (6 minutes)](https://www.youtube.com/watch?v=Kp4tJYCAvUs) -->
+## Where does my data live?
+
+`r emo::ji("play button")` [Required Video: How do I get to my data? (8 minutes)](https://www.youtube.com/watch?v=jvWwrELLEw8)
 
 ## `r emo::ji("check")` Check-in 2.3: Loading Data
 

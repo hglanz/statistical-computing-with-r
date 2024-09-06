@@ -254,28 +254,28 @@
     "href": "videos/week-1/directories.html#principles-of-reproducibility",
     "title": "Directories & Scientific Reproducibility",
     "section": "Principles of Reproducibility",
-    "text": "Principles of Reproducibility\n\nNuts and bolts\n\nThe documentation for a project should contain everything necessary (e.g., scripts, Quarto files) to reproduce the results.\n\n\n\n\nPortability\n\nAny user should be able to run the scripts on their own computer or workspace.\n\n\n\n\n\nOne-click Reproducibility\n\nReproducing all the computations should require (almost) nothing other than executing a single main script file."
+    "text": "Principles of Reproducibility\n\nNuts and bolts\n\nThe documentation for a project should contain everything necessary (e.g., scripts, Quarto files) to reproduce the results.\n\n\n. . .\n\nPortability\n\nAny user should be able to run the scripts on their own computer or workspace.\n\n\n. . .\n\nOne-click Reproducibility\n\nReproducing all the computations should require (almost) nothing other than executing a single main script file."
   },
   {
     "objectID": "videos/week-1/directories.html#what-is-a-directory",
     "href": "videos/week-1/directories.html#what-is-a-directory",
     "title": "Directories & Scientific Reproducibility",
     "section": "What is a directory?",
-    "text": "What is a directory?\n\nA directory is just a fancy name for a folder.\n\n\n\nYour working directory is the folder that R “thinks” it lives in at the moment.\n\n\ngetwd()\n\n\"/Users/allisontheobold/Documents/STAT 331/videos/week-1\""
+    "text": "What is a directory?\n\nA directory is just a fancy name for a folder.\n\n. . .\n\nYour working directory is the folder that R “thinks” it lives in at the moment.\n\n\ngetwd()\n\n\"/Users/allisontheobold/Documents/STAT 331/videos/week-1\""
   },
   {
     "objectID": "videos/week-1/directories.html#paths",
     "href": "videos/week-1/directories.html#paths",
     "title": "Directories & Scientific Reproducibility",
     "section": "Paths",
-    "text": "Paths\n\nA path describes where a certain file or directory lives.\n\n\n\ngetwd()\n\n\"/Users/allisontheobold/Documents/STAT 331/videos/week-1\"\n\n\n\nThis file lives on my computer in my user files (/Users/),\n\n\non my account (/allisontheobold/),\n\n\nin my Documents (/Documents),\n\n\nin a series of organized folders (STAT 331/videos/week-1)."
+    "text": "Paths\n\nA path describes where a certain file or directory lives.\n\n. . .\n\ngetwd()\n\n\"/Users/allisontheobold/Documents/STAT 331/videos/week-1\"\n\n. . .\nThis file lives on my computer in my user files (/Users/),\n. . .\non my account (/allisontheobold/),\n. . .\nin my Documents (/Documents),\n. . .\nin a series of organized folders (STAT 331/videos/week-1)."
   },
   {
     "objectID": "videos/week-1/directories.html#file-management-check-in",
     "href": "videos/week-1/directories.html#file-management-check-in",
     "title": "Directories & Scientific Reproducibility",
     "section": "File Management Check-in",
-    "text": "File Management Check-in\n\n\nYour STAT331 folder should live in your Documents.\nIt should have a Week1 sub-folder.\nInside the Week1 folder, there should be a Lab1 sub-folder.\n\n\n\n\n\n\n\n\n\nYour folder cannot synch with anything online!\n\n\nYour STAT 331 folder cannot be in a folder stored on OneDrive or iCloud! Storing your project in this location will cause your code to periodically not run and I cannot help you fix it."
+    "text": "File Management Check-in\n\n\nYour STAT331 folder should live in your Documents.\nIt should have a Week1 sub-folder.\nInside the Week1 folder, there should be a Lab1 sub-folder.\n\n\n. . .\n\n\n\n\n\n\nYour folder cannot synch with anything online!\n\n\n\nYour STAT 331 folder cannot be in a folder stored on OneDrive or iCloud! Storing your project in this location will cause your code to periodically not run and I cannot help you fix it."
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#thursday-september-26",
@@ -1402,14 +1402,14 @@
     "href": "videos/week-2/r-projects.html#good-practice",
     "title": "RStudio Projects",
     "section": "Good practice",
-    "text": "Good practice\nUse the here package to load in your data!\n\nread_csv(here::here(\"Lab2\",\n                    \"data\", \n                    \"rodents.csv\")\n         )\n\n\n\nThis path is relative to where your RStudio Project lives, which can be reproduced if you send your project to someone else."
+    "text": "Good practice\nUse the here package to load in your data!\n\nread_csv(here::here(\"data\", \n                    \"rodents.csv\")\n         )\n\n\n\nThis path is relative to where your RStudio Project lives, which can be reproduced if you send your project to someone else."
   },
   {
     "objectID": "videos/week-2/r-projects.html#bad-practice",
     "href": "videos/week-2/r-projects.html#bad-practice",
     "title": "RStudio Projects",
     "section": "Bad practice",
-    "text": "Bad practice\nIf you put something like this at the top of your .qmd file, I will set your computer on fire:\n\nsetwd(\"/User/reginageorge/Desktop/R_Class/Lab_1/\")\n\n\n\n\nSetting working directory by hand = BAD!\nThat directory is specific to you!\nQuarto will ignore this code when rendering!"
+    "text": "Bad practice\nIf you put something like this at the top of your .qmd file, I will set your computer on fire:\n\nsetwd(\"/User/reginageorge/Desktop/R_Class/Lab_1/\")\n\n\n\n\nThis directory is specific to you!\nQuarto will ignore this code when rendering!"
   },
   {
     "objectID": "weeks/week-1-quarto.html",
@@ -1507,7 +1507,7 @@
     "text": "Describe what an R Project is\nOutline how an R Project affects the file paths used to read in data\n\nRead in data from common formats into R",
     "crumbs": [
       "Weekly materials",
-      "Week 2, Part 2"
+      "Week 2, Part 2 - Data Import"
     ]
   },
   {
@@ -1518,7 +1518,7 @@
     "text": "Describe what an R Project is\nOutline how an R Project affects the file paths used to read in data\n\nRead in data from common formats into R",
     "crumbs": [
       "Weekly materials",
-      "Week 2, Part 2"
+      "Week 2, Part 2 - Data Import"
     ]
   },
   {
@@ -1529,7 +1529,7 @@
     "text": "1.1 Working Directories in R\nTo find where your working directory is in R, you can either look at the top of your console or type getwd() into your console.\n\ngetwd()\n\nAlthough it is not recommended, you can set your working directory in R with setwd():\n\nsetwd(\"/path/to/my/assignment/folder\")\n\n\n\n\n\n\n\nFile Paths in R\n\n\n\nA quick warning on file paths is that Mac / Linux and Windows differ in the direction of their backslash to separate folder locations. Mac/Linux use / (e.g. STAT331/Week1) while Window’s uses \\ (e.g. STAT331\\Week1).",
     "crumbs": [
       "Weekly materials",
-      "Week 2, Part 2"
+      "Week 2, Part 2 - Data Import"
     ]
   },
   {
@@ -1537,10 +1537,10 @@
     "href": "weeks/week-2-projects-data-import.html#r-projects",
     "title": "R Projects & Importing Data",
     "section": "1.2 R Projects",
-    "text": "1.2 R Projects\n📖 Required Reading: Workflow (R Projects)\n\n\n\n\n\n\nOnly read Section 6.2!\n\n\n\n\n\n\nIf you open up your folder from Lab 1, you will notice that you have a blue cube (an R Project) living in this folder! The R Project lives in this folder for two reasons, (1) when you copied the Lab 1 GitHub repository you told RStudio you wanted to make a new R Project, and (2) in order for RStudio to talk with GitHub you need to use an R Project.\nHowever, if you look at your STAT331 folder (the one that lives in your Documents folder), you should not see a blue cube since we never created an R Project in this folder. Let’s do that now!\nTo add a R Project to an existing folder on your computer (e.g., you already created a folder for this class), first open RStudio on your computer and click File &gt; New Project, then:\n\n\n\nNavigation prompt for creating a new R Project in an existing directory\n\n\nThen, browse on your computer to where you saved your STAT331 folder last week. This should be in your Documents folder, similar to where mine is saved!\n\n\n\nNavigation prompt for selecting which existing folder in which the R Project should be created.\n\n\nOnce you click “Create Project”, your existing folder, STAT331 should now contain a STAT331.Rproj file. This is your new “home” base for this class - whenever you refer to a file with a relative path it will begin to look for it here.",
+    "text": "1.2 R Projects\n📖 Required Reading: Workflow (R Projects)\n\n\n\n\n\n\nOnly read Section 6.2!\n\n\n\n\n\n\nIf you open up your folder from Lab 1, you will notice that you have a blue cube (an R Project) living in this folder! The R Project lives in this folder for two reasons, (1) when you copied the Lab 1 GitHub repository you told RStudio you wanted to make a new R Project, and (2) in order for RStudio to talk with GitHub you need to use an R Project.\nHowever, if you look at your STAT331 folder (the one that lives in your Documents folder), you should not see a blue cube since we never created an R Project in this folder. Let’s do that now!\nTo add a R Project to an existing folder on your computer (e.g., you already created a folder for this class), first open RStudio on your computer and click File &gt; New Project, then:\n\n\n\nNavigation prompt for creating a new R Project in an existing directory\n\n\nThen, browse on your computer to where you saved your STAT331 folder last week. This should be in your Documents folder, similar to where mine is saved!\n\n\n\nNavigation prompt for selecting which existing folder in which the R Project should be created.\n\n\nOnce you click “Create Project”, your existing folder, STAT331 should now contain a STAT331.Rproj file. This is your new “home” base for this class - whenever you refer to a file with a relative path it will begin to look for it here.\nIf you would like a list of step-by-step instructions for this process, feel free to look at this file: Creating a Project in an Existing Directory",
     "crumbs": [
       "Weekly materials",
-      "Week 2, Part 2"
+      "Week 2, Part 2 - Data Import"
     ]
   },
   {
@@ -1562,29 +1562,29 @@
     "text": "1.3 ✅ Check-in 2.2: RStudio Projects\nTake a screenshot of your class directory, showing the R Project living inside your STAT331 folder.",
     "crumbs": [
       "Weekly materials",
-      "Week 2, Part 2"
+      "Week 2, Part 2 - Data Import"
     ]
   },
   {
     "objectID": "weeks/week-2-projects-data-import.html#where-does-my-data-live",
     "href": "weeks/week-2-projects-data-import.html#where-does-my-data-live",
     "title": "R Projects & Importing Data",
-    "section": "2.1 Where does my data live?",
-    "text": "2.1 Where does my data live?\n\n▶️ Required Video: Data Locations and the {here} package (8 minutes)",
+    "section": "2.2 Where does my data live?",
+    "text": "2.2 Where does my data live?\n▶️ Required Video: How do I get to my data? (8 minutes)",
     "crumbs": [
       "Weekly materials",
-      "Week 2, Part 2"
+      "Week 2, Part 2 - Data Import"
     ]
   },
   {
     "objectID": "weeks/week-2-projects-data-import.html#how-do-i-load-my-data",
     "href": "weeks/week-2-projects-data-import.html#how-do-i-load-my-data",
     "title": "R Projects & Importing Data",
-    "section": "2.2 How do I load my data?",
-    "text": "2.2 How do I load my data?\n📖 Required Reading: Data Import",
+    "section": "2.1 How do I load my data?",
+    "text": "2.1 How do I load my data?\n📖 Required Reading: Data Import",
     "crumbs": [
       "Weekly materials",
-      "Week 2, Part 2"
+      "Week 2, Part 2 - Data Import"
     ]
   },
   {
@@ -1595,7 +1595,7 @@
     "text": "2.3 ✅ Check-in 2.3: Loading Data\nFor this check-in you are asked to work through reading in different data sets. You are expected to create your own Quarto document to complete this activity.\nThe folder Age_Data contains several data sets with the names and ages of five individuals. The data sets are stored as different file types. Download Ages_Data.zip here, make sure to unzip the folder, save these in a reasonable place (e.g., STAT331 &gt; Week 2 &gt; Checkins or STAT331 &gt; Checkins &gt; Week 2).\n\n\n\n\n\n\nExtracting zip folders\n\n\n\nYou will need to extract the contents of the ages.zip file, that means you will need to uncompress the files from the folder for RStudio to know where to get the data from.\n\n\nOnce you have the data saved (and extracted) in your STAT 331 folder, preferably in the Week 2 subfolder, use the readr and readxl packages to complete the following exercises.\n\nLoad the appropriate packages for reading in data.\nRead in the data set ages.csv\nRead in the data set ages_tab.txt\nRead in the data set ages_mystery.txt\nRead in the data set ages.xlsx\nFind a way to use read_csv() to read ages.csv with the variable “Name” as a factor data type and “Age” as a character data type.\n\nOnce you’ve finished coding these exercises, head over to Canvas and fill in the “gap” code I’ve provided. For reference, I would recommend you store the Ages_Data similar to how I have:",
     "crumbs": [
       "Weekly materials",
-      "Week 2, Part 2"
+      "Week 2, Part 2 - Data Import"
     ]
   },
   {
@@ -2164,7 +2164,7 @@
     "href": "slides/week-2/week-2-ggplot.html#pa-2-using-data-visualization-to-find-the-penguins",
     "title": "Basics of Graphics",
     "section": "PA 2: Using Data Visualization to Find the Penguins",
-    "text": "PA 2: Using Data Visualization to Find the Penguins\n\n\n\n\nArtwork by Allison Horst"
+    "text": "PA 2: Using Data Visualization to Find the Penguins\n\n ## Pair Programming Collaborations"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#to-do",
@@ -2381,7 +2381,7 @@
     "href": "slides/week-2/week-2-ggplot.html#same-data-three-different-plots",
     "title": "Basics of Graphics",
     "section": "Same Data, Three Different Plots",
-    "text": "Same Data, Three Different Plots\n\ngeom_point()geom_text()geom_smooth()\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty, \n                     y = hwy,\n                     color = class)\n       ) +\n  geom_point() +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty,\n                     y = hwy,\n                     color = class)\n       ) +\n  geom_text(mapping = aes(label = class)) +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty,\n                     y = hwy,\n                     color = class)\n       ) +\n  geom_smooth() +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )\n\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: span too small.  fewer data values than degrees of freedom.\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: at 14.995\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: radius 2.5e-05\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: all data on boundary of neighborhood. make span bigger\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: pseudoinverse used at 14.995\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: neighborhood radius 0.005\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: reciprocal condition number 1\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: There are other near singularities as well. 1.01\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: zero-width neighborhood. make span bigger\n\n\nWarning: Failed to fit group 1.\nCaused by error in `predLoess()`:\n! NA/NaN/Inf in foreign function call (arg 5)\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: pseudoinverse used at 19\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: neighborhood radius 2\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: reciprocal condition number 1.9563e-16\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : pseudoinverse used at\n19\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : neighborhood radius 2\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : reciprocal condition\nnumber 1.9563e-16\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: pseudoinverse used at 18.035\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: neighborhood radius 2.035\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: reciprocal condition number 0\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: There are other near singularities as well. 1\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : pseudoinverse used at\n18.035\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : neighborhood radius\n2.035\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : reciprocal condition\nnumber 0\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : There are other near\nsingularities as well. 1"
+    "text": "Same Data, Three Different Plots\n\ngeom_point()geom_text()geom_smooth()\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty, \n                     y = hwy,\n                     color = class)\n       ) +\n  geom_point() +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty,\n                     y = hwy,\n                     color = class)\n       ) +\n  geom_text(mapping = aes(label = class)) +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty,\n                     y = hwy,\n                     color = class)\n       ) +\n  geom_smooth() +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )\n\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: span too small.  fewer data values than degrees of freedom.\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: at 14.995\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: radius 2.5e-05\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: all data on boundary of neighborhood. make span bigger\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: pseudoinverse used at 14.995\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: neighborhood radius 0.005\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: reciprocal condition number 1\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: There are other near singularities as well. 1.01\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: zero-width neighborhood. make span bigger\n\n\nWarning: Failed to fit group 1.\nCaused by error in `predLoess()`:\n! NA/NaN/Inf in foreign function call (arg 5)\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: pseudoinverse used at 19\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: neighborhood radius 2\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: reciprocal condition number 1.398e-16\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : pseudoinverse used at\n19\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : neighborhood radius 2\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : reciprocal condition\nnumber 1.398e-16\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: pseudoinverse used at 18.035\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: neighborhood radius 2.035\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: reciprocal condition number 3.0725e-17\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: There are other near singularities as well. 1\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : pseudoinverse used at\n18.035\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : neighborhood radius\n2.035\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : reciprocal condition\nnumber 3.0725e-17\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : There are other near\nsingularities as well. 1"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#ggplot-code",
