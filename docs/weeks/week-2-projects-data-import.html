@@ -63,7 +63,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../labs/instructions/lab-1-instructions.html" rel="next">
+<link href="../weeks/week-3-dplyr.html" rel="next">
 <link href="../weeks/week-2-ggplot.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -76,8 +76,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
-<link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -109,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -118,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-0-discord.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week-2-projects-data-import.html">Week 2, Part 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-0-discord.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week-2-projects-data-import.html">Week 2, Part 2 - Data Import</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -137,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-331-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
-    <a href="https://posit.cloud/" title="" class="quarto-navigation-tool px-1" aria-label="Posit Cloud"><i class="bi bi-cloud-fill"></i></a>
+    <a href="https://posit.cloud/spaces/546280/join?access_code=N-bhlJ_sTPDIaalm5SqgEzb9DnAcr67mFzQ0YcYT" title="" class="quarto-navigation-tool px-1" aria-label="Posit Cloud"><i class="bi bi-cloud-fill"></i></a>
     <a href="https://canvas.calpoly.edu" title="Cal Poly Canvas" class="quarto-navigation-tool px-1" aria-label="Cal Poly Canvas"><i class="bi bi-person-fill"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -214,37 +212,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-0-discord.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 0, Course Set-up</span></a>
+ <span class="menu-text">Week 0 - Course Set-up</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-1-r-rstudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 1, Part 1</span></a>
+ <span class="menu-text">Week 1, Part 1 - R &amp; RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-1-quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 1, Part 2</span></a>
+ <span class="menu-text">Week 1, Part 2 - Quarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-1-version-control.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 1, Part 3</span></a>
+ <span class="menu-text">Week 1, Part 3 - Version Control</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-2-ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 2, Part 1</span></a>
+ <span class="menu-text">Week 2, Part 1 - ggplot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-2-projects-data-import.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 2, Part 2</span></a>
+ <span class="menu-text">Week 2, Part 2 - Data Import</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-3-dplyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3 - dplyr</span></a>
   </div>
 </li>
       </ul>
@@ -291,17 +295,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#loading-data-into-r" id="toc-loading-data-into-r" class="nav-link" data-scroll-target="#loading-data-into-r"><span class="header-section-number">2</span> Loading Data Into R</a>
   <ul class="collapse">
-  <li><a href="#where-does-my-data-live" id="toc-where-does-my-data-live" class="nav-link" data-scroll-target="#where-does-my-data-live"><span class="header-section-number">2.1</span> Where does my data live?</a></li>
-  <li><a href="#how-do-i-load-my-data" id="toc-how-do-i-load-my-data" class="nav-link" data-scroll-target="#how-do-i-load-my-data"><span class="header-section-number">2.2</span> How do I load my data?</a></li>
+  <li><a href="#how-do-i-load-my-data" id="toc-how-do-i-load-my-data" class="nav-link" data-scroll-target="#how-do-i-load-my-data"><span class="header-section-number">2.1</span> How do I load my data?</a></li>
+  <li><a href="#where-does-my-data-live" id="toc-where-does-my-data-live" class="nav-link" data-scroll-target="#where-does-my-data-live"><span class="header-section-number">2.2</span> Where does my data live?</a></li>
   <li><a href="#check-in-2.3-loading-data" id="toc-check-in-2.3-loading-data" class="nav-link" data-scroll-target="#check-in-2.3-loading-data"><span class="header-section-number">2.3</span> ✅ Check-in 2.3: Loading Data</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-331-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-0-discord.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week-2-projects-data-import.html">Week 2, Part 2</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-0-discord.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week-2-projects-data-import.html">Week 2, Part 2 - Data Import</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">R Projects &amp; Importing Data</h1>
 </div>
@@ -341,14 +345,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="check-ins-1">✅ Check-ins: 1</h4>
 </section>
 </section>
-<section id="directories-paths-and-projects" class="level1" data-number="1">
+<section id="directories-paths-and-projects" class="level1 page-columns page-full" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Directories, Paths, and Projects</h1>
 <p>Last week, we learned how to organize our personal files and locate them using absolute and relative file paths. The idea of a “base folder” or starting place was introduced as a <strong>working directory</strong>. In <code>R</code>, there are two ways to set up your file path and file system organization:</p>
-<!-- update video -->
-<!-- ::: column-margin -->
-<!--   -->
-<!-- ::: -->
-<ol type="1">
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/fnAiYAOHAww?si=lPZIX0MeG4C3jxLb" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div></div><ol type="1">
 <li>Set your working directory in <code>R</code> (do not recommend)</li>
 <li>Use R Projects (preferred!)</li>
 </ol>
@@ -409,6 +412,7 @@ Only read Section 6.2!
 </figure>
 </div>
 <p>Once you click “Create Project”, your existing folder, <code>STAT331</code> should now contain a <code>STAT331.Rproj</code> file. This is your new “home” base for this class - whenever you refer to a file with a relative path it will begin to look for it here.</p>
+<p>If you would like a list of step-by-step instructions for this process, feel free to look at this file: <a href="https://scribehow.com/shared/Creating_a_Project_in_an_Existing_Directory__7NTs-4d2RtO1octP6rrBTQ">Creating a Project in an Existing Directory</a></p>
 </section>
 <section id="check-in-2.2-rstudio-projects" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="check-in-2.2-rstudio-projects"><span class="header-section-number">1.3</span> ✅ Check-in 2.2: RStudio Projects</h2>
@@ -418,16 +422,13 @@ Only read Section 6.2!
 </section>
 <section id="loading-data-into-r" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Loading Data Into R</h1>
-<section id="where-does-my-data-live" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="where-does-my-data-live"><span class="header-section-number">2.1</span> Where does my data live?</h2>
-<!-- Update video based on new pacing of projects & make a bit shorter! -->
-<p>▶️ <a href="https://www.youtube.com/watch?v=jvWwrELLEw8">Required Video: Data Locations and the {here} package (8 minutes)</a></p>
-</section>
-<section id="how-do-i-load-my-data" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="how-do-i-load-my-data"><span class="header-section-number">2.2</span> How do I load my data?</h2>
+<section id="how-do-i-load-my-data" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="how-do-i-load-my-data"><span class="header-section-number">2.1</span> How do I load my data?</h2>
 <p>📖 <a href="https://r4ds.hadley.nz/data-import.html">Required Reading: Data Import</a></p>
-<!-- Needed? -->
-<!-- ▶️ [Required Video: Loading Data (6 minutes)](https://www.youtube.com/watch?v=Kp4tJYCAvUs) -->
+</section>
+<section id="where-does-my-data-live" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="where-does-my-data-live"><span class="header-section-number">2.2</span> Where does my data live?</h2>
+<p>▶️ <a href="https://www.youtube.com/watch?v=jvWwrELLEw8">Required Video: How do I get to my data? (8 minutes)</a></p>
 </section>
 <section id="check-in-2.3-loading-data" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="check-in-2.3-loading-data"><span class="header-section-number">2.3</span> ✅ Check-in 2.3: Loading Data</h2>
@@ -991,13 +992,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../weeks/week-2-ggplot.html" class="pagination-link  aria-label=" week="" 2,="" part="" 1"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 2, Part 1</span>
+      <a 1="" href="../weeks/week-2-ggplot.html" class="pagination-link  aria-label=" week="" 2,="" part="" -="" ggplot"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 2, Part 1 - ggplot</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../labs/instructions/lab-1-instructions.html" class="pagination-link" aria-label="Lab 1">
-        <span class="nav-page-text">Lab 1</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../weeks/week-3-dplyr.html" class="pagination-link" aria-label="Week 3 - dplyr">
+        <span class="nav-page-text">Week 3 - dplyr</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1015,7 +1016,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
