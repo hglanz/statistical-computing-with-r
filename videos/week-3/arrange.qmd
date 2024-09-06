@@ -1,0 +1,118 @@
+---
+title: "Getting Fancy -- Arranging Some Data"
+format: revealjs
+execute: 
+  eval: false
+---
+
+```{r, echo = FALSE, message = FALSE}
+cereals <- read_csv("cereals.csv") %>% 
+  mutate(type = as_factor(type), 
+         mfr = as_factor(mfr))
+```
+
+# Ordering
+
+Verb: `arrange()`
+
+We **arrange** the dataset in order of a particular variable.
+
+```{r}
+arrange(cereals, calories)
+```
+
+------------------------------------------------------------------------
+
+.larger\[Descending Order\]
+
+.pull-left\[ Default is ascending order!
+
+```{r, eval = FALSE}
+arrange(cereals, calories)
+```
+
+\]
+
+.pull-right\[ Need to add `desc()` to get descending order!
+
+```{r, eval = FALSE}
+arrange(cereals, desc(calories))
+```
+
+\]
+
+------------------------------------------------------------------------
+
+.larger\[Related: `top_n()`\]
+
+```{r}
+top_n(cereals, 3, sugars)
+```
+
+------------------------------------------------------------------------
+
+.larger\[Function Arguments\]
+
+This is correct, but lazy.
+
+```{r, eval = FALSE}
+top_n(cereals, 3, sugars)
+```
+
+This is **much** better practice!
+
+```{r, eval = FALSE}
+top_n(x = cereals, n = 3, wt = sugars)
+```
+
+------------------------------------------------------------------------
+
+.larger\[`bottom_n()` ?\]
+
+```{r}
+top_n(cereals, n = 3, wt = desc(sugars))
+```
+
+------------------------------------------------------------------------
+
+.larger\[Data Investigation\]
+
+```{r}
+arrange(cereals, sugars, carbo)
+```
+
+------------------------------------------------------------------------
+
+.larger\[Tying to `mutate()`\]
+
+Missing values were recorded as `-1`. Let's fix that!
+
+```{r}
+cereals <- mutate_all(cereals, ~na_if(. , -1))
+```
+
+------------------------------------------------------------------------
+
+.larger\[`mutate_all()`\]
+
+![](images/mutate_all.jpg)
+
+------------------------------------------------------------------------
+
+.larger\[`na_if()`\]
+
+![](images/na_if.jpg)
+
+------------------------------------------------------------------------
+
+.larger\[Checking our work\]
+
+```{r}
+arrange(cereals, sugars)
+```
+
+------------------------------------------------------------------------
+
+<center>
+
+![](images/high_five.jpg)

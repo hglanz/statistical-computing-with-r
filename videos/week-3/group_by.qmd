@@ -1,0 +1,82 @@
+---
+title: "It's a Party Now -- Making Groups"
+format: revealjs
+execute: 
+  eval: false
+---
+
+```{r, echo = FALSE, message = FALSE}
+library(tidyverse)
+library(flair)
+
+cereals <- read_csv("cereals.csv") %>% 
+  mutate(type = as_factor(type), 
+         mfr = as_factor(mfr)) %>% 
+  rename(temp = type)
+```
+
+.larger\[Making Groups\]
+
+Verb: `group_by()`
+
+Separating a **categorical** variable into its different levels.
+
+```{r group, echo = FALSE, eval = FALSE}
+group_by(cereals, temp)
+```
+
+```{r, echo = FALSE}
+decorate("group", eval = FALSE) %>% 
+  flair("group_by") 
+```
+
+------------------------------------------------------------------------
+
+.larger\[A grouped dataset?\]
+
+```{r}
+group_by(cereals, mfr)
+```
+
+------------------------------------------------------------------------
+
+.larger\[A friend!\]
+
+`group_by()` is almost always paired with `summarize()`
+
+</br>
+
+<center>
+
+.larger\[How?\]
+
+------------------------------------------------------------------------
+
+.larger\[Option #1: Nesting\]
+
+```{r}
+summarise(
+  group_by(cereals, mfr), 
+  mean_cal = mean(calories)
+)
+```
+
+------------------------------------------------------------------------
+
+.bitlarger\[Option #2: Intermediate Variable\]
+
+```{r}
+groups <- group_by(cereals, mfr)
+
+summarise(groups, mean_cal = mean(calories))
+```
+
+------------------------------------------------------------------------
+
+.larger\[Option #3: The pipe\]
+
+```{r}
+cereals %>% 
+  group_by(mfr) %>% 
+  summarise(mean_cal = mean(calories))
+```

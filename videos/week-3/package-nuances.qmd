@@ -1,0 +1,107 @@
+---
+title: "The Nuances of R Packages"
+format: revealjs
+---
+
+# Three annoying complications of packages
+
+## Versions
+
+- From time to time, packages get updated
+
+- This is good!
+
+- But, it can mess with your code, which depended on the older version.
+
+- Outside the scope of this class; just be aware.
+
+## Dependencies
+
+- A *dependency* is when one package makes use of another.
+
+- For example, if you create an Rpackage that uses the function `group_by()`,
+your package **depends** on `dplyr`
+
+- Typically these get loaded automatically!
+
+- Occasionally, something goes weird and you need to manually install the
+dependency.
+
+
+## Conflicts
+
+Sometimes, packages choose the same name for their functions.
+
+This is called a *conflict*.
+
+. . .
+
+For example...
+
+```{r}
+#| echo: true
+#| message: true
+#| warning: true
+
+library(tidyverse)
+```
+
+```
+── Attaching packages ──────────────────────────── tidyverse 1.3.0 ──
+✓ ggplot2 3.3.3     ✓ purrr   0.3.4
+✓ tibble  3.1.0     ✓ dplyr   1.0.5
+✓ tidyr   1.1.3     ✓ stringr 1.4.0
+✓ readr   1.4.0     ✓ forcats 0.5.1
+── Conflicts ─────────────────────────────── tidyverse_conflicts() ──
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+```
+
+## Order Matters - Part 1
+
+```{r}
+#| label: conflict-1
+#| message: false
+
+dat <- data.frame(bob = 1:10, joe = 11:20)
+
+library(MASS)
+library(dplyr)
+```
+
+```{r}
+#| error: true
+
+dat %>% 
+  select(bob)
+```
+
+## Order Matters - Part 2
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: detach-packages-for-next-example
+
+detach("package:dplyr", unload = TRUE)
+detach("package:MASS", unload = TRUE)
+```
+
+```{r}
+#| label: conflict-2
+#| message: false
+
+dat <- data.frame(bob = 1:10, joe = 11:20)
+
+library(dplyr)
+library(MASS)
+```
+
+```{r}
+#| error: true
+
+dat %>% 
+  select(bob)
+```
+

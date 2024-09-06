@@ -1,0 +1,127 @@
+---
+title: "An Introduction to the tidyverse & dplyr"
+format: revealjs
+---
+
+# R History lesson
+# What is the `tidyverse`?
+
+## The tidyverse
+
+The `tidyverse` is a collection of packages that follow a (somewhat) consistent philosophy and structure.
+
+The term `base R` is sometimes used as an alternative, to refer to only R's built-in packages.
+
+## A brief history
+
+. . .
+
+**2008:** `plyr` and `ggplot` released as part of **Hadley Wickham**'s doctoral dissertation.
+
+. . .
+
+**2012:** The pipe (`%>%`) is created.  
+
+*(While the pipe itself is not technically tidyverse, the tidyverse is built around its use.)*
+
+. . .
+
+**2014:** `dplyr` released; Wickham hired as Chief Scientist at **RStudio**
+
+. . .
+
+<!-- Add when native pipe was added -->
+
+**Today:** A paid team of 20-ish developers maintains a huge number of packages.  (https://www.tidyverse.org/)
+
+
+## The Philosophy of the tidyverse
+
+- Keep functions as simple as possible 
+  * Each function should do one thing well 
+
+. . .
+
+- Function names should be verbs
+  * When many functions use the same verb, focus on noun (ggplot2)
+  * Favor explicit, lengthy names, over short, implicit, names
+
+. . .
+
+- Build **pipe-friendly** functions
+
+##
+
+> Programs must be written for people to read, and only incidentally for 
+> machines to execute.
+>
+> — Hal Abelson
+
+</br>
+
+```{r}
+#| eval: false
+
+penguins %>%
+  filter(species == "Adelie")
+```
+
+```{r}
+#| eval: false
+
+penguins[penguins$species == "Adelie",]
+```
+
+## The tidyverse: Pros 
+
+* Fairly consistent behavior of functions
+
+    + Predictable **input** and **output** types
+    + *"opinionated"*
+    + More on this later
+    
+. . .
+
+* Semi-guaranteed maintenance of packages (because RStudio pays developers!)
+
+. . .
+
+* More available and polished documentation and tutorials
+
+. . .
+
+* Welcoming community
+
+
+## The tidyverse: Cons
+
+::: {.incremental}
+* Sometimes less flexible for complex tasks
+
+* Generally slower, especially on big data
+
+* Updates frequently -> sometimes this makes your old code unrunnable.
+
+* Some people object to **RStudio**'s strong influence over an open-source community.
+:::
+
+
+## Should you use the tidyverse???
+
+. . .
+
+Even the most die-hard tidyverse fanatics use base R and other packages quite frequently.
+
+. . .
+
+Above all, the best code approach is the one you enjoy the most and that gets the job done!
+
+. . .
+
+
+In this class, you must demonstrate an understanding of the packages we have 
+learned. 
+
+. . .
+
+However, after this class you are free to use whatever package(s) you want!

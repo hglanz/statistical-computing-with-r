@@ -1,0 +1,48 @@
+---
+title: "Extending the pipe"
+format: revealjs
+execute: 
+  eval: false
+---
+
+```{r, echo = FALSE, message = FALSE}
+library(tidyverse)
+library(flair)
+
+cereals <- read_csv("cereals.csv") |> 
+  mutate(type = as_factor(type), 
+         mfr = as_factor(mfr)) |> 
+  rename(temp = type)
+```
+
+class: inverse
+
+.larger\[You can use the pipe for so much more!\]
+
+------------------------------------------------------------------------
+
+.larger\[Plotting: The pipe is your friend\]
+
+Want a histogram of the calories for just *cold* cereals? Pipe it through `filter()` first!
+
+------------------------------------------------------------------------
+
+```{r pipe, eval = FALSE, echo = FALSE}
+cereals |>
+  filter(temp == "C") |>
+  ggplot(aes(x = calories)) +
+    geom_histogram(binwidth = 17)
+```
+
+```{r, echo = FALSE}
+decorate("pipe", message = FALSE, eval = FALSE) |> 
+  flair(pattern = "|>") |> 
+  flair(pattern = "+")
+```
+
+```{r, echo = FALSE, out.width = "35%", fig.align='center'}
+cereals |>
+  filter(temp == "C") |>
+  ggplot(aes(x = calories)) +
+    geom_histogram(binwidth = 17)
+```

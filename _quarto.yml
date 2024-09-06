@@ -4,6 +4,7 @@ project:
   render: 
     - "*.qmd"
     - "!/labs/student/"
+    - "!/videos/week-3/"
 
 website:
   page-navigation: true
