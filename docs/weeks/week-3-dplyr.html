@@ -63,6 +63,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../weeks/week-4.qmd" rel="next">
+<link href="../weeks/week-2-projects-data-import.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -114,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Wrangling with dplyr</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-0-discord.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week-3-dplyr.html">Week 3 - dplyr</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -133,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-331-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
-    <a href="https://posit.cloud/" title="" class="quarto-navigation-tool px-1" aria-label="Posit Cloud"><i class="bi bi-cloud-fill"></i></a>
+    <a href="https://posit.cloud/spaces/546280/join?access_code=N-bhlJ_sTPDIaalm5SqgEzb9DnAcr67mFzQ0YcYT" title="" class="quarto-navigation-tool px-1" aria-label="Posit Cloud"><i class="bi bi-cloud-fill"></i></a>
     <a href="https://canvas.calpoly.edu" title="Cal Poly Canvas" class="quarto-navigation-tool px-1" aria-label="Cal Poly Canvas"><i class="bi bi-person-fill"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -200,47 +202,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">Weekly materials</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-0-discord.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 0, Course Set-up</span></a>
+ <span class="menu-text">Week 0 - Course Set-up</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-1-r-rstudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 1, Part 1</span></a>
+ <span class="menu-text">Week 1, Part 1 - R &amp; RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-1-quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 1, Part 2</span></a>
+ <span class="menu-text">Week 1, Part 2 - Quarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-1-version-control.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 1, Part 3</span></a>
+ <span class="menu-text">Week 1, Part 3 - Version Control</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-2-ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 2, Part 1</span></a>
+ <span class="menu-text">Week 2, Part 1 - ggplot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-2-projects-data-import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 2, Part 2</span></a>
+ <span class="menu-text">Week 2, Part 2 - Data Import</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-3-dplyr.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Week 3 - dplyr</span></a>
   </div>
 </li>
       </ul>
@@ -299,7 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-0-discord.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week-3-dplyr.html">Week 3 - dplyr</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Data Wrangling with dplyr</h1>
 </div>
@@ -338,12 +346,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Use <code>group_by()</code> to perform groupwise operations</p></li>
 <li><p>Use the pipe operator (<code>|&gt;</code> or <code>|&gt;</code>) to chain together data wrangling operations</p></li>
 </ul>
-<!-- Update with totals from videos -->
-<section id="watch-videos-14-minutes" class="level4">
-<h4 class="anchored" data-anchor-id="watch-videos-14-minutes">▶️ Watch Videos: 14 minutes</h4>
+<section id="watch-videos-60-minutes" class="level4">
+<h4 class="anchored" data-anchor-id="watch-videos-60-minutes">▶️ Watch Videos: 60 minutes</h4>
 </section>
-<section id="readings-60-75-minutes" class="level4">
-<h4 class="anchored" data-anchor-id="readings-60-75-minutes">📖 Readings: 60-75 minutes</h4>
+<section id="readings-60-minutes" class="level4">
+<h4 class="anchored" data-anchor-id="readings-60-minutes">📖 Readings: 60 minutes</h4>
 </section>
 <section id="activities-30-45-minutes" class="level4">
 <h4 class="anchored" data-anchor-id="activities-30-45-minutes">💻 Activities: 30-45 minutes</h4>
@@ -447,7 +454,7 @@ Removing messages from your HTML file
 </section>
 <section id="check-in-3.2-data-wrangling" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="check-in-3.2-data-wrangling"><span class="header-section-number">2.5</span> ✅ Check-in 3.2: Data Wrangling</h2>
-<p><strong>Question 1:</strong> Suppose we would like to study how the ratio of penguin body mass to flipper size differs across the species. Arrange the following steps into an order that accomplishes this goal (assuming the steps are connected with a <code>|&gt;</code> or a <code>|&gt;</code>).</p>
+<p><strong>Question 1:</strong> Suppose we would like to study how the ratio of penguin body mass to flipper size differs across the species. Arrange the following steps into an order that accomplishes this goal (assuming the steps are connected with a <code>|&gt;</code> or a <code>%&gt;%</code>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(med_mass_flipper_ratio)</span>
@@ -490,7 +497,6 @@ Try running the code!
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(penguins[penguins<span class="sc">$</span>species <span class="sc">==</span> <span class="st">"Adelie"</span>, ]<span class="sc">$</span>body_mass_g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<!-- Mean of Adelie species body mass!  -->
 <p>For each of the following <code>dplyr</code> pipelines, indicate which of the following is true:</p>
 <ol type="i">
 <li>It returns the exact same thing as the (above) base R code</li>
@@ -553,9 +559,6 @@ Try running the code!
 <p>You can check your answers using the <code>penguins</code> data from the <strong>palmerpenguins</strong> R package!</p>
 </div>
 </div>
-<!-- ## History of the tidyverse -->
-<!-- Edit down video to highlight the history part! -->
-<!-- ▶️ [Required Video: Intro to the tidyverse & dplyr -- 8 minutes](https://youtu.be/jgVi2znoHgg) -->
 
 
 </section>
@@ -1088,6 +1091,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a 2="" href="../weeks/week-2-projects-data-import.html" class="pagination-link  aria-label=" week="" 2,="" part="" -="" data="" import"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 2, Part 2 - Data Import</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../weeks/week-4.qmd" class="pagination-link" aria-label="">
+        <span class="nav-page-text"></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

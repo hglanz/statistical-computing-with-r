@@ -42,11 +42,9 @@ When you are finished with the readings and videos, you should be able to...
 -   Use the pipe operator (`|>` or `|>`) to chain together data wrangling
 operations
 
-<!-- Update with totals from videos -->
+#### `r emo::ji("play button")` Watch Videos: 60 minutes
 
-#### `r emo::ji("play button")` Watch Videos: 14 minutes
-
-#### `r emo::ji("book")` Readings: 60-75 minutes
+#### `r emo::ji("book")` Readings: 60 minutes
 
 #### `r emo::ji("computer")` Activities: 30-45 minutes
 
@@ -166,22 +164,20 @@ d)  `tibble`s create row names
 **Question 1:** Suppose we would like to study how the ratio of penguin body
 mass to flipper size differs across the species. Arrange the following steps
 into an order that accomplishes this goal (assuming the steps are connected with
-a `|>` or a `|>`).
+a `|>` or a `%>%`).
 
 ```{r}
 #| include: false
 
 penguins |>
   mutate(
-    mass_flipper_ratio = body_mass_g/flipper_length_mm
+    mass_flipper_ratio = body_mass_g / flipper_length_mm
   ) |>
   group_by(species) |>
   summarize(
     avg_mass_flipper_ratio = median(mass_flipper_ratio)
   ) |>
   arrange(avg_mass_flipper_ratio)
-
-#cebda
 ```
 
 ```{r}
@@ -216,7 +212,8 @@ mutate(
 ::: callout-tip
 ## Try running the code!
 
-You can check your answers using the `penguins` data from the **palmerpenguins** R package!
+You can check your answers using the `penguins` data from the **palmerpenguins**
+R package!
 :::
 
 **Question 2:**
@@ -226,12 +223,12 @@ Consider the base R code below.
 ```{r}
 #| echo: true
 #| eval: false
+
 mean(penguins[penguins$species == "Adelie", ]$body_mass_g)
 ```
 
-<!-- Mean of Adelie species body mass!  -->
-
-For each of the following `dplyr` pipelines, indicate which of the following is true:
+For each of the following `dplyr` pipelines, indicate which of the following is
+true:
 
 (i) It returns the exact same thing as the (above) base R code
 (ii) It returns the correct information, but the wrong object type
@@ -287,10 +284,6 @@ penguins |>
 ::: callout-tip
 ## Try running the code!
 
-You can check your answers using the `penguins` data from the **palmerpenguins** R package!
+You can check your answers using the `penguins` data from the **palmerpenguins**
+R package!
 :::
-
-<!-- ## History of the tidyverse -->
-
-<!-- Edit down video to highlight the history part! -->
-<!-- `r emo::ji("play button")` [Required Video: Intro to the tidyverse & dplyr -- 8 minutes](https://youtu.be/jgVi2znoHgg) -->
