@@ -1,0 +1,47 @@
+---
+title: "Practice Activity 3 Task Card"
+---
+
+## Dealing with Errors
+
+As you work through this PA, you will encounter some code that does not work as
+you want it to. Don't despair! **Errors** (when R is unable to run your code)
+and **bugs** (when the code doesn't do what you hoped) are a natural part of
+coding. Even the best of the best deal with these problems regularly - learning
+to track down the issue is a skill that you can learn and practice.
+
+**Errors can be sneaky - check results *often*!**
+
+If a chunk of code runs smoothly without giving you an error or warning this
+**does not** necessarily mean it accomplished the desired task.
+
+It is a good habit to check the results of your code **every time** you finish a
+task. In general, I would recommend completing the following tasks
+**every time** you write a code chunk.
+
+-   Include a comment at the beginning of the code chunk that briefly states the
+purpose of the chunk. Comments in the code chunks come after `#` signs. These
+comments will remind later readers---which might be your future self!---what the
+desired output of the code chunk is.
+
+-   If you created a new object, take a look at it! You can inspect the object
+by either clicking its name in your *Environment* tab or by typing its name into
+the console. Make sure it looks about how you expect. **Do not** type code to
+inspect the object in your Quarto file, as that **is not** code that needs to be
+saved!
+
+-   If you created or updated a data frame, make sure your edits did what you
+hoped. Use the *Environment* or the `head()` function to investigate your
+changes.
+
+**Google is your friend!**
+
+<!-- The whole of the internet is at your disposal! Use it early, use it often. -->
+
+<!-- Some tricks: -->
+
+<!-- -   Copy-paste the exact error message into Google. Chances are, somebody else -->
+<!-- had a similar problem and got a similar message. -->
+
+<!-- -   Include package names in your search terms. For example, "bar plot in -->
+<!-- ggplot" is a better search than "bar plot in R". -->
