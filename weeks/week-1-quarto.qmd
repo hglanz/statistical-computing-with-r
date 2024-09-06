@@ -20,7 +20,7 @@ of this week's coursework you will learn how to identify **folders** and
 # Principles of Reproducibility
 
 ::: {.column-margin}
-{{< video https://youtu.be/wiPjz3yf3bA >}}
+{{< video https://youtu.be/86Bz3lE4HGs?si=2Q20CRw9-W4lFJoG >}}
 :::
 
 ## File Management
