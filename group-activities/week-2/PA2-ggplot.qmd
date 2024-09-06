@@ -47,7 +47,8 @@ Remember, your group is expected to adhere to the following norms:
 
 # Getting Set-up
 
-<!-- The partner whose family name starts first alphabetically starts as the Listener (typing and listening to instructions from the Problem Solver)! -->
+The partner whose family name starts first alphabetically starts as the Listener
+(typing and listening to instructions from the Problem Solver)!
 
 ## Step 1: Install the `palmerpenguins` Package
 
