@@ -8,9 +8,9 @@
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.5.57">
 
-  <title>Introduction to Statistical Computing in R - R Projects</title>
+  <title>Introduction to Statistical Computing in R – RStudio Projects</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -41,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -69,7 +69,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -83,7 +83,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -390,42 +390,45 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">R Projects</h1>
+  <h1 class="title">RStudio Projects</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="the-beauty-of-r-projects" class="slide level2">
-<h2>The Beauty of R Projects</h2>
-<ul>
-<li><p>An <strong>R Project</strong> is basically a “flag” planted in a certain directory.</p></li>
-<li><p>When you double click an <strong>.Rproj</strong> file, it:</p></li>
-</ul>
+<section id="the-beauty-of-rstudio-projects" class="slide level2">
+<h2>The Beauty of RStudio Projects</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
+<p>An <strong>RStudio Project</strong> is basically a “flag” planted in a certain directory.</p>
+<p><br></p>
+<div class="fragment">
+<div class="small">
+<p>When you double click an <strong>.Rproj</strong> file, it:</p>
 <ol type="1">
 <li><p>Opens RStudio</p></li>
 <li><p>Sets the working directory to be wherever the .Rproj file lives.</p></li>
-<li><p>Links to GitHub, if set up (more on that later!)</p></li>
+<li><p>Links to GitHub, if setup (more on that later!)</p></li>
 </ol>
+</div>
+</div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../images/project_flag.jpg" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="A picture with two layers. The top image is a moutain peak with a red flag at the top of the peak. The bottom image is a translucent blue cube with an R in the middle (symbolizing an RProject) witht the file name 'stat331.RProj' displayed under the cube."></p>
+<p><img data-src="../images/project_flag.jpg" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="A picture with two layers. The top image is a moutain peak with a red flag at the top of the peak. The bottom image is a translucent blue cube with an R in the middle (symbolizing an RStudio Project) witht the file name 'stat331.RProj' displayed under the cube."></p>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 </section>
-<section id="r-projects-reproducibility" class="slide level2">
-<h2>R Projects &amp; Reproducibility</h2>
+<section id="rstudio-projects-reproducibility" class="slide level2">
+<h2>RStudio Projects &amp; Reproducibility</h2>
 <p>RStudio Projects are great for <strong>reproducibility</strong>!</p>
 <p>You can send anyone your folder with your .Rproj file and they will be able to run your code on their computer!</p>
 </section>
 <section id="principles-of-reproducibility" class="slide level2">
 <h2>Principles of Reproducibility</h2>
 <p>You can to send your project to someone else, and they can jump in and start working right away.</p>
+<div class="fragment">
 <p>This means:</p>
 <ol type="1">
 <li><p>Files are organized and well-named.</p></li>
@@ -434,6 +437,7 @@
 <li><p>Code will run the same every time, even if data values change.</p></li>
 <li><p>Analysis process is well-explained and easy to read.</p></li>
 </ol>
+</div>
 </section>
 <section id="setting-up-an-rstudio-project" class="title-slide slide level1 center">
 <h1>Setting up an RStudio Project</h1>
@@ -442,27 +446,16 @@
 
 <section id="setting-up-an-rstudio-project-1" class="title-slide slide level1 center">
 <h1>Setting up an RStudio Project</h1>
-<p>From an already existing directory (a folder you already have)</p>
-<!-- Create scribe video of making an R Project -->
-
-<img data-src="../images/existing-directory-rproj.png" class="quarto-figure quarto-figure-center r-stretch" alt="A picture of the option you would select when making a new R Project for a folder that already exists on your computer. The image has a manilla folder in the background with a translucent blue cube with an R in the center in the font. The text next to the folder says 'Existing Directory' with a description saying 'Associate a project with an existing working directory'."></section>
+<p><a href="https://scribehow.com/shared/Creating_a_Project_in_an_Existing_Directory__7NTs-4d2RtO1octP6rrBTQ">From an already existing directory (a folder you already have)</a></p>
+<p><img data-src="../images/existing-directory-rproj.png" class="quarto-figure quarto-figure-center" alt="A picture of the option you would select when making a new RStudio Project for a folder that already exists on your computer. The image has a manilla folder in the background with a translucent blue cube with an R in the center in the font. The text next to the folder says 'Existing Directory' with a description saying 'Associate a project with an existing working directory'."> <span class="small">*This is what you’re doing in this week’s coursework!</span></p>
+</section>
 
 <section>
 <section id="setting-up-an-rstudio-project-2" class="title-slide slide level1 center">
 <h1>Setting up an RStudio Project</h1>
 <p>Creating a new directory (a folder you <strong>do not</strong> already have)</p>
-<!-- Create scribe video of making an R Project -->
 
-<img data-src="../images/new-directory-rproj.png" class="quarto-figure quarto-figure-center r-stretch" alt="A picture of the option you would select when making a new R Project for a folder that DOES NOT already exist on your computer. The image has a translucent blue cube with an R. The text next to the cube says 'New Directory' with a description saying 'Start a project in a brand new working directory'."></section>
-<section id="good-practice" class="slide level2">
-<h2>Good practice</h2>
-<ul>
-<li>Organize your folders carefully, and name them meaningfully:
-<ul>
-<li><code>/User/atheobold/Stat331/lab1/</code> rather than <code>Desktop/stuff/</code></li>
-</ul></li>
-<li>Use <strong>R Projects</strong> liberally - put one in the “main” folder for each project</li>
-</ul>
+<img data-src="../images/new-directory-rproj.png" class="quarto-figure quarto-figure-center r-stretch" alt="A picture of the option you would select when making a new RStudio Project for a folder that DOES NOT already exist on your computer. The image has a translucent blue cube with an R. The text next to the cube says 'New Directory' with a description saying 'Start a project in a brand new working directory'."><p><span class="small">*This is what you do when you copy the Lab assignment each week!</span></p>
 </section>
 <section id="bad-practice" class="slide level2">
 <h2>Bad practice</h2>
@@ -470,15 +463,32 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"/User/reginageorge/Desktop/R_Class/Lab_1/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="fragment">
+<p><br></p>
 <ul>
 <li><p>Setting working directory by hand = BAD!</p></li>
 <li><p>That directory is specific to you!</p></li>
 <li><p>Quarto will ignore this code when rendering!</p></li>
 </ul>
+</div>
+</section>
+<section id="good-practice" class="slide level2">
+<h2>Good practice</h2>
+<p>Use the <strong>here</strong> package to load in your data!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"Lab2"</span>,</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"data"</span>, </span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"rodents.csv"</span>)</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>         )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><br></p>
+<p>This path is <em>relative</em> to where your RStudio Project lives, which can be reproduced if you send your project to someone else.</p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </div>
 </section></section>
@@ -762,18 +772,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -805,7 +804,47 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/atheobold\.github\.io\/stat-331-website");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -842,7 +881,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

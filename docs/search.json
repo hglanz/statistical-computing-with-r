@@ -1381,7 +1381,7 @@
     "href": "videos/week-2/r-projects.html#the-beauty-of-r-projects",
     "title": "R Projects",
     "section": "The Beauty of R Projects",
-    "text": "The Beauty of R Projects\n\nAn R Project is basically a “flag” planted in a certain directory.\nWhen you double click an .Rproj file, it:\n\n\n\n\nOpens RStudio\nSets the working directory to be wherever the .Rproj file lives.\nLinks to GitHub, if set up (more on that later!)"
+    "text": "The Beauty of R Projects\n\n\nAn R Project is basically a “flag” planted in a certain directory.\n\n\n\nWhen you double click an .Rproj file, it:\n\nOpens RStudio\nSets the working directory to be wherever the .Rproj file lives.\nLinks to GitHub, if setup (more on that later!)"
   },
   {
     "objectID": "videos/week-2/r-projects.html#r-projects-reproducibility",
@@ -1393,23 +1393,23 @@
   {
     "objectID": "videos/week-2/r-projects.html#principles-of-reproducibility",
     "href": "videos/week-2/r-projects.html#principles-of-reproducibility",
-    "title": "R Projects",
+    "title": "RStudio Projects",
     "section": "Principles of Reproducibility",
-    "text": "Principles of Reproducibility\nYou can to send your project to someone else, and they can jump in and start working right away.\nThis means:\n\nFiles are organized and well-named.\nReferences to data and code work for everyone.\nPackage dependency is clear.\nCode will run the same every time, even if data values change.\nAnalysis process is well-explained and easy to read."
+    "text": "Principles of Reproducibility\nYou can to send your project to someone else, and they can jump in and start working right away.\n\nThis means:\n\nFiles are organized and well-named.\nReferences to data and code work for everyone.\nPackage dependency is clear.\nCode will run the same every time, even if data values change.\nAnalysis process is well-explained and easy to read."
   },
   {
     "objectID": "videos/week-2/r-projects.html#good-practice",
     "href": "videos/week-2/r-projects.html#good-practice",
-    "title": "R Projects",
+    "title": "RStudio Projects",
     "section": "Good practice",
-    "text": "Good practice\n\nOrganize your folders carefully, and name them meaningfully:\n\n/User/atheobold/Stat331/lab1/ rather than Desktop/stuff/\n\nUse R Projects liberally - put one in the “main” folder for each project"
+    "text": "Good practice\nUse the here package to load in your data!\n\nread_csv(here::here(\"Lab2\",\n                    \"data\", \n                    \"rodents.csv\")\n         )\n\n\n\nThis path is relative to where your RStudio Project lives, which can be reproduced if you send your project to someone else."
   },
   {
     "objectID": "videos/week-2/r-projects.html#bad-practice",
     "href": "videos/week-2/r-projects.html#bad-practice",
-    "title": "R Projects",
+    "title": "RStudio Projects",
     "section": "Bad practice",
-    "text": "Bad practice\nIf you put something like this at the top of your .qmd file, I will set your computer on fire:\n\nsetwd(\"/User/reginageorge/Desktop/R_Class/Lab_1/\")\n\n\nSetting working directory by hand = BAD!\nThat directory is specific to you!\nQuarto will ignore this code when rendering!"
+    "text": "Bad practice\nIf you put something like this at the top of your .qmd file, I will set your computer on fire:\n\nsetwd(\"/User/reginageorge/Desktop/R_Class/Lab_1/\")\n\n\n\n\nSetting working directory by hand = BAD!\nThat directory is specific to you!\nQuarto will ignore this code when rendering!"
   },
   {
     "objectID": "weeks/week-1-quarto.html",
@@ -3341,5 +3341,19 @@
     "title": "The Nuances of R Packages",
     "section": "",
     "text": "dat &lt;- data.frame(bob = 1:10, joe = 11:20)\n\nlibrary(dplyr)\nlibrary(MASS)\n\n\ndat %&gt;% \n  select(bob)\n\nError in select(., bob): unused argument (bob)"
+  },
+  {
+    "objectID": "videos/week-2/r-projects.html#the-beauty-of-rstudio-projects",
+    "href": "videos/week-2/r-projects.html#the-beauty-of-rstudio-projects",
+    "title": "RStudio Projects",
+    "section": "The Beauty of RStudio Projects",
+    "text": "The Beauty of RStudio Projects\n\n\nAn RStudio Project is basically a “flag” planted in a certain directory.\n\n\n\nWhen you double click an .Rproj file, it:\n\nOpens RStudio\nSets the working directory to be wherever the .Rproj file lives.\nLinks to GitHub, if setup (more on that later!)"
+  },
+  {
+    "objectID": "videos/week-2/r-projects.html#rstudio-projects-reproducibility",
+    "href": "videos/week-2/r-projects.html#rstudio-projects-reproducibility",
+    "title": "RStudio Projects",
+    "section": "RStudio Projects & Reproducibility",
+    "text": "RStudio Projects & Reproducibility\nRStudio Projects are great for reproducibility!\nYou can send anyone your folder with your .Rproj file and they will be able to run your code on their computer!"
   }
 ]
