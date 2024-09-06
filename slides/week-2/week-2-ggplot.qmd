@@ -1037,7 +1037,12 @@ ggplot(data = mpg,
 <!-- Be sure to update with new Posit Cloud assignment link! -->
 
 ![Artwork by Allison Horst](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)
+## Pair Programming Collaborations
 
+<!-- Add blurb about roles  -->
+<!-- Add reminder about multiple abilities -->
+
+<!-- Add blurb about cheatsheet -->
 
 ## To do...
 
