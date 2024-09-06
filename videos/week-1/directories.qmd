@@ -110,11 +110,11 @@ in a series of organized folders (`STAT 331/videos/week-1`).
 ## File Management Check-in
 
 ::: {.incremental}
-- Your `STAT 331` folder should live in your **Documents**.
+- Your `STAT331` folder should live in your **Documents**.
 
-- It should have a `Week 1` sub-folder. 
+- It should have a `Week1` sub-folder. 
 
-- Inside the `Week 1` folder, there should be a `Lab 1` sub-folder. 
+- Inside the `Week1` folder, there should be a `Lab1` sub-folder. 
 :::
 . . .
 
