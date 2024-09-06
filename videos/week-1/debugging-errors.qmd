@@ -189,7 +189,7 @@ my_new_vec <- as.integer(my_vec)
 :::
 
 ::: {.column width="45%"}
-::: {.fragment}
+::: fragment
 **Does this look right?**
 
 ```{r}
@@ -308,8 +308,10 @@ It *probably* means...
 #| error: true
 #| code-line-numbers: false
 
-matrix(c("a", "b", "c", "d"), 
-       num_row = 2)
+matrix(
+  c("a", "b", "c", "d"), 
+  num_row = 2
+  )
 ```
 
 . . .
@@ -318,8 +320,7 @@ matrix(c("a", "b", "c", "d"),
 
 The documentation says...
 
-```
+```         
 matrix(data = NA, nrow = 1, ncol = 1, byrow = FALSE,
        dimnames = NULL)
 ```
-

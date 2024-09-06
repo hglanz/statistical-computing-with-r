@@ -241,6 +241,11 @@ programming language, including
 - data types (e.g., numeric, integer, double, character) 
 - R's package system
 :::
+
+## Debugging R Code
+
+### 📽️ [Required Video: Debugging R Code](https://youtu.be/aqNsoILPszA?si=WQtJzG_LJgrumJOT)
+
 ------------------------------------------------------------------------
 
 # Introduction to RStudio

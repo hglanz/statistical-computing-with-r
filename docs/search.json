@@ -153,7 +153,7 @@
     "text": "For the first portion of this week’s coursework, we are going to learn about / refresh our memory on R and RStudio. This course is all about you learning skills for working with data in R, so you will need to have local installations of both R and RStudio on your computer.",
     "crumbs": [
       "Weekly materials",
-      "Week 1, Part 1"
+      "Week 1, Part 1 - R & RStudio"
     ]
   },
   {
@@ -164,7 +164,7 @@
     "text": "1.1 Updating Your Version of R\nIf you already have R downloaded, you need to confirm that you have the most up to date version of R. Do not ignore these instructions. If you neglect to update your version of R, you may find that updating a package will make it so your code will not run.\n\nStep 1: Open RStudio\nStep 2: At the top of the the Console it will say what version of R you are using\n\n{fig-alt = “A screenshot of what version of R should appear when you open RStudio. The version reads ‘R version 4.4.1 (2024-06-14) – ’Race for Your Life’.”}\nIf the version is not 4.4.1 (like the image above), you need to update your version of R! The simplest way to do this is to follow the instructions below to install R.",
     "crumbs": [
       "Weekly materials",
-      "Week 1, Part 1"
+      "Week 1, Part 1 - R & RStudio"
     ]
   },
   {
@@ -175,7 +175,7 @@
     "text": "1.2 Installing R\nDownload and install R by going to https://cloud.r-project.org/. Here, you will find three options for installing R—click on the option for your computer’s operating system.\n\n\n\n\nIf you are a Windows user:\n\nClick on “Download R for Windows”\nClick on “base”\nClick on the Download link.\nWhen you open the execution file (.exe) you will be prompted with a variety of questions about installing R. Feel free to use the default features / settings that come with R (continue to click “Ok” until the download starts).\n\n\n\n\n\n\n\nMultiple Versions of R\n\n\n\nBeware that if you had a previous version of R downloaded on your PC, that old version will not be deleted when you download the most recent version of R. We do not want to have two versions of R installed, as your computer can get confused what version of R to use. So, you need to remove the old version of R.\nTo do this you need to:\n\nNavigate to your computer’s settings\nClick on the “Apps” option on the left-hand panel\nSearch for or scroll down to R\nFind the older version of R\n\n\n\nClick on the ... on the right side\nSelect “Uninstall”\n\n\n\n\n\n\nIf you are macOS user:\n\nClick on “Download R for (Mac) OS X”\nUnder “Latest release:” click on R-X.X.X.pkg, where R-X.X.X is the version number. For example, the latest version of R as of July 1, 2024 was R-4.4.1 (Race for Your Life).\nWhen installing, use the default features / settings that come with R (click Ok until the download starts).\n\n\n\n\n\n\n\nTroubleshooting for Macs\n\n\n\nFirst, identify which version of OSx you are running. How-to\nNext, find out which version of R your computer can run. Link\nIf this version is 3.6 or later, download the latest version that your computer can handle.\nIf this version is 3.4 or earlier, you’re going to run in to some trouble. I recommend updating your version of OSx, if you are willing. If you can’t, then you can use Posit Cloud to run R and RStudio on a free server. However, I recommend strongly against this option; your files will not be saved indefinitely, you will have limited hours to complete your work, your computing power will be limited, and you will need an internet connection at all times to do your work.\n\n\n\n\nIf you are a Linux user:\nClick on “Download R for Linux” and choose your distribution for more information on installing R for your setup.",
     "crumbs": [
       "Weekly materials",
-      "Week 1, Part 1"
+      "Week 1, Part 1 - R & RStudio"
     ]
   },
   {
@@ -186,7 +186,7 @@
     "text": "2.1 Updating Your Version of RStudio\nIf you already have RStudio, you need to double check if you have the most recent version. You will not have access to the newest features for Quarto documents unless you have the most recent version of RStudio.\n\nStep 1: Open RStudio\nStep 2: Click on “Help” in the upper menu\nStep 3: Click on “Check for Updates”\n\nIf there are no updates to RStudio since you installed it, you are good to go! If you need to update RStudio, you will be sent to Posit (the parent company) to download the most recent version of RStudio desktop.",
     "crumbs": [
       "Weekly materials",
-      "Week 1, Part 1"
+      "Week 1, Part 1 - R & RStudio"
     ]
   },
   {
@@ -197,7 +197,7 @@
     "text": "2.2 Installing RStudio\n\n\n\n\nDownloading the most recent version of RStudio works the same way regardless of whether you’ve never downloaded RStudio before or if you just need to update your version of RStudio.\nWhen you navigate to the RStudio download page (https://rstudio.com/products/rstudio/download/), the website should automatically detect your computer’s operating system. So, you should be able to simply click the blue “Download RStudio Desktop for [insert operating system here]” button.\nClicking the button will begin installing RStudio. Once the download has completed, you will need to open the application file (on a Mac this is a .dmg file, on Windows this is an exe file).",
     "crumbs": [
       "Weekly materials",
-      "Week 1, Part 1"
+      "Week 1, Part 1 - R & RStudio"
     ]
   },
   {
@@ -1374,7 +1374,7 @@
     "href": "videos/week-1/debugging-errors.html#try-it",
     "title": "Debugging Errors!",
     "section": "Try it…",
-    "text": "Try it…\nWhat’s wrong here?\n\nmatrix(c(\"a\", \"b\", \"c\", \"d\"), \n       num_row = 2)\n\nError in matrix(c(\"a\", \"b\", \"c\", \"d\"), num_row = 2): unused argument (num_row = 2)\n\n\n\n\nThe documentation says…\nmatrix(data = NA, nrow = 1, ncol = 1, byrow = FALSE,\n       dimnames = NULL)"
+    "text": "Try it…\nWhat’s wrong here?\n\nmatrix(\n  c(\"a\", \"b\", \"c\", \"d\"), \n  num_row = 2\n  )\n\nError in matrix(c(\"a\", \"b\", \"c\", \"d\"), num_row = 2): unused argument (num_row = 2)\n\n\n\n\nThe documentation says…\nmatrix(data = NA, nrow = 1, ncol = 1, byrow = FALSE,\n       dimnames = NULL)"
   },
   {
     "objectID": "videos/week-2/r-projects.html#the-beauty-of-r-projects",
@@ -2640,28 +2640,44 @@
     "href": "weeks/week-3-dplyr.html",
     "title": "Data Wrangling with dplyr",
     "section": "",
-    "text": "When you are finished with the readings and videos, you should be able to…\n\nDescribe to someone what a function conflict is\nDescribe to someone the similarities and differences between a list, a data.frame, and a tibble\nIdentify the structure of an object\nIdentify the data type(s) of an object\nDescribe to someone what the tidyverse is\nUse the five main dplyr verbs:\n\nfilter()\narrange()\nselect()\nmutate()\nsummarize()\n\nUse group_by() to perform groupwise operations\nUse the pipe operator (|&gt; or |&gt;) to chain together data wrangling operations"
+    "text": "When you are finished with the readings and videos, you should be able to…\n\nDescribe to someone what a function conflict is\nDescribe to someone the similarities and differences between a list, a data.frame, and a tibble\nIdentify the structure of an object\nIdentify the data type(s) of an object\nDescribe to someone what the tidyverse is\nUse the five main dplyr verbs:\n\nfilter()\narrange()\nselect()\nmutate()\nsummarize()\n\nUse group_by() to perform groupwise operations\nUse the pipe operator (|&gt; or |&gt;) to chain together data wrangling operations",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3 - dplyr"
+    ]
   },
   {
     "objectID": "weeks/week-3-dplyr.html#learning-targets",
     "href": "weeks/week-3-dplyr.html#learning-targets",
     "title": "Data Wrangling with dplyr",
     "section": "",
-    "text": "When you are finished with the readings and videos, you should be able to…\n\nDescribe to someone what a function conflict is\nDescribe to someone the similarities and differences between a list, a data.frame, and a tibble\nIdentify the structure of an object\nIdentify the data type(s) of an object\nDescribe to someone what the tidyverse is\nUse the five main dplyr verbs:\n\nfilter()\narrange()\nselect()\nmutate()\nsummarize()\n\nUse group_by() to perform groupwise operations\nUse the pipe operator (|&gt; or |&gt;) to chain together data wrangling operations"
+    "text": "When you are finished with the readings and videos, you should be able to…\n\nDescribe to someone what a function conflict is\nDescribe to someone the similarities and differences between a list, a data.frame, and a tibble\nIdentify the structure of an object\nIdentify the data type(s) of an object\nDescribe to someone what the tidyverse is\nUse the five main dplyr verbs:\n\nfilter()\narrange()\nselect()\nmutate()\nsummarize()\n\nUse group_by() to perform groupwise operations\nUse the pipe operator (|&gt; or |&gt;) to chain together data wrangling operations",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3 - dplyr"
+    ]
   },
   {
     "objectID": "weeks/week-3-dplyr.html#learning-more-about-packages-in-r",
     "href": "weeks/week-3-dplyr.html#learning-more-about-packages-in-r",
     "title": "Data Wrangling with dplyr",
     "section": "1.1 Learning More About Packages in R",
-    "text": "1.1 Learning More About Packages in R\n▶️ Required Video: Why do I get this message when I load the tidyverse? – 8 minutes\n\n\n\n\n\n\nRemoving messages from your HTML file\n\n\n\nTo remove the package loading / data loading messages, you have two options:\n\nGlobally turn off all messages by specifying message: false as an execute option in your YAML\nLocally turn off messages for a specific code chunk by specifying #| message: false as a code chunk option"
+    "text": "1.1 Learning More About Packages in R\n▶️ Required Video: Why do I get this message when I load the tidyverse? – 8 minutes\n\n\n\n\n\n\nRemoving messages from your HTML file\n\n\n\nTo remove the package loading / data loading messages, you have two options:\n\nGlobally turn off all messages by specifying message: false as an execute option in your YAML\nLocally turn off messages for a specific code chunk by specifying #| message: false as a code chunk option",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3 - dplyr"
+    ]
   },
   {
     "objectID": "weeks/week-3-dplyr.html#learning-more-about-data-types-objects-in-r",
     "href": "weeks/week-3-dplyr.html#learning-more-about-data-types-objects-in-r",
     "title": "Data Wrangling with dplyr",
     "section": "1.2 Learning More about Data Types & Objects in R",
-    "text": "1.2 Learning More about Data Types & Objects in R\nChoose one of these two options:\n\n\n▶️ Watch a Video: Data Types in R\n\n📖 Read a Textbook: Data Types in R\n\n\nIn addition, read the following section from the first edition of R for DS:\n📖 Required Reading: Tibbles"
+    "text": "1.2 Learning More about Data Types & Objects in R\nChoose one of these two options:\n\n\n▶️ Watch a Video: Data Types in R\n\n📖 Read a Textbook: Data Types in R\n\n\nIn addition, read the following section from the first edition of R for DS:\n📖 Required Reading: Tibbles",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3 - dplyr"
+    ]
   },
   {
     "objectID": "weeks/week-3-dplyr.html#preview-activity-6-data-structures",
@@ -2675,28 +2691,44 @@
     "href": "weeks/week-3-dplyr.html#introduction-to-dplyr",
     "title": "Data Wrangling with dplyr",
     "section": "2.1 Introduction to dplyr",
-    "text": "2.1 Introduction to dplyr\n📖 Required Reading: Data Transformation"
+    "text": "2.1 Introduction to dplyr\n📖 Required Reading: Data Transformation",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3 - dplyr"
+    ]
   },
   {
     "objectID": "weeks/week-3-dplyr.html#dplyr-verbs",
     "href": "weeks/week-3-dplyr.html#dplyr-verbs",
     "title": "Data Wrangling with dplyr",
     "section": "2.2 dplyr Verbs",
-    "text": "2.2 dplyr Verbs\n\n\n▶️ Required Video: filter() – 11 minutes\n▶️ Required Video: select() – 6 minutes\n▶️ Required Video: mutate() – 9 minutes\n \n▶️ Required Video: arrange() – 7 minutes\n▶️ Required Video: summarize()– 8 minutes\n▶️ Required Video: group_by() – 6 minutes"
+    "text": "2.2 dplyr Verbs\n\n\n▶️ Required Video: filter() – 11 minutes\n▶️ Required Video: select() – 6 minutes\n▶️ Required Video: mutate() – 9 minutes\n \n▶️ Required Video: arrange() – 7 minutes\n▶️ Required Video: summarize()– 8 minutes\n▶️ Required Video: group_by() – 6 minutes",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3 - dplyr"
+    ]
   },
   {
     "objectID": "weeks/week-3-dplyr.html#the-pipe-operator",
     "href": "weeks/week-3-dplyr.html#the-pipe-operator",
     "title": "Data Wrangling with dplyr",
     "section": "2.3 The Pipe Operator",
-    "text": "2.3 The Pipe Operator\n▶️ Required Video: The pipe operator – 8 minutes\n▶️ Required Video: Extending the pipe – 3 minutes"
+    "text": "2.3 The Pipe Operator\n▶️ Required Video: The pipe operator – 8 minutes\n▶️ Required Video: Extending the pipe – 3 minutes",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3 - dplyr"
+    ]
   },
   {
     "objectID": "weeks/week-3-dplyr.html#practice",
     "href": "weeks/week-3-dplyr.html#practice",
     "title": "Data Wrangling with dplyr",
     "section": "2.4 Practice",
-    "text": "2.4 Practice\n💻 Required Tutorial: Practice with dplyr"
+    "text": "2.4 Practice\n💻 Required Tutorial: Practice with dplyr",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3 - dplyr"
+    ]
   },
   {
     "objectID": "labs/instructions/lab-3-instructions.html",
@@ -3200,14 +3232,22 @@
     "href": "weeks/week-3-dplyr.html#check-in-3.1-data-structures",
     "title": "Data Wrangling with dplyr",
     "section": "1.3 ✅ Check-in 3.1: Data Structures",
-    "text": "1.3 ✅ Check-in 3.1: Data Structures\nQuestion 1\nIn essence, a data.frame is simply a special list - with a few extra restrictions on the list format.\nThink about the datasets you have already worked with. Which of the following restrictions on a list do you think are needed for the list to be a data.frame? (Select all that apply)\n\nThe elements of the list must all be vectors of the same length.\nThe elements of the list must all be the same data type.\nThe elements of the list must all have no missing values.\nThe elements of the list must all have names.\n\nQuestion 2\nTibbles are described as “opinionated” dataframes. Which of the following are true about a tibble’s behavior? (Select all that apply)\n\ntibbles only print the first 10 rows of a dataset\ntibbles allow for non-syntactic variable names, like :)\ntibbles never convert strings to factors\ntibbles create row names"
+    "text": "1.3 ✅ Check-in 3.1: Data Structures\nQuestion 1\nIn essence, a data.frame is simply a special list - with a few extra restrictions on the list format.\nThink about the datasets you have already worked with. Which of the following restrictions on a list do you think are needed for the list to be a data.frame? (Select all that apply)\n\nThe elements of the list must all be vectors of the same length.\nThe elements of the list must all be the same data type.\nThe elements of the list must all have no missing values.\nThe elements of the list must all have names.\n\nQuestion 2\nTibbles are described as “opinionated” dataframes. Which of the following are true about a tibble’s behavior? (Select all that apply)\n\ntibbles only print the first 10 rows of a dataset\ntibbles allow for non-syntactic variable names, like :)\ntibbles never convert strings to factors\ntibbles create row names",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3 - dplyr"
+    ]
   },
   {
     "objectID": "weeks/week-3-dplyr.html#check-in-3.2-data-wrangling",
     "href": "weeks/week-3-dplyr.html#check-in-3.2-data-wrangling",
     "title": "Data Wrangling with dplyr",
     "section": "2.5 ✅ Check-in 3.2: Data Wrangling",
-    "text": "2.5 ✅ Check-in 3.2: Data Wrangling\nQuestion 1: Suppose we would like to study how the ratio of penguin body mass to flipper size differs across the species. Arrange the following steps into an order that accomplishes this goal (assuming the steps are connected with a |&gt; or a |&gt;).\n\n# a\narrange(med_mass_flipper_ratio)\n\n\n# b\ngroup_by(species)\n\n\n# c\npenguins \n  \n\n# d\nsummarize(\n  med_mass_flipper_ratio = median(mass_flipper_ratio)\n)\n\n  \n# e\nmutate(\n  mass_flipper_ratio = body_mass_g / flipper_length_mm\n)\n\n\n\n\n\n\n\nTry running the code!\n\n\n\nYou can check your answers using the penguins data from the palmerpenguins R package!\n\n\nQuestion 2:\nConsider the base R code below.\n\nmean(penguins[penguins$species == \"Adelie\", ]$body_mass_g)\n\n\nFor each of the following dplyr pipelines, indicate which of the following is true:\n\nIt returns the exact same thing as the (above) base R code\nIt returns the correct information, but the wrong object type\nIt returns incorrect information\nIt returns an error\n\n\n# Part a\npenguins |&gt;\n  filter(\"body_mass_g\") |&gt;\n  pull(\"Adelie\") |&gt;\n  mean()\n\n\n# Part b\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  select(body_mass_g) |&gt;\n  summarize(mean(body_mass_g))\n\n\n# Part c\npenguins |&gt;\n  pull(body_mass_g) |&gt;\n  filter(species == \"Adelie\") |&gt;\n  mean()\n\n\n# Part d\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  select(body_mass_g) |&gt;\n  mean()\n\n\n# Part e\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  pull(body_mass_g) |&gt;\n  mean()\n\n\n# Part f\npenguins |&gt;\n  select(species == \"Adelie\") |&gt;\n  filter(body_mass_g) |&gt;\n  summarize(mean(body_mass_g))\n\n\n\n\n\n\n\nTry running the code!\n\n\n\nYou can check your answers using the penguins data from the palmerpenguins R package!"
+    "text": "2.5 ✅ Check-in 3.2: Data Wrangling\nQuestion 1: Suppose we would like to study how the ratio of penguin body mass to flipper size differs across the species. Arrange the following steps into an order that accomplishes this goal (assuming the steps are connected with a |&gt; or a %&gt;%).\n\n# a\narrange(med_mass_flipper_ratio)\n\n\n# b\ngroup_by(species)\n\n\n# c\npenguins \n  \n\n# d\nsummarize(\n  med_mass_flipper_ratio = median(mass_flipper_ratio)\n)\n\n  \n# e\nmutate(\n  mass_flipper_ratio = body_mass_g / flipper_length_mm\n)\n\n\n\n\n\n\n\nTry running the code!\n\n\n\nYou can check your answers using the penguins data from the palmerpenguins R package!\n\n\nQuestion 2:\nConsider the base R code below.\n\nmean(penguins[penguins$species == \"Adelie\", ]$body_mass_g)\n\n\nFor each of the following dplyr pipelines, indicate which of the following is true:\n\nIt returns the exact same thing as the (above) base R code\nIt returns the correct information, but the wrong object type\nIt returns incorrect information\nIt returns an error\n\n\n# Part a\npenguins |&gt;\n  filter(\"body_mass_g\") |&gt;\n  pull(\"Adelie\") |&gt;\n  mean()\n\n\n# Part b\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  select(body_mass_g) |&gt;\n  summarize(mean(body_mass_g))\n\n\n# Part c\npenguins |&gt;\n  pull(body_mass_g) |&gt;\n  filter(species == \"Adelie\") |&gt;\n  mean()\n\n\n# Part d\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  select(body_mass_g) |&gt;\n  mean()\n\n\n# Part e\npenguins |&gt;\n  filter(species == \"Adelie\") |&gt;\n  pull(body_mass_g) |&gt;\n  mean()\n\n\n# Part f\npenguins |&gt;\n  select(species == \"Adelie\") |&gt;\n  filter(body_mass_g) |&gt;\n  summarize(mean(body_mass_g))\n\n\n\n\n\n\n\nTry running the code!\n\n\n\nYou can check your answers using the penguins data from the palmerpenguins R package!",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3 - dplyr"
+    ]
   },
   {
     "objectID": "videos/week-3/history-of-tidyverse.html#the-tidyverse",
@@ -3369,5 +3409,16 @@
     "title": "Debugging Errors!",
     "section": "Are you using the right function name?",
     "text": "Are you using the right function name?\n\nsequence(from = 1, to = 10, by = 1)\n\nsequence(from = 1, to = 10, by = 1)\n\nError in sequence.default(from = 1, to = 10, by = 1): argument \"nvec\" is missing, with no default\n\n\n\n\n\nseq(from = 1, to = 10, by = 1)\n\n [1]  1  2  3  4  5  6  7  8  9 10"
+  },
+  {
+    "objectID": "weeks/week-1-r-rstudio.html#debugging-r-code",
+    "href": "weeks/week-1-r-rstudio.html#debugging-r-code",
+    "title": "Week 1, Part 1: R & RStudio",
+    "section": "4.1 Debugging R Code",
+    "text": "4.1 Debugging R Code\n\n📽️ Required Video: Debugging R Code",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1, Part 1 - R & RStudio"
+    ]
   }
 ]
