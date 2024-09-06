@@ -1,6 +1,14 @@
 ---
-title: "Practice Activity 3 Task Card"
+title: "PA 3 Task Card -- Finding Margaret's College"
 ---
+
+Today you will use the `dplyr` package to clean some data. We will then use that
+cleaned data to figure out what college Margaret has been accepted to.
+
+***This task is complex. It requires many different types of abilities. Everyone
+will be good at some of these abilities but nobody will be good at all of them. 
+In order to produce the best product possible, you will need to use the skills
+of each member of your group.***
 
 ## Dealing with Errors
 
@@ -12,36 +20,49 @@ to track down the issue is a skill that you can learn and practice.
 
 **Errors can be sneaky - check results *often*!**
 
-If a chunk of code runs smoothly without giving you an error or warning this
-**does not** necessarily mean it accomplished the desired task.
+If a chunk of code runs smoothly without giving you an error or warning this **does not** necessarily mean it accomplished the desired task.
 
-It is a good habit to check the results of your code **every time** you finish a
-task. In general, I would recommend completing the following tasks
-**every time** you write a code chunk.
+It is a good habit to check the results of your code **every time** you finish a task. In general, I would recommend completing the following tasks **every time** you write a code chunk.
 
--   Include a comment at the beginning of the code chunk that briefly states the
-purpose of the chunk. Comments in the code chunks come after `#` signs. These
-comments will remind later readers---which might be your future self!---what the
-desired output of the code chunk is.
+-   Include a comment at the beginning of the code chunk that briefly states the purpose of the chunk. Comments in the code chunks come after `#` signs. These comments will remind later readers---which might be your future self!---what the desired output of the code chunk is.
 
--   If you created a new object, take a look at it! You can inspect the object
-by either clicking its name in your *Environment* tab or by typing its name into
-the console. Make sure it looks about how you expect. **Do not** type code to
-inspect the object in your Quarto file, as that **is not** code that needs to be
-saved!
+-   If you created a new object, take a look at it! You can inspect the object by either clicking its name in your *Environment* tab or by typing its name into the console. Make sure it looks about how you expect. **Do not** type code to inspect the object in your Quarto file, as that **is not** code that needs to be saved!
 
--   If you created or updated a data frame, make sure your edits did what you
-hoped. Use the *Environment* or the `head()` function to investigate your
-changes.
+-   If you created or updated a data frame, make sure your edits did what you hoped. Use the *Environment* or the `head()` function to investigate your changes.
 
-**Google is your friend!**
+## Code Formatting
 
-<!-- The whole of the internet is at your disposal! Use it early, use it often. -->
+Don't forget, writing "tidy" and "well documented" code are two of the learning targets for this course. As such, I would strongly encourage you to use every opportunity to practice these skills.
 
-<!-- Some tricks: -->
+As you are writing code for this assignment, make sure your code follows the [tidyverse style guide for dplyr code](https://style.tidyverse.org/pipes.html). Specifically, your code should:
 
-<!-- -   Copy-paste the exact error message into Google. Chances are, somebody else -->
-<!-- had a similar problem and got a similar message. -->
+-   use whitespace liberally
+    -   before & after every `=` sign
+    -   after every `,`
+    -   before every `|>`
+-   use new lines liberally
+    -   after every `|>`
+    -   after `,` when needed (if code is more than 80 characters in length)
 
-<!-- -   Include package names in your search terms. For example, "bar plot in -->
-<!-- ggplot" is a better search than "bar plot in R". -->
+## Group Roles
+
+When you are the **Listener**, you will type into the Quarto document in
+RStudio. However, you **do not** type your own ideas. Instead, you type what 
+the Problem Solver tells you to type. You are permitted to ask the Problem 
+Solver clarifying questions, and, if both of you have a question, you are 
+permitted to ask the professor. 
+
+When you are the **Problem Solver**, you are responsible for reading the 
+instructions / prompts and directing the Listener what to type in the Quarto
+document. You are also responsible for instructing the Listener what comments to
+insert in the Quarto document to help the group understand the code later. 
+
+## Group Norms
+
+Remember, your group is expected to adhere to the following norms:
+
+1.  Think and work together. Do not divide the work.
+2.  You are smarter together.
+3.  No cross-talk with other groups.
+
+<!-- Add more norms from collaborative list -->

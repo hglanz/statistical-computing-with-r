@@ -2947,5 +2947,68 @@
     "title": "PA 3: Identify the Mystery College 🏫",
     "section": "Dealing with Errors",
     "text": "Dealing with Errors\nAs you work through this PA, you will encounter some code that does not work as you want it to. Don’t despair! Errors (when R is unable to run your code) and bugs (when the code doesn’t do what you hoped) are a natural part of coding. Even the best of the best deal with these problems regularly - learning to track down the issue is a skill that you can learn and practice.\nErrors can be sneaky - check results often!\nIf a chunk of code runs smoothly without giving you an error or warning this does not necessarily mean it accomplished the desired task.\nIt is a good habit to check the results of your code every time you finish a task. In general, I would recommend completing the following tasks every time you write a code chunk.\n\nInclude a comment at the beginning of the code chunk that briefly states the purpose of the chunk. Comments in the code chunks come after # signs. These comments will remind later readers—which might be your future self!—what the desired output of the code chunk is.\nIf you created a new object, take a look at it! You can inspect the object by either clicking its name in your Environment tab or by typing its name into the console. Make sure it looks about how you expect. Do not type code to inspect the object in your Quarto file, as that is not code that needs to be saved!\nIf you created or updated a data frame, make sure your edits did what you hoped. Use the Environment or the head() function to investigate your changes.\n\nGoogle is your friend!\nThe whole of the internet is at your disposal! Use it early, use it often.\nSome tricks:\n\nCopy-paste the exact error message into Google. Chances are, somebody else had a similar problem and got a similar message.\nInclude package names in your search terms. For example, “bar plot in ggplot” is a better search than “bar plot in R”."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-task-card.html",
+    "href": "group-activities/week-2/PA2-task-card.html",
+    "title": "PA2 Task Card - Using Data Visualization to Find the Penguins",
+    "section": "",
+    "text": "Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-task-card.html#group-roles",
+    "href": "group-activities/week-2/PA2-task-card.html#group-roles",
+    "title": "PA2 Task Card - Using Data Visualization to Find the Penguins",
+    "section": "Group Roles",
+    "text": "Group Roles\nWhen you are the Listener, you will type into the Quarto document in RStudio. However, you do not type your own ideas. Instead, you type what the Problem Solver tells you to type. You are permitted to ask the Problem Solver clarifying questions, and, if both of you have a question, you are permitted to ask the professor.\nWhen you are the Problem Solver, you are responsible for reading the instructions / prompts and directing the Listener what to type in the Quarto document. You are also responsible for instructing the Listener what comments to insert in the Quarto document to help the group understand the code later."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-task-card.html#writing-code",
+    "href": "group-activities/week-2/PA2-task-card.html#writing-code",
+    "title": "PA2 Task Card - Using Data Visualization to Find the Penguins",
+    "section": "Writing Code",
+    "text": "Writing Code\nWriting “tidy” and “well documented” code are two of the learning targets for this course. As such, I would strongly encourage you to use every opportunity to practice these skills.\nTidy Code As you are writing code for this assignment, make sure your code follows the tidyverse style guide for ggplot code. Specifically, your code should:\n\nuse whitespace liberally\n\nbefore & after every = sign\nafter every ,\nbefore every +\n\nuse new lines liberally\n\nafter every +\nafter , when needed (if code is more than 80 characters in length)\n\n\nWell Documented Code – Include a comment at the beginning of the code chunk that briefly states the purpose of the chunk (comments come after # signs). In addition, if your code involves many steps or steps you needed to look up / get help on, I would encourage you to write a code comment on what is happening in these lines.\n\nggplot(data = penguins, \n       mapping = aes(x = species, \n                     fill = species\n       ) +\n# use fill instead of color to get the bars filled entirely with color (instead of just on the outside)\n  \n  geom_bar() +\n  labs(x = \"\", \n       y = \"\", \n       title = \"Number of Penguins Captured in the Palmer Archipelago\") +\n# remove axis titles and put that information in the title where it is easier to read\n  \n  theme(legend.position = \"none\")\n# to remove the legend position, since the fill information is already included on the x-axis"
+  },
+  {
+    "objectID": "group-activities/week-3/PA3-task-card.html",
+    "href": "group-activities/week-3/PA3-task-card.html",
+    "title": "PA 3 Task Card – Finding Margaret’s College",
+    "section": "",
+    "text": "Today you will use the dplyr package to clean some data. We will then use that cleaned data to figure out what college Margaret has been accepted to.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group."
+  },
+  {
+    "objectID": "group-activities/week-3/PA3-task-card.html#dealing-with-errors",
+    "href": "group-activities/week-3/PA3-task-card.html#dealing-with-errors",
+    "title": "PA 3 Task Card – Finding Margaret’s College",
+    "section": "Dealing with Errors",
+    "text": "Dealing with Errors\nAs you work through this PA, you will encounter some code that does not work as you want it to. Don’t despair! Errors (when R is unable to run your code) and bugs (when the code doesn’t do what you hoped) are a natural part of coding. Even the best of the best deal with these problems regularly - learning to track down the issue is a skill that you can learn and practice.\nErrors can be sneaky - check results often!\nIf a chunk of code runs smoothly without giving you an error or warning this does not necessarily mean it accomplished the desired task.\nIt is a good habit to check the results of your code every time you finish a task. In general, I would recommend completing the following tasks every time you write a code chunk.\n\nInclude a comment at the beginning of the code chunk that briefly states the purpose of the chunk. Comments in the code chunks come after # signs. These comments will remind later readers—which might be your future self!—what the desired output of the code chunk is.\nIf you created a new object, take a look at it! You can inspect the object by either clicking its name in your Environment tab or by typing its name into the console. Make sure it looks about how you expect. Do not type code to inspect the object in your Quarto file, as that is not code that needs to be saved!\nIf you created or updated a data frame, make sure your edits did what you hoped. Use the Environment or the head() function to investigate your changes."
+  },
+  {
+    "objectID": "group-activities/week-3/PA3-task-card.html#group-roles",
+    "href": "group-activities/week-3/PA3-task-card.html#group-roles",
+    "title": "PA 3 Task Card – Finding Margaret’s College",
+    "section": "Group Roles",
+    "text": "Group Roles\nWhen you are the Listener, you will type into the Quarto document in RStudio. However, you do not type your own ideas. Instead, you type what the Problem Solver tells you to type. You are permitted to ask the Problem Solver clarifying questions, and, if both of you have a question, you are permitted to ask the professor.\nWhen you are the Problem Solver, you are responsible for reading the instructions / prompts and directing the Listener what to type in the Quarto document. You are also responsible for instructing the Listener what comments to insert in the Quarto document to help the group understand the code later."
+  },
+  {
+    "objectID": "group-activities/week-3/PA3-task-card.html#code-formatting",
+    "href": "group-activities/week-3/PA3-task-card.html#code-formatting",
+    "title": "PA 3 Task Card – Finding Margaret’s College",
+    "section": "Code Formatting",
+    "text": "Code Formatting\nDon’t forget, writing “tidy” and “well documented” code are two of the learning targets for this course. As such, I would strongly encourage you to use every opportunity to practice these skills.\nAs you are writing code for this assignment, make sure your code follows the tidyverse style guide for dplyr code. Specifically, your code should:\n\nuse whitespace liberally\n\nbefore & after every = sign\nafter every ,\nbefore every |&gt;\n\nuse new lines liberally\n\nafter every |&gt;\nafter , when needed (if code is more than 80 characters in length)"
+  },
+  {
+    "objectID": "group-activities/week-3/PA3-task-card.html#group-norms",
+    "href": "group-activities/week-3/PA3-task-card.html#group-norms",
+    "title": "PA 3 Task Card – Finding Margaret’s College",
+    "section": "Group Norms",
+    "text": "Group Norms\nRemember, your group is expected to adhere to the following norms:\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nNo cross-talk with other groups."
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-task-card.html#group-norms",
+    "href": "group-activities/week-2/PA2-task-card.html#group-norms",
+    "title": "PA2 Task Card - Using Data Visualization to Find the Penguins",
+    "section": "Group Norms",
+    "text": "Group Norms\nRemember, your group is expected to adhere to the following norms:\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nNo cross-talk with other groups."
   }
 ]

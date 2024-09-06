@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Statistical Computing in R - PA 3 Task Card – Finding Margaret’s College</title>
+<title>Introduction to Statistical Computing in R - PA2 Task Card - Using Data Visualization to Find the Penguins</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -80,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">PA 3 Task Card – Finding Margaret’s College</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">PA2 Task Card - Using Data Visualization to Find the Penguins</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -250,10 +284,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dealing-with-errors" id="toc-dealing-with-errors" class="nav-link active" data-scroll-target="#dealing-with-errors">Dealing with Errors</a></li>
-  <li><a href="#code-formatting" id="toc-code-formatting" class="nav-link" data-scroll-target="#code-formatting">Code Formatting</a></li>
-  <li><a href="#group-roles" id="toc-group-roles" class="nav-link" data-scroll-target="#group-roles">Group Roles</a></li>
+  <li><a href="#group-roles" id="toc-group-roles" class="nav-link active" data-scroll-target="#group-roles">Group Roles</a></li>
   <li><a href="#group-norms" id="toc-group-norms" class="nav-link" data-scroll-target="#group-norms">Group Norms</a></li>
+  <li><a href="#writing-code" id="toc-writing-code" class="nav-link" data-scroll-target="#writing-code">Writing Code</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-331-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -262,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">PA 3 Task Card – Finding Margaret’s College</h1>
+<h1 class="title">PA2 Task Card - Using Data Visualization to Find the Penguins</h1>
 </div>
 
 
@@ -279,38 +312,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Today you will use the <code>dplyr</code> package to clean some data. We will then use that cleaned data to figure out what college Margaret has been accepted to.</p>
+<p>Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.</p>
 <p><strong><em>This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.</em></strong></p>
-<section id="dealing-with-errors" class="level2">
-<h2 class="anchored" data-anchor-id="dealing-with-errors">Dealing with Errors</h2>
-<p>As you work through this PA, you will encounter some code that does not work as you want it to. Don’t despair! <strong>Errors</strong> (when R is unable to run your code) and <strong>bugs</strong> (when the code doesn’t do what you hoped) are a natural part of coding. Even the best of the best deal with these problems regularly - learning to track down the issue is a skill that you can learn and practice.</p>
-<p><strong>Errors can be sneaky - check results <em>often</em>!</strong></p>
-<p>If a chunk of code runs smoothly without giving you an error or warning this <strong>does not</strong> necessarily mean it accomplished the desired task.</p>
-<p>It is a good habit to check the results of your code <strong>every time</strong> you finish a task. In general, I would recommend completing the following tasks <strong>every time</strong> you write a code chunk.</p>
-<ul>
-<li><p>Include a comment at the beginning of the code chunk that briefly states the purpose of the chunk. Comments in the code chunks come after <code>#</code> signs. These comments will remind later readers—which might be your future self!—what the desired output of the code chunk is.</p></li>
-<li><p>If you created a new object, take a look at it! You can inspect the object by either clicking its name in your <em>Environment</em> tab or by typing its name into the console. Make sure it looks about how you expect. <strong>Do not</strong> type code to inspect the object in your Quarto file, as that <strong>is not</strong> code that needs to be saved!</p></li>
-<li><p>If you created or updated a data frame, make sure your edits did what you hoped. Use the <em>Environment</em> or the <code>head()</code> function to investigate your changes.</p></li>
-</ul>
-</section>
-<section id="code-formatting" class="level2">
-<h2 class="anchored" data-anchor-id="code-formatting">Code Formatting</h2>
-<p>Don’t forget, writing “tidy” and “well documented” code are two of the learning targets for this course. As such, I would strongly encourage you to use every opportunity to practice these skills.</p>
-<p>As you are writing code for this assignment, make sure your code follows the <a href="https://style.tidyverse.org/pipes.html">tidyverse style guide for dplyr code</a>. Specifically, your code should:</p>
-<ul>
-<li>use whitespace liberally
-<ul>
-<li>before &amp; after every <code>=</code> sign</li>
-<li>after every <code>,</code></li>
-<li>before every <code>|&gt;</code></li>
-</ul></li>
-<li>use new lines liberally
-<ul>
-<li>after every <code>|&gt;</code></li>
-<li>after <code>,</code> when needed (if code is more than 80 characters in length)</li>
-</ul></li>
-</ul>
-</section>
 <section id="group-roles" class="level2">
 <h2 class="anchored" data-anchor-id="group-roles">Group Roles</h2>
 <p>When you are the <strong>Listener</strong>, you will type into the Quarto document in RStudio. However, you <strong>do not</strong> type your own ideas. Instead, you type what the Problem Solver tells you to type. You are permitted to ask the Problem Solver clarifying questions, and, if both of you have a question, you are permitted to ask the professor.</p>
@@ -325,6 +328,41 @@ ul.task-list li input[type="checkbox"] {
 <li>No cross-talk with other groups.</li>
 </ol>
 <!-- Add more norms from collaborative list -->
+</section>
+<section id="writing-code" class="level2">
+<h2 class="anchored" data-anchor-id="writing-code">Writing Code</h2>
+<p>Writing “tidy” and “well documented” code are two of the learning targets for this course. As such, I would strongly encourage you to use every opportunity to practice these skills.</p>
+<p><strong>Tidy Code</strong> As you are writing code for this assignment, make sure your code follows the <a href="https://style.tidyverse.org/ggplot2.html">tidyverse style guide for ggplot code</a>. Specifically, your code should:</p>
+<ul>
+<li>use whitespace liberally
+<ul>
+<li>before &amp; after every <code>=</code> sign</li>
+<li>after every <code>,</code></li>
+<li>before every <code>+</code></li>
+</ul></li>
+<li>use new lines liberally
+<ul>
+<li>after every <code>+</code></li>
+<li>after <code>,</code> when needed (if code is more than 80 characters in length)</li>
+</ul></li>
+</ul>
+<p><strong>Well Documented Code</strong> – Include a comment at the beginning of the code chunk that briefly states the purpose of the chunk (comments come after <code>#</code> signs). In addition, if your code involves many steps or steps you needed to look up / get help on, I would encourage you to write a code comment on what is happening in these lines.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">fill =</span> species</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># use fill instead of color to get the bars filled entirely with color (instead of just on the outside)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Number of Penguins Captured in the Palmer Archipelago"</span>) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># remove axis titles and put that information in the title where it is easier to read</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># to remove the legend position, since the fill information is already included on the x-axis</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>

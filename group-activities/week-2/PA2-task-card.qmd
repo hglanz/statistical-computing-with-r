@@ -1,0 +1,59 @@
+---
+title: "PA2 Task Card - Using Data Visualization to Find the Penguins"
+---
+
+Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.
+
+***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.***
+
+## Group Roles
+
+When you are the **Listener**, you will type into the Quarto document in RStudio. However, you **do not** type your own ideas. Instead, you type what the Problem Solver tells you to type. You are permitted to ask the Problem Solver clarifying questions, and, if both of you have a question, you are permitted to ask the professor.
+
+When you are the **Problem Solver**, you are responsible for reading the instructions / prompts and directing the Listener what to type in the Quarto document. You are also responsible for instructing the Listener what comments to insert in the Quarto document to help the group understand the code later.
+
+## Group Norms
+
+Remember, your group is expected to adhere to the following norms:
+
+1.  Think and work together. Do not divide the work.
+2.  You are smarter together.
+3.  No cross-talk with other groups.
+
+<!-- Add more norms from collaborative list -->
+
+## Writing Code
+
+Writing "tidy" and "well documented" code are two of the learning targets for this course. As such, I would strongly encourage you to use every opportunity to practice these skills.
+
+**Tidy Code** As you are writing code for this assignment, make sure your code follows the [tidyverse style guide for ggplot code](https://style.tidyverse.org/ggplot2.html). Specifically, your code should:
+
+-   use whitespace liberally
+    -   before & after every `=` sign
+    -   after every `,`
+    -   before every `+`
+-   use new lines liberally
+    -   after every `+`
+    -   after `,` when needed (if code is more than 80 characters in length)
+
+**Well Documented Code** -- Include a comment at the beginning of the code chunk that briefly states the purpose of the chunk (comments come after `#` signs). In addition, if your code involves many steps or steps you needed to look up / get help on, I would encourage you to write a code comment on what is happening in these lines.
+
+```{r}
+#| label: code-comment-example
+#| eval: false
+
+ggplot(data = penguins, 
+       mapping = aes(x = species, 
+                     fill = species
+       ) +
+# use fill instead of color to get the bars filled entirely with color (instead of just on the outside)
+  
+  geom_bar() +
+  labs(x = "", 
+       y = "", 
+       title = "Number of Penguins Captured in the Palmer Archipelago") +
+# remove axis titles and put that information in the title where it is easier to read
+  
+  theme(legend.position = "none")
+# to remove the legend position, since the fill information is already included on the x-axis
+```
