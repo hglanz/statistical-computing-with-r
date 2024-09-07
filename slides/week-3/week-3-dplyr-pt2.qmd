@@ -3,19 +3,43 @@ title: "Data Wrangling with dplyr"
 format: revealjs
 ---
 
-## Wednesday, April 17
+```{r setup}
+#| include: false
+#| message: false
+library(tidyverse)
+library(palmerpenguins)
+```
+
+<!-- Add slide on deciding if you need to save an intermediate object. -->
+<!-- ## Save your changes! -->
+
+<!-- When you manipulate your data, make sure you assign your new dataset to a variable. -->
+
+<!-- ```{r} -->
+<!-- #| code-line-numbers: "1" -->
+<!-- #| echo: true -->
+<!-- #| eval: false -->
+<!-- #| label: saving-summary-to-object -->
+
+<!-- cereal_potass_summary <- cereal |>  -->
+<!--   filter(type == "cold") |>  -->
+<!--   mutate(potass_per_cup = potas / cups) |>  -->
+<!--   group_by(manuf) |>  -->
+<!--   summarise(mean_potass_per_cup = mean(potass_per_cup)) -->
+<!-- ``` -->
+
+## Thursday, October 10
 
 Today we will...
 
-+ New Material
-  + Extend `dplyr` verbs to have more functionality.
-  + Think about data ethics.
-+ [Lab 3: Teacher Evaluations](https://zoerehnberg.github.io/STAT331-S23/lab_assignments/lab3/LA3_dplyr.html)
-
+-   New Material
+    -   Extend `dplyr` verbs to have more functionality.
+    -   Think about data ethics.
+-   [Lab 3: Teacher Evaluations](https://zoerehnberg.github.io/STAT331-S23/lab_assignments/lab3/LA3_dplyr.html)
 
 # Extending `dplyr` verbs
 
-## Example Data set --  [Cereal](https://search.r-project.org/CRAN/refmans/liver/html/cereal.html)
+## Example Data set -- [Cereal](https://search.r-project.org/CRAN/refmans/liver/html/cereal.html)
 
 ```{r}
 #| echo: true
@@ -23,7 +47,6 @@ library(liver)
 data(cereal)
 head(cereal)
 ```
-
 
 ## Count with `count()`
 
@@ -50,7 +73,6 @@ cereal |>
   kableExtra::kable_styling(font_size = 30)
 ```
 
-
 ## Summarize multiple columns with `across()`
 
 For each `type` of cereal, calculate the `mean` nutrient levels.
@@ -59,14 +81,13 @@ For each `type` of cereal, calculate the `mean` nutrient levels.
 
 **Within** the `summarize()` function, we use the `across()` function, with three arguments:
 
-+ `.cols` -- to specify the **columns** to apply functions to.
-+ `.fns` -- to specify the **functions** to apply.
-+ `.x` -- as a placeholder for the variables being passed into the function.
+-   `.cols` -- to specify the **columns** to apply functions to.
+-   `.fns` -- to specify the **functions** to apply.
+-   `.x` -- as a placeholder for the variables being passed into the function.
 
 . . .
 
 We use **lambda functions**: `~ <FUN_NAME>(.x, <ARGS>)`
-
 
 ## Summarize multiple columns with `across()`
 
@@ -114,7 +135,6 @@ cereal |>
   kableExtra::kable_styling(font_size = 23)
 ```
 
-
 ## Discretize with `if_else()`
 
 For each cereal, label the `potass` as "high" or "low".
@@ -125,7 +145,7 @@ One `if-else` statement:
 
 <font size = 6>
 
-+ `if_else(<CONDITION>, <TRUE OUTPUT>, <FALSE OUTPUT>)`
+-   `if_else(<CONDITION>, <TRUE OUTPUT>, <FALSE OUTPUT>)`
 
 </font>
 
@@ -151,7 +171,6 @@ cereal |>
 ```
 
 `.after` -- specifies the location of the newly created column
-
 
 ## Re-level with `case_when()`
 
@@ -190,7 +209,6 @@ cereal |>
   kableExtra::kable_styling(font_size = 30)
 ```
 
-
 ## `group_by()` + `slice()`
 
 For each `manuf`, find the cereal with the most `fiber`.
@@ -222,7 +240,7 @@ Find the **3** cereals with the highest `fiber` and `potass`.
 
 . . .
 
-+ If you are ordering by multiple variables, wrap them in a data.frame!
+-   If you are ordering by multiple variables, wrap them in a data.frame!
 
 ```{r}
 #| echo: true
@@ -242,7 +260,6 @@ cereal |>
   kableExtra::scroll_box(height = "250px") |> 
   kableExtra::kable_styling(font_size = 30)
 ```
-
 
 ## Piping into `ggplot()`
 
@@ -283,7 +300,6 @@ cereal |>
   scale_y_continuous(limits = c(75,225))
 ```
 
-
 ## Piping into `ggplot()`
 
 Plot the `mean` `protein` per `cup` for each `manuf`.
@@ -321,27 +337,23 @@ cereal |>
   scale_y_continuous(limits = c(0,6))
 ```
 
-
 # Creating a Game Plan
-
 
 ## Creating a Game Plan
 
 Just like when creating graphics with `ggplot`, wrangling data with `dplyr` involves thinking through many steps and writing many *layers* of code.
 
-+ To help us think through a wrangling problem, we are going to create a game plan **before** we start writing code.
+-   To help us think through a wrangling problem, we are going to create a game plan **before** we start writing code.
 
 This might involve...
 
-+ a sketch or flowchart.
-+ a list of `dplyr` verbs and variable names.
-+ annotating the `head` of the dataframe.
-
+-   a sketch or flowchart.
+-   a list of `dplyr` verbs and variable names.
+-   annotating the `head` of the dataframe.
 
 ## Creating a Game Plan
 
 ::: panel-tabset
-
 ### The Question
 
 What is the `median` grams of `sugars`per `shelf` and the number of cereals per `shelf`, when we drop the missing values (coded as `sugars = -1`)?
@@ -361,14 +373,10 @@ cereal |>
   summarise(med_sugars = median(sugars),
             num_shelf = n())
 ```
-
 :::
-
-
 
 # Thinking about Data Ethics
 
-
 ## Data Ethics
 
 **1. What do we mean by *data ethics*?**
@@ -381,48 +389,41 @@ cereal |>
 
 **2. Why do we (as statisticians, data scientists, folks working with data) need to think about *data ethics*?**
 
-
-
 ## Data Ethics
 
 **1. What do we mean by *data ethics*?**
 
-+ The process of evaluating data collection, processing, analysis, and dissemination practices for their adverse impacts on individuals, systems, and society.
+-   The process of evaluating data collection, processing, analysis, and dissemination practices for their adverse impacts on individuals, systems, and society.
 
 **2. Why do we (as statisticians, data scientists, folks working with data) need to think about *data ethics*?**
 
-+ We have a lot of power to declare **truth and fact**, hiding behind the *black box* of data science methods.
-
+-   We have a lot of power to declare **truth and fact**, hiding behind the *black box* of data science methods.
 
 ## Data Science Oath
 
-+ I will not be ashamed to say, **“I know not,”** nor will I fail to call in my colleagues when the skills of another are needed.
-+ I will respect the **privacy** of my data subjects, for their data are not disclosed to me that the world may know.
-+ I will remember that my data are not just numbers without meaning or context, but represent **real people and situations**, and that my work may lead to unintended societal consequences, such as inequality, poverty, and disparities due to algorithmic bias.
-
+-   I will not be ashamed to say, **“I know not,”** nor will I fail to call in my colleagues when the skills of another are needed.
+-   I will respect the **privacy** of my data subjects, for their data are not disclosed to me that the world may know.
+-   I will remember that my data are not just numbers without meaning or context, but represent **real people and situations**, and that my work may lead to unintended societal consequences, such as inequality, poverty, and disparities due to algorithmic bias.
 
 ## ASA Ethical Guidelines
 
-+ The American Statistical Association’s Ethical Guidelines for Statistical Practice are intended to help statistics practitioners make decisions ethically.
-+ They aim to promote accountability by informing those who rely on statistics of the standards they should expect.
+-   The American Statistical Association’s Ethical Guidelines for Statistical Practice are intended to help statistics practitioners make decisions ethically.
+-   They aim to promote accountability by informing those who rely on statistics of the standards they should expect.
 
 . . .
 
->Visit [Ethical Guidelines for Statistical Practice](https://www.amstat.org/your-career/ethical-guidelines-for-statistical-practice) and discuss one of the guidelines with your neighbor.
+> Visit [Ethical Guidelines for Statistical Practice](https://www.amstat.org/your-career/ethical-guidelines-for-statistical-practice) and discuss one of the guidelines with your neighbor.
 >
-> + What surprises you? What did you learn? 
-> + In what scenario might this come into play?
+> -   What surprises you? What did you learn?
+> -   In what scenario might this come into play?
 
+## [Lab 3](../../labs/instructions/lab-3-instructions.qmd) & [Challenge 3](../../labs/instructions/challenge-3-instructions.qmd)
 
-
-## [Lab 3: Teacher Evaluations](https://zoerehnberg.github.io/STAT331-S23//lab_assignments/lab3/LA3_dplyr.html)
-
+Exploring teacher evaluations during COVID-19
 
 ## To do...
 
-+ **Lab 3: Teacher Evaluations**
-  + Due Saturday, 4/20 at 11:59pm
-  
-+ **Read Chapter 4: Data Joins and Transformations**
-  + **Check-in 4.1 + 4.2** due Monday 4/22 at 10:00am
-  
+-   **Lab 3: Teacher Evaluations**
+    -   Due Sunday, 10/13 at 11:59pm
+-   **Read Chapter 4: Data Joins and Transformations**
+    -   **Check-in 4.1 + 4.2** due Tuesday 10/15 at 12pm
