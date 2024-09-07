@@ -64,6 +64,10 @@ Although it is not recommended, you can set your working directory in `R` with
 setwd("/path/to/my/assignment/folder")
 ```
 
+::: column-margin
+![](images/week-2/setwd-rproj-horst.png){fig-alt="A cartoon of a cracked glass cube looking frustrated with casts on its arm and leg, with bandaids on it, containing 'setwd', looks on at a metal riveted cube labeled 'R Proj' holding a skateboard looking sympathetic, and a smaller cube with a helmet on labeled 'here' doing a trick on a skateboard."}
+:::
+
 ::: {.callout-caution}
 ### File Paths in `R`
 

@@ -146,7 +146,6 @@ ggplot(data = bb_long,
 
 # Working with External Data
 
-
 ## Common Types of Data Files
 
 Look at the **file extension** for the type of data file.
@@ -252,6 +251,10 @@ Remember to load the `readr` and `readxl` packages first!
 ![](images/read_csv_doc.png)
 :::
 :::
+
+# Reading in Data
+
+![](images/here-horst.png){fig-alt="A cartoon showing two paths side-by-side. On the left is a scary spooky forest, with spiderwebs and gnarled trees, with file paths written on the branches like '~/mmm/nope.csv' and 'setwd(/haha/good/luck/)', with a scared looking cute fuzzy monster running out of it. On the right is a bright, colorful path with flowers, rainbow and sunshine, with signs saying 'here!' and 'it’s all right here!' A monster facing away from us in a backpack and walking stick is looking toward the right path. Stylized text reads 'here: find your path.'"}
 
 # Graphics
 
