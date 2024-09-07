@@ -1043,8 +1043,3 @@ ggplot(data = mpg,
 <!-- Add reminder about multiple abilities -->
 
 <!-- Add blurb about cheatsheet -->
-
-## To do...
-
-+ **PA 2: Using Data Visualization to Find the Penguins**
-  + Due **Thursday** (10/3) at 12:00pm
