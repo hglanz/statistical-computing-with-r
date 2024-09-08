@@ -1,10 +1,11 @@
 ---
 title: "PA2 Task Card - Using Data Visualization to Find the Penguins"
+editor: source
 ---
 
 Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.
 
-***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.***
+***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to solve this puzzle, you will need to use the skills of each member of your group.***
 
 ## Group Roles
 

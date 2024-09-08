@@ -13,7 +13,7 @@ execute:
 
 Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.
 
-***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.***
+***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to solve this puzzle, you will need to use the skills of each member of your group.***
 
 Some advice:
 
@@ -60,11 +60,11 @@ For this activity, we will be exploring the `penguins` data from the `palmerpeng
 
 ## Step 2: Create a Set-up Code Chunk
 
-1.  Locate the code chunk at the beginning of your document (directly under the YAML).
-2.  Name the code chunk `setup` (with the hashpipe `#|`)
-3.  Specify the code chunk options (with the hashpipe `#|`) that the messages from loading in the packages should not be included.
-4.  Load in the `tidyverse` or `ggplot2` package.
-5.  Load in the `palmerpenguins` package.
+-   Locate the code chunk at the beginning of your document (directly under the YAML).
+-   Name the code chunk `setup` (with the hashpipe `#|`)
+-   Specify the code chunk options (with the hashpipe `#|`) that the messages from loading in the packages should not be included.
+-   Load in the `tidyverse` or `ggplot2` package.
+-   Load in the `palmerpenguins` package.
 
 ## Step 3: Accessing the `penguins` Dataset
 
@@ -76,11 +76,12 @@ I like to tangibly see the data set I will be working with so let's pull the `pe
 data(penguins)
 ```
 
-## Step 4: Get to Know the Data
-
 <!-- Change roles (listener becomes problem solver)! -->
 
-6.  What variables are included in these data? What units are the variables measured in? What does each row represent?
+## Step 4: Get to Know the Data
+
+**What variables are included in these data? What units are the variables measured in? What does each row represent?**
+
 
 # Making Graphics
 
@@ -117,7 +118,7 @@ Building off of the plot you made in Step 6, add an aesthetic to differentiate t
 
 ## Step 8: Adding Another Categorical Variable
 
-10. Building off of the plot you made in Step 7, add the location of the penguins ( `island`) to your visualization. There may be more than one method to address this, however, one method will more easily allow you to address the questions below.
+Building off of the plot you made in Step 7, add the location of the penguins ( `island`) to your visualization. There may be more than one method to address this, however, one method will more easily allow you to address the questions below.
 
 ```{r}
 #| label: scatterplot-with-two-categorical-variables

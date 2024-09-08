@@ -40,7 +40,7 @@
     "href": "weeks/week-2-projects-data-import.html#working-directories-in-r",
     "title": "R Projects & Importing Data",
     "section": "1.1 Working Directories in R",
-    "text": "1.1 Working Directories in R\nTo find where your working directory is in R, you can either look at the top of your console or type getwd() into your console.\n\ngetwd()\n\nAlthough it is not recommended, you can set your working directory in R with setwd():\n\nsetwd(\"/path/to/my/assignment/folder\")\n\n\n\n\n\n\n\nFile Paths in R\n\n\n\nA quick warning on file paths is that Mac / Linux and Windows differ in the direction of their backslash to separate folder locations. Mac/Linux use / (e.g. STAT331/Week1) while Window’s uses \\ (e.g. STAT331\\Week1).",
+    "text": "1.1 Working Directories in R\nTo find where your working directory is in R, you can either look at the top of your console or type getwd() into your console.\n\ngetwd()\n\nAlthough it is not recommended, you can set your working directory in R with setwd():\n\nsetwd(\"/path/to/my/assignment/folder\")\n\n\n\n\n\n\n\n\n\n\nFile Paths in R\n\n\n\nA quick warning on file paths is that Mac / Linux and Windows differ in the direction of their backslash to separate folder locations. Mac/Linux use / (e.g. STAT331/Week1) while Window’s uses \\ (e.g. STAT331\\Week1).",
     "crumbs": [
       "Weekly materials",
       "Week 2, Part 2 - Data Import"
@@ -319,15 +319,15 @@
     "objectID": "slides/week-2/week-2-import.html#thursday-october-1",
     "href": "slides/week-2/week-2-import.html#thursday-october-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
-    "section": "Thursday, October 1",
-    "text": "Thursday, October 1\nToday we will…\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2"
+    "section": "",
+    "text": "Today we will…\n\nDebrief PA 1\n\nCompare & Contrast Strategies\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#tidy-data-1",
     "href": "slides/week-2/week-2-import.html#tidy-data-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Tidy Data",
-    "text": "Tidy Data\n\nArtwork by Allison Horst"
+    "text": "Tidy Data\n\n\n\nArtwork by Allison Horst"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#same-data-different-formats",
@@ -348,14 +348,14 @@
     "href": "slides/week-2/week-2-import.html#tidy-data-2",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Tidy Data",
-    "text": "Tidy Data\n\nArtwork by Allison Horst"
+    "text": "Tidy Data\n\n\n\nArtwork by Allison Horst"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#common-types-of-data-files",
     "href": "slides/week-2/week-2-import.html#common-types-of-data-files",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Common Types of Data Files",
-    "text": "Common Types of Data Files\nLook at the file extension for the type of data file.\n\n\n\n.csv : “comma-separated values”\n\nName, Age\nBob, 49\nJoe, 40\n\n\n\n\n.xls, .xlsx: Microsoft Excel spreadsheet\n\nCommon approach: save as .csv\nNicer approach: use the readxl package\n\n\n\n.txt: plain text\n\nCould have any sort of delimiter…\nNeed to let R know what to look for!"
+    "text": "Common Types of Data Files\nLook at the file extension for the type of data file.\n. . .\n\n\n.csv : “comma-separated values”\n\nName, Age\nBob, 49\nJoe, 40\n\n\n. . .\n.xls, .xlsx: Microsoft Excel spreadsheet\n\nCommon approach: save as .csv\nNicer approach: use the readxl package\n\n. . .\n.txt: plain text\n\nCould have any sort of delimiter…\nNeed to let R know what to look for!"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#common-types-of-data-files-1",
@@ -397,63 +397,63 @@
     "href": "slides/week-2/week-2-import.html#pre-attentive-features-2",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Pre-attentive Features",
-    "text": "Pre-attentive Features"
+    "text": "Pre-attentive Features\n\nknitr::include_graphics(\"images/pre-atten1.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#pre-attentive-features-3",
     "href": "slides/week-2/week-2-import.html#pre-attentive-features-3",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Pre-attentive Features",
-    "text": "Pre-attentive Features"
+    "text": "Pre-attentive Features\n\nknitr::include_graphics(\"images/pre-atten2.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#pre-attentive-features-4",
     "href": "slides/week-2/week-2-import.html#pre-attentive-features-4",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Pre-attentive Features",
-    "text": "Pre-attentive Features\n\nfeatures that we see and perceive before we even think about it\n\n\nThey will jump out at us in less than 250 ms.\nE.g., color, form, movement, spatial location.\n\n\nThere is a hierarchy of features:\n\nColor is stronger than shape.\nCombinations of pre-attentive features may not be pre-attentive due to interference."
+    "text": "Pre-attentive Features\n\nfeatures that we see and perceive before we even think about it\n\n\nThey will jump out at us in less than 250 ms.\nE.g., color, form, movement, spatial location.\n\n. . .\nThere is a hierarchy of features:\n\nColor is stronger than shape.\nCombinations of pre-attentive features may not be pre-attentive due to interference."
   },
   {
     "objectID": "slides/week-2/week-2-import.html#gestalt-principles",
     "href": "slides/week-2/week-2-import.html#gestalt-principles",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Gestalt Principles",
-    "text": "Gestalt Principles\n\n\n\nGestalt Hierarchy\nGraphical Feature\n\n\n\n\n1. Enclosure\nFacets\n\n\n2. Connection\nLines\n\n\n3. Proximity\nWhite Space\n\n\n4. Similarity\nColor/Shape\n\n\n\n\n\n\nImplications for practice:\n\nKnow that we perceive some groups before others.\nDesign to facilitate and emphasize the most important comparisons."
+    "text": "Gestalt Principles\n\n\n\nGestalt Hierarchy\nGraphical Feature\n\n\n\n\n1. Enclosure\nFacets\n\n\n2. Connection\nLines\n\n\n3. Proximity\nWhite Space\n\n\n4. Similarity\nColor/Shape\n\n\n\n. . .\n\n\nImplications for practice:\n\nKnow that we perceive some groups before others.\nDesign to facilitate and emphasize the most important comparisons."
   },
   {
     "objectID": "slides/week-2/week-2-import.html#double-encoding",
     "href": "slides/week-2/week-2-import.html#double-encoding",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Double Encoding",
-    "text": "Double Encoding"
+    "text": "Double Encoding\n\nknitr::include_graphics(\"images/double.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#no-double-encoding",
     "href": "slides/week-2/week-2-import.html#no-double-encoding",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "No Double Encoding",
-    "text": "No Double Encoding"
+    "text": "No Double Encoding\n\nknitr::include_graphics(\"images/no_double.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-1",
     "href": "slides/week-2/week-2-import.html#color-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color",
-    "text": "Color\n\nColor, hue, and intensity are pre-attentive features, and bigger contrasts lead to faster detection.\n\nHue: main color family (red, orange, yellow…)\nIntensity: amount of color"
+    "text": "Color\n\nColor, hue, and intensity are pre-attentive features, and bigger contrasts lead to faster detection.\n\nHue: main color family (red, orange, yellow…)\nIntensity: amount of color\n\n\n\n\n\nknitr::include_graphics(\"images/hue.png\")\n\n\n\n\n\n\n\n\n\n\nknitr::include_graphics(\"images/intensity.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines",
     "href": "slides/week-2/week-2-import.html#color-guidelines",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\n\nDo not use rainbow color gradients!\nBe conscious of what certain colors “mean”.\n\nGood idea to use red for “good” and green for “bad”?"
+    "text": "Color Guidelines\n\nDo not use rainbow color gradients!\nBe conscious of what certain colors “mean”.\n\nGood idea to use red for “good” and green for “bad”?\n\n\n\n\n\nknitr::include_graphics(\"images/rainbow.png\")\n\n\n\n\n\n\n\n\n\n\n\n\nknitr::include_graphics(\"images/red_green.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines-1",
     "href": "slides/week-2/week-2-import.html#color-guidelines-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\nFor categorical data, try not to use more than 7 colors:\n\n\n\n\n\n\n\n\n\n\nIf you need to, you can use colorRampPalette() from the RColorBrewer package to produce larger palettes:"
+    "text": "Color Guidelines\nFor categorical data, try not to use more than 7 colors:\n\nknitr::include_graphics(\"images/small_gradient.png\")\n\n\n\n\n\n\n\n\n. . .\nIf you need to, you can use colorRampPalette() from the RColorBrewer package to produce larger palettes:\n\nknitr::include_graphics(\"images/big_gradient.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines-2",
@@ -467,21 +467,21 @@
     "href": "slides/week-2/week-2-import.html#color-guidelines-3",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nuse double encoding - when you use color, also use another aesthetic (line type, shape, facet, etc.)."
+    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nuse double encoding - when you use color, also use another aesthetic (line type, shape, facet, etc.).\n\n\nknitr::include_graphics(\"images/double.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines-4",
     "href": "slides/week-2/week-2-import.html#color-guidelines-4",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nwith a unidirectional scale (e.g., all + values), use a monochromatic color gradient.\n\n\n\n\n\n\n\n\n\n\n\nwith a bidirectional scale (e.g., + and - values), use a purple-white-orange color gradient. Transition through white!"
+    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nwith a unidirectional scale (e.g., all + values), use a monochromatic color gradient.\n\n\nknitr::include_graphics(\"images/blues.png\")\n\n\n\n\n\n\n\n\n\nwith a bidirectional scale (e.g., + and - values), use a purple-white-orange color gradient. Transition through white!\n\n\nknitr::include_graphics(\"images/PuOr.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines-5",
     "href": "slides/week-2/week-2-import.html#color-guidelines-5",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nprint your chart out in black and white – if you can still read it, it will be safe for all users."
+    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nprint your chart out in black and white – if you can still read it, it will be safe for all users.\n\n\n\n\nknitr::include_graphics(\"images/nyt_color.png\")\n\n\n\n\n\n\n\n\n\n\n\n\nknitr::include_graphics(\"images/nyt_bw.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-in-ggplot2",
@@ -495,7 +495,7 @@
     "href": "slides/week-2/week-2-import.html#on-grading-feedback.",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "On Grading / Feedback….",
-    "text": "On Grading / Feedback….\n\n\nEach question will earn a score of “Success” or “Growing”\n\nQuestions marked “Growing” will receive feedback on how to improve your solution\nThese questions can be resubmitted for additional feedback\n\n\n\n\n\n\nEarning a “Success” doesn’t necessarily mean your solution is without error\n\nYou may still receive feedback on how to improve your solution\nThese questions cannot be resubmitted for additional feedback\n\n\n\n\n\n\n\nYour labs will have an appearance / code format portion.\n\nReview the code formatting guidelines before you submit your lab!\nEach week, you will be assigned one of your peer’s labs to review their code formatting."
+    "text": "On Grading / Feedback….\n\n\nEach question will earn a score of “Success” or “Growing”\n\nQuestions marked “Growing” will receive feedback on how to improve your solution\nThese questions can be resubmitted for additional feedback\n\n\n\n. . .\n\n\nEarning a “Success” doesn’t necessarily mean your solution is without error\n\nYou may still receive feedback on how to improve your solution\nThese questions cannot be resubmitted for additional feedback\n\n\n\n. . .\n\n\nYour labs will have an appearance / code format portion.\n\nReview the code formatting guidelines before you submit your lab!\nEach week, you will be assigned one of your peer’s labs to review their code formatting."
   },
   {
     "objectID": "slides/week-2/week-2-import.html#to-do",
@@ -1360,7 +1360,7 @@
     "href": "group-activities/week-2/PA2-ggplot.html",
     "title": "PA 2: Using Data Visualization to Find the Penguins",
     "section": "",
-    "text": "Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.\nSome advice:"
+    "text": "Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to solve this puzzle, you will need to use the skills of each member of your group.\nSome advice:"
   },
   {
     "objectID": "group-activities/week-2/PA2-ggplot.html#groupwork-protocols",
@@ -1851,7 +1851,7 @@
     "href": "slides/week-2/week-2-ggplot.html#pa-2-using-data-visualization-to-find-the-penguins",
     "title": "Basics of Graphics",
     "section": "PA 2: Using Data Visualization to Find the Penguins",
-    "text": "PA 2: Using Data Visualization to Find the Penguins\n\n ## Pair Programming Collaborations"
+    "text": "PA 2: Using Data Visualization to Find the Penguins\n\n\nArtwork by Allison Horst"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#to-do",
@@ -2932,7 +2932,7 @@
     "href": "slides/week-3/week-3-dplyr-pt2.html#to-do",
     "title": "Data Wrangling with dplyr",
     "section": "To do…",
-    "text": "To do…\n\nLab 3: Teacher Evaluations\n\nDue Saturday, 4/20 at 11:59pm\n\nRead Chapter 4: Data Joins and Transformations\n\nCheck-in 4.1 + 4.2 due Monday 4/22 at 10:00am"
+    "text": "To do…\n\nLab 3: Teacher Evaluations\n\nDue Sunday, 10/13 at 11:59pm\n\nRead Chapter 4: Data Joins and Transformations\n\nCheck-in 4.1 + 4.2 due Tuesday 10/15 at 12pm"
   },
   {
     "objectID": "group-activities/week-3/PA3-dplyr.html#groupwork-protocols",
@@ -2953,7 +2953,7 @@
     "href": "group-activities/week-2/PA2-task-card.html",
     "title": "PA2 Task Card - Using Data Visualization to Find the Penguins",
     "section": "",
-    "text": "Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group."
+    "text": "Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to solve this puzzle, you will need to use the skills of each member of your group."
   },
   {
     "objectID": "group-activities/week-2/PA2-task-card.html#group-roles",
@@ -3444,5 +3444,103 @@
     "title": "Data Wrangling with dplyr",
     "section": "Pair Programming Collaborations",
     "text": "Pair Programming Collaborations"
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html",
+    "href": "slides/week-2/week-2-import.html",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "",
+    "text": "Today we will…\n\nDebrief PA 1\n\nCompare & Contrast Strategies\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2"
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html#strategies-used",
+    "href": "slides/week-2/week-2-import.html#strategies-used",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "Strategies Used",
+    "text": "Strategies Used"
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html#on-the-use-of-external-resources",
+    "href": "slides/week-2/week-2-import.html#on-the-use-of-external-resources",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "On the Use of External Resources…",
+    "text": "On the Use of External Resources…"
+  },
+  {
+    "objectID": "slides/week-2/week-2-ggplot.html",
+    "href": "slides/week-2/week-2-ggplot.html",
+    "title": "Basics of Graphics",
+    "section": "",
+    "text": "Today we will…\n\nComments from Week 1\nPeer Programming\nNew Material\n\nTidy Data\nLoad External Data\nGraphics (and ggplot2)\n\nPA 2: Using Data Visualization to Find the Penguins"
+  },
+  {
+    "objectID": "slides/week-2/week-2-ggplot.html#finding-the-penguins",
+    "href": "slides/week-2/week-2-ggplot.html#finding-the-penguins",
+    "title": "Basics of Graphics",
+    "section": "Finding the Penguins",
+    "text": "Finding the Penguins\nThis activity will require you to be able to:\nNone of us have all these abilities. Each of us has some of these abilities."
+  },
+  {
+    "objectID": "slides/week-2/week-2-ggplot.html#what-skills-did-you-need",
+    "href": "slides/week-2/week-2-ggplot.html#what-skills-did-you-need",
+    "title": "Basics of Graphics",
+    "section": "What skills did you need?",
+    "text": "What skills did you need?"
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt2.html#thursday-october-10",
+    "href": "slides/week-3/week-3-dplyr-pt2.html#thursday-october-10",
+    "title": "Data Wrangling with dplyr",
+    "section": "",
+    "text": "Today we will…\n\nNew Material\n\nExtend dplyr verbs to have more functionality.\nThink about data ethics.\n\nLab 3: Teacher Evaluations"
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt2.html#lab-3-challenge-3",
+    "href": "slides/week-3/week-3-dplyr-pt2.html#lab-3-challenge-3",
+    "title": "Data Wrangling with dplyr",
+    "section": "Lab 3 & Challenge 3",
+    "text": "Lab 3 & Challenge 3\nExploring teacher evaluations during COVID-19"
+  },
+  {
+    "objectID": "slides/week-2/week-2-ggplot.html#pair-programming-collaborations",
+    "href": "slides/week-2/week-2-ggplot.html#pair-programming-collaborations",
+    "title": "Basics of Graphics",
+    "section": "Pair Programming Collaborations",
+    "text": "Pair Programming Collaborations"
+  },
+  {
+    "objectID": "slides/week-2/week-2-ggplot.html#using-data-visualization-to-find-the-penguins",
+    "href": "slides/week-2/week-2-ggplot.html#using-data-visualization-to-find-the-penguins",
+    "title": "Basics of Graphics",
+    "section": "Using Data Visualization to Find the Penguins",
+    "text": "Using Data Visualization to Find the Penguins\n\nThis activity will require knowledge of:\n\ninstalling and loading packages in R\nformatting code chunks in Quarto\ninterpreting the context of a dataset\ndata types / variable types\ndifferent types of visualizations\nwhat visualization(s) go with different data types\nhow to make visualizations with ggplot2\nchoosing between different aesthetic options\n\n\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
+  },
+  {
+    "objectID": "slides/week-2/week-2-ggplot.html#ggplot2-resources",
+    "href": "slides/week-2/week-2-ggplot.html#ggplot2-resources",
+    "title": "Basics of Graphics",
+    "section": "ggplot2 Resources",
+    "text": "ggplot2 Resources\nEvery group should have a ggplot2 cheatsheet!\n\n\n\nOn the Front\n\n\n\nthe first column (far left) column provides the “template” for making a ggplot\nthe third column has advice on creating plots for two continuous variables\nthe third column has advice on creating plots for one discrete or one continuous variable\n\n\n\n\n\n\n\n\nOn the Back\n\n\n\nthe fourth column (far right) provides information on adding facets and labels to your plot\nthe third column has information on adding themes to your plot (if you have extra time)"
+  },
+  {
+    "objectID": "slides/week-2/week-2-ggplot.html#pair-programming-expectations",
+    "href": "slides/week-2/week-2-ggplot.html#pair-programming-expectations",
+    "title": "Basics of Graphics",
+    "section": "Pair Programming Expectations",
+    "text": "Pair Programming Expectations\nDuring your collaboration, you and your partner will alternate between two roles:\n\n\n\nListener\n\n\nThe person who will type into the Quarto document in RStudio\nWill not type unless prompted by the Problem Solver\nAsks Problem Solver clarifying questions\nAsks professor questions for the group\n\n\n\n\n\n\nProblem Solver\n\n\nReads out instructions or prompts\nDirects the Listener what to type in the Quarto document in Posit Cloud\nInstructs the Listener what comments to make in the Quarto document to help the group understand the code later\nKeeps group on task\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup Norms\n\n\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nNo cross-talk with other groups."
+  },
+  {
+    "objectID": "slides/week-2/week-2-ggplot.html#opening-the-practice-activity-in-posit-cloud",
+    "href": "slides/week-2/week-2-ggplot.html#opening-the-practice-activity-in-posit-cloud",
+    "title": "Basics of Graphics",
+    "section": "Opening the Practice Activity in Posit Cloud",
+    "text": "Opening the Practice Activity in Posit Cloud\nThe partner whose family name starts first alphabetically starts as the Listener!\nThey need to do the following:\n\nClick on the PA1 link in Canvas\nLog-in to Posit Cloud \nOpen the PA2-ggplot.qmd file (from the lower right corner)\nGet started!"
+  },
+  {
+    "objectID": "slides/week-2/week-2-ggplot.html#submission",
+    "href": "slides/week-2/week-2-ggplot.html#submission",
+    "title": "Basics of Graphics",
+    "section": "Submission",
+    "text": "Submission\n\nWhen you have completed the visualization tasks, you will work as a group to answer the five questions posed at the end of the document.\nEach person will input the answers to these questions in the PA1 Canvas quiz."
   }
 ]

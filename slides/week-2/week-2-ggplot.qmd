@@ -1037,9 +1037,142 @@ ggplot(data = mpg,
 <!-- Be sure to update with new Posit Cloud assignment link! -->
 
 ![Artwork by Allison Horst](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)
-## Pair Programming Collaborations
 
-<!-- Add blurb about roles  -->
-<!-- Add reminder about multiple abilities -->
+## Using Data Visualization to Find the Penguins
 
-<!-- Add blurb about cheatsheet -->
+::: {.small}
+This activity will require knowledge of:
+
+- installing and loading packages in R
+- formatting code chunks in Quarto
+- interpreting the context of a dataset
+- data types / variable types
+- different types of visualizations
+- what visualization(s) go with different data types
+- how to make visualizations with **ggplot2**
+- choosing between different aesthetic options
+:::
+. . .
+
+</br> 
+
+[**None of us have all these abilities. Each of us has some of these abilities.**]{.midi}
+
+## Pair Programming Expectations
+
+During your collaboration, you and your partner will alternate between two roles: 
+
+. . .
+
+::: columns
+::: {.column width="48%"}
+**Listener**
+
+::: {.small}
+-   The person who will type into the Quarto document in RStudio
+-   Will not type unless prompted by the Problem Solver
+-   Asks Problem Solver clarifying questions
+-   Asks professor questions for the group
+:::
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+::: {.fragment}
+**Problem Solver**
+
+::: {.small}
+-   Reads out instructions or prompts
+-   Directs the Listener what to type in the Quarto document in Posit Cloud
+-   Instructs the Listener what comments to make in the Quarto document to help the group understand the code later
+-   Keeps group on task
+:::
+:::
+:::
+:::
+
+. . .
+
+::: {.small}
+::: {.callout-tip}
+# Group Norms
+
+- Think and work together. Do not divide the work.
+- You are smarter together.
+- No cross-talk with other groups.
+:::
+:::
+
+<!-- Add other norms that are relevant -->
+
+## ggplot2 Resources
+
+Every group should have a **ggplot2** cheatsheet! 
+
+::: columns
+::: {.column width="30%"}
+::: {.fragment}
+**On the Front**
+
+::: {.incremental}
+::: {.small}
+- the first column (far left) column provides the "template" for making a ggplot
+- the third column has advice on creating plots for two continuous variables
+- the third column has advice on creating plots for one discrete or one continuous variable
+:::
+:::
+:::
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="30%"}
+::: {.fragment}
+**On the Back**
+
+::: {.incremental}
+::: {.small}
+- the fourth column (far right) provides information on adding facets and labels to your plot
+- the third column has information on adding themes to your plot (if you have extra time)
+:::
+:::
+:::
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="30%"}
+![](images/ggplot-cheatsheet.png){fig-alt="A picture of the ggplot2 cheatsheet, which contains helpful information on assembling a variety of visualizations all using the ggplot2 package."}
+
+:::
+:::
+
+## Opening the Practice Activity in Posit Cloud
+
+The partner whose family name starts first alphabetically starts as the Listener! 
+
+They need to do the following:
+
+- Click on the PA1 link in Canvas 
+- Log-in to Posit Cloud
+<!-- add instructions on how to make the project use collaborative editing -->
+- Open the `PA2-ggplot.qmd` file (from the lower right corner)
+- Get started! 
+
+## Submission
+
+- When you have completed the visualization tasks, you will work as a group to
+answer the five questions posed at the end of the document. 
+
+- Each person will input the answers to these questions in the PA1 Canvas quiz.
+
+
+# Wrap-up
+
+# What skills did you need?
+
+## 
