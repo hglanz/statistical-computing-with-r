@@ -319,15 +319,15 @@
     "objectID": "slides/week-2/week-2-import.html#thursday-october-1",
     "href": "slides/week-2/week-2-import.html#thursday-october-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
-    "section": "",
-    "text": "Today we will…\n\nDebrief PA 1\n\nCompare & Contrast Strategies\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2"
+    "section": "Thursday, October 1",
+    "text": "Thursday, October 1\nToday we will…\n\nDebrief PA 1\n\nCompare & Contrast Strategies\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#tidy-data-1",
     "href": "slides/week-2/week-2-import.html#tidy-data-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Tidy Data",
-    "text": "Tidy Data\n\n\n\nArtwork by Allison Horst"
+    "text": "Tidy Data\n\nArtwork by Allison Horst"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#same-data-different-formats",
@@ -348,14 +348,14 @@
     "href": "slides/week-2/week-2-import.html#tidy-data-2",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Tidy Data",
-    "text": "Tidy Data\n\n\n\nArtwork by Allison Horst"
+    "text": "Tidy Data\n\nArtwork by Allison Horst"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#common-types-of-data-files",
     "href": "slides/week-2/week-2-import.html#common-types-of-data-files",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Common Types of Data Files",
-    "text": "Common Types of Data Files\nLook at the file extension for the type of data file.\n. . .\n\n\n.csv : “comma-separated values”\n\nName, Age\nBob, 49\nJoe, 40\n\n\n. . .\n.xls, .xlsx: Microsoft Excel spreadsheet\n\nCommon approach: save as .csv\nNicer approach: use the readxl package\n\n. . .\n.txt: plain text\n\nCould have any sort of delimiter…\nNeed to let R know what to look for!"
+    "text": "Common Types of Data Files\nLook at the file extension for the type of data file.\n\n\n\n.csv : “comma-separated values”\n\nName, Age\nBob, 49\nJoe, 40\n\n\n\n\n.xls, .xlsx: Microsoft Excel spreadsheet\n\nCommon approach: save as .csv\nNicer approach: use the readxl package\n\n\n\n.txt: plain text\n\nCould have any sort of delimiter…\nNeed to let R know what to look for!"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#common-types-of-data-files-1",
@@ -397,63 +397,63 @@
     "href": "slides/week-2/week-2-import.html#pre-attentive-features-2",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Pre-attentive Features",
-    "text": "Pre-attentive Features\n\nknitr::include_graphics(\"images/pre-atten1.png\")"
+    "text": "Pre-attentive Features"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#pre-attentive-features-3",
     "href": "slides/week-2/week-2-import.html#pre-attentive-features-3",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Pre-attentive Features",
-    "text": "Pre-attentive Features\n\nknitr::include_graphics(\"images/pre-atten2.png\")"
+    "text": "Pre-attentive Features"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#pre-attentive-features-4",
     "href": "slides/week-2/week-2-import.html#pre-attentive-features-4",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Pre-attentive Features",
-    "text": "Pre-attentive Features\n\nfeatures that we see and perceive before we even think about it\n\n\nThey will jump out at us in less than 250 ms.\nE.g., color, form, movement, spatial location.\n\n. . .\nThere is a hierarchy of features:\n\nColor is stronger than shape.\nCombinations of pre-attentive features may not be pre-attentive due to interference."
+    "text": "Pre-attentive Features\n\nfeatures that we see and perceive before we even think about it\n\n\nThey will jump out at us in less than 250 ms.\nE.g., color, form, movement, spatial location.\n\n\nThere is a hierarchy of features:\n\nColor is stronger than shape.\nCombinations of pre-attentive features may not be pre-attentive due to interference."
   },
   {
     "objectID": "slides/week-2/week-2-import.html#gestalt-principles",
     "href": "slides/week-2/week-2-import.html#gestalt-principles",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Gestalt Principles",
-    "text": "Gestalt Principles\n\n\n\nGestalt Hierarchy\nGraphical Feature\n\n\n\n\n1. Enclosure\nFacets\n\n\n2. Connection\nLines\n\n\n3. Proximity\nWhite Space\n\n\n4. Similarity\nColor/Shape\n\n\n\n. . .\n\n\nImplications for practice:\n\nKnow that we perceive some groups before others.\nDesign to facilitate and emphasize the most important comparisons."
+    "text": "Gestalt Principles\n\n\n\nGestalt Hierarchy\nGraphical Feature\n\n\n\n\n1. Enclosure\nFacets\n\n\n2. Connection\nLines\n\n\n3. Proximity\nWhite Space\n\n\n4. Similarity\nColor/Shape\n\n\n\n\n\n\nImplications for practice:\n\nKnow that we perceive some groups before others.\nDesign to facilitate and emphasize the most important comparisons."
   },
   {
     "objectID": "slides/week-2/week-2-import.html#double-encoding",
     "href": "slides/week-2/week-2-import.html#double-encoding",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Double Encoding",
-    "text": "Double Encoding\n\nknitr::include_graphics(\"images/double.png\")"
+    "text": "Double Encoding"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#no-double-encoding",
     "href": "slides/week-2/week-2-import.html#no-double-encoding",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "No Double Encoding",
-    "text": "No Double Encoding\n\nknitr::include_graphics(\"images/no_double.png\")"
+    "text": "No Double Encoding"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-1",
     "href": "slides/week-2/week-2-import.html#color-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color",
-    "text": "Color\n\nColor, hue, and intensity are pre-attentive features, and bigger contrasts lead to faster detection.\n\nHue: main color family (red, orange, yellow…)\nIntensity: amount of color\n\n\n\n\n\nknitr::include_graphics(\"images/hue.png\")\n\n\n\n\n\n\n\n\n\n\nknitr::include_graphics(\"images/intensity.png\")"
+    "text": "Color\n\nColor, hue, and intensity are pre-attentive features, and bigger contrasts lead to faster detection.\n\nHue: main color family (red, orange, yellow…)\nIntensity: amount of color"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines",
     "href": "slides/week-2/week-2-import.html#color-guidelines",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\n\nDo not use rainbow color gradients!\nBe conscious of what certain colors “mean”.\n\nGood idea to use red for “good” and green for “bad”?\n\n\n\n\n\nknitr::include_graphics(\"images/rainbow.png\")\n\n\n\n\n\n\n\n\n\n\n\n\nknitr::include_graphics(\"images/red_green.png\")"
+    "text": "Color Guidelines\n\nDo not use rainbow color gradients!\nBe conscious of what certain colors “mean”.\n\nGood idea to use red for “good” and green for “bad”?"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines-1",
     "href": "slides/week-2/week-2-import.html#color-guidelines-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\nFor categorical data, try not to use more than 7 colors:\n\nknitr::include_graphics(\"images/small_gradient.png\")\n\n\n\n\n\n\n\n\n. . .\nIf you need to, you can use colorRampPalette() from the RColorBrewer package to produce larger palettes:\n\nknitr::include_graphics(\"images/big_gradient.png\")"
+    "text": "Color Guidelines\nFor categorical data, try not to use more than 7 colors:\n\n\n\n\n\n\n\n\n\n\nIf you need to, you can use colorRampPalette() from the RColorBrewer package to produce larger palettes:"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines-2",
@@ -467,21 +467,21 @@
     "href": "slides/week-2/week-2-import.html#color-guidelines-3",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nuse double encoding - when you use color, also use another aesthetic (line type, shape, facet, etc.).\n\n\nknitr::include_graphics(\"images/double.png\")"
+    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nuse double encoding - when you use color, also use another aesthetic (line type, shape, facet, etc.)."
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines-4",
     "href": "slides/week-2/week-2-import.html#color-guidelines-4",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nwith a unidirectional scale (e.g., all + values), use a monochromatic color gradient.\n\n\nknitr::include_graphics(\"images/blues.png\")\n\n\n\n\n\n\n\n\n\nwith a bidirectional scale (e.g., + and - values), use a purple-white-orange color gradient. Transition through white!\n\n\nknitr::include_graphics(\"images/PuOr.png\")"
+    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nwith a unidirectional scale (e.g., all + values), use a monochromatic color gradient.\n\n\n\n\n\n\n\n\n\n\n\nwith a bidirectional scale (e.g., + and - values), use a purple-white-orange color gradient. Transition through white!"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines-5",
     "href": "slides/week-2/week-2-import.html#color-guidelines-5",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nprint your chart out in black and white – if you can still read it, it will be safe for all users.\n\n\n\n\nknitr::include_graphics(\"images/nyt_color.png\")\n\n\n\n\n\n\n\n\n\n\n\n\nknitr::include_graphics(\"images/nyt_bw.png\")"
+    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nprint your chart out in black and white – if you can still read it, it will be safe for all users."
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-in-ggplot2",
@@ -495,7 +495,7 @@
     "href": "slides/week-2/week-2-import.html#on-grading-feedback.",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "On Grading / Feedback….",
-    "text": "On Grading / Feedback….\n\n\nEach question will earn a score of “Success” or “Growing”\n\nQuestions marked “Growing” will receive feedback on how to improve your solution\nThese questions can be resubmitted for additional feedback\n\n\n\n. . .\n\n\nEarning a “Success” doesn’t necessarily mean your solution is without error\n\nYou may still receive feedback on how to improve your solution\nThese questions cannot be resubmitted for additional feedback\n\n\n\n. . .\n\n\nYour labs will have an appearance / code format portion.\n\nReview the code formatting guidelines before you submit your lab!\nEach week, you will be assigned one of your peer’s labs to review their code formatting."
+    "text": "On Grading / Feedback….\n\n\nEach question will earn a score of “Success” or “Growing”\n\nQuestions marked “Growing” will receive feedback on how to improve your solution\nThese questions can be resubmitted for additional feedback\n\n\n\n\n\n\nEarning a “Success” doesn’t necessarily mean your solution is without error\n\nYou may still receive feedback on how to improve your solution\nThese questions cannot be resubmitted for additional feedback\n\n\n\n\n\n\n\nYour labs will have an appearance / code format portion.\n\nReview the code formatting guidelines before you submit your lab!\nEach week, you will be assigned one of your peer’s labs to review their code formatting."
   },
   {
     "objectID": "slides/week-2/week-2-import.html#to-do",
@@ -3464,7 +3464,7 @@
     "href": "slides/week-2/week-2-import.html#on-the-use-of-external-resources",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "On the Use of External Resources…",
-    "text": "On the Use of External Resources…"
+    "text": "On the Use of External Resources…\n\nPart of learning to program is learning from a variety of resources. Thus, I expect you will use resources that you find on the internet.\nIn this class the assumed knowledge is the course materials, including the course textbook, coursework pages, and course slides. Any functions / code used outside of these materials require direct references.\n\n\n\n\nIf you used Google:\n\npaste the link to the resource in a code comment next to where you used that resource\n\nIf you used ChatGPT:\n\nindicate somewhere in the problem that you used ChatGPT\ndownload and attach the .txt file containing your entire conversation with ChatGPT"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html",
@@ -3542,5 +3542,12 @@
     "title": "Basics of Graphics",
     "section": "Submission",
     "text": "Submission\n\nWhen you have completed the visualization tasks, you will work as a group to answer the five questions posed at the end of the document.\nEach person will input the answers to these questions in the PA1 Canvas quiz."
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html#things-you-should-know-about-chatgpt",
+    "href": "slides/week-2/week-2-import.html#things-you-should-know-about-chatgpt",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "Things You Should Know About ChatGPT…",
+    "text": "Things You Should Know About ChatGPT…\n\n\n\nGPT uses machine learning to predict what words to give you\n\nThis method is entirely probabilistic\nMeaning, the same question may produce different answers for different people\n\n\n\n\n\n\n\nThe answers GPT gives rely a lot on the context you provide (or don’t provide)\n\nIt is good to give lots of background information (e.g., what R package you are using)\n\n\n\n\n\n\n\nChatGPT is a pretty decent tutor.\n\nDid you use GPT to help you with some code?\nDo you not understand what the code is doing?\nAsk GPT to explain code to you!"
   }
 ]
