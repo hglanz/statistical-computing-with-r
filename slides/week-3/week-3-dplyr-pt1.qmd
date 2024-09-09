@@ -26,22 +26,28 @@ Today we will...
 
 ## Comments from Week 2
 
+::: {.small}
 + Read through your `.html` to make sure it looks correct.
   + Is any of your code producing errors / warnings / messages?
   + Are images appearing properly?
   + Are hyperlinks working properly?
+:::
 
 . . .
 
+::: {.small}
 + Do not install packages in Quarto code chunks!
   + Remember: **we only install packages once**.
+:::
 
 . . .
 
+::: {.small}
 + Make sure you **cite** external sources.
   + E.g., many people used `sapply()` to get the variable data types -- this is
   fine, but where did you find this solution? It's not in the textbook or the 
   coursework, so that function requires a citation! 
+:::
 
 ## Citing Your Sources
 
@@ -86,17 +92,20 @@ knitr::include_graphics("images/dplyr.png")
 
 ## `dplyr` verbs
 
+::: {.small}
 + `filter()` -- **select rows** based on their values
 + `select()` -- **select columns**
 + `mutate()` -- **add new columns** or **change existing columns**
 + `summarize()` -- perform **summary operations** on columns
 + `group_by()` -- facilitate **group-wise operations**
 + `arrange()` -- **sort rows** based on their values
+:::
 
 . . .
 
+::: {.small}
 Use the **pipe operator** (`|>` or `%>%`) to chain together data wrangling operations.
-
+:::
 
 # The Pipe Operator
 
@@ -243,6 +252,7 @@ cereals |>
 ```{r}
 #| echo: true
 #| label: load-cereal-data
+#| code-line-numbers: false
 
 library(liver)
 data(cereal)
@@ -301,6 +311,8 @@ We **filter** to the rows (observations) we would like to **keep** in the data.
 cereal |> 
   filter(sugars < 5)
 ```
+ 
+</br>
 
 ```{r}
 #| echo: false
@@ -310,7 +322,7 @@ cereal |>
 cereal |> 
   filter(sugars < 5) |> 
   knitr::kable() |> 
-  kableExtra::scroll_box(height = "250px") |> 
+  kableExtra::scroll_box(height = "400px") |> 
   kableExtra::kable_styling(font_size = 25)
 ```
 
@@ -330,6 +342,8 @@ cereal |>
          type == "hot")
 ```
 
+</br>
+
 ```{r}
 #| echo: false
 #| eval: true
@@ -339,20 +353,22 @@ cereal |>
   filter(sugars < 5,
          type == "hot") |> 
   knitr::kable() |> 
-  kableExtra::scroll_box(height = "250px") |> 
+  kableExtra::scroll_box(height = "350px") |> 
   kableExtra::kable_styling(font_size = 25)
 ```
 
-. . .
-
-::: {.small}
-::: {.callout-tip}
-# Why not use `&`?
+## Why not use `&`?
 
 The `,` separating these two conditions is equivalent to using an `&`. 
 
-Why not just use a `&`? Well, with a lot of `&`s your code can get hard to
+. . .
+
+Why not just use a `&`? 
+
+Well, with a lot of `&`s your code can get hard to
 read...
+
+. . .
 
 ```{r}
 #| label: lots-of-ands
@@ -363,8 +379,6 @@ read...
 filter(sugars < 5 & type == "cold" & calories > 100)
 ```
 
-:::
-:::
 
 ## `filter()`: Handy Helpers!
 
@@ -452,6 +466,7 @@ These functions select rows by **row number**.
 
 ## How do we "filter" in base `R`?
 
+::: {.small}
 You can use the `subset()` function!
 
 ```{r}
@@ -477,8 +492,9 @@ subset(cereal, name %in% c("Cheerios", "Cinnamon Toast Crunch", "Raisin Bran", "
   kableExtra::scroll_box(height = "250px") |> 
   kableExtra::kable_styling(font_size = 25)
 ```
+:::
 
-. . .
+## Another example of the `subset()` function...
 
 ```{r}
 #| echo: true
@@ -499,8 +515,8 @@ subset(cereal, sugars < 5 & type == "hot") |>
   kableExtra::kable_styling(font_size = 25)
 ```
 
-# `arrange()`
 
+# `arrange()`
 
 ## `arrange()`
 
@@ -520,6 +536,8 @@ cereal |>
   arrange(sodium)
 ```
 
+</br>
+
 ```{r}
 #| echo: false
 #| eval: true
@@ -529,7 +547,7 @@ cereal |>
 cereal |> 
   arrange(sodium) |>
   knitr::kable() |> 
-  kableExtra::scroll_box(height = "250px") |> 
+  kableExtra::scroll_box(height = "400px") |> 
   kableExtra::kable_styling(font_size = 25)
 ```
 
@@ -538,8 +556,6 @@ cereal |>
 We can arrange by **multiple** variables.
 
 . . .
-
-<br>
 
 ```{r}
 #| echo: true
@@ -551,6 +567,8 @@ cereal |>
   arrange(sodium, sugars) |>
   select(name, manuf, type, sodium, sugars)
 ```
+ 
+</br>
 
 ```{r}
 #| echo: false
@@ -560,7 +578,7 @@ cereal |>
   arrange(sodium, sugars) |>
   select(name, manuf, type, sodium, sugars) |> 
   knitr::kable() |> 
-  kableExtra::scroll_box(height = "250px") |> 
+  kableExtra::scroll_box(height = "350px") |> 
   kableExtra::kable_styling(font_size = 25)
 ```
 
@@ -632,6 +650,8 @@ You can use the `with_ties = FALSE)` argument to remove ties from your
 
 You can use the `order()` function!
 
+</br>
+
 ```{r}
 #| echo: true
 #| eval: false
@@ -695,6 +715,8 @@ cereal |>
   select(name:calories)
 ```
 
+</br> 
+
 ```{r}
 #| echo: false
 #| eval: true
@@ -703,7 +725,7 @@ cereal |>
 cereal |> 
   select(name:calories)  |> 
   knitr::kable() |> 
-  kableExtra::scroll_box(height = "250px") |> 
+  kableExtra::scroll_box(height = "400px") |> 
   kableExtra::kable_styling(font_size = 30)
 ```
 
@@ -717,6 +739,20 @@ cereal |>
 
 cereal |> 
   select(-rating)
+```
+
+</br> 
+
+```{r}
+#| echo: false
+#| eval: true
+#| label: remove-columns-table
+
+cereal |> 
+  select(-rating)  |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "400px") |> 
+  kableExtra::kable_styling(font_size = 30)
 ```
 
 ## `select()`: Reordering
@@ -867,6 +903,8 @@ cereal |>
   mutate(potass_per_cup = potass / cups)
 ```
 
+</br> 
+
 ```{r}
 #| eval: true
 #| echo: false
@@ -875,7 +913,7 @@ cereal |>
 cereal |> 
   mutate(potass_per_cup = potass / cups)  |> 
   knitr::kable() |> 
-  kableExtra::scroll_box(height = "200px") |> 
+  kableExtra::scroll_box(height = "400px") |> 
   kableExtra::kable_styling(font_size = 30)
 ```
 
@@ -891,6 +929,8 @@ cereal |>
   mutate(shelf = as.factor(shelf))
 ```
 
+</br>
+
 ```{r}
 #| eval: true
 #| echo: false
@@ -899,7 +939,7 @@ cereal |>
 cereal |> 
   mutate(shelf = as.factor(shelf))  |> 
   knitr::kable() |> 
-  kableExtra::scroll_box(height = "200px") |> 
+  kableExtra::scroll_box(height = "400px") |> 
   kableExtra::kable_styling(font_size = 30)
 ```
 
@@ -1120,6 +1160,63 @@ cereal |>
 
 + You will have the **full number of rows** remaining.
 
+## When would you need to `ungroup()`?
+
+::: {.small}
+The default for `summarize()` is to drop the *last* variable **after** the
+subsequent operation is taken. 
+
+Meaning, the first variables used for grouping **will not** be dropped, unless
+otherwise specified. 
+:::
+
+. . .
+
+::: {.small}
+```{r}
+#| code-line-numbers: false
+#| label: group-by-drop-first
+#| echo: true
+
+cereal |> 
+  group_by(manuf, type) |> 
+  summarize(mean_calories = mean(calories))
+```
+:::
+
+## How do I ungroup?
+
+**Option 1** - Use the `.groups` argument of `summarize()`
+
+::: {.small}
+```{r}
+#| eval: false
+#| echo: true
+#| label: drop-groups
+
+cereal |> 
+  group_by(manuf, type) |> 
+  summarize(mean_calories = mean(calories), 
+            .groups = "drop")
+```
+:::
+
+. . .
+
+**Option 2** - Use the `ungroup()` function after `summarize()`
+
+::: {.small}
+```{r}
+#| eval: false
+#| echo: true
+#| label: ungroup-last
+
+cereal |> 
+  group_by(manuf, type) |> 
+  summarize(mean_calories = mean(calories)) |> 
+  ungroup()
+```
+:::
 
 ## How do we "group" and "summarize" in base `R`?
 
@@ -1189,6 +1286,7 @@ Similar to the `+` formatting in `ggplot`, **do not** continue a line after writ
 #| echo: true
 #| eval: false
 #| label: bad-formatting
+#| code-line-numbers: false
 
 cereal |> group_by(type) |> summarise(mean_fiber = mean(fiber), num_cereals = n(), mean_sugar = mean(sugars))
 ```
@@ -1198,6 +1296,7 @@ cereal |> group_by(type) |> summarise(mean_fiber = mean(fiber), num_cereals = n(
 #| echo: true
 #| eval: false
 #| label: nice-formatting
+#| code-line-numbers: false
 
 cereal |> 
   group_by(type) |> 
@@ -1234,15 +1333,16 @@ This activity will require knowledge of:
 
 ## Pair Programming Expectations
 
+::: {.small}
 During your collaboration, you and your partner will alternate between two roles: 
-
+:::
 . . .
 
 ::: columns
 ::: {.column width="48%"}
+::: {.small}
 **Listener**
 
-::: {.small}
 -   The person who will type into the Quarto document in RStudio
 -   Will not type unless prompted by the Problem Solver
 -   Asks Problem Solver clarifying questions
@@ -1255,9 +1355,9 @@ During your collaboration, you and your partner will alternate between two roles
 
 ::: {.column width="48%"}
 ::: {.fragment}
+::: {.small}
 **Problem Solver**
 
-::: {.small}
 -   Reads out instructions or prompts
 -   Directs the Listener what to type in the Quarto document in Posit Cloud
 -   Instructs the Listener what comments to make in the Quarto document to help the group understand the code later
@@ -1267,16 +1367,14 @@ During your collaboration, you and your partner will alternate between two roles
 :::
 :::
 
-. . .
+## 
 
-::: {.small}
 ::: {.callout-tip}
 # Group Norms
 
 - Think and work together. Do not divide the work.
 - You are smarter together.
 - No cross-talk with other groups.
-:::
 :::
 
 <!-- Add other norms that are relevant -->
@@ -1286,15 +1384,15 @@ During your collaboration, you and your partner will alternate between two roles
 Every group should have a **dplyr** cheatsheet! 
 
 ::: columns
-::: {.column width="30%"}
+::: {.column width="37%"}
 ::: {.fragment}
 **On the Front**
 
 ::: {.incremental}
 ::: {.small}
-- the first column (far left) column provides guidance on finding grouped summaries (`group_by()` + `summarize()`)
-- the second column provides guidance on `filter()`ing values with logical comparisons
-- the third column has advice on `select()`ing and `mutate()`ing variables
+- Column 1: grouped summaries (`group_by()` + `summarize()`)
+- Column 2: `filter()`ing values with logical comparisons
+- Column 3: `select()`ing and `mutate()`ing variables
 :::
 :::
 :::
@@ -1303,14 +1401,13 @@ Every group should have a **dplyr** cheatsheet!
 ::: {.column width="3%"}
 :::
 
-::: {.column width="30%"}
+::: {.column width="37%"}
 ::: {.fragment}
 **On the Back**
 
 ::: {.incremental}
 ::: {.small}
-- the second column provides a list of summary functions you might like to use
-with `summarize()`
+- Column 2: summary functions you might like to use with `summarize()`
 :::
 :::
 :::
@@ -1319,7 +1416,7 @@ with `summarize()`
 ::: {.column width="3%"}
 :::
 
-::: {.column width="30%"}
+::: {.column width="15%"}
 ![](images/dplyr-cheatsheet.png){fig-alt="A picture of the dplyr cheatsheet, which contains helpful information on working with data in a variety of ways."}
 
 :::
@@ -1340,6 +1437,11 @@ They need to do the following:
 ## Submission
 
 > Submit the full name of the college Margaret will attend to the Canvas Quiz.
+
+- Each person will input the college in the PA3 Canvas quiz.
+- The person who last occupied the role of Listener will download and submit the
+`PA-3.qmd` file for the group.
+  + Only one submission per group!
 
 # Wrap-up
 

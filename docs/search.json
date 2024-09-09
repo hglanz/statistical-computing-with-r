@@ -3583,7 +3583,7 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#submission",
     "title": "Data Wrangling with dplyr",
     "section": "Submission",
-    "text": "Submission\n\nSubmit the full name of the college Margaret will attend to the Canvas Quiz."
+    "text": "Submission\n\nSubmit the full name of the college Margaret will attend to the Canvas Quiz.\n\n\nEach person will input the college in the PA3 Canvas quiz.\nThe person who last occupied the role of Listener will download and submit the PA-3.qmd file for the group.\n\nOnly one submission per group!"
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt2.html#piping-into-ggplot-1-output",
