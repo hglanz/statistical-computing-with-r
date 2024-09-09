@@ -1209,16 +1209,138 @@ cereal |>
 
 :::
 
-## [PA 3: Identify the Mystery College](../../group-activities/week-3/PA3-dplyr.qmd)
+# [PA 3: Identify the Mystery College](../../group-activities/week-3/PA3-dplyr.qmd)
 
-Today you will use the `dplyr` package to clean some data and then use that
-cleaned data to figure out what college Margaret has been accepted to.
+Today you will use the `dplyr` package to clean some data and then use that cleaned data to figure out what college Margaret has been accepted to.
+
+![](images/WSU-ivy-covered-building.jpg){fig-alt="A picture of a college building covered in green ivy. The building is reminescent of gothic architecture, with a brick exterior and many windows."}
+
+## Finding Margaret's College
+
+::: {.small}
+This activity will require knowledge of:
+
+- debugging code errors
+- function syntax
+- logical comparisons
+- dplyr verbs and when to use them
+- chaining steps together with the pipe operator
+:::
+. . .
+
+</br> 
+
+[**None of us have all these abilities. Each of us has some of these abilities.**]{.midi}
+
+## Pair Programming Expectations
+
+During your collaboration, you and your partner will alternate between two roles: 
+
+. . .
+
+::: columns
+::: {.column width="48%"}
+**Listener**
+
+::: {.small}
+-   The person who will type into the Quarto document in RStudio
+-   Will not type unless prompted by the Problem Solver
+-   Asks Problem Solver clarifying questions
+-   Asks professor questions for the group
+:::
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+::: {.fragment}
+**Problem Solver**
+
+::: {.small}
+-   Reads out instructions or prompts
+-   Directs the Listener what to type in the Quarto document in Posit Cloud
+-   Instructs the Listener what comments to make in the Quarto document to help the group understand the code later
+-   Keeps group on task
+:::
+:::
+:::
+:::
+
+. . .
+
+::: {.small}
+::: {.callout-tip}
+# Group Norms
+
+- Think and work together. Do not divide the work.
+- You are smarter together.
+- No cross-talk with other groups.
+:::
+:::
+
+<!-- Add other norms that are relevant -->
+
+## dplyr Resources
+
+Every group should have a **dplyr** cheatsheet! 
+
+::: columns
+::: {.column width="30%"}
+::: {.fragment}
+**On the Front**
+
+::: {.incremental}
+::: {.small}
+- the first column (far left) column provides guidance on finding grouped summaries (`group_by()` + `summarize()`)
+- the second column provides guidance on `filter()`ing values with logical comparisons
+- the third column has advice on `select()`ing and `mutate()`ing variables
+:::
+:::
+:::
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="30%"}
+::: {.fragment}
+**On the Back**
+
+::: {.incremental}
+::: {.small}
+- the second column provides a list of summary functions you might like to use
+with `summarize()`
+:::
+:::
+:::
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="30%"}
+![](images/dplyr-cheatsheet.png){fig-alt="A picture of the dplyr cheatsheet, which contains helpful information on working with data in a variety of ways."}
+
+:::
+:::
+
+## Opening the Practice Activity in Posit Cloud
+
+The partner whose birthday comes last starts as the Listener!
+
+They need to do the following:
+
+- Click on the PA2 link in Canvas 
+- Log-in to Posit Cloud
+<!-- add instructions on how to make the project use collaborative editing -->
+- Open the `PA3-dplyr.qmd` file (from the lower right corner)
+- Get started! 
+
+## Submission
 
 > Submit the full name of the college Margaret will attend to the Canvas Quiz.
 
-## Pair Programming Collaborations
+# Wrap-up
 
-<!-- Add blurb about roles  -->
-<!-- Add reminder about multiple abilities -->
-
-<!-- Add blurb about cheatsheet -->
+# What skills did you need?
