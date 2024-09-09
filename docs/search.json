@@ -3520,7 +3520,7 @@
     "href": "slides/week-2/week-2-ggplot.html#ggplot2-resources",
     "title": "Basics of Graphics",
     "section": "ggplot2 Resources",
-    "text": "ggplot2 Resources\nEvery group should have a ggplot2 cheatsheet!\n\n\n\nOn the Front\n\n\n\nthe first column (far left) column provides the “template” for making a ggplot\nthe third column has advice on creating plots for two continuous variables\nthe third column has advice on creating plots for one discrete or one continuous variable\n\n\n\n\n\n\n\n\nOn the Back\n\n\n\nthe fourth column (far right) provides information on adding facets and labels to your plot\nthe third column has information on adding themes to your plot (if you have extra time)"
+    "text": "ggplot2 Resources\nEvery group should have a ggplot2 cheatsheet!\n\n\n\nOn the Front\n\n\n\nColummn 1: the “template” for making a ggplot\nColumn 3: creating plots for two continuous variables\nColumn 4: creating plots for one discrete or one continuous variable\n\n\n\n\n\n\n\n\nOn the Back\n\n\n\nColumn 4: adding facets and labels to your plot\nColumn 3: adding themes to your plot (if you have extra time)"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#pair-programming-expectations",
@@ -3534,14 +3534,14 @@
     "href": "slides/week-2/week-2-ggplot.html#opening-the-practice-activity-in-posit-cloud",
     "title": "Basics of Graphics",
     "section": "Opening the Practice Activity in Posit Cloud",
-    "text": "Opening the Practice Activity in Posit Cloud\nThe partner whose family name starts first alphabetically starts as the Listener!\nThey need to do the following:\n\nClick on the PA1 link in Canvas\nLog-in to Posit Cloud \nOpen the PA2-ggplot.qmd file (from the lower right corner)\nGet started!"
+    "text": "Opening the Practice Activity in Posit Cloud\nThe partner whose family name starts first alphabetically starts as the Listener!\nThey need to do the following:\n\nClick on the PA2 link in Canvas\nLog-in to Posit Cloud \nOpen the PA2-ggplot.qmd file (from the lower right corner)\nGet started!"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#submission",
     "href": "slides/week-2/week-2-ggplot.html#submission",
     "title": "Basics of Graphics",
     "section": "Submission",
-    "text": "Submission\n\nWhen you have completed the visualization tasks, you will work as a group to answer the five questions posed at the end of the document.\nEach person will input the answers to these questions in the PA1 Canvas quiz.\nThe person who last occupied the role of Listener will download and submit the PA-2.qmd file for the group.\n\nOnly one submission per group!"
+    "text": "Submission\n\nWhen you have completed the visualization tasks, you will work as a group to answer the five questions posed at the end of the document.\nEach person will input the answers to these questions in the PA2 Canvas quiz.\nThe person who last occupied the role of Listener will download and submit the PA-2.qmd file for the group.\n\nOnly one submission per group!"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#things-you-should-know-about-chatgpt",
@@ -3562,14 +3562,14 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#pair-programming-expectations",
     "title": "Data Wrangling with dplyr",
     "section": "Pair Programming Expectations",
-    "text": "Pair Programming Expectations\n\nDuring your collaboration, you and your partner will alternate between two roles:\n\n\n\n\n\nListener\n\nThe person who will type into the Quarto document in RStudio\nWill not type unless prompted by the Problem Solver\nAsks Problem Solver clarifying questions\nAsks professor questions for the group\n\n\n\n\n\n\n\nProblem Solver\n\nReads out instructions or prompts\nDirects the Listener what to type in the Quarto document in Posit Cloud\nInstructs the Listener what comments to make in the Quarto document to help the group understand the code later\nKeeps group on task\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup Norms\n\n\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nNo cross-talk with other groups."
+    "text": "Pair Programming Expectations\n\nDuring your collaboration, you and your partner will alternate between two roles:\n\n\n\n\n\nListener\n\nThe person who will type into the Quarto document in RStudio\nWill not type unless prompted by the Problem Solver\nAsks Problem Solver clarifying questions\nAsks professor questions for the group\n\n\n\n\n\n\n\nProblem Solver\n\nReads out instructions or prompts\nDirects the Listener what to type in the Quarto document in Posit Cloud\nInstructs the Listener what comments to make in the Quarto document to help the group understand the code later\nKeeps group on task"
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt1.html#dplyr-resources",
     "href": "slides/week-3/week-3-dplyr-pt1.html#dplyr-resources",
     "title": "Data Wrangling with dplyr",
     "section": "dplyr Resources",
-    "text": "dplyr Resources\nEvery group should have a dplyr cheatsheet!\n\n\n\nOn the Front\n\n\n\nthe first column (far left) column provides guidance on finding grouped summaries (group_by() + summarize())\nthe second column provides guidance on filter()ing values with logical comparisons\nthe third column has advice on select()ing and mutate()ing variables\n\n\n\n\n\n\n\n\nOn the Back\n\n\n\nthe second column provides a list of summary functions you might like to use with summarize()"
+    "text": "dplyr Resources\nEvery group should have a dplyr cheatsheet!\n\n\n\nOn the Front\n\n\n\nColumn 1: grouped summaries (group_by() + summarize())\nColumn 2: filter()ing values with logical comparisons\nColumn 3: select()ing and mutate()ing variables\n\n\n\n\n\n\n\n\nOn the Back\n\n\n\nColumn 2: summary functions you might like to use with summarize()"
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt1.html#opening-the-practice-activity-in-posit-cloud",
@@ -3653,6 +3653,20 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#when-would-you-need-to-ungroup",
     "title": "Data Wrangling with dplyr",
     "section": "When would you need to ungroup()?",
-    "text": "When would you need to ungroup()?\nTechnically,"
+    "text": "When would you need to ungroup()?\n\nThe default for summarize() is to drop the last variable after the subsequent operation is taken.\nMeaning, the first variables used for grouping will not be dropped, unless otherwise specified.\n\n\n\n\ncereal |&gt; \n  group_by(manuf, type) |&gt; \n  summarize(mean_calories = mean(calories))\n\n# A tibble: 9 × 3\n# Groups:   manuf [7]\n  manuf type  mean_calories\n  &lt;fct&gt; &lt;fct&gt;         &lt;dbl&gt;\n1 A     hot           100  \n2 G     cold          111. \n3 K     cold          109. \n4 N     cold           84  \n5 N     hot           100  \n6 P     cold          109. \n7 Q     cold           94.3\n8 Q     hot           100  \n9 R     cold          115"
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt1.html#how-do-i-ungroup",
+    "href": "slides/week-3/week-3-dplyr-pt1.html#how-do-i-ungroup",
+    "title": "Data Wrangling with dplyr",
+    "section": "How do I ungroup?",
+    "text": "How do I ungroup?\nOption 1 - Use the .groups argument of summarize()\n\n\ncereal |&gt; \n  group_by(manuf, type) |&gt; \n  summarize(mean_calories = mean(calories), \n            .groups = \"drop\")\n\n\n\nOption 2 - Use the ungroup() function after summarize()\n\n\ncereal |&gt; \n  group_by(manuf, type) |&gt; \n  summarize(mean_calories = mean(calories)) |&gt; \n  ungroup()"
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt1.html#section",
+    "href": "slides/week-3/week-3-dplyr-pt1.html#section",
+    "title": "Data Wrangling with dplyr",
+    "section": "",
+    "text": "Group Norms\n\n\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nNo cross-talk with other groups."
   }
 ]

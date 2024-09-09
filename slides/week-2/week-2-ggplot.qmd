@@ -1129,9 +1129,9 @@ Every group should have a **ggplot2** cheatsheet!
 
 ::: {.incremental}
 ::: {.small}
-- the first column (far left) column provides the "template" for making a ggplot
-- the third column has advice on creating plots for two continuous variables
-- the third column has advice on creating plots for one discrete or one continuous variable
+- Colummn 1: the "template" for making a ggplot
+- Column 3: creating plots for two continuous variables
+- Column 4: creating plots for one discrete or one continuous variable
 :::
 :::
 :::
@@ -1146,8 +1146,8 @@ Every group should have a **ggplot2** cheatsheet!
 
 ::: {.incremental}
 ::: {.small}
-- the fourth column (far right) provides information on adding facets and labels to your plot
-- the third column has information on adding themes to your plot (if you have extra time)
+- Column 4: adding facets and labels to your plot
+- Column 3: adding themes to your plot (if you have extra time)
 :::
 :::
 :::
@@ -1168,7 +1168,7 @@ The partner whose family name starts first alphabetically starts as the Listener
 
 They need to do the following:
 
-- Click on the PA1 link in Canvas 
+- Click on the PA2 link in Canvas 
 - Log-in to Posit Cloud
 <!-- add instructions on how to make the project use collaborative editing -->
 - Open the `PA2-ggplot.qmd` file (from the lower right corner)
@@ -1179,7 +1179,7 @@ They need to do the following:
 - When you have completed the visualization tasks, you will work as a group to
 answer the five questions posed at the end of the document. 
 
-- Each person will input the answers to these questions in the PA1 Canvas quiz.
+- Each person will input the answers to these questions in the PA2 Canvas quiz.
 - The person who last occupied the role of Listener will download and submit the
 `PA-2.qmd` file for the group.
   + Only one submission per group!
