@@ -1032,7 +1032,7 @@ ggplot(data = mpg,
 :::
 
 
-## [PA 2: Using Data Visualization to Find the Penguins](https://posit.cloud/spaces/546280/content/8635027)
+# [PA 2: Using Data Visualization to Find the Penguins](https://posit.cloud/spaces/546280/content/8635027)
 
 <!-- Be sure to update with new Posit Cloud assignment link! -->
 
@@ -1040,6 +1040,8 @@ ggplot(data = mpg,
 
 ## Using Data Visualization to Find the Penguins
 
+::: columns
+::: {.column width="60%"}
 ::: {.small}
 This activity will require knowledge of:
 
@@ -1052,20 +1054,31 @@ This activity will require knowledge of:
 - how to make visualizations with **ggplot2**
 - choosing between different aesthetic options
 :::
-. . .
 
-</br> 
+:::
 
-[**None of us have all these abilities. Each of us has some of these abilities.**]{.midi}
+::: {.column width="5%"}
+:::
+
+::: {.column width="35%"}
+::: {.fragment}
+::: {.midi}
+**None of us have all these abilities. Each of us has some of these abilities.**
+:::
+:::
+:::
+:::
 
 ## Pair Programming Expectations
 
+::: {.small}
 During your collaboration, you and your partner will alternate between two roles: 
+:::
 
 . . .
 
 ::: columns
-::: {.column width="48%"}
+::: {.column width="49%"}
 **Listener**
 
 ::: {.small}
@@ -1076,10 +1089,10 @@ During your collaboration, you and your partner will alternate between two roles
 :::
 :::
 
-::: {.column width="4%"}
+::: {.column width="2%"}
 :::
 
-::: {.column width="48%"}
+::: {.column width="49%"}
 ::: {.fragment}
 **Problem Solver**
 
@@ -1093,16 +1106,14 @@ During your collaboration, you and your partner will alternate between two roles
 :::
 :::
 
-. . .
+## 
 
-::: {.small}
 ::: {.callout-tip}
-# Group Norms
+## Group Norms
 
 - Think and work together. Do not divide the work.
 - You are smarter together.
 - No cross-talk with other groups.
-:::
 :::
 
 <!-- Add other norms that are relevant -->
@@ -1112,7 +1123,7 @@ During your collaboration, you and your partner will alternate between two roles
 Every group should have a **ggplot2** cheatsheet! 
 
 ::: columns
-::: {.column width="30%"}
+::: {.column width="37%"}
 ::: {.fragment}
 **On the Front**
 
@@ -1129,7 +1140,7 @@ Every group should have a **ggplot2** cheatsheet!
 ::: {.column width="3%"}
 :::
 
-::: {.column width="30%"}
+::: {.column width="37%"}
 ::: {.fragment}
 **On the Back**
 
@@ -1145,7 +1156,7 @@ Every group should have a **ggplot2** cheatsheet!
 ::: {.column width="3%"}
 :::
 
-::: {.column width="30%"}
+::: {.column width="15%"}
 ![](images/ggplot-cheatsheet.png){fig-alt="A picture of the ggplot2 cheatsheet, which contains helpful information on assembling a variety of visualizations all using the ggplot2 package."}
 
 :::
@@ -1174,5 +1185,3 @@ answer the five questions posed at the end of the document.
 # Wrap-up
 
 # What skills did you need?
-
-## 
