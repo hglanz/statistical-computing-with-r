@@ -1180,6 +1180,9 @@ They need to do the following:
 answer the five questions posed at the end of the document. 
 
 - Each person will input the answers to these questions in the PA1 Canvas quiz.
+- The person who last occupied the role of Listener will download and submit the
+`PA-2.qmd` file for the group.
+  + Only one submission per group!
 
 
 # Wrap-up
