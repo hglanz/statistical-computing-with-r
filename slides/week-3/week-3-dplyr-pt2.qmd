@@ -13,34 +13,6 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-<!-- Add slide on deciding if you need to save an intermediate object. -->
-
-<!-- ## Save your changes! -->
-
-<!-- When you manipulate your data, make sure you assign your new dataset to a variable. -->
-
-<!-- ```{r} -->
-
-<!-- #| code-line-numbers: "1" -->
-
-<!-- #| echo: true -->
-
-<!-- #| eval: false -->
-
-<!-- #| label: saving-summary-to-object -->
-
-<!-- cereal_potass_summary <- cereal |>  -->
-
-<!--   filter(type == "cold") |>  -->
-
-<!--   mutate(potass_per_cup = potas / cups) |>  -->
-
-<!--   group_by(manuf) |>  -->
-
-<!--   summarise(mean_potass_per_cup = mean(potass_per_cup)) -->
-
-<!-- ``` -->
-
 ## Thursday, October 10
 
 Today we will...
@@ -54,12 +26,18 @@ Today we will...
 
 ## Example Data set -- [Cereal](https://search.r-project.org/CRAN/refmans/liver/html/cereal.html)
 
+::: {.small}
 ```{r}
 #| echo: true
+#| label: data-load-preview
+#| code-line-numbers: false
+
 library(liver)
 data(cereal)
-head(cereal)
+
+glimpse(cereal)
 ```
+:::
 
 ## Count with `count()`
 
@@ -91,22 +69,42 @@ cereal |>
   kableExtra::kable_styling(font_size = 25)
 ```
 
-<!-- Possibly insert example slide on calculating many different means of variables  -->
-
-<!-- Connect to the DRY principle -->
-<!-- Connect to efficiency -->
-
-## Summarize multiple columns with `across()`
+## Calculate a Summary Statistic for Many Columns
 
 For each `type` of cereal, calculate the `mean` nutrient levels.
 
+::: {.small}
+```{r}
+#| echo: true
+#| label: repeated-calculations
+#| eval: false
+#| code-line-numbers: false
+
+cereal |> 
+  group_by(type) |> 
+  summarize(mean_cal = mean(calories), 
+            mean_protein = mean(protein), 
+            mean_fat = mean(fat), 
+            mean_sodium = mean(sodium), 
+            mean_fiber = mean(fiber), 
+            mean_carbs = mean(carbo), 
+            mean_sugars = mean(sugars), 
+            mean_potassium = mean(potass)
+            )
+```
+:::
+
 . . .
+
+**Does this seem like the most efficient way we could do this?**
+
+## Summarize multiple columns with `across()`
 
 **Within** the `summarize()` function, we use the `across()` function, with three arguments:
 
 -   `.cols` -- to specify the **columns** to apply functions to.
 -   `.fns` -- to specify the **function(s)** to apply.
--   `.x` -- as a placeholder for **additional arguments** being passed into the function(s).
+-   `.x` -- as a placeholder (alias) for the variables being passed into the function.
 
 . . .
 
@@ -147,6 +145,7 @@ cereal |>
 
 ## Summarize multiple columns with `across()`
 
+::: {.small}
 For each `type` of cereal, calculate the `mean` nutrient levels. *Remove 10% of observations at the ends of the values, so extreme values are not included in the calculations.*
 
 
@@ -164,6 +163,7 @@ cereal |>
            )
     )
 ```
+:::
 
 ```{r}
 #| eval: true
@@ -179,19 +179,79 @@ cereal |>
   kableExtra::kable_styling(font_size = 23)
 ```
 
+## Getting Fancy with Names
+
+::: columns
+::: {.column width="10%"}
+::: {.small}
+`.names`
+:::
+:::
+
+::: {.column width="2%"}
+:::
+
+::: {.column width="85%"}
+::: {.small}
+```
+A glue specification that describes how to name the output columns. This can use {.col} to stand for the selected column name, and {.fn} to stand for the name of the function being applied. The default (NULL) is equivalent to "{.col}" for the single function case and "{.col}_{.fn}" for the case where a list is used for .fns.
+```
+:::
+:::
+:::
+
+. . .
+
+</br>
+
+::: {.small}
+```{r}
+#| echo: true
+#| eval: false
+#| label: summarize-across-with-names-code
+#| code-line-numbers: false
+
+cereal |> 
+  group_by(type) |> 
+  summarise(
+    across(.cols = calories:potass, 
+           .fns = ~ mean(.x), 
+           .names = "mean_{.col}"
+           )
+    )
+```
+
+<!-- I'm using mean instead of {.fn} because it expects that {.fn} is a list of functions, so when I use that in the .names argument my columns end up being 1_protein (since the mean is the first function).  -->
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| label: summarize-across-with-names-table
+
+cereal |> 
+  group_by(type) |> 
+  summarise(
+    across(.cols = calories:potass, 
+           .fns = ~ mean(.x), 
+           .names = "mean_{.col}"
+           )
+    ) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "130px") |> 
+  kableExtra::kable_styling(font_size = 23)
+```
+
+
 ## Discretize with `if_else()`
 
 For each cereal, label the `potass` as "high" or "low".
 
 . . .
 
-One `if_else` statement:
-
-<font size = 6>
-
--   `if_else(<CONDITION>, <TRUE OUTPUT>, <FALSE OUTPUT>)`
-
-</font>
+::: {.small}
+`if_else(<CONDITION>, <TRUE OUTPUT>, <FALSE OUTPUT>)`
+:::
 
 . . .
 
@@ -202,7 +262,9 @@ One `if_else` statement:
 #| code-line-numbers: false
 
 cereal |> 
-  mutate(po_category = if_else(potass <= 100, "low", "high"),
+  mutate(po_category = if_else(potass <= 100, 
+                               "low", 
+                               "high"),
          .after = potass)
 ```
 
@@ -218,17 +280,9 @@ cereal |>
   kableExtra::kable_styling(font_size = 25)
 ```
 
-</br>
-
 . . .
 
-::: {.small}
-::: {.callout-tip}
-# `.after`
-
-This specifies the location of the newly created column!
-:::
-:::
+What do you think `.after` does?
 
 ## Re-level with `case_when()`
 
@@ -251,7 +305,8 @@ cereal |>
                            manuf == "N" ~ "Nabisco", 
                            manuf == "P" ~ "Post", 
                            manuf == "Q" ~ "Quaker Oats", 
-                           manuf == "R" ~ "Ralston Purina"))
+                           manuf == "R" ~ "Ralston Purina")
+         )
 ```
 
 . . .
@@ -373,14 +428,15 @@ cereal |>
                        shape = manuf)) +
   geom_point(show.legend = FALSE,
              size = 6) +
-  labs(subtitle = "for each Manufacturer",
-       title = "Mean Protein per Cup", 
+  labs(subtitle = "for 77 different breakfast cereals",
+       title = "Mean Grams of Protein per Cup", 
        x = "", 
        y = "") +
   theme_bw() +
-  theme(plot.subtitle = element_text(size = 32),
-        axis.text = element_text(size = 22),
-        axis.text.x = element_text(angle = 13)) +
+  theme(plot.title = element_text(size = 24),
+        plot.subtitle = element_text(size = 18),
+        axis.text = element_text(size = 22)
+        ) +
   scale_x_continuous(limits = c(0, 10))
 ```
 
@@ -388,6 +444,7 @@ cereal |>
 
 ## Creating a Game Plan
 
+::: {.small}
 Just like when creating graphics with `ggplot`, wrangling data with `dplyr` involves thinking through many steps and writing many *layers* of code.
 
 -   To help you think through a wrangling problem, I strongly encourage you to create a game plan **before** we start writing code.
@@ -397,6 +454,7 @@ This might involve...
 -   a sketch or flowchart.
 -   a list of `dplyr` verbs and variable names.
 -   annotating the `head` of the dataframe.
+:::
 
 ## Creating a Game Plan
 
@@ -465,10 +523,12 @@ cereal |>
 
 . . .
 
+::: {.small}
 > Visit [Ethical Guidelines for Statistical Practice](https://www.amstat.org/your-career/ethical-guidelines-for-statistical-practice) and discuss one of the guidelines with your neighbor.
 >
 > -   What surprises you? What did you learn?
 > -   In what scenario might this come into play?
+:::
 
 # [Lab 3](../../labs/instructions/lab-3-instructions.qmd) & [Challenge 3](../../labs/instructions/challenge-3-instructions.qmd)
 
