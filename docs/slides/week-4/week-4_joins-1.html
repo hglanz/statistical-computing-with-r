@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Statistical Computing in R - Data Joins + Pivots + Factors</title>
+<title>Data Joins + Pivots + Factors – Introduction to Statistical Computing in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -113,13 +113,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Joins + Pivots + Factors</li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -149,9 +149,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -202,9 +202,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Weekly materials</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -255,9 +255,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Labs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -416,7 +416,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>has observations as rows and variables as columns.</li>
 <li><strong>has different formats for different tasks.</strong></li>
 </ul>
-<div class="img-fluid quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://r4ds.hadley.nz/images/tidy-1.png" class="img-fluid figure-img"></p>
 <figcaption>R4DS</figcaption>
@@ -425,7 +425,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="consequences-of-messy-data" class="level2">
 <h2 class="anchored" data-anchor-id="consequences-of-messy-data">Consequences of Messy Data</h2>
-<div class="img-fluid quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://www.openscapes.org/img/blog/tidydata/tidydata_2.jpg" class="img-fluid figure-img"></p>
 <figcaption>Allison Horst</figcaption>
@@ -439,7 +439,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="creating-tidy-data" class="level2">
 <h2 class="anchored" data-anchor-id="creating-tidy-data">Creating Tidy Data</h2>
 <p>We may need to <strong>transform</strong> our data to turn it into the <strong>version of tidy</strong> that is best for a task at hand.</p>
-<div class="img-fluid quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://www.openscapes.org/img/blog/tidydata/tidydata_4.jpg" class="img-fluid figure-img"></p>
 <figcaption>Allison Horst</figcaption>
@@ -471,7 +471,7 @@ Attaching package: 'liver'</code></pre>
 </div>
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:210px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">name</th>
@@ -625,7 +625,7 @@ Attaching package: 'liver'</code></pre>
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:210px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">shelf</th>
@@ -727,7 +727,7 @@ Attaching package: 'liver'</code></pre>
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">shelf</th>
@@ -907,7 +907,7 @@ Attaching package: 'liver'</code></pre>
 <h1>Pivoting Data</h1>
 <div class="columns">
 <div class="column">
-<div class="img-fluid quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://github.com/gadenbuie/tidyexplain/raw/main/images/static/png/original-dfs-tidy.png" class="img-fluid figure-img"></p>
 <figcaption>Kelsey Gonzalez</figcaption>
@@ -924,7 +924,7 @@ Attaching package: 'liver'</code></pre>
 <li>The data is in a human-friendly form (like a calendar).</li>
 <li>Each week has a row, and each day has a column.</li>
 </ul>
-<div class="img-fluid quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/slo-rainfall.jpg" class="img-fluid figure-img"></p>
 <figcaption><a href="cesanluisobispo.ucanr.edu">Data source</a></figcaption>
@@ -1032,7 +1032,7 @@ Caused by warning:
 </div>
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">Week</th>
@@ -1247,7 +1247,7 @@ Caused by warning:
 </div>
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">manuf</th>
@@ -1367,7 +1367,7 @@ Caused by warning:
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:420px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">manuf</th>
@@ -1439,7 +1439,7 @@ Caused by warning:
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:420px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">manuf</th>
@@ -1507,7 +1507,7 @@ Caused by warning:
 <ul>
 <li>It is the <em>relation</em> between datasets, not just the individual datasets themselves, that are important.</li>
 </ul>
-<div class="img-fluid quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/imdb_relational.png" class="img-fluid figure-img"></p>
 <figcaption>IMDb movie relational data</figcaption>
@@ -1571,7 +1571,7 @@ Caused by warning:
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:160px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -1643,7 +1643,7 @@ Caused by warning:
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:160px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -1707,7 +1707,7 @@ Caused by warning:
 </div>
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:160px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -1810,7 +1810,7 @@ Caused by warning:
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:170px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -1882,7 +1882,7 @@ Caused by warning:
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:170px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">id</th>
@@ -1935,7 +1935,7 @@ Caused by warning:
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:170px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">id</th>
@@ -2060,7 +2060,7 @@ Caused by warning:
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:320px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -2096,7 +2096,7 @@ Caused by warning:
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:320px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -2159,7 +2159,7 @@ Caused by warning:
 </div>
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:320px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -2224,7 +2224,7 @@ Caused by warning:
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:320px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -2316,7 +2316,7 @@ Caused by warning:
 </div>
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -2351,7 +2351,7 @@ Caused by warning:
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; ">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -2580,18 +2580,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2623,7 +2612,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/atheobold\.github\.io\/stat-331-website");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -2658,7 +2687,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -2706,7 +2739,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
