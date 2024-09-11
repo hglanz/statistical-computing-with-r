@@ -1,7 +1,7 @@
 ---
 title: "PA 3: Identify the Mystery College 🏫"
 subtitle: "Data Wrangling with `dplyr`"
-author: "NAME"
+author: "Names of Your Group!"
 format: html
 embed-resources: true
 code-tools: true
@@ -58,7 +58,7 @@ First, we declare our package dependencies and load the data.
 
 *The data loading function `read_csv()` will give you an outpouring of helpful information about the dataset. If you do not see the word "error", there is nothing to be concerned about.*
 
-```{r setup}
+```{r}
 #| warning: false
 #| message: false
 #| label: load-data-packages
@@ -184,7 +184,7 @@ carries out all of the steps necessary to clean the data.
 
 *Think about coding efficiency -- you __should not__ have multiple calls to the __same__ function!*
 
-```{r combine}
+```{r}
 #| label: all-steps-one-pipeline
 # Code combining ALL of your previous steps into ONE pipeline
 
@@ -222,7 +222,7 @@ Anheuser-Busch Clydesdales are a thing.
 8.  Of the three options remaining at this step, Margaret will attend the
 college that has the lowest admission rate.
 
-```{r identify-college}
+```{r}
 #| label: identify-college
 # Code to solve for the mystery college using the 8 clues above.
 
