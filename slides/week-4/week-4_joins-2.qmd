@@ -12,7 +12,25 @@ editor: source
 library(tidyverse)
 library(palmerpenguins)
 library(ggridges)
+library(readxl)
 ```
+
+```{r}
+#| eval: true
+#| label: imdb-data
+#| include: false
+#| message: false
+#| warning: false
+
+actors <- read_csv("data/actors.csv")
+directors <- read_csv("data/directors.csv")
+directors_genres <- read_csv("data/directors_genres.csv")
+movies <- read_csv("data/movies.csv")
+movies_directors <- read_csv("data/movies_directors.csv")
+movies_genres <- read_csv("data/movies_genres.csv")
+roles <- read_csv("data/roles.csv")
+```
+
 ## Wednesday, April 24
 
 Today we will...
@@ -245,7 +263,8 @@ I have randomly selected 25 songs (and their albums) to consider.
 ```{r}
 #| echo: false
 set.seed(2)
-full_eras <- read_excel("data/TS_data.xlsx", sheet = 1)
+
+full_eras <- read_xlsx("data/TS_data.xlsx", sheet = 1)
 eras_data <- full_eras |> 
   slice_sample(n = 25) |> 
   select(Song, Album)
