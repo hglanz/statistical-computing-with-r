@@ -3,15 +3,19 @@ title: "Data Joins and Transformations"
 format: html
 number-sections: true
 number-depth: 2
+bibliography: references.bib
 editor: source
 execute: 
   echo: true
-  eval: false
   include: true
 ---
 
 ```{r}
-#| include: false
+#| echo: false
+#| message: false
+#| warning: false
+#| label: package-load
+
 library(tidyverse)
 ```
 
@@ -147,50 +151,60 @@ are in single columns. This format is inherently rectangular, which is also
 important for statistical analysis - our methods are typically designed to work
 with matrices of data.
 
-![Tidy data format, illustrated.](https://www.openscapes.org/img/blog/tidydata/tidydata_1.jpg){#fig-tidy-data-definition fig-alt="Stylized text providing an overview of Tidy Data. The top reads 'Tidy data is a standard way of mapping the meaning of a dataset to its structure. - Hadley Wickham.' On the left reads 'In tidy data: each variable forms a column; each observation forms a row; each cell is a single measurement.' There is an example table on the lower right with columns ‘id’, ‘name’ and ‘color’ with observations for different cats, illustrating tidy data structure."}
+![Figure 1: Tidy data format, illustrated.](https://www.openscapes.org/img/blog/tidydata/tidydata_1.jpg){fig-alt="Stylized text providing an overview of Tidy Data. The top reads 'Tidy data is a standard way of mapping the meaning of a dataset to its structure. - Hadley Wickham.' On the left reads 'In tidy data: each variable forms a column; each observation forms a row; each cell is a single measurement.' There is an example table on the lower right with columns ‘id’, ‘name’ and ‘color’ with observations for different cats, illustrating tidy data structure."}
 
-![An illustration of the principle that every messy dataset is messy in its own way.](https://www.openscapes.org/img/blog/tidydata/tidydata_2.jpg){fig-alt="There are two sets of anthropomorphized data tables. The top group of three tables are all rectangular and smiling, with a shared speech bubble reading 'our columns are variables and our rows are observations!'. Text to the left of that group reads “The standard structure of tidy data means that 'tidy datasets are all alike…' The lower group of four tables are all different shapes, look ragged and concerned, and have different speech bubbles reading (from left to right) 'my column are values and my rows are variables', 'I have variables in columns AND in rows', 'I have multiple variables in a single column', and 'I don’t even KNOW what my deal is.' Next to the frazzled data tables is text '...but every messy dataset is messy in its own way. -Hadley Wickham.'"}
+![Figure 2: An illustration of the principle that every messy dataset is messy in its own way.](https://www.openscapes.org/img/blog/tidydata/tidydata_2.jpg){fig-alt="There are two sets of anthropomorphized data tables. The top group of three tables are all rectangular and smiling, with a shared speech bubble reading 'our columns are variables and our rows are observations!'. Text to the left of that group reads “The standard structure of tidy data means that 'tidy datasets are all alike…' The lower group of four tables are all different shapes, look ragged and concerned, and have different speech bubbles reading (from left to right) 'my column are values and my rows are variables', 'I have variables in columns AND in rows', 'I have multiple variables in a single column', and 'I don’t even KNOW what my deal is.' Next to the frazzled data tables is text '...but every messy dataset is messy in its own way. -Hadley Wickham.'"}
 
 The preference for tidy data has several practical implications: it is easier
 to reuse code on tidy data, allowing for analysis using a standardized set of
 tools (rather than having to build a custom tool for each data analysis job).
 
-![Tidy data is easier to manage because the same tools and approaches apply to multiple datasets.](https://www.openscapes.org/img/blog/tidydata/tidydata_3.jpg){fig-alt="On the left is a happy cute fuzzy monster holding a rectangular data frame with a tool that fits the data frame shape. On the workbench behind the monster are other data frames of similar rectangular shape, and neatly arranged tools that also look like they would fit those data frames. The workbench looks uncluttered and tidy. The text above the tidy workbench reads 'When working with tidy data, we can use the same tools in similar ways for different datasets…' On the right is a cute monster looking very frustrated, using duct tape and other tools to haphazardly tie data tables together, each in a different way. The monster is in front of a messy, cluttered workbench. The text above the frustrated monster reads '...but working with untidy data often means reinventing the wheel with one-time approaches that are hard to iterate or reuse.'"}
+![Figure 3: Tidy data is easier to manage because the same tools and approaches apply to multiple datasets.](https://www.openscapes.org/img/blog/tidydata/tidydata_3.jpg){fig-alt="On the left is a happy cute fuzzy monster holding a rectangular data frame with a tool that fits the data frame shape. On the workbench behind the monster are other data frames of similar rectangular shape, and neatly arranged tools that also look like they would fit those data frames. The workbench looks uncluttered and tidy. The text above the tidy workbench reads 'When working with tidy data, we can use the same tools in similar ways for different datasets…' On the right is a cute monster looking very frustrated, using duct tape and other tools to haphazardly tie data tables together, each in a different way. The monster is in front of a messy, cluttered workbench. The text above the frustrated monster reads '...but working with untidy data often means reinventing the wheel with one-time approaches that are hard to iterate or reuse.'"}
 
 In addition, standardized tools for data analysis means that it is easier to
 collaborate with others: if everyone starts with the same set of assumptions
 about the dataset, you can borrow methods and tools from a collaborator's
 analysis and easily apply them to your own dataset.
 
-::: {#fig-tidy-data-advantages layout-ncol="2"}
-![Collaboration with tidy data.](https://www.openscapes.org/img/blog/tidydata/tidydata_4.jpg){fig-alt="Two happy looking round fuzzy monsters, each holding a similarly shaped wrench with the word wrangle' on it. Between their tools is held up a rectangular data table labeled 'TIDY.'"}
+::: columns
+::: {.column width="47%"}
+![Figure 4: Collaboration with tidy data.](https://www.openscapes.org/img/blog/tidydata/tidydata_4.jpg){fig-alt="Two happy looking round fuzzy monsters, each holding a similarly shaped wrench with the word wrangle' on it. Between their tools is held up a rectangular data table labeled 'TIDY.'"}
+:::
 
-![Tidy data enables standardized workflows.](https://www.openscapes.org/img/blog/tidydata/tidydata_5.jpg){fig-alt="Cute fuzzy monsters putting rectangular data tables onto a conveyor belt. Along the conveyor belt line are different automated 'stations' that update the data, reading 'WRANGLE', 'VISUALIZE', and 'MODEL'. A monster at the end of the conveyor belt is carrying away a table that reads 'Complete analysis.'"}
+::: {.column width="3%"}
+:::
+
+::: {.column width="47%"}
+![Figure 5: Tidy data enables standardized workflows.](https://www.openscapes.org/img/blog/tidydata/tidydata_5.jpg){fig-alt="Cute fuzzy monsters putting rectangular data tables onto a conveyor belt. Along the conveyor belt line are different automated 'stations' that update the data, reading 'WRANGLE', 'VISUALIZE', and 'MODEL'. A monster at the end of the conveyor belt is carrying away a table that reads 'Complete analysis.'"}
+:::
+:::
 
 Tidy data makes it easier to collaborate with others and analyze new data using
 standardized workflows.
-:::
 
 ## Examples: Messy Data
 
 These datasets all display the same data: TB (Tuberculosis) cases documented by
 the WHO (World Health Organization) in Afghanistan, Brazil, and China, between
-1999 and 2000. There are 4 variables: country, year, cases, and population, but
+1999 and 2000. There are four variables: country, year, cases, and population, but
 each table has a different layout.
 
-+ For each of the data set, determine whether each table is tidy. If it is not,
-identify which rule or rules it violates.
++ For each of the data set, determine whether each table is tidy. 
+  + If it is not, identify which rule(s) it violates.
 
-+ What would you have to do in order to compute a standardized TB infection rate
-per 100,000 people?
++ What would you have to do to the data to be able to compute a standardized TB
+infection rate per 100,000 people?
 
-*All of these data sets are "built-in" to the `tidyverse` package*
+::: {.callout-tip}
+All of these data sets are "built-in" to the `tidyr` package!
+:::
 
 ::: panel-tabset
 #### Table 1 {-}
 
 ```{r}
 #| echo: false
+#| eval: true
 #| label: tidy-table-1
 
 knitr::kable(table1, caption = "Table 1")
@@ -199,29 +213,32 @@ knitr::kable(table1, caption = "Table 1")
 Here, each observation is a single row, each variable is a column, and
 everything is nicely arranged for e.g. regression or statistical analysis. We
 can easily compute another measure, such as cases per 100,000 population, by
-taking cases/population \* 100000 (this would define a new column).
+taking `cases` / `population` \* 100000 (this would define a new column).
 
-#### 2 {- #table2}
+#### Table 2 {- #table2}
 
 ```{r}
 #| echo: false
+#| eval: true
 #| label: tidy2
 
 knitr::kable(table2, caption = "Table 2")
 ```
 
-Here, we have 4 columns again, but we now have 12 rows: one of the columns is an
-indicator of which of two numerical observations is recorded in that row; a 
-second column stores the value. This form of the data is more easily plotted in
-e.g. ggplot2, if we want to show lines for both cases and population, but
-computing per capita cases would be much more difficult in this form than in the
-arrangement in table 1.
+Here, we have 4 columns again, but we now have 12 rows (instead of 6): one of
+the columns is an indicator of which of two numerical observations is recorded
+in that row; a second column stores the value (e.g., `cases`, `population`).
+This form of the data is more easily plotted in **ggplot2**, if we want to show
+trend lines for both cases and population, but computing per capita cases would
+be much more difficult in this form than in the arrangement in Table 1!
 
-#### 3 {-}
+#### Table 3 {-}
 
 ```{r}
 #| label: tidy-table-3
+#| eval: true
 #| echo: false
+
 knitr::kable(table3, caption = "Table 3")
 ```
 
@@ -230,10 +247,11 @@ stores both the case count and the population. We can't do *anything* with this
 format as it stands, because we can't do math on data stored as characters.
 However, this form might be easier to read and record for a human being.
 
-#### 4 {- #tables4ab}
+#### Table 4 {- #tables4ab}
 
 ```{r}
 #| echo: false
+#| eval: true
 #| label: tidy-table-4
 
 knitr::kable(table4a, caption = "Table 4a")
@@ -242,48 +260,52 @@ knitr::kable(table4b, caption = "Table 4b")
 
 In this form, we have two tables - one for population, and one for cases. Each
 year's observations are in a separate column. This format is often found in
-separate sheets of an excel workbook. To work with this data, we'll need to
+separate sheets of an Excel workbook. To work with this data, we'll need to
 transform each table so that there is a column indicating which year an
 observation is from, and then merge the two tables together by country and year.
 
-#### 5 {-}
+#### Table 5 {-}
 
-```{r tidy5}
+```{r}
 #| echo: false
-knitr::kable(table5, caption = "Table 5")
+#| eval: true
+#| label: tidy-table-5
+
+knitr::kable(tidyr::table5, caption = "Table 5")
 ```
 
-Table 5 is very similar to table 3, but the year has been separated into two
+Table 5 is very similar to Table 3, but the year has been separated into two
 columns - century, and year. This is more common with year, month, and day in
 separate columns (or date and time in separate columns), often to deal with the
 fact that spreadsheets don't always handle dates the way you'd hope they would.
-
-:::
 :::
 
-By the end of this chapter, you will have the skills needed to wrangle and transform the most common "messy" data sets into "tidy" form.
+In a perfect world, all data would come in the right format for our needs, but this is often not the case. We will spend the next few weeks learning about how
+to use R to reformat our data to follow the **tidy data** framework and see why
+this is so important. By the end of this chapter, you will have the skills
+needed to wrangle and transform the most common "messy" data sets into "tidy"
+form.
 
-<!-- In a perfect world, all data would come in the right format for our needs, but this is often not the case. We will spend the next few weeks learning about how  -->
-<!-- to use R to reformat our data to follow the **tidy data** framework and see why -->
-<!-- this is so important. For now, we will work with nice clean data sets but you -->
-<!-- should be able to identify when data follows a tidy data format and when it does -->
-<!-- not. -->
+::: callout-note
+## Do we always want our data in the same layout?
 
-<!-- ::: my-opinion -->
-<!-- #### Wait. So is it Tidy format? -->
+The concept of tidy data is useful for mapping variables from the data set to
+elements in a graph, specifications of a model, or aggregating to create
+summaries. However, what is considered to be "tidy data" format for one task,
+might not be in the correct "tidy data" format for a different task. It is
+important for you to consider the end goal when restructuring your data.
 
-<!-- The concept of tidy data is useful for mapping variables from the data set to elements in a graph, specifications of a model, or aggregating to create summaries. However, what is considered to be "tidy data" format for one task, might not be in the correct "tidy data" format for a different task. It is important for you to consider the end goal when restructuring your data. -->
-
-<!-- Part of this course is building the skills for you to be able to map your data operation steps from an original data set to the correct format (and output). -->
-<!-- ::: -->
+Part of this course is building the skills for you to be able to map your data
+operation steps from an original data set to the correct format (and output).
+:::
 
 # Part Three: Reshaping Data
+
+`r emo::ji("book")` [Required Reading: *R4DS* Chapter 5 (Data tidying)](https://r4ds.hadley.nz/data-tidy.html)
 
 ::: column-margin
 ![](images/week-4/tidyr.png){width=50% fig-alt="Hexagonal sticker for the 'tidyr' package from RStudio. The design features a tidy broom sweeping across, symbolizing data cleaning and organization. The background is a soft gradient of blues, and the package name 'tidyr' is prominently displayed in white near the bottom."}
 :::
-
-`r emo::ji("book")` [Required Reading: *R4DS* Chapter 5 (Data tidying)](https://r4ds.hadley.nz/data-tidy.html)
 
 `r emo::ji("play button")` [Required Video: Data Layouts -- 7 minutes](http://somup.com/crfFrmF6VQ)
 
@@ -313,6 +335,10 @@ columns:
 
 -   A column called `Amount` with the corresponding amount of the nutrient.
 
+::: {.callout-caution}
+You are expected to use `pivot_longer()` to perform this operation!
+:::
+
 # Part Four: Joining data
 
 `r emo::ji("book")` [Required Reading: *R4DS* Chapter 21 (Joins)](https://r4ds.hadley.nz/joins.html)
@@ -322,39 +348,63 @@ Because these chapters do a **much** better job visualizing the concepts, I've
 chosen not to record additional videos.
 :::
 
-### `r emo::ji("check")` **Check-in: *Practice with Joins***
+### `r emo::ji("check")` **Check-in 4.1: Practice with Joins**
 
 The following code creates three datasets / tibbles:
 
 ```{r}
 #| label: course-datasets-for-joining
 #| echo: true
+#| eval: true
 
 prof_info <- tibble(
   professor = c("Bodwin", 
                 "Theobold", 
                 "Robinson",
-                "Mann"),
+                "Mann", 
+                "Ruiz"),
   undergrad_school = c("Harvard", 
                        "Colorado Mesa University",
                        "Winona State University",
-                       "Carlton College"),
+                       "Carlton College", 
+                       "Reed College"),
   grad_school = c("UNC", 
                   "Montana State University", 
                   "University of Nebraska-Lincoln",
-                  "University of Michigan")
+                  "University of Michigan", 
+                  "Oregon State University")
 )
 
-prof_course <- tibble(
-  professor = c("Bodwin", "Robinson", "Theobold", "Mann", "Carlton"),
-  Stat_331 = c(TRUE, TRUE, TRUE, TRUE, TRUE),
-  Stat_330 = c(FALSE, TRUE, FALSE, FALSE, FALSE),
-  Stat_431 = c(TRUE, TRUE, TRUE, TRUE, FALSE)
+prof_course <- tidyr::tibble(
+  professor = c("Bodwin", 
+                "Robinson", 
+                "Theobold", 
+                "Mann", 
+                "Carlton"),
+  Stat_331 = c(TRUE, 
+               TRUE, 
+               TRUE, 
+               TRUE, 
+               TRUE),
+  Stat_330 = c(FALSE, 
+               TRUE, 
+               FALSE, 
+               FALSE, 
+               FALSE),
+  Stat_431 = c(TRUE, 
+               TRUE, 
+               TRUE, 
+               TRUE, 
+               FALSE)
 )
 
-course_info <- data.frame(
-  course = c("Stat_331", "Stat_330", "Stat_431"),
-  num_sections = c(8, 3, 1)
+course_info <- tibble(
+  course = c("Stat_331", 
+             "Stat_330", 
+             "Stat_431"),
+  num_sections = c(8, 
+                   3, 
+                   1)
 )
 
 ```
@@ -364,6 +414,7 @@ Here is what they look like once created:
 ```{r}
 #| label: preview-datasets
 #| echo: true
+#| eval: true
 
 prof_info
 
@@ -376,40 +427,42 @@ These datasets contain information about five Cal Poly professors, their educati
 
 **a) Combine datasets 1 and 2 to make this dataset:**
 
-```         
-  professor undergrad_school         grad_school                    Stat_331 Stat_330 Stat_431
-  <chr>     <chr>                    <chr>                          <lgl>    <lgl>    <lgl>   
-1 Bodwin    Harvard                  UNC                            TRUE     FALSE    TRUE    
-2 Robinson  Winona State University  University of Nebraska-Lincoln TRUE     TRUE     TRUE    
-3 Theobold  Colorado Mesa University Montana State University       TRUE     FALSE    TRUE   
+```
+professor undergrad_school         grad_school          Stat_331 Stat_330 Stat_431
+Bodwin    Harvard                  UNC                  TRUE     FALSE    TRUE    
+Theobold  Colorado Mesa University Montana State Unive… TRUE     FALSE    TRUE    
+Robinson  Winona State University  University of Nebra… TRUE     TRUE     TRUE    
+Mann      Carlton College          University of Michi… TRUE     FALSE    TRUE
 ```
 
 **b) Combine datasets 1 and 2 to make this dataset:**
 
-```         
-  professor Stat_331 Stat_330 Stat_431 undergrad_school         grad_school                   
-  <chr>     <lgl>    <lgl>    <lgl>    <chr>                    <chr>                         
-1 Bodwin    TRUE     FALSE    TRUE     Harvard                  UNC                           
-2 Robinson  TRUE     TRUE     TRUE     Winona State University  University of Nebraska-Lincoln
-3 Theobold  TRUE     FALSE    TRUE     Colorado Mesa University Montana State University      
-4 Carlton   TRUE     FALSE    FALSE    NA                       NA      
+```
+professor undergrad_school         grad_school          Stat_331 Stat_330 Stat_431
+Bodwin    Harvard                  UNC                  TRUE     FALSE    TRUE    
+Theobold  Colorado Mesa University Montana State Unive… TRUE     FALSE    TRUE    
+Robinson  Winona State University  University of Nebra… TRUE     TRUE     TRUE  
+Mann      Carlton College          University of Michi… TRUE     FALSE    TRUE    
+Ruiz      Reed College             Oregon State Univer… NA       NA       NA
 ```
 
 **c) Combine datasets 2 and 3 to make this dataset:**
 
 ```         
-   professor course   can_teach num_sections
-   <chr>     <chr>    <lgl>            <dbl>
- 1 Bodwin    Stat_331 TRUE                 8
- 2 Bodwin    Stat_330 FALSE                3
- 3 Bodwin    Stat_431 TRUE                 1
- 4 Robinson  Stat_331 TRUE                 8
- 5 Robinson  Stat_330 TRUE                 3
- 6 Robinson  Stat_431 TRUE                 1
- 7 Theobold  Stat_331 TRUE                 8
- 8 Theobold  Stat_330 FALSE                3
- 9 Theobold  Stat_431 TRUE                 1
-10 Carlton   Stat_331 TRUE                 8
-11 Carlton   Stat_330 FALSE                3
-12 Carlton   Stat_431 FALSE                1
+professor course   can_teach num_sections
+Bodwin    Stat_331 TRUE                 8
+Bodwin    Stat_330 FALSE                3
+Bodwin    Stat_431 TRUE                 1
+Robinson  Stat_331 TRUE                 8
+Robinson  Stat_330 TRUE                 3
+Robinson  Stat_431 TRUE                 1
+Theobold  Stat_331 TRUE                 8
+Theobold  Stat_330 FALSE                3
+Theobold  Stat_431 TRUE                 1
+Mann      Stat_331 TRUE                 8
+Mann      Stat_330 FALSE                3
+Mann      Stat_431 TRUE                 1
+Carlton   Stat_331 TRUE                 8
+Carlton   Stat_330 FALSE                3
+Carlton   Stat_431 FALSE                1
 ```
