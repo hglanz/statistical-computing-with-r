@@ -1487,14 +1487,14 @@
     "href": "slides/week-1/week-1-intro-version-control.html#verifying-your-connection",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Verifying Your Connection",
-    "text": "Verifying Your Connection\n\n\nOpen RStudio and run the following code in your console (lower left pane):\n\n\n\n\n\nusethis::git_sitrep()\n\n\n\n\nYou should see something like:\n\n── GitHub user \n• Default GitHub host: 'https://github.com'\n• Personal access token for 'https://github.com': '&lt;discovered&gt;'\n• GitHub user: 'atheobold'\n• Token scopes: 'admin:org, admin:public_key, delete:packages, delete_repo, gist, notifications, repo, user, workflow, write:packages'\n• Email(s): 'atheobol@calpoly.edu (primary)', 'theobold.allison970@gmail.com', '12439090+atheobold@users.noreply.github.com'\nℹ No active usethis project\n\n\n\nIf that is not the case, Dr. Theobold will help you troubleshoot in 5-minutes!"
+    "text": "Verifying Your Connection\n\n\nOpen RStudio and run the following code in your console (lower left pane):\n\n\n\n\n\nusethis::git_sitrep()\n\n\n\nYou should see something like:\n\n── GitHub user \n• Default GitHub host: 'https://github.com'\n• Personal access token for 'https://github.com': '&lt;discovered&gt;'\n• GitHub user: 'atheobold'\n• Token scopes: 'admin:org, admin:public_key, delete:packages, delete_repo, gist, notifications, repo, user, workflow, write:packages'\n• Email(s): 'atheobol@calpoly.edu (primary)', 'theobold.allison970@gmail.com', '12439090+atheobold@users.noreply.github.com'\nℹ No active usethis project\n\n\n\nIf that is not the case, Dr. Theobold will help you troubleshoot in 5-minutes!"
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#once-youve-cloned-the-repo",
     "href": "slides/week-1/week-1-intro-version-control.html#once-youve-cloned-the-repo",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Once You’ve Cloned the Repo",
-    "text": "Once You’ve Cloned the Repo\nStep 3: Open the lab-1.qmd file\nStep 4: Change your name\nStep 5: Commit your change (with a nice message!)\nStep 6: Push your change"
+    "text": "Once You’ve Cloned the Repo\nStep 4: Open the lab-1.qmd file\nStep 5: Change your name\nStep 6: Commit your change (with a nice message!)\nStep 7: Push your change"
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#some-words-about-chatgpt",
@@ -1508,7 +1508,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#to-do",
     "title": "Scripts, Notebooks & Version Control",
     "section": "To do…",
-    "text": "To do…\n\nLab 1: Introduction to Quarto\n\nDue Sunday (9/29) at 11:59pm\n\nChallenge 1: Modifying Your Quarto Document\n\nDue Sunday (9/29) at 11:59pm\n\nComplete the Week 2 Coursework\n\nCheck-ins 2.1 + 2.2 due Tuesday (10/1) by the start of class"
+    "text": "To do…\n\nLab 1: Introduction to Quarto\n\nDue Sunday (9/29) at 11:59pm\n\nChallenge 1: Modifying Your Quarto Document\n\nDue Sunday (9/29) at 11:59pm\n\nComplete the Week 2 Coursework\n\nCheck-ins 2.1, 2.2, 2.3 due Tuesday (10/1) by the start of class"
   },
   {
     "objectID": "weeks/week-1-r-rstudio.html",
@@ -3542,5 +3542,12 @@
     "title": "Extending Joins, Factors, Clean Variable Names",
     "section": "To do…",
     "text": "To do…\n\nLab 4: Childcare Costs in California\n\nDue Saturday (4/27) at 11:59pm\n\nRead Chapter 5: Strings + Dates\n\nCheck-in 5.1 - 5.2 due Monday (4/29) at 10:00am"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#consent-to-participate",
+    "href": "slides/week-1/week-1-intro-version-control.html#consent-to-participate",
+    "title": "Scripts, Notebooks & Version Control",
+    "section": "Consent to Participate",
+    "text": "Consent to Participate\n\n\nIf you agree to participate…\n\nyou will be recorded once a week for 10-weeks while participating in pair programming to complete collaborative tasks.\nyou will complete surveys about your demographic information, your prior computing experiences, and your attitudes toward data science.\n\n\n\n\n\n\nYour participation in this research will not directly affect your course grade.\n\n\n\n\n\n\n\n\n\n\nConsent Form\n\n\nPlease complete the consent form (https://forms.gle/oax73hoe7uRSVLYw8) by Monday, 9/30."
   }
 ]
