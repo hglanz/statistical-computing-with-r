@@ -1,6 +1,6 @@
 ---
 title: "Challenge 2: Spicing things up with ggplot2"
-author: "Add your name!"
+aauthor: "Your name here!"
 format: html
 editor: source
 embed-resources: true
