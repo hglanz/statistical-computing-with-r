@@ -2562,7 +2562,7 @@
     "href": "labs/instructions/lab-4-instuctions.html#the-data",
     "title": "Lab 4: Childcare Costs in California",
     "section": "The Data",
-    "text": "The Data\nIn this lab we’re going look at the median weekly cost of childcare in California. A detailed description of the data can be found here.\nThe data come to us from TidyTuesday.\n0. Load the appropriate libraries and the data.\n\n# load packages\n\n\n# load data\nchildcare_costs &lt;- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv')\n\ncounties &lt;- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv')\n\n1. Briefly describe the dataset (~ 4 sentences). What information does it contain?"
+    "text": "The Data\nIn this lab we’re going look at the median weekly cost of childcare in California. A detailed description of the data can be found here.\nThe data come to us from TidyTuesday.\n0. Load the appropriate libraries and the data.\n\nchildcare_costs &lt;- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv')\n\ncounties &lt;- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv')\n\n1. Briefly describe the dataset (~ 4 sentences). What information does it contain?"
   },
   {
     "objectID": "labs/instructions/lab-4-instuctions.html#california-childcare-costs",
