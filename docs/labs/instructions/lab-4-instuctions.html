@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name">
+<meta name="author" content="Instructions">
 
 <title>Lab 4: Childcare Costs in California – Introduction to Statistical Computing in R</title>
 <style>
@@ -317,7 +317,7 @@ window.Quarto = {
   <li><a href="#the-data" id="toc-the-data" class="nav-link active" data-scroll-target="#the-data">The Data</a></li>
   <li><a href="#california-childcare-costs" id="toc-california-childcare-costs" class="nav-link" data-scroll-target="#california-childcare-costs">California Childcare Costs</a></li>
   <li><a href="#median-household-income-vs.-childcare-costs-for-infants" id="toc-median-household-income-vs.-childcare-costs-for-infants" class="nav-link" data-scroll-target="#median-household-income-vs.-childcare-costs-for-infants">Median Household Income vs.&nbsp;Childcare Costs for Infants</a></li>
-  <li><a href="#open-ended-analysis" id="toc-open-ended-analysis" class="nav-link" data-scroll-target="#open-ended-analysis">Open-Ended Analysis</a></li>
+  <li><a href="#challenge-4-open-ended-analysis" id="toc-challenge-4-open-ended-analysis" class="nav-link" data-scroll-target="#challenge-4-open-ended-analysis">Challenge 4: Open-Ended Analysis</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-331-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -336,7 +336,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
+             <p>Instructions </p>
           </div>
   </div>
     
@@ -355,7 +355,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+Tips for Success
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -372,46 +372,31 @@ Tip
 </div>
 </div>
 </div>
-<p><a href="LA4_childcare.qmd">Download starter .qmd file</a></p>
 <section id="the-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-data">The Data</h2>
 <p>In this lab we’re going look at the median weekly cost of childcare in California. A detailed description of the data can be found <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-05-09/readme.md">here</a>.</p>
 <p>The data come to us from <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday</a>.</p>
 <p><strong>0. Load the appropriate libraries and the data.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load libraries</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load data</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>childcare_costs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv"): could not find function "read_csv"</code></pre>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>childcare_costs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>counties <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>counties <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv"): could not find function "read_csv"</code></pre>
-</div>
-</div>
-<p><strong>1. Briefly describe the data (~ 4 sentences). What information does it contain?</strong></p>
+<p><strong>1. Briefly describe the dataset (~ 4 sentences). What information does it contain?</strong></p>
 </section>
 <section id="california-childcare-costs" class="level2">
 <h2 class="anchored" data-anchor-id="california-childcare-costs">California Childcare Costs</h2>
-<p><strong>2. Let’s focus only on California. Create a <code>ca_childcare</code> dataset containing (1) county information and (2) all information from the <code>childcare_costs</code> dataset.</strong></p>
-<p><strong>a. Sketch a game plan for completing this task. You should do all of this within one pipeline</strong></p>
-<p><img src=".png" class="img-fluid"></p>
-<p><strong>b. Implement/code your game plan to create the dataset of childcare costs in California.</strong> <em>Checkpoint: There are 58 counties in CA and 11 years in the dataset. Therefore, your new dataset should have 53 x 11 = 638 observations.</em></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code for Q2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>Let’s start by focusing only on California.</p>
+<p><strong>2. Create a <code>ca_childcare</code> dataset of childcare costs in California, containing (1) county information and (2) all information from the <code>childcare_costs</code> dataset.</strong> <em>Hint: There are 58 counties in CA and 11 years in the dataset. Therefore, your new dataset should have 53 x 11 = 638 observations.</em></p>
 <p><strong>3. Using a function from the <code>forcats</code> package, complete the code below to create a new variable where each county is categorized into one of the <a href="https://census.ca.gov/regions/">10 Census regions</a> in California. Use the Region description (from the plot), not the Region number.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ca_childcare <span class="ot">&lt;-</span> ca_childcare <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">county_name =</span> <span class="fu">str_remove</span>(county_name, <span class="st">" County"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  ...</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># code for Q3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: The pipe operator requires a function call as RHS (&lt;text&gt;:3:3)</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ca_childcare <span class="ot">&lt;-</span> ca_childcare <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">county_name =</span> <span class="fu">str_remove</span>(county_name, <span class="st">" County"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -427,7 +412,7 @@ Tip
 <p>You will learn about the <code>str_remove()</code> function from the <code>stringr</code> package next week!</p>
 </div>
 </div>
-<p><strong>4. Let’s consider the median household income of each region, and how that income has changed over time. Create a table with ten rows, one for each region, and two columns, one for 2008 and one for 2018. The cells should contain the <code>median</code> of the median household income (expressed in 2018 dollars) of the <code>region</code> and the <code>study_year</code>. Order the rows by 2018 values.</strong></p>
+<p><strong>4. Let’s consider the median household income of each region, and how that income has changed over time. Create a table with ten rows, one for each region, and two columns, one for 2008 and one for 2018. The cells should contain the <code>median</code> of the median household income (expressed in 2018 dollars) of the <code>region</code> and the <code>study_year</code>. Arrange the rows by 2018 values.</strong></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -438,11 +423,8 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This will require transforming your data! Sketch out what you want the data to look like before you begin to code. You should be starting with your California dataset that contains the regions.</p>
+<p>This will require transforming your data! Sketch out what you want the data to look like before you begin to code. You should be starting with your California dataset that contains the regions!</p>
 </div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code for Q4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>5. Which California <code>region</code> had the lowest <code>median</code> full-time median weekly price for center-based childcare for infants in 2018? Does this <code>region</code> correspond to the <code>region</code> with the lowest <code>median</code> income in 2018 that you found in Q4?</strong></p>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -457,9 +439,6 @@ Warning
 <div class="callout-body-container callout-body">
 <p>The code should give me the EXACT answer. This means having the code output the exact row(s) and variable(s) necessary for providing the solution.</p>
 </div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code for Q5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>6. The following plot shows, for all ten regions, the change over time of the full-time median price for center-based childcare for infants, toddlers, and preschoolers. Recreate the plot. You do not have to replicate the exact colors or theme, but your plot should have the same content, including the order of the facets and legend, reader-friendly labels, axes breaks, and a loess smoother.</strong></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -483,9 +462,6 @@ Tip
 <figcaption>Plot to recreate</figcaption>
 </figure>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code for Q6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 <section id="median-household-income-vs.-childcare-costs-for-infants" class="level2">
 <h2 class="anchored" data-anchor-id="median-household-income-vs.-childcare-costs-for-infants">Median Household Income vs.&nbsp;Childcare Costs for Infants</h2>
@@ -503,27 +479,18 @@ Refresher on Linear Regression
 </div>
 </div>
 <p><strong>7. Create a scatterplot showing the relationship between median household income (expressed in 2018 dollars) and the full-time median weekly price charged for center-based childcare for an infant in California. Overlay a linear regression line (lm) to show the trend.</strong></p>
+<p><strong>8. Look up the documentation for <code>lm()</code> and fit a linear regression model to the relationship shown in your plot above.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot for scatterplot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># complete the code provided</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>reg_mod1 <span class="ot">&lt;-</span> <span class="fu">lm</span>()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg_mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>8. Look up the documentation for <code>lm()</code> and fit a linear regression model to the relationship shown in your plot above (recall: <span class="math inline">\(y = mx+b\)</span>). Identify the coefficient estimates from the model.</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># complete the code provided</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>reg_mod1 <span class="ot">&lt;-</span> <span class="fu">lm</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in terms.formula(formula, data = data): argument is not a valid model</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg_mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'reg_mod1' not found</code></pre>
-</div>
-</div>
-<p><strong>9. Do you have evidence to conclude there is a relationship between the median household income and the median weekly cost of center-based childcare for infants in California? Cite values from your output for support.</strong></p>
+<p><strong>9. Using the output from <code>summary()</code>, write out the estimated regression line (recall: <span class="math inline">\(y = mx + b\)</span>).</strong></p>
+<p><strong>10. Do you have evidence to conclude there is a relationship between the median household income and the median weekly cost of center-based childcare for infants in California? Cite values from your <code>summary()</code> output to support your claim!</strong></p>
 </section>
-<section id="open-ended-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="open-ended-analysis">Open-Ended Analysis</h2>
-<p>Let’s give you a taste of what to expect for the open-ended essay portion of the midterm exam.</p>
-<p><strong>10. Investigate the full-time median price for childcare in a center-based setting versus the full-time median price for childcare in a family (in-home) setting in California. Pay close attention to the different developmental stages. Support your answer with one table of summary statistics and one visualization.</strong></p>
+<section id="challenge-4-open-ended-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-4-open-ended-analysis">Challenge 4: Open-Ended Analysis</h2>
+<p><strong>Investigate the full-time median price for childcare in a center-based setting versus the full-time median price for childcare in a family (in-home) setting in California. Pay close attention to the different developmental stages. Support your answer with one table of summary statistics and one visualization.</strong></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -544,7 +511,6 @@ Tip
 </ul>
 </div>
 </div>
-<p>Dr.&nbsp;Rehnberg will be reading through these and providing some feedback!</p>
 
 
 </section>

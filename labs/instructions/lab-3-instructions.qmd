@@ -1,6 +1,6 @@
 ---
 title: "Lab 3: Student Evaluations of Teaching"
-author: "NAME"
+author: "Instructions"
 format: 
   html:  
     embed-resources: true
