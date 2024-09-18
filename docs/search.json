@@ -1024,7 +1024,7 @@
     "href": "group-activities/pair-programming-norms.html#completing-the-task",
     "title": "Pair Programming Roles",
     "section": "Completing the Task",
-    "text": "Completing the Task\nWorking with your partner, complete the Practice Activity in the Quarto document provided. In your roles—Listener and Problem Solver—use the prompts below to help guide the completion of your activity.\n\n\nProblem Solver\nI am looking for…\nI am confused by…\nI notice…\nWhat might be true is…\nWhat’s important is…\nI predict…\nThis reminds me of…\nWhat if we…\nWe could try…\nI am thinking about…\nA line of code I could write is…\n\n\n\nListener\n\nDo you understand what we need to do?\nWhat’s the question we have for Dr. Theobold? Can we answer the question ourselves?\nWhat are you focusing on?\nWhat are you thinking now?\nCould you tell me more?\nWhat are you doing (or writing) now? Please elaborate.\nI can’t follow that, run that by me again.\n What other sources of information do we need?\nWhich words should I look up?\nWhat else do we need to complete this problem?"
+    "text": "Completing the Task\nWorking with your partner, complete the Practice Activity in the Quarto document provided. In your roles—Coder and Developer—use the prompts below to help guide the completion of your activity.\n\n\nCoder\nI am looking for…\nI am confused by…\nI notice…\nWhat might be true is…\nWhat’s important is…\nI predict…\nThis reminds me of…\nWhat if we…\nWe could try…\nI am thinking about…\nA line of code I could write is…\n\n\n\nDeveloper\n\nDo you understand what we need to do?\nWhat’s the question we have for Dr. Theobold? Can we answer the question ourselves?\nWhat are you focusing on?\nWhat are you thinking now?\nCould you tell me more?\nWhat are you doing (or writing) now? Please elaborate.\nI can’t follow that, run that by me again.\n What other sources of information do we need?\nWhich words should we look up?\nWhat else do we need to complete this problem?"
   },
   {
     "objectID": "group-activities/pair-programming-norms.html#once-youre-finished",
@@ -4403,5 +4403,26 @@
     "title": "Extending Joins, Factors, Clean Variable Names",
     "section": "To do…",
     "text": "To do…\n\nLab 4: Childcare Costs in California\n\nDue Saturday (4/27) at 11:59pm\n\nRead Chapter 5: Strings + Dates\n\nCheck-in 5.1 - 5.2 due Monday (4/29) at 10:00am"
+  },
+  {
+    "objectID": "labs/instructions/bonus-challenges/bCH_murder.html",
+    "href": "labs/instructions/bonus-challenges/bCH_murder.html",
+    "title": "Bonus Challenge: Murder in SQL City",
+    "section": "",
+    "text": "Download starter .qmd file\nFor this challenge, you will be using table joins to solve a murder mystery.\nGuilty Party(ies):"
+  },
+  {
+    "objectID": "labs/instructions/bonus-challenges/bCH_murder.html#instructions",
+    "href": "labs/instructions/bonus-challenges/bCH_murder.html#instructions",
+    "title": "Bonus Challenge: Murder in SQL City",
+    "section": "Instructions",
+    "text": "Instructions\nNorthwestern University’s Knight Lab wanted to help sharpen users’ database skills, so they created a murder mystery. Can you solve this crime in SQL City??\nThe database you will be working with contains tables with different pieces of information pertinent to the crime - people, social media check-ins, driver’s licenses, crime scene reports, police interviews, and more.\n\n\n\nDatabase schema\n\n\nSolve the murder mystery, showing all of your work in this document. For full credit, your document must be well organized and easy to follow. Use headers, good code formatting practices, and comment your code. You MUST include any external references you use to solve this mystery.\nYour solution must be reproducible – that is, you should use dplyr verbs, table joins, etc. to solve the mystery, rather than just looking through the tables yourself. Your code must execute properly and stand alone.\nWhen you are finished solving the mystery:\n\nWrite the name of the guilty party or parties at the top of the assignment.\nTurn your rendered HTML document in to Canvas."
+  },
+  {
+    "objectID": "labs/instructions/bonus-challenges/bCH_murder.html#solve-the-crime-10",
+    "href": "labs/instructions/bonus-challenges/bCH_murder.html#solve-the-crime-10",
+    "title": "Bonus Challenge: Murder in SQL City",
+    "section": "Solve the Crime (+10)",
+    "text": "Solve the Crime (+10)\nThis code chunk will read in all of the tables for you.\n\nlibrary(tidyverse)\nif (!\"purrr\" %in% installed.packages()) install.packages(\"purrr\")\nsource(\"https://raw.githubusercontent.com/zoerehnberg/STAT331-S23/main/challenges/bCH_murder_setup.R\")\n\n\n\n\n\n\n\nTip\n\n\n\nIn my solution, I used str_detect() a couple of times. This function is from the stringr package (part of the tidyverse!) which we will cover in week 5 of the course.\n\n\nTo get you started, I’ll set you up in the right place.\n\nA crime has taken place and the detective needs your help. The detective gave you the crime scene report, but you somehow lost it. You vaguely remember that the crime was a murder that occurred sometime on Jan.15, 2018 and that it took place in SQL City. Start by retrieving the corresponding crime scene report from the police department’s database."
   }
 ]
