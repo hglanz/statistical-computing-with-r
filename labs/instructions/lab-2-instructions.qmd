@@ -1,5 +1,6 @@
 ---
 title: "Lab 2: Exploring Rodents with `ggplot2`"
+author: "Instructions"
 format: html
 editor: source
 number-sections: true

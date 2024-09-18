@@ -32,11 +32,46 @@ Today we will...
 -   Challenge 1: Modifying your Quarto Document
 :::
 
-# Questions about the syllabus
+# Questions about the Syllabus
 
-# Questions from the reading
+# Questions from the Reading
 
-# Questions from PA 1
+# Groupworthy Data Science
+
+# Groupworthy Data Science
+
+> The purpose of the study is to understand how power and authority are
+negotiated by students when participating in pair programming tasks, as well as
+how an instructor’s pedagogy impacts the structure of these experiences.
+
+## Consent to Participate
+
+::: {.small}
+- If you agree to participate... 
+
+  + you will be recorded once a week for 10-weeks while participating in pair         programming to complete collaborative tasks. 
+
+  + you will complete surveys about your demographic information, your prior computing experiences, and your attitudes toward data science.
+:::
+
+. . .
+
+</br>
+
+::: {.small}
+Your participation in this research will not directly affect your course grade. 
+:::
+
+. . .
+
+</br> 
+
+::: {.callout-warning}
+# Consent Form 
+
+Please complete the consent form (<https://forms.gle/oax73hoe7uRSVLYw8>) by 
+Monday, 9/30. 
+:::
 
 # Scripts + Notebooks
 
@@ -96,6 +131,7 @@ Quarto **unifies** and **extends** the R Markdown ecosystem.
 #| echo: false
 #| out-width: "50%"
 #| fig-align: center
+#| fig-alt: "The image displays a collection of hexagonal logos representing different R packages that are part of the R Markdown ecosystem. The logos from top to bottom, left to right, are: Xaringan, Distill, Blogdown, RMarkdown, Bookdown, Flexdashboard, Knitr, Rticles, RSConnect. These logos are arranged in a hexagonal shape, visually emphasizing the interconnected nature of these tools in the R Markdown ecosystem."
 knitr::include_graphics("images/rmd_ecosystem.png")
 ```
 
@@ -155,7 +191,7 @@ website:
 
 ## Quarto Components
 
-![](images/quarto_sections.jpeg){width="80%"}
+![](images/quarto_sections.jpeg){width="80%" fig-alt="The image shows a split-screen view of a Quarto document editor and the rendered output in a browser-like preview. On the left side, the code editor is displayed, and on the right side, the rendered HTML output of the document. On the left, the top section contains the front matter, which includes metadata about the document such as the title ('Hello, Quarto'), the format (HTML), and the editor (set to visual mode). Below this, there is an R code chunk where R packages are loaded (specifically, 'tidyverse' and 'palmerpenguins'). This section is marked with `{r`} at the beginning of the code chunk, and the chunk is labeled 'load-packages.' Some options, like 'include: false', are present to prevent this code from appearing in the final rendered output. Following the code is Markdown content, which includes text descriptions and headings such as 'Meet Quarto' and 'Meet the Penguins'. There are also inline code elements and hyperlinks, like a link to the Palmer Penguins dataset. On the right side of the image, the rendered output is displayed, showing formatted text and visuals. The title 'Hello, Quarto' is shown as a heading, followed by a description of Quarto and a section discussing penguins. A link to the Palmer Penguins dataset is included, along with a colorful illustration of three penguins representing different species (Chinstrap, Gentoo, and Adélie). Below this text, a plot is displayed, showing the relationship between flipper length and bill length for these penguin species. This image highlights how Quarto documents combine code, Markdown, and front matter to create a dynamic and executable report."}
 
 ## R Code Options in Quarto
 
@@ -166,11 +202,11 @@ website:
 
 ## R Code Options in Quarto
 
-<center>![](images/code_options.png)</center>
+<center>![](images/code_options.png){fig-alt="The image displays a table with two columns: 'Option' and 'Description.' It lists various options that can be used in code chunks within Quarto documents, along with their descriptions.The first option is 'eval,' which evaluates the code chunk. If 'false,' it only echoes the code into the output without executing it. The second option is 'echo,' which includes the source code in the output. Next is 'output,' which includes the results of executing the code in the output. The possible values for this option are 'true,' 'false,' or 'asis.' If set to 'asis,' the output will be in raw markdown and won't have any of Quarto's standard enclosing markdown. The 'warning' option includes warnings in the output. Lastly, the 'error' option includes errors in the output. It notes that enabling this option means errors while executing the code won't halt the document's processing."}</center>
 
 ## YAML Completion in Quarto
 
-<center>![](images/quarto_code_options.png)</center>
+<center>![](images/quarto_yaml_completion.png){fig-alt="The image demonstrates three different aspects of YAML code completion and diagnostics in Quarto. At the top, under the heading 'YAML completion for fields,' there is a code editor where the user is typing the beginning of an R chunk ('{r'). As they begin typing '#| e', a code completion menu appears suggesting YAML fields such as 'eval', 'echo', 'external', and 'error', among others. The highlighted field is `eval`, and a description in a yellow box appears, explaining that this option evaluates the code chunk, or, if set to 'false', it only echoes the code into the output. In the middle, under the heading 'YAML completion for options,' the code editor shows the 'eval' field typed out as '#| eval:'. As the user begins entering a value, a dropdown suggests the options 'true' and 'false' for the field, representing valid boolean options. At the bottom, under the heading 'YAML diagnostics for errors,' there is an example of an incorrect entry. The user has written '#| eval: FALSE' (with uppercase 'FALSE'), which leads to a red error indicator in the editor. A tooltip appears, pointing out the mistake and suggesting that the value should be lowercase 'false' instead. The image showcases how Quarto assists users with code completion, option suggestions, and real-time error diagnostics in the YAML section of code chunks."}</center>
 
 ## Rendering your Quarto Document
 
@@ -178,9 +214,9 @@ To take your *.qmd* file and make it look pretty, you have to **render** it.
 
 <center>
 
-![](images/render.png)
+![](images/render.png){fig-alt="The image shows the toolbar from an RStudio or Quarto editor interface. At the top, it displays the filename 'hello.qmd' (indicating a Quarto Markdown file). There are several options visible in the toolbar, and a specific button labeled 'Render' is highlighted with a pink outline. This 'Render' button is used to generate the final output (such as HTML, PDF, or other formats) based on the Quarto document. Additionally, there is an option for 'Render on Save,' which allows automatic rendering whenever the document is saved. The toolbar also includes options for adjusting the view between 'Source' and 'Visual' modes, formatting tools, inserting content, and running code chunks. The image emphasizes the 'Render' function, which is essential for compiling and viewing the Quarto document's output."}
 
-![](images/render_on_save.png)
+![](images/render_on_save.png){fig-alt="The image shows a toolbar from an RStudio or Quarto editor interface, similar to the previous one. At the top, the filename 'hello.qmd' is displayed, indicating the file being worked on is a Quarto Markdown document. In this image, the 'Render on Save' option is highlighted with a pink outline, indicating that it is selected or being emphasized. This feature automatically triggers rendering of the document every time it is saved, which is useful for seeing updates to the output in real-time without manually pressing the 'Render' button. In addition to the 'Render on Save' option, the toolbar also includes the 'Render' button, formatting tools, and options for switching between 'Source' and 'Visual' editing modes. Other options for running code chunks, adjusting formatting, and inserting elements are also visible, but the main focus here is on the 'Render on Save' functionality."}
 
 </center>
 
@@ -225,6 +261,8 @@ you can **recall specific versions later**.
 ```{r}
 #| fig-align: center
 #| out-width: 50%
+#| fig-alt: "The image is the official logo for Git, a version control system. It consists of a diamond-shaped orange symbol with white lines inside that resemble a branching structure, symbolizing version control and branching in Git. Next to the symbol is the word 'Git' written in bold, black lowercase letters. The logo visually represents Git's core function of managing changes in code through branching and merging."
+
 knitr::include_graphics("https://bornsql.ca/wp-content/uploads/2022/03/Git-Logo-2Color.png") 
 ```
 
@@ -440,8 +478,6 @@ usethis::git_sitrep()
 
 . . .
 
-</br> 
-
 You should see something like:
 
 ::: {.small}
@@ -464,28 +500,29 @@ If that is not the case, Dr. Theobold will help you troubleshoot in 5-minutes!
 
 # Accessing Lab 1 
 
-Step 1: Fork the [Lab 1 repository](https://github.com/atheobold/stat-331-lab-1)
+Here are step by step directions: [Copying the Lab Assignment with GitHub Classroom in 11 Steps](https://scribehow.com/shared/Copying_the_Lab_Assignment_with_GitHub_Classroom__jKUfxzJUQjOQ2lqJy2UPoQ)
 
-Step 2: Clone your Lab 1 repository to your computer
+</br>
 
-Here are step by step directions: [Forking and cloning a repo in 10 steps](https://scribehow.com/embed/How_to_Fork_a_GitHub_Repository__85zc-pWwSAin-RPejYY66A)
+::: {.small}
+Step 1: Open the [Lab 1 assignment on GitHub Classroom](https://classroom.github.com/a/j-bckA7U)
 
+Step 2: Open your Lab 1 repository
+
+Step 3: Clone the repository to your computer
+:::
 
 ## Once You've Cloned the Repo
 
-Step 3: Open the `lab-1.qmd` file
+Step 4: Open the `lab-1.qmd` file
 
-Step 4: Change your name 
+Step 5: Change your name 
 
-Step 5: Commit your change (with a nice message!)
+Step 6: Commit your change (with a nice message!)
 
-Step 6: Push your change
+Step 7: Push your change
 
 # [Lab 1 Instructions](../../labs/instructions/lab-1-instructions.qmd)
-
-## Some words about ChatGPT...
-
-<!-- insert course policy -->
 
 ## To do...
 
@@ -494,5 +531,5 @@ Step 6: Push your change
 -   **Challenge 1: Modifying Your Quarto Document**
     -   Due Sunday (9/29) at 11:59pm
 -   **Complete the Week 2 Coursework**
-    -   **Check-ins 2.1 + 2.2** due Tuesday (10/1) by the start of class
+    -   **Check-ins 2.1, 2.2, 2.3** due Tuesday (10/1) by the start of class
   

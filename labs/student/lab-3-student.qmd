@@ -1,14 +1,9 @@
 ---
 title: "Lab 3: Student Evaluations of Teaching"
-author: "NAME"
-format: 
-  html:  
-    embed-resources: true
-    code-tools: true
-    toc: true
+author: "Your name here!"
+format: html
 editor: source
-execute: 
-  echo: true
+embed-resources: true
 ---
 
 In this lab, we will be using the `dplyr` package to explore student evaluations
