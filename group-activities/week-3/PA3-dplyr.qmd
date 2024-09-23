@@ -23,18 +23,24 @@ cleaned data to figure out what college Margaret has been accepted to.
 ## Groupwork Protocols
 
 During the Practice Activity, you and your partner will alternate between two
-roles---listener and problem solver. 
+roles---Developer and Coder. 
 
-When you are the **Listener**, you will type into the Quarto document in
+When you are the **Developer**, you will type into the Quarto document in
 RStudio. However, you **do not** type your own ideas. Instead, you type what 
-the Problem Solver tells you to type. You are permitted to ask the Problem 
-Solver clarifying questions, and, if both of you have a question, you are 
-permitted to ask the professor. 
+the Coder tells you to type. You are permitted to ask the Coder clarifying
+questions, and, if both of you have a question, you are permitted to ask the
+professor. You are expected to run the code provided by the Coder and, if 
+necessary, to work with the Coder to debug the code. Once the code runs, you
+are expected to collaborate with the Coder to write code comments that describe
+the actions taken by your code.
 
-When you are the **Problem Solver**, you are responsible for reading the 
-instructions / prompts and directing the Listener what to type in the Quarto
-document. You are also responsible for instructing the Listener what comments to
-insert in the Quarto document to help the group understand the code later. 
+When you are the **Coder**, you are responsible for reading the 
+instructions / prompts and directing the Developer what to type in the Quarto
+document. You are responsible for managing the resources your group has
+available to you (e.g., cheatsheet, textbook). If necessary, you should work
+with the Developer to debug the code you specified. Once the code runs, you
+are expected to collaborate with the Developer to write code comments that
+describe the actions taken by your code.
 
 ### Group Norms
 
@@ -49,8 +55,8 @@ Remember, your group is expected to adhere to the following norms:
 This section will clean today's data so that you can use it more easily in Part
 Two.
 
-The partner whose birthday comes last starts as the Listener (typing and
-listening to instructions from the Problem Solver)!
+The partner whose birthday comes last starts as the Developer (typing and
+listening to instructions from the Coder)!
 
 ## Data Download & Package Loading
 
@@ -125,7 +131,7 @@ colleges_clean <- colleges_clean |>
          ADM_RATE       = numeric(ADM_RATE)) 
 ```
 
-<!-- Swap roles -- Listener becomes Problem Solver, Problem Solver becomes Listener! -->
+<!-- Swap roles -- Developer becomes Coder, Coder becomes Developer! -->
 
 **Step 4:** Adjust the appropriate variables to be factors, using `as.factor()`.
 
@@ -157,7 +163,7 @@ colleges_clean <- colleges_clean |>
     select(TOTAL_IN = UGDS x TUITIONFEE_IN)
 ```
 
-<!-- Swap roles -- Listener becomes Problem Solver, Problem Solver becomes Listener! -->
+<!-- Swap roles -- Developer becomes Coder, Coder becomes Developer! -->
 
 **Step 7:** Remove every row with missing data.
 
@@ -199,7 +205,7 @@ school is her dream school.
 
 **Clues:**
 
-<!-- Swap roles -- Listener becomes Problem Solver, Problem Solver becomes Listener! -->
+<!-- Swap roles -- Developer becomes Coder, Coder becomes Developer! -->
 
 1.  This college is located in Region 4.
 
@@ -209,7 +215,7 @@ school is her dream school.
 
 4.  The average SAT score of this college is an even number.
 
-<!-- Swap roles -- Listener becomes Problem Solver, Problem Solver becomes Listener! -->
+<!-- Swap roles -- Developer becomes Coder, Coder becomes Developer! -->
 
 5.  This college is in the state where gooey butter cake, the Chiefs, and the
 Anheuser-Busch Clydesdales are a thing.
@@ -224,7 +230,6 @@ college that has the lowest admission rate.
 
 ```{r}
 #| label: identify-college
-# Code to solve for the mystery college using the 8 clues above.
 
 ```
 
