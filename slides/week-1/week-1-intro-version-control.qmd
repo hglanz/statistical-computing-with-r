@@ -71,6 +71,31 @@ Please complete the consent form (<https://forms.gle/oax73hoe7uRSVLYw8>) by
 Monday, 9/30. 
 :::
 
+## My Collaborator
+::: columns
+::: {.column width="70%"}
+Judith Canner, Professor of Statistics
+
+::: {.small}
+- Joined faculty at CSUMB in 2010
+- Is CSUMB's Statistics and Data Science Program Coordinator.
+- Favorite classes to teach are Data Visualization and Statistical Computing.
+- Learned how to program in R in 2005 when my PhD adviser handed me some code
+and said "modify this."
+- Goal is to see statistics and data science education that is accessible to
+everyone!
+:::
+:::
+
+::: {.column width="2%"}
+:::
+
+::: {.column width="28%"}
+![](images/judith-graduation.png)
+![](images/judith-spain.png)
+:::
+:::
+
 # Scripts + Notebooks
 
 ## Scripts

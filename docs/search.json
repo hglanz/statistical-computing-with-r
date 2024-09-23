@@ -3659,5 +3659,12 @@
     "title": "Basics of Graphics",
     "section": "",
     "text": "Today we will…\n\nComments from Week 1\nPeer Programming\nNew Material\n\nTidy Data\nLoad External Data\nGraphics (and ggplot2)\n\nPA 2: Using Data Visualization to Find the Penguins"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#my-collaborator",
+    "href": "slides/week-1/week-1-intro-version-control.html#my-collaborator",
+    "title": "Scripts, Notebooks & Version Control",
+    "section": "My Collaborator",
+    "text": "My Collaborator\n\n\nJudith Canner, Professor of Statistics\n\n\nJoined faculty at CSUMB in 2010\nIs CSUMB’s Statistics and Data Science Program Coordinator.\nFavorite classes to teach are Data Visualization and Statistical Computing.\nLearned how to program in R in 2005 when my PhD adviser handed me some code and said “modify this.”\nGoal is to see statistics and data science education that is accessible to everyone!"
   }
 ]
