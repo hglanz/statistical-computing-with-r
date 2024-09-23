@@ -93,11 +93,9 @@ We will be joined in class by Jasmine.
 
 Jasmine is...
 
--   A forth-year Statistics major pursuing a Data Science minor.
-
-<!-- + Originally from San Ramon in the East Bay Area. -->
-
-<!-- + A golfer, dancer, and crocheter! -->
+- a forth-year Statistics major pursuing a Data Science minor,
+- originally from Irvine, CA,
+- someone who loves sushi, hanging out with friends, watching Netflix, and working out. 
 
 ## You!
 
