@@ -132,7 +132,7 @@ Last but not least - for the teams you are a part of, you may want to use Discor
 
 ## See you at the Party!
 
-## `r emo::ji("check")` Check-in 1.4: Discord Server
+## `r emo::ji("check")` Check-in 1.5: Discord Server
 
 Introduce yourself in the "Introductions" channel of the Discord Server.
 

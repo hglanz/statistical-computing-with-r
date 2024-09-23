@@ -104,7 +104,7 @@ frequently.
 :::
 
 
-### ✅ Check-in 1.5:  Install Git
+### ✅ Check-in 1.6:  Install Git
 
 We will be working with Git/GitHub every week for the next 10 weeks, starting 
 this week! To be prepared for class, follow the instructions in the above
@@ -139,7 +139,7 @@ from another backup. You don't want to take chances.]
 
 ### 📖 Required Reading: [Register for a GitHub Account](https://happygitwithr.com/github-acct)
 
-### ✅ Check-in 1.6: Register for a GitHub Account
+### ✅ Check-in 1.7 Register for a GitHub Account
 
 Follow the instructions in [Registering a GitHub Account](https://happygitwithr.com/github-acct.html) to create a **free**
 GitHub account.
@@ -195,7 +195,7 @@ use_git_config(user.name = "Jane Doe",
                user.email = "jane@example.org")
 ```
 
-### ✅ Check-in  1.7: Introduce Yourself to git
+### ✅ Check-in  1.8: Introduce Yourself to git
 
 Follow the instructions for introducing yourself to git by running the code 
 in your console. Once you've run the code, take a screenshot of the output in 
@@ -224,7 +224,7 @@ NOT an acceptable credential when talking to GitHub as a Git server.
 We're not using SSH, so feel free to skip that section!
 :::
 
-### ✅ Check-in 1.8: PAT
+### ✅ Check-in 1.9: PAT
 
 Follow the instructions for setting up your own personal access token. When
 selecting an expiration either choose one of the options that will allow your

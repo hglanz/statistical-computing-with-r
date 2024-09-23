@@ -223,7 +223,7 @@ respectful projects.
 ::: callout-note
 # The History of `R`
 
-If you would like to learn more about the history of R, here is an [excellent article written by Roger Peng](https://bookdown.org/rdpeng/rprogdatascience/history-and-overview-of-r.html)
+If you would like to learn more about the history of R, here is an [excellent article written by Roger Peng](https://bookdown.org/rdpeng/rprogdatascience/history-and-overview-of-r.html).
 :::
 
 ### 💻 [Required Tutorial: R Programming Basics](https://r-primers.andrewheiss.com/basics/02-programming-basics)
@@ -232,7 +232,7 @@ If you would like to learn more about the history of R, here is an [excellent ar
 # Programming in R
 
 This tutorial gives you an overview of the foundations that make up the R 
-programming language, including
+programming language, including:
 
 - functions and their arguments
 - accessing help files

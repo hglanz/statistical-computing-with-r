@@ -1195,7 +1195,7 @@
     "href": "slides/week-1/week-1-intro-R.html#on-a-personal-note",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "On a personal note…",
-    "text": "On a personal note…\n\n\nI prefer you refer to me as “Dr. Theobold” or “Dr. T.”\nPlease don’t call me “Allison” or “Professor.”\n\n\nI use they / them pronouns. If you are not sure what this means, I’d encourage you to read more about gender identity and pronouns. 🙂"
+    "text": "On a personal note…\n\n\nI prefer you refer to me as “Dr. Theobold”, or “Dr. T”, or “Professor Theobold.”\nPlease don’t call me “Allison” or “Professor.”\n\n\nI use they / them pronouns. If you are not sure what this means, I’d encourage you to read more about gender identity and pronouns. 🙂"
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#our-classroom-learning-assistant",
@@ -1216,7 +1216,7 @@
     "href": "slides/week-1/week-1-intro-R.html#beginning-of-the-week",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "Beginning of the Week",
-    "text": "Beginning of the Week\n\nBefore Tuesday’s ClassDuring Class on TuesdayAfter Tuesday’s Class\n\n\n\nLook over the coursework page\nRead the required chapter(s)\nWatch the required video(s)\nComplete the Preview Activities\n\n\n\n\nReview chapter content\nAsk clarifying questions\nDiscuss example analyses\nWork in pairs to complete the Practice Activity\n\n\n\n\nFinish whatever remains of the Practice Activity\nComplete any additional reading / videos / Preview Activities"
+    "text": "Beginning of the Week\n\nBefore Tuesday’s ClassDuring Class on TuesdayAfter Tuesday’s Class\n\n\n\nLook over the coursework page\nRead the required chapter(s)\nWatch the required video(s)\nComplete the Check-ins\n\n\n\n\nReview chapter content\nAsk clarifying questions\nDiscuss example analyses\nWork in pairs to complete the Practice Activity\n\n\n\n\nFinish whatever remains of the Practice Activity\nComplete any additional reading / videos / Check-ins"
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#end-of-the-week",
@@ -1244,7 +1244,7 @@
     "href": "slides/week-1/week-1-intro-R.html#data-structures",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "Data Structures",
-    "text": "Data Structures\n\nHomogeneousHeterogeneous\n\n\n\nevery element has the same data type\n\n\nVector: a one-dimensional column of homogeneous data.\nMatrix: the next step after a vector - it’s a set of homogenous data arranged in a two-dimensional, rectangular format.\n\n\n\n\nelements can be of different types\n\n\nList: a one-dimensional column of heterogeneous data1.\nDataframe: a two-dimensional set of heterogeneous data arranged in a rectangular format.\n\n\n\n\nThis is similar to a dictionary in Python!"
+    "text": "Data Structures\n\nHomogeneousHeterogeneous\n\n\n\nevery element has the same data type\n\n\nVector: a one-dimensional column of homogeneous data.\nMatrix: the next step after a vector - it’s a set of homogenous data arranged in a two-dimensional, rectangular format.\n\n\n\n\nelements can be of different types\n\n\nList: a one-dimensional column of heterogeneous data.\nDataframe: a two-dimensional set of heterogeneous data arranged in a rectangular format."
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#indexing",
@@ -1265,7 +1265,7 @@
     "href": "slides/week-1/week-1-intro-R.html#broken-circles",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "Broken Circles",
-    "text": "Broken Circles\n\n\n\nTo set the stage for your future group collaborations, we will complete an activity that explores how working in groups can be more / less successful.\nLet’s start by dividing the class into groups of 3-4 students."
+    "text": "Broken Circles\n\n\n\nTo set the stage for your future group collaborations, we will complete an activity that explores how working in groups can be more / less successful.\nLet’s start by dividing the class into groups of 6 students."
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#discussion",
@@ -1279,7 +1279,7 @@
     "href": "slides/week-1/week-1-intro-R.html#section",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "",
-    "text": "Complete Version Control coursework\nCheck-ins 1.3 & 1.4\n\nDue Thursday (9/26) by the start of class\n\nIntroduce yourself on Discord!\n\nDue by the end of the week\n\nPA 1: Find the Mistakes\n\nDue Wednesday (9/25) by 5pm"
+    "text": "Complete Version Control coursework\nCheck-ins 1.6 - 1.9: Getting version control set-up\n\nDue Thursday (9/26) by the start of class\n\nIntroduce yourself on Discord!\n\nDue by Friday (9/27)"
   },
   {
     "objectID": "labs/instructions/lab-3-instructions.html",
@@ -3604,6 +3604,53 @@
     "crumbs": [
       "Weekly materials",
       "Week 3 - dplyr"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#check-in-1.3-stat-331-folder",
+    "href": "weeks/week-1-quarto.html#check-in-1.3-stat-331-folder",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "1.2 ✅ Check-in 1.3: Stat 331 Folder",
+    "text": "1.2 ✅ Check-in 1.3: Stat 331 Folder\nTake a screenshot of your class directory, showing:\n\nthe location of your Stat 331 folder\na Week 1 sub-folder\na Lab 1 sub-sub-folder (inside the Week 1 folder)\n\n\n\n\n\n\n\nYour folder cannot synch with anything online!\n\n\n\nYour STAT 331 folder cannot be in a folder stored on OneDrive or iCloud! Storing your folder in this location will cause your code to periodically not run and I cannot help you fix it.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1, Part 2 - Quarto"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#check-in-1.4-quarto-documents",
+    "href": "weeks/week-1-quarto.html#check-in-1.4-quarto-documents",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "2.3 ✅ Check-in: 1.4 Quarto Documents",
+    "text": "2.3 ✅ Check-in: 1.4 Quarto Documents\nQuestion 1: What are the options at the top of a Quarto document (between the --- and --- symbols) called?\n\nXML\nYAML\nREML\nTOML\n\nQuestion 2: What symbols create an R code chunk?\n\n```\n{r}\n```{r}\n`{r}`\n\nQuestion 3: What symbol defines a heading?\n\n$\n_\n*\n#\n\nQuestion 4: When working in a Quarto document, the [visual / source] editor will display the raw Quarto document, whereas the [visual / source] will display the document as it will appear when it is rendered.\nQuestion 5: To produce an HTML report from your Quarto document, you need to click the ____ button.\n\nVisual\nRender\nRender on Save\nSave",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1, Part 2 - Quarto"
+    ]
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#heterogeneous",
+    "href": "slides/week-1/week-1-intro-R.html#heterogeneous",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Heterogeneous",
+    "text": "Heterogeneous\n\nelements can be of different types\n\n\nList: a one-dimensional column of heterogeneous data1.\nDataframe: a two-dimensional set of heterogeneous data arranged in a rectangular format.\n\nThis is similar to a dictionary in Python! :::"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#before-class-on-thursday-1",
+    "href": "slides/week-1/week-1-intro-R.html#before-class-on-thursday-1",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Before class on Thursday…",
+    "text": "Before class on Thursday…\n\nComplete Version Control coursework\nCheck-ins 1.6 - 1.9: Getting version control set-up\n\nDue Thursday (9/26) by the start of class\n\nIntroduce yourself on Discord!\n\nDue by Friday (9/27)"
+  },
+  {
+    "objectID": "weeks/week-0-discord.html#check-in-1.5-discord-server",
+    "href": "weeks/week-0-discord.html#check-in-1.5-discord-server",
+    "title": "Course Set-up and Structure",
+    "section": "2.6 ✅ Check-in 1.5: Discord Server",
+    "text": "2.6 ✅ Check-in 1.5: Discord Server\nIntroduce yourself in the “Introductions” channel of the Discord Server.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 0 - Course Set-up"
     ]
   }
 ]

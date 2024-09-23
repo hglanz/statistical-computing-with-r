@@ -2,7 +2,7 @@
 title: "Intro to STAT 331 / 531 + Intro to R"
 format: 
   revealjs:
-    theme: [../style.scss]
+    theme: [../style.scss, simple]
 editor: source
 ---
 
@@ -66,7 +66,7 @@ Today we will...
 
 ::: columns
 ::: {.column width="50%"}
-I prefer you refer to me as "Dr. Theobold" or "Dr. T."
+I prefer you refer to me as "Dr. Theobold", or "Dr. T", or "Professor Theobold."
 
 Please don't call me "Allison" or "Professor."
 
@@ -117,7 +117,7 @@ Please read the intros of your classmates so you can discover who you will be le
 -   Look over the coursework page
 -   Read the required chapter(s)
 -   Watch the required video(s)
--   Complete the [**Preview Activities**]{style="color: #b76352;"}
+-   Complete the [**Check-ins**]{style="color: #b76352;"}
 
 ## During Class on Tuesday
 
@@ -129,7 +129,7 @@ Please read the intros of your classmates so you can discover who you will be le
 ## After Tuesday's Class
 
 -   Finish whatever remains of the [**Practice Activity**]{style="color: #0F4C81;"}
--   Complete any additional reading / videos / [**Preview Activities**]{style="color: #b76352;"}
+-   Complete any additional reading / videos / [**Check-ins**]{style="color: #b76352;"}
 :::
 
 ## End of the Week
@@ -219,12 +219,13 @@ earth_demolished <- FALSE
 
 > elements can be of different types
 
--   **List**: a one-dimensional column of heterogeneous data[^1].
+-   **List**: a one-dimensional column of heterogeneous data.
 
 -   **Dataframe**: a two-dimensional set of heterogeneous data arranged in a rectangular format.
+
 :::
 
-[^1]: This is similar to a dictionary in Python!
+
 
 ## Indexing
 
@@ -342,7 +343,7 @@ x | y
 To set the stage for your future group collaborations, we will complete an 
 activity that explores how working in groups can be more / less successful. 
 
-Let's start by dividing the class into groups of 3-4 students. 
+Let's start by dividing the class into groups of 6 students. 
 :::
 :::
 
@@ -368,18 +369,14 @@ cooperation easier?
 
 # Before class on Thursday...
 
-## 
+# Before class on Thursday...
 
-- Complete [Version Control coursework](../weeks/week-1-version-control.qmd)
+- Complete the [Version Control coursework](../weeks/week-1-version-control.qmd)
 
--   **Check-ins 1.3 & 1.4**
+-   **Check-ins 1.6 - 1.9**: Getting version control set-up
 
     -   Due Thursday (9/26) by the start of class
 
 - Introduce yourself on Discord!
 
-    - Due by the end of the week
-
--   **PA 1: Find the Mistakes**
-
-    -   Due Wednesday (9/25) by 5pm
+    - Due by Friday (9/27)
