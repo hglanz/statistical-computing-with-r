@@ -48,7 +48,7 @@ to help the group understand the code later.
 -   If neither party understands what the problem is asking, raises hand to 
 ask a group question to Dr. Theobold. 
 -   Types the code specified by the Coder into the Quarto document in RStudio
--   Listens carefully, ask the Coder to repeat statements if needed, or to slow
+-   Listens carefully, asks the Coder to repeat statements if needed, or to slow
 down.
 -   Encourages the Coder to vocalize their thinking.
 -   Asks the Coder clarifying questions.

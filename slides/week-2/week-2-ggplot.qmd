@@ -1079,13 +1079,23 @@ During your collaboration, you and your partner will alternate between two roles
 
 ::: columns
 ::: {.column width="49%"}
-**Listener**
+**Developer**
 
 ::: {.small}
--   The person who will type into the Quarto document in RStudio
--   Will not type unless prompted by the Problem Solver
--   Asks Problem Solver clarifying questions
--   Asks professor questions for the group
+-   Reads prompt and ensures Coder understands what is being asked. 
+-   Types the code specified by the Coder into the Quarto document.
+<!-- -   Listens carefully, asks the Coder to repeat statements if needed, or to slow -->
+<!-- down. -->
+<!-- -   Encourages the Coder to vocalize their thinking. -->
+<!-- -   Asks the Coder clarifying questions. -->
+<!-- -   Checks for accuracy by asking the solution to be restated for clarity. -->
+<!-- -   **Does not** give hints to the Coder for how to solve the problem.  -->
+<!-- -   **Does not** solve the problem themselves.  -->
+-   Runs the code provided by the Coder. 
+-   Works with Coder to debug the code. 
+<!-- -   **Does not** tell the Coder how to correct an error. -->
+-   Evaluates the output.  
+-   Works with Coder to write code comments. 
 :::
 :::
 
@@ -1094,13 +1104,18 @@ During your collaboration, you and your partner will alternate between two roles
 
 ::: {.column width="49%"}
 ::: {.fragment}
-**Problem Solver**
+**Coder**
 
 ::: {.small}
 -   Reads out instructions or prompts
--   Directs the Listener what to type in the Quarto document in Posit Cloud
--   Instructs the Listener what comments to make in the Quarto document to help the group understand the code later
--   Keeps group on task
+-   Directs the Developer what to type. 
+-   Talks with Developer about their ideas. 
+<!-- -   **Does not** ask the Developer how they would solve the problem.  -->
+-   Manages resources (e.g., cheatsheets, textbook). 
+<!-- -   **Does not** ask the developer what functions / tools they should use.  -->
+-   Works with Developer to debug the code. 
+<!-- -   **Does not** ask the Developer to debug the code.  -->
+-   Works with Developer to write code comments. 
 :::
 :::
 :::
@@ -1164,7 +1179,7 @@ Every group should have a **ggplot2** cheatsheet!
 
 ## Opening the Practice Activity in Posit Cloud
 
-The partner whose family name starts first alphabetically starts as the Listener! 
+The partner whose family name starts first alphabetically starts as the Developer! 
 
 They need to do the following:
 
