@@ -1032,9 +1032,7 @@ ggplot(data = mpg,
 :::
 
 
-# [PA 2: Using Data Visualization to Find the Penguins](https://posit.cloud/spaces/546280/content/8635027)
-
-<!-- Be sure to update with new Posit Cloud assignment link! -->
+# PA 2: Using Data Visualization to Find the Penguins
 
 ![Artwork by Allison Horst](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)
 
@@ -1043,7 +1041,7 @@ ggplot(data = mpg,
 ::: columns
 ::: {.column width="60%"}
 ::: {.small}
-This activity will require knowledge of:
+This puzzle activity will require knowledge of:
 
 - installing and loading packages in R
 - formatting code chunks in Quarto
@@ -1133,6 +1131,11 @@ During your collaboration, you and your partner will alternate between two roles
 
 <!-- Add other norms that are relevant -->
 
+<!-- Add in discussion of benefits of speaking your code out loud -->
+<!-- - deeper understanding -->
+<!-- - practice communicating ideas -->
+<!-- - explaining your thinking -->
+
 ## ggplot2 Resources
 
 Every group should have a **ggplot2** cheatsheet! 
@@ -1179,11 +1182,13 @@ Every group should have a **ggplot2** cheatsheet!
 
 ## Opening the Practice Activity in Posit Cloud
 
-The partner whose family name starts first alphabetically starts as the Developer! 
+The partner whose family name starts first alphabetically starts as the
+Developer! 
 
-They need to do the following:
+Both of you need to do the following:
 
-- Click on the PA2 link in Canvas 
+- Open the email you were sent 
+Click on the PA2 link in Canvas 
 - Log-in to Posit Cloud
 <!-- add instructions on how to make the project use collaborative editing -->
 - Open the `PA2-ggplot.qmd` file (from the lower right corner)

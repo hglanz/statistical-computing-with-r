@@ -1006,7 +1006,7 @@
     "href": "slides/week-2/week-2-ggplot.html#section",
     "title": "Basics of Graphics",
     "section": "",
-    "text": "Add dataAdd aestheticsAdd one geom per layer\n\n\nThis begins a plot that you can add layers to:\n\nggplot(data = mpg)\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg, \n       aes(x = class, y = hwy)\n       )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg, \n       aes(x = class, y = hwy)\n       ) +\n  geom_jitter()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg, \n       aes(x = class, y = hwy)\n       ) +\n  geom_jitter() +\n  geom_boxplot()\n\n\n\n\n\n\n\n\n\n\n\nHow would you make the points be on top of the boxplots?"
+    "text": "Add dataAdd aestheticsAdd one geom per layer\n\n\nThis begins a plot that you can add layers to:\n\nggplot(data = mpg)\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg, \n       aes(x = class, y = hwy)\n       )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg, \n       aes(x = class, y = hwy)\n       ) +\n  geom_jitter()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg, \n       aes(x = class, y = hwy)\n       ) +\n  geom_jitter() +\n  geom_boxplot()\n\n\n\n\n\n\n\n\n\n\nHow would you make the points be on top of the boxplots?"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#aesthetics",
@@ -1041,7 +1041,7 @@
     "href": "slides/week-2/week-2-ggplot.html#geometric-objects",
     "title": "Basics of Graphics",
     "section": "Geometric Objects",
-    "text": "Geometric Objects\nWee use a geom_XXX() function to represent data points.\n\n\n\n\none variable\n\ngeom_density()\ngeom_dotplot()\ngeom_histogram()\ngeom_boxplot()\n\n\n\n\ntwo variable\n\ngeom_point()\ngeom_line()\ngeom_density_2d()\n\n\n\n\nthree variable\n\ngeom_contour()\ngeom_raster()\n\n\n\n\n\nThis is not an exhaustive list – see ggplot2 cheat sheet."
+    "text": "Geometric Objects\nWee use a geom_XXX() function to represent data points.\n\n\n\n\none variable\n\ngeom_density()\ngeom_dotplot()\ngeom_histogram()\ngeom_boxplot()\n\n\n\n\ntwo variable\n\ngeom_point()\ngeom_line()\ngeom_density_2d()\n\n\n\n\nthree variable\n\ngeom_contour()\ngeom_raster()\n\n\n\n\nThis is not an exhaustive list – see ggplot2 cheat sheet."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#same-data-three-different-plots",
@@ -1090,7 +1090,7 @@
     "href": "slides/week-2/week-2-ggplot.html#statistical-transformation-stat-1",
     "title": "Basics of Graphics",
     "section": "Statistical Transformation: stat",
-    "text": "Statistical Transformation: stat\n\nstat_count()stat_summary()\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  stat_count(geom = \"bar\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"mean\") +\n  scale_y_continuous(limits = c(0, 45))\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"max\") +\n  scale_y_continuous(limits = c(0, 45))"
+    "text": "Statistical Transformation: stat\n\nstat_count()stat_summary()\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  stat_count(geom = \"bar\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"mean\") +\n  scale_y_continuous(limits = c(0, 45))\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"max\") +\n  scale_y_continuous(limits = c(0, 45))"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#position-adjustements",
@@ -1139,7 +1139,7 @@
     "href": "slides/week-2/week-2-ggplot.html#using-data-visualization-to-find-the-penguins",
     "title": "Basics of Graphics",
     "section": "Using Data Visualization to Find the Penguins",
-    "text": "Using Data Visualization to Find the Penguins\n\n\n\nThis activity will require knowledge of:\n\ninstalling and loading packages in R\nformatting code chunks in Quarto\ninterpreting the context of a dataset\ndata types / variable types\ndifferent types of visualizations\nwhat visualization(s) go with different data types\nhow to make visualizations with ggplot2\nchoosing between different aesthetic options\n\n\n\n\n\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
+    "text": "Using Data Visualization to Find the Penguins\n\n\n\nThis puzzle activity will require knowledge of:\n\ninstalling and loading packages in R\nformatting code chunks in Quarto\ninterpreting the context of a dataset\ndata types / variable types\ndifferent types of visualizations\nwhat visualization(s) go with different data types\nhow to make visualizations with ggplot2\nchoosing between different aesthetic options\n\n\n\n\n\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#pair-programming-expectations",
@@ -1167,7 +1167,7 @@
     "href": "slides/week-2/week-2-ggplot.html#opening-the-practice-activity-in-posit-cloud",
     "title": "Basics of Graphics",
     "section": "Opening the Practice Activity in Posit Cloud",
-    "text": "Opening the Practice Activity in Posit Cloud\nThe partner whose family name starts first alphabetically starts as the Developer!\nThey need to do the following:\n\nClick on the PA2 link in Canvas\nLog-in to Posit Cloud \nOpen the PA2-ggplot.qmd file (from the lower right corner)\nGet started!"
+    "text": "Opening the Practice Activity in Posit Cloud\nThe partner whose family name starts first alphabetically starts as the Developer!\nBoth of you need to do the following:\n\nOpen the email you were sent Click on the PA2 link in Canvas\nLog-in to Posit Cloud \nOpen the PA2-ggplot.qmd file (from the lower right corner)\nGet started!"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#submission",
