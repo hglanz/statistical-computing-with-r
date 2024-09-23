@@ -36,17 +36,13 @@ TR 12:10pm - 2:00pm
 :::
 :::
 
-[^1]: The classroom is a dynamic learning community.
-
-    If necessary, I may make changes to the syllabus as the semester goes on to best suit the needs of all students. I promise to notify you in advance if I make any changes. 
-
-    Any changes to the syllabus made after the first day of class will be indicated in **red**.
+[^1]: The classroom is a dynamic learning community. If necessary, I may make changes to the syllabus as the semester goes on to best suit the needs of all students. I promise to notify you in advance if I make any changes. Any changes to the syllabus made after the first day of class will be indicated in [**red**]{style="color: #FF0000;"}.
 
 </br>
 
 ::: columns
 ::: {.column width="55%"}
-Dr. **Allison Theobold** (they / she)  
+Dr. **Allison Theobold** (they / she)
 
 **Assistant Professor of Statistics**
 
@@ -73,7 +69,9 @@ Dr. **Allison Theobold** (they / she)
 ::: {.column width="30%"}
 Have you ever wondered...
 
-...how are the visualizations you see in the media made? ...how do people cut down large datasets to address a specific question? ...how the applet simulations in your statistics classes work?
+...how are the visualizations you see in the media made?\
+...how do people cut down large datasets to address a specific question?\
+...how the applet simulations in your statistics classes work?
 
 We'll answer these questions and more by studying the principles of
 :::
@@ -93,7 +91,7 @@ There is not an expectation that you have seen R before, only that you have some
 ::: {.column width="30%"}
 people use when doing statistics in the wild.
 
-In this course, we will learn the foundational skills for programming in R and a variety of skills for working with data. We will then build on these skills to consider how to write programs which are more efficient. <!-- Finally, we will apply these skills into a statistical analysis—linear regression.  -->
+In this course, we will learn the foundational skills for programming in R and a variety of skills for working with data. We will then build on these skills to consider how to write programs which are more efficient.
 :::
 :::
 
@@ -213,7 +211,7 @@ Let's unpack how you are expected to evaluate yourself in these three dimensions
 
 Each week, a set of learning targets will be outlined. These learning targets will not exist solely within a given week. You will find that the skills you learn early in the course will be used throughout the course. Whereas, some skills, learned later in the course, will not be used as often. You can demonstrate proficiency with these skills through three main avenues: Group-based Practice Activities Lab Assignments Challenge Assignments
 
-However, evidence of continued learning can only be demonstrated within individual lab assignments. You can keep track of your progress yourself using this Interactive Checklist.
+However, evidence of continued learning can only be demonstrated within individual lab assignments. You can keep track of your progress yourself using this [Interactive Checklist](https://docs.google.com/spreadsheets/d/1GpiDk3BDI8erN0tHWuouh-VDormk_dNS70WC9l5h0e8/edit?usp=sharing).
 
 ## Evidence of Continued Learning
 
@@ -240,9 +238,7 @@ This course uses collaborative learning to provide a supportive community when i
 
 Many people are uncomfortable working in a team for a variety of reasons, such as fearing looking dumb, being rejected, or being disrespected. It is my hope that our weekly collaborations will offer opportunities for you to grow as a group member, by becoming more aware of how you interact with others.
 
-During the first week of class, each of you will be placed in a group with one other student. During Weeks 2-5, you will work with this person on the Practice Activities we complete during class on Tuesdays. To make group collaborations more equitable, I expect for you and your partner to alternative between two "roles"—recorder and listener. We will discuss these roles in class, but here are some rough descriptions of the scope of each role:
-
-<!-- Add pair-programming table -->
+During the first week of class, each of you will be placed in a group with one other student. During Weeks 2-5, you will work with this person on the Practice Activities we complete during class on Tuesdays. To make group collaborations more equitable, I expect for you and your partner to alternative between two "roles"—Developer and Coder. We will discuss these roles in class, but you can find descriptions of the scope of each role on the [Pair Programming Roles document](/group-activities/pair-programming-norms.qmd "Pair Programming Roles document").
 
 ### Peer Code Review
 
@@ -292,59 +288,59 @@ At the end of the term, **you're going to tell me how you did and thus what grad
 
 We will generate the descriptions / expectations of these grades together after you've had the chance to see how this course looks. Specifically, we will dedicate a portion of class during Week 3 to writing these expectations together.
 
-+--------------------------+----------------------------------------+
-| Letter Grade             | Description of Work and Participation  |
-+==========================+========================================+
-| **A**\                   | **Learning Targets:**\                 |
-| (Superior Achievement)   | \                                      |
-|                          | **Revising Thinking:\                  |
-|                          | \                                      |
-|                          | Extending Thinking:\                   |
-|                          | \                                      |
-|                          | Collaborative Group Member:\           |
-|                          | \                                      |
-|                          | Peer-Code Review:**                    |
-+--------------------------+----------------------------------------+
-| **B**\                   | **Learning Targets:**\                 |
-| (Good Achievement)       | \                                      |
-|                          | **Revising Thinking:\                  |
-|                          | \                                      |
-|                          | Extending Thinking:\                   |
-|                          | \                                      |
-|                          | Collaborative Group Member:\           |
-|                          | \                                      |
-|                          | Peer-Code Review:**                    |
-+--------------------------+----------------------------------------+
-| **C**\                   | **Learning Targets:**\                 |
-| (Acceptable Achievement) | \                                      |
-|                          | **Revising Thinking:\                  |
-|                          | \                                      |
-|                          | Extending Thinking:\                   |
-|                          | \                                      |
-|                          | Collaborative Group Member:\           |
-|                          | \                                      |
-|                          | Peer-Code Review:**                    |
-+--------------------------+----------------------------------------+
-| **D**                    | **Learning Targets:**\                 |
-|                          | \                                      |
-|                          | **Revising Thinking:\                  |
-|                          | \                                      |
-|                          | Extending Thinking:\                   |
-|                          | \                                      |
-|                          | Collaborative Group Member:\           |
-|                          | \                                      |
-|                          | Peer-Code Review:**                    |
-+--------------------------+----------------------------------------+
-| **F**                    | **Learning Targets:**\                 |
-|                          | \                                      |
-|                          | **Revising Thinking:\                  |
-|                          | \                                      |
-|                          | Extending Thinking:\                   |
-|                          | \                                      |
-|                          | Collaborative Group Member:\           |
-|                          | \                                      |
-|                          | Peer-Code Review:**                    |
-+--------------------------+----------------------------------------+
++--------------------------+---------------------------------------+
+| Letter Grade             | Description of Work and Participation |
++==========================+=======================================+
+| **A**\                   | **Learning Targets:**\                |
+| (Superior Achievement)   | \                                     |
+|                          | **Revising Thinking:\                 |
+|                          | \                                     |
+|                          | Extending Thinking:\                  |
+|                          | \                                     |
+|                          | Collaborative Group Member:\          |
+|                          | \                                     |
+|                          | Peer-Code Review:**                   |
++--------------------------+---------------------------------------+
+| **B**\                   | **Learning Targets:**\                |
+| (Good Achievement)       | \                                     |
+|                          | **Revising Thinking:\                 |
+|                          | \                                     |
+|                          | Extending Thinking:\                  |
+|                          | \                                     |
+|                          | Collaborative Group Member:\          |
+|                          | \                                     |
+|                          | Peer-Code Review:**                   |
++--------------------------+---------------------------------------+
+| **C**\                   | **Learning Targets:**\                |
+| (Acceptable Achievement) | \                                     |
+|                          | **Revising Thinking:\                 |
+|                          | \                                     |
+|                          | Extending Thinking:\                  |
+|                          | \                                     |
+|                          | Collaborative Group Member:\          |
+|                          | \                                     |
+|                          | Peer-Code Review:**                   |
++--------------------------+---------------------------------------+
+| **D**                    | **Learning Targets:**\                |
+|                          | \                                     |
+|                          | **Revising Thinking:\                 |
+|                          | \                                     |
+|                          | Extending Thinking:\                  |
+|                          | \                                     |
+|                          | Collaborative Group Member:\          |
+|                          | \                                     |
+|                          | Peer-Code Review:**                   |
++--------------------------+---------------------------------------+
+| **F**                    | **Learning Targets:**\                |
+|                          | \                                     |
+|                          | **Revising Thinking:\                 |
+|                          | \                                     |
+|                          | Extending Thinking:\                  |
+|                          | \                                     |
+|                          | Collaborative Group Member:\          |
+|                          | \                                     |
+|                          | Peer-Code Review:**                   |
++--------------------------+---------------------------------------+
 
 # What if I need to miss class?
 
@@ -421,81 +417,157 @@ I will listen and believe you if someone is threatening you. I will help you get
 <!-- # Course Schedule -->
 
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- | Week        | Day      | Date                | Topic                                                | Assignment Due                       | -->
+
 <!-- +=============+==========+=====================+======================================================+======================================+ -->
+
 <!-- | 1           | Tues     | 9/24                | Introduction to R & Reproducibility                  | Week 1 Preview Activities            | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Wed      | 9/25                | Introduction to Base R                               | Practice Activity 1                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Thurs    | 9/26                | Introduction to Version Control                      |                                      | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Sun      | 9/29                |                                                      | Lab 1 & Challenge 1                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- | 2           | Tues     | 10/1                | Data Visualization with \*\*ggplot2\*\*              | Week 2 Preview Activities            | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Wed      | 10/2                |                                                      | Practice Activity 2                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Sun      | 10/6                |                                                      | Lab 2 & Challenge 2                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- | 3           | Tues     | 10/8                | Data Wrangling with **dplyr**                        | Week 3 Preview Activities            | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Wed      | 10/9                |                                                      | Practice Activity 3                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Sun      | 10/13               |                                                      | Lab 3 & Challenge 3                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- | 4           | Tues     | 10/15               | Data Organization & Relational Data with **tidyr**   | Week 4 Preview Activities            | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Wed      | 10/16               |                                                      | Practice Activity 4                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Sun      | 10/20               |                                                      | Lab 4 & Challenge 4                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- | 5           | Tues     | 10/22               | Working with Special Data Types                      | Week 5 Preview Activities            | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Wed      | 10/23               | Strings & Regular Expressions                        | Practice Activity 5                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Thurs    | 10/24               | Dates                                                |                                      | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Sun      | 10/27               |                                                      | Lab 5 & Challenge 5                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- | 6           | Tues     | 10/29               | Simple User-Defined (Vector) Functions               | Week 6 Preview Activities            | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Wed      | 10/30               |                                                      | Practice Activity 6                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Thurs    | 10/31               | Portfolio Party                                      |                                      | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Sun      | 11/3                |                                                      | Week 6 Reflections & Draft Portfolio | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- | 7           | Tues     | 11/5                | Dataframe Functions & 5-minute Portfolio Conferences | Week 7 Preview Activities            | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Thurs    | 11/7                |                                                      | Practice Activity 7                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Sun      | 11/10               |                                                      | Lab 7 & Challenge 7                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- | 8           | Tues     | 11/12               | Introduction to Iteration                            | Week 8 Preview Activities            | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Wed      | 11/13               |                                                      | Practice Activity 8                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Sun      | 11/17               |                                                      | Lab 8 & Challenge 8                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- | 9           | Tues     | 11/19               | Webscraping                                          | Week 9 Preview Activities            | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Wed      | 11/20               |                                                      | Practice Activity 9                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Sun      | 11/24               |                                                      | Lab 9 & Challenge 9                  | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- | 10          | Tues     | 11/26               | No Class Fall Break                                  |                                      | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Thurs    | 11/28               | No Class Fall Break                                  |                                      | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- | 11          | Tues     | 12/3                | Distributions & Simulation                           | Week 10 Preview Activities           | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Wed      | 12/4                |                                                      | Practice Activity 10                 | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Thurs    | 12/5                | Portfolio Party!                                     |                                      | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- |             | Sat      | 12/7                |                                                      | Final Portfolio & Reflections        | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
+
 <!-- | Finals Week | Mon      | 12/9, 10:10am - 1pm | 10-minute Portfolio & Grade Conferences              |                                      | -->
+
 <!-- +-------------+----------+---------------------+------------------------------------------------------+--------------------------------------+ -->
 
 # Learning Targets

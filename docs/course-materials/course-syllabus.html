@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Statistical Computing in R - STAT 331, Fall 2024</title>
+<title>STAT 331, Fall 2024 – Introduction to Statistical Computing in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,13 +79,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course-materials/course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="../course-materials/course-syllabus.html">Syllabus</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -115,9 +115,9 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -168,9 +168,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Weekly materials</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -221,9 +221,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Labs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -328,7 +328,7 @@ ul.task-list li input[type="checkbox"] {
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:40%;">
-<div class="img-fluid quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/r-flowers.png" class="img-fluid figure-img" alt="Two round creatures painting and decorating the R logo with flowers."></p>
 <figcaption>Image by Alison Horst</figcaption>
@@ -356,7 +356,9 @@ ul.task-list li input[type="checkbox"] {
 <div class="columns">
 <div class="column" style="width:30%;">
 <p>Have you ever wondered…</p>
-<p>…how are the visualizations you see in the media made? …how do people cut down large datasets to address a specific question? …how the applet simulations in your statistics classes work?</p>
+<p>…how are the visualizations you see in the media made?<br>
+…how do people cut down large datasets to address a specific question?<br>
+…how the applet simulations in your statistics classes work?</p>
 <p>We’ll answer these questions and more by studying the principles of</p>
 </div><div class="column" style="width:2%;">
 
@@ -367,15 +369,13 @@ ul.task-list li input[type="checkbox"] {
 
 </div><div class="column" style="width:30%;">
 <p>people use when doing statistics in the wild.</p>
-<p>In this course, we will learn the foundational skills for programming in R and a variety of skills for working with data. We will then build on these skills to consider how to write programs which are more efficient. <!-- Finally, we will apply these skills into a statistical analysis—linear regression.  --></p>
+<p>In this course, we will learn the foundational skills for programming in R and a variety of skills for working with data. We will then build on these skills to consider how to write programs which are more efficient.</p>
 </div>
 </div>
 <aside id="footnotes" class="footnotes footnotes-end-of-section" role="doc-footnote">
 <hr>
 <ol>
-<li id="fn1"><p>The classroom is a dynamic learning community.</p>
-<p>If necessary, I may make changes to the syllabus as the semester goes on to best suit the needs of all students. I promise to notify you in advance if I make any changes.&nbsp;</p>
-<p>Any changes to the syllabus made after the first day of class will be indicated in <strong>red</strong>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>The classroom is a dynamic learning community. If necessary, I may make changes to the syllabus as the semester goes on to best suit the needs of all students. I promise to notify you in advance if I make any changes. Any changes to the syllabus made after the first day of class will be indicated in <span style="color: #FF0000;"><strong>red</strong></span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 </section>
@@ -463,7 +463,7 @@ The goal of ungrading is to remove marks from the picture, so you are able to fo
 <section id="accomplishment-of-learning-targets" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="accomplishment-of-learning-targets"><span class="header-section-number">4.1</span> Accomplishment of Learning Targets</h2>
 <p>Each week, a set of learning targets will be outlined. These learning targets will not exist solely within a given week. You will find that the skills you learn early in the course will be used throughout the course. Whereas, some skills, learned later in the course, will not be used as often. You can demonstrate proficiency with these skills through three main avenues: Group-based Practice Activities Lab Assignments Challenge Assignments</p>
-<p>However, evidence of continued learning can only be demonstrated within individual lab assignments. You can keep track of your progress yourself using this Interactive Checklist.</p>
+<p>However, evidence of continued learning can only be demonstrated within individual lab assignments. You can keep track of your progress yourself using this <a href="https://docs.google.com/spreadsheets/d/1GpiDk3BDI8erN0tHWuouh-VDormk_dNS70WC9l5h0e8/edit?usp=sharing">Interactive Checklist</a>.</p>
 </section>
 <section id="evidence-of-continued-learning" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="evidence-of-continued-learning"><span class="header-section-number">4.2</span> Evidence of Continued Learning</h2>
@@ -488,8 +488,7 @@ The goal of ungrading is to remove marks from the picture, so you are able to fo
 <h3 class="anchored" data-anchor-id="collaborative-group-work">Collaborative Group Work</h3>
 <p>This course uses collaborative learning to provide a supportive community when initially exploring the concepts associated with each week. On Tuesdays, you will collaborate in assigned teams to complete a Practice Activity. Collaborating on the Practice Activity is more than independently coding each task and asking someone a question when you get stuck. Collaborating is working together with your team to accomplish each question.</p>
 <p>Many people are uncomfortable working in a team for a variety of reasons, such as fearing looking dumb, being rejected, or being disrespected. It is my hope that our weekly collaborations will offer opportunities for you to grow as a group member, by becoming more aware of how you interact with others.</p>
-<p>During the first week of class, each of you will be placed in a group with one other student. During Weeks 2-5, you will work with this person on the Practice Activities we complete during class on Tuesdays. To make group collaborations more equitable, I expect for you and your partner to alternative between two “roles”—recorder and listener. We will discuss these roles in class, but here are some rough descriptions of the scope of each role:</p>
-<!-- Add pair-programming table -->
+<p>During the first week of class, each of you will be placed in a group with one other student. During Weeks 2-5, you will work with this person on the Practice Activities we complete during class on Tuesdays. To make group collaborations more equitable, I expect for you and your partner to alternative between two “roles”—Developer and Coder. We will discuss these roles in class, but you can find descriptions of the scope of each role on the <a href="../group-activities/pair-programming-norms.html" title="Pair Programming Roles document">Pair Programming Roles document</a>.</p>
 </section>
 <section id="peer-code-review" class="level3">
 <h3 class="anchored" data-anchor-id="peer-code-review">Peer Code Review</h3>
@@ -528,10 +527,10 @@ The goal of ungrading is to remove marks from the picture, so you are able to fo
 <h1 data-number="7"><span class="header-section-number">7</span> Are there “guidelines” for how I should award myself a grade?</h1>
 <p>At the end of the term, <strong>you’re going to tell me how you did and thus what grade you earned in the course</strong>. This will be done in your Week 10 reflection, to be submitted alongside your Final Portfolio. As I previously stated, you should think of your portfolio as the “evidence” for the grade you propose in your reflection. I will probably agree with you, because you know yourself, your work, and your understanding pretty well. If I don’t, we’ll talk about it.</p>
 <p>We will generate the descriptions / expectations of these grades together after you’ve had the chance to see how this course looks. Specifically, we will dedicate a portion of class during Week 3 to writing these expectations together.</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 37%">
-<col style="width: 56%">
+<col style="width: 55%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -807,7 +806,7 @@ Peer-Code Review:</strong></td>
 </div>
 
 
-<aside id="footnotes" class="footnotes footnotes-end-of-section" role="doc-footnote">
+<aside id="footnotes-2" class="footnotes footnotes-end-of-section" role="doc-footnote">
 <hr>
 <ol start="2">
 <li id="fn2"><p>“well documented” code has elements of the following:</p>
@@ -1016,18 +1015,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1059,7 +1047,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/atheobold\.github\.io\/stat-331-website");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1094,7 +1122,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1142,7 +1174,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -1365,7 +1402,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../course-materials/course-overview.html" class="pagination-link  aria-label=" overview"="">
+      <a href="../course-materials/course-overview.html" class="pagination-link" aria-label="Overview">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
       </a>          
   </div>

@@ -10,11 +10,11 @@
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/weeks/week-1-version-control.html</loc>
-    <lastmod>2024-09-23T00:18:46.561Z</lastmod>
+    <lastmod>2024-09-23T20:31:33.797Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/weeks/week-1-quarto.html</loc>
-    <lastmod>2024-09-23T00:05:52.431Z</lastmod>
+    <lastmod>2024-09-23T20:31:33.795Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/videos/week-2/r-projects.html</loc>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/slides/week-1/week-1-intro-R.html</loc>
-    <lastmod>2024-09-23T15:56:24.975Z</lastmod>
+    <lastmod>2024-09-23T20:31:33.789Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/labs/instructions/lab-3-instructions.html</loc>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/group-activities/week-3/PA3-task-card.html</loc>
-    <lastmod>2024-09-23T18:19:19.953Z</lastmod>
+    <lastmod>2024-09-23T20:31:33.783Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/group-activities/week-2/expert-designer.html</loc>
@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/group-activities/week-2/PA2-ggplot.html</loc>
-    <lastmod>2024-09-23T16:12:05.601Z</lastmod>
+    <lastmod>2024-09-23T20:31:33.780Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/group-activities/week-1/data-cleaning-viz-steps.html</loc>
@@ -82,7 +82,7 @@
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/course-materials/course-syllabus.html</loc>
-    <lastmod>2024-09-01T19:44:12.622Z</lastmod>
+    <lastmod>2024-09-23T20:46:30.211Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/course-materials/course-overview.html</loc>
@@ -106,23 +106,23 @@
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/group-activities/pair-programming-norms.html</loc>
-    <lastmod>2024-09-23T15:58:48.606Z</lastmod>
+    <lastmod>2024-09-23T20:31:33.777Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/group-activities/week-1/broken-circles.html</loc>
-    <lastmod>2024-09-23T01:14:43.025Z</lastmod>
+    <lastmod>2024-09-23T20:31:33.779Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/group-activities/week-2/PA2-ggplot-solution.html</loc>
-    <lastmod>2024-09-02T16:04:12.228Z</lastmod>
+    <lastmod>2024-09-23T20:31:33.779Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/group-activities/week-2/PA2-task-card.html</loc>
-    <lastmod>2024-09-23T18:14:55.982Z</lastmod>
+    <lastmod>2024-09-23T20:31:33.781Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/group-activities/week-3/PA3-dplyr.html</loc>
-    <lastmod>2024-09-23T18:21:32.882Z</lastmod>
+    <lastmod>2024-09-23T20:31:33.783Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/group-activities/week-4/PA4-tidyr.html</loc>
@@ -146,7 +146,7 @@
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/slides/week-1/week-1-intro-version-control.html</loc>
-    <lastmod>2024-09-23T17:39:09.643Z</lastmod>
+    <lastmod>2024-09-23T20:31:33.791Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/slides/week-2/week-2-import.html</loc>
@@ -166,11 +166,11 @@
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/weeks/week-0-discord.html</loc>
-    <lastmod>2024-09-23T00:20:16.110Z</lastmod>
+    <lastmod>2024-09-23T20:31:33.794Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/weeks/week-1-r-rstudio.html</loc>
-    <lastmod>2024-09-22T23:57:35.419Z</lastmod>
+    <lastmod>2024-09-23T20:31:33.796Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/weeks/week-2-ggplot.html</loc>
@@ -179,5 +179,9 @@
   <url>
     <loc>https://atheobold.github.io/stat-331-website/weeks/week-3-dplyr.html</loc>
     <lastmod>2024-09-06T19:59:34.783Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/portfolio/portfolio-instructions.html</loc>
+    <lastmod>2024-09-23T20:38:17.546Z</lastmod>
   </url>
 </urlset>
