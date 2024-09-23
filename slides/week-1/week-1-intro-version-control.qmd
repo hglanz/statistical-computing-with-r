@@ -2,7 +2,7 @@
 title: "Scripts, Notebooks & Version Control"
 format: 
   revealjs:
-    theme: [../style.scss]
+    theme: [../style.scss, simple]
     auto-stretch: false
 editor: source
 embed-resources: true
@@ -24,7 +24,6 @@ Today we will...
 -   Answer Clarifying Questions:
     -   Syllabus?
     -   Questions from the reading?
-    -   PA 1: Find the Mistakes?
 -   New Material
     -   Scripts + Notebooks
     -   Version Control
@@ -51,7 +50,8 @@ how an instructor’s pedagogy impacts the structure of these experiences.
 
   + you will be recorded once a week for 10-weeks while participating in pair         programming to complete collaborative tasks. 
 
-  + you will complete surveys about your demographic information, your prior computing experiences, and your attitudes toward data science.
+  + you will complete a pre- and post-survey about your prior computing
+  experiences and your attitudes toward data science.
 :::
 
 . . .
@@ -59,12 +59,10 @@ how an instructor’s pedagogy impacts the structure of these experiences.
 </br>
 
 ::: {.small}
-Your participation in this research will not directly affect your course grade. 
+Your participation in this research will not affect your course grade. 
 :::
 
 . . .
-
-</br> 
 
 ::: {.callout-warning}
 # Consent Form 
@@ -193,6 +191,10 @@ website:
 
 ![](images/quarto_sections.jpeg){width="80%" fig-alt="The image shows a split-screen view of a Quarto document editor and the rendered output in a browser-like preview. On the left side, the code editor is displayed, and on the right side, the rendered HTML output of the document. On the left, the top section contains the front matter, which includes metadata about the document such as the title ('Hello, Quarto'), the format (HTML), and the editor (set to visual mode). Below this, there is an R code chunk where R packages are loaded (specifically, 'tidyverse' and 'palmerpenguins'). This section is marked with `{r`} at the beginning of the code chunk, and the chunk is labeled 'load-packages.' Some options, like 'include: false', are present to prevent this code from appearing in the final rendered output. Following the code is Markdown content, which includes text descriptions and headings such as 'Meet Quarto' and 'Meet the Penguins'. There are also inline code elements and hyperlinks, like a link to the Palmer Penguins dataset. On the right side of the image, the rendered output is displayed, showing formatted text and visuals. The title 'Hello, Quarto' is shown as a heading, followed by a description of Quarto and a section discussing penguins. A link to the Palmer Penguins dataset is included, along with a colorful illustration of three penguins representing different species (Chinstrap, Gentoo, and Adélie). Below this text, a plot is displayed, showing the relationship between flipper length and bill length for these penguin species. This image highlights how Quarto documents combine code, Markdown, and front matter to create a dynamic and executable report."}
 
+. . .
+
+**How does Quarto know that a section of text should be interpreted as R code?**
+
 ## R Code Options in Quarto
 
 **R code chunk** options are included at the top of each code chunk, prefaced with a `#|` (hashpipe).
@@ -235,6 +237,7 @@ Quarto CLI (command line interface) orchestrates each step of rendering:
 When you click **Render**:
 
 ::: {.incremental}
+::: {.small}
 1.    Your file is saved.
 2.    The R code written in your *.qmd* file gets run **in order**.
 
@@ -243,6 +246,7 @@ When you click **Render**:
 
   -   If your Quarto file is called "Lab1.qmd", then a file called "Lab1.html" will be created.
   -   This will be saved in the same folder as "Lab1.qmd".
+:::
 :::
 
 # Version Control
@@ -309,7 +313,7 @@ knitr::include_graphics("https://bornsql.ca/wp-content/uploads/2022/03/Git-Logo-
 
 2. GitHub makes it easy to have multiple people working on the same files at the same time.
 
-3. You can host a URL of fun things (like the class text, these slides, a personal website, etc.) with [GitHub pages](https://pages.github.com/).
+3. You can host a URL of fun things (like the class text, these slides, the course website, etc.) with [GitHub pages](https://pages.github.com/).
 
 
 ## Git Repositories

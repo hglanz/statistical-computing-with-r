@@ -2348,14 +2348,14 @@
     "href": "slides/week-1/week-1-intro-version-control.html#thursday-september-26",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Thursday, September 26",
-    "text": "Thursday, September 26\nToday we will…\n\n\nAnswer Clarifying Questions:\n\nSyllabus?\nQuestions from the reading?\nPA 1: Find the Mistakes?\n\nNew Material\n\nScripts + Notebooks\nVersion Control\n\nLab 1: Introduction to Quarto\nChallenge 1: Modifying your Quarto Document"
+    "text": "Thursday, September 26\nToday we will…\n\n\nAnswer Clarifying Questions:\n\nSyllabus?\nQuestions from the reading?\n\nNew Material\n\nScripts + Notebooks\nVersion Control\n\nLab 1: Introduction to Quarto\nChallenge 1: Modifying your Quarto Document"
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#consent-to-participate",
     "href": "slides/week-1/week-1-intro-version-control.html#consent-to-participate",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Consent to Participate",
-    "text": "Consent to Participate\n\n\nIf you agree to participate…\n\nyou will be recorded once a week for 10-weeks while participating in pair programming to complete collaborative tasks.\nyou will complete surveys about your demographic information, your prior computing experiences, and your attitudes toward data science.\n\n\n\n\n\n\nYour participation in this research will not directly affect your course grade.\n\n\n\n\n\n\n\n\n\n\nConsent Form\n\n\nPlease complete the consent form (https://forms.gle/oax73hoe7uRSVLYw8) by Monday, 9/30."
+    "text": "Consent to Participate\n\n\nIf you agree to participate…\n\nyou will be recorded once a week for 10-weeks while participating in pair programming to complete collaborative tasks.\nyou will complete a pre- and post-survey about your prior computing experiences and your attitudes toward data science.\n\n\n\n\n\n\nYour participation in this research will not affect your course grade.\n\n\n\n\n\n\n\n\n\nConsent Form\n\n\nPlease complete the consent form (https://forms.gle/oax73hoe7uRSVLYw8) by Monday, 9/30."
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#scripts",
@@ -2404,7 +2404,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#quarto-components",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Quarto Components",
-    "text": "Quarto Components"
+    "text": "Quarto Components\n\n\nHow does Quarto know that a section of text should be interpreted as R code?"
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#r-code-options-in-quarto",
@@ -2446,7 +2446,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#rendering-your-quarto-document-2",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Rendering your Quarto Document",
-    "text": "Rendering your Quarto Document\nWhen you click Render:\n\n\nYour file is saved.\nThe R code written in your .qmd file gets run in order.\n\n\nIt starts from scratch, even if you previously ran some of the code in RStudio.\n\n\nA new file is created.\n\n\nIf your Quarto file is called “Lab1.qmd”, then a file called “Lab1.html” will be created.\nThis will be saved in the same folder as “Lab1.qmd”."
+    "text": "Rendering your Quarto Document\nWhen you click Render:\n\n\n\nYour file is saved.\nThe R code written in your .qmd file gets run in order.\n\n\nIt starts from scratch, even if you previously ran some of the code in RStudio.\n\n\nA new file is created.\n\n\nIf your Quarto file is called “Lab1.qmd”, then a file called “Lab1.html” will be created.\nThis will be saved in the same folder as “Lab1.qmd”."
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#git-vs-github",
@@ -2467,7 +2467,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#why-learn-github",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Why Learn GitHub?",
-    "text": "Why Learn GitHub?\n\nGitHub provides a structured way for tracking changes to files over the course of a project.\n\n\nThink Google Docs or Dropbox history, but more structured and powerful!\n\n\nGitHub makes it easy to have multiple people working on the same files at the same time.\nYou can host a URL of fun things (like the class text, these slides, a personal website, etc.) with GitHub pages."
+    "text": "Why Learn GitHub?\n\nGitHub provides a structured way for tracking changes to files over the course of a project.\n\n\nThink Google Docs or Dropbox history, but more structured and powerful!\n\n\nGitHub makes it easy to have multiple people working on the same files at the same time.\nYou can host a URL of fun things (like the class text, these slides, the course website, etc.) with GitHub pages."
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#git-repositories",
