@@ -1,84 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://atheobold.github.io/stat-331-website/weeks/week-4-reshaping-joining.html</loc>
-    <lastmod>2024-09-18T18:58:18.461Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/weeks/week-2-projects-data-import.html</loc>
-    <lastmod>2024-09-07T21:30:57.197Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/weeks/week-1-version-control.html</loc>
-    <lastmod>2024-09-23T20:31:33.797Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/weeks/week-1-quarto.html</loc>
-    <lastmod>2024-09-23T20:31:33.795Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/videos/week-2/r-projects.html</loc>
-    <lastmod>2024-09-06T16:16:25.216Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/videos/week-1/debugging-errors.html</loc>
-    <lastmod>2024-09-06T19:19:38.362Z</lastmod>
+    <loc>https://atheobold.github.io/stat-331-website/slides/week-3/week-3-dplyr-pt1.html</loc>
+    <lastmod>2024-09-11T17:58:30.813Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/slides/week-4/week-4_joins-1.html</loc>
-    <lastmod>2024-09-09T21:00:12.393Z</lastmod>
+    <lastmod>2024-09-11T17:58:30.860Z</lastmod>
   </url>
   <url>
-    <loc>https://atheobold.github.io/stat-331-website/slides/week-3/week-3-dplyr-pt1.html</loc>
-    <lastmod>2024-09-09T20:20:58.978Z</lastmod>
+    <loc>https://atheobold.github.io/stat-331-website/slides/week-3/week-3-dplyr-pt2.html</loc>
+    <lastmod>2024-09-11T17:58:30.814Z</lastmod>
   </url>
   <url>
-    <loc>https://atheobold.github.io/stat-331-website/slides/week-2/week-2-ggplot.html</loc>
-    <lastmod>2024-09-23T20:35:12.014Z</lastmod>
+    <loc>https://atheobold.github.io/stat-331-website/videos/week-1/debugging-errors.html</loc>
+    <lastmod>2024-09-09T13:36:21.506Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-3/PA3-dplyr.html</loc>
+    <lastmod>2024-09-23T20:31:33.783Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/weeks/week-4-reshaping-joining.html</loc>
+    <lastmod>2024-09-11T21:04:36.098Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/slides/week-1/week-1-intro-R.html</loc>
     <lastmod>2024-09-23T20:31:33.789Z</lastmod>
   </url>
   <url>
-    <loc>https://atheobold.github.io/stat-331-website/labs/instructions/lab-3-instructions.html</loc>
-    <lastmod>2024-09-18T18:58:18.455Z</lastmod>
+    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-1/base-r.html</loc>
+    <lastmod>2024-08-21T18:31:45.315Z</lastmod>
   </url>
   <url>
-    <loc>https://atheobold.github.io/stat-331-website/labs/instructions/lab-1-instructions.html</loc>
-    <lastmod>2024-09-18T18:58:18.455Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/labs/instructions/challenge-2-instructions.html</loc>
-    <lastmod>2024-08-22T21:26:55.784Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/index.html</loc>
-    <lastmod>2024-09-18T18:58:18.454Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-3/PA3-task-card.html</loc>
-    <lastmod>2024-09-23T20:31:33.783Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-2/expert-designer.html</loc>
-    <lastmod>2024-08-16T17:29:29.904Z</lastmod>
+    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-2/PA2-ggplot-solution.html</loc>
+    <lastmod>2024-09-23T20:31:33.779Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/group-activities/week-2/PA2-ggplot.html</loc>
     <lastmod>2024-09-23T20:31:33.780Z</lastmod>
   </url>
   <url>
-    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-1/data-cleaning-viz-steps.html</loc>
-    <lastmod>2024-08-01T22:01:14.002Z</lastmod>
+    <loc>https://atheobold.github.io/stat-331-website/weeks/week-1-version-control.html</loc>
+    <lastmod>2024-09-23T20:31:33.797Z</lastmod>
   </url>
   <url>
-    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-1/base-r.html</loc>
-    <lastmod>2024-08-18T19:33:35.270Z</lastmod>
+    <loc>https://atheobold.github.io/stat-331-website/labs/instructions/challenge-2-instructions.html</loc>
+    <lastmod>2024-08-22T14:49:00.248Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/videos/week-1/directories.html</loc>
+    <lastmod>2024-09-06T14:23:01.120Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/code-review/code-review-guidelines.html</loc>
+    <lastmod>2024-09-03T13:32:27.134Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/videos/week-2/r-projects.html</loc>
+    <lastmod>2024-09-09T13:36:21.507Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/weeks/week-0-discord.html</loc>
+    <lastmod>2024-09-23T20:31:33.794Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-2/PA2-task-card.html</loc>
+    <lastmod>2024-09-23T20:31:33.781Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/portfolio/portfolio-instructions.html</loc>
+    <lastmod>2024-09-23T22:15:10.708Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-3/PA3-task-card.html</loc>
+    <lastmod>2024-09-23T20:31:33.783Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-1/broken-circles.html</loc>
+    <lastmod>2024-09-23T20:31:33.779Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/course-materials/course_resources.html</loc>
-    <lastmod>2024-06-20T21:00:55.861Z</lastmod>
+    <lastmod>2024-08-17T13:59:28.492Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/course-materials/course-syllabus.html</loc>
@@ -86,102 +90,98 @@
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/course-materials/course-overview.html</loc>
-    <lastmod>2024-06-20T20:45:49.507Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/code-review/code-review-guidelines.html</loc>
-    <lastmod>2024-09-04T01:11:31.869Z</lastmod>
+    <lastmod>2024-08-17T13:59:28.490Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/course-materials/computing-access.html</loc>
-    <lastmod>2024-06-20T21:20:58.641Z</lastmod>
+    <lastmod>2024-08-17T13:59:28.490Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/course-materials/course-support.html</loc>
-    <lastmod>2024-06-20T21:02:54.463Z</lastmod>
+    <lastmod>2024-08-17T13:59:28.490Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/course-materials/course-team.html</loc>
-    <lastmod>2024-06-20T21:08:40.091Z</lastmod>
+    <lastmod>2024-08-17T13:59:28.492Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/group-activities/pair-programming-norms.html</loc>
     <lastmod>2024-09-23T20:31:33.777Z</lastmod>
   </url>
   <url>
-    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-1/broken-circles.html</loc>
-    <lastmod>2024-09-23T20:31:33.779Z</lastmod>
+    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-2/expert-designer.html</loc>
+    <lastmod>2024-08-17T13:59:28.908Z</lastmod>
   </url>
   <url>
-    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-2/PA2-ggplot-solution.html</loc>
-    <lastmod>2024-09-23T20:31:33.779Z</lastmod>
+    <loc>https://atheobold.github.io/stat-331-website/index.html</loc>
+    <lastmod>2024-09-11T21:49:39.704Z</lastmod>
   </url>
   <url>
-    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-2/PA2-task-card.html</loc>
-    <lastmod>2024-09-23T20:31:33.781Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-3/PA3-dplyr.html</loc>
-    <lastmod>2024-09-23T20:31:33.783Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-4/PA4-tidyr.html</loc>
-    <lastmod>2024-09-18T18:58:18.453Z</lastmod>
+    <loc>https://atheobold.github.io/stat-331-website/weeks/week-1-quarto.html</loc>
+    <lastmod>2024-09-23T20:31:33.795Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/labs/instructions/bonus-challenges/bCH_murder.html</loc>
-    <lastmod>2024-06-04T20:40:55.000Z</lastmod>
+    <lastmod>2024-09-11T17:58:30.770Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/labs/instructions/lab-1-instructions.html</loc>
+    <lastmod>2024-09-16T17:09:58.930Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/weeks/week-2-projects-data-import.html</loc>
+    <lastmod>2024-09-09T13:36:21.555Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/labs/instructions/challenge-3-instructions.html</loc>
-    <lastmod>2024-09-11T16:55:46.673Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/labs/instructions/lab-2-instructions.html</loc>
-    <lastmod>2024-09-18T18:58:18.455Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/labs/instructions/lab-4-instuctions.html</loc>
-    <lastmod>2024-09-18T18:58:18.456Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/slides/week-1/week-1-intro-version-control.html</loc>
-    <lastmod>2024-09-23T20:31:33.791Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/slides/week-2/week-2-import.html</loc>
-    <lastmod>2024-09-08T19:10:40.118Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/slides/week-3/week-3-dplyr-pt2.html</loc>
-    <lastmod>2024-09-09T20:52:09.464Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/slides/week-4/week-4_joins-2.html</loc>
-    <lastmod>2024-09-11T16:59:11.602Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/videos/week-1/directories.html</loc>
-    <lastmod>2024-09-06T15:25:48.403Z</lastmod>
-  </url>
-  <url>
-    <loc>https://atheobold.github.io/stat-331-website/weeks/week-0-discord.html</loc>
-    <lastmod>2024-09-23T20:31:33.794Z</lastmod>
+    <lastmod>2024-09-11T17:58:30.787Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/weeks/week-1-r-rstudio.html</loc>
     <lastmod>2024-09-23T20:31:33.796Z</lastmod>
   </url>
   <url>
-    <loc>https://atheobold.github.io/stat-331-website/weeks/week-2-ggplot.html</loc>
-    <lastmod>2024-09-01T21:19:52.240Z</lastmod>
+    <loc>https://atheobold.github.io/stat-331-website/slides/week-1/week-1-intro-version-control.html</loc>
+    <lastmod>2024-09-23T20:31:33.791Z</lastmod>
   </url>
   <url>
     <loc>https://atheobold.github.io/stat-331-website/weeks/week-3-dplyr.html</loc>
-    <lastmod>2024-09-06T19:59:34.783Z</lastmod>
+    <lastmod>2024-09-09T13:36:21.555Z</lastmod>
   </url>
   <url>
-    <loc>https://atheobold.github.io/stat-331-website/portfolio/portfolio-instructions.html</loc>
-    <lastmod>2024-09-23T22:15:10.708Z</lastmod>
+    <loc>https://atheobold.github.io/stat-331-website/weeks/week-2-ggplot.html</loc>
+    <lastmod>2024-09-03T13:32:13.189Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/labs/instructions/lab-2-instructions.html</loc>
+    <lastmod>2024-09-16T17:10:09.157Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/labs/instructions/lab-4-instuctions.html</loc>
+    <lastmod>2024-09-16T17:13:47.095Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-1/data-cleaning-viz-steps.html</loc>
+    <lastmod>2024-08-21T18:31:45.826Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/group-activities/week-4/PA4-tidyr.html</loc>
+    <lastmod>2024-09-11T21:47:40.947Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/labs/instructions/lab-3-instructions.html</loc>
+    <lastmod>2024-09-16T17:10:24.290Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/slides/week-2/week-2-import.html</loc>
+    <lastmod>2024-09-09T13:36:21.448Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/slides/week-2/week-2-ggplot.html</loc>
+    <lastmod>2024-09-23T20:35:12.014Z</lastmod>
+  </url>
+  <url>
+    <loc>https://atheobold.github.io/stat-331-website/slides/week-4/week-4_joins-2.html</loc>
+    <lastmod>2024-09-11T17:58:30.860Z</lastmod>
   </url>
 </urlset>

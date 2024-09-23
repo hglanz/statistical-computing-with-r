@@ -71,7 +71,7 @@ website:
             text: "Week 2, Part 2 - Data Import"
           - href: weeks/week-3-dplyr.qmd
             text: "Week 3 - dplyr"
-          - href: weeks/week-4.qmd
+          #- href: weeks/week-4.qmd
           #   text: "Week 4"
           # - href: weeks/week-5.qmd
           #   text: "Week 5"
@@ -91,13 +91,10 @@ website:
             text: Lab 1
           - href: labs/instructions/lab-2-instructions.qmd
             text: Lab 2
-      # - section: "Portfolio"
-      #   contents:
-      #     - href: portfolio/midterm-project/midterm-project-directions.qmd
-      #       text: Midterm Portfolio Check-in
-      #     - href: portfolio/final-portfolio-instructions.qmd
-      #       text: Final Portfolio Instructions
-      
+      - section: "Portfolio"
+        contents:
+          - href: portfolio/portfolio-instructions.qmd
+            text: Portfolio Instructions
 
 format:
   html:
