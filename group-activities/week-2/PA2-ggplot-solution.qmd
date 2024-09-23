@@ -1,0 +1,222 @@
+---
+title: "PA 2: Using Data Visualization to Find the Penguins"
+format: html
+editor: source
+execute: 
+  echo: fenced
+  error: true
+---
+
+```{r}
+#| message: false
+#| label: set-up
+
+library(tidyverse)
+library(palmerpenguins)
+```
+
+# Getting Set-up
+
+<!-- The partner whose family name starts first alphabetically starts as the listener (typing and listening to instructions from the problem solver)! -->
+
+## Step 1: Install the `palmerpenguins` Package
+
+We will be creating visualizations using the `ggplot2` package.
+
+For this activity, we will be exploring the `penguins` data from the `palmerpenguins` package, which has [fantastic documentation with really awesome artwork](https://allisonhorst.github.io/palmerpenguins/). So, you will need to install the **palmerpenguins** package. Run the following code in your console:
+
+`install.packages("palmerpenguins")`
+
+## Step 2: Create a Set-up Code Chunk
+
+1.  Locate the code chunk at the beginning of your document (directly under the YAML).
+2.  Name the code chunk `setup` (with the hashpipe `#|`)
+3.  Specify the code chunk options (with the hashpipe `#|`) that the messages from loading in the packages should not be included.
+4.  Load in the `tidyverse` or `ggplot2` package.
+5.  Load in the `palmerpenguins` package.
+
+## Step 3: Accessing the `penguins` Dataset
+
+I like to tangibly see the data set I will be working with so let's pull the `penguins` data into the R environment. Run the code below and you should see the penguins data appear in the top right Environment tab.
+
+```{r}
+#| label: load-data
+
+data(penguins)
+```
+
+## Step 4: Get to Know the Data
+
+<!-- Change roles (listener becomes problem solver)! -->
+
+6.  What variables are included in these data? What units are the variables measured in? What does each row represent?
+
+**Each row is a penguin who was captured during the study. The columns are the
+variables measured on each penguin. Fortunately, the units for the measurements
+are encoded in the variable names (e.g., `bill_length_mm`, `body_mass_g`).**
+
+# Making Graphics
+
+In this section you will explore the `penguins` dataset by creating multiple types of plots. As you are creating you plots, please don't forget to (1) give your plots reader friendly axes labels, and. (2) follow good code formatting!
+
+## Step 5: Barchart
+
+Use `ggplot2` to draw a barchart of different `species` included in the dataset.
+
+```{r}
+#| label: barchart
+
+ggplot(data = penguins, 
+       mapping = aes(x = species)
+       ) + 
+  geom_bar() + 
+  labs(
+    x = "Species of Penguin", 
+    title = "Frequency of Penguin Species Captured on Palmer Archipelago"
+    )
+
+```
+
+## Step 6: Scatterplot
+
+Use `ggplot2` to create a scatterplot of the relationship between the bill length (`bill_length_mm`) and bill depth (`bill_depth_mm`).
+
+```{r}
+#| label: scatterplot
+#| warning: false
+
+ggplot(data = penguins, 
+       mapping = aes(
+         x = bill_length_mm, 
+         y = bill_depth_mm
+         )
+       ) + 
+  geom_point() + 
+  labs(
+    x = "Bill Length (mm)", 
+    y = "Bill Depth (mm)"
+    )
+
+```
+
+::: {.callout-tip}
+Notice I set `#| warning: fals`e in the above code option. I did this because
+`ggplot()` outputs warning messages when it omits missing values (NAs) from a
+plot. I didn’t want these messages to be output on the page, so I turned them
+off!
+:::
+
+## Step 7: Adding A Categorical Variable
+
+<!-- Change roles (listener becomes problem solver)! -->
+
+Building off of the plot you made in Step 6, add an aesthetic to differentiate the species of the penguins in the scatterplot by color.
+
+```{r}
+#| label: scatterplot-with-one-categorical-variable
+#| warning: false
+
+ggplot(data = penguins, 
+       mapping = aes(
+         x = bill_length_mm, 
+         y = bill_depth_mm, 
+         color = species
+         )
+       ) + 
+  geom_point() + 
+  labs(
+    x = "Bill Length (mm)", 
+    y = "Bill Depth (mm)", 
+    color = "Penguin Species"
+    )
+```
+
+::: {.callout-tip}
+
+Notice how I’m using a new line for each argument of `aes()`? I’m doing this
+because it make my code easier to read! The general guideline is that each line
+of your code should not be over 80 characters long.
+:::
+
+## Step 8: Adding Another Categorical Variable
+
+10. Building off of the plot you made in Step 7, add the location of the penguins ( `island`) to your visualization. There may be more than one method to address this, however, one method will more easily allow you to address the questions below.
+
+```{r}
+#| label: scatterplot-with-two-categorical-variables
+#| warning: false
+
+ggplot(data = penguins, 
+       mapping = aes(x = bill_length_mm, 
+                     y = bill_depth_mm, 
+                     color = species
+                     )
+       ) + 
+  geom_point() +
+  facet_wrap(~ island) + 
+  labs(x = "Bill Length (mm)", 
+       y = "Bill Depth (mm)", 
+       color = "Penguin Species"
+       )
+```
+
+# Canvas Quiz
+
+Working together as a team, use the plots you both created to address the
+following questions on Canvas:
+
+1.  Which species of penguins is represented the **least** in the `penguins`
+data set?
+
+**Based on the barplot, the Chinstrap penguins are the least represented.**
+
+2.  Which species of penguins are found on every island?
+
+**Based on the scatterplot, the Adelie penguins are found on every island, as
+there are pink points in each island facet.**
+
+3.  Which species of penguins are found on Dream Island?
+
+**The Chinstrap penguins.**
+
+4.  Which species of penguins are found on Torgersen Island?
+
+**The Adelie penguins.**
+
+5.  Color deficiencies can make differentiating groups difficult---what 
+aesthetic could you add to your plot to double encode species?
+
+```{r}
+#| warning: false
+#| label: scatterplot-double-encode
+
+ggplot(data = penguins, 
+       mapping = aes(
+         x = bill_length_mm, 
+         y = bill_depth_mm, 
+         color = species, 
+         shape = species
+         )
+       ) + 
+  geom_point() + 
+  facet_wrap(~ island)  + 
+  labs(
+    x = "Bill Length (mm)", 
+    y = "Bill Depth (mm)", 
+    color = "Penguin Species", 
+    shape = "Penguin Species"
+    )
+```
+
+::: {.callout-tip}
+When you encode the `species` variable into the `shape` aesthetic you will
+automatically get a second legend, but this legend is redundant with the `color`
+legend. So, we only want one legend for the entire plot. If you Google how to
+compress two legends into one in `ggplot` (like I did), you’ll get a lot of
+answers. A lot of them are too complicated!
+
+The simplest way to compress two legends is to give them the same name in the
+`labs()` function! Notice how `color` and `shape` have the same label in the
+`labs()` function above, this is how I get the single legend for both
+aesthetics.
+:::
