@@ -353,6 +353,14 @@ Let's start by dividing the class into groups of 6 students.
 :::
 :::
 
+## Activity Guidelines
+
+1. No talking or other noises!
+2. No pointing or hand signals!
+3. No taking pieces. You may only give pieces to others.
+
+**Your group is finished once [everyone]{.underline} has a complete circle.**
+
 ## Discussion 
 
 - What do you think this game was about? What was its purpose?
@@ -363,7 +371,20 @@ cooperation easier?
 
 # A Data Puzzle
 
-<!-- add in activity on data steps -->
+# A Data Puzzle
+
+> Arrange the different pieces (tables and graphs) based on the actions that led
+> to each new table / graph.
+
+. . .
+
+</br> 
+
+Once you have arranged each of the tables and graphs, answer the following
+questions:
+
+1. What is the most common type of work location - remote or in-person? 
+2. Does work location type vary by company size?
 
 # Groupworthy Data Science
 
