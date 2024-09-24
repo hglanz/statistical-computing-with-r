@@ -365,6 +365,43 @@ cooperation easier?
 
 <!-- add in activity on data steps -->
 
+# Groupworthy Data Science
+
+# Groupworthy Data Science
+
+> The purpose of the study is to understand how an instructor's pedagogy impacts
+> the equity of group collaborations, specifically as they relate to pair 
+> programming. 
+
+## Consent to Participate
+
+::: {.small}
+- If you agree to participate... 
+
+  + you will be recorded once a week for 10-weeks while participating in pair         programming to complete collaborative tasks. 
+
+  + you will complete a pre- and post-survey about your prior computing
+  experiences and your attitudes toward data science.
+:::
+
+. . .
+
+</br>
+
+::: {.small}
+Your participation in this research will not affect your course grade. 
+:::
+
+. . .
+
+::: {.callout-warning}
+# Consent Form 
+
+Please complete the consent form (<https://forms.gle/oax73hoe7uRSVLYw8>) by 
+Monday, 9/30. 
+:::
+
+
 # Before class on Thursday...
 
 # Before class on Thursday...

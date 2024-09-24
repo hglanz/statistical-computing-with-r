@@ -935,7 +935,7 @@
     "href": "slides/week-1/week-1-intro-R.html#hi-im-dr.-theobold",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "Hi, I’m Dr. Theobold!",
-    "text": "Hi, I’m Dr. Theobold!\n\n\n\n\nI am originally from Colorado, but went to grad school in Montana.\nMy favorite things are being outside, drinking coffee, and watching women’s basketball.\n\n\n\n\n\n\n\n\n\n\n\n\nI love cats!\nI’ve been programming in R since 2014!\nI absolutely love teaching this course!"
+    "text": "Hi, I’m Dr. Theobold!\n\n\n\n\nI am originally from Colorado, but went to grad school in Montana.\nMy favorite things are being outside, drinking coffee, and watching women’s basketball.\n\n\n\n\n\n\n\n\n\n\n\n\n\nI love cats!\nI’ve been programming in R since 2014!\nI absolutely love teaching this course!"
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#on-a-personal-note",
@@ -3693,5 +3693,12 @@
     "title": "Extending Joins, Factors, Clean Variable Names",
     "section": "To do…",
     "text": "To do…\n\nLab 4: Childcare Costs in California\n\nDue Saturday (4/27) at 11:59pm\n\nRead Chapter 5: Strings + Dates\n\nCheck-in 5.1 - 5.2 due Monday (4/29) at 10:00am"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#consent-to-participate",
+    "href": "slides/week-1/week-1-intro-R.html#consent-to-participate",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Consent to Participate",
+    "text": "Consent to Participate\n\n\nIf you agree to participate…\n\nyou will be recorded once a week for 10-weeks while participating in pair programming to complete collaborative tasks.\nyou will complete a pre- and post-survey about your prior computing experiences and your attitudes toward data science.\n\n\n\n\n\n\nYour participation in this research will not affect your course grade.\n\n\n\n\n\n\n\n\n\nConsent Form\n\n\nPlease complete the consent form (https://forms.gle/oax73hoe7uRSVLYw8) by Monday, 9/30."
   }
 ]

@@ -39,9 +39,9 @@ Today we will...
 
 # Groupworthy Data Science
 
-> The purpose of the study is to understand how power and authority are
-negotiated by students when participating in pair programming tasks, as well as
-how an instructor’s pedagogy impacts the structure of these experiences.
+> The purpose of the study is to understand how an instructor's pedagogy impacts
+> the equity of group collaborations, specifically as they relate to pair 
+> programming. 
 
 ## Consent to Participate
 
