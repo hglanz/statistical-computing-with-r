@@ -8,9 +8,9 @@
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.57">
+  <meta name="generator" content="quarto-1.4.533">
 
-  <title>Introduction to Statistical Computing in R – Tidy Data, Importing Data &amp; More Advanced Graphics</title>
+  <title>Introduction to Statistical Computing in R - Tidy Data, Importing Data &amp; More Advanced Graphics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -41,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -69,7 +69,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.cf { color: #003b4f; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -83,7 +83,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.kw { color: #003b4f; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -442,7 +442,7 @@
 <div id="tabset-1-1">
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top">
+<table>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Team</th>
@@ -484,7 +484,7 @@
 <div id="tabset-1-2">
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top">
+<table>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Team</th>
@@ -648,7 +648,8 @@
 <pre><code>Name, Age
 Bob, 49
 Joe, 40</code></pre>
-</div></div>
+</div>
+</div>
 </div>
 <div class="fragment">
 <p><code>.xls</code>, <code>.xlsx</code>: Microsoft Excel spreadsheet</p>
@@ -720,7 +721,8 @@ Joe, 40</code></pre>
 
 </div><div class="column" style="width:48%;">
 <p><img data-src="images/read_csv_doc.png"></p>
-</div></div>
+</div>
+</div>
 </section></section>
 <section id="reading-in-data" class="title-slide slide level1 center">
 <h1>Reading in Data</h1>
@@ -751,11 +753,11 @@ Joe, 40</code></pre>
 <section id="pre-attentive-features-2" class="slide level2">
 <h2>Pre-attentive Features</h2>
 
-<img data-src="images/pre-atten1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A white background scattered with various green triangles and a single green circle. The triangles are evenly spaced but randomly oriented and positioned, with no apparent pattern or alignment. The single circle stands out among the triangles due to its different shape." width="887"></section>
+<img data-src="images/pre-atten1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A white background scattered with various green triangles and a single green circle. The triangles are evenly spaced but randomly oriented and positioned, with no apparent pattern or alignment. The single circle stands out among the triangles due to its different shape."></section>
 <section id="pre-attentive-features-3" class="slide level2">
 <h2>Pre-attentive Features</h2>
 
-<img data-src="images/pre-atten2.png" class="quarto-figure quarto-figure-center r-stretch" alt="A white background scattered with various red circles and a single green circle. The circles are evenly spaced but randomly oriented and positioned, with no apparent pattern or alignment. The single circle stands out among the other circles due to its different color." width="887"></section>
+<img data-src="images/pre-atten2.png" class="quarto-figure quarto-figure-center r-stretch" alt="A white background scattered with various red circles and a single green circle. The circles are evenly spaced but randomly oriented and positioned, with no apparent pattern or alignment. The single circle stands out among the other circles due to its different color."></section>
 <section id="pre-attentive-features-4" class="slide level2">
 <h2>Pre-attentive Features</h2>
 <blockquote>
@@ -775,7 +777,7 @@ Joe, 40</code></pre>
 </section>
 <section id="gestalt-principles" class="slide level2">
 <h2>Gestalt Principles</h2>
-<table class="caption-top">
+<table>
 <thead>
 <tr class="header">
 <th>Gestalt Hierarchy</th>
@@ -815,11 +817,11 @@ Joe, 40</code></pre>
 <section id="double-encoding" class="slide level2">
 <h2>Double Encoding</h2>
 
-<img data-src="images/double.png" class="quarto-figure quarto-figure-center r-stretch" width="887"></section>
+<img data-src="images/double.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="no-double-encoding" class="slide level2">
 <h2>No Double Encoding</h2>
 
-<img data-src="images/no_double.png" class="quarto-figure quarto-figure-center r-stretch" width="887"></section></section>
+<img data-src="images/no_double.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
 <section>
 <section id="color" class="title-slide slide level1 center">
 <h1><a href="https://www.youtube.com/watch?v=zALBl5f1ib4">Color</a></h1>
@@ -850,12 +852,13 @@ Joe, 40</code></pre>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="images/intensity.png" alt="This image illustrates the concept of color intensity. It shows a yellow square labeled 'YELLOW (HUE)' on the left, a gray square labeled 'GRAY' in the middle, and a square of desaturated yellow labeled 'LESS INTENSE' on the right. The image conveys that adding gray to a pure hue, such as yellow, results in a color that is less intense or more muted. The mathematical symbols '+' and '=' are used to show the combination of the yellow hue with gray, leading to a less intense color." width="683"></p>
+<p><img data-src="images/intensity.png" alt="This image illustrates the concept of color intensity. It shows a yellow square labeled 'YELLOW (HUE)' on the left, a gray square labeled 'GRAY' in the middle, and a square of desaturated yellow labeled 'LESS INTENSE' on the right. The image conveys that adding gray to a pure hue, such as yellow, results in a color that is less intense or more muted. The mathematical symbols '+' and '=' are used to show the combination of the yellow hue with gray, leading to a less intense color."></p>
 </figure>
 </div>
 </div>
 </div>
-</div></div>
+</div>
+</div>
 </section>
 <section id="color-guidelines" class="slide level2">
 <h2>Color Guidelines</h2>
@@ -872,7 +875,7 @@ Joe, 40</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/rainbow.png" class="quarto-figure quarto-figure-center" alt="This image is a color-coded map of Texas, showing the percentage of people in each county who identify as white. The map uses a rainbow gradient scale to represent different percentages: red and orange for lower percentages (0% to 25%), transitioning through yellow and green (around 50%), to blue and purple for higher percentages (75% to 100%). Each county in Texas is colored according to where it falls on this scale, indicating the variation in racial identification across the state. The legend at the bottom of the map clarifies the percentage range associated with each color." width="576"></p>
+<p><img data-src="images/rainbow.png" class="quarto-figure quarto-figure-center" alt="This image is a color-coded map of Texas, showing the percentage of people in each county who identify as white. The map uses a rainbow gradient scale to represent different percentages: red and orange for lower percentages (0% to 25%), transitioning through yellow and green (around 50%), to blue and purple for higher percentages (75% to 100%). Each county in Texas is colored according to where it falls on this scale, indicating the variation in racial identification across the state. The legend at the bottom of the map clarifies the percentage range associated with each color."></p>
 </figure>
 </div>
 </div>
@@ -884,12 +887,13 @@ Joe, 40</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/red_green.png" class="quarto-figure quarto-figure-center" alt="This image is a bar chart comparing the energy sources of six countries: Mexico, Brazil, Turkey, Russia, Indonesia, and China. Each bar represents a country and is divided into two color-coded segments: red for 'Low-carbon sources' and green for 'Fossil fuels sources.' The chart shows the proportion of energy generated from each source in each country. The purpose of this image is not to demonstrate what fuels each country is using but to highlight how the graph uses red and green hues to separate the two types of fuel. Not only are these colors are difficult for some people's eyes to differentiate, but the plot has swapped what we would ordinarily think of as 'good' and 'bad' colors with fuels that are worse and better for the planet." width="456"></p>
+<p><img data-src="images/red_green.png" class="quarto-figure quarto-figure-center" alt="This image is a bar chart comparing the energy sources of six countries: Mexico, Brazil, Turkey, Russia, Indonesia, and China. Each bar represents a country and is divided into two color-coded segments: red for 'Low-carbon sources' and green for 'Fossil fuels sources.' The chart shows the proportion of energy generated from each source in each country. The purpose of this image is not to demonstrate what fuels each country is using but to highlight how the graph uses red and green hues to separate the two types of fuel. Not only are these colors are difficult for some people's eyes to differentiate, but the plot has swapped what we would ordinarily think of as 'good' and 'bad' colors with fuels that are worse and better for the planet."></p>
 </figure>
 </div>
 </div>
 </div>
-</div></div>
+</div>
+</div>
 </section>
 <section id="color-guidelines-1" class="slide level2">
 <h2>Color Guidelines</h2>
@@ -909,7 +913,7 @@ Joe, 40</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/big_gradient.png" class="quarto-figure quarto-figure-center" alt="This image is a rectangular strip divided into 19 equal vertical sections, each filled with a different solid color. The colors from left to right are red, maroon, dark blue, teal, green, light green, gray, purple, dark maroon, orange, light orange, yellow, light yellow, gold, brown, pink, light pink, mauve, and light gray. Each section is distinctly separated by thin black lines, with no gradients or transitions between the colors. The image represents an extended color spectrum or palette with a nuanced range of colors." width="778"></p>
+<p><img data-src="images/big_gradient.png" class="quarto-figure quarto-figure-center" alt="This image is a rectangular strip divided into 19 equal vertical sections, each filled with a different solid color. The colors from left to right are red, maroon, dark blue, teal, green, light green, gray, purple, dark maroon, orange, light orange, yellow, light yellow, gold, brown, pink, light pink, mauve, and light gray. Each section is distinctly separated by thin black lines, with no gradients or transitions between the colors. The image represents an extended color spectrum or palette with a nuanced range of colors."></p>
 </figure>
 </div>
 </div>
@@ -973,7 +977,7 @@ Joe, 40</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/nyt_color.png" class="quarto-figure quarto-figure-center" alt="This image is a bar chart titled 'How Often Teens Say They Use Each Platform,' depicting the frequency of usage of various social media platforms by teenagers. The platforms listed from top to bottom are YouTube, TikTok, Snapchat, Instagram, and Facebook. Each platform's usage is broken down into six categories, represented as different segments in the bar: Almost constantly (dark blue), Several times a day (medium blue), About once a day (light blue), Less often (lightest blue), Don’t use (gray)." width="713"></p>
+<p><img data-src="images/nyt_color.png" class="quarto-figure quarto-figure-center" alt="This image is a bar chart titled 'How Often Teens Say They Use Each Platform,' depicting the frequency of usage of various social media platforms by teenagers. The platforms listed from top to bottom are YouTube, TikTok, Snapchat, Instagram, and Facebook. Each platform's usage is broken down into six categories, represented as different segments in the bar: Almost constantly (dark blue), Several times a day (medium blue), About once a day (light blue), Less often (lightest blue), Don’t use (gray)."></p>
 </figure>
 </div>
 </div>
@@ -985,12 +989,13 @@ Joe, 40</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/nyt_bw.png" class="quarto-figure quarto-figure-center" alt="This image is a copy of the previous image, but the blue tones have been replaced with grey tones." width="713"></p>
+<p><img data-src="images/nyt_bw.png" class="quarto-figure quarto-figure-center" alt="This image is a copy of the previous image, but the blue tones have been replaced with grey tones."></p>
 </figure>
 </div>
 </div>
 </div>
-</div></div>
+</div>
+</div>
 </section>
 <section id="color-in-ggplot2" class="slide level2">
 <h2>Color in ggplot2</h2>
@@ -1122,12 +1127,12 @@ Joe, 40</code></pre>
 </ul></li>
 </ul>
 
-<div class="quarto-auto-generated-content">
+
+</section><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div>
-</section></section>
+</div></section>
     </div>
   </div>
 
@@ -1408,7 +1413,18 @@ Joe, 40</code></pre>
         }
         return false;
       }
-      const onCopySuccess = function(e) {
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1440,47 +1456,7 @@ Joe, 40</code></pre>
         }, 1000);
         // clear code selection
         e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
       });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        // For code content inside modals, clipBoardJS needs to be initialized with a container option
-        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/atheobold\.github\.io\/stat-331-website");
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -1517,11 +1493,7 @@ Joe, 40</code></pre>
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
+          return note.innerHTML;
         });
       }
       const findCites = (el) => {
