@@ -22,7 +22,8 @@ Today we will...
 ::: {.small}
 -   Answer Clarifying Questions:
     -   Syllabus?
-    -   Questions from the reading?
+    -   Ungrading?
+    -   Participating in research on group collaborations?
 -   New Material
     -   Scripts + Notebooks
     -   Version Control
@@ -30,11 +31,22 @@ Today we will...
 -   Challenge 1: Modifying your Quarto Document
 :::
 
+# Changes to Student Hours
+
+# Changes to Student Hours
+
+</br> 
+
+New Student Hours are:
+
+> Wednesdays from 4pm - 5pm  
+> Thursdays from 11am - 12pm
+
 # Questions about the Syllabus
 
-# Questions from the Reading
+## What does "ungrading" mean?
 
-# Groupworthy Data Science
+# A reminder about my research...
 
 # Groupworthy Data Science
 
@@ -47,7 +59,8 @@ Today we will...
 ::: {.small}
 - If you agree to participate... 
 
-  + you will be recorded once a week for 10-weeks while participating in pair         programming to complete collaborative tasks. 
+  + you will be recorded once a week for 10-weeks while participating in pair 
+  programming to complete collaborative tasks. 
 
   + you will complete a pre- and post-survey about your prior computing
   experiences and your attitudes toward data science.
