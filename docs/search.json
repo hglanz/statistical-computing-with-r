@@ -2436,7 +2436,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#thursday-september-26",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Thursday, September 26",
-    "text": "Thursday, September 26\nToday we will…\n\n\nAnswer Clarifying Questions:\n\nSyllabus?\nUngrading?\nParticipating in research on group collaborations?\n\nNew Material\n\nScripts + Notebooks\nVersion Control\n\nLab 1: Introduction to Quarto\nChallenge 1: Modifying your Quarto Document"
+    "text": "Thursday, September 26\nToday we will…\n\n\nChanges to Student Hours\nAnswer Clarifying Questions:\n\nSyllabus?\nUngrading?\nParticipating in Dr. Theobold’s research on group collaborations?\n\nNew Material\n\nScripts + Notebooks\nVersion Control\n\nLab 1: Introduction to Quarto\nChallenge 1: Modifying your Quarto Document"
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#consent-to-participate",
@@ -3713,6 +3713,13 @@
     "href": "slides/week-1/week-1-intro-version-control.html#what-does-ungrading-mean",
     "title": "Scripts, Notebooks & Version Control",
     "section": "What does “ungrading” mean?",
-    "text": "What does “ungrading” mean?"
+    "text": "What does “ungrading” mean?\n\n“Ungrading is a pedagogical practice which entirely removes grades as a focus of the course. Instead, ungrading exclusively focuses on providing students with feedback aimed at helping them build proficiency to accomplish the course’s learning goals.”"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#how-does-this-system-work",
+    "href": "slides/week-1/week-1-intro-version-control.html#how-does-this-system-work",
+    "title": "Scripts, Notebooks & Version Control",
+    "section": "How does this system work?",
+    "text": "How does this system work?\n\n\nEach problem on an assignment is marked for proficiency (e.g., success, growing).\n\nThese marks are not attached to a grade outcome (e.g., A, B, C, D).\n\nGrades are defined from a set of criteria, co-developed between you and me.\n\nAt the end of the course, you propose the grade you believe you’ve earned based on a portfolio of your work and the criteria we established."
   }
 ]
