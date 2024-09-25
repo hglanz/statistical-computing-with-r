@@ -1188,7 +1188,7 @@
     "href": "slides/week-1/week-1-intro-R.html#hi-im-dr.-theobold",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "Hi, I’m Dr. Theobold!",
-    "text": "Hi, I’m Dr. Theobold!\n\n\n\n\nI am originally from Colorado, but went to grad school in Montana.\nMy favorite things are being outside, drinking coffee, and watching women’s basketball.\n\n\n\n\n\n\n\n\n\n\n\n\n\nI love cats!\nI’ve been programming in R since 2014!\nI absolutely love teaching this course!"
+    "text": "Hi, I’m Dr. Theobold!\n\n\n\n\nI am originally from Colorado, but went to grad school in Montana.\nMy favorite things are being outside, drinking coffee, and watching women’s basketball.\n\n\n\n\n\n\n\n\n\n\n\n\nI love cats!\nI’ve been programming in R since 2014!\nI absolutely love teaching this course!"
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#on-a-personal-note",
@@ -2583,7 +2583,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#committing-changes",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Committing Changes",
-    "text": "Committing Changes\nTell git you have made changes you want to add to the repo.\n\nAlso provide a commit message – a short label describing what the changes are and why they exist.\n\n\n\nThe red line is a change we commit (add) to the repo.\n\n\n\n\n\n\n\n\n\nThe log of these changes is called your commit history.\n\nYou can always go back to old copies!"
+    "text": "Committing Changes\nTell git you have made changes you want to add to the repo.\n\nAlso provide a commit message – a short label describing what the changes are and why they exist.\n\n\n\nThe red line is a change we commit (add) to the repo.\n\n\n\n\n\n\n\n\nThe log of these changes is called your commit history.\n\nYou can always go back to old copies!"
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#commit-tips",
@@ -2625,7 +2625,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#verifying-your-connection",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Verifying Your Connection",
-    "text": "Verifying Your Connection\n\n\nOpen RStudio and run the following code in your console (lower left pane):\n\n\n\n\n\nusethis::git_sitrep()\n\n\n\n\nYou should see something like:\n\n── GitHub user \n• Default GitHub host: 'https://github.com'\n• Personal access token for 'https://github.com': '&lt;discovered&gt;'\n• GitHub user: 'atheobold'\n• Token scopes: 'admin:org, admin:public_key, delete:packages, delete_repo, gist, notifications, repo, user, workflow, write:packages'\n• Email(s): 'atheobol@calpoly.edu (primary)', 'theobold.allison970@gmail.com', '12439090+atheobold@users.noreply.github.com'\nℹ No active usethis project\n\n\n\nIf that is not the case, Dr. Theobold will help you troubleshoot in 5-minutes!"
+    "text": "Verifying Your Connection\n\n\nOpen RStudio and run the following code in your console (lower left pane):\n\n\n\n\n\nusethis::git_sitrep()\n\n\n\nYou should see something like:\n\n── GitHub user \n• Default GitHub host: 'https://github.com'\n• Personal access token for 'https://github.com': '&lt;discovered&gt;'\n• GitHub user: 'atheobold'\n• Token scopes: 'admin:org, admin:public_key, delete:packages, delete_repo, gist, notifications, repo, user, workflow, write:packages'\n• Email(s): 'atheobol@calpoly.edu (primary)', 'theobold.allison970@gmail.com', '12439090+atheobold@users.noreply.github.com'\nℹ No active usethis project\n\n\n\nIf that is not the case, Dr. Theobold will help you troubleshoot in 5-minutes!"
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#once-youve-cloned-the-repo",
