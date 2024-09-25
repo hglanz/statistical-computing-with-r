@@ -42,15 +42,15 @@ TR 12:10pm - 2:00pm
 
 ::: columns
 ::: {.column width="55%"}
-Dr. **Allison Theobold** (they / she)
+**Dr. Allison Theobold** (they / them)
 
 **Assistant Professor of Statistics**
 
 **Office:** Building 25, Office 105
 
-**Student Hours:** Tue & Thu: 2:10 - 3:00 pm
+**Student Hours:** Wednesdays 4-5pm & Thursdays 11am to 12pm
 
-**Email:** [atheobol\@calpoly.edu](mailto:atheobol@calpoly.edu)
+**Email:** [atheobol@calpoly.edu](mailto:atheobol@calpoly.edu)
 :::
 
 ::: {.column width="5%"}
@@ -73,24 +73,20 @@ Have you ever wondered...
 ...how do people cut down large datasets to address a specific question?\
 ...how the applet simulations in your statistics classes work?
 
-We'll answer these questions and more by studying the principles of
+We'll answer these questions and more by studying the principles of "statistical computing" methods in the programming language called R.
 :::
 
 ::: {.column width="2%"}
 :::
 
 ::: {.column width="30%"}
-"statistical computing" methods in the programming language called R.
-
-There is not an expectation that you have seen R before, only that you have some experiences with computing (writing code and executing code). For those who have not seen R before, it is an open-source programming language developed by Statisticians, and is one of the main "languages" you will find
+There is not an expectation that you have seen R before, only that you have some experiences with computing (writing code and executing code). For those who have not seen R before, it is an open-source programming language developed by Statisticians, and is one of the main "languages" you will find people use when doing statistics in the wild.
 :::
 
 ::: {.column width="2%"}
 :::
 
 ::: {.column width="30%"}
-people use when doing statistics in the wild.
-
 In this course, we will learn the foundational skills for programming in R and a variety of skills for working with data. We will then build on these skills to consider how to write programs which are more efficient.
 :::
 :::
@@ -102,7 +98,7 @@ In order to learn statistical computing, it's not enough to simply listen to you
 ::: columns
 ::: {.column width="30%"}
 [**Before class,**]{style="color: #34605f; font-size: 1.25em"}\
-you'll complete **Preview Activities** which will guide you through your first contact with new concepts. Practice Activities involve readings, videos, and exercises to build your basic skill fluency. For example, you might be asked to read a chapter from the course textbook, watch a few videos discussing some concepts from the chapter, and then complete some preliminary exercises to get you started thinking about how to apply the concepts in the context of real data.
+you'll complete **Preview Activities** / **Check-ins** which will guide you through your first contact with new concepts. Practice Activities involve readings, videos, and exercises to build your basic skill fluency. For example, you might be asked to read a chapter from the course textbook, watch a few videos discussing some concepts from the chapter, and then complete some preliminary exercises to get you started thinking about how to apply the concepts in the context of real data.
 :::
 
 ::: {.column width="2%"}
@@ -258,17 +254,17 @@ I encourage you to work on your portfolio every week, inserting snippets of code
 
 At the end of Week 6, you will submit your first reflection and your draft portfolio. See @sec-portfolio below for a description of what should be included in your portfolio. At the end of your portfolio, you will include a proposal for the grade you've earned in the course. Your portfolio acts as the "data" to support your proposed grade.
 
-We will have an in-person, 5-minute meeting during Week 7 to discuss your proposed grade. 
+We will have an in-person, 5-minute meeting during Week 7 to discuss your proposed grade.
 
 ### Week 10 Reflection
 
-Your final reflection will be submitted at the end of Week 10 (December 7). This reflection will accompany the final portfolio you assemble. 
+Your final reflection will be submitted at the end of Week 10 (December 7). This reflection will accompany the final portfolio you assemble.
 
 We will have in-person, 5-minute meetings on Monday, December 9. Meetings will be held during the ordinary final exam time, between 10:10am and 1:00pm and will be reserved a week in advance.
 
 # **How will my final portfolio look?** {#sec-portfolio}
 
-Your Final Portfolio will be a collection of artifacts from your work in 331 which demonstrate, (1) your proficiency with the learning targets, (2) your continued learning, and (3) evidence for how you have contributed to the classroom community. 
+Your Final Portfolio will be a collection of artifacts from your work in 331 which demonstrate, (1) your proficiency with the learning targets, (2) your continued learning, and (3) evidence for how you have contributed to the classroom community.
 
 For **each** learning target, you'll choose your favorite and best work from your lab assignments, challenges, and practice activities. To save yourself time, try and choose lab assignments which demonstrate your proficiency in as many of the learning targets as possible. For example, if you are selecting an assignment for the "selecting columns" and "filtering rows" learning targets, I would recommend choosing **one** question where you demonstrate your understanding of **both** these targets over one problem per target.
 
