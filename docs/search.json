@@ -3721,5 +3721,12 @@
     "title": "Scripts, Notebooks & Version Control",
     "section": "How does this system work?",
     "text": "How does this system work?\n\n\nEach problem on an assignment is marked for proficiency (e.g., success, growing).\n\nThese marks are not attached to a grade outcome (e.g., A, B, C, D).\n\nGrades are defined from a set of criteria, co-developed between you and me.\n\nAt the end of the course, you propose the grade you believe you’ve earned based on a portfolio of your work and the criteria we established."
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#chunk-option-completion-in-quarto",
+    "href": "slides/week-1/week-1-intro-version-control.html#chunk-option-completion-in-quarto",
+    "title": "Scripts, Notebooks & Version Control",
+    "section": "Chunk Option Completion in Quarto",
+    "text": "Chunk Option Completion in Quarto"
   }
 ]

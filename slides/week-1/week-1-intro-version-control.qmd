@@ -261,7 +261,7 @@ website:
 
 <center>![](images/code_options.png){fig-alt="The image displays a table with two columns: 'Option' and 'Description.' It lists various options that can be used in code chunks within Quarto documents, along with their descriptions.The first option is 'eval,' which evaluates the code chunk. If 'false,' it only echoes the code into the output without executing it. The second option is 'echo,' which includes the source code in the output. Next is 'output,' which includes the results of executing the code in the output. The possible values for this option are 'true,' 'false,' or 'asis.' If set to 'asis,' the output will be in raw markdown and won't have any of Quarto's standard enclosing markdown. The 'warning' option includes warnings in the output. Lastly, the 'error' option includes errors in the output. It notes that enabling this option means errors while executing the code won't halt the document's processing."}</center>
 
-## YAML Completion in Quarto
+## Chunk Option Completion in Quarto
 
 <center>![](images/quarto_yaml_completion.png){fig-alt="The image demonstrates three different aspects of YAML code completion and diagnostics in Quarto. At the top, under the heading 'YAML completion for fields,' there is a code editor where the user is typing the beginning of an R chunk ('{r'). As they begin typing '#| e', a code completion menu appears suggesting YAML fields such as 'eval', 'echo', 'external', and 'error', among others. The highlighted field is `eval`, and a description in a yellow box appears, explaining that this option evaluates the code chunk, or, if set to 'false', it only echoes the code into the output. In the middle, under the heading 'YAML completion for options,' the code editor shows the 'eval' field typed out as '#| eval:'. As the user begins entering a value, a dropdown suggests the options 'true' and 'false' for the field, representing valid boolean options. At the bottom, under the heading 'YAML diagnostics for errors,' there is an example of an incorrect entry. The user has written '#| eval: FALSE' (with uppercase 'FALSE'), which leads to a red error indicator in the editor. A tooltip appears, pointing out the mistake and suggesting that the value should be lowercase 'false' instead. The image showcases how Quarto assists users with code completion, option suggestions, and real-time error diagnostics in the YAML section of code chunks."}</center>
 
@@ -581,7 +581,11 @@ Step 6: Commit your change (with a nice message!)
 
 Step 7: Push your change
 
-# [Lab 1 Instructions](../../labs/instructions/lab-1-instructions.qmd)
+# [Lab 1 & Challenge 1 Instructions](../../labs/instructions/lab-1-instructions.qmd)
+
+::: {.midi}
+*I would highly recommend having these pulled up alongside RStudio while you work! 
+:::
 
 ## To do...
 
