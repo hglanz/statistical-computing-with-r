@@ -5,6 +5,7 @@ format: html
 number-sections: true
 number-depth: 2
 editor: source
+code-block-background: true
 execute:
   echo: false
 ---
