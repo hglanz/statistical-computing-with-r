@@ -425,18 +425,6 @@
 </ul>
 </section>
 <section>
-<section id="pair-programming" class="title-slide slide level1 center">
-<h1>Pair Programming</h1>
-
-</section>
-<section id="lets-talk-pair-programming" class="slide level2">
-<h2>Let’s Talk Pair Programming</h2>
-<p><strong>What</strong>:</p>
-<p><strong>How</strong>:</p>
-<p><strong>Why</strong>:</p>
-<p><strong>Informed Consent</strong>: If you have not already, please complete the <a href="https://canvas.calpoly.edu/courses/130201/pages/informed-consent-for-participation">informed consent</a> for our research into the pedagogy surrounding pair programming.</p>
-</section></section>
-<section>
 <section id="grammar-of-graphics" class="title-slide slide level1 center">
 <h1>Grammar of Graphics</h1>
 
@@ -1167,14 +1155,16 @@
 <div class="small">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
-<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cty, </span>
-<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> hwy, </span>
-<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a>                     <span class="at">color =</span> class)</span>
-<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span> </span>
-<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb25-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb25-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"City (mpg)"</span>, </span>
-<span id="cb25-9"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Highway (mpg)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> cty, </span>
+<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> hwy, </span>
+<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">color =</span> class</span>
+<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a>         )</span>
+<span id="cb25-7"><a aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span> </span>
+<span id="cb25-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb25-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb25-10"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"City (mpg)"</span>, </span>
+<span id="cb25-11"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Highway (mpg)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1395,7 +1385,7 @@
 <div>
 <div class="small">
 <ul>
-<li class="fragment">Colummn 1: the “template” for making a ggplot</li>
+<li class="fragment">Column 1: the “template” for making a ggplot</li>
 <li class="fragment">Column 3: creating plots for two continuous variables</li>
 <li class="fragment">Column 4: creating plots for one discrete or one continuous variable</li>
 </ul>

@@ -37,19 +37,6 @@ Today we will...
 
 + Make sure you **install** a package before you **load** it!
 
-# Pair Programming
-
-## Let's Talk Pair Programming
-
-**What**: 
-
-**How**: 
-
-**Why**: 
-
-**Informed Consent**: If you have not already, please complete the [informed consent](https://canvas.calpoly.edu/courses/130201/pages/informed-consent-for-participation) for our research into the pedagogy surrounding pair programming. 
-
-
 # Grammar of Graphics
 
 ## Grammar of Graphics
@@ -900,9 +887,11 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy, color = class)) + geom_point(
 #| code-line-numbers: false
 
 ggplot(data = mpg, 
-       mapping = aes(x = cty, 
-                     y = hwy, 
-                     color = class)
+       mapping = aes(
+         x = cty, 
+         y = hwy, 
+         color = class
+         )
        ) + 
   geom_point() + 
   theme_bw() + 
@@ -1147,7 +1136,7 @@ Every group should have a **ggplot2** cheatsheet!
 
 ::: {.incremental}
 ::: {.small}
-- Colummn 1: the "template" for making a ggplot
+- Column 1: the "template" for making a ggplot
 - Column 3: creating plots for two continuous variables
 - Column 4: creating plots for one discrete or one continuous variable
 :::

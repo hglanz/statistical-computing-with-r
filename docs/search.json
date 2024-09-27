@@ -3447,7 +3447,7 @@
     "href": "slides/week-2/week-2-ggplot.html#ggplot-code",
     "title": "Basics of Graphics",
     "section": "ggplot Code",
-    "text": "ggplot Code\n\nIt is good practice to put each geom and aes on a new line.\n\nThis makes code easier to read!\nGenerally: no line of code should be over 80 characters long.\n\n\n\nBadAmazingGood\n\n\n\n\nggplot(data = mpg, mapping = aes(x = cty, y = hwy, color = class)) + geom_point() + theme_bw() + labs(x = \"City (mpg)\", y = \"Highway (mpg)\")\n\n\n\n\n\n\nggplot(data = mpg, \n       mapping = aes(x = cty, \n                     y = hwy, \n                     color = class)\n       ) + \n  geom_point() + \n  theme_bw() + \n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\")\n\n\n\n\n\n\nggplot(data = mpg, \n       mapping = aes(x = cty, y = hwy, color = class)) + \n  geom_point() + \n  theme_bw() + \n  labs(x = \"City (mpg)\", y = \"Highway (mpg)\")"
+    "text": "ggplot Code\n\nIt is good practice to put each geom and aes on a new line.\n\nThis makes code easier to read!\nGenerally: no line of code should be over 80 characters long.\n\n\n\nBadAmazingGood\n\n\n\n\nggplot(data = mpg, mapping = aes(x = cty, y = hwy, color = class)) + geom_point() + theme_bw() + labs(x = \"City (mpg)\", y = \"Highway (mpg)\")\n\n\n\n\n\n\nggplot(data = mpg, \n       mapping = aes(\n         x = cty, \n         y = hwy, \n         color = class\n         )\n       ) + \n  geom_point() + \n  theme_bw() + \n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\")\n\n\n\n\n\n\nggplot(data = mpg, \n       mapping = aes(x = cty, y = hwy, color = class)) + \n  geom_point() + \n  theme_bw() + \n  labs(x = \"City (mpg)\", y = \"Highway (mpg)\")"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#creating-a-game-plan",
@@ -3489,7 +3489,7 @@
     "href": "slides/week-2/week-2-ggplot.html#ggplot2-resources",
     "title": "Basics of Graphics",
     "section": "ggplot2 Resources",
-    "text": "ggplot2 Resources\nEvery group should have a ggplot2 cheatsheet!\n\n\n\nOn the Front\n\n\n\nColummn 1: the “template” for making a ggplot\nColumn 3: creating plots for two continuous variables\nColumn 4: creating plots for one discrete or one continuous variable\n\n\n\n\n\n\n\n\nOn the Back\n\n\n\nColumn 4: adding facets and labels to your plot\nColumn 3: adding themes to your plot (if you have extra time)"
+    "text": "ggplot2 Resources\nEvery group should have a ggplot2 cheatsheet!\n\n\n\nOn the Front\n\n\n\nColumn 1: the “template” for making a ggplot\nColumn 3: creating plots for two continuous variables\nColumn 4: creating plots for one discrete or one continuous variable\n\n\n\n\n\n\n\n\nOn the Back\n\n\n\nColumn 4: adding facets and labels to your plot\nColumn 3: adding themes to your plot (if you have extra time)"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#opening-the-practice-activity-in-posit-cloud",
