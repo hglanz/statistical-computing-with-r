@@ -50,8 +50,8 @@ Remember, your group is expected to adhere to the following norms:
 
 # Getting Set-up
 
-The partner whose family name starts first alphabetically starts as the 
-Developer (typing and listening to instructions from the Coder!
+<!-- The partner whose family name starts first alphabetically starts as the  -->
+<!-- Developer (typing and listening to instructions from the Coder! -->
 
 ## Step 1: Install the `palmerpenguins` Package
 

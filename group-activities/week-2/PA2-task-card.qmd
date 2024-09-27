@@ -1,6 +1,7 @@
 ---
 title: "PA2 Task Card - Using Data Visualization to Find the Penguins"
 editor: source
+format: typst
 ---
 
 Today you will be exploring different types of visualizations to uncover which
@@ -36,17 +37,21 @@ Remember, your group is expected to adhere to the following norms:
 
 1.  Think and work together. Do not divide the work.
 2.  You are smarter together.
-3.  No cross-talk with other groups.
+3.  Be open minded. 
+4.  No cross-talk with other groups.
+5.  Communicate with each other! 
 
-<!-- Add more norms from collaborative list -->
+\newpage
 
-## Writing Code
+# Writing Code
 
 Writing "tidy" and "well documented" code are two of the learning targets for
 this course. As such, I would strongly encourage you to use every opportunity to
 practice these skills.
 
-**Tidy Code** As you are writing code for this assignment, make sure your code
+## Tidy Code
+
+As you are writing code for this assignment, make sure your code
 follows the [tidyverse style guide for ggplot code](https://style.tidyverse.org/ggplot2.html).
 Specifically, your code should:
 
@@ -58,7 +63,9 @@ Specifically, your code should:
     -   after every `+`
     -   after `,` when needed (if code is more than 80 characters in length)
 
-**Well Documented Code** -- Include a comment at the beginning of the code chunk
+## Well Documented Code
+
+Include a comment at the beginning of the code chunk
 that briefly states the purpose of the chunk (comments come after `#` signs). In
 addition, if your code involves many steps or steps you needed to look up / get
 help on, I would encourage you to write a code comment on what is happening in
