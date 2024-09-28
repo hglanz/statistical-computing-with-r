@@ -37,7 +37,7 @@ was introduced as a **working directory**. In `R`, there are two ways to set up
 your file path and file system organization:
 
 ::: column-margin
-{{< video https://youtu.be/fnAiYAOHAww?si=lPZIX0MeG4C3jxLb >}}
+{{< video https://www.youtube.com/watch?v=86Bz3lE4HGs >}}
 :::
 
 1.  Set your working directory in `R` (do not recommend)

@@ -1471,7 +1471,7 @@
     "href": "group-activities/week-2/PA2-task-card.html#group-norms",
     "title": "PA2 Task Card - Using Data Visualization to Find the Penguins",
     "section": "Group Norms",
-    "text": "Group Norms\nRemember, your group is expected to adhere to the following norms:\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nNo cross-talk with other groups."
+    "text": "Group Norms\nRemember, your group is expected to adhere to the following norms:\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nBe open minded.\nNo cross-talk with other groups.\nCommunicate with each other!"
   },
   {
     "objectID": "group-activities/week-2/PA2-task-card.html#writing-code",
@@ -2335,8 +2335,8 @@
     "objectID": "slides/week-1/week-1-intro-version-control.html#thursday-september-26",
     "href": "slides/week-1/week-1-intro-version-control.html#thursday-september-26",
     "title": "Scripts, Notebooks & Version Control",
-    "section": "Thursday, September 26",
-    "text": "Thursday, September 26\nToday we will…\n\n\nChanges to Student Hours\nAnswer Clarifying Questions:\n\nSyllabus?\nUngrading?\nParticipating in Dr. Theobold’s research on group collaborations?\n\nNew Material\n\nScripts + Notebooks\nVersion Control\n\nLab 1: Introduction to Quarto\nChallenge 1: Modifying your Quarto Document"
+    "section": "",
+    "text": "Today we will…\n\n\nChanges to Student Hours\nAnswer Clarifying Questions:\n\nSyllabus?\nUngrading?\nParticipating in Dr. Theobold’s research on group collaborations?\n\nNew Material\n\nScripts + Notebooks\nVersion Control\n\nLab 1: Introduction to Quarto\nChallenge 1: Modifying your Quarto Document"
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#what-does-ungrading-mean",
@@ -2357,7 +2357,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#consent-to-participate",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Consent to Participate",
-    "text": "Consent to Participate\n\n\nIf you agree to participate…\n\nyou will be recorded once a week for 10-weeks while participating in pair programming to complete collaborative tasks.\nyou will complete a pre- and post-survey about your prior computing experiences and your attitudes toward data science.\n\n\n\n\n\n\nYour participation in this research will not affect your course grade.\n\n\n\n\n\n\n\n\n\nConsent Form\n\n\nPlease complete the consent form (https://forms.gle/oax73hoe7uRSVLYw8) by Monday, 9/30."
+    "text": "Consent to Participate\n\n\nIf you agree to participate…\n\nyou will be recorded once a week for 10-weeks while participating in pair programming to complete collaborative tasks.\nyou will complete a pre- and post-survey about your prior computing experiences and your attitudes toward data science.\n\n\n\n. . .\n\n\nYour participation in this research will not affect your course grade.\n\n. . .\n\n\n\n\n\n\nConsent Form\n\n\n\nPlease complete the consent form (https://forms.gle/oax73hoe7uRSVLYw8) by Monday, 9/30."
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#my-collaborator",
@@ -2371,7 +2371,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#scripts",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Scripts",
-    "text": "Scripts\n\nScripts (File &gt; New File &gt; R Script) are files of code that are meant to be run on their own.\n\n\n\nScripts can be run in RStudio by clicking the Run button at the top of the editor window when the script is open.\nYou can also run code interactively in a script by:\n\nhighlighting lines of code and hitting run.\nplacing your cursor on a line of code and hitting run.\nplacing your cursor on a line of code and hitting ctrl + enter or command + enter."
+    "text": "Scripts\n\nScripts (File &gt; New File &gt; R Script) are files of code that are meant to be run on their own.\n\n. . .\n\nScripts can be run in RStudio by clicking the Run button at the top of the editor window when the script is open.\nYou can also run code interactively in a script by:\n\nhighlighting lines of code and hitting run.\nplacing your cursor on a line of code and hitting run.\nplacing your cursor on a line of code and hitting ctrl + enter or command + enter."
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#notebooks",
@@ -2385,7 +2385,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#what-is-markdown",
     "title": "Scripts, Notebooks & Version Control",
     "section": "What is Markdown?",
-    "text": "What is Markdown?\nMarkdown is a markup language.\nIt uses special symbols and formatting to make pretty documents.\n\n\n*italics* – makes italics\n**bold** – makes bold text\n# – makes headers\n! – includes images or HTML links\n&lt; &gt; – embeds URLs\n\n\n\nMarkdown files have the .md extension."
+    "text": "What is Markdown?\nMarkdown is a markup language.\nIt uses special symbols and formatting to make pretty documents.\n. . .\n\n*italics* – makes italics\n**bold** – makes bold text\n# – makes headers\n! – includes images or HTML links\n&lt; &gt; – embeds URLs\n\n. . .\nMarkdown files have the .md extension."
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#what-is-quarto",
@@ -2413,7 +2413,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#quarto-components",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Quarto Components",
-    "text": "Quarto Components\n\n\nHow does Quarto know that a section of text should be interpreted as R code?"
+    "text": "Quarto Components\n\n. . .\nHow does Quarto know that a section of text should be interpreted as R code?"
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#r-code-options-in-quarto",
@@ -2462,7 +2462,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#git-vs-github",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Git vs GitHub",
-    "text": "Git vs GitHub\n\n\n\n\n\n\n\n\n\n\n\n\nA system for version control that manages a collection of files in a structured way.\nUses the command line or a GUI.\nGit is local."
+    "text": "Git vs GitHub\n\n\n\nknitr::include_graphics(\"https://bornsql.ca/wp-content/uploads/2022/03/Git-Logo-2Color.png\") \n\n\n\n\n\n\n\n\n\nA system for version control that manages a collection of files in a structured way.\nUses the command line or a GUI.\nGit is local."
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#git-vs-github-1",
@@ -2497,7 +2497,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#committing-changes",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Committing Changes",
-    "text": "Committing Changes\nTell git you have made changes you want to add to the repo.\n\nAlso provide a commit message – a short label describing what the changes are and why they exist.\n\n\n\nThe red line is a change we commit (add) to the repo.\n\n\n\n\n\n\n\n\nThe log of these changes is called your commit history.\n\nYou can always go back to old copies!"
+    "text": "Committing Changes\nTell git you have made changes you want to add to the repo.\n\nAlso provide a commit message – a short label describing what the changes are and why they exist.\n\n\n\nThe red line is a change we commit (add) to the repo.\n\n\n\n\n\n\n\n\n. . .\nThe log of these changes is called your commit history.\n\nYou can always go back to old copies!"
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#commit-tips",
@@ -2539,7 +2539,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#verifying-your-connection",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Verifying Your Connection",
-    "text": "Verifying Your Connection\n\n\nOpen RStudio and run the following code in your console (lower left pane):\n\n\n\n\n\nusethis::git_sitrep()\n\n\n\nYou should see something like:\n\n── GitHub user \n• Default GitHub host: 'https://github.com'\n• Personal access token for 'https://github.com': '&lt;discovered&gt;'\n• GitHub user: 'atheobold'\n• Token scopes: 'admin:org, admin:public_key, delete:packages, delete_repo, gist, notifications, repo, user, workflow, write:packages'\n• Email(s): 'atheobol@calpoly.edu (primary)', 'theobold.allison970@gmail.com', '12439090+atheobold@users.noreply.github.com'\nℹ No active usethis project\n\n\n\nIf that is not the case, Dr. Theobold will help you troubleshoot in 5-minutes!"
+    "text": "Verifying Your Connection\n\n\nOpen RStudio and run the following code in your console (lower left pane):\n\n\n\n\n\nusethis::git_sitrep()\n\n\n\n. . .\nYou should see something like:\n\n── GitHub user \n• Default GitHub host: 'https://github.com'\n• Personal access token for 'https://github.com': '&lt;discovered&gt;'\n• GitHub user: 'atheobold'\n• Token scopes: 'admin:org, admin:public_key, delete:packages, delete_repo, gist, notifications, repo, user, workflow, write:packages'\n• Email(s): 'atheobol@calpoly.edu (primary)', 'theobold.allison970@gmail.com', '12439090+atheobold@users.noreply.github.com'\nℹ No active usethis project\n\n. . .\nIf that is not the case, Dr. Theobold will help you troubleshoot in 5-minutes!"
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#once-youve-cloned-the-repo",
@@ -3285,8 +3285,8 @@
     "objectID": "slides/week-2/week-2-ggplot.html#tuesday-october-1",
     "href": "slides/week-2/week-2-ggplot.html#tuesday-october-1",
     "title": "Basics of Graphics",
-    "section": "Tuesday, October 1",
-    "text": "Tuesday, October 1\nToday we will…\n\nComments from Week 1\nPeer Programming\nNew Material\n\nTidy Data\nLoad External Data\nGraphics (and ggplot2)\n\nPA 2: Using Data Visualization to Find the Penguins"
+    "section": "",
+    "text": "Today we will…\n\nComments from Week 1\nPeer Programming\nNew Material\n\nTidy Data\nLoad External Data\nGraphics (and ggplot2)\n\nPA 2: Using Data Visualization to Find the Penguins"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#comments-from-week-1",
@@ -3307,7 +3307,7 @@
     "href": "slides/week-2/week-2-ggplot.html#grammar-of-graphics-1",
     "title": "Basics of Graphics",
     "section": "Grammar of Graphics",
-    "text": "Grammar of Graphics\nThe Grammar of Graphics (GoG) is a principled way of specifying exactly how to create a particular graph from a given data set. It helps us to systematically design new graphs.\n\n\nThink of a graph or a data visualization as a mapping…\n…FROM variables in the data set (or statistics computed from the data)…\n…TO visual attributes (or “aesthetics”) of marks (or “geometric elements”) on the page/screen."
+    "text": "Grammar of Graphics\nThe Grammar of Graphics (GoG) is a principled way of specifying exactly how to create a particular graph from a given data set. It helps us to systematically design new graphs.\n. . .\n\nThink of a graph or a data visualization as a mapping…\n…FROM variables in the data set (or statistics computed from the data)…\n…TO visual attributes (or “aesthetics”) of marks (or “geometric elements”) on the page/screen."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#why-grammar-of-graphics",
@@ -3328,21 +3328,21 @@
     "href": "slides/week-2/week-2-ggplot.html#how-to-build-a-graphic",
     "title": "Basics of Graphics",
     "section": "How to Build a Graphic",
-    "text": "How to Build a Graphic\nComplete this template to build a basic graphic:\n\nggplot(\n  data = &lt;DATA&gt;, \n  mapping = aes(&lt;MAPPINGS&gt;)\n  ) +\n  &lt;GEOM FUNCTION&gt;() + \n  any other arguments...\n\n\nNotice, every + adds another layer to our graphic."
+    "text": "How to Build a Graphic\nComplete this template to build a basic graphic:\n\nggplot(\n  data = &lt;DATA&gt;, \n  mapping = aes(&lt;MAPPINGS&gt;)\n  ) +\n  &lt;GEOM FUNCTION&gt;() + \n  any other arguments...\n\n. . .\nNotice, every + adds another layer to our graphic."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#section",
     "href": "slides/week-2/week-2-ggplot.html#section",
     "title": "Basics of Graphics",
     "section": "",
-    "text": "Add dataAdd aestheticsAdd one geom per layer\n\n\nThis begins a plot that you can add layers to:\n\nggplot(data = mpg)\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg, \n       aes(x = class, y = hwy)\n       )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg, \n       aes(x = class, y = hwy)\n       ) +\n  geom_jitter()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg, \n       aes(x = class, y = hwy)\n       ) +\n  geom_jitter() +\n  geom_boxplot()\n\n\n\n\n\n\n\n\n\n\nHow would you make the points be on top of the boxplots?"
+    "text": "Add dataAdd aestheticsAdd one geom per layer\n\n\nThis begins a plot that you can add layers to:\n\nggplot(data = mpg)\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg, \n       aes(x = class, y = hwy)\n       )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg, \n       aes(x = class, y = hwy)\n       ) +\n  geom_jitter()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg, \n       aes(x = class, y = hwy)\n       ) +\n  geom_jitter() +\n  geom_boxplot()\n\n\n\n\n\n\n\n\n\n\n\nHow would you make the points be on top of the boxplots?"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#aesthetics",
     "href": "slides/week-2/week-2-ggplot.html#aesthetics",
     "title": "Basics of Graphics",
     "section": "Aesthetics",
-    "text": "Aesthetics\nWe map variables (columns) from the data to aesthetics on the graphic using the aes() function.\n\nWhat aesthetics can we set (see ggplot2 cheat sheet for more)?\n\n\n\n\nx, y\ncolor, fill\nlinetype\nsize\nshape"
+    "text": "Aesthetics\nWe map variables (columns) from the data to aesthetics on the graphic using the aes() function.\n. . .\nWhat aesthetics can we set (see ggplot2 cheat sheet for more)?\n\n\n\n\nx, y\ncolor, fill\nlinetype\nsize\nshape"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#aesthetics-1",
@@ -3370,35 +3370,35 @@
     "href": "slides/week-2/week-2-ggplot.html#geometric-objects",
     "title": "Basics of Graphics",
     "section": "Geometric Objects",
-    "text": "Geometric Objects\nWee use a geom_XXX() function to represent data points.\n\n\n\n\none variable\n\ngeom_density()\ngeom_dotplot()\ngeom_histogram()\ngeom_boxplot()\n\n\n\n\ntwo variable\n\ngeom_point()\ngeom_line()\ngeom_density_2d()\n\n\n\n\nthree variable\n\ngeom_contour()\ngeom_raster()\n\n\n\n\nThis is not an exhaustive list – see ggplot2 cheat sheet."
+    "text": "Geometric Objects\nWee use a geom_XXX() function to represent data points.\n. . .\n\n\n\none variable\n\ngeom_density()\ngeom_dotplot()\ngeom_histogram()\ngeom_boxplot()\n\n\n\n\ntwo variable\n\ngeom_point()\ngeom_line()\ngeom_density_2d()\n\n\n\n\nthree variable\n\ngeom_contour()\ngeom_raster()\n\n\n\n\n\nThis is not an exhaustive list – see ggplot2 cheat sheet."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#same-data-three-different-plots",
     "href": "slides/week-2/week-2-ggplot.html#same-data-three-different-plots",
     "title": "Basics of Graphics",
     "section": "Same Data, Three Different Plots",
-    "text": "Same Data, Three Different Plots\n\ngeom_point()geom_text()geom_smooth()\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty, \n                     y = hwy,\n                     color = class)\n       ) +\n  geom_point() +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty,\n                     y = hwy,\n                     color = class)\n       ) +\n  geom_text(mapping = aes(label = class)) +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty,\n                     y = hwy,\n                     color = class)\n       ) +\n  geom_smooth() +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )"
+    "text": "Same Data, Three Different Plots\n\ngeom_point()geom_text()geom_smooth()\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty, \n                     y = hwy,\n                     color = class)\n       ) +\n  geom_point() +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty,\n                     y = hwy,\n                     color = class)\n       ) +\n  geom_text(mapping = aes(label = class)) +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty,\n                     y = hwy,\n                     color = class)\n       ) +\n  geom_smooth() +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )\n\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: span too small.  fewer data values than degrees of freedom.\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: at 14.995\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: radius 2.5e-05\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: all data on boundary of neighborhood. make span bigger\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: pseudoinverse used at 14.995\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: neighborhood radius 0.005\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: reciprocal condition number 1\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: There are other near singularities as well. 1.01\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: zero-width neighborhood. make span bigger\n\n\nWarning: Failed to fit group 1.\nCaused by error in `predLoess()`:\n! NA/NaN/Inf in foreign function call (arg 5)\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: pseudoinverse used at 19\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: neighborhood radius 2\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: reciprocal condition number 1.398e-16\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : pseudoinverse used at\n19\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : neighborhood radius 2\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : reciprocal condition\nnumber 1.398e-16\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: pseudoinverse used at 18.035\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: neighborhood radius 2.035\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: reciprocal condition number 3.0725e-17\n\n\nWarning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,\n: There are other near singularities as well. 1\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : pseudoinverse used at\n18.035\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : neighborhood radius\n2.035\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : reciprocal condition\nnumber 3.0725e-17\n\n\nWarning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x\nelse if (is.data.frame(newdata))\nas.matrix(model.frame(delete.response(terms(object)), : There are other near\nsingularities as well. 1"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#creating-a-graphic",
     "href": "slides/week-2/week-2-ggplot.html#creating-a-graphic",
     "title": "Basics of Graphics",
     "section": "Creating a Graphic",
-    "text": "Creating a Graphic\nTo create a specific type of graphic, we will combine aesthetics and geometric objects.\n\n\nLet’s try it!"
+    "text": "Creating a Graphic\nTo create a specific type of graphic, we will combine aesthetics and geometric objects.\n. . .\n\nLet’s try it!"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#section-1",
     "href": "slides/week-2/week-2-ggplot.html#section-1",
     "title": "Basics of Graphics",
     "section": "",
-    "text": "The GoalGame Planggplot\n\n\nStart with the TX housing data.\n\nMake a plot of  median house price  over  time  (including both  individual data points  and  a smoothed trend line), distinguishing between  different cities .\n\n\n\n\n\n\n\n\nCode\nggplot(data = sm_tx,\n       mapping = aes(x = date, \n                     y = median, \n                     color = city)\n       ) + \n  geom_point() + \n  geom_smooth(method = \"loess\") + \n  labs(x = \"Date\",\n       y = \"\",\n       color = \" \",\n       title = \"Changes in Median Home Price for Texas Metro Areas\") +\n  scale_y_continuous(labels = scales::label_dollar())"
+    "text": "The GoalGame Planggplot\n\n\nStart with the TX housing data.\n\nMake a plot of  median house price  over  time  (including both  individual data points  and  a smoothed trend line), distinguishing between  different cities .\n\n\n\n\n\n\n\n\nCode\nggplot(data = sm_tx,\n       mapping = aes(x = date, \n                     y = median, \n                     color = city)\n       ) + \n  geom_point() + \n  geom_smooth(method = \"loess\") + \n  labs(x = \"Date\",\n       y = \"\",\n       color = \" \",\n       title = \"Changes in Median Home Price for Texas Metro Areas\") +\n  scale_y_continuous(labels = scales::label_dollar())\n\n\n`geom_smooth()` using formula = 'y ~ x'"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#faceting",
     "href": "slides/week-2/week-2-ggplot.html#faceting",
     "title": "Basics of Graphics",
     "section": "Faceting",
-    "text": "Faceting\nExtracts subsets of data and places them in side-by-side plots.\n\n\nCode\nggplot(data = sm_tx,\n       mapping = aes(x = date, \n                     y = median)\n       ) + \n  geom_point() + \n  facet_grid(~city) +\n  geom_smooth(method = \"loess\") + \n  labs(x = \"Date\",\n       y = \"\",\n       color = \" \",\n       title = \"Changes in Median Home Price for Texas Metro Areas\") +\n  scale_y_continuous(labels = scales::label_dollar())"
+    "text": "Faceting\nExtracts subsets of data and places them in side-by-side plots.\n\n\nCode\nggplot(data = sm_tx,\n       mapping = aes(x = date, \n                     y = median)\n       ) + \n  geom_point() + \n  facet_grid(~city) +\n  geom_smooth(method = \"loess\") + \n  labs(x = \"Date\",\n       y = \"\",\n       color = \" \",\n       title = \"Changes in Median Home Price for Texas Metro Areas\") +\n  scale_y_continuous(labels = scales::label_dollar())\n\n\n`geom_smooth()` using formula = 'y ~ x'"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#faceting-1",
@@ -3412,14 +3412,14 @@
     "href": "slides/week-2/week-2-ggplot.html#statistical-transformation-stat",
     "title": "Basics of Graphics",
     "section": "Statistical Transformation: stat",
-    "text": "Statistical Transformation: stat\nA stat transforms an existing variable into a new variable to plot.\n\nidentity leaves the data as is.\ncount counts the number of observations.\nsummary allows you to specify a desired transformation function.\n\n\nSometimes these statistical transformations happen under the hood when we use a specific geom_XXX()."
+    "text": "Statistical Transformation: stat\nA stat transforms an existing variable into a new variable to plot.\n\nidentity leaves the data as is.\ncount counts the number of observations.\nsummary allows you to specify a desired transformation function.\n\n. . .\nSometimes these statistical transformations happen under the hood when we use a specific geom_XXX()."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#statistical-transformation-stat-1",
     "href": "slides/week-2/week-2-ggplot.html#statistical-transformation-stat-1",
     "title": "Basics of Graphics",
     "section": "Statistical Transformation: stat",
-    "text": "Statistical Transformation: stat\n\nstat_count()stat_summary()\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  stat_count(geom = \"bar\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"mean\") +\n  scale_y_continuous(limits = c(0, 45))\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"max\") +\n  scale_y_continuous(limits = c(0, 45))"
+    "text": "Statistical Transformation: stat\n\nstat_count()stat_summary()\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  stat_count(geom = \"bar\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"mean\") +\n  scale_y_continuous(limits = c(0, 45))\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"max\") +\n  scale_y_continuous(limits = c(0, 45))"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#position-adjustements",
@@ -3454,7 +3454,7 @@
     "href": "slides/week-2/week-2-ggplot.html#creating-a-game-plan",
     "title": "Basics of Graphics",
     "section": "Creating a Game Plan",
-    "text": "Creating a Game Plan\nThere are a lot of pieces to put together when creating a good graphic.\n\nSo, when sitting down to create a plot, you should first create a game plan!\n\n\nThis game plan should include:\n\nWhat data are you starting from?\nWhat are your x- and y-axes?\nWhat type(s) of geom do you need?\nWhat other aes’s do you need?"
+    "text": "Creating a Game Plan\nThere are a lot of pieces to put together when creating a good graphic.\n\nSo, when sitting down to create a plot, you should first create a game plan!\n\n. . .\nThis game plan should include:\n\nWhat data are you starting from?\nWhat are your x- and y-axes?\nWhat type(s) of geom do you need?\nWhat other aes’s do you need?"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#section-2",
@@ -3475,14 +3475,14 @@
     "href": "slides/week-2/week-2-ggplot.html#pair-programming-expectations",
     "title": "Basics of Graphics",
     "section": "Pair Programming Expectations",
-    "text": "Pair Programming Expectations\n\nDuring your collaboration, you and your partner will alternate between two roles:\n\n\n\n\nDeveloper\n\n\nReads prompt and ensures Coder understands what is being asked.\nTypes the code specified by the Coder into the Quarto document.       \nRuns the code provided by the Coder.\nWorks with Coder to debug the code. \nEvaluates the output.\n\nWorks with Coder to write code comments.\n\n\n\n\n\n\nCoder\n\n\nReads out instructions or prompts\nDirects the Developer what to type.\nTalks with Developer about their ideas. \nManages resources (e.g., cheatsheets, textbook). \nWorks with Developer to debug the code. \nWorks with Developer to write code comments."
+    "text": "Pair Programming Expectations\n\nDuring your collaboration, you and your partner will alternate between two roles:\n\n. . .\n\n\nDeveloper\n\n\nReads prompt and ensures Coder understands what is being asked.\nTypes the code specified by the Coder into the Quarto document.       \nRuns the code provided by the Coder.\nWorks with Coder to debug the code. \nEvaluates the output.\n\nWorks with Coder to write code comments.\n\n\n\n\n\n\nCoder\n\n\nReads out instructions or prompts\nDirects the Developer what to type.\nTalks with Developer about their ideas. \nManages resources (e.g., cheatsheets, textbook). \nWorks with Developer to debug the code. \nWorks with Developer to write code comments."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#section-3",
     "href": "slides/week-2/week-2-ggplot.html#section-3",
     "title": "Basics of Graphics",
     "section": "",
-    "text": "Group Norms\n\n\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nNo cross-talk with other groups."
+    "text": "Group Norms\n\n\n\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nNo cross-talk with other groups."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#ggplot2-resources",
@@ -3721,5 +3721,33 @@
     "title": "Extending Joins, Factors, Clean Variable Names",
     "section": "To do…",
     "text": "To do…\n\nLab 4: Childcare Costs in California\n\nDue Saturday (4/27) at 11:59pm\n\nRead Chapter 5: Strings + Dates\n\nCheck-in 5.1 - 5.2 due Monday (4/29) at 10:00am"
+  },
+  {
+    "objectID": "slides/week-2/week-2-ggplot.html",
+    "href": "slides/week-2/week-2-ggplot.html",
+    "title": "Basics of Graphics",
+    "section": "",
+    "text": "Today we will…\n\nComments from Week 1\nPeer Programming\nNew Material\n\nTidy Data\nLoad External Data\nGraphics (and ggplot2)\n\nPA 2: Using Data Visualization to Find the Penguins"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-task-card.html#tidy-code",
+    "href": "group-activities/week-2/PA2-task-card.html#tidy-code",
+    "title": "PA2 Task Card - Using Data Visualization to Find the Penguins",
+    "section": "Tidy Code",
+    "text": "Tidy Code\nAs you are writing code for this assignment, make sure your code follows the tidyverse style guide for ggplot code. Specifically, your code should:\n\nuse whitespace liberally\n\nbefore & after every = sign\nafter every ,\nbefore every +\n\nuse new lines liberally\n\nafter every +\nafter , when needed (if code is more than 80 characters in length)"
+  },
+  {
+    "objectID": "group-activities/week-2/PA2-task-card.html#well-documented-code",
+    "href": "group-activities/week-2/PA2-task-card.html#well-documented-code",
+    "title": "PA2 Task Card - Using Data Visualization to Find the Penguins",
+    "section": "Well Documented Code",
+    "text": "Well Documented Code\nInclude a comment at the beginning of the code chunk that briefly states the purpose of the chunk (comments come after # signs). In addition, if your code involves many steps or steps you needed to look up / get help on, I would encourage you to write a code comment on what is happening in these lines.\n\nggplot(data = penguins, \n       mapping = aes(x = species, \n                     fill = species\n       ) +\n# use fill instead of color to get the bars filled entirely with color (instead of just on the outside)\n  \n  geom_bar() +\n  labs(x = \"\", \n       y = \"\", \n       title = \"Number of Penguins Captured in the Palmer Archipelago\") +\n# remove axis titles and put that information in the title where it is easier to read\n  \n  theme(legend.position = \"none\")\n# to remove the legend position, since the fill information is already included on the x-axis"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html",
+    "href": "slides/week-1/week-1-intro-version-control.html",
+    "title": "Scripts, Notebooks & Version Control",
+    "section": "",
+    "text": "Today we will…\n\n\nChanges to Student Hours\nAnswer Clarifying Questions:\n\nSyllabus?\nUngrading?\nParticipating in Dr. Theobold’s research on group collaborations?\n\nNew Material\n\nScripts + Notebooks\nVersion Control\n\nLab 1: Introduction to Quarto\nChallenge 1: Modifying your Quarto Document"
   }
 ]
