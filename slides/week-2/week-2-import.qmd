@@ -20,13 +20,15 @@ Today we will...
 
 + Debrief PA 1
   + Compare & Contrast Strategies
++ Debrief Lab 1 
+  + Content Related to Lab 2
 + New Material
   + Tidy Data
   + Load External Data
   + Graphical Perception
   + Colors in ggplot
 + [Lab 2: Exploring Rodents with ggplot2](https://classroom.github.com/a/4e-4Et4D)
-
+  + Using External Resources
 <!-- Be sure to update with new GH Classroom assignment link! -->
 
 # PA 1: Using Data Visualization to Find the Penguins
@@ -408,6 +410,7 @@ knitr::include_graphics("images/red_green.png")
 ```
 :::
 :::
+
 
 ## Color Guidelines
   
