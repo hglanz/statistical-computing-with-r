@@ -8,9 +8,9 @@
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.57">
+  <meta name="generator" content="quarto-1.4.533">
 
-  <title>Introduction to Statistical Computing in R – Basics of Graphics</title>
+  <title>Introduction to Statistical Computing in R - Basics of Graphics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -41,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -69,7 +69,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.cf { color: #003b4f; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -83,7 +83,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.kw { color: #003b4f; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -412,18 +412,6 @@
 </ul>
 <!-- Be sure to update with new Posit Cloud assignment link! -->
 </section>
-<section id="comments-from-week-1" class="slide level2">
-<h2>Comments from Week 1</h2>
-<ul>
-<li><p>It is better to <strong>not have spaces</strong> in your directory or file names!</p>
-<ul>
-<li>Use “STAT_331” of “STAT331” instead of “STAT 331”!</li>
-<li>Use “week_1” or “week1” instead of “week 1”!</li>
-</ul></li>
-<li><p>When you want to open R to complete a new assignment for this class, do so by <strong>double clicking on your .Rproj file</strong> (the blue cube).</p></li>
-<li><p>Make sure you <strong>install</strong> a package before you <strong>load</strong> it!</p></li>
-</ul>
-</section>
 <section>
 <section id="grammar-of-graphics" class="title-slide slide level1 center">
 <h1>Grammar of Graphics</h1>
@@ -439,16 +427,16 @@
 <p>…<strong>TO visual attributes</strong> (or “aesthetics”) <strong>of marks</strong> (or “geometric elements”) on the page/screen.</p>
 </div>
 </section>
-<section id="why-grammar-of-graphics" class="slide level2">
-<h2>Why Grammar of Graphics?</h2>
+<section id="why-gog" class="slide level2">
+<h2>Why GoG?</h2>
 <ul>
 <li>It’s more flexible than a “chart zoo” of named graphs.</li>
 <li>The software understands the structure of your graph.</li>
 <li>It easily automates graphing of data subsets.</li>
 </ul>
 </section>
-<section id="components-of-grammar-of-graphics" class="slide level2">
-<h2>Components of Grammar of Graphics</h2>
+<section id="components-of-gog" class="slide level2">
+<h2>Components of GoG</h2>
 <div class="small">
 <ul>
 <li><code>data</code>: dataframe containing variables</li>
@@ -480,6 +468,9 @@
 <div class="fragment">
 <p>Notice, every <code>+</code> adds another <strong>layer</strong> to our graphic.</p>
 </div>
+<div class="fragment">
+<p>Also notice that I’m using <strong>named arguments</strong> to make my code easier to read.</p>
+</div>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -502,7 +493,7 @@
 <div id="tabset-1-2">
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb3" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
-<span id="cb3-2"><a></a>       <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> hwy)</span>
+<span id="cb3-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> hwy)</span>
 <span id="cb3-3"><a></a>       )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -519,9 +510,10 @@
 <div class="small">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> hwy)</span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> class, </span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> hwy)</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -535,10 +527,11 @@
 <div class="small">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> hwy)</span>
-<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
-<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
-<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> class, </span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> hwy)</span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -548,8 +541,8 @@
 </div>
 </div>
 </div>
-</div></div>
-<p>How would you make the points be <u><strong>on top</strong></u> of the boxplots?</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -572,7 +565,8 @@
 </font><p><font size="6"></font></p>
 </div><div class="column" style="width:78%;">
 
-</div></div>
+</div>
+</div>
 </div>
 </section>
 <section id="aesthetics-1" class="slide level2">
@@ -592,7 +586,8 @@
 </div>
 </div><div class="column" style="width:80%;">
 <p><img data-src="images/aes.png"></p>
-</div></div>
+</div>
+</div>
 </section>
 <section id="special-properties-of-aesthetics" class="slide level2">
 <h2>Special Properties of Aesthetics</h2>
@@ -677,104 +672,88 @@
 <li><code>geom_raster()</code></li>
 </ul>
 </div>
-</div></div>
+</div>
+</div>
 <p><br></p>
 <p><em>This is not an exhaustive list – see <a href="https://github.com/rstudio/cheatsheets/blob/main/data-visualization-2.1.pdf">ggplot2 cheat sheet</a></em>.</p>
-</div>
-</section>
-<section id="same-data-three-different-plots" class="slide level2">
-<h2>Same Data, Three Different Plots</h2>
-<div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">geom_point()</a></li><li><a href="#tabset-4-2">geom_text()</a></li><li><a href="#tabset-4-3">geom_smooth()</a></li></ul>
-<div class="tab-content">
-<div id="tabset-4-1">
-<div class="small">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
-<span id="cb10-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cty, </span>
-<span id="cb10-3"><a></a>                     <span class="at">y =</span> hwy,</span>
-<span id="cb10-4"><a></a>                     <span class="at">color =</span> class)</span>
-<span id="cb10-5"><a></a>       ) <span class="sc">+</span></span>
-<span id="cb10-6"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb10-7"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"City (mpg)"</span>, </span>
-<span id="cb10-8"><a></a>       <span class="at">y =</span> <span class="st">"Highway (mpg)"</span>, </span>
-<span id="cb10-9"><a></a>       <span class="at">color =</span> <span class="st">" "</span>) <span class="sc">+</span></span>
-<span id="cb10-10"><a></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
-<span id="cb10-11"><a></a>        <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb10-12"><a></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)</span>
-<span id="cb10-13"><a></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="week-2-ggplot_files/figure-revealjs/example-scatterplot-1.png" class="quarto-figure quarto-figure-center" width="576"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-4-2">
-<div class="small">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
-<span id="cb11-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cty,</span>
-<span id="cb11-3"><a></a>                     <span class="at">y =</span> hwy,</span>
-<span id="cb11-4"><a></a>                     <span class="at">color =</span> class)</span>
-<span id="cb11-5"><a></a>       ) <span class="sc">+</span></span>
-<span id="cb11-6"><a></a>  <span class="fu">geom_text</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">label =</span> class)) <span class="sc">+</span></span>
-<span id="cb11-7"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"City (mpg)"</span>, </span>
-<span id="cb11-8"><a></a>       <span class="at">y =</span> <span class="st">"Highway (mpg)"</span>, </span>
-<span id="cb11-9"><a></a>       <span class="at">color =</span> <span class="st">" "</span>) <span class="sc">+</span></span>
-<span id="cb11-10"><a></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
-<span id="cb11-11"><a></a>        <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb11-12"><a></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)</span>
-<span id="cb11-13"><a></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="week-2-ggplot_files/figure-revealjs/example-word-plot-1.png" class="quarto-figure quarto-figure-center" width="576"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-4-3">
-<div class="small">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
-<span id="cb12-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cty,</span>
-<span id="cb12-3"><a></a>                     <span class="at">y =</span> hwy,</span>
-<span id="cb12-4"><a></a>                     <span class="at">color =</span> class)</span>
-<span id="cb12-5"><a></a>       ) <span class="sc">+</span></span>
-<span id="cb12-6"><a></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
-<span id="cb12-7"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"City (mpg)"</span>, </span>
-<span id="cb12-8"><a></a>       <span class="at">y =</span> <span class="st">"Highway (mpg)"</span>, </span>
-<span id="cb12-9"><a></a>       <span class="at">color =</span> <span class="st">" "</span>) <span class="sc">+</span></span>
-<span id="cb12-10"><a></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
-<span id="cb12-11"><a></a>        <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb12-12"><a></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)</span>
-<span id="cb12-13"><a></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="week-2-ggplot_files/figure-revealjs/example-line-plot-1.png" class="quarto-figure quarto-figure-center" width="576"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!-- ## Same Data, Three Different Plots -->
+<!-- ::: panel-tabset -->
+<!-- ### geom_point() -->
+<!-- ::: {.small} -->
+<!-- ```{r} -->
+<!-- #| echo: true -->
+<!-- #| code-fold: true -->
+<!-- #| code-line-numbers: "6" -->
+<!-- #| fig-height: 4 -->
+<!-- #| fig-width: 6 -->
+<!-- #| fig-align: center -->
+<!-- #| label: example-scatterplot -->
+<!-- ggplot(data = mpg, -->
+<!--        mapping = aes(x = cty,  -->
+<!--                      y = hwy, -->
+<!--                      color = class) -->
+<!--        ) + -->
+<!--   geom_point() + -->
+<!--   labs(x = "City (mpg)",  -->
+<!--        y = "Highway (mpg)",  -->
+<!--        color = " ") + -->
+<!--   theme(axis.title = element_text(size = 14), -->
+<!--         legend.position = "top", -->
+<!--         legend.text = element_text(size = 14) -->
+<!--         ) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ### geom_text() -->
+<!-- ::: {.small} -->
+<!-- ```{r} -->
+<!-- #| echo: true -->
+<!-- #| code-fold: true -->
+<!-- #| code-line-numbers: "6" -->
+<!-- #| fig-height: 4 -->
+<!-- #| fig-width: 6 -->
+<!-- #| fig-align: center -->
+<!-- #| label: example-word-plot -->
+<!-- ggplot(data = mpg, -->
+<!--        mapping = aes(x = cty, -->
+<!--                      y = hwy, -->
+<!--                      color = class) -->
+<!--        ) + -->
+<!--   geom_text(mapping = aes(label = class)) + -->
+<!--   labs(x = "City (mpg)",  -->
+<!--        y = "Highway (mpg)",  -->
+<!--        color = " ") + -->
+<!--   theme(axis.title = element_text(size = 14), -->
+<!--         legend.position = "top", -->
+<!--         legend.text = element_text(size = 14) -->
+<!--         ) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ### geom_smooth() -->
+<!-- ::: {.small} -->
+<!-- ```{r} -->
+<!-- #| echo: true -->
+<!-- #| code-fold: true -->
+<!-- #| code-line-numbers: "6" -->
+<!-- #| fig-height: 4 -->
+<!-- #| fig-width: 6 -->
+<!-- #| fig-align: center -->
+<!-- #| label: example-line-plot -->
+<!-- ggplot(data = mpg, -->
+<!--        mapping = aes(x = cty, -->
+<!--                      y = hwy, -->
+<!--                      color = class) -->
+<!--        ) + -->
+<!--   geom_smooth() + -->
+<!--   labs(x = "City (mpg)",  -->
+<!--        y = "Highway (mpg)",  -->
+<!--        color = " ") + -->
+<!--   theme(axis.title = element_text(size = 14), -->
+<!--         legend.position = "top", -->
+<!--         legend.text = element_text(size = 14) -->
+<!--         ) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: -->
 </div>
 </section>
 <section id="creating-a-graphic" class="slide level2">
@@ -788,33 +767,33 @@
 <section id="section-1" class="slide level2">
 <h2></h2>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">The Goal</a></li><li><a href="#tabset-5-2">Game Plan</a></li><li><a href="#tabset-5-3">ggplot</a></li></ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">The Goal</a></li><li><a href="#tabset-4-2">Game Plan</a></li><li><a href="#tabset-4-3">ggplot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-5-1">
+<div id="tabset-4-1">
 <p>Start with the TX housing data.</p>
 <p><img data-src="images/tx_housing.png"></p>
 <p>Make a plot of <span style="color:teal"> median house price </span> over <span style="color:purple"> time </span> (including both <span style="color:green"> individual data points </span> and <span style="color:darkorange"> a smoothed trend line</span>), distinguishing between <span style="color:blue"> different cities </span>.</p>
 </div>
-<div id="tabset-5-2">
+<div id="tabset-4-2">
 <p><img data-src="images/txhousing_plan.png"></p>
 </div>
-<div id="tabset-5-3">
+<div id="tabset-4-3">
 <div class="small">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> sm_tx,</span>
-<span id="cb13-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, </span>
-<span id="cb13-3"><a></a>                     <span class="at">y =</span> median, </span>
-<span id="cb13-4"><a></a>                     <span class="at">color =</span> city)</span>
-<span id="cb13-5"><a></a>       ) <span class="sc">+</span> </span>
-<span id="cb13-6"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb13-7"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>) <span class="sc">+</span> </span>
-<span id="cb13-8"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Date"</span>,</span>
-<span id="cb13-9"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb13-10"><a></a>       <span class="at">color =</span> <span class="st">" "</span>,</span>
-<span id="cb13-11"><a></a>       <span class="at">title =</span> <span class="st">"Changes in Median Home Price for Texas Metro Areas"</span>) <span class="sc">+</span></span>
-<span id="cb13-12"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_dollar</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> sm_tx,</span>
+<span id="cb10-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, </span>
+<span id="cb10-3"><a></a>                     <span class="at">y =</span> median, </span>
+<span id="cb10-4"><a></a>                     <span class="at">color =</span> city)</span>
+<span id="cb10-5"><a></a>       ) <span class="sc">+</span> </span>
+<span id="cb10-6"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb10-7"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>) <span class="sc">+</span> </span>
+<span id="cb10-8"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Date"</span>,</span>
+<span id="cb10-9"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb10-10"><a></a>       <span class="at">color =</span> <span class="st">" "</span>,</span>
+<span id="cb10-11"><a></a>       <span class="at">title =</span> <span class="st">"Changes in Median Home Price for Texas Metro Areas"</span>) <span class="sc">+</span></span>
+<span id="cb10-12"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_dollar</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -835,28 +814,28 @@
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> sm_tx,</span>
-<span id="cb14-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, </span>
-<span id="cb14-3"><a></a>                     <span class="at">y =</span> median)</span>
-<span id="cb14-4"><a></a>       ) <span class="sc">+</span> </span>
-<span id="cb14-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb14-6"><a></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>city) <span class="sc">+</span></span>
-<span id="cb14-7"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>) <span class="sc">+</span> </span>
-<span id="cb14-8"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Date"</span>,</span>
-<span id="cb14-9"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb14-10"><a></a>       <span class="at">color =</span> <span class="st">" "</span>,</span>
-<span id="cb14-11"><a></a>       <span class="at">title =</span> <span class="st">"Changes in Median Home Price for Texas Metro Areas"</span>) <span class="sc">+</span></span>
-<span id="cb14-12"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_dollar</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> sm_tx,</span>
+<span id="cb11-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, </span>
+<span id="cb11-3"><a></a>                     <span class="at">y =</span> median)</span>
+<span id="cb11-4"><a></a>       ) <span class="sc">+</span> </span>
+<span id="cb11-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb11-6"><a></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>city) <span class="sc">+</span></span>
+<span id="cb11-7"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>) <span class="sc">+</span> </span>
+<span id="cb11-8"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Date"</span>,</span>
+<span id="cb11-9"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb11-10"><a></a>       <span class="at">color =</span> <span class="st">" "</span>,</span>
+<span id="cb11-11"><a></a>       <span class="at">title =</span> <span class="st">"Changes in Median Home Price for Texas Metro Areas"</span>) <span class="sc">+</span></span>
+<span id="cb11-12"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_dollar</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="week-2-ggplot_files/figure-revealjs/unnamed-chunk-15-1.png" width="1152" class="r-stretch"></section>
+<img data-src="week-2-ggplot_files/figure-revealjs/unnamed-chunk-12-1.png" width="1152" class="r-stretch"></section>
 <section id="faceting-1" class="slide level2">
 <h2>Faceting</h2>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Options</a></li><li><a href="#tabset-6-2">Scales</a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Options</a></li><li><a href="#tabset-5-2">Scales</a></li></ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-5-1">
 <div class="small">
 <ul>
 <li><code>facet_wrap(~ b)</code>: facets by one variable
@@ -872,7 +851,7 @@
 </ul>
 </div>
 </div>
-<div id="tabset-6-2">
+<div id="tabset-5-2">
 <div class="small">
 <p>You can set scales to let axis limits vary across facets:</p>
 <p><code>facet_grid(y ~ x, scales = ______)</code></p>
@@ -910,17 +889,17 @@
 <section id="statistical-transformation-stat-1" class="slide level2">
 <h2>Statistical Transformation: <code>stat</code></h2>
 <div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1"><code>stat_count()</code></a></li><li><a href="#tabset-7-2"><code>stat_summary()</code></a></li></ul>
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1"><code>stat_count()</code></a></li><li><a href="#tabset-6-2"><code>stat_summary()</code></a></li></ul>
 <div class="tab-content">
-<div id="tabset-7-1">
+<div id="tabset-6-1">
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
-<span id="cb15-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> class)</span>
-<span id="cb15-3"><a></a>       ) <span class="sc">+</span></span>
-<span id="cb15-4"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
+<span id="cb12-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> class)</span>
+<span id="cb12-3"><a></a>       ) <span class="sc">+</span></span>
+<span id="cb12-4"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -933,10 +912,10 @@
 </div><div class="column" style="width:50%;">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
-<span id="cb16-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> class)</span>
-<span id="cb16-3"><a></a>       ) <span class="sc">+</span></span>
-<span id="cb16-4"><a></a>  <span class="fu">stat_count</span>(<span class="at">geom =</span> <span class="st">"bar"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
+<span id="cb13-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> class)</span>
+<span id="cb13-3"><a></a>       ) <span class="sc">+</span></span>
+<span id="cb13-4"><a></a>  <span class="fu">stat_count</span>(<span class="at">geom =</span> <span class="st">"bar"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -946,20 +925,21 @@
 </div>
 </div>
 </div>
-</div></div>
 </div>
-<div id="tabset-7-2">
+</div>
+</div>
+<div id="tabset-6-2">
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="5-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
-<span id="cb17-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> class,</span>
-<span id="cb17-3"><a></a>                     <span class="at">y =</span> hwy)</span>
-<span id="cb17-4"><a></a>       ) <span class="sc">+</span></span>
-<span id="cb17-5"><a></a>  <span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">"bar"</span>,</span>
-<span id="cb17-6"><a></a>               <span class="at">fun =</span> <span class="st">"mean"</span>) <span class="sc">+</span></span>
-<span id="cb17-7"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">45</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="5-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
+<span id="cb14-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> class,</span>
+<span id="cb14-3"><a></a>                     <span class="at">y =</span> hwy)</span>
+<span id="cb14-4"><a></a>       ) <span class="sc">+</span></span>
+<span id="cb14-5"><a></a>  <span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">"bar"</span>,</span>
+<span id="cb14-6"><a></a>               <span class="at">fun =</span> <span class="st">"mean"</span>) <span class="sc">+</span></span>
+<span id="cb14-7"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">45</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -972,13 +952,13 @@
 </div><div class="column" style="width:50%;">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="5-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
-<span id="cb18-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> class,</span>
-<span id="cb18-3"><a></a>                     <span class="at">y =</span> hwy)</span>
-<span id="cb18-4"><a></a>       ) <span class="sc">+</span></span>
-<span id="cb18-5"><a></a>  <span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">"bar"</span>,</span>
-<span id="cb18-6"><a></a>               <span class="at">fun =</span> <span class="st">"max"</span>) <span class="sc">+</span></span>
-<span id="cb18-7"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">45</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="5-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
+<span id="cb15-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> class,</span>
+<span id="cb15-3"><a></a>                     <span class="at">y =</span> hwy)</span>
+<span id="cb15-4"><a></a>       ) <span class="sc">+</span></span>
+<span id="cb15-5"><a></a>  <span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">"bar"</span>,</span>
+<span id="cb15-6"><a></a>               <span class="at">fun =</span> <span class="st">"max"</span>) <span class="sc">+</span></span>
+<span id="cb15-7"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">45</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -988,7 +968,8 @@
 </div>
 </div>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1009,10 +990,10 @@
 <h2>Position Adjustements</h2>
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
-<span id="cb19-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(fl, <span class="at">fill =</span> drv)</span>
-<span id="cb19-3"><a></a>       ) <span class="sc">+</span> </span>
-<span id="cb19-4"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"_____"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
+<span id="cb16-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(fl, <span class="at">fill =</span> drv)</span>
+<span id="cb16-3"><a></a>       ) <span class="sc">+</span> </span>
+<span id="cb16-4"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"_____"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 
@@ -1020,21 +1001,21 @@
 <section id="plot-customizations" class="slide level2">
 <h2>Plot Customizations</h2>
 <div class="panel-tabset">
-<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Labels</a></li><li><a href="#tabset-8-2">Themes</a></li><li><a href="#tabset-8-3">Scales: Axes Ticks</a></li><li><a href="#tabset-8-4">Scales: Color</a></li></ul>
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Labels</a></li><li><a href="#tabset-7-2">Themes</a></li><li><a href="#tabset-7-3">Scales: Axes Ticks</a></li><li><a href="#tabset-7-4">Scales: Color</a></li></ul>
 <div class="tab-content">
-<div id="tabset-8-1">
+<div id="tabset-7-1">
 <div class="small">
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="5-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
-<span id="cb20-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> cyl)</span>
-<span id="cb20-3"><a></a>       ) <span class="sc">+</span> </span>
-<span id="cb20-4"><a></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span> </span>
-<span id="cb20-5"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Engine Displacement (liters)"</span>, </span>
-<span id="cb20-6"><a></a>       <span class="at">y =</span> <span class="st">" "</span>, </span>
-<span id="cb20-7"><a></a>       <span class="at">color =</span> <span class="st">"Cylinders"</span>,</span>
-<span id="cb20-8"><a></a>       <span class="at">title =</span> <span class="st">"Cars with More Cylinders Have Larger Engine Displacement</span><span class="sc">\n</span><span class="st"> and Lower Fuel Efficiency"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="5-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
+<span id="cb17-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> cyl)</span>
+<span id="cb17-3"><a></a>       ) <span class="sc">+</span> </span>
+<span id="cb17-4"><a></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span> </span>
+<span id="cb17-5"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Engine Displacement (liters)"</span>, </span>
+<span id="cb17-6"><a></a>       <span class="at">y =</span> <span class="st">" "</span>, </span>
+<span id="cb17-7"><a></a>       <span class="at">color =</span> <span class="st">"Cylinders"</span>,</span>
+<span id="cb17-8"><a></a>       <span class="at">title =</span> <span class="st">"Cars with More Cylinders Have Larger Engine Displacement</span><span class="sc">\n</span><span class="st"> and Lower Fuel Efficiency"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1046,21 +1027,21 @@
 </div>
 </div>
 </div>
-<div id="tabset-8-2">
+<div id="tabset-7-2">
 <div class="small">
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
-<span id="cb21-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> cyl)</span>
-<span id="cb21-3"><a></a>       ) <span class="sc">+</span> </span>
-<span id="cb21-4"><a></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span> </span>
-<span id="cb21-5"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Engine Displacement (liters)"</span>, </span>
-<span id="cb21-6"><a></a>       <span class="at">y =</span> <span class="st">" "</span>, </span>
-<span id="cb21-7"><a></a>       <span class="at">color =</span> <span class="st">"Cylinders"</span>,</span>
-<span id="cb21-8"><a></a>       <span class="at">title =</span> <span class="st">"Cars with More Cylinders Have Larger Engine Displacement</span><span class="sc">\n</span><span class="st"> and Lower Fuel Efficiency"</span>) <span class="sc">+</span></span>
-<span id="cb21-9"><a></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb21-10"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
+<span id="cb18-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> cyl)</span>
+<span id="cb18-3"><a></a>       ) <span class="sc">+</span> </span>
+<span id="cb18-4"><a></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span> </span>
+<span id="cb18-5"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Engine Displacement (liters)"</span>, </span>
+<span id="cb18-6"><a></a>       <span class="at">y =</span> <span class="st">" "</span>, </span>
+<span id="cb18-7"><a></a>       <span class="at">color =</span> <span class="st">"Cylinders"</span>,</span>
+<span id="cb18-8"><a></a>       <span class="at">title =</span> <span class="st">"Cars with More Cylinders Have Larger Engine Displacement</span><span class="sc">\n</span><span class="st"> and Lower Fuel Efficiency"</span>) <span class="sc">+</span></span>
+<span id="cb18-9"><a></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb18-10"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1072,22 +1053,22 @@
 </div>
 </div>
 </div>
-<div id="tabset-8-3">
+<div id="tabset-7-3">
 <div class="small">
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="9-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
-<span id="cb22-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> cyl)</span>
-<span id="cb22-3"><a></a>       ) <span class="sc">+</span> </span>
-<span id="cb22-4"><a></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span> </span>
-<span id="cb22-5"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Engine Displacement (liters)"</span>, </span>
-<span id="cb22-6"><a></a>       <span class="at">y =</span> <span class="st">" "</span>, </span>
-<span id="cb22-7"><a></a>       <span class="at">color =</span> <span class="st">"Cylinders"</span>,</span>
-<span id="cb22-8"><a></a>       <span class="at">title =</span> <span class="st">"Cars with More Cylinders Have Larger Engine Displacement</span><span class="sc">\n</span><span class="st"> and Lower Fuel Efficiency"</span>) <span class="sc">+</span></span>
-<span id="cb22-9"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">50</span>),</span>
-<span id="cb22-10"><a></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">5</span>)</span>
-<span id="cb22-11"><a></a>                     )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="9-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
+<span id="cb19-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> cyl)</span>
+<span id="cb19-3"><a></a>       ) <span class="sc">+</span> </span>
+<span id="cb19-4"><a></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span> </span>
+<span id="cb19-5"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Engine Displacement (liters)"</span>, </span>
+<span id="cb19-6"><a></a>       <span class="at">y =</span> <span class="st">" "</span>, </span>
+<span id="cb19-7"><a></a>       <span class="at">color =</span> <span class="st">"Cylinders"</span>,</span>
+<span id="cb19-8"><a></a>       <span class="at">title =</span> <span class="st">"Cars with More Cylinders Have Larger Engine Displacement</span><span class="sc">\n</span><span class="st"> and Lower Fuel Efficiency"</span>) <span class="sc">+</span></span>
+<span id="cb19-9"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">50</span>),</span>
+<span id="cb19-10"><a></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">5</span>)</span>
+<span id="cb19-11"><a></a>                     )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1099,20 +1080,20 @@
 </div>
 </div>
 </div>
-<div id="tabset-8-4">
+<div id="tabset-7-4">
 <div class="small">
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
-<span id="cb23-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> cyl)</span>
-<span id="cb23-3"><a></a>       ) <span class="sc">+</span> </span>
-<span id="cb23-4"><a></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span> </span>
-<span id="cb23-5"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Engine Displacement (liters)"</span>, </span>
-<span id="cb23-6"><a></a>       <span class="at">y =</span> <span class="st">" "</span>, </span>
-<span id="cb23-7"><a></a>       <span class="at">color =</span> <span class="st">"Cylinders"</span>,</span>
-<span id="cb23-8"><a></a>       <span class="at">title =</span> <span class="st">"Cars with More Cylinders Have Larger Engine Displacement</span><span class="sc">\n</span><span class="st"> and Lower Fuel Efficiency"</span>) <span class="sc">+</span></span>
-<span id="cb23-9"><a></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">"white"</span>, <span class="at">high =</span> <span class="st">"green4"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
+<span id="cb20-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> cyl)</span>
+<span id="cb20-3"><a></a>       ) <span class="sc">+</span> </span>
+<span id="cb20-4"><a></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span> </span>
+<span id="cb20-5"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Engine Displacement (liters)"</span>, </span>
+<span id="cb20-6"><a></a>       <span class="at">y =</span> <span class="st">" "</span>, </span>
+<span id="cb20-7"><a></a>       <span class="at">color =</span> <span class="st">"Cylinders"</span>,</span>
+<span id="cb20-8"><a></a>       <span class="at">title =</span> <span class="st">"Cars with More Cylinders Have Larger Engine Displacement</span><span class="sc">\n</span><span class="st"> and Lower Fuel Efficiency"</span>) <span class="sc">+</span></span>
+<span id="cb20-9"><a></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">"white"</span>, <span class="at">high =</span> <span class="st">"green4"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1142,40 +1123,40 @@
 </ul>
 </div>
 <div class="panel-tabset">
-<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Bad</a></li><li><a href="#tabset-9-2">Amazing</a></li><li><a href="#tabset-9-3">Good</a></li></ul>
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Bad</a></li><li><a href="#tabset-8-2">Good</a></li><li><a href="#tabset-8-3">Amazing</a></li></ul>
 <div class="tab-content">
-<div id="tabset-9-1">
+<div id="tabset-8-1">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy, <span class="at">color =</span> class)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"City (mpg)"</span>, <span class="at">y =</span> <span class="st">"Highway (mpg)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy, <span class="at">color =</span> class)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"City (mpg)"</span>, <span class="at">y =</span> <span class="st">"Highway (mpg)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<div id="tabset-9-2">
+<div id="tabset-8-2">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
-<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> cty, </span>
-<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> hwy, </span>
-<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">color =</span> class</span>
-<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a>         )</span>
-<span id="cb25-7"><a aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span> </span>
-<span id="cb25-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb25-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb25-10"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"City (mpg)"</span>, </span>
-<span id="cb25-11"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Highway (mpg)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy, <span class="at">color =</span> class)) <span class="sc">+</span> </span>
+<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"City (mpg)"</span>, <span class="at">y =</span> <span class="st">"Highway (mpg)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<div id="tabset-9-3">
+<div id="tabset-8-3">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
-<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy, <span class="at">color =</span> class)) <span class="sc">+</span> </span>
-<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb26-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"City (mpg)"</span>, <span class="at">y =</span> <span class="st">"Highway (mpg)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> cty, </span>
+<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> hwy, </span>
+<span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">color =</span> class</span>
+<span id="cb23-6"><a aria-hidden="true" tabindex="-1"></a>         )</span>
+<span id="cb23-7"><a aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span> </span>
+<span id="cb23-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb23-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb23-10"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"City (mpg)"</span>, </span>
+<span id="cb23-11"><a aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Highway (mpg)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1213,72 +1194,53 @@
 <!-- ::: -->
 <!-- :::: -->
 </section></section>
-<section>
 <section id="lets-make-some-visualizations" class="title-slide slide level1 center">
 <h1>Let’s Make Some Visualizations!</h1>
+<!-- ## Creating a Game Plan -->
+<!-- There are a lot of pieces to put together when creating a good graphic. -->
+<!-- + So, when sitting down to create a plot, you should first create a -->
+<!-- **game plan**! -->
+<!-- . . . -->
+<!-- This game plan should include: -->
+<!-- 1. What data are you starting from? -->
+<!-- 2. What are your x- and y-axes? -->
+<!-- 3. What type(s) of `geom` do you need? -->
+<!-- 4. What other `aes`'s do you need? -->
+<!-- ## -->
+<!-- ::: panel-tabset -->
+<!-- ### Make a Game Plan! -->
+<!-- Use the `mpg` dataset to create two side-by-side scatterplots of city MPG  -->
+<!-- (`cty`) vs. highway MPG (`hwy`) where the points are colored by the drive type -->
+<!-- (`drv`). The two plots should be separated by `year`. -->
+<!-- ![](images/empty_game_plan.png) -->
+<!-- ### Example -->
+<!-- ![](images/mpg_game_plan.png) -->
+<!-- ### R Code -->
+<!-- ::: {.small} -->
+<!-- ```{r} -->
+<!-- #| code-fold: true -->
+<!-- #| echo: true -->
+<!-- #| fig-height: 4.5 -->
+<!-- ggplot(data = mpg, -->
+<!--        mapping = aes(x = cty, -->
+<!--                      y = hwy, -->
+<!--                      color = drv) -->
+<!--        ) + -->
+<!--   geom_point() + -->
+<!--   facet_wrap(~ year) + -->
+<!--   labs(x = "City Milage (mpg)", -->
+<!--        y = "Highway Milage")+ -->
+<!--   scale_color_discrete(name = "Drive Type", -->
+<!--                        labels = c("4-wheel", -->
+<!--                                   "Front", -->
+<!--                                   "Rear") -->
+<!--                        ) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- # Expert Designer -->
+</section>
 
-</section>
-<section id="creating-a-game-plan" class="slide level2">
-<h2>Creating a Game Plan</h2>
-<p>There are a lot of pieces to put together when creating a good graphic.</p>
-<ul>
-<li>So, when sitting down to create a plot, you should first create a <strong>game plan</strong>!</li>
-</ul>
-<div class="fragment">
-<p>This game plan should include:</p>
-<ol type="1">
-<li>What data are you starting from?</li>
-<li>What are your x- and y-axes?</li>
-<li>What type(s) of <code>geom</code> do you need?</li>
-<li>What other <code>aes</code>’s do you need?</li>
-</ol>
-</div>
-</section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-<div class="panel-tabset">
-<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">Make a Game Plan!</a></li><li><a href="#tabset-10-2">Example</a></li><li><a href="#tabset-10-3">R Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-10-1">
-<p>Use the <code>mpg</code> dataset to create two side-by-side scatterplots of city MPG (<code>cty</code>) vs.&nbsp;highway MPG (<code>hwy</code>) where the points are colored by the drive type (<code>drv</code>). The two plots should be separated by <code>year</code>.</p>
-<p><img data-src="images/empty_game_plan.png"></p>
-</div>
-<div id="tabset-10-2">
-<p><img data-src="images/mpg_game_plan.png"></p>
-</div>
-<div id="tabset-10-3">
-<div class="small">
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg,</span>
-<span id="cb27-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cty,</span>
-<span id="cb27-3"><a></a>                     <span class="at">y =</span> hwy,</span>
-<span id="cb27-4"><a></a>                     <span class="at">color =</span> drv)</span>
-<span id="cb27-5"><a></a>       ) <span class="sc">+</span></span>
-<span id="cb27-6"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb27-7"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> year) <span class="sc">+</span></span>
-<span id="cb27-8"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"City Milage (mpg)"</span>,</span>
-<span id="cb27-9"><a></a>       <span class="at">y =</span> <span class="st">"Highway Milage"</span>)<span class="sc">+</span></span>
-<span id="cb27-10"><a></a>  <span class="fu">scale_color_discrete</span>(<span class="at">name =</span> <span class="st">"Drive Type"</span>,</span>
-<span id="cb27-11"><a></a>                       <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"4-wheel"</span>,</span>
-<span id="cb27-12"><a></a>                                  <span class="st">"Front"</span>,</span>
-<span id="cb27-13"><a></a>                                  <span class="st">"Rear"</span>)</span>
-<span id="cb27-14"><a></a>                       )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="week-2-ggplot_files/figure-revealjs/unnamed-chunk-30-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section></section>
 <section>
 <section id="pa-2-using-data-visualization-to-find-the-penguins" class="title-slide slide level1 center">
 <h1>PA 2: Using Data Visualization to Find the Penguins</h1>
@@ -1309,7 +1271,8 @@
 <p><strong>None of us have all these abilities. Each of us has some of these abilities.</strong></p>
 </div>
 </div>
-</div></div>
+</div>
+</div>
 </section>
 <section id="pair-programming-expectations" class="slide level2">
 <h2>Pair Programming Expectations</h2>
@@ -1347,10 +1310,11 @@
 </ul>
 </div>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -1361,11 +1325,13 @@
 <p><strong>Group Norms</strong></p>
 </div>
 <div class="callout-content">
-<ul>
+<ol type="1">
 <li>Think and work together. Do not divide the work.</li>
 <li>You are smarter together.</li>
+<li>Be open minded.</li>
 <li>No cross-talk with other groups.</li>
-</ul>
+<li>Communicate with each other!</li>
+</ol>
 </div>
 </div>
 </div>
@@ -1410,16 +1376,18 @@
 
 </div><div class="column" style="width:15%;">
 <p><img data-src="images/ggplot-cheatsheet.png" alt="A picture of the ggplot2 cheatsheet, which contains helpful information on assembling a variety of visualizations all using the ggplot2 package."></p>
-</div></div>
+</div>
+</div>
 </section>
 <section id="opening-the-practice-activity-in-posit-cloud" class="slide level2">
 <h2>Opening the Practice Activity in Posit Cloud</h2>
 <p>The partner whose family name starts first alphabetically starts as the Developer!</p>
 <p>Both of you need to do the following:</p>
 <ul>
-<li>Open the email you were sent Click on the PA2 link in Canvas</li>
-<li>Log-in to Posit Cloud <!-- add instructions on how to make the project use collaborative editing --></li>
-<li>Open the <code>PA2-ggplot.qmd</code> file (from the lower right corner)</li>
+<li>Open the email you were sent (from me and / or Posit Cloud)</li>
+<li>Click on the link to join your workspace</li>
+<li>Log-in to Posit Cloud</li>
+<li>Both team members should open the <code>PA2-ggplot.qmd</code> file</li>
 <li>Get started!</li>
 </ul>
 </section>
@@ -1428,7 +1396,7 @@
 <ul>
 <li><p>When you have completed the visualization tasks, you will work as a group to answer the five questions posed at the end of the document.</p></li>
 <li><p>Each person will input the answers to these questions in the PA2 Canvas quiz.</p></li>
-<li><p>The person who last occupied the role of Listener will download and submit the <code>PA-2.qmd</code> file for the group.</p>
+<li><p>The person who last occupied the role of Developer will download and submit the <code>PA-2.qmd</code> file for the group.</p>
 <ul>
 <li>Only one submission per group!</li>
 </ul></li>
@@ -1442,13 +1410,13 @@
 <section id="what-skills-did-you-need" class="title-slide slide level1 center">
 <h1>What skills did you need?</h1>
 
-<div class="quarto-auto-generated-content">
+
+</section>
+    <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div>
-</section>
-    </div>
+</div></div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
@@ -1728,7 +1696,18 @@
         }
         return false;
       }
-      const onCopySuccess = function(e) {
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1760,47 +1739,7 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
       });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        // For code content inside modals, clipBoardJS needs to be initialized with a container option
-        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/atheobold\.github\.io\/stat-331-website");
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -1837,11 +1776,7 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
+          return note.innerHTML;
         });
       }
       const findCites = (el) => {

@@ -26,17 +26,6 @@ Today we will...
 
 <!-- Be sure to update with new Posit Cloud assignment link! -->
 
-## Comments from Week 1
-
-+ It is better to **not have spaces** in your directory or file names!
-  + Use "STAT_331" of "STAT331" instead of "STAT 331"!
-  + Use "week_1" or "week1" instead of "week 1"!
-  
-+ When you want to open R to complete a new assignment for this class, do so by
-**double clicking on your .Rproj file** (the blue cube).
-
-+ Make sure you **install** a package before you **load** it!
-
 # Grammar of Graphics
 
 ## Grammar of Graphics
@@ -54,7 +43,7 @@ Think of a graph or a data visualization as a mapping...
 ...**TO visual attributes** (or "aesthetics") **of marks** (or "geometric elements") on the page/screen.
 
 
-## Why Grammar of Graphics?
+## Why GoG?
 
 + It's more flexible than a "chart zoo" of named graphs.
 + The software understands the structure of your graph.
@@ -62,7 +51,7 @@ Think of a graph or a data visualization as a mapping...
 
 
 
-## Components of Grammar of Graphics
+## Components of GoG
 
 ::: {.small}
 + `data`: dataframe containing variables
@@ -98,6 +87,10 @@ ggplot(
 
 Notice, every `+` adds another **layer** to our graphic.
 
+. . .
+
+Also notice that I'm using **named arguments** to make my code easier to read. 
+
 ##
 
 ::: panel-tabset
@@ -131,7 +124,7 @@ ggplot(data = mpg)
 
 
 ggplot(data = mpg, 
-       aes(x = class, y = hwy)
+       mapping = aes(x = class, y = hwy)
        )
 ```
 
@@ -149,7 +142,8 @@ ggplot(data = mpg,
 #| fig-alt: "A visualization of the different hwy milage for different types of cars. On the x-axis there is a variable named 'class' with seven different values mapped to a particular white gridline---2seater, compact, midsize, minivan, pickup, subcompact, suv. On the y-axis there is a variable named 'hwy' with three printed values mapped to different white gridlines---20, 30, and 40. The spaces between these gridlines represent values between the printed values (e.g., 25). The visualization has a variety of points (black dots), where each point represents a particular vehicle. Each point is horizontally aligned with the type of vehicle and vertically aligned with the highway mileage for the vehicle. Overall, it appears that pickups and suvs have the lowest highway mileage, with minivans having slightly better milage. compact, midsize, and subcompact vehicles have fairly similar milage, with cars ranging from 25 to 40 miles per gallon."
 
 ggplot(data = mpg, 
-       aes(x = class, y = hwy)
+       mapping = aes(x = class, 
+                     y = hwy)
        ) +
   geom_jitter()
 ```
@@ -166,7 +160,8 @@ ggplot(data = mpg,
 #| fig-alt: "The same visualization is presented, except there are not boxplots superimposed on top of the points (dots) for each vehicle type. The boxplots display the median (center line), quantiles (edges), and min / max (whiskers) of each vehicle's mileage."
 
 ggplot(data = mpg, 
-       aes(x = class, y = hwy)
+       mapping = aes(x = class, 
+                     y = hwy)
        ) +
   geom_jitter() +
   geom_boxplot()
@@ -174,9 +169,6 @@ ggplot(data = mpg,
 :::
 :::
 ::::
-
-How would you make the points be [**on top**]{.underline} of the boxplots?
-
 :::
 
 ## Aesthetics
@@ -348,94 +340,94 @@ Wee use a `geom_XXX()` function to represent data points.
 *This is not an exhaustive list -- see [ggplot2 cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/data-visualization-2.1.pdf)*.
 
 
-## Same Data, Three Different Plots
+<!-- ## Same Data, Three Different Plots -->
 
-::: panel-tabset
+<!-- ::: panel-tabset -->
 
-### geom_point()
+<!-- ### geom_point() -->
 
-::: {.small}
-```{r}
-#| echo: true
-#| code-fold: true
-#| code-line-numbers: "6"
-#| fig-height: 4
-#| fig-width: 6
-#| fig-align: center
-#| label: example-scatterplot
+<!-- ::: {.small} -->
+<!-- ```{r} -->
+<!-- #| echo: true -->
+<!-- #| code-fold: true -->
+<!-- #| code-line-numbers: "6" -->
+<!-- #| fig-height: 4 -->
+<!-- #| fig-width: 6 -->
+<!-- #| fig-align: center -->
+<!-- #| label: example-scatterplot -->
 
-ggplot(data = mpg,
-       mapping = aes(x = cty, 
-                     y = hwy,
-                     color = class)
-       ) +
-  geom_point() +
-  labs(x = "City (mpg)", 
-       y = "Highway (mpg)", 
-       color = " ") +
-  theme(axis.title = element_text(size = 14),
-        legend.position = "top",
-        legend.text = element_text(size = 14)
-        )
-```
-:::
+<!-- ggplot(data = mpg, -->
+<!--        mapping = aes(x = cty,  -->
+<!--                      y = hwy, -->
+<!--                      color = class) -->
+<!--        ) + -->
+<!--   geom_point() + -->
+<!--   labs(x = "City (mpg)",  -->
+<!--        y = "Highway (mpg)",  -->
+<!--        color = " ") + -->
+<!--   theme(axis.title = element_text(size = 14), -->
+<!--         legend.position = "top", -->
+<!--         legend.text = element_text(size = 14) -->
+<!--         ) -->
+<!-- ``` -->
+<!-- ::: -->
 
-### geom_text()
+<!-- ### geom_text() -->
 
-::: {.small}
-```{r}
-#| echo: true
-#| code-fold: true
-#| code-line-numbers: "6"
-#| fig-height: 4
-#| fig-width: 6
-#| fig-align: center
-#| label: example-word-plot
+<!-- ::: {.small} -->
+<!-- ```{r} -->
+<!-- #| echo: true -->
+<!-- #| code-fold: true -->
+<!-- #| code-line-numbers: "6" -->
+<!-- #| fig-height: 4 -->
+<!-- #| fig-width: 6 -->
+<!-- #| fig-align: center -->
+<!-- #| label: example-word-plot -->
 
-ggplot(data = mpg,
-       mapping = aes(x = cty,
-                     y = hwy,
-                     color = class)
-       ) +
-  geom_text(mapping = aes(label = class)) +
-  labs(x = "City (mpg)", 
-       y = "Highway (mpg)", 
-       color = " ") +
-  theme(axis.title = element_text(size = 14),
-        legend.position = "top",
-        legend.text = element_text(size = 14)
-        )
-```
-:::
+<!-- ggplot(data = mpg, -->
+<!--        mapping = aes(x = cty, -->
+<!--                      y = hwy, -->
+<!--                      color = class) -->
+<!--        ) + -->
+<!--   geom_text(mapping = aes(label = class)) + -->
+<!--   labs(x = "City (mpg)",  -->
+<!--        y = "Highway (mpg)",  -->
+<!--        color = " ") + -->
+<!--   theme(axis.title = element_text(size = 14), -->
+<!--         legend.position = "top", -->
+<!--         legend.text = element_text(size = 14) -->
+<!--         ) -->
+<!-- ``` -->
+<!-- ::: -->
 
-### geom_smooth()
+<!-- ### geom_smooth() -->
 
-::: {.small}
-```{r}
-#| echo: true
-#| code-fold: true
-#| code-line-numbers: "6"
-#| fig-height: 4
-#| fig-width: 6
-#| fig-align: center
-#| label: example-line-plot
+<!-- ::: {.small} -->
+<!-- ```{r} -->
+<!-- #| echo: true -->
+<!-- #| code-fold: true -->
+<!-- #| code-line-numbers: "6" -->
+<!-- #| fig-height: 4 -->
+<!-- #| fig-width: 6 -->
+<!-- #| fig-align: center -->
+<!-- #| label: example-line-plot -->
 
-ggplot(data = mpg,
-       mapping = aes(x = cty,
-                     y = hwy,
-                     color = class)
-       ) +
-  geom_smooth() +
-  labs(x = "City (mpg)", 
-       y = "Highway (mpg)", 
-       color = " ") +
-  theme(axis.title = element_text(size = 14),
-        legend.position = "top",
-        legend.text = element_text(size = 14)
-        )
-```
-:::
-:::
+<!-- ggplot(data = mpg, -->
+<!--        mapping = aes(x = cty, -->
+<!--                      y = hwy, -->
+<!--                      color = class) -->
+<!--        ) + -->
+<!--   geom_smooth() + -->
+<!--   labs(x = "City (mpg)",  -->
+<!--        y = "Highway (mpg)",  -->
+<!--        color = " ") + -->
+<!--   theme(axis.title = element_text(size = 14), -->
+<!--         legend.position = "top", -->
+<!--         legend.text = element_text(size = 14) -->
+<!--         ) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: -->
 
 
 ## Creating a Graphic
@@ -877,6 +869,23 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy, color = class)) + geom_point(
 ```
 :::
 
+### Good
+
+::: {.small}
+```{r}
+#| echo: true
+#| eval: false
+#| label: medium-formatted-code
+#| code-line-numbers: false
+
+ggplot(data = mpg, 
+       mapping = aes(x = cty, y = hwy, color = class)) + 
+  geom_point() + 
+  theme_bw() + 
+  labs(x = "City (mpg)", y = "Highway (mpg)")
+```
+:::
+
 ### Amazing
 
 ::: {.small}
@@ -897,23 +906,6 @@ ggplot(data = mpg,
   theme_bw() + 
   labs(x = "City (mpg)", 
        y = "Highway (mpg)")
-```
-:::
-
-### Good
-
-::: {.small}
-```{r}
-#| echo: true
-#| eval: false
-#| label: medium-formatted-code
-#| code-line-numbers: false
-
-ggplot(data = mpg, 
-       mapping = aes(x = cty, y = hwy, color = class)) + 
-  geom_point() + 
-  theme_bw() + 
-  labs(x = "City (mpg)", y = "Highway (mpg)")
 ```
 :::
 :::
@@ -962,64 +954,65 @@ ggplot(data = mpg,
 
 # Let's Make Some Visualizations!
 
-## Creating a Game Plan
+<!-- ## Creating a Game Plan -->
 
-There are a lot of pieces to put together when creating a good graphic.
+<!-- There are a lot of pieces to put together when creating a good graphic. -->
 
-+ So, when sitting down to create a plot, you should first create a
-**game plan**!
+<!-- + So, when sitting down to create a plot, you should first create a -->
+<!-- **game plan**! -->
 
-. . .
+<!-- . . . -->
 
-This game plan should include:
+<!-- This game plan should include: -->
 
-1. What data are you starting from?
-2. What are your x- and y-axes?
-3. What type(s) of `geom` do you need?
-4. What other `aes`'s do you need?
+<!-- 1. What data are you starting from? -->
+<!-- 2. What are your x- and y-axes? -->
+<!-- 3. What type(s) of `geom` do you need? -->
+<!-- 4. What other `aes`'s do you need? -->
 
 
-##
+<!-- ## -->
 
-::: panel-tabset
+<!-- ::: panel-tabset -->
 
-### Make a Game Plan!
+<!-- ### Make a Game Plan! -->
 
-Use the `mpg` dataset to create two side-by-side scatterplots of city MPG 
-(`cty`) vs. highway MPG (`hwy`) where the points are colored by the drive type
-(`drv`). The two plots should be separated by `year`.
+<!-- Use the `mpg` dataset to create two side-by-side scatterplots of city MPG  -->
+<!-- (`cty`) vs. highway MPG (`hwy`) where the points are colored by the drive type -->
+<!-- (`drv`). The two plots should be separated by `year`. -->
 
-![](images/empty_game_plan.png)
+<!-- ![](images/empty_game_plan.png) -->
 
-### Example
+<!-- ### Example -->
 
-![](images/mpg_game_plan.png)
+<!-- ![](images/mpg_game_plan.png) -->
 
-### R Code
+<!-- ### R Code -->
 
-::: {.small}
-```{r}
-#| code-fold: true
-#| echo: true
-#| fig-height: 4.5
-ggplot(data = mpg,
-       mapping = aes(x = cty,
-                     y = hwy,
-                     color = drv)
-       ) +
-  geom_point() +
-  facet_wrap(~ year) +
-  labs(x = "City Milage (mpg)",
-       y = "Highway Milage")+
-  scale_color_discrete(name = "Drive Type",
-                       labels = c("4-wheel",
-                                  "Front",
-                                  "Rear")
-                       )
-```
-:::
-:::
+<!-- ::: {.small} -->
+<!-- ```{r} -->
+<!-- #| code-fold: true -->
+<!-- #| echo: true -->
+<!-- #| fig-height: 4.5 -->
+<!-- ggplot(data = mpg, -->
+<!--        mapping = aes(x = cty, -->
+<!--                      y = hwy, -->
+<!--                      color = drv) -->
+<!--        ) + -->
+<!--   geom_point() + -->
+<!--   facet_wrap(~ year) + -->
+<!--   labs(x = "City Milage (mpg)", -->
+<!--        y = "Highway Milage")+ -->
+<!--   scale_color_discrete(name = "Drive Type", -->
+<!--                        labels = c("4-wheel", -->
+<!--                                   "Front", -->
+<!--                                   "Rear") -->
+<!--                        ) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: -->
 
+<!-- # Expert Designer -->
 
 # PA 2: Using Data Visualization to Find the Penguins
 
@@ -1113,9 +1106,11 @@ During your collaboration, you and your partner will alternate between two roles
 ::: {.callout-tip}
 ## Group Norms
 
-- Think and work together. Do not divide the work.
-- You are smarter together.
-- No cross-talk with other groups.
+1.  Think and work together. Do not divide the work.
+2.  You are smarter together.
+3.  Be open minded. 
+4.  No cross-talk with other groups.
+5.  Communicate with each other! 
 :::
 
 <!-- Add other norms that are relevant -->
@@ -1176,11 +1171,10 @@ Developer!
 
 Both of you need to do the following:
 
-- Open the email you were sent 
-Click on the PA2 link in Canvas 
+- Open the email you were sent (from me and / or Posit Cloud)
+- Click on the link to join your workspace
 - Log-in to Posit Cloud
-<!-- add instructions on how to make the project use collaborative editing -->
-- Open the `PA2-ggplot.qmd` file (from the lower right corner)
+- Both team members should open the `PA2-ggplot.qmd` file
 - Get started! 
 
 ## Submission
@@ -1189,10 +1183,9 @@ Click on the PA2 link in Canvas
 answer the five questions posed at the end of the document. 
 
 - Each person will input the answers to these questions in the PA2 Canvas quiz.
-- The person who last occupied the role of Listener will download and submit the
-`PA-2.qmd` file for the group.
+- The person who last occupied the role of Developer will download and submit
+the `PA-2.qmd` file for the group.
   + Only one submission per group!
-
 
 # Wrap-up
 
