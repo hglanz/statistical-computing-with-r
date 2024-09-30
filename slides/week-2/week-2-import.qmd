@@ -18,6 +18,7 @@ library(tidyverse)
 
 Today we will...
 
+::: {.small}
 + Debrief PA 1
   + Compare & Contrast Strategies
 + Debrief Lab 1 
@@ -29,6 +30,7 @@ Today we will...
   + Colors in ggplot
 + [Lab 2: Exploring Rodents with ggplot2](https://classroom.github.com/a/4e-4Et4D)
   + Using External Resources
+:::
 <!-- Be sure to update with new GH Classroom assignment link! -->
 
 # PA 1: Using Data Visualization to Find the Penguins
@@ -36,6 +38,44 @@ Today we will...
 ## Strategies Used 
 
 <!-- Fill in based on group Quarto submissions -->
+
+# Lab 1
+
+## Grading / Feedback
+
+::: {.small}
++ Each question will earn a score of "Success" or "Growing".
+  * Questions marked "Growing" will receive feedback on how to improve your
+  solution.
+  * These questions can be resubmitted for additional feedback. 
+:::
+
+. . .
+
+::: {.small}
++ Earning a "Success" doesn't necessarily mean your solution is without error.
+  * You may still receive feedback on how to improve your solution.
+  * These questions cannot be resubmitted for additional feedback.
+:::
+
+## Growing Points
+
+::: {.incremental}
+- Q2: **All** your code should be visible! 
+- Q9: Captions should include more information than what is already present in
+the plot!
+- Q11: There's no need to save intermediate objects if they are never used later! 
+:::
+
+## How this translates into Lab 2...
+
+::: {.incremental}
+- Every lab and challenge is expected to use code-folding. 
+- There should be no messages / warnings output in your final rendered HTML. 
+- You should reduce the amount of "intermediate object junk" in your workspace. 
+  + Ask yourself, do I need to use this later?
+  + If the answer is no, then you should not save that object. 
+:::
 
 # Tidy Data
 
@@ -262,9 +302,11 @@ Remember to load the `readr` and `readxl` packages first!
 :::
 :::
 
-# Reading in Data
+<!-- # Reading in Data -->
 
-![](images/here-horst.png){fig-alt="A cartoon showing two paths side-by-side. On the left is a scary spooky forest, with spiderwebs and gnarled trees, with file paths written on the branches like '~/mmm/nope.csv' and 'setwd(/haha/good/luck/)', with a scared looking cute fuzzy monster running out of it. On the right is a bright, colorful path with flowers, rainbow and sunshine, with signs saying 'here!' and 'it’s all right here!' A monster facing away from us in a backpack and walking stick is looking toward the right path. Stylized text reads 'here: find your path.'"}
+<!-- ![](images/here-horst.png){fig-alt="A cartoon showing two paths side-by-side. On the left is a scary spooky forest, with spiderwebs and gnarled trees, with file paths written on the branches like '~/mmm/nope.csv' and 'setwd(/haha/good/luck/)', with a scared looking cute fuzzy monster running out of it. On the right is a bright, colorful path with flowers, rainbow and sunshine, with signs saying 'here!' and 'it’s all right here!' A monster facing away from us in a backpack and walking stick is looking toward the right path. Stylized text reads 'here: find your path.'"} -->
+
+# Graphics
 
 # Graphics
 
@@ -530,31 +572,16 @@ You can also take a look at other [ways to find nice color palettes](https://lis
 
 # [Lab 2: Exploring Rodents with ggplot2](../../labs/instructions/lab-2-instructions.qmd) & [Challenge 2: Spicing things up with ggplot2](../../labs/instructions/challenge-2-instructions.qmd)
 
-## On Grading / Feedback....
+## Peer Code Review
 
-::: {.small}
-+ Each question will earn a score of "Success" or "Growing"
-  * Questions marked "Growing" will receive feedback on how to improve your solution
-  * These questions can be resubmitted for additional feedback 
-:::
+Starting with Lab 2, your labs **will** have an appearance / code format 
+portion. 
 
-. . .
+- Review the [code formatting guidelines](../../code-review/code-review-guidelines.qmd)
+*before* you submit your lab!
 
-::: {.small}
-+ Earning a "Success" doesn't necessarily mean your solution is without error
-  * You may still receive feedback on how to improve your solution
-  * These questions cannot be resubmitted for additional feedback 
-:::
-
-. . .
-
-::: {.small}
-+ Your labs **will** have an appearance / code format portion. 
-  * Review the [code formatting guidelines](../../code-review/code-review-guidelines.qmd)
-  *before* you submit your lab!
-  * Each week, you will be assigned one of your peer's labs to review their code
-  formatting.
-:::
+- Each week, you will be assigned one of your peer's labs to review their code
+formatting.
 
 ## On the Use of External Resources...
 
@@ -576,8 +603,7 @@ outside of these materials require direct references.
 
 - If you used ChatGPT: 
   + indicate somewhere in the problem that you used ChatGPT
-  + download and attach the `.txt` file containing your **entire** conversation
-  with ChatGPT
+  + paste the link to your chat (using the Share button from ChatGPT)
 :::
 
 <!-- Additionally, you are permitted and encouraged to work with your peers as you -->
@@ -591,9 +617,8 @@ outside of these materials require direct references.
 
 ::: {.small}
 - GPT uses machine learning to predict what words to give you
-  + This method is entirely probabilistic 
-  + Meaning, the same question may produce different answers for different 
-  people
+  + This method is entirely probabilistic, meaning, the same question may
+  produce different answers for different people.
 :::
 
 . . .
@@ -608,7 +633,7 @@ outside of these materials require direct references.
 
 ::: {.small}
 - ChatGPT is a pretty decent tutor.
-  + Did you use GPT to help you with some code?
+  + Did you use GPT to help you with some code? 
   + Do you not understand what the code is doing?
   + Ask GPT to explain code to you!
 :::
