@@ -99,13 +99,13 @@ website:
 format:
   html:
     theme:
-      light: [simple, style/stat331.scss]
-      dark: [simple, style/stat331.scss, style/dark.scss]
+      light: [cosmo, style/stat331.scss]
+      dark: [cosmo, style/stat331.scss, style/dark.scss]
     mainfont: "Atkinson Hyperlegible"
     code-copy: true
     code-overflow: wrap
     toc: true
     linkcolor: "#5D737E"
-    highlight-style: a11y-dark
+#    highlight-style: a11y-dark
 
 editor: visual

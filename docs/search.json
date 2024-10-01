@@ -960,13 +960,6 @@
     "text": "Tuesday, October 1\nToday we will…\n\nComments from Week 1\nPeer Programming\nNew Material\n\nTidy Data\nLoad External Data\nGraphics (and ggplot2)\n\nPA 2: Using Data Visualization to Find the Penguins"
   },
   {
-    "objectID": "slides/week-2/week-2-ggplot.html#comments-from-week-1",
-    "href": "slides/week-2/week-2-ggplot.html#comments-from-week-1",
-    "title": "Basics of Graphics",
-    "section": "Comments from Week 1",
-    "text": "Comments from Week 1\n\nIt is better to not have spaces in your directory or file names!\n\nUse “STAT_331” of “STAT331” instead of “STAT 331”!\nUse “week_1” or “week1” instead of “week 1”!\n\nWhen you want to open R to complete a new assignment for this class, do so by double clicking on your .Rproj file (the blue cube).\nMake sure you install a package before you load it!"
-  },
-  {
     "objectID": "slides/week-2/week-2-ggplot.html#grammar-of-graphics-1",
     "href": "slides/week-2/week-2-ggplot.html#grammar-of-graphics-1",
     "title": "Basics of Graphics",
@@ -974,18 +967,18 @@
     "text": "Grammar of Graphics\nThe Grammar of Graphics (GoG) is a principled way of specifying exactly how to create a particular graph from a given data set. It helps us to systematically design new graphs.\n\n\nThink of a graph or a data visualization as a mapping…\n…FROM variables in the data set (or statistics computed from the data)…\n…TO visual attributes (or “aesthetics”) of marks (or “geometric elements”) on the page/screen."
   },
   {
-    "objectID": "slides/week-2/week-2-ggplot.html#why-grammar-of-graphics",
-    "href": "slides/week-2/week-2-ggplot.html#why-grammar-of-graphics",
+    "objectID": "slides/week-2/week-2-ggplot.html#why-gog",
+    "href": "slides/week-2/week-2-ggplot.html#why-gog",
     "title": "Basics of Graphics",
-    "section": "Why Grammar of Graphics?",
-    "text": "Why Grammar of Graphics?\n\nIt’s more flexible than a “chart zoo” of named graphs.\nThe software understands the structure of your graph.\nIt easily automates graphing of data subsets."
+    "section": "Why GoG?",
+    "text": "Why GoG?\n\nIt’s more flexible than a “chart zoo” of named graphs.\nThe software understands the structure of your graph.\nIt easily automates graphing of data subsets."
   },
   {
-    "objectID": "slides/week-2/week-2-ggplot.html#components-of-grammar-of-graphics",
-    "href": "slides/week-2/week-2-ggplot.html#components-of-grammar-of-graphics",
+    "objectID": "slides/week-2/week-2-ggplot.html#components-of-gog",
+    "href": "slides/week-2/week-2-ggplot.html#components-of-gog",
     "title": "Basics of Graphics",
-    "section": "Components of Grammar of Graphics",
-    "text": "Components of Grammar of Graphics\n\n\ndata: dataframe containing variables\naes : aesthetic mappings (position, color, symbol, …)\ngeom : geometric element (point, line, bar, box, …)\nstat : statistical variable transformation (identity, count, linear model, quantile, …)\nscale : scale transformation (log scale, color mapping, axes tick breaks, …)\ncoord : Cartesian, polar, map projection, …\nfacet : divide into subplots using a categorical variable"
+    "section": "Components of GoG",
+    "text": "Components of GoG\n\n\ndata: dataframe containing variables\naes : aesthetic mappings (position, color, symbol, …)\ngeom : geometric element (point, line, bar, box, …)\nstat : statistical variable transformation (identity, count, linear model, quantile, …)\nscale : scale transformation (log scale, color mapping, axes tick breaks, …)\ncoord : Cartesian, polar, map projection, …\nfacet : divide into subplots using a categorical variable"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#how-to-build-a-graphic",
@@ -1035,13 +1028,6 @@
     "title": "Basics of Graphics",
     "section": "Geometric Objects",
     "text": "Geometric Objects\nWee use a geom_XXX() function to represent data points.\n\n\n\n\none variable\n\ngeom_density()\ngeom_dotplot()\ngeom_histogram()\ngeom_boxplot()\n\n\n\n\ntwo variable\n\ngeom_point()\ngeom_line()\ngeom_density_2d()\n\n\n\n\nthree variable\n\ngeom_contour()\ngeom_raster()\n\n\n\n\n\nThis is not an exhaustive list – see ggplot2 cheat sheet."
-  },
-  {
-    "objectID": "slides/week-2/week-2-ggplot.html#same-data-three-different-plots",
-    "href": "slides/week-2/week-2-ggplot.html#same-data-three-different-plots",
-    "title": "Basics of Graphics",
-    "section": "Same Data, Three Different Plots",
-    "text": "Same Data, Three Different Plots\n\ngeom_point()geom_text()geom_smooth()\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty, \n                     y = hwy,\n                     color = class)\n       ) +\n  geom_point() +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty,\n                     y = hwy,\n                     color = class)\n       ) +\n  geom_text(mapping = aes(label = class)) +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = mpg,\n       mapping = aes(x = cty,\n                     y = hwy,\n                     color = class)\n       ) +\n  geom_smooth() +\n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\", \n       color = \" \") +\n  theme(axis.title = element_text(size = 14),\n        legend.position = \"top\",\n        legend.text = element_text(size = 14)\n        )"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#creating-a-graphic",
@@ -1114,20 +1100,6 @@
     "text": "ggplot Code\n\nIt is good practice to put each geom and aes on a new line.\n\nThis makes code easier to read!\nGenerally: no line of code should be over 80 characters long.\n\n\n\nBadGoodAmazing\n\n\n\n\nggplot(data = mpg, mapping = aes(x = cty, y = hwy, color = class)) + geom_point() + theme_bw() + labs(x = \"City (mpg)\", y = \"Highway (mpg)\")\n\n\n\n\n\n\nggplot(data = mpg, \n       mapping = aes(x = cty, y = hwy, color = class)) + \n  geom_point() + \n  theme_bw() + \n  labs(x = \"City (mpg)\", y = \"Highway (mpg)\")\n\n\n\n\n\n\nggplot(data = mpg, \n       mapping = aes(\n         x = cty, \n         y = hwy, \n         color = class\n         )\n       ) + \n  geom_point() + \n  theme_bw() + \n  labs(x = \"City (mpg)\", \n       y = \"Highway (mpg)\")"
   },
   {
-    "objectID": "slides/week-2/week-2-ggplot.html#creating-a-game-plan",
-    "href": "slides/week-2/week-2-ggplot.html#creating-a-game-plan",
-    "title": "Basics of Graphics",
-    "section": "Creating a Game Plan",
-    "text": "Creating a Game Plan\nThere are a lot of pieces to put together when creating a good graphic.\n\nSo, when sitting down to create a plot, you should first create a game plan!\n\n\nThis game plan should include:\n\nWhat data are you starting from?\nWhat are your x- and y-axes?\nWhat type(s) of geom do you need?\nWhat other aes’s do you need?"
-  },
-  {
-    "objectID": "slides/week-2/week-2-ggplot.html#section-2",
-    "href": "slides/week-2/week-2-ggplot.html#section-2",
-    "title": "Basics of Graphics",
-    "section": "",
-    "text": "Group Norms\n\n\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nBe open minded.\nNo cross-talk with other groups.\nCommunicate with each other!"
-  },
-  {
     "objectID": "slides/week-2/week-2-ggplot.html#using-data-visualization-to-find-the-penguins",
     "href": "slides/week-2/week-2-ggplot.html#using-data-visualization-to-find-the-penguins",
     "title": "Basics of Graphics",
@@ -1142,11 +1114,11 @@
     "text": "Pair Programming Expectations\n\nDuring your collaboration, you and your partner will alternate between two roles:\n\n\n\n\nDeveloper\n\n\nReads prompt and ensures Coder understands what is being asked.\nTypes the code specified by the Coder into the Quarto document.       \nRuns the code provided by the Coder.\nWorks with Coder to debug the code. \nEvaluates the output.\n\nWorks with Coder to write code comments.\n\n\n\n\n\n\nCoder\n\n\nReads out instructions or prompts\nDirects the Developer what to type.\nTalks with Developer about their ideas. \nManages resources (e.g., cheatsheets, textbook). \nWorks with Developer to debug the code. \nWorks with Developer to write code comments."
   },
   {
-    "objectID": "slides/week-2/week-2-ggplot.html#section-3",
-    "href": "slides/week-2/week-2-ggplot.html#section-3",
+    "objectID": "slides/week-2/week-2-ggplot.html#section-2",
+    "href": "slides/week-2/week-2-ggplot.html#section-2",
     "title": "Basics of Graphics",
     "section": "",
-    "text": "Group Norms\n\n\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nNo cross-talk with other groups."
+    "text": "Group Norms\n\n\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nBe open minded.\nNo cross-talk with other groups.\nCommunicate with each other!"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#ggplot2-resources",
@@ -2569,7 +2541,7 @@
     "href": "slides/week-2/week-2-import.html#thursday-october-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Thursday, October 1",
-    "text": "Thursday, October 1\nToday we will…\n\nDebrief PA 1\n\nCompare & Contrast Strategies\n\nDebrief Lab 1\n\nContent Related to Lab 2\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2\n\nUsing External Resources"
+    "text": "Thursday, October 1\nToday we will…\n\n\nDebrief PA 1\n\nCompare & Contrast Strategies\n\nDebrief Lab 1\n\nContent Related to Lab 2\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2\n\nUsing External Resources"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#strategies-used",
@@ -2577,6 +2549,27 @@
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Strategies Used",
     "text": "Strategies Used"
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html#grading-feedback",
+    "href": "slides/week-2/week-2-import.html#grading-feedback",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "Grading / Feedback",
+    "text": "Grading / Feedback\n\n\nEach question will earn a score of “Success” or “Growing”.\n\nQuestions marked “Growing” will receive feedback on how to improve your solution.\nThese questions can be resubmitted for additional feedback.\n\n\n\n\n\n\nEarning a “Success” doesn’t necessarily mean your solution is without error.\n\nYou may still receive feedback on how to improve your solution.\nThese questions cannot be resubmitted for additional feedback."
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html#growing-points",
+    "href": "slides/week-2/week-2-import.html#growing-points",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "Growing Points",
+    "text": "Growing Points\n\n\nQ2: All your code should be visible!\nQ9: Captions should include more information than what is already present in the plot!\nQ11: There’s no need to save intermediate objects if they are never used later!"
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html#how-this-translates-into-lab-2",
+    "href": "slides/week-2/week-2-import.html#how-this-translates-into-lab-2",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "How this translates into Lab 2…",
+    "text": "How this translates into Lab 2…\n\n\nEvery lab and challenge is expected to use code-folding.\nThere should be no messages / warnings output in your final rendered HTML.\nYou should reduce the amount of “intermediate object junk” in your workspace.\n\nAsk yourself, do I need to use this later?\nIf the answer is no, then you should not save that object."
   },
   {
     "objectID": "slides/week-2/week-2-import.html#tidy-data-1",
@@ -2747,25 +2740,25 @@
     "text": "Color in ggplot2\nThere are several packages with color scheme options:\n\nRcolorbrewer\nggsci\nviridis\nwesanderson\n\nThese packages have color palettes that are aesthetically pleasing and, in many cases, color deficiency friendly.\nYou can also take a look at other ways to find nice color palettes."
   },
   {
-    "objectID": "slides/week-2/week-2-import.html#on-grading-feedback.",
-    "href": "slides/week-2/week-2-import.html#on-grading-feedback.",
+    "objectID": "slides/week-2/week-2-import.html#peer-code-review",
+    "href": "slides/week-2/week-2-import.html#peer-code-review",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
-    "section": "On Grading / Feedback….",
-    "text": "On Grading / Feedback….\n\n\nEach question will earn a score of “Success” or “Growing”\n\nQuestions marked “Growing” will receive feedback on how to improve your solution\nThese questions can be resubmitted for additional feedback\n\n\n\n\n\n\nEarning a “Success” doesn’t necessarily mean your solution is without error\n\nYou may still receive feedback on how to improve your solution\nThese questions cannot be resubmitted for additional feedback\n\n\n\n\n\n\n\nYour labs will have an appearance / code format portion.\n\nReview the code formatting guidelines before you submit your lab!\nEach week, you will be assigned one of your peer’s labs to review their code formatting."
+    "section": "Peer Code Review",
+    "text": "Peer Code Review\nStarting with Lab 2, your labs will have an appearance / code format portion.\n\nReview the code formatting guidelines before you submit your lab!\nEach week, you will be assigned one of your peer’s labs to review their code formatting."
   },
   {
     "objectID": "slides/week-2/week-2-import.html#on-the-use-of-external-resources",
     "href": "slides/week-2/week-2-import.html#on-the-use-of-external-resources",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "On the Use of External Resources…",
-    "text": "On the Use of External Resources…\n\nPart of learning to program is learning from a variety of resources. Thus, I expect you will use resources that you find on the internet.\nIn this class the assumed knowledge is the course materials, including the course textbook, coursework pages, and course slides. Any functions / code used outside of these materials require direct references.\n\n\n\n\nIf you used Google:\n\npaste the link to the resource in a code comment next to where you used that resource\n\nIf you used ChatGPT:\n\nindicate somewhere in the problem that you used ChatGPT\ndownload and attach the .txt file containing your entire conversation with ChatGPT"
+    "text": "On the Use of External Resources…\n\nPart of learning to program is learning from a variety of resources. Thus, I expect you will use resources that you find on the internet.\nIn this class the assumed knowledge is the course materials, including the course textbook, coursework pages, and course slides. Any functions / code used outside of these materials require direct references.\n\n\n\n\nIf you used Google:\n\npaste the link to the resource in a code comment next to where you used that resource\n\nIf you used ChatGPT:\n\nindicate somewhere in the problem that you used ChatGPT\npaste the link to your chat (using the Share button from ChatGPT)"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#things-you-should-know-about-chatgpt",
     "href": "slides/week-2/week-2-import.html#things-you-should-know-about-chatgpt",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Things You Should Know About ChatGPT…",
-    "text": "Things You Should Know About ChatGPT…\n\n\n\nGPT uses machine learning to predict what words to give you\n\nThis method is entirely probabilistic\nMeaning, the same question may produce different answers for different people\n\n\n\n\n\n\n\nThe answers GPT gives rely a lot on the context you provide (or don’t provide)\n\nIt is good to give lots of background information (e.g., what R package you are using)\n\n\n\n\n\n\n\nChatGPT is a pretty decent tutor.\n\nDid you use GPT to help you with some code?\nDo you not understand what the code is doing?\nAsk GPT to explain code to you!"
+    "text": "Things You Should Know About ChatGPT…\n\n\n\nGPT uses machine learning to predict what words to give you\n\nThis method is entirely probabilistic, meaning, the same question may produce different answers for different people.\n\n\n\n\n\n\n\nThe answers GPT gives rely a lot on the context you provide (or don’t provide)\n\nIt is good to give lots of background information (e.g., what R package you are using)\n\n\n\n\n\n\n\nChatGPT is a pretty decent tutor.\n\nDid you use GPT to help you with some code?\nDo you not understand what the code is doing?\nAsk GPT to explain code to you!"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#to-do",
@@ -3623,26 +3616,5 @@
       "Weekly materials",
       "Week 3 - dplyr"
     ]
-  },
-  {
-    "objectID": "slides/week-2/week-2-ggplot.html#why-gog",
-    "href": "slides/week-2/week-2-ggplot.html#why-gog",
-    "title": "Basics of Graphics",
-    "section": "Why GoG?",
-    "text": "Why GoG?\n\nIt’s more flexible than a “chart zoo” of named graphs.\nThe software understands the structure of your graph.\nIt easily automates graphing of data subsets."
-  },
-  {
-    "objectID": "slides/week-2/week-2-ggplot.html#components-of-gog",
-    "href": "slides/week-2/week-2-ggplot.html#components-of-gog",
-    "title": "Basics of Graphics",
-    "section": "Components of GoG",
-    "text": "Components of GoG\n\n\ndata: dataframe containing variables\naes : aesthetic mappings (position, color, symbol, …)\ngeom : geometric element (point, line, bar, box, …)\nstat : statistical variable transformation (identity, count, linear model, quantile, …)\nscale : scale transformation (log scale, color mapping, axes tick breaks, …)\ncoord : Cartesian, polar, map projection, …\nfacet : divide into subplots using a categorical variable"
-  },
-  {
-    "objectID": "slides/week-2/week-2-import.html",
-    "href": "slides/week-2/week-2-import.html",
-    "title": "Tidy Data, Importing Data & More Advanced Graphics",
-    "section": "",
-    "text": "Today we will…\n\nDebrief PA 1\n\nCompare & Contrast Strategies\n\nDebrief Lab 1\n\nContent Related to Lab 2\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2\n\nUsing External Resources"
   }
 ]
