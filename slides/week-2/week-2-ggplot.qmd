@@ -1171,11 +1171,14 @@ Developer!
 
 Both of you need to do the following:
 
+::: {.small}
 - Open the email you were sent (from me and / or Posit Cloud)
 - Click on the link to join your workspace
 - Log-in to Posit Cloud
-- Both team members should open the `PA2-ggplot.qmd` file
+- Open the PA 2: Using Data Visualization to Find the Penguins project
+- Open the `PA2-ggplot.qmd` file
 - Get started! 
+:::
 
 ## Submission
 
@@ -1184,7 +1187,7 @@ answer the five questions posed at the end of the document.
 
 - Each person will input the answers to these questions in the PA2 Canvas quiz.
 - The person who last occupied the role of Developer will download and submit
-the `PA-2.qmd` file for the group.
+the `PA-2.html` file for the group.
   + Only one submission per group!
 
 # Wrap-up
