@@ -16,15 +16,28 @@ library(tidyverse)
 
 Today we will...
 
-+ Comments from Week 1
-+ Peer Programming
++ Accessing Practice Activities
 + New Material
   + Tidy Data
   + Load External Data
   + Graphics (and `ggplot2`)
-+ [PA 2: Using Data Visualization to Find the Penguins](https://posit.cloud/spaces/546280/content/8635027)
++ PA 2: Using Data Visualization to Find the Penguins
+   + Peer Programming
 
 <!-- Be sure to update with new Posit Cloud assignment link! -->
+
+# Accessing Practice Activities
+
+We are using Posit Cloud for collaborative coding, so you and your partner 
+can type in the **same** document at the **same** time. 
+
+::: {.small}
+Take 3-minutes to: 
+
+- Open the email you were sent (from me and / or Posit Cloud)
+- Click on the link to join your workspace
+- Log-in to Posit Cloud
+:::
 
 # Grammar of Graphics
 
