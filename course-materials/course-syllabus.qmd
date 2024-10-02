@@ -392,7 +392,9 @@ Even inadvertent or unintentional misuse or appropriation of another's work (suc
 
 -   If you used Google, you are expected to "inform" me of any resources you used by **pasting the link to the resource in a code comment next to where you used that resource**.
 
--   If you used ChatGPT, you are expected to "inform" me of the assistance you received by (1) indicating somewhere in the problem that you used ChatGPT (e.g., below the question prompt or as a code comment), and (2) downloading and attaching the `.txt` file containing your **entire** conversation with ChatGPT.
+-   If you used ChatGPT, you are expected to "inform" me of the assistance you received by (1) indicating somewhere in the problem that you used ChatGPT (e.g., below the question prompt or as a code comment), and (2) pasting the link to your chat (using the Share button from ChatGPT) so I can see your **entire** conversation with ChatGPT.
+
+**ChatGPT cannot be used for group activities (e.g., Practice Activities), only individual assignments (e.g., Labs, Challenges).** 
 
 It is both good professional practice and academic integrity to cite any resources you used during your work. The first incident of failing to cite your resources, will result in a warning. The second incident of failing to cite your resources will result in a 0 on the assignment, meaning you will not be able to include **any** code from that Lab or Challenge in your Final Portfolio. You will also be reported to the Office of Student Rights and Responsibilities.
 
