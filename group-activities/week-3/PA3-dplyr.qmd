@@ -102,7 +102,7 @@ them. Narrow your data set down to only:
 
 ```{r}
 #| label:  select-vars
-colleges_clean <- colleges | >  
+colleges_clean1 <- colleges | >  
   select(INSTNM, CITY, STABBR, ZIP,
          ADM_RATE, SAT_AVG, UGDS,
          TUITIONFEE_IN, TUITIONFEE_OUT
@@ -114,7 +114,8 @@ colleges_clean <- colleges | >
 
 ```{r}
 #| label: filter-private-profit
-colleges_clean <- colleges_clean |> 
+
+colleges_clean2 <- colleges_clean |> 
   filter(CONTROL == 1, CONTROL == 2)
 ```
 
@@ -123,7 +124,7 @@ colleges_clean <- colleges_clean |>
 ```{r}
 #| label: mutate-numeric
 
-colleges_clean <- colleges_clean |> 
+colleges_clean3 <- colleges_clean |> 
   mutate(TUITIONFEE_IN  = numeric(TUITIONFEE_IN),
          TUITIONFEE_OUT = numeric(TUITIONFEE_OUT),
          SAT_AVG        = numeric(SAT_AVG),
@@ -138,7 +139,7 @@ colleges_clean <- colleges_clean |>
 ```{r}
 #| label: mutate-factor
 
-colleges_clean <- colleges_clean |>
+colleges_clean4 <- colleges_clean |>
   mutate(CONTROL = as.character(CONTROL),
          REGION  = as.character(REGION))
 ```
@@ -149,7 +150,7 @@ difference between out-of-state and in-state costs.
 ```{r}
 #| label: add-differences-between-in-state-out-of-state
 
-colleges_clean |> 
+colleges_clean5 |> 
     TUITION_DIFF = TUITIONFEE_OUT - TUITIONFEE_IN
 ```
 
@@ -159,7 +160,7 @@ amount of money made from tuition per year.
 ```{r}
 #| label: add-total-tuition
 
-colleges_clean <- colleges_clean |> 
+colleges_clean6 <- colleges_clean |> 
     select(TOTAL_IN = UGDS x TUITIONFEE_IN)
 ```
 
@@ -170,23 +171,16 @@ colleges_clean <- colleges_clean |>
 ```{r}
 #| label: drop-na
 
-colleges_clean <- colleges_clean |> 
+colleges_clean7 <- colleges_clean |> 
   drop.na()
 ```
 
-Lastly, notice that each of these steps started with
-
-```{r}
-#| eval: false
-
-colleges_clean <- colleges_clean |> ...
-```
-
-That is pretty redundant! Instead, we could perform all these tasks as one long
-"pipeline."
+At this point we've made seven different datasets, but notice each of these steps
+started with `colleges_clean <- colleges_clean |>`. That is pretty redundant! 
+Instead, we could have performed all these tasks as one long "pipeline."
 
 **Step 8:** Combine your (fixed) code chunks into a **single** code chunk that
-carries out all of the steps necessary to clean the data.
+carries out all of the steps necessary to clean the data. 
 
 *Think about coding efficiency -- you __should not__ have multiple calls to the __same__ function!*
 
@@ -194,6 +188,8 @@ carries out all of the steps necessary to clean the data.
 #| label: all-steps-one-pipeline
 # Code combining ALL of your previous steps into ONE pipeline
 
+colleges_clean <- colleges |>
+  
 ```
 
 # Part Two: Identify the Mystery College
@@ -222,8 +218,8 @@ Anheuser-Busch Clydesdales are a thing.
 
 6.  More than 1,000 undergraduates attend this college.
 
-7.  The total amount of money made from tuition per year for this college is
-**not less** than $50,000,000.
+7.  The total amount of money made from tuition per year for this college is 
+greater than or equal to $50,000,000.
 
 8.  Of the three options remaining at this step, Margaret will attend the
 college that has the lowest admission rate.

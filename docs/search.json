@@ -956,15 +956,15 @@
     "objectID": "slides/week-2/week-2-ggplot.html#tuesday-october-1",
     "href": "slides/week-2/week-2-ggplot.html#tuesday-october-1",
     "title": "Basics of Graphics",
-    "section": "Tuesday, October 1",
-    "text": "Tuesday, October 1\nToday we will…\n\nAccessing Practice Activities\nNew Material\n\nTidy Data\nLoad External Data\nGraphics (and ggplot2)\n\nPA 2: Using Data Visualization to Find the Penguins\n\nPeer Programming"
+    "section": "",
+    "text": "Today we will…\n\nAccessing Practice Activities\nNew Material\n\nTidy Data\nLoad External Data\nGraphics (and ggplot2)\n\nPA 2: Using Data Visualization to Find the Penguins\n\nPeer Programming"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#grammar-of-graphics-1",
     "href": "slides/week-2/week-2-ggplot.html#grammar-of-graphics-1",
     "title": "Basics of Graphics",
     "section": "Grammar of Graphics",
-    "text": "Grammar of Graphics\nThe Grammar of Graphics (GoG) is a principled way of specifying exactly how to create a particular graph from a given data set. It helps us to systematically design new graphs.\n\n\nThink of a graph or a data visualization as a mapping…\n…FROM variables in the data set (or statistics computed from the data)…\n…TO visual attributes (or “aesthetics”) of marks (or “geometric elements”) on the page/screen."
+    "text": "Grammar of Graphics\nThe Grammar of Graphics (GoG) is a principled way of specifying exactly how to create a particular graph from a given data set. It helps us to systematically design new graphs.\n. . .\n\nThink of a graph or a data visualization as a mapping…\n…FROM variables in the data set (or statistics computed from the data)…\n…TO visual attributes (or “aesthetics”) of marks (or “geometric elements”) on the page/screen."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#why-gog",
@@ -985,7 +985,7 @@
     "href": "slides/week-2/week-2-ggplot.html#how-to-build-a-graphic",
     "title": "Basics of Graphics",
     "section": "How to Build a Graphic",
-    "text": "How to Build a Graphic\nComplete this template to build a basic graphic:\n\nggplot(\n  data = &lt;DATA&gt;, \n  mapping = aes(&lt;MAPPINGS&gt;)\n  ) +\n  &lt;GEOM FUNCTION&gt;() + \n  any other arguments...\n\n\nNotice, every + adds another layer to our graphic.\n\n\nAlso notice that I’m using named arguments to make my code easier to read."
+    "text": "How to Build a Graphic\nComplete this template to build a basic graphic:\n\nggplot(\n  data = &lt;DATA&gt;, \n  mapping = aes(&lt;MAPPINGS&gt;)\n  ) +\n  &lt;GEOM FUNCTION&gt;() + \n  any other arguments...\n\n. . .\nNotice, every + adds another layer to our graphic.\n. . .\nAlso notice that I’m using named arguments to make my code easier to read."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#section",
@@ -999,7 +999,7 @@
     "href": "slides/week-2/week-2-ggplot.html#aesthetics",
     "title": "Basics of Graphics",
     "section": "Aesthetics",
-    "text": "Aesthetics\nWe map variables (columns) from the data to aesthetics on the graphic using the aes() function.\n\nWhat aesthetics can we set (see ggplot2 cheat sheet for more)?\n\n\n\n\nx, y\ncolor, fill\nlinetype\nsize\nshape"
+    "text": "Aesthetics\nWe map variables (columns) from the data to aesthetics on the graphic using the aes() function.\n. . .\nWhat aesthetics can we set (see ggplot2 cheat sheet for more)?\n\n\n\n\nx, y\ncolor, fill\nlinetype\nsize\nshape"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#aesthetics-1",
@@ -1027,28 +1027,28 @@
     "href": "slides/week-2/week-2-ggplot.html#geometric-objects",
     "title": "Basics of Graphics",
     "section": "Geometric Objects",
-    "text": "Geometric Objects\nWee use a geom_XXX() function to represent data points.\n\n\n\n\none variable\n\ngeom_density()\ngeom_dotplot()\ngeom_histogram()\ngeom_boxplot()\n\n\n\n\ntwo variable\n\ngeom_point()\ngeom_line()\ngeom_density_2d()\n\n\n\n\nthree variable\n\ngeom_contour()\ngeom_raster()\n\n\n\n\nThis is not an exhaustive list – see ggplot2 cheat sheet."
+    "text": "Geometric Objects\nWee use a geom_XXX() function to represent data points.\n. . .\n\n\n\none variable\n\ngeom_density()\ngeom_dotplot()\ngeom_histogram()\ngeom_boxplot()\n\n\n\n\ntwo variable\n\ngeom_point()\ngeom_line()\ngeom_density_2d()\n\n\n\n\nthree variable\n\ngeom_contour()\ngeom_raster()\n\n\n\n\n\nThis is not an exhaustive list – see ggplot2 cheat sheet."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#creating-a-graphic",
     "href": "slides/week-2/week-2-ggplot.html#creating-a-graphic",
     "title": "Basics of Graphics",
     "section": "Creating a Graphic",
-    "text": "Creating a Graphic\nTo create a specific type of graphic, we will combine aesthetics and geometric objects.\n\n\nLet’s try it!"
+    "text": "Creating a Graphic\nTo create a specific type of graphic, we will combine aesthetics and geometric objects.\n. . .\n\nLet’s try it!"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#section-1",
     "href": "slides/week-2/week-2-ggplot.html#section-1",
     "title": "Basics of Graphics",
     "section": "",
-    "text": "The GoalGame Planggplot\n\n\nStart with the TX housing data.\n\nMake a plot of  median house price  over  time  (including both  individual data points  and  a smoothed trend line), distinguishing between  different cities .\n\n\n\n\n\n\n\n\nCode\nggplot(data = sm_tx,\n       mapping = aes(x = date, \n                     y = median, \n                     color = city)\n       ) + \n  geom_point() + \n  geom_smooth(method = \"loess\") + \n  labs(x = \"Date\",\n       y = \"\",\n       color = \" \",\n       title = \"Changes in Median Home Price for Texas Metro Areas\") +\n  scale_y_continuous(labels = scales::label_dollar())"
+    "text": "The GoalGame Planggplot\n\n\nStart with the TX housing data.\n\nMake a plot of  median house price  over  time  (including both  individual data points  and  a smoothed trend line), distinguishing between  different cities .\n\n\n\n\n\n\n\n\nCode\nggplot(data = sm_tx,\n       mapping = aes(x = date, \n                     y = median, \n                     color = city)\n       ) + \n  geom_point() + \n  geom_smooth(method = \"loess\") + \n  labs(x = \"Date\",\n       y = \"\",\n       color = \" \",\n       title = \"Changes in Median Home Price for Texas Metro Areas\") +\n  scale_y_continuous(labels = scales::label_dollar())\n\n\n`geom_smooth()` using formula = 'y ~ x'"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#faceting",
     "href": "slides/week-2/week-2-ggplot.html#faceting",
     "title": "Basics of Graphics",
     "section": "Faceting",
-    "text": "Faceting\nExtracts subsets of data and places them in side-by-side plots.\n\n\nCode\nggplot(data = sm_tx,\n       mapping = aes(x = date, \n                     y = median)\n       ) + \n  geom_point() + \n  facet_grid(~city) +\n  geom_smooth(method = \"loess\") + \n  labs(x = \"Date\",\n       y = \"\",\n       color = \" \",\n       title = \"Changes in Median Home Price for Texas Metro Areas\") +\n  scale_y_continuous(labels = scales::label_dollar())"
+    "text": "Faceting\nExtracts subsets of data and places them in side-by-side plots.\n\n\nCode\nggplot(data = sm_tx,\n       mapping = aes(x = date, \n                     y = median)\n       ) + \n  geom_point() + \n  facet_grid(~city) +\n  geom_smooth(method = \"loess\") + \n  labs(x = \"Date\",\n       y = \"\",\n       color = \" \",\n       title = \"Changes in Median Home Price for Texas Metro Areas\") +\n  scale_y_continuous(labels = scales::label_dollar())\n\n\n`geom_smooth()` using formula = 'y ~ x'"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#faceting-1",
@@ -1062,14 +1062,14 @@
     "href": "slides/week-2/week-2-ggplot.html#statistical-transformation-stat",
     "title": "Basics of Graphics",
     "section": "Statistical Transformation: stat",
-    "text": "Statistical Transformation: stat\nA stat transforms an existing variable into a new variable to plot.\n\nidentity leaves the data as is.\ncount counts the number of observations.\nsummary allows you to specify a desired transformation function.\n\n\nSometimes these statistical transformations happen under the hood when we use a specific geom_XXX()."
+    "text": "Statistical Transformation: stat\nA stat transforms an existing variable into a new variable to plot.\n\nidentity leaves the data as is.\ncount counts the number of observations.\nsummary allows you to specify a desired transformation function.\n\n. . .\nSometimes these statistical transformations happen under the hood when we use a specific geom_XXX()."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#statistical-transformation-stat-1",
     "href": "slides/week-2/week-2-ggplot.html#statistical-transformation-stat-1",
     "title": "Basics of Graphics",
     "section": "Statistical Transformation: stat",
-    "text": "Statistical Transformation: stat\n\nstat_count()stat_summary()\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  stat_count(geom = \"bar\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"mean\") +\n  scale_y_continuous(limits = c(0, 45))\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"max\") +\n  scale_y_continuous(limits = c(0, 45))"
+    "text": "Statistical Transformation: stat\n\nstat_count()stat_summary()\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  stat_count(geom = \"bar\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"mean\") +\n  scale_y_continuous(limits = c(0, 45))\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"max\") +\n  scale_y_continuous(limits = c(0, 45))"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#position-adjustements",
@@ -1111,14 +1111,14 @@
     "href": "slides/week-2/week-2-ggplot.html#pair-programming-expectations",
     "title": "Basics of Graphics",
     "section": "Pair Programming Expectations",
-    "text": "Pair Programming Expectations\n\nDuring your collaboration, you and your partner will alternate between two roles:\n\n\n\n\nDeveloper\n\n\nReads prompt and ensures Coder understands what is being asked.\nTypes the code specified by the Coder into the Quarto document.       \nRuns the code provided by the Coder.\nWorks with Coder to debug the code. \nEvaluates the output.\n\nWorks with Coder to write code comments.\n\n\n\n\n\n\nCoder\n\n\nReads out instructions or prompts\nDirects the Developer what to type.\nTalks with Developer about their ideas. \nManages resources (e.g., cheatsheets, textbook). \nWorks with Developer to debug the code. \nWorks with Developer to write code comments."
+    "text": "Pair Programming Expectations\n\nDuring your collaboration, you and your partner will alternate between two roles:\n\n. . .\n\n\nDeveloper\n\n\nReads prompt and ensures Coder understands what is being asked.\nTypes the code specified by the Coder into the Quarto document.       \nRuns the code provided by the Coder.\nWorks with Coder to debug the code. \nEvaluates the output.\n\nWorks with Coder to write code comments.\n\n\n\n\n\n\nCoder\n\n\nReads out instructions or prompts\nDirects the Developer what to type.\nTalks with Developer about their ideas. \nManages resources (e.g., cheatsheets, textbook). \nWorks with Developer to debug the code. \nWorks with Developer to write code comments."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#section-2",
     "href": "slides/week-2/week-2-ggplot.html#section-2",
     "title": "Basics of Graphics",
     "section": "",
-    "text": "Group Norms\n\n\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nBe open minded.\nNo cross-talk with other groups.\nCommunicate with each other!"
+    "text": "Group Norms\n\n\n\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nBe open minded.\nNo cross-talk with other groups.\nCommunicate with each other!"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#ggplot2-resources",
@@ -1483,7 +1483,7 @@
     "href": "group-activities/week-3/PA3-dplyr.html#data-cleaning",
     "title": "PA 3: Identify the Mystery College 🏫",
     "section": "Data Cleaning",
-    "text": "Data Cleaning\nNow we will clean the data. Alas, each of the R chunks in this section will cause an error and / or do the desired task incorrectly. Even the chunks that run without error are not correct! You will need to find the mistake and correct it to complete the intended action.\nStep 1: There are too many variables in this data set. We don’t need all of them. Narrow your data set down to only:\n\nINSTNM name of the institution\nCITY city, STABBR state, and ZIP ZIP code of the institution\nADM_RATE admissions rate\nSAT_AVG average SAT score\nUGDS number of undergraduate students\nTUITIONFEE_IN in- and TUITIONFEE_OUT out-of-state tuition\nCONTROL Whether the school is public or private\nREGION region of the school.\n\n\ncolleges_clean &lt;- colleges | &gt;  \n  select(INSTNM, CITY, STABBR, ZIP,\n         ADM_RATE, SAT_AVG, UGDS,\n         TUITIONFEE_IN, TUITIONFEE_OUT\n         CONTROL, REGION) \n\nStep 2: Remove the schools that are for-profit (category 3), keeping public (category 1) and private schools (category 2).\n\ncolleges_clean &lt;- colleges_clean |&gt; \n  filter(CONTROL == 1, CONTROL == 2)\n\nStep 3: Adjust the appropriate variables to be numeric, using as.numeric().\n\ncolleges_clean &lt;- colleges_clean |&gt; \n  mutate(TUITIONFEE_IN  = numeric(TUITIONFEE_IN),\n         TUITIONFEE_OUT = numeric(TUITIONFEE_OUT),\n         SAT_AVG        = numeric(SAT_AVG),\n         UGDS           = numeric(UGDS),\n         ADM_RATE       = numeric(ADM_RATE)) \n\n\nStep 4: Adjust the appropriate variables to be factors, using as.factor().\n\ncolleges_clean &lt;- colleges_clean |&gt;\n  mutate(CONTROL = as.character(CONTROL),\n         REGION  = as.character(REGION))\n\nStep 5: Create a new variable called TUITION_DIFF which contains the difference between out-of-state and in-state costs.\n\ncolleges_clean |&gt; \n    TUITION_DIFF = TUITIONFEE_OUT - TUITIONFEE_IN\n\nStep 6: Create a new variable called TOTAL_IN which contains the total amount of money made from tuition per year.\n\ncolleges_clean &lt;- colleges_clean |&gt; \n    select(TOTAL_IN = UGDS x TUITIONFEE_IN)\n\n\nStep 7: Remove every row with missing data.\n\ncolleges_clean &lt;- colleges_clean |&gt; \n  drop.na()\n\nLastly, notice that each of these steps started with\n\ncolleges_clean &lt;- colleges_clean |&gt; ...\n\nThat is pretty redundant! Instead, we could perform all these tasks as one long “pipeline.”\nStep 8: Combine your (fixed) code chunks into a single code chunk that carries out all of the steps necessary to clean the data.\nThink about coding efficiency – you should not have multiple calls to the same function!\n\n# Code combining ALL of your previous steps into ONE pipeline"
+    "text": "Data Cleaning\nNow we will clean the data. Alas, each of the R chunks in this section will cause an error and / or do the desired task incorrectly. Even the chunks that run without error are not correct! You will need to find the mistake and correct it to complete the intended action.\nStep 1: There are too many variables in this data set. We don’t need all of them. Narrow your data set down to only:\n\nINSTNM name of the institution\nCITY city, STABBR state, and ZIP ZIP code of the institution\nADM_RATE admissions rate\nSAT_AVG average SAT score\nUGDS number of undergraduate students\nTUITIONFEE_IN in- and TUITIONFEE_OUT out-of-state tuition\nCONTROL Whether the school is public or private\nREGION region of the school.\n\n\ncolleges_clean1 &lt;- colleges | &gt;  \n  select(INSTNM, CITY, STABBR, ZIP,\n         ADM_RATE, SAT_AVG, UGDS,\n         TUITIONFEE_IN, TUITIONFEE_OUT\n         CONTROL, REGION) \n\nStep 2: Remove the schools that are for-profit (category 3), keeping public (category 1) and private schools (category 2).\n\ncolleges_clean2 &lt;- colleges_clean |&gt; \n  filter(CONTROL == 1, CONTROL == 2)\n\nStep 3: Adjust the appropriate variables to be numeric, using as.numeric().\n\ncolleges_clean3 &lt;- colleges_clean |&gt; \n  mutate(TUITIONFEE_IN  = numeric(TUITIONFEE_IN),\n         TUITIONFEE_OUT = numeric(TUITIONFEE_OUT),\n         SAT_AVG        = numeric(SAT_AVG),\n         UGDS           = numeric(UGDS),\n         ADM_RATE       = numeric(ADM_RATE)) \n\n\nStep 4: Adjust the appropriate variables to be factors, using as.factor().\n\ncolleges_clean4 &lt;- colleges_clean |&gt;\n  mutate(CONTROL = as.character(CONTROL),\n         REGION  = as.character(REGION))\n\nStep 5: Create a new variable called TUITION_DIFF which contains the difference between out-of-state and in-state costs.\n\ncolleges_clean5 |&gt; \n    TUITION_DIFF = TUITIONFEE_OUT - TUITIONFEE_IN\n\nStep 6: Create a new variable called TOTAL_IN which contains the total amount of money made from tuition per year.\n\ncolleges_clean6 &lt;- colleges_clean |&gt; \n    select(TOTAL_IN = UGDS x TUITIONFEE_IN)\n\n\nStep 7: Remove every row with missing data.\n\ncolleges_clean7 &lt;- colleges_clean |&gt; \n  drop.na()\n\nAt this point we’ve made seven different datasets, but notice each of these steps started with colleges_clean &lt;- colleges_clean |&gt;. That is pretty redundant! Instead, we could have performed all these tasks as one long “pipeline.”\nStep 8: Combine your (fixed) code chunks into a single code chunk that carries out all of the steps necessary to clean the data.\nThink about coding efficiency – you should not have multiple calls to the same function!\n\n# Code combining ALL of your previous steps into ONE pipeline\n\ncolleges_clean &lt;- colleges |&gt;"
   },
   {
     "objectID": "group-activities/week-1/data-cleaning-viz-steps.html#view-original-data",
@@ -3616,5 +3616,12 @@
       "Weekly materials",
       "Week 3 - dplyr"
     ]
+  },
+  {
+    "objectID": "slides/week-2/week-2-ggplot.html",
+    "href": "slides/week-2/week-2-ggplot.html",
+    "title": "Basics of Graphics",
+    "section": "",
+    "text": "Today we will…\n\nAccessing Practice Activities\nNew Material\n\nTidy Data\nLoad External Data\nGraphics (and ggplot2)\n\nPA 2: Using Data Visualization to Find the Penguins\n\nPeer Programming"
   }
 ]
