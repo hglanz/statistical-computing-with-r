@@ -3644,5 +3644,12 @@
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Multiple Categorical Variables",
     "text": "Multiple Categorical Variables\n\nColors & ShapesColors & Facets\n\n\n\n\n\nCode\nggplot(data = penguins) +\n    geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = island )) + \n    labs(title = \"Relashonship Between Bill Length and Bill Depth\", x = \"Bill Length (mm)\" , y = \"Bill Depth (mm)\",)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = bill_depth_mm, \n                     color = species)) +\n  geom_point() + \n  facet_wrap(~island) +\n  labs(x = \"Bill Length\",\n       y = \"\", \n       title = \"Changes in Bill Depth versus Length\")"
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html#did-you-notice-that-your-figures-were-not-included-in-the-html-your-group-submitted-to-canvas",
+    "href": "slides/week-2/week-2-import.html#did-you-notice-that-your-figures-were-not-included-in-the-html-your-group-submitted-to-canvas",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "Did you notice that your figures were not included in the HTML your group submitted to Canvas?",
+    "text": "Did you notice that your figures were not included in the HTML your group submitted to Canvas?\n\n\nBy default, Quarto does not embed plots in the HTML document. Instead, it creates a “PA-2-files” folder which stores all your plots.\n\n\n\n\nSo, when you submit your HTML file, your plots are not included! How do we fix this????\n\n\n\n\nAdd an embed-resources: true line to your YAML (at the beginning of your document)!\n---\ntitle: \"PA 2: Using Data Visualization to Find the Penguins\"\nauthor: \"Dr. T!\"\nformat: html\neditor: source\nembed-resources: true\n---"
   }
 ]

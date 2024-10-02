@@ -488,6 +488,31 @@
 </li>
 </ul>
 </div>
+</section>
+<section id="did-you-notice-that-your-figures-were-not-included-in-the-html-your-group-submitted-to-canvas" class="slide level2">
+<h2>Did you notice that your figures were not included in the HTML your group submitted to Canvas?</h2>
+<div class="fragment">
+<div class="small">
+<p>By default, Quarto <strong>does not</strong> embed plots in the HTML document. Instead, it creates a “PA-2-files” folder which stores all your plots.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="small">
+<p>So, when you submit your HTML file, your plots are not included! How do we fix this????</p>
+</div>
+</div>
+<div class="fragment">
+<div class="small">
+<p>Add an <code>embed-resources: true</code> line to your YAML (at the beginning of your document)!</p>
+<pre><code>---
+title: "PA 2: Using Data Visualization to Find the Penguins"
+author: "Dr. T!"
+format: html
+editor: source
+embed-resources: true
+---</code></pre>
+</div>
+</div>
 </section></section>
 <section>
 <section id="lab-1" class="title-slide slide level1 center">
@@ -689,22 +714,22 @@
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> bb_wide, </span>
-<span id="cb3-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Team)</span>
-<span id="cb3-3"><a></a>       ) <span class="sc">+</span></span>
-<span id="cb3-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Points, </span>
-<span id="cb3-5"><a></a>                           <span class="at">color =</span> <span class="st">"Points"</span>), </span>
-<span id="cb3-6"><a></a>             <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb3-7"><a></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Assists, </span>
-<span id="cb3-8"><a></a>                           <span class="at">color =</span> <span class="st">"Assists"</span>), </span>
-<span id="cb3-9"><a></a>             <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb3-10"><a></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Rebounds, </span>
-<span id="cb3-11"><a></a>                           <span class="at">color =</span> <span class="st">"Rebounds"</span>), </span>
-<span id="cb3-12"><a></a>             <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span> </span>
-<span id="cb3-13"><a></a>  <span class="fu">scale_colour_manual</span>(</span>
-<span id="cb3-14"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkred"</span>, <span class="st">"steelblue"</span>, <span class="st">"forestgreen"</span>)</span>
-<span id="cb3-15"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb3-16"><a></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Statistic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> bb_wide, </span>
+<span id="cb4-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Team)</span>
+<span id="cb4-3"><a></a>       ) <span class="sc">+</span></span>
+<span id="cb4-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Points, </span>
+<span id="cb4-5"><a></a>                           <span class="at">color =</span> <span class="st">"Points"</span>), </span>
+<span id="cb4-6"><a></a>             <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb4-7"><a></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Assists, </span>
+<span id="cb4-8"><a></a>                           <span class="at">color =</span> <span class="st">"Assists"</span>), </span>
+<span id="cb4-9"><a></a>             <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb4-10"><a></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Rebounds, </span>
+<span id="cb4-11"><a></a>                           <span class="at">color =</span> <span class="st">"Rebounds"</span>), </span>
+<span id="cb4-12"><a></a>             <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span> </span>
+<span id="cb4-13"><a></a>  <span class="fu">scale_colour_manual</span>(</span>
+<span id="cb4-14"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkred"</span>, <span class="st">"steelblue"</span>, <span class="st">"forestgreen"</span>)</span>
+<span id="cb4-15"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb4-16"><a></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Statistic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -721,16 +746,16 @@
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> bb_long, </span>
-<span id="cb4-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Team, </span>
-<span id="cb4-3"><a></a>                     <span class="at">y =</span> Value, </span>
-<span id="cb4-4"><a></a>                     <span class="at">color =</span> Statistic)</span>
-<span id="cb4-5"><a></a>       ) <span class="sc">+</span></span>
-<span id="cb4-6"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span> </span>
-<span id="cb4-7"><a></a>  <span class="fu">scale_colour_manual</span>(</span>
-<span id="cb4-8"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkred"</span>, <span class="st">"steelblue"</span>, <span class="st">"forestgreen"</span>)</span>
-<span id="cb4-9"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb4-10"><a></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Statistic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> bb_long, </span>
+<span id="cb5-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Team, </span>
+<span id="cb5-3"><a></a>                     <span class="at">y =</span> Value, </span>
+<span id="cb5-4"><a></a>                     <span class="at">color =</span> Statistic)</span>
+<span id="cb5-5"><a></a>       ) <span class="sc">+</span></span>
+<span id="cb5-6"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span> </span>
+<span id="cb5-7"><a></a>  <span class="fu">scale_colour_manual</span>(</span>
+<span id="cb5-8"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkred"</span>, <span class="st">"steelblue"</span>, <span class="st">"forestgreen"</span>)</span>
+<span id="cb5-9"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb5-10"><a></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Statistic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">

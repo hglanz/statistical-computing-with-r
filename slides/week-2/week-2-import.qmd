@@ -87,6 +87,40 @@ ggplot(data = penguins,
 - Make sure you remove the `messages` and `warnings` from your final document!  
 :::
 
+## Did you notice that your figures were not included in the HTML your group submitted to Canvas?
+
+. . .
+
+::: {.small}
+By default, Quarto **does not** embed plots in the HTML document. Instead, it
+creates a "PA-2-files" folder which stores all your plots. 
+:::
+
+. . .
+
+::: {.small}
+So, when you submit your HTML file, your plots are not included! How do we fix
+this????
+:::
+
+. . .
+
+::: {.small}
+Add an `embed-resources: true` line to your YAML (at the beginning of your 
+document)!
+
+```
+---
+title: "PA 2: Using Data Visualization to Find the Penguins"
+author: "Dr. T!"
+format: html
+editor: source
+embed-resources: true
+---
+```
+
+:::
+
 # Lab 1
 
 ## Grading / Feedback
