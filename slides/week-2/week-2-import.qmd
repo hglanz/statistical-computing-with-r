@@ -12,6 +12,7 @@ editor: source
 #| label: setup
 
 library(tidyverse)
+library(palmerpenguins)
 ```
 
 ## Thursday, October 1
@@ -20,7 +21,6 @@ Today we will...
 
 ::: {.small}
 + Debrief PA 1
-  + Compare & Contrast Strategies
 + Debrief Lab 1 
   + Content Related to Lab 2
 + New Material
@@ -35,9 +35,57 @@ Today we will...
 
 # PA 1: Using Data Visualization to Find the Penguins
 
-## Strategies Used 
+## Multiple Categorical Variables
 
-<!-- Fill in based on group Quarto submissions -->
+::: panel-tabset
+
+## Colors & Shapes
+
+::: {.small}
+```{r}
+#| code-fold: true
+#| echo: true
+#| fig-height: 4
+#| fig-align: center
+#| label: student-code-step-8-shapes
+
+ggplot(data = penguins) +
+    geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = island )) + 
+    labs(title = "Relashonship Between Bill Length and Bill Depth", x = "Bill Length (mm)" , y = "Bill Depth (mm)",)
+```
+:::
+
+## Colors & Facets
+
+::: {.small}
+```{r}
+#| code-fold: true
+#| echo: true
+#| fig-height: 4
+#| fig-align: center
+#| label: student-code-step-8-facets
+
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = bill_depth_mm, 
+                     color = species)) +
+  geom_point() + 
+  facet_wrap(~island) +
+  labs(x = "Bill Length",
+       y = "", 
+       title = "Changes in Bill Depth versus Length")
+```
+:::
+:::
+
+## Somethings I also noticed...
+
+::: {.incremental}
+- Code chunk options need to have a space before the option
+(`#| label:` not `#|label:`).
+- Make sure your code is visible (`echo: true`)!
+- Make sure you remove the `messages` and `warnings` from your final document!  
+:::
 
 # Lab 1
 

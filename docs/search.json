@@ -2541,7 +2541,7 @@
     "href": "slides/week-2/week-2-import.html#thursday-october-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Thursday, October 1",
-    "text": "Thursday, October 1\nToday we will…\n\n\nDebrief PA 1\n\nCompare & Contrast Strategies\n\nDebrief Lab 1\n\nContent Related to Lab 2\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2\n\nUsing External Resources"
+    "text": "Thursday, October 1\nToday we will…\n\n\nDebrief PA 1\nDebrief Lab 1\n\nContent Related to Lab 2\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2\n\nUsing External Resources"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#strategies-used",
@@ -2604,7 +2604,7 @@
     "href": "slides/week-2/week-2-import.html#common-types-of-data-files",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Common Types of Data Files",
-    "text": "Common Types of Data Files\nLook at the file extension for the type of data file.\n\n\n\n.csv : “comma-separated values”\n\nName, Age\nBob, 49\nJoe, 40\n\n\n\n\n.xls, .xlsx: Microsoft Excel spreadsheet\n\nCommon approach: save as .csv\nNicer approach: use the readxl package\n\n\n\n.txt: plain text\n\nCould have any sort of delimiter…\nNeed to let R know what to look for!"
+    "text": "Common Types of Data Files\nLook at the file extension for the type of data file.\n\n\n\n.csv : “comma-separated values”\n\nName, Age\nBob, 49\nJoe, 40\n\n\n\n.xls, .xlsx: Microsoft Excel spreadsheet\n\nCommon approach: save as .csv\nNicer approach: use the readxl package\n\n\n\n.txt: plain text\n\nCould have any sort of delimiter…\nNeed to let R know what to look for!"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#common-types-of-data-files-1",
@@ -3623,5 +3623,26 @@
     "title": "Basics of Graphics",
     "section": "",
     "text": "Today we will…\n\nAccessing Practice Activities\nNew Material\n\nTidy Data\nLoad External Data\nGraphics (and ggplot2)\n\nPA 2: Using Data Visualization to Find the Penguins\n\nPeer Programming"
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html#including-multiple-categorical-variables",
+    "href": "slides/week-2/week-2-import.html#including-multiple-categorical-variables",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "Including Multiple Categorical Variables",
+    "text": "Including Multiple Categorical Variables\n\nColors & ShapesColors & Facets\n\n\n\n\nCode\nggplot(data = penguins) +\n    geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = island )) + \n    labs(title = \"Relashonship Between Bill Length and Bill Depth\", x = \"Bill Length (mm)\" , y = \"Bill Depth (mm)\",)\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = bill_depth_mm, \n                     color = species)) +\n  geom_point() + \n  facet_wrap(~island) +\n  labs(x = \"Bill Length\",\n       y = \"\", \n       title = \"Changes in Bill Depth versus Length\")\n\n\n\n\n\n\n\n\n\n\n\n\n:::"
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html#somethings-i-also-noticed",
+    "href": "slides/week-2/week-2-import.html#somethings-i-also-noticed",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "Somethings I also noticed…",
+    "text": "Somethings I also noticed…\n\n\nCode chunk options need to have a space before the option (#| label: not #|label:).\nMake sure your code is visible (echo: true)!\nMake sure you remove the messages and warnings from your final document!"
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html#multiple-categorical-variables",
+    "href": "slides/week-2/week-2-import.html#multiple-categorical-variables",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "Multiple Categorical Variables",
+    "text": "Multiple Categorical Variables\n\nColors & ShapesColors & Facets\n\n\n\n\n\nCode\nggplot(data = penguins) +\n    geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = island )) + \n    labs(title = \"Relashonship Between Bill Length and Bill Depth\", x = \"Bill Length (mm)\" , y = \"Bill Depth (mm)\",)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = bill_depth_mm, \n                     color = species)) +\n  geom_point() + \n  facet_wrap(~island) +\n  labs(x = \"Bill Length\",\n       y = \"\", \n       title = \"Changes in Bill Depth versus Length\")"
   }
 ]
