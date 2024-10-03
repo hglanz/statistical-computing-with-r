@@ -525,7 +525,7 @@ ggplot(data = sm_tx,
                      y = median)
        ) + 
   geom_point() + 
-  facet_grid(~city) +
+  facet_wrap(~city) +
   geom_smooth(method = "loess") + 
   labs(x = "Date",
        y = "",

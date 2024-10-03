@@ -1027,7 +1027,7 @@
     "href": "slides/week-2/week-2-ggplot.html#geometric-objects",
     "title": "Basics of Graphics",
     "section": "Geometric Objects",
-    "text": "Geometric Objects\nWee use a geom_XXX() function to represent data points.\n\n\n\n\none variable\n\ngeom_density()\ngeom_dotplot()\ngeom_histogram()\ngeom_boxplot()\n\n\n\n\ntwo variable\n\ngeom_point()\ngeom_line()\ngeom_density_2d()\n\n\n\n\nthree variable\n\ngeom_contour()\ngeom_raster()\n\n\n\n\n\nThis is not an exhaustive list – see ggplot2 cheat sheet."
+    "text": "Geometric Objects\nWee use a geom_XXX() function to represent data points.\n\n\n\n\none variable\n\ngeom_density()\ngeom_dotplot()\ngeom_histogram()\ngeom_boxplot()\n\n\n\n\ntwo variable\n\ngeom_point()\ngeom_line()\ngeom_density_2d()\n\n\n\n\nthree variable\n\ngeom_contour()\ngeom_raster()\n\n\n\n\nThis is not an exhaustive list – see ggplot2 cheat sheet."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#creating-a-graphic",
@@ -1048,7 +1048,7 @@
     "href": "slides/week-2/week-2-ggplot.html#faceting",
     "title": "Basics of Graphics",
     "section": "Faceting",
-    "text": "Faceting\nExtracts subsets of data and places them in side-by-side plots.\n\n\nCode\nggplot(data = sm_tx,\n       mapping = aes(x = date, \n                     y = median)\n       ) + \n  geom_point() + \n  facet_grid(~city) +\n  geom_smooth(method = \"loess\") + \n  labs(x = \"Date\",\n       y = \"\",\n       color = \" \",\n       title = \"Changes in Median Home Price for Texas Metro Areas\") +\n  scale_y_continuous(labels = scales::label_dollar())"
+    "text": "Faceting\nExtracts subsets of data and places them in side-by-side plots.\n\n\nCode\nggplot(data = sm_tx,\n       mapping = aes(x = date, \n                     y = median)\n       ) + \n  geom_point() + \n  facet_wrap(~city) +\n  geom_smooth(method = \"loess\") + \n  labs(x = \"Date\",\n       y = \"\",\n       color = \" \",\n       title = \"Changes in Median Home Price for Texas Metro Areas\") +\n  scale_y_continuous(labels = scales::label_dollar())"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#faceting-1",
@@ -1069,7 +1069,7 @@
     "href": "slides/week-2/week-2-ggplot.html#statistical-transformation-stat-1",
     "title": "Basics of Graphics",
     "section": "Statistical Transformation: stat",
-    "text": "Statistical Transformation: stat\n\nstat_count()stat_summary()\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  stat_count(geom = \"bar\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"mean\") +\n  scale_y_continuous(limits = c(0, 45))\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"max\") +\n  scale_y_continuous(limits = c(0, 45))"
+    "text": "Statistical Transformation: stat\n\nstat_count()stat_summary()\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  stat_count(geom = \"bar\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"mean\") +\n  scale_y_continuous(limits = c(0, 45))\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"max\") +\n  scale_y_continuous(limits = c(0, 45))"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#position-adjustements",
@@ -1980,7 +1980,7 @@
     "href": "group-activities/week-3/PA3-task-card.html#group-norms",
     "title": "PA 3 Task Card – Finding Margaret’s College",
     "section": "Group Norms",
-    "text": "Group Norms\nRemember, your group is expected to adhere to the following norms:\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nNo cross-talk with other groups."
+    "text": "Group Norms\nRemember, your group is expected to adhere to the following norms:\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nBe open minded.\nNo cross-talk with other groups.\nCommunicate with each other!"
   },
   {
     "objectID": "group-activities/week-3/PA3-task-card.html#dealing-with-errors",
@@ -2001,7 +2001,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nExpert Designer Group Warm-up\nPA 2 Instructions\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nPA3 Instructions\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\n\nPA4 Instructions\n\n\n\n\n\nThurs, 10/17\n\n\nPA4 Due by 12pm\nLab 4 Instructions\nChallenge 4 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\n\n\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\n\nPA5 Due by 12pm\nLab 5 Instructions\nChallenge 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 10/31\nPortfolio Party\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n\n\n\n\n\n\n\nThurs, 11/7\n\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 Instructions\nChallenge 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\n\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\n\n\nPA4 Due by 12pm\nLab 4 Instructions\nChallenge 4 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\n\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\n\nPA5 Due by 12pm\nLab 5 Instructions\nChallenge 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 10/31\nPortfolio Party\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n\n\n\n\n\n\n\nThurs, 11/7\n\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 Instructions\nChallenge 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -2541,7 +2541,7 @@
     "href": "slides/week-2/week-2-import.html#thursday-october-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Thursday, October 1",
-    "text": "Thursday, October 1\nToday we will…\n\n\nDebrief PA 1\n\nCompare & Contrast Strategies\n\nDebrief Lab 1\n\nContent Related to Lab 2\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2\n\nUsing External Resources"
+    "text": "Thursday, October 1\nToday we will…\n\n\nDebrief PA 1\nDebrief Lab 1\n\nContent Related to Lab 2\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2\n\nUsing External Resources"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#strategies-used",
@@ -2604,7 +2604,7 @@
     "href": "slides/week-2/week-2-import.html#common-types-of-data-files",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Common Types of Data Files",
-    "text": "Common Types of Data Files\nLook at the file extension for the type of data file.\n\n\n\n.csv : “comma-separated values”\n\nName, Age\nBob, 49\nJoe, 40\n\n\n\n\n.xls, .xlsx: Microsoft Excel spreadsheet\n\nCommon approach: save as .csv\nNicer approach: use the readxl package\n\n\n\n.txt: plain text\n\nCould have any sort of delimiter…\nNeed to let R know what to look for!"
+    "text": "Common Types of Data Files\nLook at the file extension for the type of data file.\n\n\n\n.csv : “comma-separated values”\n\nName, Age\nBob, 49\nJoe, 40\n\n\n\n.xls, .xlsx: Microsoft Excel spreadsheet\n\nCommon approach: save as .csv\nNicer approach: use the readxl package\n\n\n\n.txt: plain text\n\nCould have any sort of delimiter…\nNeed to let R know what to look for!"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#common-types-of-data-files-1",
@@ -3623,5 +3623,61 @@
     "title": "Basics of Graphics",
     "section": "",
     "text": "Today we will…\n\nAccessing Practice Activities\nNew Material\n\nTidy Data\nLoad External Data\nGraphics (and ggplot2)\n\nPA 2: Using Data Visualization to Find the Penguins\n\nPeer Programming"
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html#including-multiple-categorical-variables",
+    "href": "slides/week-2/week-2-import.html#including-multiple-categorical-variables",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "Including Multiple Categorical Variables",
+    "text": "Including Multiple Categorical Variables\n\nColors & ShapesColors & Facets\n\n\n\n\nCode\nggplot(data = penguins) +\n    geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = island )) + \n    labs(title = \"Relashonship Between Bill Length and Bill Depth\", x = \"Bill Length (mm)\" , y = \"Bill Depth (mm)\",)\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = bill_depth_mm, \n                     color = species)) +\n  geom_point() + \n  facet_wrap(~island) +\n  labs(x = \"Bill Length\",\n       y = \"\", \n       title = \"Changes in Bill Depth versus Length\")\n\n\n\n\n\n\n\n\n\n\n\n\n:::"
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html#somethings-i-also-noticed",
+    "href": "slides/week-2/week-2-import.html#somethings-i-also-noticed",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "Somethings I also noticed…",
+    "text": "Somethings I also noticed…\n\n\nCode chunk options need to have a space before the option (#| label: not #|label:).\nMake sure your code is visible (echo: true)!\nMake sure you remove the messages and warnings from your final document!"
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html#multiple-categorical-variables",
+    "href": "slides/week-2/week-2-import.html#multiple-categorical-variables",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "Multiple Categorical Variables",
+    "text": "Multiple Categorical Variables\n\nColors & ShapesColors & Facets\n\n\n\n\n\nCode\nggplot(data = penguins) +\n    geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = island )) + \n    labs(title = \"Relashonship Between Bill Length and Bill Depth\", x = \"Bill Length (mm)\" , y = \"Bill Depth (mm)\",)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = bill_depth_mm, \n                     color = species)) +\n  geom_point() + \n  facet_wrap(~island) +\n  labs(x = \"Bill Length\",\n       y = \"\", \n       title = \"Changes in Bill Depth versus Length\")"
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html#did-you-notice-that-your-figures-were-not-included-in-the-html-your-group-submitted-to-canvas",
+    "href": "slides/week-2/week-2-import.html#did-you-notice-that-your-figures-were-not-included-in-the-html-your-group-submitted-to-canvas",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "Did you notice that your figures were not included in the HTML your group submitted to Canvas?",
+    "text": "Did you notice that your figures were not included in the HTML your group submitted to Canvas?\n\n\nBy default, Quarto does not embed plots in the HTML document. Instead, it creates a “PA-2-files” folder which stores all your plots.\n\n\n\n\nSo, when you submit your HTML file, your plots are not included! How do we fix this????\n\n\n\n\nAdd an embed-resources: true line to your YAML (at the beginning of your document)!\n---\ntitle: \"PA 2: Using Data Visualization to Find the Penguins\"\nauthor: \"Dr. T!\"\nformat: html\neditor: source\nembed-resources: true\n---"
+  },
+  {
+    "objectID": "group-activities/week-4/PA-4-task-card.html",
+    "href": "group-activities/week-4/PA-4-task-card.html",
+    "title": "PA 4 Task Card – Military Spending",
+    "section": "",
+    "text": "Today you will use the readxl and tidyr packages to clean some data.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to solve this puzzle, you will need to use the skills of each member of your group."
+  },
+  {
+    "objectID": "group-activities/week-4/PA-4-task-card.html#group-roles",
+    "href": "group-activities/week-4/PA-4-task-card.html#group-roles",
+    "title": "PA 4 Task Card – Military Spending",
+    "section": "Group Roles",
+    "text": "Group Roles\nWhen you are the Developer, you will type into the Quarto document in RStudio. However, you do not type your own ideas. Instead, you type what the Coder tells you to type. You are permitted to ask the Coder clarifying questions, and, if both of you have a question, you are permitted to ask the professor. You are expected to run the code provided by the Coder and, if necessary, to work with the Coder to debug the code. Once the code runs, you are expected to collaborate with the Coder to write code comments that describe the actions taken by your code.\nWhen you are the Coder, you are responsible for reading the instructions / prompts and directing the Developer what to type in the Quarto document. You are responsible for managing the resources your group has available to you (e.g., cheatsheet, textbook). If necessary, you should work with the Developer to debug the code you specified. Once the code runs, you are expected to collaborate with the Developer to write code comments that describe the actions taken by your code."
+  },
+  {
+    "objectID": "group-activities/week-4/PA-4-task-card.html#group-norms",
+    "href": "group-activities/week-4/PA-4-task-card.html#group-norms",
+    "title": "PA 4 Task Card – Military Spending",
+    "section": "Group Norms",
+    "text": "Group Norms\nRemember, your group is expected to adhere to the following norms:\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nBe open minded.\nNo cross-talk with other groups.\nCommunicate with each other!"
+  },
+  {
+    "objectID": "group-activities/week-4/PA-4-task-card.html#code-formatting",
+    "href": "group-activities/week-4/PA-4-task-card.html#code-formatting",
+    "title": "PA 4 Task Card – Military Spending",
+    "section": "Code Formatting",
+    "text": "Code Formatting\nDon’t forget, writing “tidy” and “well documented” code are two of the learning targets for this course. As such, I would strongly encourage you to use every opportunity to practice these skills.\nAs you are writing code for this assignment, make sure your code follows the tidyverse style guide for dplyr code. Specifically, your code should:\n\nuse whitespace liberally\n\nbefore & after every = sign\nafter every ,\nbefore every |&gt;\n\nuse new lines liberally\n\nafter every |&gt;\nafter , when needed (if code is more than 80 characters in length)"
   }
 ]

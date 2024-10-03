@@ -1,6 +1,7 @@
 ---
 title: "PA 3 Task Card -- Finding Margaret's College"
 editor: source
+format: typst
 ---
 
 Today you will use the `dplyr` package to clean some data. We will then use that
@@ -36,9 +37,11 @@ Remember, your group is expected to adhere to the following norms:
 
 1.  Think and work together. Do not divide the work.
 2.  You are smarter together.
-3.  No cross-talk with other groups.
+3.  Be open minded. 
+4.  No cross-talk with other groups.
+5.  Communicate with each other! 
 
-<!-- Add more norms from collaborative list -->
+\newpage
 
 ## Dealing with Errors
 
@@ -71,6 +74,7 @@ saved!
 -   If you created or updated a data frame, make sure your edits did what you
 hoped. Use the *Environment* or the `head()` function to investigate your
 changes.
+
 
 ## Code Formatting
 
