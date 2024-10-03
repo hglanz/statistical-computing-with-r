@@ -24,3 +24,8 @@
 <!-- 11. Navigate (or create) a "Lab 2" folder, included in your Week 2 folder in your STAT 331 folder. Once you get there, click "Open". -->
 
 <!-- 12. Click "Create Project". -->
+
+
+# Use this to clone
+
+create_from_github(repo_spec = "https://github.com/Statistical-Computing-with-R/lab-2-atheobold.git", destdir = "/Users/allisontheobold/Desktop", fork = FALSE, rstudio = TRUE, open = TRUE, protocol = "https")
