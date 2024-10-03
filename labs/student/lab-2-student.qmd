@@ -4,6 +4,9 @@ author: "Your name here!"
 format: html
 editor: source
 embed-resources: true
+execute: 
+  eval: false
+  echo: fenced
 ---
 
 # Part 1: GitHub Workflow
@@ -253,3 +256,16 @@ summary(species_mod)
 ```
 
 **18. Based on the results of the ANOVA F-test, draw a conclusion in context of the hypotheses. Make sure to cite appropriate output from above.**
+
+
+# Lab 2 Submission
+
+For Lab 2 you will submit **only** your HTML file. Your HTML file is required to have the following specifications in the YAML options (at the top of your document):
+
+-   have the plots embedded (`embed-resources: true`)
+-   include your source code (`code-tools: true`)
+-   include all your code and output (`echo: true`)
+
+**If any of the options are not included, your Lab 2 or Challenge 2 assignment will receive an "Incomplete" and you will be required to submit a revision.**
+
+In addition, your document should not have any warnings or messages output in your HTML document. **If your HTML contains warnings or messages, you will receive an "Incomplete" for document formatting and you will be required to submit a revision.**
