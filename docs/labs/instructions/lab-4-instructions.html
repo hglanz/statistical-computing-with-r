@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Instructions">
 
-<title>Introduction to Statistical Computing in R - Statistical Computing in R</title>
+<title>Introduction to Statistical Computing in R - Lab 4: Childcare Costs in California</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +21,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./course-materials/computing-access.html" rel="next">
-<link href="./course-materials/course-team.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,6 +103,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -82,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-materials/course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 4: Childcare Costs in California</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -96,8 +158,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/r-flowers.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/r-flowers.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-331-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
@@ -115,52 +177,52 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-materials/course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-materials/course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-materials/course-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-team.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-materials/course-team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Teaching team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/computing-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-materials/computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course_resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course-materials/course_resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Resources</span></a>
   </div>
 </li>
@@ -177,43 +239,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-0-discord.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-0-discord.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 0 - Course Set-up</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-1-r-rstudio.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-1-r-rstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1, Part 1 - R &amp; RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-1-quarto.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-1-quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1, Part 2 - Quarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-1-version-control.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-1-version-control.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1, Part 3 - Version Control</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-2-ggplot.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-2-ggplot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2, Part 1 - ggplot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-2-projects-data-import.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-2-projects-data-import.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2, Part 2 - Data Import</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-3-dplyr.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-3-dplyr.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 3 - dplyr</span></a>
   </div>
 </li>
@@ -230,13 +292,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/lab-1-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../labs/instructions/lab-1-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/lab-2-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../labs/instructions/lab-2-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 2</span></a>
   </div>
 </li>
@@ -253,7 +315,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./portfolio/portfolio-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../portfolio/portfolio-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Portfolio Instructions</span></a>
   </div>
 </li>
@@ -265,20 +327,35 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link active" data-scroll-target="#the-data">The Data</a></li>
+  <li><a href="#california-childcare-costs" id="toc-california-childcare-costs" class="nav-link" data-scroll-target="#california-childcare-costs">California Childcare Costs</a></li>
+  <li><a href="#median-household-income-vs.-childcare-costs-for-infants" id="toc-median-household-income-vs.-childcare-costs-for-infants" class="nav-link" data-scroll-target="#median-household-income-vs.-childcare-costs-for-infants">Median Household Income vs.&nbsp;Childcare Costs for Infants</a></li>
+  <li><a href="#challenge-4-open-ended-analysis" id="toc-challenge-4-open-ended-analysis" class="nav-link" data-scroll-target="#challenge-4-open-ended-analysis">Challenge 4: Open-Ended Analysis</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-331-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-materials/course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Statistical Computing in R</h1>
+<h1 class="title">Lab 4: Childcare Costs in California</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Instructions </p>
+          </div>
+  </div>
     
   
     
@@ -289,344 +366,167 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.</p>
-<!-- TODO: Switch to spreadsheet for content (like Mine and Maria do) -->
-<table class="table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 12%">
-<col style="width: 23%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Date</th>
-<th>Topic &amp; Preview Activities</th>
-<th>Lecture Slides</th>
-<th>Practice Activity</th>
-<th>Lab &amp; Challenge</th>
-<th>Portfolio</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>Mon, 9/23</td>
-<td><a href="./weeks/week-0-discord.html" title="Course Set-up Instructions">Course Set-up</a></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>Tues, 9/24</td>
-<td><p><a href="./weeks/week-1-r-rstudio.html">Intro to R &amp; RStudio</a></p>
-<p><a href="./weeks/week-1-quarto.html">Intro to Quarto</a></p></td>
-<td><a href="./slides/week-1/week-1-intro-R.html" title="Welcome to STAT 331 &amp; Intro to R">Welcome to STAT 331 &amp; Intro to R</a></td>
-<td><p><a href="./group-activities/week-1/broken-circles.html" title="Broken Circles Group Warm-up">Broken Circles Group Warm-up</a></p>
-<p><a href="./group-activities/pair-programming-norms.html" title="Creating Pair Programming Norms">Creating Pair Programming Norms</a></p>
-<p><a href="./group-activities/week-1/data-cleaning-viz-steps.html" title="Data Cleaning, Visualization Puzzle">Data Cleaning, Visualization Puzzle</a></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 9/26</td>
-<td><a href="./weeks/week-1-version-control.html">Intro to Version Control</a></td>
-<td><a href="./slides/week-1/week-1-intro-version-control.html" title="Intro to Quarto &amp; Version Control">Intro to Quarto &amp; Version Control</a></td>
-<td></td>
-<td><p><a href="./labs/instructions/lab-1-instructions.html">Lab 1 &amp; Challenge 1 Instructions</a></p>
-<p><a href="https://classroom.github.com/a/j-bckA7U" title="Lab 1 &amp; Challenge 1 Assignment on GitHub Classroom">Link to Assignment on GitHub Classroom</a> (due 9/29)</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Tuesday, 10/1</td>
-<td><p><a href="./weeks/week-2-ggplot.html" title="Data Visualization with ggplot2">Data Visualization with ggplot2</a></p>
-<p><a href="./weeks/week-2-projects-data-import.html" title="Data Import &amp; R Projects">Data Import &amp; R Projects</a></p></td>
-<td><a href="./slides/week-2/week-2-ggplot.html" title="Basics of Graphics">Basics of Graphics</a></td>
-<td>Look for email from Posit Cloud to access PA2</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 10/3</td>
-<td></td>
-<td><a href="./slides/week-2/week-2-import.html" title="Tidy Data, Importing Data &amp; More Advanced Graphics">Tidy Data, Importing Data &amp; More Advanced Graphics</a></td>
-<td>PA 2 Due by 12pm</td>
-<td><p><a href="./labs/instructions/lab-2-instructions.html" title="Lab 2 Instructions">Lab 2 Instructions</a></p>
-<p><a href="./labs/instructions/challenge-2-instructions.html" title="Challenge 2 Instructions">Challenge 2 Instructions</a></p>
-<p><a href="https://classroom.github.com/a/4e-4Et4D" title="Lab 2 &amp; Challenge 2 Assignment on GitHub Classroom">Link to Assignment on GitHub Classroom</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 10/6</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Lab 2 &amp; Challenge 2 Due by 11:59pm</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Tues, 10/8</td>
-<td><a href="./weeks/week-3-dplyr.html" title="Data Wrangling with dplyr">Data Wrangling with dplyr</a></td>
-<td><a href="./slides/week-3/week-3-dplyr-pt1.html" title="Data Wrangling with dplyr">Data Wrangling with dplyr</a></td>
-<td>Look for email from Posit Cloud to access PA3</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 10/10</td>
-<td></td>
-<td><a href="./slides/week-3/week-3-dplyr-pt2.html" title="Extending Data Wrangling Verbs">Extending Data Wrangling Verbs</a></td>
-<td>PA3 Due by 12pm</td>
-<td><p><a href="./labs/instructions/lab-3-instructions.html" title="Lab 3 Instructions">Lab 3 Instructions</a></p>
-<p><a href="./labs/instructions/challenge-3-instructions.html" title="Challenge 3 Instructions">Challenge 3 Instructions</a></p>
-<p><a href="https://classroom.github.com/a/Wd6RcGOb" title="Link to Assignment on GitHub Classroom">Link to Assignment on GitHub Classroom</a></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sunday, 10/13</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 3 &amp; Challenge 3 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 2 Peer Code Review Due (Guidelines)">Lab 2 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Tues, 10/15</td>
-<td><a href="./weeks/week-4-reshaping-joining.html" title="Data Joins and Transformations with tidyr">Data Joins and Transformations with tidyr</a></td>
-<td></td>
-<td>Look for email from Posit Cloud to access PA4</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 10/17</td>
-<td><a href="./weeks/week-4-factors.html" title="Working with Categorical Variables">Working with Categorical Variables</a></td>
-<td></td>
-<td>PA4 Due by 12pm</td>
-<td><p><a href="./labs/instructions/lab-4-instructions.html" title="Lab 4 &amp; Challenge 4 Instructions">Lab 4 &amp; Challenge 4 Instructions</a></p>
-<p>Link to GitHub Repository</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 10/20</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 4 &amp; Challenge 4 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 3 Peer Code Review Due (Guidelines)">Lab 3 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Tues, 10/22</td>
-<td>Working with Strings</td>
-<td></td>
-<td>Look for email from Posit Cloud to access PA5</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 10/24</td>
-<td>Working with Dates</td>
-<td></td>
-<td>PA5 Due by 12pm</td>
-<td><p>Lab 5 Instructions</p>
-<p>Challenge 5 Instructions</p>
-<p>Link to GitHub Repository</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sun, 10/27</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 5 &amp; Challenge 5 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 4 Peer Code Review Due (Guidelines)">Lab 4 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Tues, 10/29</td>
-<td>Writing your own simple (vector) functions</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 10/31</td>
-<td>Portfolio Party</td>
-<td></td>
-<td></td>
-<td></td>
-<td><a href="./portfolio/portfolio-instructions.html" title="Portfolio Instructions">Portfolio Instructions</a></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 11/3</td>
-<td></td>
-<td></td>
-<td></td>
-<td><a href="./code-review/code-review-guidelines.html" title="Lab 5 Peer Code Review Due (Guidelines)">Lab 5 Peer Code Review Due (Guidelines)</a></td>
-<td>Midterm Portfolio Due</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>Tues, 11/5</td>
-<td>Writing your own dataframe functions</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 11/7</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 7 Instructions</p>
-<p>Challenge 7 Instructions</p>
-<p>Link to GitHub Repository</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sun, 11/10</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Lab 7 &amp; Challenge 7 Due by 11:59pm</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Tues, 11/12</td>
-<td>Introduction to Iteration</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 11/14</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 8 Instructions</p>
-<p>Challenge 8 Instructions</p>
-<p>Link to GitHub Repository</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 11/17</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 8 &amp; Challenge 8 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 7 Peer Code Review Due (Guidelines)">Lab 7 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>Tues, 11/19</td>
-<td>Webscraping</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 11/21</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 9 Instructions</p>
-<p>Challenge 9 Instructions</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sun, 11/24</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 9 &amp; Challenge 9 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 8 Peer Code Review Due (Guidelines)">Lab 8 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td>Fall Break</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td>Tues, 12/3</td>
-<td>Distributions &amp; Simulation</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 12/5</td>
-<td>Portfolio Party</td>
-<td></td>
-<td></td>
-<td><a href="./code-review/code-review-guidelines.html" title="Lab 9 Peer Code Review Due (Guidelines)">Lab 9 Peer Code Review Due (Guidelines)</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sat, 12/7</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>Final Portfolio Due</td>
-</tr>
-<tr class="even">
-<td>Finals Week</td>
-<td>Mon, 12/9, 10:10am - 1pm</td>
-<td>10-minute Portfolio Conferences</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tips for Success
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>I advise you to focus particularly on:</p>
+<ul>
+<li><p>Setting chunk options carefully.</p></li>
+<li><p>Making sure you don’t print out more output than you need.</p></li>
+<li><p>Making sure you don’t assign more objects than necessary. Avoid “object junk” in your environment.</p></li>
+<li><p>Making your code readable and nicely formatted.</p></li>
+<li><p>Thinking through your desired result <strong>before</strong> writing any code.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The Data</h2>
+<p>In this lab we’re going look at the median weekly cost of childcare in California. A detailed description of the data can be found <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-05-09/readme.md">here</a>.</p>
+<p>The data come to us from <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday</a>.</p>
+<p><strong>0. Load the appropriate libraries and the data.</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>childcare_costs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv'</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>counties <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>1. Briefly describe the dataset (~ 4 sentences). What information does it contain?</strong></p>
+</section>
+<section id="california-childcare-costs" class="level2">
+<h2 class="anchored" data-anchor-id="california-childcare-costs">California Childcare Costs</h2>
+<p>Let’s start by focusing only on California.</p>
+<p><strong>2. Create a <code>ca_childcare</code> dataset of childcare costs in California, containing (1) county information and (2) all information from the <code>childcare_costs</code> dataset.</strong> <em>Hint: There are 58 counties in CA and 11 years in the dataset. Therefore, your new dataset should have 53 x 11 = 638 observations.</em></p>
+<p><strong>3. Using a function from the <code>forcats</code> package, complete the code below to create a new variable where each county is categorized into one of the <a href="https://census.ca.gov/regions/">ten (10) Census regions</a> in California. Use the Region description (from the plot), not the Region number.</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ca_childcare <span class="ot">&lt;-</span> ca_childcare <span class="sc">|&gt;</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">county_name =</span> <span class="fu">str_remove</span>(county_name, <span class="st">" County"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I have provided you with code that eliminates the word “County” from each of the county names in your <code>ca_childcare</code> dataset. You should keep this line of code and pipe into the rest of your data manipulations.</p>
+<p>You will learn about the <code>str_remove()</code> function from the <code>stringr</code> package next week!</p>
+</div>
+</div>
+<p><strong>4. Let’s consider the median household income of each region, and how that income has changed over time. Create a table with ten rows, one for each region, and two columns, one for 2008 and one for 2018. The cells should contain the <code>median</code> of the median household income (expressed in 2018 dollars) of the <code>region</code> and the <code>study_year</code>. Arrange the rows by 2018 values.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will require transforming your data! Sketch out what you want the data to look like before you begin to code. You should be starting with your California dataset that contains the regions!</p>
+</div>
+</div>
+<p><strong>5. Which California <code>region</code> had the lowest <code>median</code> full-time median weekly price for center-based childcare for infants in 2018? Does this <code>region</code> correspond to the <code>region</code> with the lowest <code>median</code> income in 2018 that you found in Q4?</strong></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The code should give me the EXACT answer. This means having the code output the exact row(s) and variable(s) necessary for providing the solution.</p>
+</div>
+</div>
+<p><strong>6. The following plot shows, for all ten regions, the change over time of the full-time median price for center-based childcare for infants, toddlers, and preschoolers. Recreate the plot. You do not have to replicate the exact colors or theme, but your plot should have the same content, including the order of the facets and legend, reader-friendly labels, axes breaks, and a loess smoother.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will require transforming your data! Sketch out what you want the data to look like before you begin to code. You should be starting with your California dataset that contains the regions.</p>
+<p>You will also be required to use functions from <code>forcats</code> to change the labels and the ordering of your factor levels.</p>
+<p>Remember to avoid “object junk” in your environment!</p>
+</div>
+</div>
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/zoerehnberg/STAT331-S23/blob/main/lab_assignments/lab4/LA4_recreate_plot.png?raw=true" class="img-fluid figure-img"></p>
+<figcaption>Plot to recreate</figcaption>
+</figure>
+</div>
+</section>
+<section id="median-household-income-vs.-childcare-costs-for-infants" class="level2">
+<h2 class="anchored" data-anchor-id="median-household-income-vs.-childcare-costs-for-infants">Median Household Income vs.&nbsp;Childcare Costs for Infants</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Refresher on Linear Regression
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>While a second course in statistics is a pre-requisite for this class, <a href="https://moderndive.com/10-inference-for-regression.html">here</a> is a refresher on simple linear regression with a single predictor.</p>
+</div>
+</div>
+<p><strong>7. Create a scatterplot showing the relationship between median household income (expressed in 2018 dollars) and the full-time median weekly price charged for center-based childcare for an infant in California. Overlay a linear regression line (lm) to show the trend.</strong></p>
+<p><strong>8. Look up the documentation for <code>lm()</code> and fit a linear regression model to the relationship shown in your plot above.</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># complete the code provided</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>reg_mod1 <span class="ot">&lt;-</span> <span class="fu">lm</span>()</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg_mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>9. Using the output from <code>summary()</code>, write out the estimated regression line (recall: <span class="math inline">\(y = mx + b\)</span>).</strong></p>
+<p><strong>10. Do you have evidence to conclude there is a relationship between the median household income and the median weekly cost of center-based childcare for infants in California? Cite values from your <code>summary()</code> output to support your claim!</strong></p>
+</section>
+<section id="challenge-4-open-ended-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-4-open-ended-analysis">Challenge 4: Open-Ended Analysis</h2>
+<p><strong>Investigate the full-time median price for childcare in a center-based setting versus the full-time median price for childcare in a family (in-home) setting in California. Pay close attention to the different developmental stages. Support your answer with one table of summary statistics and one visualization.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Aim for about 150-300 words.
+<ul>
+<li>You should (1) introduce the data and the topic you are investigating, (2) discuss your table and plot, and (3) conclude.</li>
+</ul></li>
+<li>This should read like a mini-report. I recommend using <code>#| code-fold: true</code> for readability.</li>
+<li>Don’t just have a summary table or plot show up “out of the blue” – make sure to build up to them with text, describe what they show, and provide captions.</li>
+</ul>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1155,18 +1055,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./course-materials/course-team.html" class="pagination-link  aria-label=" teaching="" team"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Teaching team</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./course-materials/computing-access.html" class="pagination-link" aria-label="Access">
-        <span class="nav-page-text">Access</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1175,7 +1063,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-331-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-331-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
