@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Statistical Computing in R - Statistical Computing in R</title>
+<title>Introduction to Statistical Computing in R - Working with Categorical Variables</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +23,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./course-materials/computing-access.html" rel="next">
-<link href="./course-materials/course-team.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -82,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-materials/course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Working with Categorical Variables</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -96,8 +94,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/r-flowers.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/r-flowers.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/stat-331-website" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
@@ -115,52 +113,52 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-team.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course-team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Teaching team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/computing-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course_resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course_resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Resources</span></a>
   </div>
 </li>
@@ -177,43 +175,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-0-discord.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-0-discord.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 0 - Course Set-up</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-1-r-rstudio.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-1-r-rstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1, Part 1 - R &amp; RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-1-quarto.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-1-quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1, Part 2 - Quarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-1-version-control.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-1-version-control.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1, Part 3 - Version Control</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-2-ggplot.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-2-ggplot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2, Part 1 - ggplot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-2-projects-data-import.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-2-projects-data-import.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2, Part 2 - Data Import</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-3-dplyr.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-3-dplyr.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 3 - dplyr</span></a>
   </div>
 </li>
@@ -230,13 +228,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/lab-1-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/instructions/lab-1-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/lab-2-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/instructions/lab-2-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 2</span></a>
   </div>
 </li>
@@ -253,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./portfolio/portfolio-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../portfolio/portfolio-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Portfolio Instructions</span></a>
   </div>
 </li>
@@ -265,14 +263,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#factors-with-forcats" id="toc-factors-with-forcats" class="nav-link active" data-scroll-target="#factors-with-forcats"><span class="header-section-number">1</span> Factors with <code>forcats</code></a>
+  <ul class="collapse">
+  <li><a href="#check-in-4.3-functions-from-forcats" id="toc-check-in-4.3-functions-from-forcats" class="nav-link" data-scroll-target="#check-in-4.3-functions-from-forcats">✅ <strong>Check-in 4.3: Functions from <code>forcats</code></strong></a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-331-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-materials/course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Statistical Computing in R</h1>
+<h1 class="title">Working with Categorical Variables</h1>
 </div>
 
 
@@ -289,345 +296,82 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.</p>
-<!-- TODO: Switch to spreadsheet for content (like Mine and Maria do) -->
-<table class="table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 12%">
-<col style="width: 23%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Date</th>
-<th>Topic &amp; Preview Activities</th>
-<th>Lecture Slides</th>
-<th>Practice Activity</th>
-<th>Lab &amp; Challenge</th>
-<th>Portfolio</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>Mon, 9/23</td>
-<td><a href="./weeks/week-0-discord.html" title="Course Set-up Instructions">Course Set-up</a></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>Tues, 9/24</td>
-<td><p><a href="./weeks/week-1-r-rstudio.html">Intro to R &amp; RStudio</a></p>
-<p><a href="./weeks/week-1-quarto.html">Intro to Quarto</a></p></td>
-<td><a href="./slides/week-1/week-1-intro-R.html" title="Welcome to STAT 331 &amp; Intro to R">Welcome to STAT 331 &amp; Intro to R</a></td>
-<td><p><a href="./group-activities/week-1/broken-circles.html" title="Broken Circles Group Warm-up">Broken Circles Group Warm-up</a></p>
-<p><a href="./group-activities/pair-programming-norms.html" title="Creating Pair Programming Norms">Creating Pair Programming Norms</a></p>
-<p><a href="./group-activities/week-1/data-cleaning-viz-steps.html" title="Data Cleaning, Visualization Puzzle">Data Cleaning, Visualization Puzzle</a></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 9/26</td>
-<td><a href="./weeks/week-1-version-control.html">Intro to Version Control</a></td>
-<td><a href="./slides/week-1/week-1-intro-version-control.html" title="Intro to Quarto &amp; Version Control">Intro to Quarto &amp; Version Control</a></td>
-<td></td>
-<td><p><a href="./labs/instructions/lab-1-instructions.html">Lab 1 &amp; Challenge 1 Instructions</a></p>
-<p><a href="https://classroom.github.com/a/j-bckA7U" title="Lab 1 &amp; Challenge 1 Assignment on GitHub Classroom">Link to Assignment on GitHub Classroom</a> (due 9/29)</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Tuesday, 10/1</td>
-<td><p><a href="./weeks/week-2-ggplot.html" title="Data Visualization with ggplot2">Data Visualization with ggplot2</a></p>
-<p><a href="./weeks/week-2-projects-data-import.html" title="Data Import &amp; R Projects">Data Import &amp; R Projects</a></p></td>
-<td><a href="./slides/week-2/week-2-ggplot.html" title="Basics of Graphics">Basics of Graphics</a></td>
-<td>Look for email from Posit Cloud to access PA2</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 10/3</td>
-<td></td>
-<td><a href="./slides/week-2/week-2-import.html" title="Tidy Data, Importing Data &amp; More Advanced Graphics">Tidy Data, Importing Data &amp; More Advanced Graphics</a></td>
-<td>PA 2 Due by 12pm</td>
-<td><p><a href="./labs/instructions/lab-2-instructions.html" title="Lab 2 Instructions">Lab 2 Instructions</a></p>
-<p><a href="./labs/instructions/challenge-2-instructions.html" title="Challenge 2 Instructions">Challenge 2 Instructions</a></p>
-<p><a href="https://classroom.github.com/a/4e-4Et4D" title="Lab 2 &amp; Challenge 2 Assignment on GitHub Classroom">Link to Assignment on GitHub Classroom</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 10/6</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Lab 2 &amp; Challenge 2 Due by 11:59pm</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Tues, 10/8</td>
-<td><a href="./weeks/week-3-dplyr.html" title="Data Wrangling with dplyr">Data Wrangling with dplyr</a></td>
-<td><a href="./slides/week-3/week-3-dplyr-pt1.html" title="Data Wrangling with dplyr">Data Wrangling with dplyr</a></td>
-<td>Look for email from Posit Cloud to access PA3</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 10/10</td>
-<td></td>
-<td><a href="./slides/week-3/week-3-dplyr-pt2.html" title="Extending Data Wrangling Verbs">Extending Data Wrangling Verbs</a></td>
-<td>PA3 Due by 12pm</td>
-<td><p><a href="./labs/instructions/lab-3-instructions.html" title="Lab 3 Instructions">Lab 3 Instructions</a></p>
-<p><a href="./labs/instructions/challenge-3-instructions.html" title="Challenge 3 Instructions">Challenge 3 Instructions</a></p>
-<p><a href="https://classroom.github.com/a/Wd6RcGOb" title="Link to Assignment on GitHub Classroom">Link to Assignment on GitHub Classroom</a></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sunday, 10/13</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 3 &amp; Challenge 3 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 2 Peer Code Review Due (Guidelines)">Lab 2 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Tues, 10/15</td>
-<td><a href="./weeks/week-4-reshaping-joining.html" title="Data Joins and Transformations with tidyr">Data Joins and Transformations with tidyr</a></td>
-<td></td>
-<td>Look for email from Posit Cloud to access PA4</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 10/17</td>
-<td><a href="./weeks/week-4-factors.html" title="Working with Categorical Variables">Working with Categorical Variables</a></td>
-<td></td>
-<td>PA4 Due by 12pm</td>
-<td><p>Lab 4 Instructions</p>
-<p>Challenge 4 Instructions</p>
-<p>Link to GitHub Repository</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 10/20</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 4 &amp; Challenge 4 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 3 Peer Code Review Due (Guidelines)">Lab 3 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Tues, 10/22</td>
-<td>Working with Strings</td>
-<td></td>
-<td>Look for email from Posit Cloud to access PA5</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 10/24</td>
-<td>Working with Dates</td>
-<td></td>
-<td>PA5 Due by 12pm</td>
-<td><p>Lab 5 Instructions</p>
-<p>Challenge 5 Instructions</p>
-<p>Link to GitHub Repository</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sun, 10/27</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 5 &amp; Challenge 5 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 4 Peer Code Review Due (Guidelines)">Lab 4 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Tues, 10/29</td>
-<td>Writing your own simple (vector) functions</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 10/31</td>
-<td>Portfolio Party</td>
-<td></td>
-<td></td>
-<td></td>
-<td><a href="./portfolio/portfolio-instructions.html" title="Portfolio Instructions">Portfolio Instructions</a></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 11/3</td>
-<td></td>
-<td></td>
-<td></td>
-<td><a href="./code-review/code-review-guidelines.html" title="Lab 5 Peer Code Review Due (Guidelines)">Lab 5 Peer Code Review Due (Guidelines)</a></td>
-<td>Midterm Portfolio Due</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>Tues, 11/5</td>
-<td>Writing your own dataframe functions</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 11/7</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 7 Instructions</p>
-<p>Challenge 7 Instructions</p>
-<p>Link to GitHub Repository</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sun, 11/10</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Lab 7 &amp; Challenge 7 Due by 11:59pm</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Tues, 11/12</td>
-<td>Introduction to Iteration</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 11/14</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 8 Instructions</p>
-<p>Challenge 8 Instructions</p>
-<p>Link to GitHub Repository</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 11/17</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 8 &amp; Challenge 8 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 7 Peer Code Review Due (Guidelines)">Lab 7 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>Tues, 11/19</td>
-<td>Webscraping</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 11/21</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 9 Instructions</p>
-<p>Challenge 9 Instructions</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sun, 11/24</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 9 &amp; Challenge 9 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 8 Peer Code Review Due (Guidelines)">Lab 8 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td>Fall Break</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td>Tues, 12/3</td>
-<td>Distributions &amp; Simulation</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 12/5</td>
-<td>Portfolio Party</td>
-<td></td>
-<td></td>
-<td><a href="./code-review/code-review-guidelines.html" title="Lab 9 Peer Code Review Due (Guidelines)">Lab 9 Peer Code Review Due (Guidelines)</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sat, 12/7</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>Final Portfolio Due</td>
-</tr>
-<tr class="even">
-<td>Finals Week</td>
-<td>Mon, 12/9, 10:10am - 1pm</td>
-<td>10-minute Portfolio Conferences</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>The second section of this coursework is focused on working with factor data types. By the end of this week, you should be able to:</p>
+<ul>
+<li>Use forcats to reorder and relabel factor variables in data cleaning steps and data visualizations.</li>
+</ul>
+<hr>
+<section id="watch-videos-9-minutes" class="level4">
+<h4 class="anchored" data-anchor-id="watch-videos-9-minutes">▶️ Watch Videos: 9-minutes</h4>
+</section>
+<section id="readings-15-minutes" class="level4">
+<h4 class="anchored" data-anchor-id="readings-15-minutes">📖 Readings: 15-minutes</h4>
+</section>
+<section id="activities-0" class="level4">
+<h4 class="anchored" data-anchor-id="activities-0">💻 Activities: 0</h4>
+</section>
+<section id="check-ins-1" class="level4">
+<h4 class="anchored" data-anchor-id="check-ins-1">✅ Check-ins: 1</h4>
+<hr>
+</section>
+<section id="factors-with-forcats" class="level1 page-columns page-full" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Factors with <code>forcats</code></h1>
+<p>We have been floating around the idea of <em>factor</em> data types. In this section, we will formally define factors and why they are needed for data visualization and analysis. We will then learn useful functions for working with factors in our data cleaning steps.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/week-4/forcats.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="The image is a hexagonal sticker with a light blue background. In the center, there is an orange cat with a smiling face, standing on its hind legs and holding a string of colorful flags that spell 'forcats' in lowercase letters. The cat appears playful and joyful, and the design gives a whimsical, fun feel. The borders of the hexagon are outlined in white, and the overall design is simple yet vibrant, focusing on the cat and the string of flags."></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div><p>▶️ <a href="https://www.youtube.com/embed/dAiSYli7tVg">Required Video: Working with factors using forcats – 9 minutes</a></p>
+<p>In short, factors are categorical variables with a fixed number of values (think a set number of groups). One of the main features that set factors apart from groups is that you can reorder the groups to be non-alphabetical. In this section we will be using the <code>forcats</code> package (part of the <code>tidyverse</code>!) to create and manipulate factor variables.</p>
+<p>📖 <a href="https://r4ds.hadley.nz/factors.html">Required Reading: <em>R4DS</em> Chapter 16 (Factors)</a></p>
+<section id="check-in-4.3-functions-from-forcats" class="level3">
+<h3 class="anchored" data-anchor-id="check-in-4.3-functions-from-forcats">✅ <strong>Check-in 4.3: Functions from <code>forcats</code></strong></h3>
+<p>Answer the following questions in the Canvas Quiz.</p>
+<p><strong>1. Which of the following tasks can <code>fct_recode()</code> accomplish?</strong> Select all that apply!</p>
+<ul>
+<li>changes the values of the factor levels</li>
+<li>reorders the levels of a factor</li>
+<li>remove levels of a factor you don’t want</li>
+<li>collapse levels of a factor into a new level</li>
+</ul>
+<p><strong>2. Which of the following tasks can <code>fct_relevel()</code> accomplish?</strong></p>
+<ul>
+<li>reorders the levels of a factor</li>
+<li>changes the values of the factor levels</li>
+<li>remove levels of a factor you don’t want</li>
+<li>collapse levels of a factor into a new level</li>
+</ul>
+<p><strong>3. What is the main difference between <code>fct_collapse()</code> and <code>fct_recode()</code>?</strong></p>
+<ul>
+<li><code>fct_recode()</code> uses strings to create factor levels</li>
+<li><code>fct_recode()</code> uses groups to create factor levels</li>
+<li><code>fct_recode()</code> cannot create an “Other” group</li>
+</ul>
+<p><strong>4. What ordering do you get with <code>fct_reorder()</code>?</strong></p>
+<ul>
+<li>largest to smallest based on another variable</li>
+<li>order of appearance</li>
+<li>largest to smallest based on counts</li>
+<li>alphabetical order</li>
+</ul>
+<p><strong>5. What ordering do you get with <code>fct_inorder()</code>?</strong></p>
+<ul>
+<li>order of appearance</li>
+<li>alphabetical order</li>
+<li>largest to smallest based on counts</li>
+<li>largest to smallest based on another variable :::</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1156,18 +900,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./course-materials/course-team.html" class="pagination-link  aria-label=" teaching="" team"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Teaching team</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./course-materials/computing-access.html" class="pagination-link" aria-label="Access">
-        <span class="nav-page-text">Access</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1176,7 +908,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-331-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-331-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

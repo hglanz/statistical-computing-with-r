@@ -4,14 +4,14 @@
     "href": "weeks/week-4-reshaping-joining.html",
     "title": "Data Joins and Transformations",
     "section": "",
-    "text": "The first section of this coursework is focused on working with factor data types. By the end of this week, you should be able to:\nBroadly, your objective while reading the second section of this chapter is to be able to identify data sets which have “messy” formats and determine a sequence of operations to transition the data into “tidy” format. To do this, you should master the following concepts:"
+    "text": "Broadly, your objective while reading these chapters is to be able to identify data sets which have “messy” formats and determine a sequence of operations to transition the data into “tidy” format. To do this, you should master the following concepts:"
   },
   {
     "objectID": "weeks/week-4-reshaping-joining.html#examples-messy-data",
     "href": "weeks/week-4-reshaping-joining.html#examples-messy-data",
     "title": "Data Joins and Transformations",
-    "section": "2.1 Examples: Messy Data",
-    "text": "2.1 Examples: Messy Data\nThese datasets all display the same data: TB (Tuberculosis) cases documented by the WHO (World Health Organization) in Afghanistan, Brazil, and China, between 1999 and 2000. There are four variables: country, year, cases, and population, but each table has a different layout.\n\nFor each of the data set, determine whether each table is tidy.\n\nIf it is not, identify which rule(s) it violates.\n\nWhat would you have to do to the data to be able to compute a standardized TB infection rate per 100,000 people?\n\n\n\n\n\n\n\nTip\n\n\n\nAll of these data sets are “built-in” to the tidyr package!\n\n\n\nTable 1Table 2Table 3Table 4Table 5\n\n\n\n\n\nTable 1\n\n\ncountry\nyear\ncases\npopulation\n\n\n\n\nAfghanistan\n1999\n745\n19987071\n\n\nAfghanistan\n2000\n2666\n20595360\n\n\nBrazil\n1999\n37737\n172006362\n\n\nBrazil\n2000\n80488\n174504898\n\n\nChina\n1999\n212258\n1272915272\n\n\nChina\n2000\n213766\n1280428583\n\n\n\n\n\nHere, each observation is a single row, each variable is a column, and everything is nicely arranged for e.g. regression or statistical analysis. We can easily compute another measure, such as cases per 100,000 population, by taking cases / population * 100000 (this would define a new column).\n\n\n\n\n\nTable 2\n\n\ncountry\nyear\ntype\ncount\n\n\n\n\nAfghanistan\n1999\ncases\n745\n\n\nAfghanistan\n1999\npopulation\n19987071\n\n\nAfghanistan\n2000\ncases\n2666\n\n\nAfghanistan\n2000\npopulation\n20595360\n\n\nBrazil\n1999\ncases\n37737\n\n\nBrazil\n1999\npopulation\n172006362\n\n\nBrazil\n2000\ncases\n80488\n\n\nBrazil\n2000\npopulation\n174504898\n\n\nChina\n1999\ncases\n212258\n\n\nChina\n1999\npopulation\n1272915272\n\n\nChina\n2000\ncases\n213766\n\n\nChina\n2000\npopulation\n1280428583\n\n\n\n\n\nHere, we have 4 columns again, but we now have 12 rows (instead of 6): one of the columns is an indicator of which of two numerical observations is recorded in that row; a second column stores the value (e.g., cases, population). This form of the data is more easily plotted in ggplot2, if we want to show trend lines for both cases and population, but computing per capita cases would be much more difficult in this form than in the arrangement in Table 1!\n\n\n\n\n\nTable 3\n\n\ncountry\nyear\nrate\n\n\n\n\nAfghanistan\n1999\n745/19987071\n\n\nAfghanistan\n2000\n2666/20595360\n\n\nBrazil\n1999\n37737/172006362\n\n\nBrazil\n2000\n80488/174504898\n\n\nChina\n1999\n212258/1272915272\n\n\nChina\n2000\n213766/1280428583\n\n\n\n\n\nThis form has only 3 columns, because the rate variable (which is a character) stores both the case count and the population. We can’t do anything with this format as it stands, because we can’t do math on data stored as characters. However, this form might be easier to read and record for a human being.\n\n\n\n\n\nTable 4a\n\n\ncountry\n1999\n2000\n\n\n\n\nAfghanistan\n745\n2666\n\n\nBrazil\n37737\n80488\n\n\nChina\n212258\n213766\n\n\n\n\n\n\nTable 4b\n\n\ncountry\n1999\n2000\n\n\n\n\nAfghanistan\n19987071\n20595360\n\n\nBrazil\n172006362\n174504898\n\n\nChina\n1272915272\n1280428583\n\n\n\n\n\nIn this form, we have two tables - one for population, and one for cases. Each year’s observations are in a separate column. This format is often found in separate sheets of an Excel workbook. To work with this data, we’ll need to transform each table so that there is a column indicating which year an observation is from, and then merge the two tables together by country and year.\n\n\n\n\n\nTable 5\n\n\ncountry\ncentury\nyear\nrate\n\n\n\n\nAfghanistan\n19\n99\n745/19987071\n\n\nAfghanistan\n20\n00\n2666/20595360\n\n\nBrazil\n19\n99\n37737/172006362\n\n\nBrazil\n20\n00\n80488/174504898\n\n\nChina\n19\n99\n212258/1272915272\n\n\nChina\n20\n00\n213766/1280428583\n\n\n\n\n\nTable 5 is very similar to Table 3, but the year has been separated into two columns - century, and year. This is more common with year, month, and day in separate columns (or date and time in separate columns), often to deal with the fact that spreadsheets don’t always handle dates the way you’d hope they would.\n\n\n\nIn a perfect world, all data would come in the right format for our needs, but this is often not the case. We will spend the next few weeks learning about how to use R to reformat our data to follow the tidy data framework and see why this is so important. By the end of this chapter, you will have the skills needed to wrangle and transform the most common “messy” data sets into “tidy” form.\n\n\n\n\n\n\nDo we always want our data in the same layout?\n\n\n\nThe concept of tidy data is useful for mapping variables from the data set to elements in a graph, specifications of a model, or aggregating to create summaries. However, what is considered to be “tidy data” format for one task, might not be in the correct “tidy data” format for a different task. It is important for you to consider the end goal when restructuring your data.\nPart of this course is building the skills for you to be able to map your data operation steps from an original data set to the correct format (and output)."
+    "section": "1.1 Examples: Messy Data",
+    "text": "1.1 Examples: Messy Data\nThese datasets all display the same data: TB (Tuberculosis) cases documented by the WHO (World Health Organization) in Afghanistan, Brazil, and China, between 1999 and 2000. There are four variables: country, year, cases, and population, but each table has a different layout.\n\nFor each of the data set, determine whether each table is tidy.\n\nIf it is not, identify which rule(s) it violates.\n\nWhat would you have to do to the data to be able to compute a standardized TB infection rate per 100,000 people?\n\n\n\n\n\n\n\nTip\n\n\n\nAll of these data sets are “built-in” to the tidyr package!\n\n\n\nTable 1Table 2Table 3Table 4Table 5\n\n\n\n\n\nTable 1\n\n\ncountry\nyear\ncases\npopulation\n\n\n\n\nAfghanistan\n1999\n745\n19987071\n\n\nAfghanistan\n2000\n2666\n20595360\n\n\nBrazil\n1999\n37737\n172006362\n\n\nBrazil\n2000\n80488\n174504898\n\n\nChina\n1999\n212258\n1272915272\n\n\nChina\n2000\n213766\n1280428583\n\n\n\n\n\nHere, each observation is a single row, each variable is a column, and everything is nicely arranged for e.g. regression or statistical analysis. We can easily compute another measure, such as cases per 100,000 population, by taking cases / population * 100000 (this would define a new column).\n\n\n\n\n\nTable 2\n\n\ncountry\nyear\ntype\ncount\n\n\n\n\nAfghanistan\n1999\ncases\n745\n\n\nAfghanistan\n1999\npopulation\n19987071\n\n\nAfghanistan\n2000\ncases\n2666\n\n\nAfghanistan\n2000\npopulation\n20595360\n\n\nBrazil\n1999\ncases\n37737\n\n\nBrazil\n1999\npopulation\n172006362\n\n\nBrazil\n2000\ncases\n80488\n\n\nBrazil\n2000\npopulation\n174504898\n\n\nChina\n1999\ncases\n212258\n\n\nChina\n1999\npopulation\n1272915272\n\n\nChina\n2000\ncases\n213766\n\n\nChina\n2000\npopulation\n1280428583\n\n\n\n\n\nHere, we have 4 columns again, but we now have 12 rows (instead of 6): one of the columns is an indicator of which of two numerical observations is recorded in that row; a second column stores the value (e.g., cases, population). This form of the data is more easily plotted in ggplot2, if we want to show trend lines for both cases and population, but computing per capita cases would be much more difficult in this form than in the arrangement in Table 1!\n\n\n\n\n\nTable 3\n\n\ncountry\nyear\nrate\n\n\n\n\nAfghanistan\n1999\n745/19987071\n\n\nAfghanistan\n2000\n2666/20595360\n\n\nBrazil\n1999\n37737/172006362\n\n\nBrazil\n2000\n80488/174504898\n\n\nChina\n1999\n212258/1272915272\n\n\nChina\n2000\n213766/1280428583\n\n\n\n\n\nThis form has only 3 columns, because the rate variable (which is a character) stores both the case count and the population. We can’t do anything with this format as it stands, because we can’t do math on data stored as characters. However, this form might be easier to read and record for a human being.\n\n\n\n\n\nTable 4a\n\n\ncountry\n1999\n2000\n\n\n\n\nAfghanistan\n745\n2666\n\n\nBrazil\n37737\n80488\n\n\nChina\n212258\n213766\n\n\n\n\n\n\nTable 4b\n\n\ncountry\n1999\n2000\n\n\n\n\nAfghanistan\n19987071\n20595360\n\n\nBrazil\n172006362\n174504898\n\n\nChina\n1272915272\n1280428583\n\n\n\n\n\nIn this form, we have two tables - one for population, and one for cases. Each year’s observations are in a separate column. This format is often found in separate sheets of an Excel workbook. To work with this data, we’ll need to transform each table so that there is a column indicating which year an observation is from, and then merge the two tables together by country and year.\n\n\n\n\n\nTable 5\n\n\ncountry\ncentury\nyear\nrate\n\n\n\n\nAfghanistan\n19\n99\n745/19987071\n\n\nAfghanistan\n20\n00\n2666/20595360\n\n\nBrazil\n19\n99\n37737/172006362\n\n\nBrazil\n20\n00\n80488/174504898\n\n\nChina\n19\n99\n212258/1272915272\n\n\nChina\n20\n00\n213766/1280428583\n\n\n\n\n\nTable 5 is very similar to Table 3, but the year has been separated into two columns - century, and year. This is more common with year, month, and day in separate columns (or date and time in separate columns), often to deal with the fact that spreadsheets don’t always handle dates the way you’d hope they would.\n\n\n\nIn a perfect world, all data would come in the right format for our needs, but this is often not the case. We will spend the next few weeks learning about how to use R to reformat our data to follow the tidy data framework and see why this is so important. By the end of this chapter, you will have the skills needed to wrangle and transform the most common “messy” data sets into “tidy” form.\n\n\n\n\n\n\nDo we always want our data in the same layout?\n\n\n\nThe concept of tidy data is useful for mapping variables from the data set to elements in a graph, specifications of a model, or aggregating to create summaries. However, what is considered to be “tidy data” format for one task, might not be in the correct “tidy data” format for a different task. It is important for you to consider the end goal when restructuring your data.\nPart of this course is building the skills for you to be able to map your data operation steps from an original data set to the correct format (and output)."
   },
   {
     "objectID": "weeks/week-2-projects-data-import.html",
@@ -956,15 +956,15 @@
     "objectID": "slides/week-2/week-2-ggplot.html#tuesday-october-1",
     "href": "slides/week-2/week-2-ggplot.html#tuesday-october-1",
     "title": "Basics of Graphics",
-    "section": "Tuesday, October 1",
-    "text": "Tuesday, October 1\nToday we will…\n\nAccessing Practice Activities\nNew Material\n\nTidy Data\nLoad External Data\nGraphics (and ggplot2)\n\nPA 2: Using Data Visualization to Find the Penguins\n\nPeer Programming"
+    "section": "",
+    "text": "Today we will…\n\nAccessing Practice Activities\nNew Material\n\nTidy Data\nLoad External Data\nGraphics (and ggplot2)\n\nPA 2: Using Data Visualization to Find the Penguins\n\nPeer Programming"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#grammar-of-graphics-1",
     "href": "slides/week-2/week-2-ggplot.html#grammar-of-graphics-1",
     "title": "Basics of Graphics",
     "section": "Grammar of Graphics",
-    "text": "Grammar of Graphics\nThe Grammar of Graphics (GoG) is a principled way of specifying exactly how to create a particular graph from a given data set. It helps us to systematically design new graphs.\n\n\nThink of a graph or a data visualization as a mapping…\n…FROM variables in the data set (or statistics computed from the data)…\n…TO visual attributes (or “aesthetics”) of marks (or “geometric elements”) on the page/screen."
+    "text": "Grammar of Graphics\nThe Grammar of Graphics (GoG) is a principled way of specifying exactly how to create a particular graph from a given data set. It helps us to systematically design new graphs.\n. . .\n\nThink of a graph or a data visualization as a mapping…\n…FROM variables in the data set (or statistics computed from the data)…\n…TO visual attributes (or “aesthetics”) of marks (or “geometric elements”) on the page/screen."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#why-gog",
@@ -985,7 +985,7 @@
     "href": "slides/week-2/week-2-ggplot.html#how-to-build-a-graphic",
     "title": "Basics of Graphics",
     "section": "How to Build a Graphic",
-    "text": "How to Build a Graphic\nComplete this template to build a basic graphic:\n\nggplot(\n  data = &lt;DATA&gt;, \n  mapping = aes(&lt;MAPPINGS&gt;)\n  ) +\n  &lt;GEOM FUNCTION&gt;() + \n  any other arguments...\n\n\nNotice, every + adds another layer to our graphic.\n\n\nAlso notice that I’m using named arguments to make my code easier to read."
+    "text": "How to Build a Graphic\nComplete this template to build a basic graphic:\n\nggplot(\n  data = &lt;DATA&gt;, \n  mapping = aes(&lt;MAPPINGS&gt;)\n  ) +\n  &lt;GEOM FUNCTION&gt;() + \n  any other arguments...\n\n. . .\nNotice, every + adds another layer to our graphic.\n. . .\nAlso notice that I’m using named arguments to make my code easier to read."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#section",
@@ -999,7 +999,7 @@
     "href": "slides/week-2/week-2-ggplot.html#aesthetics",
     "title": "Basics of Graphics",
     "section": "Aesthetics",
-    "text": "Aesthetics\nWe map variables (columns) from the data to aesthetics on the graphic using the aes() function.\n\nWhat aesthetics can we set (see ggplot2 cheat sheet for more)?\n\n\n\n\nx, y\ncolor, fill\nlinetype\nsize\nshape"
+    "text": "Aesthetics\nWe map variables (columns) from the data to aesthetics on the graphic using the aes() function.\n. . .\nWhat aesthetics can we set (see ggplot2 cheat sheet for more)?\n\n\n\n\nx, y\ncolor, fill\nlinetype\nsize\nshape"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#aesthetics-1",
@@ -1027,28 +1027,28 @@
     "href": "slides/week-2/week-2-ggplot.html#geometric-objects",
     "title": "Basics of Graphics",
     "section": "Geometric Objects",
-    "text": "Geometric Objects\nWee use a geom_XXX() function to represent data points.\n\n\n\n\none variable\n\ngeom_density()\ngeom_dotplot()\ngeom_histogram()\ngeom_boxplot()\n\n\n\n\ntwo variable\n\ngeom_point()\ngeom_line()\ngeom_density_2d()\n\n\n\n\nthree variable\n\ngeom_contour()\ngeom_raster()\n\n\n\n\nThis is not an exhaustive list – see ggplot2 cheat sheet."
+    "text": "Geometric Objects\nWee use a geom_XXX() function to represent data points.\n. . .\n\n\n\none variable\n\ngeom_density()\ngeom_dotplot()\ngeom_histogram()\ngeom_boxplot()\n\n\n\n\ntwo variable\n\ngeom_point()\ngeom_line()\ngeom_density_2d()\n\n\n\n\nthree variable\n\ngeom_contour()\ngeom_raster()\n\n\n\n\n\nThis is not an exhaustive list – see ggplot2 cheat sheet."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#creating-a-graphic",
     "href": "slides/week-2/week-2-ggplot.html#creating-a-graphic",
     "title": "Basics of Graphics",
     "section": "Creating a Graphic",
-    "text": "Creating a Graphic\nTo create a specific type of graphic, we will combine aesthetics and geometric objects.\n\n\nLet’s try it!"
+    "text": "Creating a Graphic\nTo create a specific type of graphic, we will combine aesthetics and geometric objects.\n. . .\n\nLet’s try it!"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#section-1",
     "href": "slides/week-2/week-2-ggplot.html#section-1",
     "title": "Basics of Graphics",
     "section": "",
-    "text": "The GoalGame Planggplot\n\n\nStart with the TX housing data.\n\nMake a plot of  median house price  over  time  (including both  individual data points  and  a smoothed trend line), distinguishing between  different cities .\n\n\n\n\n\n\n\n\nCode\nggplot(data = sm_tx,\n       mapping = aes(x = date, \n                     y = median, \n                     color = city)\n       ) + \n  geom_point() + \n  geom_smooth(method = \"loess\") + \n  labs(x = \"Date\",\n       y = \"\",\n       color = \" \",\n       title = \"Changes in Median Home Price for Texas Metro Areas\") +\n  scale_y_continuous(labels = scales::label_dollar())"
+    "text": "The GoalGame Planggplot\n\n\nStart with the TX housing data.\n\nMake a plot of  median house price  over  time  (including both  individual data points  and  a smoothed trend line), distinguishing between  different cities .\n\n\n\n\n\n\n\n\nCode\nggplot(data = sm_tx,\n       mapping = aes(x = date, \n                     y = median, \n                     color = city)\n       ) + \n  geom_point() + \n  geom_smooth(method = \"loess\") + \n  labs(x = \"Date\",\n       y = \"\",\n       color = \" \",\n       title = \"Changes in Median Home Price for Texas Metro Areas\") +\n  scale_y_continuous(labels = scales::label_dollar())\n\n\n`geom_smooth()` using formula = 'y ~ x'"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#faceting",
     "href": "slides/week-2/week-2-ggplot.html#faceting",
     "title": "Basics of Graphics",
     "section": "Faceting",
-    "text": "Faceting\nExtracts subsets of data and places them in side-by-side plots.\n\n\nCode\nggplot(data = sm_tx,\n       mapping = aes(x = date, \n                     y = median)\n       ) + \n  geom_point() + \n  facet_wrap(~city) +\n  geom_smooth(method = \"loess\") + \n  labs(x = \"Date\",\n       y = \"\",\n       color = \" \",\n       title = \"Changes in Median Home Price for Texas Metro Areas\") +\n  scale_y_continuous(labels = scales::label_dollar())"
+    "text": "Faceting\nExtracts subsets of data and places them in side-by-side plots.\n\n\nCode\nggplot(data = sm_tx,\n       mapping = aes(x = date, \n                     y = median)\n       ) + \n  geom_point() + \n  facet_wrap(~city) +\n  geom_smooth(method = \"loess\") + \n  labs(x = \"Date\",\n       y = \"\",\n       color = \" \",\n       title = \"Changes in Median Home Price for Texas Metro Areas\") +\n  scale_y_continuous(labels = scales::label_dollar())\n\n\n`geom_smooth()` using formula = 'y ~ x'"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#faceting-1",
@@ -1062,14 +1062,14 @@
     "href": "slides/week-2/week-2-ggplot.html#statistical-transformation-stat",
     "title": "Basics of Graphics",
     "section": "Statistical Transformation: stat",
-    "text": "Statistical Transformation: stat\nA stat transforms an existing variable into a new variable to plot.\n\nidentity leaves the data as is.\ncount counts the number of observations.\nsummary allows you to specify a desired transformation function.\n\n\nSometimes these statistical transformations happen under the hood when we use a specific geom_XXX()."
+    "text": "Statistical Transformation: stat\nA stat transforms an existing variable into a new variable to plot.\n\nidentity leaves the data as is.\ncount counts the number of observations.\nsummary allows you to specify a desired transformation function.\n\n. . .\nSometimes these statistical transformations happen under the hood when we use a specific geom_XXX()."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#statistical-transformation-stat-1",
     "href": "slides/week-2/week-2-ggplot.html#statistical-transformation-stat-1",
     "title": "Basics of Graphics",
     "section": "Statistical Transformation: stat",
-    "text": "Statistical Transformation: stat\n\nstat_count()stat_summary()\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  stat_count(geom = \"bar\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"mean\") +\n  scale_y_continuous(limits = c(0, 45))\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"max\") +\n  scale_y_continuous(limits = c(0, 45))"
+    "text": "Statistical Transformation: stat\n\nstat_count()stat_summary()\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class)\n       ) +\n  stat_count(geom = \"bar\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"mean\") +\n  scale_y_continuous(limits = c(0, 45))\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = mpg,\n       mapping = aes(x = class,\n                     y = hwy)\n       ) +\n  stat_summary(geom = \"bar\",\n               fun = \"max\") +\n  scale_y_continuous(limits = c(0, 45))"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#position-adjustements",
@@ -1111,14 +1111,14 @@
     "href": "slides/week-2/week-2-ggplot.html#pair-programming-expectations",
     "title": "Basics of Graphics",
     "section": "Pair Programming Expectations",
-    "text": "Pair Programming Expectations\n\nDuring your collaboration, you and your partner will alternate between two roles:\n\n\n\n\nDeveloper\n\n\nReads prompt and ensures Coder understands what is being asked.\nTypes the code specified by the Coder into the Quarto document.       \nRuns the code provided by the Coder.\nWorks with Coder to debug the code. \nEvaluates the output.\n\nWorks with Coder to write code comments.\n\n\n\n\n\n\nCoder\n\n\nReads out instructions or prompts\nDirects the Developer what to type.\nTalks with Developer about their ideas. \nManages resources (e.g., cheatsheets, textbook). \nWorks with Developer to debug the code. \nWorks with Developer to write code comments."
+    "text": "Pair Programming Expectations\n\nDuring your collaboration, you and your partner will alternate between two roles:\n\n. . .\n\n\nDeveloper\n\n\nReads prompt and ensures Coder understands what is being asked.\nTypes the code specified by the Coder into the Quarto document.       \nRuns the code provided by the Coder.\nWorks with Coder to debug the code. \nEvaluates the output.\n\nWorks with Coder to write code comments.\n\n\n\n\n\n\nCoder\n\n\nReads out instructions or prompts\nDirects the Developer what to type.\nTalks with Developer about their ideas. \nManages resources (e.g., cheatsheets, textbook). \nWorks with Developer to debug the code. \nWorks with Developer to write code comments."
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#section-2",
     "href": "slides/week-2/week-2-ggplot.html#section-2",
     "title": "Basics of Graphics",
     "section": "",
-    "text": "Group Norms\n\n\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nBe open minded.\nNo cross-talk with other groups.\nCommunicate with each other!"
+    "text": "Group Norms\n\n\n\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nBe open minded.\nNo cross-talk with other groups.\nCommunicate with each other!"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#ggplot2-resources",
@@ -2001,7 +2001,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\n\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\n\n\nPA4 Due by 12pm\nLab 4 Instructions\nChallenge 4 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\n\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\n\nPA5 Due by 12pm\nLab 5 Instructions\nChallenge 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 10/31\nPortfolio Party\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n\n\n\n\n\n\n\nThurs, 11/7\n\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 Instructions\nChallenge 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\n\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\nWorking with Categorical Variables\n\nPA4 Due by 12pm\nLab 4 Instructions\nChallenge 4 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\n\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\n\nPA5 Due by 12pm\nLab 5 Instructions\nChallenge 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 10/31\nPortfolio Party\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n\n\n\n\n\n\n\nThurs, 11/7\n\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 Instructions\nChallenge 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -2540,8 +2540,8 @@
     "objectID": "slides/week-2/week-2-import.html#thursday-october-1",
     "href": "slides/week-2/week-2-import.html#thursday-october-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
-    "section": "Thursday, October 1",
-    "text": "Thursday, October 1\nToday we will…\n\n\nDebrief PA 1\nDebrief Lab 1\n\nContent Related to Lab 2\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2\n\nUsing External Resources"
+    "section": "",
+    "text": "Today we will…\n\n\nDebrief PA 1\nDebrief Lab 1\n\nContent Related to Lab 2\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2\n\nUsing External Resources"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#strategies-used",
@@ -2555,7 +2555,7 @@
     "href": "slides/week-2/week-2-import.html#grading-feedback",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Grading / Feedback",
-    "text": "Grading / Feedback\n\n\nEach question will earn a score of “Success” or “Growing”.\n\nQuestions marked “Growing” will receive feedback on how to improve your solution.\nThese questions can be resubmitted for additional feedback.\n\n\n\n\n\n\nEarning a “Success” doesn’t necessarily mean your solution is without error.\n\nYou may still receive feedback on how to improve your solution.\nThese questions cannot be resubmitted for additional feedback."
+    "text": "Grading / Feedback\n\n\nEach question will earn a score of “Success” or “Growing”.\n\nQuestions marked “Growing” will receive feedback on how to improve your solution.\nThese questions can be resubmitted for additional feedback.\n\n\n\n. . .\n\n\nEarning a “Success” doesn’t necessarily mean your solution is without error.\n\nYou may still receive feedback on how to improve your solution.\nThese questions cannot be resubmitted for additional feedback."
   },
   {
     "objectID": "slides/week-2/week-2-import.html#growing-points",
@@ -2576,7 +2576,7 @@
     "href": "slides/week-2/week-2-import.html#tidy-data-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Tidy Data",
-    "text": "Tidy Data\n\nArtwork by Allison Horst"
+    "text": "Tidy Data\n\n\n\nArtwork by Allison Horst"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#same-data-different-formats",
@@ -2597,14 +2597,14 @@
     "href": "slides/week-2/week-2-import.html#tidy-data-2",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Tidy Data",
-    "text": "Tidy Data\n\nArtwork by Allison Horst"
+    "text": "Tidy Data\n\n\n\nArtwork by Allison Horst"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#common-types-of-data-files",
     "href": "slides/week-2/week-2-import.html#common-types-of-data-files",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Common Types of Data Files",
-    "text": "Common Types of Data Files\nLook at the file extension for the type of data file.\n\n\n\n.csv : “comma-separated values”\n\nName, Age\nBob, 49\nJoe, 40\n\n\n\n.xls, .xlsx: Microsoft Excel spreadsheet\n\nCommon approach: save as .csv\nNicer approach: use the readxl package\n\n\n\n.txt: plain text\n\nCould have any sort of delimiter…\nNeed to let R know what to look for!"
+    "text": "Common Types of Data Files\nLook at the file extension for the type of data file.\n. . .\n\n\n.csv : “comma-separated values”\n\nName, Age\nBob, 49\nJoe, 40\n\n\n. . .\n.xls, .xlsx: Microsoft Excel spreadsheet\n\nCommon approach: save as .csv\nNicer approach: use the readxl package\n\n. . .\n.txt: plain text\n\nCould have any sort of delimiter…\nNeed to let R know what to look for!"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#common-types-of-data-files-1",
@@ -2646,63 +2646,63 @@
     "href": "slides/week-2/week-2-import.html#pre-attentive-features-2",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Pre-attentive Features",
-    "text": "Pre-attentive Features"
+    "text": "Pre-attentive Features\n\nknitr::include_graphics(\"images/pre-atten1.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#pre-attentive-features-3",
     "href": "slides/week-2/week-2-import.html#pre-attentive-features-3",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Pre-attentive Features",
-    "text": "Pre-attentive Features"
+    "text": "Pre-attentive Features\n\nknitr::include_graphics(\"images/pre-atten2.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#pre-attentive-features-4",
     "href": "slides/week-2/week-2-import.html#pre-attentive-features-4",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Pre-attentive Features",
-    "text": "Pre-attentive Features\n\nfeatures that we see and perceive before we even think about it\n\n\nThey will jump out at us in less than 250 ms.\nE.g., color, form, movement, spatial location.\n\n\nThere is a hierarchy of features:\n\nColor is stronger than shape.\nCombinations of pre-attentive features may not be pre-attentive due to interference."
+    "text": "Pre-attentive Features\n\nfeatures that we see and perceive before we even think about it\n\n\nThey will jump out at us in less than 250 ms.\nE.g., color, form, movement, spatial location.\n\n. . .\nThere is a hierarchy of features:\n\nColor is stronger than shape.\nCombinations of pre-attentive features may not be pre-attentive due to interference."
   },
   {
     "objectID": "slides/week-2/week-2-import.html#gestalt-principles",
     "href": "slides/week-2/week-2-import.html#gestalt-principles",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Gestalt Principles",
-    "text": "Gestalt Principles\n\n\n\nGestalt Hierarchy\nGraphical Feature\n\n\n\n\n1. Enclosure\nFacets\n\n\n2. Connection\nLines\n\n\n3. Proximity\nWhite Space\n\n\n4. Similarity\nColor/Shape\n\n\n\n\n\n\nImplications for practice:\n\nKnow that we perceive some groups before others.\nDesign to facilitate and emphasize the most important comparisons."
+    "text": "Gestalt Principles\n\n\n\nGestalt Hierarchy\nGraphical Feature\n\n\n\n\n1. Enclosure\nFacets\n\n\n2. Connection\nLines\n\n\n3. Proximity\nWhite Space\n\n\n4. Similarity\nColor/Shape\n\n\n\n. . .\n\n\nImplications for practice:\n\nKnow that we perceive some groups before others.\nDesign to facilitate and emphasize the most important comparisons."
   },
   {
     "objectID": "slides/week-2/week-2-import.html#double-encoding",
     "href": "slides/week-2/week-2-import.html#double-encoding",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Double Encoding",
-    "text": "Double Encoding"
+    "text": "Double Encoding\n\nknitr::include_graphics(\"images/double.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#no-double-encoding",
     "href": "slides/week-2/week-2-import.html#no-double-encoding",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "No Double Encoding",
-    "text": "No Double Encoding"
+    "text": "No Double Encoding\n\nknitr::include_graphics(\"images/no_double.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-1",
     "href": "slides/week-2/week-2-import.html#color-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color",
-    "text": "Color\n\nColor, hue, and intensity are pre-attentive features, and bigger contrasts lead to faster detection.\n\nHue: main color family (red, orange, yellow…)\nIntensity: amount of color"
+    "text": "Color\n\nColor, hue, and intensity are pre-attentive features, and bigger contrasts lead to faster detection.\n\nHue: main color family (red, orange, yellow…)\nIntensity: amount of color\n\n\n\n\n\nknitr::include_graphics(\"images/hue.png\")\n\n\n\n\n\n\n\n\n\n\nknitr::include_graphics(\"images/intensity.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines",
     "href": "slides/week-2/week-2-import.html#color-guidelines",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\n\nDo not use rainbow color gradients!\nBe conscious of what certain colors “mean”.\n\nGood idea to use red for “good” and green for “bad”?"
+    "text": "Color Guidelines\n\nDo not use rainbow color gradients!\nBe conscious of what certain colors “mean”.\n\nGood idea to use red for “good” and green for “bad”?\n\n\n\n\n\nknitr::include_graphics(\"images/rainbow.png\")\n\n\n\n\n\n\n\n\n\n\n\n\nknitr::include_graphics(\"images/red_green.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines-1",
     "href": "slides/week-2/week-2-import.html#color-guidelines-1",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\nFor categorical data, try not to use more than 7 colors:\n\n\n\n\n\n\n\n\n\n\nIf you need to, you can use colorRampPalette() from the RColorBrewer package to produce larger palettes:"
+    "text": "Color Guidelines\nFor categorical data, try not to use more than 7 colors:\n\nknitr::include_graphics(\"images/small_gradient.png\")\n\n\n\n\n\n\n\n\n. . .\nIf you need to, you can use colorRampPalette() from the RColorBrewer package to produce larger palettes:\n\nknitr::include_graphics(\"images/big_gradient.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines-2",
@@ -2716,21 +2716,21 @@
     "href": "slides/week-2/week-2-import.html#color-guidelines-3",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nuse double encoding - when you use color, also use another aesthetic (line type, shape, facet, etc.)."
+    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nuse double encoding - when you use color, also use another aesthetic (line type, shape, facet, etc.).\n\n\nknitr::include_graphics(\"images/double.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines-4",
     "href": "slides/week-2/week-2-import.html#color-guidelines-4",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nwith a unidirectional scale (e.g., all + values), use a monochromatic color gradient.\n\n\n\n\n\n\n\n\n\n\n\nwith a bidirectional scale (e.g., + and - values), use a purple-white-orange color gradient. Transition through white!"
+    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nwith a unidirectional scale (e.g., all + values), use a monochromatic color gradient.\n\n\nknitr::include_graphics(\"images/blues.png\")\n\n\n\n\n\n\n\n\n\nwith a bidirectional scale (e.g., + and - values), use a purple-white-orange color gradient. Transition through white!\n\n\nknitr::include_graphics(\"images/PuOr.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-guidelines-5",
     "href": "slides/week-2/week-2-import.html#color-guidelines-5",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Color Guidelines",
-    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nprint your chart out in black and white – if you can still read it, it will be safe for all users."
+    "text": "Color Guidelines\nTo make your graphic color deficiency friendly…\n\nprint your chart out in black and white – if you can still read it, it will be safe for all users.\n\n\n\n\nknitr::include_graphics(\"images/nyt_color.png\")\n\n\n\n\n\n\n\n\n\n\n\n\nknitr::include_graphics(\"images/nyt_bw.png\")"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#color-in-ggplot2",
@@ -2751,14 +2751,14 @@
     "href": "slides/week-2/week-2-import.html#on-the-use-of-external-resources",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "On the Use of External Resources…",
-    "text": "On the Use of External Resources…\n\nPart of learning to program is learning from a variety of resources. Thus, I expect you will use resources that you find on the internet.\nIn this class the assumed knowledge is the course materials, including the course textbook, coursework pages, and course slides. Any functions / code used outside of these materials require direct references.\n\n\n\n\nIf you used Google:\n\npaste the link to the resource in a code comment next to where you used that resource\n\nIf you used ChatGPT:\n\nindicate somewhere in the problem that you used ChatGPT\npaste the link to your chat (using the Share button from ChatGPT)"
+    "text": "On the Use of External Resources…\n\nPart of learning to program is learning from a variety of resources. Thus, I expect you will use resources that you find on the internet.\nIn this class the assumed knowledge is the course materials, including the course textbook, coursework pages, and course slides. Any functions / code used outside of these materials require direct references.\n\n. . .\n\n\nIf you used Google:\n\npaste the link to the resource in a code comment next to where you used that resource\n\nIf you used ChatGPT:\n\nindicate somewhere in the problem that you used ChatGPT\npaste the link to your chat (using the Share button from ChatGPT)"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#things-you-should-know-about-chatgpt",
     "href": "slides/week-2/week-2-import.html#things-you-should-know-about-chatgpt",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Things You Should Know About ChatGPT…",
-    "text": "Things You Should Know About ChatGPT…\n\n\n\nGPT uses machine learning to predict what words to give you\n\nThis method is entirely probabilistic, meaning, the same question may produce different answers for different people.\n\n\n\n\n\n\n\nThe answers GPT gives rely a lot on the context you provide (or don’t provide)\n\nIt is good to give lots of background information (e.g., what R package you are using)\n\n\n\n\n\n\n\nChatGPT is a pretty decent tutor.\n\nDid you use GPT to help you with some code?\nDo you not understand what the code is doing?\nAsk GPT to explain code to you!"
+    "text": "Things You Should Know About ChatGPT…\n. . .\n\n\nGPT uses machine learning to predict what words to give you\n\nThis method is entirely probabilistic, meaning, the same question may produce different answers for different people.\n\n\n\n. . .\n\n\nThe answers GPT gives rely a lot on the context you provide (or don’t provide)\n\nIt is good to give lots of background information (e.g., what R package you are using)\n\n\n\n. . .\n\n\nChatGPT is a pretty decent tutor.\n\nDid you use GPT to help you with some code?\nDo you not understand what the code is doing?\nAsk GPT to explain code to you!"
   },
   {
     "objectID": "slides/week-2/week-2-import.html#to-do",
@@ -3643,14 +3643,14 @@
     "href": "slides/week-2/week-2-import.html#multiple-categorical-variables",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Multiple Categorical Variables",
-    "text": "Multiple Categorical Variables\n\nColors & ShapesColors & Facets\n\n\n\n\n\nCode\nggplot(data = penguins) +\n    geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = island )) + \n    labs(title = \"Relashonship Between Bill Length and Bill Depth\", x = \"Bill Length (mm)\" , y = \"Bill Depth (mm)\",)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = bill_depth_mm, \n                     color = species)) +\n  geom_point() + \n  facet_wrap(~island) +\n  labs(x = \"Bill Length\",\n       y = \"\", \n       title = \"Changes in Bill Depth versus Length\")"
+    "text": "Multiple Categorical Variables\n\nColors & ShapesColors & Facets\n\n\n\n\n\nCode\nggplot(data = penguins) +\n    geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = species, shape = island )) + \n    labs(title = \"Relashonship Between Bill Length and Bill Depth\", x = \"Bill Length (mm)\" , y = \"Bill Depth (mm)\",)\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(data = penguins,\n       mapping = aes(x = bill_length_mm, \n                     y = bill_depth_mm, \n                     color = species)) +\n  geom_point() + \n  facet_wrap(~island) +\n  labs(x = \"Bill Length\",\n       y = \"\", \n       title = \"Changes in Bill Depth versus Length\")\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`)."
   },
   {
     "objectID": "slides/week-2/week-2-import.html#did-you-notice-that-your-figures-were-not-included-in-the-html-your-group-submitted-to-canvas",
     "href": "slides/week-2/week-2-import.html#did-you-notice-that-your-figures-were-not-included-in-the-html-your-group-submitted-to-canvas",
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Did you notice that your figures were not included in the HTML your group submitted to Canvas?",
-    "text": "Did you notice that your figures were not included in the HTML your group submitted to Canvas?\n\n\nBy default, Quarto does not embed plots in the HTML document. Instead, it creates a “PA-2-files” folder which stores all your plots.\n\n\n\n\nSo, when you submit your HTML file, your plots are not included! How do we fix this????\n\n\n\n\nAdd an embed-resources: true line to your YAML (at the beginning of your document)!\n---\ntitle: \"PA 2: Using Data Visualization to Find the Penguins\"\nauthor: \"Dr. T!\"\nformat: html\neditor: source\nembed-resources: true\n---"
+    "text": "Did you notice that your figures were not included in the HTML your group submitted to Canvas?\n. . .\n\nBy default, Quarto does not embed plots in the HTML document. Instead, it creates a “PA-2-files” folder which stores all your plots.\n\n. . .\n\nSo, when you submit your HTML file, your plots are not included! How do we fix this????\n\n. . .\n\nAdd an embed-resources: true line to your YAML (at the beginning of your document)!\n---\ntitle: \"PA 2: Using Data Visualization to Find the Penguins\"\nauthor: \"Dr. T!\"\nformat: html\neditor: source\nembed-resources: true\n---"
   },
   {
     "objectID": "group-activities/week-4/PA-4-task-card.html",
@@ -3679,5 +3679,19 @@
     "title": "PA 4 Task Card – Military Spending",
     "section": "Code Formatting",
     "text": "Code Formatting\nDon’t forget, writing “tidy” and “well documented” code are two of the learning targets for this course. As such, I would strongly encourage you to use every opportunity to practice these skills.\nAs you are writing code for this assignment, make sure your code follows the tidyverse style guide for dplyr code. Specifically, your code should:\n\nuse whitespace liberally\n\nbefore & after every = sign\nafter every ,\nbefore every |&gt;\n\nuse new lines liberally\n\nafter every |&gt;\nafter , when needed (if code is more than 80 characters in length)"
+  },
+  {
+    "objectID": "slides/week-2/week-2-import.html",
+    "href": "slides/week-2/week-2-import.html",
+    "title": "Tidy Data, Importing Data & More Advanced Graphics",
+    "section": "",
+    "text": "Today we will…\n\n\nDebrief PA 1\nDebrief Lab 1\n\nContent Related to Lab 2\n\nNew Material\n\nTidy Data\nLoad External Data\nGraphical Perception\nColors in ggplot\n\nLab 2: Exploring Rodents with ggplot2\n\nUsing External Resources"
+  },
+  {
+    "objectID": "weeks/week-4-factors.html",
+    "href": "weeks/week-4-factors.html",
+    "title": "Working with Categorical Variables",
+    "section": "",
+    "text": "The second section of this coursework is focused on working with factor data types. By the end of this week, you should be able to:\n\nUse forcats to reorder and relabel factor variables in data cleaning steps and data visualizations.\n\n\n\n▶️ Watch Videos: 9-minutes\n\n\n📖 Readings: 15-minutes\n\n\n💻 Activities: 0\n\n\n✅ Check-ins: 1\n\n\n\n1 Factors with forcats\nWe have been floating around the idea of factor data types. In this section, we will formally define factors and why they are needed for data visualization and analysis. We will then learn useful functions for working with factors in our data cleaning steps.\n\n\n\n\n\n\n\n\n\n\n\n▶️ Required Video: Working with factors using forcats – 9 minutes\nIn short, factors are categorical variables with a fixed number of values (think a set number of groups). One of the main features that set factors apart from groups is that you can reorder the groups to be non-alphabetical. In this section we will be using the forcats package (part of the tidyverse!) to create and manipulate factor variables.\n📖 Required Reading: R4DS Chapter 16 (Factors)\n\n✅ Check-in 4.3: Functions from forcats\nAnswer the following questions in the Canvas Quiz.\n1. Which of the following tasks can fct_recode() accomplish? Select all that apply!\n\nchanges the values of the factor levels\nreorders the levels of a factor\nremove levels of a factor you don’t want\ncollapse levels of a factor into a new level\n\n2. Which of the following tasks can fct_relevel() accomplish?\n\nreorders the levels of a factor\nchanges the values of the factor levels\nremove levels of a factor you don’t want\ncollapse levels of a factor into a new level\n\n3. What is the main difference between fct_collapse() and fct_recode()?\n\nfct_recode() uses strings to create factor levels\nfct_recode() uses groups to create factor levels\nfct_recode() cannot create an “Other” group\n\n4. What ordering do you get with fct_reorder()?\n\nlargest to smallest based on another variable\norder of appearance\nlargest to smallest based on counts\nalphabetical order\n\n5. What ordering do you get with fct_inorder()?\n\norder of appearance\nalphabetical order\nlargest to smallest based on counts\nlargest to smallest based on another variable :::"
   }
 ]

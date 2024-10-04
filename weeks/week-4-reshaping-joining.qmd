@@ -19,16 +19,10 @@ execute:
 library(tidyverse)
 ```
 
-The first section of this coursework is focused on working with factor data
-types. By the end of this week, you should be able to:
-
-- Use forcats to reorder and relabel factor variables in data cleaning steps and
-data visualizations.
-
-Broadly, your objective while reading the second section of this chapter is to 
-be able to identify data sets which have “messy” formats and determine a
-sequence of operations to transition the data into “tidy” format. To do this, 
-you should master the following concepts:
+Broadly, your objective while reading these chapters is to be able to identify
+data sets which have “messy” formats and determine a sequence of operations to
+transition the data into “tidy” format. To do this, you should master the
+following concepts:
 
 - Determine what data format is necessary to generate a desired plot or
 statistical model.
@@ -39,86 +33,17 @@ from multiple tables into a single table.
 
 ------------------------------------------------------------------------
 
-#### `r emo::ji("play button")` Watch Videos: 
+#### `r emo::ji("play button")` Watch Videos: 25-minutes
 
-#### `r emo::ji("book")` Readings: 
+#### `r emo::ji("book")` Readings: 75-minutes
 
-#### `r emo::ji("computer")` Activities: 
+#### `r emo::ji("computer")` Activities: 3
 
-#### `r emo::ji("check")` Check-ins: 
+#### `r emo::ji("check")` Check-ins: 2
 
 ------------------------------------------------------------------------
 
-# Part One: Factors with `forcats`
-
-We have been floating around the idea of *factor* data types. In this section, 
-we will formally define factors and why they are needed for data visualization
-and analysis. We will then learn useful functions for working with factors in
-our data cleaning steps.
-
-::: column-margin
-```{r}
-#| echo: false
-#| eval: true
-#| out-width: "50%"
-#| fig-align: center
-#| fig-alt: "The image is a hexagonal sticker with a light blue background. In the center, there is an orange cat with a smiling face, standing on its hind legs and holding a string of colorful flags that spell 'forcats' in lowercase letters. The cat appears playful and joyful, and the design gives a whimsical, fun feel. The borders of the hexagon are outlined in white, and the overall design is simple yet vibrant, focusing on the cat and the string of flags."
-
-knitr::include_graphics("images/week-4/forcats.png")
-```
-:::
-
-`r emo::ji("play button")` [Required Video: Working with factors using forcats -- 9 minutes](https://www.youtube.com/embed/dAiSYli7tVg)
-
-In short, factors are categorical variables with a fixed number of values (think
-a set number of groups). One of the main features that set factors apart from
-groups is that you can reorder the groups to be non-alphabetical. In this
-section we will be using the `forcats` package (part of the `tidyverse`!) to
-create and manipulate factor variables.
-
-`r emo::ji("book")` [Required Reading: *R4DS* Chapter 16 (Factors) ](https://r4ds.hadley.nz/factors.html)
-
-<!-- ::: check-in -->
-<!-- ## Check-in 4.1: Functions from `forcats` {- #checkin4-1} -->
-
-<!-- Answer the following questions in the Canvas Quiz. -->
-
-<!-- **1. Which of the following tasks can `fct_recode()` accomplish?** -->
-
-<!-- + changes the values of the factor levels -->
-<!-- + reorders the levels of a factor -->
-<!-- + remove levels of a factor you don’t want -->
-<!-- + collapse levels of a factor into a new level -->
-
-<!-- **2. Which of the following tasks can `fct_relevel()` accomplish?** -->
-
-<!-- + reorders the levels of a factor -->
-<!-- + changes the values of the factor levels -->
-<!-- + remove levels of a factor you don’t want -->
-<!-- + collapse levels of a factor into a new level -->
-
-<!-- **3. What is the main difference between `fct_collapse()` and `fct_recode()`?** -->
-
-<!-- + `fct_recode()` uses strings to create factor levels -->
-<!-- + `fct_recode()` uses groups to create factor levels -->
-<!-- + `fct_recode()` cannot create an “Other” group -->
-
-<!-- **4. What ordering do you get with `fct_reorder()`?** -->
-
-<!-- + largest to smallest based on another variable -->
-<!-- + order of appearance -->
-<!-- + largest to smallest based on counts -->
-<!-- + alphabetical order -->
-
-<!-- **5. What ordering do you get with `fct_inorder()`?** -->
-
-<!-- + order of appearance -->
-<!-- + alphabetical order -->
-<!-- + largest to smallest based on counts -->
-<!-- + largest to smallest based on another variable -->
-<!-- ::: -->
-
-# Part Two: Tidy Data
+# Part One: Tidy Data
 
 The illustrations below are lifted from an [excellent blog post](https://www.openscapes.org/blog/2020/10/12/tidy-data/) [@lowndesTidyDataEfficiency2020] about tidy data; they're reproduced here 
 because
@@ -299,7 +224,7 @@ Part of this course is building the skills for you to be able to map your data
 operation steps from an original data set to the correct format (and output).
 :::
 
-# Part Three: Reshaping Data
+# Part Two: Reshaping Data
 
 `r emo::ji("book")` [Required Reading: *R4DS* Chapter 5 (Data tidying)](https://r4ds.hadley.nz/data-tidy.html)
 
@@ -313,11 +238,13 @@ operation steps from an original data set to the correct format (and output).
 
 `r emo::ji("play button")` [Required Video: Pivoting Wider -- 9 minutes](http://somup.com/crfqebF63k)
 
-### `r emo::ji("check")` **Check-in 4.1: *Pivoting***
+### `r emo::ji("check")` **Check-in 4.1: Practice with Pivoting**
 
 Load in the cereal data set:
 
 ```{r}
+#| message: false
+
 library(liver)
 
 data(cereal)
@@ -339,7 +266,7 @@ columns:
 You are expected to use `pivot_longer()` to perform this operation!
 :::
 
-# Part Four: Joining data
+# Part Three: Joining data
 
 `r emo::ji("book")` [Required Reading: *R4DS* Chapter 21 (Joins)](https://r4ds.hadley.nz/joins.html)
 
@@ -348,7 +275,7 @@ Because these chapters do a **much** better job visualizing the concepts, I've
 chosen not to record additional videos.
 :::
 
-### `r emo::ji("check")` **Check-in 4.1: Practice with Joins**
+### `r emo::ji("check")` **Check-in 4.2: Practice with Joins**
 
 The following code creates three datasets / tibbles:
 
@@ -466,3 +393,4 @@ Carlton   Stat_331 TRUE                 8
 Carlton   Stat_330 FALSE                3
 Carlton   Stat_431 FALSE                1
 ```
+

@@ -321,18 +321,17 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-one-factors-with-forcats" id="toc-part-one-factors-with-forcats" class="nav-link active" data-scroll-target="#part-one-factors-with-forcats"><span class="header-section-number">1</span> Part One: Factors with <code>forcats</code></a></li>
-  <li><a href="#part-two-tidy-data" id="toc-part-two-tidy-data" class="nav-link" data-scroll-target="#part-two-tidy-data"><span class="header-section-number">2</span> Part Two: Tidy Data</a>
+  <li><a href="#part-one-tidy-data" id="toc-part-one-tidy-data" class="nav-link active" data-scroll-target="#part-one-tidy-data"><span class="header-section-number">1</span> Part One: Tidy Data</a>
   <ul class="collapse">
-  <li><a href="#examples-messy-data" id="toc-examples-messy-data" class="nav-link" data-scroll-target="#examples-messy-data"><span class="header-section-number">2.1</span> Examples: Messy Data</a></li>
+  <li><a href="#examples-messy-data" id="toc-examples-messy-data" class="nav-link" data-scroll-target="#examples-messy-data"><span class="header-section-number">1.1</span> Examples: Messy Data</a></li>
   </ul></li>
-  <li><a href="#part-three-reshaping-data" id="toc-part-three-reshaping-data" class="nav-link" data-scroll-target="#part-three-reshaping-data"><span class="header-section-number">3</span> Part Three: Reshaping Data</a>
+  <li><a href="#part-two-reshaping-data" id="toc-part-two-reshaping-data" class="nav-link" data-scroll-target="#part-two-reshaping-data"><span class="header-section-number">2</span> Part Two: Reshaping Data</a>
   <ul class="collapse">
-  <li><a href="#check-in-4.1-pivoting" id="toc-check-in-4.1-pivoting" class="nav-link" data-scroll-target="#check-in-4.1-pivoting">✅ <strong>Check-in 4.1: <em>Pivoting</em></strong></a></li>
+  <li><a href="#check-in-4.1-practice-with-pivoting" id="toc-check-in-4.1-practice-with-pivoting" class="nav-link" data-scroll-target="#check-in-4.1-practice-with-pivoting">✅ <strong>Check-in 4.1: Practice with Pivoting</strong></a></li>
   </ul></li>
-  <li><a href="#part-four-joining-data" id="toc-part-four-joining-data" class="nav-link" data-scroll-target="#part-four-joining-data"><span class="header-section-number">4</span> Part Four: Joining data</a>
+  <li><a href="#part-three-joining-data" id="toc-part-three-joining-data" class="nav-link" data-scroll-target="#part-three-joining-data"><span class="header-section-number">3</span> Part Three: Joining data</a>
   <ul class="collapse">
-  <li><a href="#check-in-4.1-practice-with-joins" id="toc-check-in-4.1-practice-with-joins" class="nav-link" data-scroll-target="#check-in-4.1-practice-with-joins">✅ <strong>Check-in 4.1: Practice with Joins</strong></a></li>
+  <li><a href="#check-in-4.2-practice-with-joins" id="toc-check-in-4.2-practice-with-joins" class="nav-link" data-scroll-target="#check-in-4.2-practice-with-joins">✅ <strong>Check-in 4.2: Practice with Joins</strong></a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-331-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -359,78 +358,28 @@ div.csl-indent {
 </header>
 
 
-<p>The first section of this coursework is focused on working with factor data types. By the end of this week, you should be able to:</p>
-<ul>
-<li>Use forcats to reorder and relabel factor variables in data cleaning steps and data visualizations.</li>
-</ul>
-<p>Broadly, your objective while reading the second section of this chapter is to be able to identify data sets which have “messy” formats and determine a sequence of operations to transition the data into “tidy” format. To do this, you should master the following concepts:</p>
+<p>Broadly, your objective while reading these chapters is to be able to identify data sets which have “messy” formats and determine a sequence of operations to transition the data into “tidy” format. To do this, you should master the following concepts:</p>
 <ul>
 <li>Determine what data format is necessary to generate a desired plot or statistical model.</li>
 <li>Understand the differences between “wide” and “long” format data and how to transition between the two structures.</li>
 <li>Understand relational data formats and how to use data joins to assemble data from multiple tables into a single table.</li>
 </ul>
 <hr>
-<section id="watch-videos" class="level4">
-<h4 class="anchored" data-anchor-id="watch-videos">▶️ Watch Videos:</h4>
+<section id="watch-videos-25-minutes" class="level4">
+<h4 class="anchored" data-anchor-id="watch-videos-25-minutes">▶️ Watch Videos: 25-minutes</h4>
 </section>
-<section id="readings" class="level4">
-<h4 class="anchored" data-anchor-id="readings">📖 Readings:</h4>
+<section id="readings-75-minutes" class="level4">
+<h4 class="anchored" data-anchor-id="readings-75-minutes">📖 Readings: 75-minutes</h4>
 </section>
-<section id="activities" class="level4">
-<h4 class="anchored" data-anchor-id="activities">💻 Activities:</h4>
+<section id="activities-3" class="level4">
+<h4 class="anchored" data-anchor-id="activities-3">💻 Activities: 3</h4>
 </section>
-<section id="check-ins" class="level4">
-<h4 class="anchored" data-anchor-id="check-ins">✅ Check-ins:</h4>
+<section id="check-ins-2" class="level4">
+<h4 class="anchored" data-anchor-id="check-ins-2">✅ Check-ins: 2</h4>
 <hr>
 </section>
-<section id="part-one-factors-with-forcats" class="level1 page-columns page-full" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Part One: Factors with <code>forcats</code></h1>
-<p>We have been floating around the idea of <em>factor</em> data types. In this section, we will formally define factors and why they are needed for data visualization and analysis. We will then learn useful functions for working with factors in our data cleaning steps.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/week-4/forcats.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="The image is a hexagonal sticker with a light blue background. In the center, there is an orange cat with a smiling face, standing on its hind legs and holding a string of colorful flags that spell 'forcats' in lowercase letters. The cat appears playful and joyful, and the design gives a whimsical, fun feel. The borders of the hexagon are outlined in white, and the overall design is simple yet vibrant, focusing on the cat and the string of flags."></p>
-</figure>
-</div>
-</div>
-</div>
-</div></div><p>▶️ <a href="https://www.youtube.com/embed/dAiSYli7tVg">Required Video: Working with factors using forcats – 9 minutes</a></p>
-<p>In short, factors are categorical variables with a fixed number of values (think a set number of groups). One of the main features that set factors apart from groups is that you can reorder the groups to be non-alphabetical. In this section we will be using the <code>forcats</code> package (part of the <code>tidyverse</code>!) to create and manipulate factor variables.</p>
-<p>📖 <a href="https://r4ds.hadley.nz/factors.html">Required Reading: <em>R4DS</em> Chapter 16 (Factors)</a></p>
-<!-- ::: check-in -->
-<!-- ## Check-in 4.1: Functions from `forcats` {- #checkin4-1} -->
-<!-- Answer the following questions in the Canvas Quiz. -->
-<!-- **1. Which of the following tasks can `fct_recode()` accomplish?** -->
-<!-- + changes the values of the factor levels -->
-<!-- + reorders the levels of a factor -->
-<!-- + remove levels of a factor you don’t want -->
-<!-- + collapse levels of a factor into a new level -->
-<!-- **2. Which of the following tasks can `fct_relevel()` accomplish?** -->
-<!-- + reorders the levels of a factor -->
-<!-- + changes the values of the factor levels -->
-<!-- + remove levels of a factor you don’t want -->
-<!-- + collapse levels of a factor into a new level -->
-<!-- **3. What is the main difference between `fct_collapse()` and `fct_recode()`?** -->
-<!-- + `fct_recode()` uses strings to create factor levels -->
-<!-- + `fct_recode()` uses groups to create factor levels -->
-<!-- + `fct_recode()` cannot create an “Other” group -->
-<!-- **4. What ordering do you get with `fct_reorder()`?** -->
-<!-- + largest to smallest based on another variable -->
-<!-- + order of appearance -->
-<!-- + largest to smallest based on counts -->
-<!-- + alphabetical order -->
-<!-- **5. What ordering do you get with `fct_inorder()`?** -->
-<!-- + order of appearance -->
-<!-- + alphabetical order -->
-<!-- + largest to smallest based on counts -->
-<!-- + largest to smallest based on another variable -->
-<!-- ::: -->
-</section>
-<section id="part-two-tidy-data" class="level1 page-columns page-full" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Part Two: Tidy Data</h1>
+<section id="part-one-tidy-data" class="level1 page-columns page-full" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Part One: Tidy Data</h1>
 <p>The illustrations below are lifted from an <a href="https://www.openscapes.org/blog/2020/10/12/tidy-data/">excellent blog post</a> <span class="citation" data-cites="lowndesTidyDataEfficiency2020">(<a href="#ref-lowndesTidyDataEfficiency2020" role="doc-biblioref">Lowndes and Horst 2020</a>)</span> about tidy data; they’re reproduced here because</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
@@ -486,8 +435,8 @@ div.csl-indent {
 </div>
 </div>
 <p>Tidy data makes it easier to collaborate with others and analyze new data using standardized workflows.</p>
-<section id="examples-messy-data" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="examples-messy-data"><span class="header-section-number">2.1</span> Examples: Messy Data</h2>
+<section id="examples-messy-data" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="examples-messy-data"><span class="header-section-number">1.1</span> Examples: Messy Data</h2>
 <p>These datasets all display the same data: TB (Tuberculosis) cases documented by the WHO (World Health Organization) in Afghanistan, Brazil, and China, between 1999 and 2000. There are four variables: country, year, cases, and population, but each table has a different layout.</p>
 <ul>
 <li>For each of the data set, determine whether each table is tidy.
@@ -847,8 +796,8 @@ Do we always want our data in the same layout?
 </div>
 </section>
 </section>
-<section id="part-three-reshaping-data" class="level1 page-columns page-full" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Part Three: Reshaping Data</h1>
+<section id="part-two-reshaping-data" class="level1 page-columns page-full" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Part Two: Reshaping Data</h1>
 <p>📖 <a href="https://r4ds.hadley.nz/data-tidy.html">Required Reading: <em>R4DS</em> Chapter 5 (Data tidying)</a></p>
 
 <div class="no-row-height column-margin column-container"><div class="">
@@ -856,23 +805,15 @@ Do we always want our data in the same layout?
 </div></div><p>▶️ <a href="http://somup.com/crfFrmF6VQ">Required Video: Data Layouts – 7 minutes</a></p>
 <p>▶️ <a href="http://somup.com/crfF3NF6hg">Required Video: Pivoting Longer – 9 minutes</a></p>
 <p>▶️ <a href="http://somup.com/crfqebF63k">Required Video: Pivoting Wider – 9 minutes</a></p>
-<section id="check-in-4.1-pivoting" class="level3">
-<h3 class="anchored" data-anchor-id="check-in-4.1-pivoting">✅ <strong>Check-in 4.1: <em>Pivoting</em></strong></h3>
+<section id="check-in-4.1-practice-with-pivoting" class="level3">
+<h3 class="anchored" data-anchor-id="check-in-4.1-practice-with-pivoting">✅ <strong>Check-in 4.1: Practice with Pivoting</strong></h3>
 <p>Load in the cereal data set:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(liver)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'liver'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:base':
-
-    transform</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(cereal)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cereal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(liver)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(cereal)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cereal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                       name manuf type calories protein fat sodium fiber carbo
 1                 100% Bran     N cold       70       4   1    130  10.0   5.0
@@ -911,8 +852,8 @@ Caution
 </div>
 </section>
 </section>
-<section id="part-four-joining-data" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Part Four: Joining data</h1>
+<section id="part-three-joining-data" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Part Three: Joining data</h1>
 <p>📖 <a href="https://r4ds.hadley.nz/joins.html">Required Reading: <em>R4DS</em> Chapter 21 (Joins)</a></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -927,63 +868,63 @@ Note
 <p>Because these chapters do a <strong>much</strong> better job visualizing the concepts, I’ve chosen not to record additional videos.</p>
 </div>
 </div>
-<section id="check-in-4.1-practice-with-joins" class="level3">
-<h3 class="anchored" data-anchor-id="check-in-4.1-practice-with-joins">✅ <strong>Check-in 4.1: Practice with Joins</strong></h3>
+<section id="check-in-4.2-practice-with-joins" class="level3">
+<h3 class="anchored" data-anchor-id="check-in-4.2-practice-with-joins">✅ <strong>Check-in 4.2: Practice with Joins</strong></h3>
 <p>The following code creates three datasets / tibbles:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>prof_info <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">professor =</span> <span class="fu">c</span>(<span class="st">"Bodwin"</span>, </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Theobold"</span>, </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Robinson"</span>,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Mann"</span>, </span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Ruiz"</span>),</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">undergrad_school =</span> <span class="fu">c</span>(<span class="st">"Harvard"</span>, </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Colorado Mesa University"</span>,</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Winona State University"</span>,</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Carlton College"</span>, </span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Reed College"</span>),</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">grad_school =</span> <span class="fu">c</span>(<span class="st">"UNC"</span>, </span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Montana State University"</span>, </span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"University of Nebraska-Lincoln"</span>,</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"University of Michigan"</span>, </span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Oregon State University"</span>)</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>prof_course <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">tibble</span>(</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">professor =</span> <span class="fu">c</span>(<span class="st">"Bodwin"</span>, </span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Robinson"</span>, </span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Theobold"</span>, </span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Mann"</span>, </span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Carlton"</span>),</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">Stat_331 =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, </span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>, </span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>, </span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>, </span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>),</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">Stat_330 =</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, </span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>, </span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>               <span class="cn">FALSE</span>, </span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>               <span class="cn">FALSE</span>, </span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>               <span class="cn">FALSE</span>),</span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">Stat_431 =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, </span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>, </span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>, </span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>, </span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>               <span class="cn">FALSE</span>)</span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>course_info <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">course =</span> <span class="fu">c</span>(<span class="st">"Stat_331"</span>, </span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Stat_330"</span>, </span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Stat_431"</span>),</span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>  <span class="at">num_sections =</span> <span class="fu">c</span>(<span class="dv">8</span>, </span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>                   <span class="dv">3</span>, </span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>                   <span class="dv">1</span>)</span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>prof_info <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">professor =</span> <span class="fu">c</span>(<span class="st">"Bodwin"</span>, </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Theobold"</span>, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Robinson"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Mann"</span>, </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Ruiz"</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">undergrad_school =</span> <span class="fu">c</span>(<span class="st">"Harvard"</span>, </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Colorado Mesa University"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Winona State University"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Carlton College"</span>, </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Reed College"</span>),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">grad_school =</span> <span class="fu">c</span>(<span class="st">"UNC"</span>, </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Montana State University"</span>, </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"University of Nebraska-Lincoln"</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"University of Michigan"</span>, </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Oregon State University"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>prof_course <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">professor =</span> <span class="fu">c</span>(<span class="st">"Bodwin"</span>, </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Robinson"</span>, </span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Theobold"</span>, </span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Mann"</span>, </span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Carlton"</span>),</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">Stat_331 =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>, </span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>, </span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>, </span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>),</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">Stat_330 =</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, </span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>, </span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>               <span class="cn">FALSE</span>, </span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>               <span class="cn">FALSE</span>, </span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>               <span class="cn">FALSE</span>),</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">Stat_431 =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, </span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>, </span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>, </span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>               <span class="cn">TRUE</span>, </span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>               <span class="cn">FALSE</span>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>course_info <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">course =</span> <span class="fu">c</span>(<span class="st">"Stat_331"</span>, </span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Stat_330"</span>, </span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Stat_431"</span>),</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>  <span class="at">num_sections =</span> <span class="fu">c</span>(<span class="dv">8</span>, </span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>                   <span class="dv">3</span>, </span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>                   <span class="dv">1</span>)</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here is what they look like once created:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>prof_info</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>prof_info</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
   professor undergrad_school         grad_school                   
@@ -994,7 +935,7 @@ Note
 4 Mann      Carlton College          University of Michigan        
 5 Ruiz      Reed College             Oregon State University       </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>prof_course </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>prof_course </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
   professor Stat_331 Stat_330 Stat_431
@@ -1005,7 +946,7 @@ Note
 4 Mann      TRUE     FALSE    TRUE    
 5 Carlton   TRUE     FALSE    FALSE   </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>course_info</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>course_info</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   course   num_sections
