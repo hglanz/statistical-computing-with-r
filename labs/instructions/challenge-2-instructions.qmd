@@ -5,7 +5,6 @@ toc: true
 editor: source
 execute:
   echo: false
-  eval: false
   message: false
   warning: false
   error: true
@@ -76,7 +75,7 @@ and directly specify the colors you want to use. You can either:
 2.  create a vector of colors using hex numbers and store that vector as a
 variable. Then, call that vector in the `scale_color_manual()` function.
 
-Here are some exaplme hex color schemes:
+Here are some example hex color schemes:
 
 ```{r}
 #| echo: true
@@ -95,11 +94,16 @@ If you are interested in using specific hex colors, I like the [image color pick
 
 ```{r}
 #| include: false
-surveys |> 
-  ggplot(aes(x = weight, y = species, color = genus)) +
+
+ggplot(data = surveys, 
+       mapping = aes(x = weight, y = species, color = genus)
+       ) +
   geom_boxplot() +
   scale_color_manual(values = cdPalette_grey) +
-  labs(x = "Weight (g)", y = "", subtitle = "Species", legend = "Genus")
+  labs(x = "Weight (g)", 
+       y = "", 
+       subtitle = "by Rodent Species", 
+       legend = "Genus")
 ```
 
 ### Package Specification
@@ -136,18 +140,17 @@ We can add annotation(s) to a `ggplot()` using the `annotate()` function:
 #| label: example-annotation
 
 ggplot(data = surveys, 
-       mapping = aes(y = species,
-                     x = weight,
-                     color = genus)) +
+       mapping = aes(x = weight, y = species, color = genus)
+       ) +
   geom_boxplot() +
   scale_color_manual(values = cdPalette_grey) + 
-  annotate("text", y = 6, x = 250, label = "Sigmodon") +
-  annotate("text", y = 4, x = 250, label = "Perognathus") +
+  annotate("text", y = 6, x = 200, label = "Sigmodon") +
+  annotate("text", y = 4, x = 200, label = "Perognathus") +
   theme(legend.position = "none") +
   labs(x = "Weight (g)",
        y = "",
-       subtitle = "Species",
-       title = "Rodent Weight by Species")
+       subtitle = "by Species and Genera",
+       title = "Rodent Weight")
 ```
 
 Note that I've labeled the "Sigmodon" and "Perognathus" genera, so the reader
