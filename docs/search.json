@@ -614,7 +614,7 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#the-pipe-operator-2",
     "title": "Data Wrangling with dplyr",
     "section": "The Pipe Operator",
-    "text": "The Pipe Operator\n\nThe pipe specifies a sequence of operations.\n\nThe output from one operation is passed into the first argument (the dataset) of the next operation.\n\n\n\n\nThe “original” pipe: %&gt;%\n\nLoaded with tidyverse package (part of magrittr).\n\nThe “native” pipe: |&gt;\n\nCreated in R version 4.1.0.\nTools &gt; Global Options... &gt; Code &gt; check Use native pipe operator box."
+    "text": "The Pipe Operator\n\nThe pipe specifies a sequence of operations.\n\nThe output from one operation is passed into the first argument (the dataset) of the next operation.\n\n\n\n\nThe “original” pipe: %&gt;%\n\nLoaded with tidyverse package (part of magrittr).\n\nThe “native” pipe: |&gt;\n\nCreated in R version 4.1.0.\nDirections for how to use"
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt1.html#the-pipe-operator-3",

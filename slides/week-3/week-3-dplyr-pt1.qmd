@@ -96,7 +96,7 @@ knitr::include_graphics("images/diagram_sentence.jpg")
 + The "native" pipe: `|>`
 
   + Created in `R` version 4.1.0.
-  + `Tools` > `Global Options...` > `Code` > check `Use native pipe operator` box.
+  + [Directions for how to use](https://scribehow.com/shared/Setting_Up_the_Native_Pipe_in_R__ZMEdb0tKRtil46l2S6SeIA)
 
 
 ## The Pipe Operator
