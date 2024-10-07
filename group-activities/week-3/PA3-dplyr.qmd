@@ -48,7 +48,9 @@ Remember, your group is expected to adhere to the following norms:
 
 1.  Think and work together. Do not divide the work.
 2.  You are smarter together.
-3.  No cross-talk with other groups.
+3.  Be open minded. 
+4.  No cross-talk with other groups.
+5.  Communicate with each other! 
 
 # Part One: Data Import and Cleaning
 
@@ -109,14 +111,13 @@ colleges_clean1 <- colleges | >
          CONTROL, REGION) 
 ```
 
-**Step 2:** Remove the schools that are for-profit (category 3), keeping public
-(category 1) and private schools (category 2).
+**Step 2:** Remove the schools that are private and for-profit (category 3).
 
 ```{r}
 #| label: filter-private-profit
 
-colleges_clean2 <- colleges_clean |> 
-  filter(CONTROL == 1, CONTROL == 2)
+colleges_clean2 <- colleges_clean1 |> 
+  filter(CONTROL == 3)
 ```
 
 **Step 3:** Adjust the appropriate variables to be numeric, using `as.numeric()`.
@@ -124,7 +125,7 @@ colleges_clean2 <- colleges_clean |>
 ```{r}
 #| label: mutate-numeric
 
-colleges_clean3 <- colleges_clean |> 
+colleges_clean3 <- colleges_clean2 |> 
   mutate(TUITIONFEE_IN  = numeric(TUITIONFEE_IN),
          TUITIONFEE_OUT = numeric(TUITIONFEE_OUT),
          SAT_AVG        = numeric(SAT_AVG),
@@ -139,7 +140,7 @@ colleges_clean3 <- colleges_clean |>
 ```{r}
 #| label: mutate-factor
 
-colleges_clean4 <- colleges_clean |>
+colleges_clean4 <- colleges_clean3 |>
   mutate(CONTROL = as.character(CONTROL),
          REGION  = as.character(REGION))
 ```
@@ -150,28 +151,39 @@ difference between out-of-state and in-state costs.
 ```{r}
 #| label: add-differences-between-in-state-out-of-state
 
-colleges_clean5 |> 
+colleges_clean4 |> 
     TUITION_DIFF = TUITIONFEE_OUT - TUITIONFEE_IN
 ```
 
-**Step 6:** Create a new variable called `TOTAL_IN` which contains the total
+**Step 6:** Create a new variable called `TOTAL_APPLY` which contains the 
+number of students who apply to the university every year. (You can assume the
+size of the first year class is 1/4 of the undergraduate population.)
+
+```{r}
+#| label: add-total-apply
+
+colleges_clean6 <- colleges_clean5 |> 
+    mutate(APPLY = ADM_RATE * (UGDS / 4))
+```
+
+**Step 7:** Create a new variable called `TOTAL_IN` which contains the total
 amount of money made from tuition per year.
 
 ```{r}
 #| label: add-total-tuition
 
-colleges_clean6 <- colleges_clean |> 
+colleges_clean7 <- colleges_clean6 |> 
     select(TOTAL_IN = UGDS x TUITIONFEE_IN)
 ```
 
 <!-- Swap roles -- Developer becomes Coder, Coder becomes Developer! -->
 
-**Step 7:** Remove every row with missing data.
+**Step 8:** Remove every row with missing data.
 
 ```{r}
 #| label: drop-na
 
-colleges_clean7 <- colleges_clean |> 
+colleges_clean8 <- colleges_clean7 |> 
   drop.na()
 ```
 
@@ -179,7 +191,7 @@ At this point we've made seven different datasets, but notice each of these step
 started with `colleges_clean <- colleges_clean |>`. That is pretty redundant! 
 Instead, we could have performed all these tasks as one long "pipeline."
 
-**Step 8:** Combine your (fixed) code chunks into a **single** code chunk that
+**Step 9:** Combine your (fixed) code chunks into a **single** code chunk that
 carries out all of the steps necessary to clean the data. 
 
 *Think about coding efficiency -- you __should not__ have multiple calls to the __same__ function!*
@@ -194,39 +206,34 @@ colleges_clean <- colleges |>
 
 # Part Two: Identify the Mystery College
 
-Wow! Your best friend Margaret has been accepted to her top choice college!
-Unfortunately, Margaret is a very mysterious person, and she won't tell you
+Wow! Your best friend Ephelia has been accepted to her top choice college!
+Unfortunately, Ephelia is a very mysterious person, and she won't tell you
 directly which college this is. You'll have to use her clues to figure out which
 school is her dream school.
 
 **Clues:**
 
-<!-- Swap roles -- Developer becomes Coder, Coder becomes Developer! -->
+1.  This college is located in Region 7.
 
-1.  This college is located in Region 4.
+2.  This college's admission rate is above the median rate for the region.
 
-2.  This college's admission rate is below the median rate for the region.
+3.  This college **does not** charge the same for in- and out-of-state tuition.
 
-3.  This college **does** charge the same for in- and out-of-state tuition.
+4.  The average SAT score of this college is an odd number.
 
-4.  The average SAT score of this college is an even number.
+5.  This college **is not** in Idaho.
 
-<!-- Swap roles -- Developer becomes Coder, Coder becomes Developer! -->
+6.  Less than 10,000 undergraduates attend this college.
 
-5.  This college is in the state where gooey butter cake, the Chiefs, and the
-Anheuser-Busch Clydesdales are a thing.
+7.  The college **is not** in the state where Dr. Theobold received a Ph.D.
 
-6.  More than 1,000 undergraduates attend this college.
+8.  Of the five options remaining at this step, Ephelia will attend the college
+that has the lowest admission rate.
 
-7.  The total amount of money made from tuition per year for this college is 
-greater than or equal to $50,000,000.
+```{r identify-college}
+# Code to solve for the mystery college using the 8 clues above.
 
-8.  Of the three options remaining at this step, Margaret will attend the
-college that has the lowest admission rate.
-
-```{r}
-#| label: identify-college
 
 ```
 
-Submit the college Margaret will attend to the Canvas Quiz.
+Submit the college Ephelia will attend to the Canvas Quiz.
