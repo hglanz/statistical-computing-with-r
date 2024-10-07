@@ -1,11 +1,11 @@
 ---
-title: "PA 3 Task Card -- Finding Margaret's College"
+title: "PA 3 Task Card -- Finding Ephelia's College"
 editor: source
-format: typst
+format: docx
 ---
 
 Today you will use the `dplyr` package to clean some data. We will then use that
-cleaned data to figure out what college Margaret has been accepted to.
+cleaned data to figure out what college Ephelia has been accepted to.
 
 ***This task is complex. It requires many different types of abilities. Everyone
 will be good at some of these abilities but nobody will be good at all of them.
@@ -41,15 +41,16 @@ Remember, your group is expected to adhere to the following norms:
 4.  No cross-talk with other groups.
 5.  Communicate with each other! 
 
-\newpage
+{{< pagebreak >}}
 
 ## Dealing with Errors
 
 As you work through this PA, you will encounter some code that does not work as
-you want it to. Don't despair! **Errors** (when R is unable to run your code)
-and **bugs** (when the code doesn't do what you hoped) are a natural part of
-coding. Even the best of the best deal with these problems regularly - learning
-to track down the issue is a skill that you can learn and practice.
+you want it to. Don't despair! 
+**Errors** (when R is unable to run your code) and **bugs** (when the code
+doesn't do what you hoped) are a natural part of coding. Even the best of the
+best deal with these problems regularly - learning to track down the issue is a
+skill that you can learn and practice.
 
 **Errors can be sneaky - check results *often*!**
 
