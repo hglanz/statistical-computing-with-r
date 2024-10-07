@@ -572,7 +572,7 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#tuesday-october-8",
     "title": "Data Wrangling with dplyr",
     "section": "Tuesday, October 8",
-    "text": "Tuesday, October 8\nToday we will…\n\nComments from Week 2\nNew Material\n\nIntroduce the dplyr package.\nUse dplyr verbs to manipulate data.\n\nPA 3: Identify the Mystery College"
+    "text": "Tuesday, October 8\nToday we will…\n\nNew Material\n\nIntroduce the dplyr package.\nUse dplyr verbs to manipulate data.\n\nPA 3: Identify the Mystery College"
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt1.html#comments-from-week-2",
@@ -593,7 +593,7 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#dplyr",
     "title": "Data Wrangling with dplyr",
     "section": "dplyr",
-    "text": "dplyr\ndplyr is part of the tidyverse that provides us with the Grammar of Data Manipulation.\n\nThis package gives us the tools to wrangle, manipulate, and tidy our data with ease.\nCheck out the dplyr cheatsheet."
+    "text": "dplyr\ndplyr is part of the tidyverse that provides us with the Grammar of Data Wrangling.\n\nThis package gives us the tools to wrangle and tidy our data with ease.\nCheck out the dplyr cheatsheet."
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt1.html#dplyr-verbs",
@@ -740,7 +740,7 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#slice_max",
     "title": "Data Wrangling with dplyr",
     "section": "slice_max()",
-    "text": "slice_max()\nSelects the n rows with the maximum values of the specified variable.\n\ncereal |&gt; \n  slice_max(order_by = sugars, n = 3)\n\n\n\n\n\n\n\nname\nmanuf\ntype\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\nshelf\nweight\ncups\nrating\n\n\n\n\nGolden Crisp\nP\ncold\n100\n2\n0\n45\n0\n11\n15\n40\n25\n1\n1.00\n0.88\n35.25244\n\n\nSmacks\nK\ncold\n110\n2\n1\n70\n1\n9\n15\n40\n25\n2\n1.00\n0.75\n31.23005\n\n\nApple Jacks\nK\ncold\n110\n2\n0\n125\n1\n11\n14\n30\n25\n2\n1.00\n1.00\n33.17409\n\n\nPost Nat. Raisin Bran\nP\ncold\n120\n3\n1\n200\n6\n11\n14\n260\n25\n3\n1.33\n0.67\n37.84059\n\n\nTotal Raisin Bran\nG\ncold\n140\n3\n1\n190\n4\n15\n14\n230\n100\n3\n1.50\n1.00\n28.59278\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNot interested in ties?\n\n\nYou can use the with_ties = FALSE) argument to remove ties from your arrange()d output!"
+    "text": "slice_max()\nSelects the n rows with the maximum values of the specified variable.\n\ncereal |&gt; \n  slice_max(order_by = sugars, n = 3)\n\n\n\n\n\n\n\nname\nmanuf\ntype\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\nshelf\nweight\ncups\nrating\n\n\n\n\nGolden Crisp\nP\ncold\n100\n2\n0\n45\n0\n11\n15\n40\n25\n1\n1.00\n0.88\n35.25244\n\n\nSmacks\nK\ncold\n110\n2\n1\n70\n1\n9\n15\n40\n25\n2\n1.00\n0.75\n31.23005\n\n\nApple Jacks\nK\ncold\n110\n2\n0\n125\n1\n11\n14\n30\n25\n2\n1.00\n1.00\n33.17409\n\n\nPost Nat. Raisin Bran\nP\ncold\n120\n3\n1\n200\n6\n11\n14\n260\n25\n3\n1.33\n0.67\n37.84059\n\n\nTotal Raisin Bran\nG\ncold\n140\n3\n1\n190\n4\n15\n14\n230\n100\n3\n1.50\n1.00\n28.59278\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNot interested in ties?\n\n\nYou can use the with_ties = FALSE argument to remove ties from your arranged output!"
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt1.html#how-do-we-arrange-in-base-r",
@@ -782,7 +782,7 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#select-handy-helpers",
     "title": "Data Wrangling with dplyr",
     "section": "select(): Handy Helpers!",
-    "text": "select(): Handy Helpers!\n\neverything() : selects all columns that you have not already specified\nstarts_with() : selects columns with names that start with the specified string\nends_with() : selects columns with names that end with the specified string\ncontains() : selects columns with names that contain the specified string"
+    "text": "select(): Handy Helpers!\n\n\neverything() : selects all columns that you have not already specified\nstarts_with() : selects columns with names that start with the specified string\nends_with() : selects columns with names that end with the specified string\ncontains() : selects columns with names that contain the specified string\n\n\n\n\n\n\n\n\n\nStrings in Week 5\n\n\nYou’ll learn more about working with strings in Week 5!"
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt1.html#rename-1",
@@ -817,7 +817,7 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#mutate-handy-helpers",
     "title": "Data Wrangling with dplyr",
     "section": "mutate(): Handy Helpers!",
-    "text": "mutate(): Handy Helpers!\n\nif_else(): creating a new variable with two levels\ncase_when(): creating a new variable with three or more levels\n\nPssst, don’t use nested if_else() functions.\n\nas.factor(), as.numeric(), etc. : change variable type\n+, -, *, / : basic mathematical operations\n%% : modulo (returns the remainder when doing division)"
+    "text": "mutate(): Handy Helpers!\n\nas.factor(), as.numeric(), etc. : change variable type\n+, -, *, / : basic mathematical operations\n%% : modulo (returns the remainder when doing division)\n\nOn Thursday we’ll talk about:\n\nif_else(): creating a new variable with two levels\ncase_when(): creating a new variable with three or more levels"
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt1.html#how-do-we-mutate-in-base-r",
@@ -845,7 +845,7 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#summarize-1",
     "title": "Data Wrangling with dplyr",
     "section": "summarize()",
-    "text": "summarize()\nWe can calculate summaries of variables in the data.\n\n\ncereal |&gt; \n  summarise(mean_fiber = mean(fiber))\n\n  mean_fiber\n1   2.151948\n\n\n\n\nOr multiple summaries at the same time.\n\ncereal |&gt; \nsummarize(mean_fiber = mean(fiber),\n          num_cereals = n(),\n          mean_sugar = mean(sugars))\n\n  mean_fiber num_cereals mean_sugar\n1   2.151948          77   6.922078"
+    "text": "summarize()\nWe can calculate summaries of variables in the data.\n\n\ncereal |&gt; \n  summarise(mean_fiber = mean(fiber))\n\n  mean_fiber\n1   2.151948\n\n\n\n\nOr multiple summaries at the same time.\n\ncereal |&gt; \nsummarize(mean_fiber = mean(fiber),\n          num_cereals = n(),\n          mean_sugar = mean(sugars)\n          )\n\n  mean_fiber num_cereals mean_sugar\n1   2.151948          77   6.922078"
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt1.html#summarize-handy-helpers",
@@ -908,7 +908,7 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#code-formatting",
     "title": "Data Wrangling with dplyr",
     "section": "Code Formatting",
-    "text": "Code Formatting\nSimilar to the + formatting in ggplot, do not continue a line after writing a |&gt;!\n\nBad PracticeGood Practice\n\n\n\ncereal |&gt; group_by(type) |&gt; summarise(mean_fiber = mean(fiber), num_cereals = n(), mean_sugar = mean(sugars))\n\n\n\n\ncereal |&gt; \n  group_by(type) |&gt; \n  summarise(mean_fiber = mean(fiber), \n            num_cereals = n(),\n            mean_sugar = mean(sugars)\n            )"
+    "text": "Code Formatting\nSimilar to the + formatting in ggplot, do not continue a line after writing a |&gt;!\n\nBad PracticeGoodAmazing\n\n\n\ncereal |&gt; group_by(type) |&gt; summarise(mean_fiber = mean(fiber), num_cereals = n(), mean_sugar = mean(sugars))\n\n\n\n\ncereal |&gt; \n  group_by(type) |&gt; \n  summarise(mean_fiber = mean(fiber), num_cereals = n(), mean_sugar = mean(sugars))\n\n\n\n\ncereal |&gt; \n  group_by(type) |&gt; \n  summarise(mean_fiber = mean(fiber), \n            num_cereals = n(),\n            mean_sugar = mean(sugars)\n            )"
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt1.html#finding-margarets-college",
@@ -922,7 +922,7 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#pair-programming-expectations",
     "title": "Data Wrangling with dplyr",
     "section": "Pair Programming Expectations",
-    "text": "Pair Programming Expectations\n\nDuring your collaboration, you and your partner will alternate between two roles:\n\n\n\n\n\nListener\n\nThe person who will type into the Quarto document in RStudio\nWill not type unless prompted by the Problem Solver\nAsks Problem Solver clarifying questions\nAsks professor questions for the group\n\n\n\n\n\n\n\nProblem Solver\n\nReads out instructions or prompts\nDirects the Listener what to type in the Quarto document in Posit Cloud\nInstructs the Listener what comments to make in the Quarto document to help the group understand the code later\nKeeps group on task"
+    "text": "Pair Programming Expectations\n\nDuring your collaboration, you and your partner will alternate between two roles:\n\n\n\n\nDeveloper\n\n\nReads prompt and ensures Coder understands what is being asked.\nTypes the code specified by the Coder into the Quarto document.       \nRuns the code provided by the Coder.\nWorks with Coder to debug the code. \nEvaluates the output.\n\nWorks with Coder to write code comments.\n\n\n\n\n\n\nCoder\n\n\nReads out instructions or prompts\nDirects the Developer what to type.\nTalks with Developer about their ideas. \nManages resources (e.g., cheatsheets, textbook). \nWorks with Developer to debug the code. \nWorks with Developer to write code comments."
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt1.html#section",
@@ -950,7 +950,7 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#submission",
     "title": "Data Wrangling with dplyr",
     "section": "Submission",
-    "text": "Submission\n\nSubmit the full name of the college Margaret will attend to the Canvas Quiz.\n\n\nEach person will input the college in the PA3 Canvas quiz.\nThe person who last occupied the role of Listener will download and submit the PA-3.qmd file for the group.\n\nOnly one submission per group!"
+    "text": "Submission\n\nSubmit the full name of the college Ephelia will attend to the Canvas Quiz.\n\n\nEach person will input the full name of the college in the PA3 Canvas quiz.\nThe person who last occupied the role of Developer will download and submit the PA-3.html file for the group.\n\nOnly one submission per group!"
   },
   {
     "objectID": "slides/week-2/week-2-ggplot.html#tuesday-october-1",
@@ -1462,7 +1462,7 @@
     "href": "group-activities/week-3/PA3-dplyr.html",
     "title": "PA 3: Identify the Mystery College 🏫",
     "section": "",
-    "text": "Today you will use the dplyr package to clean some data. We will then use that cleaned data to figure out what college Margaret has been accepted to.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group."
+    "text": "Today you will use the dplyr package to clean some data. We will then use that cleaned data to figure out what college Ephelia has been accepted to.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group."
   },
   {
     "objectID": "group-activities/week-3/PA3-dplyr.html#groupwork-protocols",
@@ -3728,5 +3728,26 @@
     "title": "Lab 4: Childcare Costs in California",
     "section": "Challenge 4: Open-Ended Analysis",
     "text": "Challenge 4: Open-Ended Analysis\nInvestigate the full-time median price for childcare in a center-based setting versus the full-time median price for childcare in a family (in-home) setting in California. Pay close attention to the different developmental stages. Support your answer with one table of summary statistics and one visualization.\n\n\n\n\n\n\nTip\n\n\n\n\nAim for about 150-300 words.\n\nYou should (1) introduce the data and the topic you are investigating, (2) discuss your table and plot, and (3) conclude.\n\nThis should read like a mini-report. I recommend using #| code-fold: true for readability.\nDon’t just have a summary table or plot show up “out of the blue” – make sure to build up to them with text, describe what they show, and provide captions."
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt1.html#finding-ephelias-college",
+    "href": "slides/week-3/week-3-dplyr-pt1.html#finding-ephelias-college",
+    "title": "Data Wrangling with dplyr",
+    "section": "Finding Ephelia’s College",
+    "text": "Finding Ephelia’s College\n\nThis activity will require knowledge of:\n\ndebugging code errors\nfunction syntax\nlogical comparisons\ndplyr verbs and when to use them\nchaining steps together with the pipe operator\n\n\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt1.html#task-card",
+    "href": "slides/week-3/week-3-dplyr-pt1.html#task-card",
+    "title": "Data Wrangling with dplyr",
+    "section": "Task Card",
+    "text": "Task Card\nEvery group should have a task card!\n\n\nOn the Front\n\nthe expectation of each role\nthe norms of collaborating\n\n\n\n\n\nOn the Back\n\nadvice for dealing with code errors\nguidelines for formatting dplyr code"
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt1.html#how-does-this-look-in-posit-cloud",
+    "href": "slides/week-3/week-3-dplyr-pt1.html#how-does-this-look-in-posit-cloud",
+    "title": "Data Wrangling with dplyr",
+    "section": "How does this look in Posit Cloud?",
+    "text": "How does this look in Posit Cloud?\nFirst, both of you will do the following:\n\n\nJoin your Practice Activity workspace in Posit Cloud\n\nIf you were sent a new email, you were added to a different group!\n\nLog-in to Posit Cloud\nOpen the PA 3: Identify the Mystery College project\nOpen the PA3-dplyr.qmd file\n\n\n\n\nThen, the partner whose birthday is closest to January 1st starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type.\n\n\n\n\n\nThroughout the activity you will swap roles—the Developer becomes Coder, and the Coder becomes the Developer!"
   }
 ]
