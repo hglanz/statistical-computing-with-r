@@ -16,7 +16,7 @@ execute:
 ---
 
 Today you will use the `dplyr` package to clean some data. We will then use that
-cleaned data to figure out what college Margaret has been accepted to.
+cleaned data to figure out what college Ephelia has been accepted to.
 
 ***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.***
 
