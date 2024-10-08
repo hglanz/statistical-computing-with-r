@@ -150,7 +150,7 @@ declare your data using the `.data` argument
 #| code-line-numbers: false
 #| label: not-piped-data
 
-summary(.data = cereal)
+summarize(.data = cereal)
 ```
 
 :::
@@ -169,7 +169,7 @@ pipe your data into the first argument of the function
 #| label: pipe-data
 
 cereal |> 
-  summary()
+  summarize()
 ```
 :::
 :::
@@ -311,16 +311,13 @@ cereal |>
 
 ## Why not use `&`?
 
-The `,` separating these two conditions is equivalent to using an `&`. 
+The `,` separating these two conditions is equivalent to using an `&`. Why not
+just use a `&`? 
 
 . . .
-
-Why not just use a `&`? 
 
 Well, with a lot of `&`s your code can get hard to
 read...
-
-. . .
 
 ```{r}
 #| label: lots-of-ands
@@ -331,11 +328,29 @@ read...
 filter(sugars < 5 & type == "cold" & calories > 100)
 ```
 
+. . .
+
+</br>
+
+
+So instead we use commas.
+
+```{r}
+#| label: lots-of-commas
+#| eval: false
+#| echo: true
+#| code-line-numbers: false
+
+filter(sugars < 5, 
+       type == "cold", 
+       calories > 100)
+```
 
 ## `filter()`: Handy Helpers!
 
 + `>` : greater than
 + `<` : less than
++ `>=` or `<=`: greater than / less than or equal to
 + `==` : equal to
 + `!` : not
 + `%in%` : checks if an element belongs to a vector
@@ -551,6 +566,20 @@ cereal |>
   arrange(desc(sodium))
 ```
 
+</br> 
+
+```{r}
+#| echo: false
+#| eval: true
+#| label: arrange-desc-table
+
+cereal |> 
+  arrange(desc(sodium)) |>
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "250px") |> 
+  kableExtra::kable_styling(font_size = 25)
+```
+
 
 ## `arrange()`: Related Functions
 
@@ -593,7 +622,7 @@ cereal |>
 # Not interested in ties?
 
 You can use the `with_ties = FALSE` argument to remove ties from your 
-`arrange`d output!
+output!
 :::
 :::
 
@@ -1027,6 +1056,7 @@ Or **multiple** summaries at the same time.
 ```{r}
 #| echo: true
 #| label: summarize-many-vars
+#| code-line-numbers: false
 
 cereal |> 
 summarize(mean_fiber = mean(fiber),
@@ -1155,6 +1185,7 @@ cereal |>
 #| eval: false
 #| echo: true
 #| label: drop-groups
+#| code-line-numbers: false
 
 cereal |> 
   group_by(manuf, type) |> 
@@ -1172,6 +1203,7 @@ cereal |>
 #| eval: false
 #| echo: true
 #| label: ungroup-last
+#| code-line-numbers: false
 
 cereal |> 
   group_by(manuf, type) |> 
@@ -1364,11 +1396,13 @@ Every group should have a **dplyr** cheatsheet!
 
 Every group should have a **task card**! 
 
+. . .
+
 ::: columns
 ::: {.column width="45%"}
 **On the Front**
 
-- the expectation of each role
+- the expectations of each role
 - the norms of collaborating
 :::
 
@@ -1427,7 +1461,7 @@ During your collaboration, you and your partner will alternate between two roles
 -   Directs the Developer what to type. 
 -   Talks with Developer about their ideas. 
 <!-- -   **Does not** ask the Developer how they would solve the problem.  -->
--   Manages resources (e.g., cheatsheets, textbook). 
+-   Manages resources (e.g., cheatsheets, textbook, slides). 
 <!-- -   **Does not** ask the developer what functions / tools they should use.  -->
 -   Works with Developer to debug the code. 
 <!-- -   **Does not** ask the Developer to debug the code.  -->
@@ -1472,7 +1506,7 @@ Coder, and the Coder will become the Developer.
 
 We are alternating roles so everyone:
 
-- has the chance to practice their coding
+- has the chance to apply their coding skills
 - practices talking through their code
 - has the opportunity to explain their thinking
 
