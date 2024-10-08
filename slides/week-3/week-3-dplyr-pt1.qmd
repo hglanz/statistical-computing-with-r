@@ -1289,6 +1289,8 @@ Today you will use the `dplyr` package to clean some data and then use that clea
 
 ## Finding Ephelia's College
 
+::: columns
+::: {.column width="40%"}
 ::: {.small}
 This activity will require knowledge of:
 
@@ -1298,9 +1300,20 @@ This activity will require knowledge of:
 - dplyr verbs and when to use them
 - chaining steps together with the pipe operator
 :::
-. . .
 
-</br> 
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+
+![](images/debugging_horst.png){fig-alt="This image is a comic illustration titled 'debugging' featuring a series of 10 round green characters with various facial expressions and captions describing the stages of debugging code. The first character is smiling confidently with the caption 'I got this.' The second character has a neutral, confused expression with the caption 'Huh. Really thought that was it.' The third character looks puzzled and silent, captioned '(...).' The fourth character looks annoyed, with the caption 'Fine. Restarting.' The fifth character is angry and blushing, captioned 'OH WTF.' The sixth character is having a meltdown, looking wild-eyed and frazzled with the caption 'Zombie meltdown.' The seventh character looks exhausted and sleepy, drooling a bit, captioned with '...' The eighth character has a lightbulb above its head and a hopeful expression, captioned 'A NEW HOPE!' The ninth character looks determined, typing on a keyboard with a caption of '[insert awesome theme song].' Finally, the tenth character is joyful and celebrating with confetti, captioned 'I love CODING' The illustration humorously captures the emotional rollercoaster of debugging code."}
+
+:::
+:::
+
+. . .
 
 [**None of us have all these abilities. Each of us has some of these abilities.**]{.midi}
 
@@ -1426,9 +1439,9 @@ During your collaboration, you and your partner will alternate between two roles
 
 ## How does this look in Posit Cloud?
 
+::: {.small}
 First, both of you will do the following:
 
-::: {.small}
 - Join your Practice Activity workspace in Posit Cloud
   * If you were sent a new email, you were added to a different group!
 - Log-in to Posit Cloud
@@ -1448,13 +1461,35 @@ Developer (typing and listening to instructions from the Coder)!
 - The Developer **only types what they are told to type**. 
 :::
 
+## Why are we switching?
+
+Throughout the activity you will swap roles---the Developer will become the 
+Coder, and the Coder will become the Developer. 
+
 . . .
 
-::: {.small}
-Throughout the activity you will swap roles---the Developer becomes Coder, and the Coder
-becomes the Developer!
-:::
+</br> 
 
+We are alternating roles so everyone:
+
+- has the chance to practice their coding
+- practices talking through their code
+- has the opportunity to explain their thinking
+
+## External Resources
+
+During the Practice Activity, you **are not** permitted to use Google or ChatGPT
+for help. 
+
+. . .
+
+</br> 
+
+You **are** permitted to use:
+
+- the `dplyr` cheatsheet,
+- the course textbook, and
+- the course slides. 
 
 ## Submission
 

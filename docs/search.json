@@ -3734,7 +3734,7 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#finding-ephelias-college",
     "title": "Data Wrangling with dplyr",
     "section": "Finding Ephelia’s College",
-    "text": "Finding Ephelia’s College\n\nThis activity will require knowledge of:\n\ndebugging code errors\nfunction syntax\nlogical comparisons\ndplyr verbs and when to use them\nchaining steps together with the pipe operator\n\n\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
+    "text": "Finding Ephelia’s College\n\n\n\nThis activity will require knowledge of:\n\ndebugging code errors\nfunction syntax\nlogical comparisons\ndplyr verbs and when to use them\nchaining steps together with the pipe operator\n\n\n\n\n\n\n\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt1.html#task-card",
@@ -3748,6 +3748,20 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#how-does-this-look-in-posit-cloud",
     "title": "Data Wrangling with dplyr",
     "section": "How does this look in Posit Cloud?",
-    "text": "How does this look in Posit Cloud?\nFirst, both of you will do the following:\n\n\nJoin your Practice Activity workspace in Posit Cloud\n\nIf you were sent a new email, you were added to a different group!\n\nLog-in to Posit Cloud\nOpen the PA 3: Identify the Mystery College project\nOpen the PA3-dplyr.qmd file\n\n\n\n\nThen, the partner whose birthday is closest to January 1st starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type.\n\n\n\n\n\nThroughout the activity you will swap roles—the Developer becomes Coder, and the Coder becomes the Developer!"
+    "text": "How does this look in Posit Cloud?\n\nFirst, both of you will do the following:\n\nJoin your Practice Activity workspace in Posit Cloud\n\nIf you were sent a new email, you were added to a different group!\n\nLog-in to Posit Cloud\nOpen the PA 3: Identify the Mystery College project\nOpen the PA3-dplyr.qmd file\n\n\n\n\nThen, the partner whose birthday is closest to January 1st starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt1.html#why-are-we-switching",
+    "href": "slides/week-3/week-3-dplyr-pt1.html#why-are-we-switching",
+    "title": "Data Wrangling with dplyr",
+    "section": "Why are we switching?",
+    "text": "Why are we switching?\nThroughout the activity you will swap roles—the Developer will become the Coder, and the Coder will become the Developer.\n\n\nWe are alternating roles so everyone:\n\nhas the chance to practice their coding\npractices talking through their code\nhas the opportunity to explain their thinking"
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt1.html#external-resources",
+    "href": "slides/week-3/week-3-dplyr-pt1.html#external-resources",
+    "title": "Data Wrangling with dplyr",
+    "section": "External Resources",
+    "text": "External Resources\nDuring the Practice Activity, you are not permitted to use Google or ChatGPT for help.\n\n\nYou are permitted to use:\n\nthe dplyr cheatsheet,\nthe course textbook, and\nthe course slides."
   }
 ]
