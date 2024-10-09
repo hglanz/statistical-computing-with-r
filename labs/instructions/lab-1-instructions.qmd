@@ -34,19 +34,27 @@ week).
 -   In the "Files" pane, you should see a list of all the files included in the
 `lab-1` repository you copied.
 -   In the upper right pane, you should see a tab labeled "Git".
--   Every file included in the repository should be listed with a question mark
-symbol next to it, that's okay! This just means these files are not currently
-being tracked.
+-   Nothing should be displayed in this pane, since you haven't made any changes 
+to the files that were copied! 
 
-## Step 3: Pushing Your Lab to GitHub
+## Step 3: Making a Small Change
 
-Now for our last step, we need to [commit the files to our repo](https://happygitwithr.com/existing-github-first#stage-and-commit).
+Now, find the `lab-1-student.qmd` file in the "Files" tab in the lower right 
+hand corner. Click on this file to open it. 
+
+At the top of the document (in the YAML) there is an `author` line that says 
+`"Your name here!"`. Change this to be your name and save your file either by
+clicking on the blue floppy disk or with a shortcut (command / control + s). 
+
+## Step 4: Pushing Your Lab to GitHub
+
+Now for our last step, we need to [commit the files to our repo](https://happygitwithr.com/existing-github-first#stage-and-commit). 
 
 -   Click the "Git" tab in upper right pane
--   Check the "Staged" box for every file listed
+-   Check the "Staged" box for the `lab-1-student.qmd` file 
 -   Click "Commit"
 -   In the box that opens, type a message in "Commit message", such as
-"Initialize lab 1".
+"Added my name".
 -   Click "Commit".
 -   Click the green "Push" button to send your local changes to GitHub.
 
@@ -58,14 +66,14 @@ To https://github.com/atheobold/introduction-to-quarto-allison-theobold.git
    3a2171f..6d58539  HEAD -> main
 ```
 
-## Step 4: Verifying Your Changes
+## Step 5: Verifying Your Changes
 
-Go back to your browser. I assume you're still viewing the GitHub repo you just cloned. Refresh the page. You should see all the project files you committed there. If you click on "commits", you should see one with the message you used, e.g. "Initialize lab 1".
+Go back to your browser. I assume you're still viewing the GitHub repo you just cloned. Refresh the page. You should see all the project files you committed there. If you click on "commits", you should see one with the message you used, e.g. "Added my name".
 
-## Step 5: Let's get started working with Quarto!
+## Step 6: Let's get started working with Quarto!
 
-In the Files pane, click on `lab-1-student.qmd` to open the Quarto file you will
-be working in for Lab 1.
+Now that you've added your name, go ahead and get started with the rest of the 
+lab! 
 
 # Part Two: Exploring Quarto Documents
 
