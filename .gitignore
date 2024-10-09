@@ -34,3 +34,6 @@ po/*~
 rsconnect/
 
 /.quarto/
+
+# HTML files
+*.html
