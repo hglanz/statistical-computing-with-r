@@ -147,6 +147,162 @@ cereal |>
   kableExtra::kable_styling(font_size = 25)
 ```
 
+## `group_by()` + `slice()`
+
+For each `manuf`, find the cereal with the most `fiber`.
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+#| label: group-by-slice-code
+
+cereal |> 
+  group_by(manuf) |> 
+  slice_max(order_by = fiber)
+```
+
+</br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| label: group-by-slice-table
+
+cereal |> 
+  group_by(manuf) |> 
+  slice_max(order_by = fiber) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "250px") |> 
+  kableExtra::kable_styling(font_size = 25)
+```
+
+## Multiple Variables in `slice()`
+
+Find the **3** cereals with the highest `fiber` and `potass`.
+
+. . .
+
+-   If you are ordering by multiple variables, wrap them in a data.frame!
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+#| label: slice-max-multiple-vars-code
+
+cereal |> 
+  slice_max(order_by = data.frame(fiber, potass),
+            n = 3)
+```
+
+</br>
+
+```{r}
+#| eval: true
+#| echo: false
+#| label: slice-max-multiple-vars-table
+
+cereal |> 
+  slice_max(order_by = data.frame(fiber, potass),
+            n = 3) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "250px") |> 
+  kableExtra::kable_styling(font_size = 25)
+```
+
+## Discretize with `if_else()`
+
+For each cereal, label the `potass` as "high" or "low".
+
+. . .
+
+::: {.small}
+`if_else(<CONDITION>, <TRUE OUTPUT>, <FALSE OUTPUT>)`
+:::
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+#| label: if-else-code
+#| code-line-numbers: false
+
+cereal |> 
+  mutate(po_category = if_else(potass <= 100, 
+                               "low", 
+                               "high"),
+         .after = potass)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| label: if-else-table
+cereal |> 
+  mutate(po_category = if_else(potass <= 100, "low", "high"),
+         .after = potass) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "200px") |> 
+  kableExtra::kable_styling(font_size = 25)
+```
+
+. . .
+
+What do you think `.after` does?
+
+## Re-level with `case_when()`
+
+For each manufacturer, change the `manuf` code to the name of the manufacturer.
+
+. . .
+
+A **series** of `if-else` statements.
+
+```{r}
+#| echo: true
+#| eval: false
+#| label: case-when-code
+#| code-line-numbers: false
+
+cereal |> 
+  mutate(manuf = case_when(manuf == "A" ~ "American Home Food Products", 
+                           manuf == "G" ~ "General Mills", 
+                           manuf == "K" ~ "Kelloggs", 
+                           manuf == "N" ~ "Nabisco", 
+                           manuf == "P" ~ "Post", 
+                           manuf == "Q" ~ "Quaker Oats", 
+                           manuf == "R" ~ "Ralston Purina")
+         )
+```
+
+. . .
+
+**Does this code create a new variable or change an existing variable?**
+
+## 
+
+```{r}
+#| eval: true
+#| echo: false
+#| label: case-when-table
+
+cereal |> 
+  mutate(manuf = case_when(manuf == "A" ~ "American Home Food Products", 
+                           manuf == "G" ~ "General Mills", 
+                           manuf == "K" ~ "Kelloggs", 
+                           manuf == "N" ~ "Nabisco", 
+                           manuf == "P" ~ "Post", 
+                           manuf == "Q" ~ "Quaker Oats", 
+                           manuf == "R" ~ "Ralston Purina")) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "750px") |> 
+  kableExtra::kable_styling(font_size = 25)
+```
+
 ## Calculate a Summary Statistic for Many Columns
 
 For each `type` of cereal, calculate the `mean` nutrient levels.
@@ -318,163 +474,6 @@ cereal |>
   knitr::kable() |> 
   kableExtra::scroll_box(height = "130px") |> 
   kableExtra::kable_styling(font_size = 23)
-```
-
-
-## Discretize with `if_else()`
-
-For each cereal, label the `potass` as "high" or "low".
-
-. . .
-
-::: {.small}
-`if_else(<CONDITION>, <TRUE OUTPUT>, <FALSE OUTPUT>)`
-:::
-
-. . .
-
-```{r}
-#| echo: true
-#| eval: false
-#| label: if-else-code
-#| code-line-numbers: false
-
-cereal |> 
-  mutate(po_category = if_else(potass <= 100, 
-                               "low", 
-                               "high"),
-         .after = potass)
-```
-
-```{r}
-#| eval: true
-#| echo: false
-#| label: if-else-table
-cereal |> 
-  mutate(po_category = if_else(potass <= 100, "low", "high"),
-         .after = potass) |> 
-  knitr::kable() |> 
-  kableExtra::scroll_box(height = "200px") |> 
-  kableExtra::kable_styling(font_size = 25)
-```
-
-. . .
-
-What do you think `.after` does?
-
-## Re-level with `case_when()`
-
-For each manufacturer, change the `manuf` code to the name of the manufacturer.
-
-. . .
-
-A **series** of `if-else` statements.
-
-```{r}
-#| echo: true
-#| eval: false
-#| label: case-when-code
-#| code-line-numbers: false
-
-cereal |> 
-  mutate(manuf = case_when(manuf == "A" ~ "American Home Food Products", 
-                           manuf == "G" ~ "General Mills", 
-                           manuf == "K" ~ "Kelloggs", 
-                           manuf == "N" ~ "Nabisco", 
-                           manuf == "P" ~ "Post", 
-                           manuf == "Q" ~ "Quaker Oats", 
-                           manuf == "R" ~ "Ralston Purina")
-         )
-```
-
-. . .
-
-**Does this code create a new variable or change an existing variable?**
-
-## 
-
-```{r}
-#| eval: true
-#| echo: false
-#| label: case-when-table
-
-cereal |> 
-  mutate(manuf = case_when(manuf == "A" ~ "American Home Food Products", 
-                           manuf == "G" ~ "General Mills", 
-                           manuf == "K" ~ "Kelloggs", 
-                           manuf == "N" ~ "Nabisco", 
-                           manuf == "P" ~ "Post", 
-                           manuf == "Q" ~ "Quaker Oats", 
-                           manuf == "R" ~ "Ralston Purina")) |> 
-  knitr::kable() |> 
-  kableExtra::scroll_box(height = "750px") |> 
-  kableExtra::kable_styling(font_size = 25)
-```
-
-## `group_by()` + `slice()`
-
-For each `manuf`, find the cereal with the most `fiber`.
-
-. . .
-
-```{r}
-#| echo: true
-#| eval: false
-#| code-line-numbers: false
-#| label: group-by-slice-code
-
-cereal |> 
-  group_by(manuf) |> 
-  slice_max(order_by = fiber)
-```
-
-</br>
-
-```{r}
-#| eval: true
-#| echo: false
-#| label: group-by-slice-table
-
-cereal |> 
-  group_by(manuf) |> 
-  slice_max(order_by = fiber) |> 
-  knitr::kable() |> 
-  kableExtra::scroll_box(height = "250px") |> 
-  kableExtra::kable_styling(font_size = 25)
-```
-
-## Multiple Variables in `slice()`
-
-Find the **3** cereals with the highest `fiber` and `potass`.
-
-. . .
-
--   If you are ordering by multiple variables, wrap them in a data.frame!
-
-```{r}
-#| echo: true
-#| eval: false
-#| code-line-numbers: false
-#| label: slice-max-multiple-vars-code
-
-cereal |> 
-  slice_max(order_by = data.frame(fiber, potass),
-            n = 3)
-```
-
-</br>
-
-```{r}
-#| eval: true
-#| echo: false
-#| label: slice-max-multiple-vars-table
-
-cereal |> 
-  slice_max(order_by = data.frame(fiber, potass),
-            n = 3) |> 
-  knitr::kable() |> 
-  kableExtra::scroll_box(height = "250px") |> 
-  kableExtra::kable_styling(font_size = 25)
 ```
 
 ## Piping into `ggplot()`
