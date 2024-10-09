@@ -19,14 +19,14 @@ In this lab, we will be using the `dplyr` package to explore student evaluations
 
 ## Step 1: Making a Copy from GitHub Classroom
 
-You can access the Lab 3 materials through the [Lab 3 assignment on GitHub Classroom](https://classroom.github.com/a/Wd6RcGOb). We're going to follow the same steps as last week to make your own copy of this repository:
+You can access the Lab 3 materials through the [Lab 3 assignment on GitHub Classroom](https://classroom.github.com/a/qwGgpcu4). We're going to follow the same steps as last week to make your own copy of this repository:
 
 <!-- Update link to GH Classroom assignment -->
 
 ::: {.callout-tip collapse="true"}
 # Same process as last week!
 
-Use these steps to make a copy of the Lab 2 repository: [List of Steps to Copy the Lab Assignment from GitHub Classroom](https://scribehow.com/shared/RStudio_and_Google_Chrome_Workflow__ATprsf2MTYmuPP86Xna1Eg)
+Use these steps to make a copy of the Lab 2 repository: [List of Steps to Copy the Lab Assignment from GitHub Classroom](https://scribehow.com/shared/Copying_Labs_from_GitHub_into_RStudio__ATprsf2MTYmuPP86Xna1Eg)
 :::
 
 ## Step 2: Making a Small Change
