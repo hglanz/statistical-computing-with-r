@@ -17,10 +17,88 @@ library(palmerpenguins)
 
 Today we will...
 
--   New Material
-    -   Extend `dplyr` verbs to have more functionality.
-    -   Think about data ethics.
--   [Lab 3: Teacher Evaluations](../../labs/instructions/lab-3-instructions.qmd)
+::: {.small}
++ Debrief PA 3
++ Debrief Lab 2 & Challenge 2 
++ Discuss Lab 2 Peer Review
++ Outline Grade Expectations for Syllabus
++ New Material
+    -   Extend `dplyr` verbs to have more functionality
++ [Lab 3: Teacher Evaluations](../../labs/instructions/lab-3-instructions.qmd)
+:::
+
+# PA 3: Identify the Mystery College
+
+## A few words about `drop_na()`
+
+-   Easy tool to remove missing values
+-   Unilaterally removes **any** row with a missing value for **any** variable
+-   **But** you can specify what columns it should look at for missing values!
+
+```{r}
+# add example with columns specified!
+```
+
+
+# Lab 2 & Challenge 2 
+
+## Grading / Feedback
+
+::: {.small}
++ Each question will earn a score of "Success" or "Growing".
+  * Questions marked "Growing" will receive feedback on how to improve your
+  solution.
+  * These questions can be resubmitted for additional feedback. 
+:::
+
+. . .
+
+::: {.small}
++ Earning a "Success" doesn't necessarily mean your solution is without error.
+  * You may still receive feedback on how to improve your solution.
+  * These questions cannot be resubmitted for additional feedback.
+:::
+
+## Growing Points
+
+::: {.incremental}
+
+:::
+
+# Peer Code Review
+
+## What feedback would you give?
+
+```{r}
+#| eval: false
+#| echo: true
+
+ggplot(data = surveys, mapping = aes(x=hindfoot_length,y= weight)) +  
+  geom_jitter(alpha=.2,color='tomato')+ facet_wrap(~species)+geom_boxplot(outlier.shape = NA)+labs(
+    title ='Weight to hindfoot comparison'
+  )+ xlab('length (mm)')+ylab('Weight(g)')
+```
+
+
+# Grade Expectations
+
+## Defining Grades in 331
+
+</br>
+
+-   A: **Superior** Attainment of Course Objectives
+
+-   B: **Good** Attainment of Course Objectives
+
+-   C: **Acceptable** Attainment of Course Objectives
+
+-   D: **Poor** Attainment of Course Objectives
+
+::: aside
+::: {style="color: #dd5227;"}
+[STAT 331 / 531 Syllabus](https://docs.google.com/document/d/1-SSRp_mXFNgYiy4uW9tlcpxDpQH4OuMqK-Hh4v5AvZI/edit?usp=sharing)
+:::
+:::
 
 # Extending `dplyr` verbs
 
