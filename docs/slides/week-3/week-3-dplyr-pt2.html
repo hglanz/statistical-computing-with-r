@@ -401,15 +401,182 @@
 <section id="thursday-october-10" class="slide level2">
 <h2>Thursday, October 10</h2>
 <p>Today we will…</p>
+<div class="small">
 <ul>
+<li>Debrief PA 3</li>
+<li>Debrief Lab 2 &amp; Challenge 2</li>
+<li>Discuss Lab 2 Peer Review</li>
+<li>Outline Grade Expectations for Syllabus</li>
 <li>New Material
 <ul>
-<li>Extend <code>dplyr</code> verbs to have more functionality.</li>
-<li>Think about data ethics.</li>
+<li>Extend <code>dplyr</code> verbs to have more functionality</li>
 </ul></li>
 <li><a href="../../labs/instructions/lab-3-instructions.html">Lab 3: Teacher Evaluations</a></li>
 </ul>
+</div>
 </section>
+<section>
+<section id="pa-3-identify-the-mystery-college" class="title-slide slide level1 center">
+<h1>PA 3: Identify the Mystery College</h1>
+
+</section>
+<section id="efficient-coding" class="slide level2">
+<h2>Efficient Coding</h2>
+<p>For the final problem, many groups’ code looked like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>colleges_clean <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(REGION <span class="sc">==</span> <span class="dv">7</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ADM_RATE <span class="sc">&gt;</span> <span class="fu">median</span>(ADM_RATE)) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(TUITION_DIFF <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(SAT_AVG <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(STABBR <span class="sc">!=</span> <span class="st">"ID"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(UGDS <span class="sc">&lt;</span> <span class="dv">10000</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(STABBR <span class="sc">!=</span> <span class="st">"MT"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_min</span>(<span class="at">order_by =</span> ADM_RATE) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><br></p>
+<p><strong>Is there a more “efficient” way do this?</strong></p>
+</div>
+</section>
+<section id="a-few-words-about-drop_na" class="slide level2">
+<h2>A few words about <code>drop_na()</code></h2>
+<ul>
+<li>Easy tool to remove missing values</li>
+<li>Unilaterally removes <strong>any</strong> row with a missing value for <strong>any</strong> variable</li>
+<li><strong>But</strong> you can specify what columns it should look at for missing values!</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>colleges_clean <span class="sc">|&gt;</span> </span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(REGION, </span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>          ADM_RATE, </span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>          TUITION_DIFF, </span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>          SAT_AVG, </span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>          STABBR, </span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>          UGDS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="lab-2-challenge-2" class="title-slide slide level1 center">
+<h1>Lab 2 &amp; Challenge 2</h1>
+
+</section>
+<section id="grading-feedback-revisions" class="slide level2">
+<h2>Grading / Feedback &amp; Revisions</h2>
+<div class="small">
+<ul>
+<li>Each question will earn a score of “Success” or “Growing”.
+<ul>
+<li>Questions marked “Growing” will receive feedback on how to improve your solution.</li>
+<li>These questions can be resubmitted for additional feedback.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<div class="small">
+<ul>
+<li>Earning a “Success” doesn’t necessarily mean your solution is without error.
+<ul>
+<li>You may still receive feedback on how to improve your solution.</li>
+<li>These questions cannot be resubmitted for additional feedback.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="small">
+<ul>
+<li><strong>Revisions for Lab 2 &amp; Challenge 2 are due next Friday (October 18th)</strong>
+<ul>
+<li>You must submit your revised HTML to the original Lab 2 / Challenge 2 assignment portal.</li>
+<li>You must include reflections on what you learned by completing the revisions.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="lab-2-growing-points" class="slide level2">
+<h2>Lab 2 Growing Points</h2>
+<div class="small">
+<ul>
+<li>Q1: Loading in data with the <code>here()</code> function
+<ul>
+<li>In this class, we use a <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/">package oriented workflow</a> to read in the data.</li>
+<li>We <strong>do not</strong> specify relative paths to read in our data.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<div class="small">
+<ul>
+<li>Q5: Adding transparency
+<ul>
+<li>Only <strong>variables</strong> being mapped to aesthetics are inserted into the <code>aes()</code> function!</li>
+<li>Hard coded values (e.g., <code>alpha = 0.5</code>) belong outside the <code>aes()</code> function.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="small">
+<ul>
+<li>Report formatting: No messages or warnings should be output in the HTML document!
+<ul>
+<li>Use code chunk options and <code>execute</code> options to suppress these messages and warnings.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="dont-make-people-tilt-their-head" class="slide level2">
+<h2><a href="https://youtu.be/h5cTacaWE6I?si=4DLb2OQoLpLFJGGQ">Don’t make people tilt their head</a></h2>
+
+<img data-src="images/tilt-head.png" data-alt-text="The image shows a comparison between two bar charts with a horizontal arrow pointing from the left chart to the right chart, indicating a transformation. The left chart is a vertical bar chart with various car categories on the x-axis (2seater, compact, midsize, minivan, pickup, subcompact, SUV) and values on the y-axis ranging from 0 to 60. The x-axis labels are tilted, making them harder to read. The right chart is a horizontal bar chart with the same car categories listed along the y-axis and values on the x-axis. This arrangement makes the labels easier to read. The transformation suggests an improvement in readability by switching from a vertical to a horizontal bar chart." class="r-stretch"></section></section>
+<section id="peer-code-review" class="title-slide slide level1 center">
+<h1>Peer Code Review</h1>
+
+</section>
+
+<section id="peer-code-review-1" class="title-slide slide level1 center">
+<h1>Peer Code Review</h1>
+<blockquote>
+<p>Each of you was assigned one student’s lab to provide feedback on their code formatting.</p>
+</blockquote>
+</section>
+
+<section>
+<section id="peer-code-review-2" class="title-slide slide level1 center">
+<h1>Peer Code Review</h1>
+<blockquote>
+<p>Your feedback is to be provided in the comment box!</p>
+</blockquote>
+</section>
+<section id="what-feedback-would-you-give" class="slide level2">
+<h2>What feedback would you give?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> surveys, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>hindfoot_length,<span class="at">y=</span> weight)) <span class="sc">+</span>  </span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">alpha=</span>.<span class="dv">2</span>,<span class="at">color=</span><span class="st">'tomato'</span>)<span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>species)<span class="sc">+</span><span class="fu">geom_boxplot</span>(<span class="at">outlier.shape =</span> <span class="cn">NA</span>)<span class="sc">+</span><span class="fu">labs</span>(</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span><span class="st">'Weight to hindfoot comparison'</span></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">'length (mm)'</span>)<span class="sc">+</span><span class="fu">ylab</span>(<span class="st">'Weight(g)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="grade-expectations" class="title-slide slide level1 center">
+<h1>Grade Expectations</h1>
+
+</section>
+<section id="defining-grades-in-331" class="slide level2">
+<h2>Defining Grades in 331</h2>
+<ul>
+<li><p>A: <strong>Superior</strong> Attainment of Course Objectives</p></li>
+<li><p>B: <strong>Good</strong> Attainment of Course Objectives</p></li>
+<li><p>C: <strong>Acceptable</strong> Attainment of Course Objectives</p></li>
+<li><p>D: <strong>Poor</strong> Attainment of Course Objectives</p></li>
+</ul>
+<div class="fragment">
+<p>We need to define criteria for each of these grades based on the <a href="../../course-materials/course-syllabus.html">four objectives of this course</a>—learning targets, revising thinking, extending thinking, collaborating with peers.</p>
+</div>
+</section></section>
 <section>
 <section id="extending-dplyr-verbs" class="title-slide slide level1 center">
 <h1>Extending <code>dplyr</code> verbs</h1>
@@ -419,10 +586,10 @@
 <h2>Example Data set – <a href="https://search.r-project.org/CRAN/refmans/liver/html/cereal.html">Cereal</a></h2>
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(liver)</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(cereal)</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(cereal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(liver)</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(cereal)</span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(cereal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 77
 Columns: 16
@@ -451,9 +618,9 @@ $ rating   &lt;dbl&gt; 68.40297, 33.98368, 59.42551, 93.70491, 34.38484, 29.5095
 <p>How many cereals does each <code>manuf</code> have in this dataset?</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(manuf) <span class="sc">|&gt;</span> </span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(manuf) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -502,229 +669,266 @@ $ rating   &lt;dbl&gt; 68.40297, 33.98368, 59.42551, 93.70491, 34.38484, 29.5095
 </div>
 </div>
 </section>
-<section id="calculate-a-summary-statistic-for-many-columns" class="slide level2">
-<h2>Calculate a Summary Statistic for Many Columns</h2>
-<p>For each <code>type</code> of cereal, calculate the <code>mean</code> nutrient levels.</p>
-<div class="small">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(type) <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_cal =</span> <span class="fu">mean</span>(calories), </span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_protein =</span> <span class="fu">mean</span>(protein), </span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_fat =</span> <span class="fu">mean</span>(fat), </span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_sodium =</span> <span class="fu">mean</span>(sodium), </span>
-<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_fiber =</span> <span class="fu">mean</span>(fiber), </span>
-<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_carbs =</span> <span class="fu">mean</span>(carbo), </span>
-<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_sugars =</span> <span class="fu">mean</span>(sugars), </span>
-<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_potassium =</span> <span class="fu">mean</span>(potass)</span>
-<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+<section id="group_by-slice" class="slide level2">
+<h2><code>group_by()</code> + <code>slice()</code></h2>
+<p>For each <code>manuf</code>, find the cereal with the most <code>fiber</code>.</p>
 <div class="fragment">
-<p><strong>Does this seem like the most efficient way we could do this?</strong></p>
-</div>
-</section>
-<section id="summarize-multiple-columns-with-across" class="slide level2">
-<h2>Summarize multiple columns with <code>across()</code></h2>
-<p><strong>Within</strong> the <code>summarize()</code> function, we use the <code>across()</code> function, with three arguments:</p>
-<ul>
-<li><code>.cols</code> – to specify the <strong>columns</strong> to apply functions to.</li>
-<li><code>.fns</code> – to specify the <strong>function(s)</strong> to apply.</li>
-<li><code>.x</code> – as a placeholder (alias) for the variables being passed into the function.</li>
-</ul>
-<div class="fragment">
-<p>We use <strong>lambda functions</strong>: <code>~ &lt;FUN_NAME&gt;(.x, &lt;ARGS&gt;)</code> to specify what function(s) to apply</p>
-</div>
-</section>
-<section id="summarize-multiple-columns-with-across-1" class="slide level2">
-<h2>Summarize multiple columns with <code>across()</code></h2>
-<p>For each <code>type</code> of cereal, calculate the <code>mean</code> nutrient levels.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(type) <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="at">.cols =</span> calories<span class="sc">:</span>potass, </span>
-<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">mean</span>(.x)</span>
-<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>           )</span>
-<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(manuf) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> fiber)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:130px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 23px; margin-left: auto; margin-right: auto;">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">type</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">calories</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">protein</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">fat</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">sodium</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">fiber</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">carbo</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">sugars</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">potass</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">cold</td>
-<td style="text-align: right;">107.1622</td>
-<td style="text-align: right;">2.486486</td>
-<td style="text-align: right;">1.013513</td>
-<td style="text-align: right;">165.06757</td>
-<td style="text-align: right;">2.189189</td>
-<td style="text-align: right;">14.7027</td>
-<td style="text-align: right;">7.1756757</td>
-<td style="text-align: right;">97.21622</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">hot</td>
-<td style="text-align: right;">100.0000</td>
-<td style="text-align: right;">4.000000</td>
-<td style="text-align: right;">1.000000</td>
-<td style="text-align: right;">26.66667</td>
-<td style="text-align: right;">1.233333</td>
-<td style="text-align: right;">12.0000</td>
-<td style="text-align: right;">0.6666667</td>
-<td style="text-align: right;">68.00000</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-</div>
-</div>
-</section>
-<section id="summarize-multiple-columns-with-across-2" class="slide level2">
-<h2>Summarize multiple columns with <code>across()</code></h2>
-<div class="small">
-<p>For each <code>type</code> of cereal, calculate the <code>mean</code> nutrient levels. <em>Remove 10% of observations at the ends of the values, so extreme values are not included in the calculations.</em></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(type) <span class="sc">|&gt;</span> </span>
-<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="at">.cols =</span> calories<span class="sc">:</span>potass, </span>
-<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">mean</span>(.x, <span class="at">trim =</span> <span class="fl">0.1</span>)</span>
-<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a>           )</span>
-<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:130px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 23px; margin-left: auto; margin-right: auto;">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">type</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">calories</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">protein</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">fat</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">sodium</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">fiber</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">carbo</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">sugars</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">potass</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">cold</td>
-<td style="text-align: right;">107.6667</td>
-<td style="text-align: right;">2.416667</td>
-<td style="text-align: right;">0.8833333</td>
-<td style="text-align: right;">170.08333</td>
-<td style="text-align: right;">1.800000</td>
-<td style="text-align: right;">14.66667</td>
-<td style="text-align: right;">7.2000000</td>
-<td style="text-align: right;">86.66667</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">hot</td>
-<td style="text-align: right;">100.0000</td>
-<td style="text-align: right;">4.000000</td>
-<td style="text-align: right;">1.0000000</td>
-<td style="text-align: right;">26.66667</td>
-<td style="text-align: right;">1.233333</td>
-<td style="text-align: right;">12.00000</td>
-<td style="text-align: right;">0.6666667</td>
-<td style="text-align: right;">68.00000</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-</div>
-</div>
-</section>
-<section id="getting-fancy-with-names" class="slide level2">
-<h2>Getting Fancy with Names</h2>
-<div class="columns">
-<div class="column" style="width:10%;">
-<div class="small">
-<p><code>.names</code></p>
-</div>
-</div><div class="column" style="width:2%;">
-
-</div><div class="column" style="width:85%;">
-<div class="small">
-<pre><code>A glue specification that describes how to name the output columns. This can use {.col} to stand for the selected column name, and {.fn} to stand for the name of the function being applied. The default (NULL) is equivalent to "{.col}" for the single function case and "{.col}_{.fn}" for the case where a list is used for .fns.</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
 <p><br></p>
-<div class="small">
+<div class="cell">
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:250px; ">
+<table class="table" data-quarto-postprocess="true" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">name</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">manuf</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">type</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">calories</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">protein</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">fat</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">sodium</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">fiber</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">carbo</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">sugars</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">potass</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">vitamins</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">shelf</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">weight</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">cups</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">rating</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Maypo</td>
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">hot</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">54.85092</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total Raisin Bran</td>
+<td style="text-align: left;">G</td>
+<td style="text-align: left;">cold</td>
+<td style="text-align: right;">140</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">190</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1.50</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">28.59278</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">All-Bran with Extra Fiber</td>
+<td style="text-align: left;">K</td>
+<td style="text-align: left;">cold</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">140</td>
+<td style="text-align: right;">14.0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">330</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">93.70491</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">100% Bran</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">cold</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">130</td>
+<td style="text-align: right;">10.0</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">280</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.33</td>
+<td style="text-align: right;">68.40297</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Post Nat. Raisin Bran</td>
+<td style="text-align: left;">P</td>
+<td style="text-align: left;">cold</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">260</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1.33</td>
+<td style="text-align: right;">0.67</td>
+<td style="text-align: right;">37.84059</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Quaker Oatmeal</td>
+<td style="text-align: left;">Q</td>
+<td style="text-align: left;">hot</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.67</td>
+<td style="text-align: right;">50.82839</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bran Chex</td>
+<td style="text-align: left;">R</td>
+<td style="text-align: left;">cold</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">125</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.67</td>
+<td style="text-align: right;">49.12025</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+<section id="multiple-variables-in-slice" class="slide level2">
+<h2>Multiple Variables in <code>slice()</code></h2>
+<p>Find the <strong>3</strong> cereals with the highest <code>fiber</code> and <code>potass</code>.</p>
+<div class="fragment">
+<ul>
+<li>If you are ordering by multiple variables, wrap them in a data.frame!</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(type) <span class="sc">|&gt;</span> </span>
-<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="at">.cols =</span> calories<span class="sc">:</span>potass, </span>
-<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">mean</span>(.x), </span>
-<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a>           <span class="at">.names =</span> <span class="st">"mean_{.col}"</span></span>
-<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a>           )</span>
-<span id="cb8-8"><a aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> <span class="fu">data.frame</span>(fiber, potass),</span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<!-- I'm using mean instead of {.fn} because it expects that {.fn} is a list of functions, so when I use that in the .names argument my columns end up being 1_protein (since the mean is the first function).  -->
-</div>
+<p><br></p>
 <div class="cell">
 <div class="cell-output-display">
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:130px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 23px; margin-left: auto; margin-right: auto;">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:250px; ">
+<table class="table" data-quarto-postprocess="true" style="font-size: 25px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">name</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">manuf</th>
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">type</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_calories</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_protein</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_fat</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_sodium</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_fiber</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_carbo</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_sugars</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_potass</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">calories</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">protein</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">fat</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">sodium</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">fiber</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">carbo</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">sugars</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">potass</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">vitamins</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">shelf</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">weight</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">cups</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">rating</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">All-Bran with Extra Fiber</td>
+<td style="text-align: left;">K</td>
 <td style="text-align: left;">cold</td>
-<td style="text-align: right;">107.1622</td>
-<td style="text-align: right;">2.486486</td>
-<td style="text-align: right;">1.013513</td>
-<td style="text-align: right;">165.06757</td>
-<td style="text-align: right;">2.189189</td>
-<td style="text-align: right;">14.7027</td>
-<td style="text-align: right;">7.1756757</td>
-<td style="text-align: right;">97.21622</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">140</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">330</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">93.70491</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">hot</td>
-<td style="text-align: right;">100.0000</td>
-<td style="text-align: right;">4.000000</td>
-<td style="text-align: right;">1.000000</td>
-<td style="text-align: right;">26.66667</td>
-<td style="text-align: right;">1.233333</td>
-<td style="text-align: right;">12.0000</td>
-<td style="text-align: right;">0.6666667</td>
-<td style="text-align: right;">68.00000</td>
+<td style="text-align: left;">100% Bran</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">cold</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">130</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">280</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.33</td>
+<td style="text-align: right;">68.40297</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">All-Bran</td>
+<td style="text-align: left;">K</td>
+<td style="text-align: left;">cold</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">260</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">320</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.33</td>
+<td style="text-align: right;">59.42551</td>
 </tr>
 </tbody>
 </table>
@@ -3691,24 +3895,58 @@ $ rating   &lt;dbl&gt; 68.40297, 33.98368, 59.42551, 93.70491, 34.38484, 29.5095
 </div>
 </div>
 </section>
-<section id="group_by-slice" class="slide level2">
-<h2><code>group_by()</code> + <code>slice()</code></h2>
-<p>For each <code>manuf</code>, find the cereal with the most <code>fiber</code>.</p>
-<div class="fragment">
+<section id="calculate-a-summary-statistic-for-many-columns" class="slide level2">
+<h2>Calculate a Summary Statistic for Many Columns</h2>
+<p>For each <code>type</code> of cereal, calculate the <code>mean</code> nutrient levels.</p>
+<div class="small">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="sc">|&gt;</span> </span>
-<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(manuf) <span class="sc">|&gt;</span> </span>
-<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> fiber)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(type) <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_cal =</span> <span class="fu">mean</span>(calories), </span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_protein =</span> <span class="fu">mean</span>(protein), </span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_fat =</span> <span class="fu">mean</span>(fat), </span>
+<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_sodium =</span> <span class="fu">mean</span>(sodium), </span>
+<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_fiber =</span> <span class="fu">mean</span>(fiber), </span>
+<span id="cb11-8"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_carbs =</span> <span class="fu">mean</span>(carbo), </span>
+<span id="cb11-9"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_sugars =</span> <span class="fu">mean</span>(sugars), </span>
+<span id="cb11-10"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_potassium =</span> <span class="fu">mean</span>(potass)</span>
+<span id="cb11-11"><a aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br></p>
+</div>
+<div class="fragment">
+<p><strong>Does this seem like the most efficient way we could do this?</strong></p>
+</div>
+</section>
+<section id="summarize-multiple-columns-with-across" class="slide level2">
+<h2>Summarize multiple columns with <code>across()</code></h2>
+<p><strong>Within</strong> the <code>summarize()</code> function, we use the <code>across()</code> function, with three arguments:</p>
+<ul>
+<li><code>.cols</code> – to specify the <strong>columns</strong> to apply functions to.</li>
+<li><code>.fns</code> – to specify the <strong>function(s)</strong> to apply.</li>
+<li><code>.x</code> – as a placeholder (alias) for the variables being passed into the function.</li>
+</ul>
+<div class="fragment">
+<p>We use <strong>lambda functions</strong>: <code>~ &lt;FUN_NAME&gt;(.x, &lt;ARGS&gt;)</code> to specify what function(s) to apply</p>
+</div>
+</section>
+<section id="summarize-multiple-columns-with-across-1" class="slide level2">
+<h2>Summarize multiple columns with <code>across()</code></h2>
+<p>For each <code>type</code> of cereal, calculate the <code>mean</code> nutrient levels.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(type) <span class="sc">|&gt;</span> </span>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="at">.cols =</span> calories<span class="sc">:</span>potass, </span>
+<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">mean</span>(.x)</span>
+<span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a>           )</span>
+<span id="cb12-7"><a aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell">
 <div class="cell-output-display">
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:250px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:130px; ">
+<table class="table" data-quarto-postprocess="true" style="font-size: 23px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">name</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">manuf</th>
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">type</th>
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">calories</th>
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">protein</th>
@@ -3718,139 +3956,30 @@ $ rating   &lt;dbl&gt; 68.40297, 33.98368, 59.42551, 93.70491, 34.38484, 29.5095
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">carbo</th>
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">sugars</th>
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">potass</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">vitamins</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">shelf</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">weight</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">cups</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">rating</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Maypo</td>
-<td style="text-align: left;">A</td>
+<td style="text-align: left;">cold</td>
+<td style="text-align: right;">107.1622</td>
+<td style="text-align: right;">2.486486</td>
+<td style="text-align: right;">1.013513</td>
+<td style="text-align: right;">165.06757</td>
+<td style="text-align: right;">2.189189</td>
+<td style="text-align: right;">14.7027</td>
+<td style="text-align: right;">7.1756757</td>
+<td style="text-align: right;">97.21622</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">hot</td>
-<td style="text-align: right;">100</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">95</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">54.85092</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Total Raisin Bran</td>
-<td style="text-align: left;">G</td>
-<td style="text-align: left;">cold</td>
-<td style="text-align: right;">140</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">190</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">230</td>
-<td style="text-align: right;">100</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1.50</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">28.59278</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">All-Bran with Extra Fiber</td>
-<td style="text-align: left;">K</td>
-<td style="text-align: left;">cold</td>
-<td style="text-align: right;">50</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">140</td>
-<td style="text-align: right;">14.0</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">330</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">0.50</td>
-<td style="text-align: right;">93.70491</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">100% Bran</td>
-<td style="text-align: left;">N</td>
-<td style="text-align: left;">cold</td>
-<td style="text-align: right;">70</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">130</td>
-<td style="text-align: right;">10.0</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">280</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">0.33</td>
-<td style="text-align: right;">68.40297</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Post Nat. Raisin Bran</td>
-<td style="text-align: left;">P</td>
-<td style="text-align: left;">cold</td>
-<td style="text-align: right;">120</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">200</td>
-<td style="text-align: right;">6.0</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">260</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1.33</td>
-<td style="text-align: right;">0.67</td>
-<td style="text-align: right;">37.84059</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Quaker Oatmeal</td>
-<td style="text-align: left;">Q</td>
-<td style="text-align: left;">hot</td>
-<td style="text-align: right;">100</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2.7</td>
-<td style="text-align: right;">-1</td>
-<td style="text-align: right;">-1</td>
-<td style="text-align: right;">110</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">0.67</td>
-<td style="text-align: right;">50.82839</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Bran Chex</td>
-<td style="text-align: left;">R</td>
-<td style="text-align: left;">cold</td>
-<td style="text-align: right;">90</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">200</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">125</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">0.67</td>
-<td style="text-align: right;">49.12025</td>
+<td style="text-align: right;">100.0000</td>
+<td style="text-align: right;">4.000000</td>
+<td style="text-align: right;">1.000000</td>
+<td style="text-align: right;">26.66667</td>
+<td style="text-align: right;">1.233333</td>
+<td style="text-align: right;">12.0000</td>
+<td style="text-align: right;">0.6666667</td>
+<td style="text-align: right;">68.00000</td>
 </tr>
 </tbody>
 </table>
@@ -3858,29 +3987,25 @@ $ rating   &lt;dbl&gt; 68.40297, 33.98368, 59.42551, 93.70491, 34.38484, 29.5095
 
 </div>
 </div>
-</div>
 </section>
-<section id="multiple-variables-in-slice" class="slide level2">
-<h2>Multiple Variables in <code>slice()</code></h2>
-<p>Find the <strong>3</strong> cereals with the highest <code>fiber</code> and <code>potass</code>.</p>
-<div class="fragment">
-<ul>
-<li>If you are ordering by multiple variables, wrap them in a data.frame!</li>
-</ul>
+<section id="summarize-multiple-columns-with-across-2" class="slide level2">
+<h2>Summarize multiple columns with <code>across()</code></h2>
+<p>If missing values were present, we would need to remove them when calculating the mean!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="sc">|&gt;</span> </span>
-<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> <span class="fu">data.frame</span>(fiber, potass),</span>
-<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(type) <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="at">.cols =</span> calories<span class="sc">:</span>potass, </span>
+<span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb13-6"><a aria-hidden="true" tabindex="-1"></a>           )</span>
+<span id="cb13-7"><a aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br></p>
 <div class="cell">
 <div class="cell-output-display">
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:250px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:130px; ">
+<table class="table" data-quarto-postprocess="true" style="font-size: 23px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">name</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">manuf</th>
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">type</th>
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">calories</th>
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">protein</th>
@@ -3890,67 +4015,107 @@ $ rating   &lt;dbl&gt; 68.40297, 33.98368, 59.42551, 93.70491, 34.38484, 29.5095
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">carbo</th>
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">sugars</th>
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">potass</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">vitamins</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">shelf</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">weight</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">cups</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">rating</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">All-Bran with Extra Fiber</td>
-<td style="text-align: left;">K</td>
 <td style="text-align: left;">cold</td>
-<td style="text-align: right;">50</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">140</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">330</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.50</td>
-<td style="text-align: right;">93.70491</td>
+<td style="text-align: right;">107.6667</td>
+<td style="text-align: right;">2.416667</td>
+<td style="text-align: right;">0.8833333</td>
+<td style="text-align: right;">170.08333</td>
+<td style="text-align: right;">1.800000</td>
+<td style="text-align: right;">14.66667</td>
+<td style="text-align: right;">7.2000000</td>
+<td style="text-align: right;">86.66667</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">100% Bran</td>
-<td style="text-align: left;">N</td>
-<td style="text-align: left;">cold</td>
-<td style="text-align: right;">70</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">130</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">280</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.33</td>
-<td style="text-align: right;">68.40297</td>
+<td style="text-align: left;">hot</td>
+<td style="text-align: right;">100.0000</td>
+<td style="text-align: right;">4.000000</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: right;">26.66667</td>
+<td style="text-align: right;">1.233333</td>
+<td style="text-align: right;">12.00000</td>
+<td style="text-align: right;">0.6666667</td>
+<td style="text-align: right;">68.00000</td>
 </tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+</section>
+<section id="getting-fancy-with-names" class="slide level2">
+<h2>Getting Fancy with Names</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+<div class="small">
+<p><code>.names</code></p>
+</div>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:85%;">
+<div class="small">
+<pre><code>A glue specification that describes how to name the output columns. This can use {.col} to stand for the selected column name, and {.fn} to stand for the name of the function being applied. The default (NULL) is equivalent to "{.col}" for the single function case and "{.col}_{.fn}" for the case where a list is used for .fns.</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><br></p>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(type) <span class="sc">|&gt;</span> </span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="at">.cols =</span> calories<span class="sc">:</span>potass, </span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">mean</span>(.x), </span>
+<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a>           <span class="at">.names =</span> <span class="st">"mean_{.col}"</span></span>
+<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a>           )</span>
+<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<!-- I'm using mean instead of {.fn} because it expects that {.fn} is a list of functions, so when I use that in the .names argument my columns end up being 1_protein (since the mean is the first function).  -->
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:130px; ">
+<table class="table" data-quarto-postprocess="true" style="font-size: 23px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">type</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_calories</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_protein</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_fat</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_sodium</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_fiber</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_carbo</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_sugars</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">mean_potass</th>
+</tr>
+</thead>
+<tbody>
 <tr class="odd">
-<td style="text-align: left;">All-Bran</td>
-<td style="text-align: left;">K</td>
 <td style="text-align: left;">cold</td>
-<td style="text-align: right;">70</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">260</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">320</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.33</td>
-<td style="text-align: right;">59.42551</td>
+<td style="text-align: right;">107.1622</td>
+<td style="text-align: right;">2.486486</td>
+<td style="text-align: right;">1.013513</td>
+<td style="text-align: right;">165.06757</td>
+<td style="text-align: right;">2.189189</td>
+<td style="text-align: right;">14.7027</td>
+<td style="text-align: right;">7.1756757</td>
+<td style="text-align: right;">97.21622</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">hot</td>
+<td style="text-align: right;">100.0000</td>
+<td style="text-align: right;">4.000000</td>
+<td style="text-align: right;">1.000000</td>
+<td style="text-align: right;">26.66667</td>
+<td style="text-align: right;">1.233333</td>
+<td style="text-align: right;">12.0000</td>
+<td style="text-align: right;">0.6666667</td>
+<td style="text-align: right;">68.00000</td>
 </tr>
 </tbody>
 </table>
@@ -3965,33 +4130,33 @@ $ rating   &lt;dbl&gt; 68.40297, 33.98368, 59.42551, 93.70491, 34.38484, 29.5095
 <p>Plot the <code>mean</code> <code>protein</code> per <code>cup</code> for each <code>manuf</code>.</p>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb13" data-code-line-numbers="|1-12|13-26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>cereal <span class="sc">|&gt;</span> </span>
-<span id="cb13-2"><a></a>  <span class="fu">mutate</span>(<span class="at">manuf =</span> <span class="fu">case_when</span>(manuf <span class="sc">==</span> <span class="st">"A"</span> <span class="sc">~</span> <span class="st">"American Home Food Products"</span>, </span>
-<span id="cb13-3"><a></a>                           manuf <span class="sc">==</span> <span class="st">"G"</span> <span class="sc">~</span> <span class="st">"General Mills"</span>, </span>
-<span id="cb13-4"><a></a>                           manuf <span class="sc">==</span> <span class="st">"K"</span> <span class="sc">~</span> <span class="st">"Kelloggs"</span>, </span>
-<span id="cb13-5"><a></a>                           manuf <span class="sc">==</span> <span class="st">"N"</span> <span class="sc">~</span> <span class="st">"Nabisco"</span>, </span>
-<span id="cb13-6"><a></a>                           manuf <span class="sc">==</span> <span class="st">"P"</span> <span class="sc">~</span> <span class="st">"Post"</span>, </span>
-<span id="cb13-7"><a></a>                           manuf <span class="sc">==</span> <span class="st">"Q"</span> <span class="sc">~</span> <span class="st">"Quaker Oats"</span>, </span>
-<span id="cb13-8"><a></a>                           manuf <span class="sc">==</span> <span class="st">"R"</span> <span class="sc">~</span> <span class="st">"Ralston Purina"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb13-9"><a></a>  <span class="fu">filter</span>(type <span class="sc">==</span> <span class="st">"cold"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb13-10"><a></a>  <span class="fu">mutate</span>(<span class="at">pro_per_cup =</span> protein <span class="sc">/</span> cups) <span class="sc">|&gt;</span> </span>
-<span id="cb13-11"><a></a>  <span class="fu">group_by</span>(manuf) <span class="sc">|&gt;</span> </span>
-<span id="cb13-12"><a></a>  <span class="fu">summarise</span>(<span class="at">mean_pro_per_cup =</span> <span class="fu">mean</span>(pro_per_cup)) <span class="sc">|&gt;</span> </span>
-<span id="cb13-13"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> manuf, </span>
-<span id="cb13-14"><a></a>                       <span class="at">x =</span> mean_pro_per_cup, </span>
-<span id="cb13-15"><a></a>                       <span class="at">shape =</span> manuf)) <span class="sc">+</span></span>
-<span id="cb13-16"><a></a>  <span class="fu">geom_point</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb13-17"><a></a>             <span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
-<span id="cb13-18"><a></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"for 77 different breakfast cereals"</span>,</span>
-<span id="cb13-19"><a></a>       <span class="at">title =</span> <span class="st">"Mean Grams of Protein per Cup"</span>, </span>
-<span id="cb13-20"><a></a>       <span class="at">x =</span> <span class="st">""</span>, </span>
-<span id="cb13-21"><a></a>       <span class="at">y =</span> <span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb13-22"><a></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb13-23"><a></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">24</span>),</span>
-<span id="cb13-24"><a></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
-<span id="cb13-25"><a></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">22</span>)</span>
-<span id="cb13-26"><a></a>        ) <span class="sc">+</span></span>
-<span id="cb13-27"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="|1-12|13-26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>cereal <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a></a>  <span class="fu">mutate</span>(<span class="at">manuf =</span> <span class="fu">case_when</span>(manuf <span class="sc">==</span> <span class="st">"A"</span> <span class="sc">~</span> <span class="st">"American Home Food Products"</span>, </span>
+<span id="cb16-3"><a></a>                           manuf <span class="sc">==</span> <span class="st">"G"</span> <span class="sc">~</span> <span class="st">"General Mills"</span>, </span>
+<span id="cb16-4"><a></a>                           manuf <span class="sc">==</span> <span class="st">"K"</span> <span class="sc">~</span> <span class="st">"Kelloggs"</span>, </span>
+<span id="cb16-5"><a></a>                           manuf <span class="sc">==</span> <span class="st">"N"</span> <span class="sc">~</span> <span class="st">"Nabisco"</span>, </span>
+<span id="cb16-6"><a></a>                           manuf <span class="sc">==</span> <span class="st">"P"</span> <span class="sc">~</span> <span class="st">"Post"</span>, </span>
+<span id="cb16-7"><a></a>                           manuf <span class="sc">==</span> <span class="st">"Q"</span> <span class="sc">~</span> <span class="st">"Quaker Oats"</span>, </span>
+<span id="cb16-8"><a></a>                           manuf <span class="sc">==</span> <span class="st">"R"</span> <span class="sc">~</span> <span class="st">"Ralston Purina"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb16-9"><a></a>  <span class="fu">filter</span>(type <span class="sc">==</span> <span class="st">"cold"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-10"><a></a>  <span class="fu">mutate</span>(<span class="at">pro_per_cup =</span> protein <span class="sc">/</span> cups) <span class="sc">|&gt;</span> </span>
+<span id="cb16-11"><a></a>  <span class="fu">group_by</span>(manuf) <span class="sc">|&gt;</span> </span>
+<span id="cb16-12"><a></a>  <span class="fu">summarise</span>(<span class="at">mean_pro_per_cup =</span> <span class="fu">mean</span>(pro_per_cup)) <span class="sc">|&gt;</span> </span>
+<span id="cb16-13"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> manuf, </span>
+<span id="cb16-14"><a></a>                       <span class="at">x =</span> mean_pro_per_cup, </span>
+<span id="cb16-15"><a></a>                       <span class="at">shape =</span> manuf)) <span class="sc">+</span></span>
+<span id="cb16-16"><a></a>  <span class="fu">geom_point</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb16-17"><a></a>             <span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb16-18"><a></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"for 77 different breakfast cereals"</span>,</span>
+<span id="cb16-19"><a></a>       <span class="at">title =</span> <span class="st">"Mean Grams of Protein per Cup"</span>, </span>
+<span id="cb16-20"><a></a>       <span class="at">x =</span> <span class="st">""</span>, </span>
+<span id="cb16-21"><a></a>       <span class="at">y =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb16-22"><a></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb16-23"><a></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">24</span>),</span>
+<span id="cb16-24"><a></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb16-25"><a></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">22</span>)</span>
+<span id="cb16-26"><a></a>        ) <span class="sc">+</span></span>
+<span id="cb16-27"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </div>
@@ -3999,7 +4164,7 @@ $ rating   &lt;dbl&gt; 68.40297, 33.98368, 59.42551, 93.70491, 34.38484, 29.5095
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week-3-dplyr-pt2_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="week-3-dplyr-pt2_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -4036,13 +4201,13 @@ $ rating   &lt;dbl&gt; 68.40297, 33.98368, 59.42551, 93.70491, 34.38484, 29.5095
 </div>
 <div id="tabset-1-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="sc">|&gt;</span> </span>
-<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(sugars, shelf) <span class="sc">|&gt;</span> </span>
-<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sugars <span class="sc">!=</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(shelf) <span class="sc">|&gt;</span> </span>
-<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">med_sugars =</span> <span class="fu">median</span>(sugars),</span>
-<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">num_shelf =</span> <span class="fu">n</span>()</span>
-<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>cereal <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(sugars, shelf) <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sugars <span class="sc">!=</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(shelf) <span class="sc">|&gt;</span> </span>
+<span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">med_sugars =</span> <span class="fu">median</span>(sugars),</span>
+<span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">num_shelf =</span> <span class="fu">n</span>()</span>
+<span id="cb17-7"><a aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
   shelf med_sugars num_shelf
@@ -4057,58 +4222,6 @@ $ rating   &lt;dbl&gt; 68.40297, 33.98368, 59.42551, 93.70491, 34.38484, 29.5095
 </div>
 </section></section>
 <section>
-<section id="thinking-about-data-ethics" class="title-slide slide level1 center">
-<h1>Thinking about Data Ethics</h1>
-
-</section>
-<section id="data-ethics" class="slide level2">
-<h2>Data Ethics</h2>
-<p><br></p>
-<p><br></p>
-<p><strong>What do we mean by <em>data ethics</em>?</strong></p>
-<p><br></p>
-<p><strong>Why do we (as statisticians, data scientists, folks working with data) need to think about <em>data ethics</em>?</strong></p>
-</section>
-<section id="data-ethics-1" class="slide level2">
-<h2>Data Ethics</h2>
-<p><strong>What do we mean by <em>data ethics</em>?</strong></p>
-<ul>
-<li>The process of evaluating data collection, processing, analysis, and dissemination practices for their adverse impacts on individuals, systems, and society.</li>
-</ul>
-<div class="fragment">
-<p><strong>Why do we (as statisticians, data scientists, folks working with data) need to think about <em>data ethics</em>?</strong></p>
-<ul>
-<li>We have a lot of power to declare <strong>truth and fact</strong>, hiding behind the <em>black box</em> of data science methods.</li>
-</ul>
-</div>
-</section>
-<section id="data-science-oath" class="slide level2">
-<h2>Data Science Oath</h2>
-<ul>
-<li>I will not be ashamed to say, <strong>“I know not,”</strong> nor will I fail to call in my colleagues when the skills of another are needed.</li>
-<li>I will respect the <strong>privacy</strong> of my data subjects, for their data are not disclosed to me that the world may know.</li>
-<li>I will remember that my data are not just numbers without meaning or context, but represent <strong>real people and situations</strong>, and that my work may lead to unintended societal consequences, such as inequality, poverty, and disparities due to algorithmic bias.</li>
-</ul>
-</section>
-<section id="asa-ethical-guidelines" class="slide level2">
-<h2>ASA Ethical Guidelines</h2>
-<ul>
-<li>The American Statistical Association’s Ethical Guidelines for Statistical Practice are intended to help statistics practitioners make decisions ethically.</li>
-<li>They aim to promote accountability by informing those who rely on statistics of the standards they should expect.</li>
-</ul>
-<div class="fragment">
-<div class="small">
-<blockquote>
-<p>Visit <a href="https://www.amstat.org/your-career/ethical-guidelines-for-statistical-practice">Ethical Guidelines for Statistical Practice</a> and discuss one of the guidelines with your neighbor.</p>
-<ul>
-<li>What surprises you? What did you learn?</li>
-<li>In what scenario might this come into play?</li>
-</ul>
-</blockquote>
-</div>
-</div>
-</section></section>
-<section>
 <section id="lab-3-challenge-3" class="title-slide slide level1 center">
 <h1><a href="../../labs/instructions/lab-3-instructions.html">Lab 3</a> &amp; <a href="../../labs/instructions/challenge-3-instructions.html">Challenge 3</a></h1>
 <p>Exploring teacher evaluations during COVID-19</p>
@@ -4116,7 +4229,11 @@ $ rating   &lt;dbl&gt; 68.40297, 33.98368, 59.42551, 93.70491, 34.38484, 29.5095
 <section id="to-do" class="slide level2">
 <h2>To do…</h2>
 <ul>
-<li><strong>Lab 3: Teacher Evaluations</strong>
+<li><strong>Lab 3: Student Evaluations of Teaching</strong>
+<ul>
+<li>Due Sunday, 10/13 at 11:59pm</li>
+</ul></li>
+<li><strong>Challenge 3: Extending Teaching Evaluation Investigations</strong>
 <ul>
 <li>Due Sunday, 10/13 at 11:59pm</li>
 </ul></li>

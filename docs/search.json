@@ -2772,7 +2772,7 @@
     "href": "slides/week-3/week-3-dplyr-pt2.html#thursday-october-10",
     "title": "Extending Data Wrangling Verbs",
     "section": "Thursday, October 10",
-    "text": "Thursday, October 10\nToday we will…\n\nNew Material\n\nExtend dplyr verbs to have more functionality.\nThink about data ethics.\n\nLab 3: Teacher Evaluations"
+    "text": "Thursday, October 10\nToday we will…\n\n\nDebrief PA 3\nDebrief Lab 2 & Challenge 2\nDiscuss Lab 2 Peer Review\nOutline Grade Expectations for Syllabus\nNew Material\n\nExtend dplyr verbs to have more functionality\n\nLab 3: Teacher Evaluations"
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt2.html#example-data-set-cereal",
@@ -2814,7 +2814,7 @@
     "href": "slides/week-3/week-3-dplyr-pt2.html#summarize-multiple-columns-with-across-2",
     "title": "Extending Data Wrangling Verbs",
     "section": "Summarize multiple columns with across()",
-    "text": "Summarize multiple columns with across()\n\nFor each type of cereal, calculate the mean nutrient levels. Remove 10% of observations at the ends of the values, so extreme values are not included in the calculations.\n\ncereal |&gt; \n  group_by(type) |&gt; \n  summarise(\n    across(.cols = calories:potass, \n           .fns = ~ mean(.x, trim = 0.1)\n           )\n    )\n\n\n\n\n\n\n\n\ntype\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\n\n\n\n\ncold\n107.6667\n2.416667\n0.8833333\n170.08333\n1.800000\n14.66667\n7.2000000\n86.66667\n\n\nhot\n100.0000\n4.000000\n1.0000000\n26.66667\n1.233333\n12.00000\n0.6666667\n68.00000"
+    "text": "Summarize multiple columns with across()\nIf missing values were present, we would need to remove them when calculating the mean!\n\ncereal |&gt; \n  group_by(type) |&gt; \n  summarise(\n    across(.cols = calories:potass, \n           .fns = ~ mean(.x, na.rm = TRUE)\n           )\n    )\n\n\n\n\n\n\n\ntype\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\n\n\n\n\ncold\n107.6667\n2.416667\n0.8833333\n170.08333\n1.800000\n14.66667\n7.2000000\n86.66667\n\n\nhot\n100.0000\n4.000000\n1.0000000\n26.66667\n1.233333\n12.00000\n0.6666667\n68.00000"
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt2.html#getting-fancy-with-names",
@@ -2919,7 +2919,7 @@
     "href": "slides/week-3/week-3-dplyr-pt2.html#to-do",
     "title": "Extending Data Wrangling Verbs",
     "section": "To do…",
-    "text": "To do…\n\nLab 3: Teacher Evaluations\n\nDue Sunday, 10/13 at 11:59pm\n\nRead Chapter 4: Data Joins and Transformations\n\nCheck-in 4.1 + 4.2 due Tuesday 10/15 at 12pm"
+    "text": "To do…\n\nLab 3: Student Evaluations of Teaching\n\nDue Sunday, 10/13 at 11:59pm\n\nChallenge 3: Extending Teaching Evaluation Investigations\n\nDue Sunday, 10/13 at 11:59pm\n\nRead Chapter 4: Data Joins and Transformations\n\nCheck-in 4.1 + 4.2 due Tuesday 10/15 at 12pm"
   },
   {
     "objectID": "slides/week-4/week-4_joins-2.html#wednesday-april-24",
@@ -3900,5 +3900,75 @@
     "title": "Lab 4: Childcare Costs in California",
     "section": "",
     "text": "Now for our last step, we need to commit the files to our repo.\n\nClick the “Git” tab in upper right pane\nCheck the “Staged” box for the lab-3-student.qmd file\nClick “Commit”\nIn the box that opens, type a message in “Commit message”, such as “Added my name”.\nClick “Commit”.\nClick the green “Push” button to send your local changes to GitHub.\n\nRStudio will display something like:\n&gt;&gt;&gt; /usr/bin/git push origin HEAD:refs/heads/main\nTo https://github.com/atheobold/introduction-to-quarto-allison-theobold.git\n   3a2171f..6d58539  HEAD -&gt; main"
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt2.html#efficient-coding",
+    "href": "slides/week-3/week-3-dplyr-pt2.html#efficient-coding",
+    "title": "Extending Data Wrangling Verbs",
+    "section": "Efficient Coding",
+    "text": "Efficient Coding\nFor the final problem, many groups’ code looked like this:\n\ncolleges_clean |&gt; \n  filter(REGION == 7) |&gt;\n  filter(ADM_RATE &gt; median(ADM_RATE)) |&gt;\n  filter(TUITION_DIFF != 0) |&gt;\n  filter(SAT_AVG %% 2 == 1) |&gt;\n  filter(STABBR != \"ID\") |&gt;\n  filter(UGDS &lt; 10000) |&gt;\n  filter(STABBR != \"MT\") |&gt; \n  slice_min(order_by = ADM_RATE) \n\n\n\nIs there a more “efficient” way do this?"
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt2.html#a-few-words-about-drop_na",
+    "href": "slides/week-3/week-3-dplyr-pt2.html#a-few-words-about-drop_na",
+    "title": "Extending Data Wrangling Verbs",
+    "section": "A few words about drop_na()",
+    "text": "A few words about drop_na()\n\nEasy tool to remove missing values\nUnilaterally removes any row with a missing value for any variable\nBut you can specify what columns it should look at for missing values!\n\n\ncolleges_clean |&gt; \n  drop_na(REGION, \n          ADM_RATE, \n          TUITION_DIFF, \n          SAT_AVG, \n          STABBR, \n          UGDS)"
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt2.html#grading-feedback",
+    "href": "slides/week-3/week-3-dplyr-pt2.html#grading-feedback",
+    "title": "Extending Data Wrangling Verbs",
+    "section": "Grading / Feedback",
+    "text": "Grading / Feedback\n\n\nEach question will earn a score of “Success” or “Growing”.\n\nQuestions marked “Growing” will receive feedback on how to improve your solution.\nThese questions can be resubmitted for additional feedback.\n\n\n\n\n\n\nEarning a “Success” doesn’t necessarily mean your solution is without error.\n\nYou may still receive feedback on how to improve your solution.\nThese questions cannot be resubmitted for additional feedback.\n\n\n\n\n\n\n\nRevisions for Lab 2 & Challenge 2 are due next Friday (October 18th)\n\nYou must submit your revised HTML to the original Lab 2 / Challenge 2 assignment portal.\nYou must include reflections on what you learned by completing the revisions."
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt2.html#growing-points",
+    "href": "slides/week-3/week-3-dplyr-pt2.html#growing-points",
+    "title": "Extending Data Wrangling Verbs",
+    "section": "Growing Points",
+    "text": "Growing Points\n\n\nQ1: Loading in data with the here() function\n\nIn this class, we use a package oriented workflow to read in the data.\nWe do not specify relative paths to read in our data.\n\n\n\n\n\n\nQ5: Adding transparency\n\nOnly variables being mapped to aesthetics are inserted into the aes() function!\nHard coded values (e.g., alpha = 0.5) belong outside the aes() function.\n\n\n\n\n\n\n\nReport formatting: No messages or warnings should be output in the HTML document!\n\nUse code chunk options and execute options to suppress these messages and warnings."
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt2.html#what-feedback-would-you-give",
+    "href": "slides/week-3/week-3-dplyr-pt2.html#what-feedback-would-you-give",
+    "title": "Extending Data Wrangling Verbs",
+    "section": "What feedback would you give?",
+    "text": "What feedback would you give?\n\nggplot(data = surveys, mapping = aes(x=hindfoot_length,y= weight)) +  \n  geom_jitter(alpha=.2,color='tomato')+ facet_wrap(~species)+geom_boxplot(outlier.shape = NA)+labs(\n    title ='Weight to hindfoot comparison'\n  )+ xlab('length (mm)')+ylab('Weight(g)')"
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt2.html#defining-grades-in-331",
+    "href": "slides/week-3/week-3-dplyr-pt2.html#defining-grades-in-331",
+    "title": "Extending Data Wrangling Verbs",
+    "section": "Defining Grades in 331",
+    "text": "Defining Grades in 331\n\nA: Superior Attainment of Course Objectives\nB: Good Attainment of Course Objectives\nC: Acceptable Attainment of Course Objectives\nD: Poor Attainment of Course Objectives\n\n\nWe need to define criteria for each of these grades based on the four objectives of this course—learning targets, revising thinking, extending thinking, collaborating with peers."
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt2.html#challenge-2-feedback",
+    "href": "slides/week-3/week-3-dplyr-pt2.html#challenge-2-feedback",
+    "title": "Extending Data Wrangling Verbs",
+    "section": "Challenge 2 Feedback",
+    "text": "Challenge 2 Feedback\nDon’t make people tilt their head"
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt2.html#dont-make-people-tilt-their-head",
+    "href": "slides/week-3/week-3-dplyr-pt2.html#dont-make-people-tilt-their-head",
+    "title": "Extending Data Wrangling Verbs",
+    "section": "Don’t make people tilt their head",
+    "text": "Don’t make people tilt their head"
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt2.html#grading-feedback-revisions",
+    "href": "slides/week-3/week-3-dplyr-pt2.html#grading-feedback-revisions",
+    "title": "Extending Data Wrangling Verbs",
+    "section": "Grading / Feedback & Revisions",
+    "text": "Grading / Feedback & Revisions\n\n\nEach question will earn a score of “Success” or “Growing”.\n\nQuestions marked “Growing” will receive feedback on how to improve your solution.\nThese questions can be resubmitted for additional feedback.\n\n\n\n\n\n\nEarning a “Success” doesn’t necessarily mean your solution is without error.\n\nYou may still receive feedback on how to improve your solution.\nThese questions cannot be resubmitted for additional feedback.\n\n\n\n\n\n\n\nRevisions for Lab 2 & Challenge 2 are due next Friday (October 18th)\n\nYou must submit your revised HTML to the original Lab 2 / Challenge 2 assignment portal.\nYou must include reflections on what you learned by completing the revisions."
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt2.html#lab-2-growing-points",
+    "href": "slides/week-3/week-3-dplyr-pt2.html#lab-2-growing-points",
+    "title": "Extending Data Wrangling Verbs",
+    "section": "Lab 2 Growing Points",
+    "text": "Lab 2 Growing Points\n\n\nQ1: Loading in data with the here() function\n\nIn this class, we use a package oriented workflow to read in the data.\nWe do not specify relative paths to read in our data.\n\n\n\n\n\n\nQ5: Adding transparency\n\nOnly variables being mapped to aesthetics are inserted into the aes() function!\nHard coded values (e.g., alpha = 0.5) belong outside the aes() function.\n\n\n\n\n\n\n\nReport formatting: No messages or warnings should be output in the HTML document!\n\nUse code chunk options and execute options to suppress these messages and warnings."
   }
 ]
