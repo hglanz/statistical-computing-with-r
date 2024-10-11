@@ -3657,7 +3657,7 @@
     "href": "group-activities/week-4/PA-4-task-card.html",
     "title": "PA 4 Task Card – Military Spending",
     "section": "",
-    "text": "Today you will use the readxl and tidyr packages to clean some data.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to solve this puzzle, you will need to use the skills of each member of your group."
+    "text": "Today you will use the readxl, dplyr, and tidyr packages to clean some data and then recreate a visualization of military expenditures for countries in Eastern Europe.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to solve this puzzle, you will need to use the skills of each member of your group."
   },
   {
     "objectID": "group-activities/week-4/PA-4-task-card.html#group-roles",
@@ -3970,5 +3970,19 @@
     "title": "Extending Data Wrangling Verbs",
     "section": "Lab 2 Growing Points",
     "text": "Lab 2 Growing Points\n\n\nQ1: Loading in data with the here() function\n\nIn this class, we use a package oriented workflow to read in the data.\nWe do not specify relative paths to read in our data.\n\n\n\n\n\n\nQ5: Adding transparency\n\nOnly variables being mapped to aesthetics are inserted into the aes() function!\nHard coded values (e.g., alpha = 0.5) belong outside the aes() function.\n\n\n\n\n\n\n\nReport formatting: No messages or warnings should be output in the HTML document!\n\nUse code chunk options and execute options to suppress these messages and warnings."
+  },
+  {
+    "objectID": "group-activities/week-4/PA-4-task-card.html#filtering-joins",
+    "href": "group-activities/week-4/PA-4-task-card.html#filtering-joins",
+    "title": "PA 4 Task Card – Military Spending",
+    "section": "Filtering Joins",
+    "text": "Filtering Joins\n\n\n\nanti_join(left_table, \n          right_table, \n          by = \"id\"\n  )"
+  },
+  {
+    "objectID": "group-activities/week-4/PA-4-task-card.html#lengthening-data",
+    "href": "group-activities/week-4/PA-4-task-card.html#lengthening-data",
+    "title": "PA 4 Task Card – Military Spending",
+    "section": "Lengthening Data",
+    "text": "Lengthening Data\n\n\n\ndf |&gt; \n  pivot_longer(\n    cols = bp1:bp2,\n    names_to = \"measurement\",\n    values_to = \"value\"\n  )"
   }
 ]

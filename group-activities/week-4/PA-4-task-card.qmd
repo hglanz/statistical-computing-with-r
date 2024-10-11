@@ -1,10 +1,12 @@
 ---
 title: "PA 4 Task Card -- Military Spending"
 editor: source
-format: typst
+format: docx
 ---
 
-Today you will use the `readxl` and `tidyr` packages to clean some data. 
+Today you will use the `readxl`, `dplyr`, and `tidyr` packages to clean some
+data and then recreate a visualization of military expenditures for countries in
+Eastern Europe. 
 
 ***This task is complex. It requires many different types of abilities. Everyone
 will be good at some of these abilities but nobody will be good at all of them.
@@ -40,7 +42,58 @@ Remember, your group is expected to adhere to the following norms:
 4.  No cross-talk with other groups.
 5.  Communicate with each other! 
 
-<!-- ## Advice on Joins? -->
+\newpage
+
+## Filtering Joins
+
+::: columns
+::: {.column width="40%"}
+```{r}
+#| eval: false
+#| echo: true
+#| label: anti-joing-from-picture
+
+anti_join(left_table, 
+          right_table, 
+          by = "id"
+  )
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="50%"}
+![](images/anti-join-2.png){width=70%}
+:::
+:::
+
+## Lengthening Data
+
+::: columns
+::: {.column width="40%"}
+```{r}
+#| eval: false
+#| echo: true
+#| label: pivot-from-r4ds
+
+df |> 
+  pivot_longer(
+    cols = bp1:bp2,
+    names_to = "measurement",
+    values_to = "value"
+  )
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+![](images/pivot-longer.png)
+:::
+:::
+
 
 ## Code Formatting
 
