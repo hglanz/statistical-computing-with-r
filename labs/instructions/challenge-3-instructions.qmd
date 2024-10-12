@@ -25,13 +25,12 @@ Helpful functions: `filter()`, `mutate()`, `if_else()`, `select()`
 
 ```{r}
 #| label: cleaning-data-for-junior-senior-comparison
-# code chunk for Q12
 
 ```
 
 **2. Using the new dataset and your `ggplot2` skills, recreate the filled bar plot shown below.**
 
-![](images/challenge-3-recreate-plot.png)
+![](images/challenge-3-plot-to-recreate.png)
 
 ::: callout-tip
 Helpful geometric object and arguments: `geom_bar(stat = ..., position = ...)`
@@ -43,7 +42,6 @@ Note that getting the general structure and reader friendly labels is the first 
 
 ```{r}
 #| label: recreate-plot
-# code chunk for Q13
 
 ```
 
@@ -55,7 +53,6 @@ Note that the `chisq.test()` function does not take a formula / data specificati
 
 ```{r}
 #| label: chi-square-test
-# code chunk for Q14
 
 ```
 
