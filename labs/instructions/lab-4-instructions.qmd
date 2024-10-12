@@ -24,12 +24,12 @@ You can access the Lab 3 materials through the [Lab 4 assignment on GitHub Class
 ::: {.callout-tip collapse="true"}
 # Same process as last week!
 
-Use these steps to make a copy of the Lab 2 repository: [List of Steps to Copy the Lab Assignment from GitHub Classroom](https://scribehow.com/shared/RStudio_and_Google_Chrome_Workflow__ATprsf2MTYmuPP86Xna1Eg)
+Use these steps to make a copy of the Lab repository: [List of Steps to Copy the Lab Assignment from GitHub Classroom](https://scribehow.com/shared/Copying_Labs_from_GitHub_into_RStudio__ATprsf2MTYmuPP86Xna1Eg)
 :::
 
 ## Step 2: Making a Small Change
 
-Now, find the `lab-3-student.qmd` file in the "Files" tab in the lower right 
+Now, find the `lab-4-student.qmd` file in the "Files" tab in the lower right 
 hand corner. Click on this file to open it. 
 
 At the top of the document (in the YAML) there is an `author` line that says 
@@ -41,7 +41,7 @@ clicking on the blue floppy disk or with a shortcut (command / control + s).
 Now for our last step, we need to [commit the files to our repo](https://happygitwithr.com/existing-github-first#stage-and-commit). 
 
 -   Click the "Git" tab in upper right pane
--   Check the "Staged" box for the `lab-3-student.qmd` file 
+-   Check the "Staged" box for the `lab-4-student.qmd` file 
 -   Click "Commit"
 -   In the box that opens, type a message in "Commit message", such as
 "Added my name".
@@ -56,7 +56,7 @@ To https://github.com/atheobold/introduction-to-quarto-allison-theobold.git
    3a2171f..6d58539  HEAD -> main
 ```
 
-## Step 4: Let's get started wranging some data!
+## Step 4: Let's get started tidying some data!
 
 # Part 2: Some Words of Advice
 
@@ -71,7 +71,7 @@ in your environment.
 
 -   Think through your desired result **before** writing any code.
 
-## The Data
+# Part 3: Exploring Childcare Costs
 
 In this lab we're going look at the median weekly cost of childcare in
 California. A detailed description of the data can be found [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-05-09/readme.md).
@@ -107,15 +107,8 @@ Let's start by focusing only on California.
 
 ```
 
-**3. Using a function from the `forcats` package, complete the code below to create a new variable where each county is categorized into one of the [ten (10) Census regions](https://census.ca.gov/regions/) in California. Use the Region description (from the plot), not the Region number.** 
-
-```{r}
-#| label: recoding-county-to-census-regions
-
-ca_childcare <- ca_childcare |> 
-  mutate(county_name = str_remove(county_name, " County")) |>
-  ...
-```
+**3. Using a function from the `forcats` package, complete the code below to create a new variable where each county is categorized into one of the [ten (10) Census regions](https://census.ca.gov/regions/) in California. Use the Region description (from the plot), not the Region number.**   
+*Hint: This is probably a good place to use ChatGPT to reduce on tedious work. But you do need to know how to prompt ChatGPT to make it useful!*
 
 ::: callout-tip
 
@@ -127,6 +120,13 @@ You will learn about the `str_remove()` function from the `stringr` package next
 week!
 :::
 
+```{r}
+#| label: recoding-county-to-census-regions
+
+ca_childcare <- ca_childcare |> 
+  mutate(county_name = str_remove(county_name, " County")) |>
+  ...
+```
 
 **4. Let's consider the median household income of each region, and how that income has changed over time. Create a table with ten rows, one for each region, and two columns, one for 2008 and one for 2018. The cells should contain the `median` of the median household income (expressed in 2018 dollars) of the `region` and the `study_year`. Arrange the rows by 2018 values.**
 
@@ -167,7 +167,7 @@ Remember to avoid "object junk" in your environment!
 
 :::
 
-![Plot to recreate](https://github.com/zoerehnberg/STAT331-S23/blob/main/lab_assignments/lab4/LA4_recreate_plot.png?raw=true)
+![Plot to recreate](images/lab-4-recreate-plot.png)
 
 ```{r}
 #| label: recreate-plot
@@ -208,8 +208,9 @@ summary(reg_mod1)
 
 ::: callout-tip
 + Aim for about 150-300 words.
-  + You should (1) introduce the data and the topic you are investigating, (2) discuss your table and plot, and (3) conclude.
-+ This should read like a mini-report. I recommend using `#| code-fold: true` for readability.
+  + You should (1) introduce the data and the topic you are investigating, 
+  (2) discuss your table and plot, and (3) conclude.
++ This should read like a mini-report! 
 + Don't just have a summary table or plot show up "out of the blue" -- make sure to build up to them with text, describe what they show, and provide captions.
 :::
 
