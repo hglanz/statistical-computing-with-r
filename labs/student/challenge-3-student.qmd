@@ -27,7 +27,7 @@ Helpful functions: `filter()`, `mutate()`, `if_else()`, `select()`
 
 **2. Using the new dataset and your `ggplot2` skills, recreate the filled bar plot shown below.**
 
-![](images/make_plot.png)
+![](https://atheobold.github.io/groupworthy-data-science/labs/instructions/images/challenge-3-plot-to-recreate.png)
 
 
 ::: callout-tip
