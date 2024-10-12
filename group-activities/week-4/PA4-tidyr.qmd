@@ -132,8 +132,8 @@ A clever way to filter out observations you **don't want** is with an
 **without** a match in another dataset.
 
 **4. Use the `anti_join()` function to filter out the `Country` values we don't want in the `military_clean` data. The `by` argument needs to be filled with the name(s) of the variables that the two datasets should be joined with.**  
-Hint: Join by different variables in `dataX` and `dataY`: `join_by(a == b)`
-will match `dataX$a` to `dataY$b`.
+Hint: To join by different variables in `data1` and `data2` you need to use 
+`by = c("a" = "b")`, which will match `data1$a` to `data2$b`.
 
 ```{r}
 #| label: filtering-out-country-values
@@ -205,8 +205,13 @@ represent the plot.
 #| label: side-by-side-boxplots-east-europe
 
 # Countries to include in the plot!
-eastern_europe <- c("Armenia", "Azerbaijan", "Belarus", 
-                    "Georgia", "Moldova", "Russia", "Ukraine")
+eastern_europe <- c("Armenia", 
+                    "Azerbaijan",
+                    "Belarus", 
+                    "Georgia", 
+                    "Moldova", 
+                    "Russia", 
+                    "Ukraine")
 
 
 ```
