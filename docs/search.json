@@ -341,7 +341,7 @@
     "href": "slides/week-4/week-4_joins-1.html#tidy-data",
     "title": "Data Joins + Pivots + Factors",
     "section": "Tidy Data",
-    "text": "Tidy Data\nTidy data…\n\nis rectangular.\nhas observations as rows and variables as columns.\nhas different formats for different tasks.\n\n\nR4DS"
+    "text": "Tidy Data\nTidy data…\n\nis rectangular.\nhas observations as rows and variables as columns.\nhas different formats for different tasks."
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#consequences-of-messy-data",
@@ -355,14 +355,14 @@
     "href": "slides/week-4/week-4_joins-1.html#creating-tidy-data",
     "title": "Data Joins + Pivots + Factors",
     "section": "Creating Tidy Data",
-    "text": "Creating Tidy Data\nWe may need to transform our data to turn it into the version of tidy that is best for a task at hand.\n\nAllison Horst"
+    "text": "Creating Tidy Data\nWe may need to transform our data to turn it into the version of tidy that is best for a task at hand.\n\nImage by Allison Horst"
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#creating-tidy-data-1",
     "href": "slides/week-4/week-4_joins-1.html#creating-tidy-data-1",
     "title": "Data Joins + Pivots + Factors",
     "section": "Creating Tidy Data",
-    "text": "Creating Tidy Data\nLet’s say we want to look at mean cereal nutrients based on shelf.\n\n\nThe data are in a wide format – a separate column for each nutrient.\nTransforming the data will make plotting easier.\n\n\nlibrary(liver)\ndata(cereal)\nhead(cereal)\n\n\n\n\n\n\n\nname\nmanuf\ntype\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\nshelf\nweight\ncups\nrating\n\n\n\n\n100% Bran\nN\ncold\n70\n4\n1\n130\n10.0\n5.0\n6\n280\n25\n3\n1\n0.33\n68.40297\n\n\n100% Natural Bran\nQ\ncold\n120\n3\n5\n15\n2.0\n8.0\n8\n135\n0\n3\n1\n1.00\n33.98368\n\n\nAll-Bran\nK\ncold\n70\n4\n1\n260\n9.0\n7.0\n5\n320\n25\n3\n1\n0.33\n59.42551\n\n\nAll-Bran with Extra Fiber\nK\ncold\n50\n4\n0\n140\n14.0\n8.0\n0\n330\n25\n3\n1\n0.50\n93.70491\n\n\nAlmond Delight\nR\ncold\n110\n2\n2\n200\n1.0\n14.0\n8\n-1\n25\n3\n1\n0.75\n34.38484\n\n\nApple Cinnamon Cheerios\nG\ncold\n110\n2\n2\n180\n1.5\n10.5\n10\n70\n25\n1\n1\n0.75\n29.50954"
+    "text": "Creating Tidy Data\nLet’s say we want to look at mean cereal nutrients based on shelf.\n\nCurrently, the data are in a wide format – a separate column for each nutrient. Transforming the data will make plotting easier."
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#creating-tidy-data-2",
@@ -383,28 +383,28 @@
     "href": "slides/week-4/week-4_joins-1.html#manual-method-steps",
     "title": "Data Joins + Pivots + Factors",
     "section": "Manual Method: Steps",
-    "text": "Manual Method: Steps\n\n\nKeep the column Week.\nCreate a new column Day_of_Week.\nCreate a new column Rainfall (hold daily rainfall values).\nNow we have three columns – move Sunday values over."
+    "text": "Manual Method: Steps\n\n\n\nKeep the column Week.\nCreate a new column Day_of_Week.\nCreate a new column Rainfall (hold daily rainfall values).\nNow we have three columns – move Sunday values over."
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#manual-method-steps-1",
     "href": "slides/week-4/week-4_joins-1.html#manual-method-steps-1",
     "title": "Data Joins + Pivots + Factors",
     "section": "Manual Method: Steps",
-    "text": "Manual Method: Steps\n\nKeep the column Week.\nCreate a new column Day_of_Week.\nCreate a new column Rainfall (hold daily rainfall values).\nNow we have three columns – move Sunday values over.\nDuplicate Week 1-5 and copy Monday values over."
+    "text": "Manual Method: Steps\n\n\nKeep the column Week.\nCreate a new column Day_of_Week.\nCreate a new column Rainfall (hold daily rainfall values).\nNow we have three columns – move Sunday values over.\nDuplicate Week 1-5 and copy Monday values over."
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#manual-method-steps-2",
     "href": "slides/week-4/week-4_joins-1.html#manual-method-steps-2",
     "title": "Data Joins + Pivots + Factors",
     "section": "Manual Method: Steps",
-    "text": "Manual Method: Steps\n\nKeep the column Week.\nCreate a new column Day_of_Week.\nCreate a new column Rainfall (hold daily rainfall values).\nNow we have three columns – move Sunday values over.\nDuplicate Week 1-5 and copy Monday values over.\nDuplicate Week 1-5 and copy Tuesday values over."
+    "text": "Manual Method: Steps\n\n\nKeep the column Week.\nCreate a new column Day_of_Week.\nCreate a new column Rainfall (hold daily rainfall values).\nNow we have three columns – move Sunday values over.\nDuplicate Week 1-5 and copy Monday values over.\nDuplicate Week 1-5 and copy Tuesday values over."
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#manual-method-steps-3",
     "href": "slides/week-4/week-4_joins-1.html#manual-method-steps-3",
     "title": "Data Joins + Pivots + Factors",
     "section": "Manual Method: Steps",
-    "text": "Manual Method: Steps\n\nKeep the column Week.\nCreate a new column Day_of_Week.\nCreate a new column Rainfall (hold daily rainfall values).\nNow we have three columns – move Sunday values over.\nDuplicate Week 1-5 and copy Monday values over.\nDuplicate Week 1-5 and copy Tuesday values over.\nContinue for the rest of the days of the week."
+    "text": "Manual Method: Steps\n\n\nKeep the column Week.\nCreate a new column Day_of_Week.\nCreate a new column Rainfall (hold daily rainfall values).\nNow we have three columns – move Sunday values over.\nDuplicate Week 1-5 and copy Monday values over.\nDuplicate Week 1-5 and copy Tuesday values over.\nContinue for the rest of the days of the week."
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#manual-method-steps-4",
@@ -432,7 +432,7 @@
     "href": "slides/week-4/week-4_joins-1.html#pivot_longer-1",
     "title": "Data Joins + Pivots + Factors",
     "section": "pivot_longer()",
-    "text": "pivot_longer()\n\nslo_rainfall |&gt; \n  pivot_longer(cols      = Sunday:Saturday,\n               names_to  = \"Day_of_Week\",\n               values_to = \"Daily_Rainfall\")\n\n\n\n\n\n\n\nWeek\nDay_of_Week\nDaily_Rainfall\n\n\n\n\n1\nSunday\n0.00\n\n\n1\nMonday\n0.12\n\n\n1\nTuesday\n0.00\n\n\n1\nWednesday\n1.58\n\n\n1\nThursday\n0.91\n\n\n1\nFriday\n0.00\n\n\n1\nSaturday\n0.05\n\n\n2\nSunday\n0.27\n\n\n2\nMonday\n4.26\n\n\n2\nTuesday\n0.43\n\n\n2\nWednesday\n0.00\n\n\n2\nThursday\n0.00\n\n\n2\nFriday\n0.16\n\n\n2\nSaturday\n1.41\n\n\n3\nSunday\n0.34\n\n\n3\nMonday\n0.33\n\n\n3\nTuesday\n0.00\n\n\n3\nWednesday\n0.00\n\n\n3\nThursday\n0.13\n\n\n3\nFriday\n0.00\n\n\n3\nSaturday\n0.00\n\n\n4\nSunday\n0.00\n\n\n4\nMonday\n0.00\n\n\n4\nTuesday\n0.00\n\n\n4\nWednesday\n0.00\n\n\n4\nThursday\n0.00\n\n\n4\nFriday\n0.00\n\n\n4\nSaturday\nNA\n\n\n5\nSunday\nNA\n\n\n5\nMonday\nNA\n\n\n5\nTuesday\nNA\n\n\n5\nWednesday\nNA\n\n\n5\nThursday\nNA\n\n\n5\nFriday\nNA\n\n\n5\nSaturday\nNA"
+    "text": "pivot_longer()\n\nslo_rainfall |&gt; \n  pivot_longer(cols = Sunday:Saturday,\n               names_to  = \"Day_of_Week\",\n               values_to = \"Daily_Rainfall\")\n\n\n\n\n\n\n\nWeek\nDay_of_Week\nDaily_Rainfall\n\n\n\n\n1\nSunday\n0.00\n\n\n1\nMonday\n0.12\n\n\n1\nTuesday\n0.00\n\n\n1\nWednesday\n1.58\n\n\n1\nThursday\n0.91\n\n\n1\nFriday\n0.00\n\n\n1\nSaturday\n0.05\n\n\n2\nSunday\n0.27\n\n\n2\nMonday\n4.26\n\n\n2\nTuesday\n0.43\n\n\n2\nWednesday\n0.00\n\n\n2\nThursday\n0.00\n\n\n2\nFriday\n0.16\n\n\n2\nSaturday\n1.41\n\n\n3\nSunday\n0.34\n\n\n3\nMonday\n0.33\n\n\n3\nTuesday\n0.00\n\n\n3\nWednesday\n0.00\n\n\n3\nThursday\n0.13\n\n\n3\nFriday\n0.00\n\n\n3\nSaturday\n0.00\n\n\n4\nSunday\n0.00\n\n\n4\nMonday\n0.00\n\n\n4\nTuesday\n0.00\n\n\n4\nWednesday\n0.00\n\n\n4\nThursday\n0.00\n\n\n4\nFriday\n0.00\n\n\n4\nSaturday\nNA\n\n\n5\nSunday\nNA\n\n\n5\nMonday\nNA\n\n\n5\nTuesday\nNA\n\n\n5\nWednesday\nNA\n\n\n5\nThursday\nNA\n\n\n5\nFriday\nNA\n\n\n5\nSaturday\nNA"
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#pivot_wider",
@@ -4026,5 +4026,432 @@
     "title": "Extending Joins, Factors, Clean Variable Names",
     "section": "ChatGPT Example…",
     "text": "ChatGPT Example…\nhttps://chatgpt.com/share/670b0fd0-d9f0-8012-8d47-aceba68925f4"
+  },
+  {
+    "objectID": "slides/week-4/week-4_joins-1.html#cereal-data",
+    "href": "slides/week-4/week-4_joins-1.html#cereal-data",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Cereal Data",
+    "text": "Cereal Data\n\nlibrary(liver)\ndata(cereal)\nhead(cereal)\n\n\n\n\n\n\n\nname\nmanuf\ntype\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\nshelf\nweight\ncups\nrating\n\n\n\n\n100% Bran\nN\ncold\n70\n4\n1\n130\n10.0\n5.0\n6\n280\n25\n3\n1\n0.33\n68.40297\n\n\n100% Natural Bran\nQ\ncold\n120\n3\n5\n15\n2.0\n8.0\n8\n135\n0\n3\n1\n1.00\n33.98368\n\n\nAll-Bran\nK\ncold\n70\n4\n1\n260\n9.0\n7.0\n5\n320\n25\n3\n1\n0.33\n59.42551\n\n\nAll-Bran with Extra Fiber\nK\ncold\n50\n4\n0\n140\n14.0\n8.0\n0\n330\n25\n3\n1\n0.50\n93.70491\n\n\nAlmond Delight\nR\ncold\n110\n2\n2\n200\n1.0\n14.0\n8\n-1\n25\n3\n1\n0.75\n34.38484\n\n\nApple Cinnamon Cheerios\nG\ncold\n110\n2\n2\n180\n1.5\n10.5\n10\n70\n25\n1\n1\n0.75\n29.50954"
+  },
+  {
+    "objectID": "slides/week-4/week-4_joins-1.html#tidying-the-cereals-data",
+    "href": "slides/week-4/week-4_joins-1.html#tidying-the-cereals-data",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Tidying the Cereals Data",
+    "text": "Tidying the Cereals Data\n\nWideWide PlotLongLong Plot\n\n\n\n\nCode\ncereal_wide &lt;- cereal |&gt; \n  group_by(shelf) |&gt; \n  summarise(across(calories:vitamins, mean))\n\n\n\n\n\n\n\n\nshelf\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\n\n\n\n\n1\n102.5000\n2.650000\n0.60\n176.2500\n1.6850000\n15.80000\n4.800000\n75.50000\n20.00000\n\n\n2\n109.5238\n1.904762\n1.00\n145.7143\n0.9047619\n13.61905\n9.619048\n57.80952\n23.80952\n\n\n3\n107.7778\n2.861111\n1.25\n158.6111\n3.1388889\n14.50000\n6.527778\n129.83333\n35.41667\n\n\n\n\n\n\n\n\n\n\n\nCode\nmy_colors &lt;- c(\"calories_col\" = \"steelblue\", \"sugars_col\" = \"orange3\")\n\ncereal_wide |&gt; \n  ggplot() +\n  geom_point(aes(x = shelf, y = calories, color = \"calories_col\")) +\n  geom_line(aes(x = shelf, y = calories, color = \"calories_col\")) + \n  geom_point(aes(x = shelf, y = sugars, color = \"sugars_col\")) +\n  geom_line(aes(x = shelf, y = sugars, color = \"sugars_col\")) +\n  scale_color_manual(values = my_colors, labels = names(my_colors)) +\n  labs(x = \"Shelf\", y = \"\", subtitle = \"Mean Amount\", color = \"Nutrient\")\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ncereal_long&lt;- cereal |&gt; \n  pivot_longer(cols = calories:vitamins,\n               names_to = \"Nutrient\",\n               values_to = \"Amount\") |&gt; \n  group_by(shelf, Nutrient) |&gt; \n  summarise(mean_amount = mean(Amount))\n\n\n\n\n\n\n\n\nshelf\nNutrient\nmean_amount\n\n\n\n\n1\ncalories\n102.5000000\n\n\n1\ncarbo\n15.8000000\n\n\n1\nfat\n0.6000000\n\n\n1\nfiber\n1.6850000\n\n\n1\npotass\n75.5000000\n\n\n1\nprotein\n2.6500000\n\n\n1\nsodium\n176.2500000\n\n\n1\nsugars\n4.8000000\n\n\n1\nvitamins\n20.0000000\n\n\n2\ncalories\n109.5238095\n\n\n2\ncarbo\n13.6190476\n\n\n2\nfat\n1.0000000\n\n\n2\nfiber\n0.9047619\n\n\n2\npotass\n57.8095238\n\n\n2\nprotein\n1.9047619\n\n\n2\nsodium\n145.7142857\n\n\n2\nsugars\n9.6190476\n\n\n2\nvitamins\n23.8095238\n\n\n3\ncalories\n107.7777778\n\n\n3\ncarbo\n14.5000000\n\n\n3\nfat\n1.2500000\n\n\n3\nfiber\n3.1388889\n\n\n3\npotass\n129.8333333\n\n\n3\nprotein\n2.8611111\n\n\n3\nsodium\n158.6111111\n\n\n3\nsugars\n6.5277778\n\n\n3\nvitamins\n35.4166667\n\n\n\n\n\n\n\n\n\n\n\nCode\ncereal_long |&gt; \n  ggplot(aes(x = shelf, \n             y = mean_amount, \n             color = Nutrient)) +\n  geom_point() +\n  geom_line() +\n  labs(x = \"Shelf\", y = \"\", subtitle = \"Mean Amount\")"
+  },
+  {
+    "objectID": "weeks/week-5-strings-dates.html",
+    "href": "weeks/week-5-strings-dates.html",
+    "title": "Special Data Types",
+    "section": "",
+    "text": "This week is all about special data types in R. Similar to the tools you learned last week for working with factors, this week you are going to learn about tools for working with strings and dates. By the end of this week you should be able to:"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html",
+    "href": "slides/week-5/W5_special_types.html",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "",
+    "text": "Today we will…\n\nReminder: no class on Wednesday!\nComments from Week 4\nNew Material\n\nString Variables\nRegular Expressions\n\nPA 5.1: Scrambled Message"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#monday-april-29",
+    "href": "slides/week-5/W5_special_types.html#monday-april-29",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "",
+    "text": "Today we will…\n\nReminder: no class on Wednesday!\nComments from Week 4\nNew Material\n\nString Variables\nRegular Expressions\n\nPA 5.1: Scrambled Message"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#comments-from-week-4",
+    "href": "slides/week-5/W5_special_types.html#comments-from-week-4",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Comments from Week 4",
+    "text": "Comments from Week 4\nWhen describing data, include context as well as the data characteristics.\n\nWhere did the data come from? What years? Location? Source?\nWhat is the data being used for?\nWhat are the variables (in context) and observations (in context)?"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#comments-from-week-4-1",
+    "href": "slides/week-5/W5_special_types.html#comments-from-week-4-1",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Comments from Week 4",
+    "text": "Comments from Week 4\n\n\nRead\n\nAverage\nTotal\nWhich or For Each\nMinimum\nMaximum\n\nThink\n\nsummarize(avg = mean())\nsummarize(total = sum())\ngroup_by()\nslice_min()\nslice_max()"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#what-is-a-string",
+    "href": "slides/week-5/W5_special_types.html#what-is-a-string",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "What is a string?",
+    "text": "What is a string?\nA string is a bunch of characters.\nThere is a difference between…\n\n…a string (many characters, one object)…\nand\n…a character vector (vector of strings).\n\n. . .\n\nmy_string &lt;- \"Hi, my name is Bond!\"\nmy_vector &lt;- c(\"Hi\", \"my\", \"name\", \"is\", \"Bond\")\n\n\nmy_string\n\n[1] \"Hi, my name is Bond!\"\n\n\n\nmy_vector\n\n[1] \"Hi\"   \"my\"   \"name\" \"is\"   \"Bond\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#stringr",
+    "href": "slides/week-5/W5_special_types.html#stringr",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "stringr",
+    "text": "stringr\n\n\nCommon tasks\n\nIdentify strings containing a particular pattern.\nRemove or replace a pattern.\nEdit a string (e.g., make it lowercase).\n\n\n\nknitr::include_graphics(\"https://github.com/rstudio/hex-stickers/blob/main/PNG/stringr.png?raw=true\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nThe stringr package loads with tidyverse.\nAll functions are of the formstr_xxx()."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#pattern",
+    "href": "slides/week-5/W5_special_types.html#pattern",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "pattern =",
+    "text": "pattern =\nThe pattern argument appears in many stringr functions .\n\nThe pattern must be supplied inside quotes.\n\n\nmy_vector &lt;- c(\"Hello,\", \"my name is\", \"Bond\", \"James Bond\")\n\nstr_detect(my_vector, pattern = \"Bond\")\nstr_locate(my_vector, pattern = \"Bond\")\nstr_match(my_vector, pattern = \"Bond\")\nstr_extract(my_vector, pattern = \"Bond\")\nstr_subset(my_vector, pattern = \"Bond\")\n\n\n. . .\nLet’s explore these functions!"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#str_detect",
+    "href": "slides/week-5/W5_special_types.html#str_detect",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "str_detect()",
+    "text": "str_detect()\nReturns a logical vector indicating whether the pattern was found in each element of the supplied vector.\n\nmy_vector &lt;- c(\"Hello,\", \"my name is\", \"Bond\", \"James Bond\")\nstr_detect(my_vector, pattern = \"Bond\")\n\n[1] FALSE FALSE  TRUE  TRUE\n\n\n. . .\n\nPairs well with filter().\nWorks with summarise() + sum or mean.\n\n. . .\n\n\n\n\n\n\nRelated Function\n\n\n\n\n\nstr_which() returns the indexes of the strings that contain a match."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#str_match",
+    "href": "slides/week-5/W5_special_types.html#str_match",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "str_match()",
+    "text": "str_match()\nReturns a character matrix containing either NA or the pattern, depending on if the pattern was found.\n\nmy_vector &lt;- c(\"Hello,\", \"my name is\", \"Bond\", \"James Bond\")\nstr_match(my_vector, pattern = \"Bond\")\n\n     [,1]  \n[1,] NA    \n[2,] NA    \n[3,] \"Bond\"\n[4,] \"Bond\"\n\n\n. . .\nThe matrix will have more columns if you use regex groups.\n\nmy_vector &lt;- c(\"Hello,\", \"my name is\", \"Bond\", \"James Bond\")\nstr_match(my_vector, pattern = \"(.)o(.)\")\n\n     [,1]  [,2] [,3]\n[1,] \"lo,\" \"l\"  \",\" \n[2,] NA    NA   NA  \n[3,] \"Bon\" \"B\"  \"n\" \n[4,] \"Bon\" \"B\"  \"n\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#str_extract",
+    "href": "slides/week-5/W5_special_types.html#str_extract",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "str_extract()",
+    "text": "str_extract()\nReturns a character vector with either NA or the pattern, depending on if the pattern was found.\n\nmy_vector &lt;- c(\"Hello,\", \"my name is\", \"Bond\", \"James Bond\")\nstr_extract(my_vector, pattern = \"Bond\")\n\n[1] NA     NA     \"Bond\" \"Bond\"\n\n\n. . .\n\n\n\n\n\n\nWarning\n\n\n\nstr_extract() only returns the first pattern match.\nUse str_extract_all() to return every pattern match."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#str_locate",
+    "href": "slides/week-5/W5_special_types.html#str_locate",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "str_locate()",
+    "text": "str_locate()\nReturns a dateframe with two numeric variables – the starting and ending location of the pattern.\n\nThe values are NA if the pattern is not found.\n\n\nmy_vector &lt;- c(\"Hello,\", \"my name is\", \"Bond\", \"James Bond\")\nstr_locate(my_vector, pattern = \"Bond\")\n\n     start end\n[1,]    NA  NA\n[2,]    NA  NA\n[3,]     1   4\n[4,]     7  10\n\n\n. . .\n\n\n\n\n\n\nRelated Function\n\n\n\nstr_sub() extracts values based on a starting and ending location."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#str_subset",
+    "href": "slides/week-5/W5_special_types.html#str_subset",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "str_subset()",
+    "text": "str_subset()\nReturns a character vector containing a subset of the original character vector consisting of the elements where the pattern was found.\n\nmy_vector &lt;- c(\"Hello,\", \"my name is\", \"Bond\", \"James Bond\")\nstr_subset(my_vector, pattern = \"Bond\")\n\n[1] \"Bond\"       \"James Bond\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#try-it-out",
+    "href": "slides/week-5/W5_special_types.html#try-it-out",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Try it out!",
+    "text": "Try it out!\n\nmy_vector &lt;- c(\"I scream,\", \"you scream\", \"we all\",\n               \"scream\",\"for\",\"ice cream\")\n\nstr_detect(my_vector, pattern = \"cream\")\nstr_locate(my_vector, pattern = \"cream\")\nstr_match(my_vector, pattern = \"cream\")\nstr_extract(my_vector, pattern = \"cream\")\nstr_subset(my_vector, pattern = \"cream\")\n\n\n\n\n\n\n\nNote\n\n\n\nFor each of these functions, write down:\n\nthe object structure of the output.\nthe data type of the output.\na brief explanation of what they do."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#replace-remove-patterns",
+    "href": "slides/week-5/W5_special_types.html#replace-remove-patterns",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Replace / Remove Patterns",
+    "text": "Replace / Remove Patterns\n\nstr_replace()str_remove()\n\n\nReplace the first matched pattern in each string.\n\nPairs well with mutate().\n\n\nstr_replace(my_vector, pattern = \"Bond\", replace = \"Franco\")\n\n[1] \"Hello,\"       \"my name is\"   \"Franco\"       \"James Franco\"\n\n\n\n\n\n\n\n\nRelated Function\n\n\n\n\n\nstr_replace_all() replaces all matched patterns in each string.\n\n\n\n\n\nRemove the first matched pattern in each string.\n\nmy_vector &lt;- c(\"Hello,\", \"my name is\", \"Bond\", \"James Bond\")\nstr_remove(my_vector, pattern = \"Bond\")\n\n[1] \"Hello,\"     \"my name is\" \"\"           \"James \"    \n\n\n\n\n\n\n\n\nRelated Functions\n\n\n\n\n\nThis is a special case of str_replace(x, pattern, replace = \"\").\nstr_remove_all() removes all matched patterns in each string."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#edit-strings",
+    "href": "slides/week-5/W5_special_types.html#edit-strings",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Edit Strings",
+    "text": "Edit Strings\nConvert letters in a string to a specific capitalization format.\n\nlowerUPPERTitle\n\n\nstr_to_lower() converts all letters in a string to lowercase.\n\n\nmy_vector &lt;- c(\"Hello,\", \"my name is\", \"Bond\", \"James Bond\")\nstr_to_lower(my_vector)\n\n[1] \"hello,\"     \"my name is\" \"bond\"       \"james bond\"\n\n\n\n\nstr_to_upper() converts all letters in a string to uppercase.\n\n\nstr_to_upper(my_vector)\n\n[1] \"HELLO,\"     \"MY NAME IS\" \"BOND\"       \"JAMES BOND\"\n\n\n\n\nstr_to_title() converts the first letter of each word to uppercase.\n\n\nstr_to_title(my_vector)\n\n[1] \"Hello,\"     \"My Name Is\" \"Bond\"       \"James Bond\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#combine-strings",
+    "href": "slides/week-5/W5_special_types.html#combine-strings",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Combine Strings",
+    "text": "Combine Strings\n\nstr_c()str_flatten()str_glue()\n\n\nJoin multiple strings into a single string.\n\nprompt &lt;- \"Hello, my name is\"\nfirst  &lt;- \"James\"\nlast   &lt;- \"Bond\"\nstr_c(prompt, last, \",\", first, last, sep = \" \")\n\n[1] \"Hello, my name is Bond , James Bond\"\n\n\n\n\n\n\n\n\nNote\n\n\n\nSimilar to paste() and paste0().\n\n\n\n\nCombine a vector of strings into a single string.\n\nmy_vector &lt;- c(\"Hello,\", \"my name is\", \"Bond\", \"James Bond\")\nstr_flatten(my_vector, collapse = \" \")\n\n[1] \"Hello, my name is Bond James Bond\"\n\n\n\n\n\n\n\n\nNote\n\n\n\nstr_c() will do the same thing, but you should use str_flatten() instead!\n\n\n\n\nUse variables in the environment to create a string based on {expressions}.\n\nfirst &lt;- \"James\"\nlast &lt;- \"Bond\"\nstr_glue(\"My name is {last}, {first} {last}\")\n\nMy name is Bond, James Bond\n\n\n\n\n\n\n\n\nTip\n\n\n\nSee the R package glue!"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#tips-for-string-success",
+    "href": "slides/week-5/W5_special_types.html#tips-for-string-success",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Tips for String Success",
+    "text": "Tips for String Success\n\nRefer to the stringr cheatsheet\nRemember that str_xxx functions need the first argument to be a vector of strings, not a dataset!\n\nYou will use these functions inside dplyr verbs like filter() or mutate().\n\n\n\ncereal |&gt; \n  mutate(is_bran = str_detect(name, \"Bran\"), \n         .after = name)\n\n\n\n\n\n\n\nname\nis_bran\nmanuf\ntype\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\nshelf\nweight\ncups\nrating\n\n\n\n\n100% Bran\nTRUE\nN\ncold\n70\n4\n1\n130\n10.0\n5.0\n6\n280\n25\n3\n1.00\n0.33\n68.40297\n\n\n100% Natural Bran\nTRUE\nQ\ncold\n120\n3\n5\n15\n2.0\n8.0\n8\n135\n0\n3\n1.00\n1.00\n33.98368\n\n\nAll-Bran\nTRUE\nK\ncold\n70\n4\n1\n260\n9.0\n7.0\n5\n320\n25\n3\n1.00\n0.33\n59.42551\n\n\nAll-Bran with Extra Fiber\nTRUE\nK\ncold\n50\n4\n0\n140\n14.0\n8.0\n0\n330\n25\n3\n1.00\n0.50\n93.70491\n\n\nAlmond Delight\nFALSE\nR\ncold\n110\n2\n2\n200\n1.0\n14.0\n8\n-1\n25\n3\n1.00\n0.75\n34.38484\n\n\nApple Cinnamon Cheerios\nFALSE\nG\ncold\n110\n2\n2\n180\n1.5\n10.5\n10\n70\n25\n1\n1.00\n0.75\n29.50954\n\n\nApple Jacks\nFALSE\nK\ncold\n110\n2\n0\n125\n1.0\n11.0\n14\n30\n25\n2\n1.00\n1.00\n33.17409\n\n\nBasic 4\nFALSE\nG\ncold\n130\n3\n2\n210\n2.0\n18.0\n8\n100\n25\n3\n1.33\n0.75\n37.03856\n\n\nBran Chex\nTRUE\nR\ncold\n90\n2\n1\n200\n4.0\n15.0\n6\n125\n25\n1\n1.00\n0.67\n49.12025\n\n\nBran Flakes\nTRUE\nP\ncold\n90\n3\n0\n210\n5.0\n13.0\n5\n190\n25\n3\n1.00\n0.67\n53.31381\n\n\nCap'n'Crunch\nFALSE\nQ\ncold\n120\n1\n2\n220\n0.0\n12.0\n12\n35\n25\n2\n1.00\n0.75\n18.04285\n\n\nCheerios\nFALSE\nG\ncold\n110\n6\n2\n290\n2.0\n17.0\n1\n105\n25\n1\n1.00\n1.25\n50.76500\n\n\nCinnamon Toast Crunch\nFALSE\nG\ncold\n120\n1\n3\n210\n0.0\n13.0\n9\n45\n25\n2\n1.00\n0.75\n19.82357\n\n\nClusters\nFALSE\nG\ncold\n110\n3\n2\n140\n2.0\n13.0\n7\n105\n25\n3\n1.00\n0.50\n40.40021\n\n\nCocoa Puffs\nFALSE\nG\ncold\n110\n1\n1\n180\n0.0\n12.0\n13\n55\n25\n2\n1.00\n1.00\n22.73645\n\n\nCorn Chex\nFALSE\nR\ncold\n110\n2\n0\n280\n0.0\n22.0\n3\n25\n25\n1\n1.00\n1.00\n41.44502\n\n\nCorn Flakes\nFALSE\nK\ncold\n100\n2\n0\n290\n1.0\n21.0\n2\n35\n25\n1\n1.00\n1.00\n45.86332\n\n\nCorn Pops\nFALSE\nK\ncold\n110\n1\n0\n90\n1.0\n13.0\n12\n20\n25\n2\n1.00\n1.00\n35.78279\n\n\nCount Chocula\nFALSE\nG\ncold\n110\n1\n1\n180\n0.0\n12.0\n13\n65\n25\n2\n1.00\n1.00\n22.39651\n\n\nCracklin' Oat Bran\nTRUE\nK\ncold\n110\n3\n3\n140\n4.0\n10.0\n7\n160\n25\n3\n1.00\n0.50\n40.44877\n\n\nCream of Wheat (Quick)\nFALSE\nN\nhot\n100\n3\n0\n80\n1.0\n21.0\n0\n-1\n0\n2\n1.00\n1.00\n64.53382\n\n\nCrispix\nFALSE\nK\ncold\n110\n2\n0\n220\n1.0\n21.0\n3\n30\n25\n3\n1.00\n1.00\n46.89564\n\n\nCrispy Wheat & Raisins\nFALSE\nG\ncold\n100\n2\n1\n140\n2.0\n11.0\n10\n120\n25\n3\n1.00\n0.75\n36.17620\n\n\nDouble Chex\nFALSE\nR\ncold\n100\n2\n0\n190\n1.0\n18.0\n5\n80\n25\n3\n1.00\n0.75\n44.33086\n\n\nFroot Loops\nFALSE\nK\ncold\n110\n2\n1\n125\n1.0\n11.0\n13\n30\n25\n2\n1.00\n1.00\n32.20758\n\n\nFrosted Flakes\nFALSE\nK\ncold\n110\n1\n0\n200\n1.0\n14.0\n11\n25\n25\n1\n1.00\n0.75\n31.43597\n\n\nFrosted Mini-Wheats\nFALSE\nK\ncold\n100\n3\n0\n0\n3.0\n14.0\n7\n100\n25\n2\n1.00\n0.80\n58.34514\n\n\nFruit & Fibre Dates; Walnuts; and Oats\nFALSE\nP\ncold\n120\n3\n2\n160\n5.0\n12.0\n10\n200\n25\n3\n1.25\n0.67\n40.91705\n\n\nFruitful Bran\nTRUE\nK\ncold\n120\n3\n0\n240\n5.0\n14.0\n12\n190\n25\n3\n1.33\n0.67\n41.01549\n\n\nFruity Pebbles\nFALSE\nP\ncold\n110\n1\n1\n135\n0.0\n13.0\n12\n25\n25\n2\n1.00\n0.75\n28.02576\n\n\nGolden Crisp\nFALSE\nP\ncold\n100\n2\n0\n45\n0.0\n11.0\n15\n40\n25\n1\n1.00\n0.88\n35.25244\n\n\nGolden Grahams\nFALSE\nG\ncold\n110\n1\n1\n280\n0.0\n15.0\n9\n45\n25\n2\n1.00\n0.75\n23.80404\n\n\nGrape Nuts Flakes\nFALSE\nP\ncold\n100\n3\n1\n140\n3.0\n15.0\n5\n85\n25\n3\n1.00\n0.88\n52.07690\n\n\nGrape-Nuts\nFALSE\nP\ncold\n110\n3\n0\n170\n3.0\n17.0\n3\n90\n25\n3\n1.00\n0.25\n53.37101\n\n\nGreat Grains Pecan\nFALSE\nP\ncold\n120\n3\n3\n75\n3.0\n13.0\n4\n100\n25\n3\n1.00\n0.33\n45.81172\n\n\nHoney Graham Ohs\nFALSE\nQ\ncold\n120\n1\n2\n220\n1.0\n12.0\n11\n45\n25\n2\n1.00\n1.00\n21.87129\n\n\nHoney Nut Cheerios\nFALSE\nG\ncold\n110\n3\n1\n250\n1.5\n11.5\n10\n90\n25\n1\n1.00\n0.75\n31.07222\n\n\nHoney-comb\nFALSE\nP\ncold\n110\n1\n0\n180\n0.0\n14.0\n11\n35\n25\n1\n1.00\n1.33\n28.74241\n\n\nJust Right Crunchy Nuggets\nFALSE\nK\ncold\n110\n2\n1\n170\n1.0\n17.0\n6\n60\n100\n3\n1.00\n1.00\n36.52368\n\n\nJust Right Fruit & Nut\nFALSE\nK\ncold\n140\n3\n1\n170\n2.0\n20.0\n9\n95\n100\n3\n1.30\n0.75\n36.47151\n\n\nKix\nFALSE\nG\ncold\n110\n2\n1\n260\n0.0\n21.0\n3\n40\n25\n2\n1.00\n1.50\n39.24111\n\n\nLife\nFALSE\nQ\ncold\n100\n4\n2\n150\n2.0\n12.0\n6\n95\n25\n2\n1.00\n0.67\n45.32807\n\n\nLucky Charms\nFALSE\nG\ncold\n110\n2\n1\n180\n0.0\n12.0\n12\n55\n25\n2\n1.00\n1.00\n26.73451\n\n\nMaypo\nFALSE\nA\nhot\n100\n4\n1\n0\n0.0\n16.0\n3\n95\n25\n2\n1.00\n1.00\n54.85092\n\n\nMuesli Raisins; Dates; & Almonds\nFALSE\nR\ncold\n150\n4\n3\n95\n3.0\n16.0\n11\n170\n25\n3\n1.00\n1.00\n37.13686\n\n\nMuesli Raisins; Peaches; & Pecans\nFALSE\nR\ncold\n150\n4\n3\n150\n3.0\n16.0\n11\n170\n25\n3\n1.00\n1.00\n34.13976\n\n\nMueslix Crispy Blend\nFALSE\nK\ncold\n160\n3\n2\n150\n3.0\n17.0\n13\n160\n25\n3\n1.50\n0.67\n30.31335\n\n\nMulti-Grain Cheerios\nFALSE\nG\ncold\n100\n2\n1\n220\n2.0\n15.0\n6\n90\n25\n1\n1.00\n1.00\n40.10596\n\n\nNut&Honey Crunch\nFALSE\nK\ncold\n120\n2\n1\n190\n0.0\n15.0\n9\n40\n25\n2\n1.00\n0.67\n29.92429\n\n\nNutri-Grain Almond-Raisin\nFALSE\nK\ncold\n140\n3\n2\n220\n3.0\n21.0\n7\n130\n25\n3\n1.33\n0.67\n40.69232\n\n\nNutri-grain Wheat\nFALSE\nK\ncold\n90\n3\n0\n170\n3.0\n18.0\n2\n90\n25\n3\n1.00\n1.00\n59.64284\n\n\nOatmeal Raisin Crisp\nFALSE\nG\ncold\n130\n3\n2\n170\n1.5\n13.5\n10\n120\n25\n3\n1.25\n0.50\n30.45084\n\n\nPost Nat. Raisin Bran\nTRUE\nP\ncold\n120\n3\n1\n200\n6.0\n11.0\n14\n260\n25\n3\n1.33\n0.67\n37.84059\n\n\nProduct 19\nFALSE\nK\ncold\n100\n3\n0\n320\n1.0\n20.0\n3\n45\n100\n3\n1.00\n1.00\n41.50354\n\n\nPuffed Rice\nFALSE\nQ\ncold\n50\n1\n0\n0\n0.0\n13.0\n0\n15\n0\n3\n0.50\n1.00\n60.75611\n\n\nPuffed Wheat\nFALSE\nQ\ncold\n50\n2\n0\n0\n1.0\n10.0\n0\n50\n0\n3\n0.50\n1.00\n63.00565\n\n\nQuaker Oat Squares\nFALSE\nQ\ncold\n100\n4\n1\n135\n2.0\n14.0\n6\n110\n25\n3\n1.00\n0.50\n49.51187\n\n\nQuaker Oatmeal\nFALSE\nQ\nhot\n100\n5\n2\n0\n2.7\n-1.0\n-1\n110\n0\n1\n1.00\n0.67\n50.82839\n\n\nRaisin Bran\nTRUE\nK\ncold\n120\n3\n1\n210\n5.0\n14.0\n12\n240\n25\n2\n1.33\n0.75\n39.25920\n\n\nRaisin Nut Bran\nTRUE\nG\ncold\n100\n3\n2\n140\n2.5\n10.5\n8\n140\n25\n3\n1.00\n0.50\n39.70340\n\n\nRaisin Squares\nFALSE\nK\ncold\n90\n2\n0\n0\n2.0\n15.0\n6\n110\n25\n3\n1.00\n0.50\n55.33314\n\n\nRice Chex\nFALSE\nR\ncold\n110\n1\n0\n240\n0.0\n23.0\n2\n30\n25\n1\n1.00\n1.13\n41.99893\n\n\nRice Krispies\nFALSE\nK\ncold\n110\n2\n0\n290\n0.0\n22.0\n3\n35\n25\n1\n1.00\n1.00\n40.56016\n\n\nShredded Wheat\nFALSE\nN\ncold\n80\n2\n0\n0\n3.0\n16.0\n0\n95\n0\n1\n0.83\n1.00\n68.23588\n\n\nShredded Wheat 'n'Bran\nTRUE\nN\ncold\n90\n3\n0\n0\n4.0\n19.0\n0\n140\n0\n1\n1.00\n0.67\n74.47295\n\n\nShredded Wheat spoon size\nFALSE\nN\ncold\n90\n3\n0\n0\n3.0\n20.0\n0\n120\n0\n1\n1.00\n0.67\n72.80179\n\n\nSmacks\nFALSE\nK\ncold\n110\n2\n1\n70\n1.0\n9.0\n15\n40\n25\n2\n1.00\n0.75\n31.23005\n\n\nSpecial K\nFALSE\nK\ncold\n110\n6\n0\n230\n1.0\n16.0\n3\n55\n25\n1\n1.00\n1.00\n53.13132\n\n\nStrawberry Fruit Wheats\nFALSE\nN\ncold\n90\n2\n0\n15\n3.0\n15.0\n5\n90\n25\n2\n1.00\n1.00\n59.36399\n\n\nTotal Corn Flakes\nFALSE\nG\ncold\n110\n2\n1\n200\n0.0\n21.0\n3\n35\n100\n3\n1.00\n1.00\n38.83975\n\n\nTotal Raisin Bran\nTRUE\nG\ncold\n140\n3\n1\n190\n4.0\n15.0\n14\n230\n100\n3\n1.50\n1.00\n28.59278\n\n\nTotal Whole Grain\nFALSE\nG\ncold\n100\n3\n1\n200\n3.0\n16.0\n3\n110\n100\n3\n1.00\n1.00\n46.65884\n\n\nTriples\nFALSE\nG\ncold\n110\n2\n1\n250\n0.0\n21.0\n3\n60\n25\n3\n1.00\n0.75\n39.10617\n\n\nTrix\nFALSE\nG\ncold\n110\n1\n1\n140\n0.0\n13.0\n12\n25\n25\n2\n1.00\n1.00\n27.75330\n\n\nWheat Chex\nFALSE\nR\ncold\n100\n3\n1\n230\n3.0\n17.0\n3\n115\n25\n1\n1.00\n0.67\n49.78744\n\n\nWheaties\nFALSE\nG\ncold\n100\n3\n1\n200\n3.0\n17.0\n3\n110\n25\n1\n1.00\n1.00\n51.59219\n\n\nWheaties Honey Gold\nFALSE\nG\ncold\n110\n2\n1\n200\n1.0\n16.0\n8\n60\n25\n1\n1.00\n0.75\n36.18756"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#tips-for-string-success-1",
+    "href": "slides/week-5/W5_special_types.html#tips-for-string-success-1",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Tips for String Success",
+    "text": "Tips for String Success\nThe real power of these str_xxx functions comes when you specify the pattern using regular expressions!\n\nknitr::include_graphics(\"images/regular_expressions.png\")"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#regular-expressions",
+    "href": "slides/week-5/W5_special_types.html#regular-expressions",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Regular Expressions",
+    "text": "Regular Expressions\n\n“Regexps are a very terse language that allow you to describe patterns in strings.”\nR for Data Science\n\n. . .\nUse str_xxx functions + regular expressions!\n\nstr_detect(string  = my_string_vector,\n           pattern = \"p[ei]ck[a-z]\")\n\n. . .\n\n\n\n\n\n\nTip\n\n\n\nYou might encounter gsub(), grep(), etc. from Base R."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#regular-expressions-1",
+    "href": "slides/week-5/W5_special_types.html#regular-expressions-1",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Regular Expressions",
+    "text": "Regular Expressions\nRegular expressions are tricky!\n\nThere are lots of new symbols to keep straight.\nThere are a lot of cases to think through.\n\n\nThis web app for testing R regular expressions might be handy!"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#special-characters",
+    "href": "slides/week-5/W5_special_types.html#special-characters",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Special Characters",
+    "text": "Special Characters\nThere is a set of characters that have a specific meaning when using regex.\n\nThe stringr package does not read these as normal characters.\nThese characters are:\n\n\n. ^ $ \\ | * + ? { } [ ] ( )"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#wild-card-character-.",
+    "href": "slides/week-5/W5_special_types.html#wild-card-character-.",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Wild Card Character: .",
+    "text": "Wild Card Character: .\n. – matches any character.\n\nx &lt;- c(\"She\", \"sells\", \"seashells\", \"by\", \"the\", \"seashore!\")\nstr_subset(x, pattern = \".ells\")\n\n[1] \"sells\"     \"seashells\"\n\n\n\nThis matches strings that contain any character followed by “ells”."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#anchor-characters",
+    "href": "slides/week-5/W5_special_types.html#anchor-characters",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Anchor Characters: ^ $",
+    "text": "Anchor Characters: ^ $\n^ – looks at the beginning of a string.\n\nx &lt;- c(\"She\", \"sells\", \"seashells\", \"by\", \"the\", \"seashore!\")\nstr_subset(x, pattern = \"^s\")\n\n[1] \"sells\"     \"seashells\" \"seashore!\"\n\n\nThis matches strings that start with “s”.\n. . .\n$ – looks at the end of a string.\n\nstr_subset(x, pattern = \"s$\")\n\n[1] \"sells\"     \"seashells\"\n\n\nThis matches strings that end with “s”."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#quantifier-characters",
+    "href": "slides/week-5/W5_special_types.html#quantifier-characters",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Quantifier Characters: ? + *",
+    "text": "Quantifier Characters: ? + *\n? – matches when the preceding character occurs 0 or 1 times in a row.\n\nx &lt;- c(\"shes\", \"shels\", \"shells\", \"shellls\", \"shelllls\")\nstr_subset(x, pattern = \"shel?s\")\n\n[1] \"shes\"  \"shels\"\n\n\n. . .\n+ – … occurs 1 or more times in a row.\n\nstr_subset(x, pattern = \"shel+s\")\n\n[1] \"shels\"    \"shells\"   \"shellls\"  \"shelllls\"\n\n\n. . .\n* – … occurs 0 or more times in a row.\n\nstr_subset(x, pattern = \"shel*s\")\n\n[1] \"shes\"     \"shels\"    \"shells\"   \"shellls\"  \"shelllls\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#quantifier-characters-1",
+    "href": "slides/week-5/W5_special_types.html#quantifier-characters-1",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Quantifier Characters: {}",
+    "text": "Quantifier Characters: {}\n{n} – matches when the preceding character occurs exactly n times in a row.\n\nx &lt;- c(\"shes\", \"shels\", \"shells\", \"shellls\", \"shelllls\")\nstr_subset(x, pattern = \"shel{2}s\")\n\n[1] \"shells\"\n\n\n. . .\n{n,} – … occures at least n times in a row.\n\nstr_subset(x, pattern = \"shel{2,}s\")\n\n[1] \"shells\"   \"shellls\"  \"shelllls\"\n\n\n. . .\n{n,m} – … occurs between n and m times in a row.\n\nstr_subset(x, pattern = \"shel{1,3}s\")\n\n[1] \"shels\"   \"shells\"  \"shellls\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#character-groups",
+    "href": "slides/week-5/W5_special_types.html#character-groups",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Character Groups: ()",
+    "text": "Character Groups: ()\nGroups are created with ( ).\n\nWe can specify “either” / “or” within a group using |.\n\n\nx &lt;- c(\"Peter\", \"Piper\", \"picked\", \"a\", \"peck\", \"of\", \"pickled\", \"peppers!\")\nstr_subset(x, pattern = \"p(e|i)ck\")\n\n[1] \"picked\"  \"peck\"    \"pickled\"\n\n\n\nThis matches strings that contain either “peck” or “pick”."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#character-classes",
+    "href": "slides/week-5/W5_special_types.html#character-classes",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Character Classes: []",
+    "text": "Character Classes: []\nCharacter classes let you specify multiple possible characters to match on.\n\nx &lt;- c(\"Peter\", \"Piper\", \"picked\", \"a\", \"peck\", \"of\", \"pickled\", \"peppers!\")\nstr_subset(x, pattern = \"p[ei]ck\")\n\n[1] \"picked\"  \"peck\"    \"pickled\"\n\n\n. . .\n[^ ] – specifies characters not to match on (think except)\n\nstr_subset(x, pattern = \"p[^i]ck\")\n\n[1] \"peck\"\n\n\n. . .\n[Pp] – capitalization matters!\n\nstr_subset(x, pattern = \"^p\")\n\n[1] \"picked\"   \"peck\"     \"pickled\"  \"peppers!\"\n\n\n\nstr_subset(x, pattern = \"^[Pp]\")\n\n[1] \"Peter\"    \"Piper\"    \"picked\"   \"peck\"     \"pickled\"  \"peppers!\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#character-classes-1",
+    "href": "slides/week-5/W5_special_types.html#character-classes-1",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Character Classes: []",
+    "text": "Character Classes: []\n[ - ] – specifies a range of characters.\n\nx &lt;- c(\"Peter\", \"Piper\", \"picked\", \"a\", \"peck\", \"of\", \"pickled\", \"peppers!\")\nstr_subset(x, pattern = \"p[ei]ck[a-z]\")\n\n[1] \"picked\"  \"pickled\"\n\n\n. . .\n\n[A-Z] matches any capital letter.\n[a-z] matches any lowercase letter.\n[A-z] or [:alpha:] matches any letter\n[0-9] or [:digit:] matches any number\nSee the stringr cheatsheet for more shortcuts, like [:punct:]"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#shortcuts",
+    "href": "slides/week-5/W5_special_types.html#shortcuts",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Shortcuts",
+    "text": "Shortcuts\n\\\\w – matches any “word” (\\\\W matches not “word”)\n\nA “word” contains any letters and numbers.\n\n\\\\d – matches any digit (\\\\D matches not digit)\n\\\\s – matches any whitespace (\\\\S matches not whitespace)\n\nWhitespace includes spaces, tabs, newlines, etc.\n\n. . .\n\nx &lt;- \"phone number: 1234567899\"\nstr_extract(x, pattern = \"\\\\d+\")\n\n[1] \"1234567899\"\n\nstr_extract_all(x, pattern = \"\\\\S+\")\n\n[[1]]\n[1] \"phone\"      \"number:\"    \"1234567899\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#try-it-out-1",
+    "href": "slides/week-5/W5_special_types.html#try-it-out-1",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Try it out!",
+    "text": "Try it out!\nWhat regular expressions would match words that…\n\nend with a vowel?\nstart with x, y, or z?\ndo not contain x, y, or z?\ncontain British spelling?\n\n\nx &lt;- c(\"zebra\", \"xray\", \"apple\", \"yellow\",\n       \"color\", \"colour\", \"summarize\", \"summarise\")\n\n\n\nCode\nstr_subset(x, \"[aeiouy]$\")\nstr_subset(x, \"^[xyz]\")\nstr_subset(x, \"^[^xyz]+$\")\nstr_subset(x, \"(our)|(i[sz]e)\")"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#escape",
+    "href": "slides/week-5/W5_special_types.html#escape",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Escape: \\\\",
+    "text": "Escape: \\\\\nTo match a special character, you need to escape it.\n\nx &lt;- c(\"How\", \"much\", \"wood\", \"could\", \"a\", \"woodchuck\", \"chuck\",\n       \"if\", \"a\", \"woodchuck\", \"could\", \"chuck\",\"wood?\")\nstr_subset(x, pattern = \"?\")\n\nError in stri_subset_regex(string, pattern, omit_na = TRUE, negate = negate, : Syntax error in regex pattern. (U_REGEX_RULE_SYNTAX, context=`?`)\n\n\n. . .\nUse \\\\ to escape the ? – it is now read as a normal character.\n\nstr_subset(x, pattern = \"\\\\?\")\n\n[1] \"wood?\"\n\n\n. . .\n\n\n\n\n\n\nNote\n\n\n\nAlternatively, you could use []:\n\nstr_subset(x, pattern = \"[?]\")\n\n[1] \"wood?\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#when-in-doubt",
+    "href": "slides/week-5/W5_special_types.html#when-in-doubt",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "When in Doubt",
+    "text": "When in Doubt\n\n\nknitr::include_graphics(\"images/backslashes.png\")\n\n\n\n\n\n\n\n\nUse the web app to test R regular expressions."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#tips-for-working-with-regex",
+    "href": "slides/week-5/W5_special_types.html#tips-for-working-with-regex",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Tips for working with regex",
+    "text": "Tips for working with regex\n\nRead the regular expressions out loud like a request.\n\n. . .\n\nTest out your expressions on small examples first.\n\n\n\n\n\n\n\nstr_view()\n\n\n\n\n\n\nstr_view(c(\"shes\", \"shels\", \"shells\", \"shellls\", \"shelllls\"), \"l+\")\n\n[2] │ she&lt;l&gt;s\n[3] │ she&lt;ll&gt;s\n[4] │ she&lt;lll&gt;s\n[5] │ she&lt;llll&gt;s\n\n\n\n\n\n. . .\n\nUse the stringr cheatsheet.\n\n. . .\n\nBe kind to yourself when working with regular expressions!"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#stringr-functions-dplyr-verbs",
+    "href": "slides/week-5/W5_special_types.html#stringr-functions-dplyr-verbs",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "stringr functions + dplyr verbs!",
+    "text": "stringr functions + dplyr verbs!\nCountry names with a (capital or lowercase) “Z”?\n\nmilitary |&gt; \n  filter(str_detect(Country, \"[Zz]\")) |&gt; \n  distinct(Country)\n\n\n\n\n\n\n\nCountry\n\n\n\n\nMozambique\n\n\nTanzania\n\n\nZambia\n\n\nZimbabwe\n\n\nBelize\n\n\nBrazil\n\n\nVenezuela\n\n\nKazakhstan\n\n\nKyrgyzstan\n\n\nUzbekistan\n\n\nNew Zealand\n\n\nBosnia-Herzegovina\n\n\nCzechia\n\n\nCzechoslovakia\n\n\nAzerbaijan\n\n\nSwitzerland\n\n\n\n\n\n\n\n. . .\nThe proportion of country names with a compass direction?\n\nmilitary |&gt; \n  distinct(Country) |&gt; \n  summarize(prop = mean(str_detect(Country,\n                                   \"[Nn]orth|[Ss]outh|[Ee]ast|[Ww]est\")))\n\n# A tibble: 1 × 1\n    prop\n   &lt;dbl&gt;\n1 0.0789"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#matchespattern",
+    "href": "slides/week-5/W5_special_types.html#matchespattern",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "matches(pattern)",
+    "text": "matches(pattern)\nSelect all variables with a name that matches the supplied pattern.\n\nPairs well with select(), rename_with(), and across().\n\n\nBeforeWith regex\n\n\n\nmilitary_clean &lt;- military |&gt; \n  mutate(across(`1988`:`2019`, \n                ~ na_if(.x, y = \". .\")),\n         across(`1988`:`2019`, \n                ~ na_if(.x, y = \"xxx\")))\n\n\n\n\nmilitary_clean &lt;- military |&gt; \n  mutate(across(matches(\"[1-9]{4}\"), \n                ~ na_if(.x, y = \". .\")),\n         across(matches(\"[1-9]{4}\"), \n                ~ na_if(.x, y = \"xxx\")))"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#messy-covid-variants",
+    "href": "slides/week-5/W5_special_types.html#messy-covid-variants",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Messy Covid Variants!",
+    "text": "Messy Covid Variants!\n\nWhat is that variable?!\n\n[{'variant': 'Other', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 4.59}, {'variant': 'V-20DEC-01 (Alpha)', 'cumWeeklySequenced': 0.0, 'newWeeklyPercentage': 0.0}, {'variant': 'V-21APR-02 (Delta B.1.617.2)', 'cumWeeklySequenced': 0.0, 'newWeeklyPercentage': 0.0}, {'variant': 'V-21OCT-01 (Delta AY 4.2)', 'cumWeeklySequenced': 0.0, 'newWeeklyPercentage': 0.0}, {'variant': 'V-22DEC-01 (Omicron CH.1.1)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 24.56}, {'variant': 'V-22JUL-01 (Omicron BA.2.75)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 8.93}, {'variant': 'V-22OCT-01 (Omicron BQ.1)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 49.57}, {'variant': 'VOC-21NOV-01 (Omicron BA.1)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 0.02}, {'variant': 'VOC-22APR-03 (Omicron BA.4)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 0.08}, {'variant': 'VOC-22APR-04 (Omicron BA.5)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 5.59}, {'variant': 'VOC-22JAN-01 (Omicron BA.2)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 1.41}, {'variant': 'unclassified_variant', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 5.26}]"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#pa-5.1-scrambled-message",
+    "href": "slides/week-5/W5_special_types.html#pa-5.1-scrambled-message",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "PA 5.1: Scrambled Message",
+    "text": "PA 5.1: Scrambled Message\nIn this activity, you will use regex to decode a message.\n\nRemember: stringr functions go inside dplyr verbs like mutate() and filter() – use them like as.factor.\n\n. . .\n\nReminder about indexing vectors:\n\n\nx &lt;- c(\"She\", \"sells\", \"seashells\", \"by\", \"the\", \"seashore!\")\n\n\n\n\nGrab elements out of a vector with [].\n\n\nx[c(1,4,5)]\n\n[1] \"She\" \"by\"  \"the\"\n\n\n\n\nTo replace those elements, use &lt;- to assign new values.\n\n\nx[c(1,4,5)] &lt;- \"\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#to-do",
+    "href": "slides/week-5/W5_special_types.html#to-do",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "To do…",
+    "text": "To do…\n\nPA 5.1: Scrambled Message\n\nDue Saturday, 5/4 at 11:59pm"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#wednesday-may-1",
+    "href": "slides/week-5/W5_special_types.html#wednesday-may-1",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Wednesday, May 1",
+    "text": "Wednesday, May 1\nToday we will…\n\nMidterm Exam 5/8: What to Expect\nNew Material\n\nWorking with Date & Time Variables\n\nPA 5.2: Jewel Heist\nLA 5: Murder in SQL City"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#midterm-exam-wednesday-58",
+    "href": "slides/week-5/W5_special_types.html#midterm-exam-wednesday-58",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Midterm Exam – Wednesday, 5/8",
+    "text": "Midterm Exam – Wednesday, 5/8\n\nThis is a three-part exam:\n\nYou will first complete a General Questions section on paper and without your computer.\nAfter you turn that in, you will complete a Short Answer section with your computer.\n\n\nYou will have the one hour and 50 minute class period to complete the first two sections.\n\n\nThe third section, Open-Ended Analysis, will be started in class and due 24 hours after the end of class."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#midterm-exam-wednesday-58-1",
+    "href": "slides/week-5/W5_special_types.html#midterm-exam-wednesday-58-1",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Midterm Exam – Wednesday, 5/8",
+    "text": "Midterm Exam – Wednesday, 5/8\n\nThe exam is worth approximately 90 points.\n\nApprox. 20 pts, 30 pts, and 40 pts for the three sections.\n\nI will provide a .qmd template for the Short Answer.\nYou will create your own .qmd for the Open-Ended Analysis. You are encouraged to create this ahead of time.\n\n\n\n\n\n\n\nCaution\n\n\n\nWhile the coding tasks are open-resource, you will likely run out of time if you have to look everything up. Know what functions you might need and where to find documentation for implementing these functions!"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#why-are-dates-and-times-tricky",
+    "href": "slides/week-5/W5_special_types.html#why-are-dates-and-times-tricky",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Why are dates and times tricky?",
+    "text": "Why are dates and times tricky?\nWhen parsing dates and times, we have to consider complicating factors like…\n\nDaylight Savings Time.\n\nOne day a year is 23 hours; one day a year is 25 hours.\nSome places use it, some don’t.\n\nLeap years – most years have 365 days, some have 366.\nTime zones."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#lubridate",
+    "href": "slides/week-5/W5_special_types.html#lubridate",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "lubridate",
+    "text": "lubridate\n\n\nCommon Tasks\n\nConvert a date-like variable (“May 8, 1995”) to a date or date-time object.\nFind the weekday, month, year, etc from a date-time object.\nConvert between time zones.\n\n\n\nknitr::include_graphics(\"https://github.com/rstudio/hex-stickers/blob/main/thumbs/lubridate.png?raw=true\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe lubridate package installs with tidyverse, but does not load.\n\nlibrary(lubridate)"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#date-time-objects",
+    "href": "slides/week-5/W5_special_types.html#date-time-objects",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "date-time Objects",
+    "text": "date-time Objects\nThere are multiple data types for dates and times.\n\nA date:\n\ndate or Date\n\nA date and a time (identifies a unique instant in time):\n\ndtm\nPOSIXlt – stores date-times as the number of seconds since January 1, 1970 (“Unix Epoch”)\nPOSIXct – stores date-times as a list with elements for second, minute, hour, day, month, year, etc."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#creating-date-time-objects",
+    "href": "slides/week-5/W5_special_types.html#creating-date-time-objects",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Creating date-time Objects",
+    "text": "Creating date-time Objects\nCreate a date from individual components:\n\nmake_date(year = 1995, month = 05, day = 08)\n\n[1] \"1995-05-08\"\n\n\n. . .\nCreate a date from a string:\n\nmdy(\"May 8, 1995\")\n\n[1] \"1995-05-08\"\n\n\n\ndmy(\"8-May-1995\", tz = \"America/Chicago\")\n\n[1] \"1995-05-08 CDT\"\n\n\n\ndmy_hms(\"8-May-1995 9:32:12\", tz = \"America/Chicago\")\n\n[1] \"1995-05-08 09:32:12 CDT\"\n\n\n\nas_datetime(\"95-05-08\", format = \"%y-%m-%d\")\n\n[1] \"1995-05-08 UTC\"\n\n\n\nparse_datetime(\"5/8/1995\", format = \"%m/%d/%Y\")\n\n[1] \"1995-05-08 UTC\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#creating-date-time-objects-1",
+    "href": "slides/week-5/W5_special_types.html#creating-date-time-objects-1",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Creating date-time Objects",
+    "text": "Creating date-time Objects"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#common-mistake-with-dates",
+    "href": "slides/week-5/W5_special_types.html#common-mistake-with-dates",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Common Mistake with Dates",
+    "text": "Common Mistake with Dates\nWhat’s wrong here?\n\nas_datetime(2023-02-6)\n\n[1] \"1970-01-01 00:33:35 UTC\"\n\n\n\n\nmy_date &lt;- 2023-02-6\nmy_date\n\n[1] 2015\n\n\n\n. . .\nMake sure you use quotes!\n\n2,015 seconds \\(\\approx\\) 33.5 minutes"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#extracting-date-time-components",
+    "href": "slides/week-5/W5_special_types.html#extracting-date-time-components",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Extracting date-time Components",
+    "text": "Extracting date-time Components\n\nbday &lt;- ymd_hms(\"1993-11-20 9:32:12\", tz = \"America/New_York\")\nbday\n\n[1] \"1993-11-20 09:32:12 EST\"\n\n\n\n\n\n\nyear(bday)\n\n[1] 1993\n\nmonth(bday)\n\n[1] 11\n\nday(bday)\n\n[1] 20\n\n\n\n\nwday(bday)\n\n[1] 7\n\nwday(bday, label = TRUE, abbr = FALSE)\n\n[1] Saturday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#subtraction-with-date-time-objects",
+    "href": "slides/week-5/W5_special_types.html#subtraction-with-date-time-objects",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Subtraction with date-time Objects",
+    "text": "Subtraction with date-time Objects\nDoing subtraction gives you a difftime object.\n\ndifftime objects do not always have the same units – it depends on the scale of the objects you are working with.\n\nHow old am I?\n\ntoday() - mdy(11201993)\n\nTime difference of 11285 days\n\n\nHow long did it take me to finish a typing challenge?\n\nbegin &lt;- mdy_hms(\"3/1/2023 13:04:34\")\nfinish &lt;- mdy_hms(\"3/1/2023 13:06:11\")\nfinish - begin\n\nTime difference of 1.616667 mins"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#durations-and-periods",
+    "href": "slides/week-5/W5_special_types.html#durations-and-periods",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Durations and Periods",
+    "text": "Durations and Periods\nDurations will always give the time span in an exact number of seconds.\n\nas.duration(today() - mdy(11201993))\n\n[1] \"975024000s (~30.9 years)\"\n\n\n\nas.duration(finish - begin)\n\n[1] \"97s (~1.62 minutes)\"\n\n\n. . .\nPeriods will give the time span in more approximate, but human readable times.\n\nas.period(today() - mdy(11201993))\n\n[1] \"11285d 0H 0M 0S\"\n\n\n\nas.period(finish - begin)\n\n[1] \"1M 37S\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#durations-and-periods-1",
+    "href": "slides/week-5/W5_special_types.html#durations-and-periods-1",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Durations and Periods",
+    "text": "Durations and Periods\nWe can also add time:\n\ndays(), years(), etc. will add a period of time.\nddays(), dyears(), etc. will add a duration of time.\n\n. . .\nBecause durations use the exact number of seconds to represent days and years, you might get unexpected results:\nWhen is is my 99th birthday?\n\nmdy(11201993) + years(99)\n\n[1] \"2092-11-20\"\n\n\n\nmdy(11201993) + dyears(99)\n\n[1] \"2092-11-19 18:00:00 UTC\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#time-zones",
+    "href": "slides/week-5/W5_special_types.html#time-zones",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Time Zones",
+    "text": "Time Zones\nTime zones are complicated!\nSpecify time zones in the form:\n\n{continent}/{city} – “America/New_York”, “Africa/Nairobi”\n{ocean}/{city} – “Pacific/Auckland”\n\n. . .\nWhat time zone does R think I’m in?\n\nSys.timezone()\n\n[1] \"America/Los_Angeles\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#time-zones-1",
+    "href": "slides/week-5/W5_special_types.html#time-zones-1",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Time Zones",
+    "text": "Time Zones\nYou can change the time zone of a date in two ways:\n\nx &lt;- ymd_hms(\"2024-06-01 18:00:00\", tz = \"Europe/Copenhagen\")\n\n\nwith_tz()force_tz()\n\n\nKeeps the instant in time the same, but changes the visual representation.\n\nx |&gt; \n  with_tz()\n\n[1] \"2024-06-01 09:00:00 PDT\"\n\nx |&gt; \n  with_tz(tzone = \"Asia/Kolkata\")\n\n[1] \"2024-06-01 21:30:00 IST\"\n\n\n\n\nChanges the instant in time by forcing a time zone change.\n\nx |&gt; \n  force_tz()\n\n[1] \"2024-06-01 18:00:00 PDT\"\n\nx |&gt; \n  force_tz(tzone = \"Asia/Kolkata\")\n\n[1] \"2024-06-01 18:00:00 IST\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#common-mistake-with-dates-1",
+    "href": "slides/week-5/W5_special_types.html#common-mistake-with-dates-1",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Common Mistake with Dates",
+    "text": "Common Mistake with Dates\nWhen you read data in or create a new date-time object, the default time zone (if not specified) is UTC.\n\nUTC (Universal Time Coordinated) is the same as GMT (Greenwich Mean Time).\n\nMake sure you specify your desired time zone!\n\nx &lt;- mdy(\"11/20/1993\")\ntz(x)\n\n[1] \"UTC\"\n\n\n\nx &lt;- mdy(\"11/20/1993\", tz = \"America/New_York\")\ntz(x)\n\n[1] \"America/New_York\""
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#pa-5.2-jewel-heist",
+    "href": "slides/week-5/W5_special_types.html#pa-5.2-jewel-heist",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "PA 5.2: Jewel Heist",
+    "text": "PA 5.2: Jewel Heist\nJust down the road in Montecito, CA several rare jewels went missing last fall. The jewels were stolen and replaced with fakes, but detectives have not been able to solve the case. They are now calling in a data scientist to help parse their clues.\nUnfortunately, the date and time of the jewel heist is not known. You have been hired to crack the case. Use the clues below to discover the thief’s identity.\n\nSubmit the name of the thief to the Canvas Quiz."
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#lab-5-murder-in-sql-city",
+    "href": "slides/week-5/W5_special_types.html#lab-5-murder-in-sql-city",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "Lab 5: Murder in SQL City",
+    "text": "Lab 5: Murder in SQL City"
+  },
+  {
+    "objectID": "slides/week-5/W5_special_types.html#to-do-1",
+    "href": "slides/week-5/W5_special_types.html#to-do-1",
+    "title": "Special Data Types: Strings + Dates",
+    "section": "To do…",
+    "text": "To do…\n\nPA 5.2: Jewel Heist – due Saturday, 5/4 at 11:59pm.\nLab 5: Murder in SQL City – due Saturday, 5/4 at 11:59pm.\nRead Chapter 6: Version Control\n\nCheck-ins 6.1 + 6.2 due Monday 5/6, at 10:00am"
+  },
+  {
+    "objectID": "weeks/week-5-strings-dates.html#regular-expressions",
+    "href": "weeks/week-5-strings-dates.html#regular-expressions",
+    "title": "Special Data Types",
+    "section": "1.1 Regular Expressions",
+    "text": "1.1 Regular Expressions\nMatching exact strings is easy - it’s just like using find and replace.\n\nlibrary(stringr)\n\nhuman_talk &lt;- \"blah, blah, blah. Do you want to go for a walk?\"\ndog_hears &lt;- str_extract(human_talk, \"walk\")\ndog_hears\n\n[1] \"walk\"\n\n\nBut, if you can master even a small amount of regular expression notation, you’ll have exponentially more power to do good (or evil) when working with strings. You can get by without regular expressions if you’re creative, but often they’re much simpler.\n\n📖 Recommended Reading: R4DS Chapter 15 (Regular Expressions)\n\n\n\n\n\n\nRead at least through Section 15.4.1.\n\n\n\n\n\n\n\n\n\n\n\n\nShort Regular Expressions Primer\n\n\n\n\n\nYou may find it helpful to follow along with this section using this web app built to test R regular expressions. The subset of regular expression syntax we’re going to cover here is fairly limited, but you can find regular expressions to do just about anything string-related. As with any tool, there are situations where it’s useful, and situations where you should not use a regular expression, no matter how much you want to.\nHere are the basics of regular expressions:\n\n[] enclose sets of characters\nFor example, [abc] will match any single character a, b, c\n- specifies a range of characters (A-z matches all upper and lower case letters)\n. matches any character (except a newline)\nTo match special characters, escape them using \\ (in most languages) or \\\\ (in R). So \\. or \\\\. will match a literal ., \\$ or \\\\$ will match a literal $.\n\n\nnum_string &lt;- \"phone: 123-456-7890, nuid: 12345678, ssn: 123-45-6789\"\n\nstr_extract(num_string, \"[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]\")\n\n[1] \"123-45-6789\"\n\n\nRepeating Patterns\nListing out all of those numbers can get repetitive, though. How do we specify repetition?\n\n* means repeat between 0 and inf times\n+ means 1 or more times\n? means 0 or 1 times – most useful when you’re looking for something optional\n{a, b} means repeat between a and b times, where a and b are integers. `\nNote that b can be blank. So [abc]{3,} will match abc, aaaa, cbbaa, but not ab, bb, or a.\nFor a single number of repeated characters, you can use {a}. So {3, } means “3 or more times” and {3} means “exactly 3 times”\n\n\nnum_string &lt;- \"phone: 123-456-7890, nuid: 12345678, ssn: 123-45-6789\"\n\n# Matches a sequence of *three* numbers, followed by a dash, \n# then a sequence of *two* numbers, followed by a dash, \n# then a sequence of *four* numbers, followed by a dash.\nssn &lt;- str_extract(num_string, \"[0-9]{3}-[0-9]{2}-[0-9]{4}\")\nssn\n\n[1] \"123-45-6789\"\n\n# Matches a sequence of *three* numbers, followed by any character, \n# then a sequence of *three* numbers, followed by any character, \n# then a sequence of *four* numbers, followed by any character, \nphone &lt;- str_extract(num_string, \"[0-9]{3}.[0-9]{3}.[0-9]{4}\")\nphone\n\n[1] \"123-456-7890\"\n\n# Matches a sequence of *eight* numbers \nnuid &lt;- str_extract(num_string, \"[0-9]{8}\")\nnuid\n\n[1] \"12345678\"\n\n\nAnchoring\nThere are also ways to “anchor” a pattern to a part of the string (e.g. the beginning or the end)\n\n^ has multiple meanings:\n\nif it’s the first character in a pattern, ^ matches the beginning of a string\nif it follows [, e.g. [^abc], ^ means “not” - for instance, “the collection of all characters that aren’t a, b, or c”.\n\n$ means the end of a string\n\nCombined with pre and post-processing, these let you make sense out of semi-structured string data, such as addresses.\n\naddress &lt;- \"1600 Pennsylvania Ave NW, Washington D.C., 20500\"\n\n# Match a sequence of one or more digits at the beginning of the string\nhouse_num &lt;- str_extract(address, \"^[0-9]{1,}\")\nhouse_num\n\n[1] \"1600\"\n\n# Match everything alphanumeric up to the comma\nstreet &lt;- str_extract(address, \"[A-z0-9 ]{1,}\")\n# Remove house number from street address\nstreet &lt;- str_remove(street, house_num) |&gt; \n  # Trim any leading or trailing whitespace from remaining string\n  str_trim() \nstreet\n\n[1] \"Pennsylvania Ave NW\"\n\n# Match one or more characters between the two commas  \ncity &lt;- str_extract(address, \",.+,\") |&gt; \n  # Remove the leading and trailing commas\n  str_remove_all(\",\") |&gt; \n  # Trim any leading or trailing whitespace from remaining string\n  str_trim()\ncity\n\n[1] \"Washington D.C.\"\n\n# Matches both 5 and 9 digit zip codes found at the end of the string\nzip &lt;- str_extract(address, \"[0-9-]{5,10}$\") \nzip\n\n[1] \"20500\"\n\n\nMaking Groups\n\n() are used to capture information. So ([0-9]{4}) captures any 4-digit number\na|b will select a or b.\n\nIf you’ve captured information using (), you can reference that information using back references. In most languages, those look like this: \\1 for the first reference, \\9 for the ninth. In R, back references are \\\\1 through \\\\9, because the \\ character is special, so you have to escape it.\n\nphone_num_variants &lt;- c(\"(123) 456-7980\", \"123.456.7890\", \"+1 123-456-7890\")\n\nphone_regex &lt;- \"\\\\+?[0-9]{0,3}? ?\\\\(?([0-9]{3})?\\\\)?.?([0-9]{3}).?([0-9]{4})\"\n# \\\\+?[0-9]{0,3} matches the country code, if specified, \n#    but won't take the first 3 digits from the area code \n#    unless a country code is also specified\n# \\\\( and \\\\) match literal parentheses if they exist\n# ([0-9]{3})? captures the area code, if it exists\n# .? matches any character\n# ([0-9]{3}) captures the exchange code\n# ([0-9]{4}) captures the 4-digit individual code\n\nstr_extract(phone_num_variants, phone_regex)\n\n[1] \"(123) 456-7980\"  \"123.456.7890\"    \"+1 123-456-7890\"\n\n# We didn't capture the country code, so it remained in the string\n\nhuman_talk &lt;- \"blah, blah, blah. Do you want to go for a walk? I think I'm going to treat myself to some ice cream for working so hard. \"\ndog_hears &lt;- str_extract_all(human_talk, \"walk|treat\")\ndog_hears\n\n[[1]]\n[1] \"walk\"  \"treat\"\n\n\nPutting it all together, we can test our regular expressions to ensure that they are specific enough to pull out what we want, while not pulling out other similar information:\n\nstrings &lt;- c(\"abcdefghijklmnopqrstuvwxyzABAB\",\n             \"banana orange strawberry apple\",\n             \"ana went to montana to eat a banana\",\n             \"call me at 432-394-2873. Do you want to go for a walk? I'm going to treat myself to some ice cream for working so hard.\",\n             \"phone: (123) 456-7890, nuid: 12345678, bank account balance: $50,000,000.23\",\n             \"1600 Pennsylvania Ave NW, Washington D.C., 20500\")\n\nphone_regex &lt;- \"\\\\+?[0-9]{0,3}? ?\\\\(?([0-9]{3})?\\\\)?.?([0-9]{3}).([0-9]{4})\"\ndog_regex &lt;- \"(walk|treat)\"\naddr_regex &lt;- \"([0-9]*) ([A-z0-9 ]{3,}), ([A-z\\\\. ]{3,}), ([0-9]{5})\"\n# Find patterns where two characters are repeated\nabab_regex &lt;- \"(..)\\\\1\"\n\n# Create a table for whether each regex was detected in each string\ntibble(\n  text = strings,\n  phone = str_detect(strings, phone_regex),\n  dog = str_detect(strings, dog_regex),\n  addr = str_detect(strings, addr_regex),\n  abab = str_detect(strings, abab_regex)\n  )\n\n# A tibble: 6 × 5\n  text                                                   phone dog   addr  abab \n  &lt;chr&gt;                                                  &lt;lgl&gt; &lt;lgl&gt; &lt;lgl&gt; &lt;lgl&gt;\n1 abcdefghijklmnopqrstuvwxyzABAB                         FALSE FALSE FALSE TRUE \n2 banana orange strawberry apple                         FALSE FALSE FALSE TRUE \n3 ana went to montana to eat a banana                    FALSE FALSE FALSE TRUE \n4 call me at 432-394-2873. Do you want to go for a walk… TRUE  TRUE  FALSE FALSE\n5 phone: (123) 456-7890, nuid: 12345678, bank account b… TRUE  FALSE FALSE FALSE\n6 1600 Pennsylvania Ave NW, Washington D.C., 20500       FALSE FALSE TRUE  FALSE\n\n\n\n\n\n\n\n✅ Check-in 5.1: Functions from stringr\n1 Which of the follow are differences between length() and str_length()?\n\nlength() gives the number of elements in a vector\nstr_length() gives the number of characters in a string\nstr_length() gives the number of strings in a vector\nlength() gives the dimensions of a dataframe\n\n2 What of the following is true about str_replace()?\n\nstr_replace() replaces the first instance of the pattern\nstr_replace() replaces the last instance of the pattern\nstr_replace() replaces every instance of the pattern\n\n3 str_trim() allows you to remove whitespace on what sides\n\nleft\nright\nboth\n\n4 Which of the following does str_sub() use to create a substring?\n\nstarting position\nending position\npattern to search for\n\n5 Which of the following does str_subset() use to create a substring?\n\nstarting position\nending position\npattern to search for\n\n6 What does the collapse argument do in str_c()?\n\nspecifies a string to be used when combining inputs into a single string\nspecifies whether the string should be collapsed"
   }
 ]
