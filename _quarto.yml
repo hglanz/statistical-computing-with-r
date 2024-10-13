@@ -4,7 +4,7 @@ project:
   render: 
     - "*.qmd"
     - "!/labs/student/"
-    - "!/videos/week-3/"
+    - "!/videos/"
 
 website:
   page-navigation: true
@@ -28,9 +28,6 @@ website:
       - icon: github
         href: https://github.com/atheobold/groupworthy-data-science
         text: "GitHub organization"
-      - icon: cloud-fill
-        href: https://posit.cloud/spaces/546280/join?access_code=N-bhlJ_sTPDIaalm5SqgEzb9DnAcr67mFzQ0YcYT
-        aria-label: Posit Cloud
       - icon: person-fill
         href: https://canvas.calpoly.edu
         text: "Cal Poly Canvas"
