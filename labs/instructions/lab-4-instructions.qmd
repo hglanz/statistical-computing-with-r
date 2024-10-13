@@ -17,7 +17,7 @@ execute:
 
 ## Step 1: Making a Copy from GitHub Classroom
 
-You can access the Lab 3 materials through the [Lab 4 assignment on GitHub Classroom](). We're going to follow the same steps as last week to make your own copy of this repository:
+You can access the Lab 4 materials through the [Lab 4 assignment on GitHub Classroom](https://classroom.github.com/a/c8Mh2QmE). We're going to follow the same steps as last week to make your own copy of this repository:
 
 <!-- Update link to GH Classroom assignment -->
 
