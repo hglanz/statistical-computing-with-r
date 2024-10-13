@@ -71,11 +71,13 @@ website:
             text: "Week 2, Part 2 - Data Import"
           - href: weeks/week-3-dplyr.qmd
             text: "Week 3 - dplyr"
-          #- href: weeks/week-4.qmd
-          #   text: "Week 4"
-          # - href: weeks/week-5.qmd
-          #   text: "Week 5"
-          # - href: weeks/week-6.qmd
+          - href: weeks/week-4-reshaping-joining.qmd
+            text: "Week 4, Part 1 - Data Transformation"
+          - href: weeks/week-4-factors.qmd
+            text: "Week 4, Part 2 - Factors"
+          - href: weeks/week-5-strings-dates.qmd
+            text: "Week 5 - Strings & Dates"
+          #- href: weeks/week-6.qmd
           #   text: "Week 6"
           # - href: weeks/week-7.qmd
           #   text: "Week 7"
@@ -88,9 +90,17 @@ website:
       - section: "Labs"
         contents:
           - href: labs/instructions/lab-1-instructions.qmd
-            text: Lab 1
+            text: "Lab 1 & Challenge 1 Instructions"
           - href: labs/instructions/lab-2-instructions.qmd
-            text: Lab 2
+            text: "Lab 2 Instructions"
+          - href: labs/instructions/challenge-2-instructions.qmd
+            text: "Challenge 2 Instructions"
+          - href: labs/instructions/lab-3-instructions
+            text: "Lab 3 Instructions"
+          - href: labs/instructions/challenge-3-instructions
+            text: "Challenge 3 Instructions"
+          - href: labs/instructions/lab-4-instructions
+            text: "Lab 4 & Challenge 4 Instructions"
       - section: "Portfolio"
         contents:
           - href: portfolio/portfolio-instructions.qmd
