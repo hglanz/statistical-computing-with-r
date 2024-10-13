@@ -1,0 +1,291 @@
+---
+title: "Working with Strings Using `stringr`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", "slide-style.css"]
+    nature:
+      highlightStyle: solarized-light
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(lubridate)
+library(palmerpenguins)
+```
+
+```{r xaringan-themer, include=FALSE}
+library(xaringanthemer)
+style_duo(
+  primary_color = "#26116c",
+  secondary_color = "#fd5e53",
+  title_slide_text_color = "#fff8e7",
+  header_font_google = google_font("Roboto"),
+  text_font_google   = google_font("Roboto Condensed"),
+  code_font_google   = google_font("Droid Mono"), 
+  text_font_size     = "30px"
+)
+```
+
+class: center, middle
+# Strings
+
+<img src="https://stringr.tidyverse.org/logo.png" width=300>
+
+---
+
+# Strings
+
+A **string** is a bunch of **characters**.
+
+Don't confuse a **string** (many characters, one object) with a 
+**character vector** (vector of strings)
+
+
+```{r}
+my_string <- "Hi, my name is Bond!"
+
+my_vector <- c("Hi", "my", "name", "is", "Bond")
+
+my_string
+
+my_vector
+```
+
+---
+
+# Strings
+
+Common tasks:
+
+* Find which strings contain a particular pattern
+
+* Remove or replace a pattern
+
+* Edit a string (for example, make it lowercase)
+
+
+The packages `stringr` is very useful for strings!  
+  *`stringr` loads with the `tidyverse`
+
+---
+
+# Find patterns
+
+```{r, eval = FALSE}
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+
+str_detect(my_vector, "Bond")
+str_locate(my_vector, "Bond")
+str_match(my_vector, "Bond")
+str_extract(my_vector, "Bond")
+str_subset(my_vector, "Bond")
+
+```
+
+---
+
+class: center, middle, invert
+
+# Exercise: What's the difference?
+
+For each of these functions, give:
+
+a) The **object structure** of the output.
+
+b) The **data type** of the output.
+
+c) A brief explanation of what they do.
+
+```{r, eval = FALSE}
+str_detect(my_vector, "Bond")
+str_locate(my_vector, "Bond")
+str_extract(my_vector, "Bond")
+str_subset(my_vector, "Bond")
+str_match(my_vector, "Bond")
+```
+
+---
+# Answers
+
+```{r}
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_detect(my_vector, "Bond")
+
+```
+
+--
+
+Returns a **logical vector** indicating if the pattern was found in that element of the original vector.
+
+---
+
+# Answers
+
+```{r}
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_match(my_vector, "Bond")
+
+```
+
+--
+
+Returns a **character matrix** with either `NA` or the pattern, depending on if the pattern was found.
+
+---
+# Answers
+
+```{r}
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_extract(my_vector, "Bond")
+
+```
+
+--
+
+Returns a **character vector** with either `NA` or the pattern, depending on if the pattern was found.
+
+
+---
+# Answers
+
+```{r}
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_locate(my_vector, "Bond")
+
+```
+
+--
+
+Returns a **data frame** with two **numeric variables** giving either `NA` or the start and end position of the pattern.
+
+---
+# Answers
+
+```{r}
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_subset(my_vector, "Bond")
+
+```
+
+--
+
+Returns a **data frame** with two **numeric variables** giving either `NA` or the start and end position of the pattern.
+
+
+---
+
+# Replace/Remove patterns
+
+
+```{r}
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_remove(my_vector, "Bond")
+str_replace(my_vector, "Bond", replacement = "Franco")
+```
+
+--
+
+*Ask yourself:*  What is the output?
+
+---
+
+# Make edits
+
+```{r}
+my_string <- "Hello, my name is Bond, James Bond."
+
+str_to_lower(my_string)
+str_to_upper(my_string)
+```
+
+---
+# Stringr
+
+Of course, we will not practice every single function in the `stringr` package.
+
+Refer to the `stringr` cheatsheet:  https://stringr.tidyverse.org/
+
+Use it to answer the following:
+
+
+* What is the difference between `length()` and `str_length()`?
+
+* What is the difference between `str_replace()` and `str_replace_all()`?
+
+* What is the difference between `str_trim()` and `str_trunc()`?
+
+* What is the difference between `str_sub()` and `str_subset()`?
+
+* What does the `collapse` argument do in `str_c()`?
+
+
+---
+class: center, middle, inverse
+
+# Your Turn
+
+Using your *colleges_clean* dataset, answer these questions:
+
+1. How exactly does Cal Poly's name appear in this dataset?
+
+2. How many colleges have the word "University" in their name?
+
+3. Which college has the *longest* name?  The *shortest* name?
+
+---
+
+# Hints
+
+*Hint 1:* The code below will work, but may not be quite correct.  Why?
+    
+```{r, eval = FALSE}
+str_count(colleges_clean$INSTNM, "University")
+```
+
+<!-- This double counts two institutions, since they have University in their name -->
+<!-- twice! -->
+
+*Hint 2:*  Remember that the `str_*` functions need the first argument to be a
+**vector of strings**, not a **dataset**.  You might want to use them *inside*
+functions like `filter` or `mutate`.
+
+```{r, eval = FALSE}
+colleges_clean %>%
+  mutate(
+    is_CA = str_detect(INSTNM, "California")
+  )
+```
+
+
+```{r, include = FALSE, eval = FALSE}
+colleges_clean$INSTNM %>%
+  str_subset("Polytechnic")
+```
+
+
+```{r, include = FALSE, eval = FALSE}
+colleges_clean %>%
+  mutate(
+    is_univ = str_detect(INSTNM, "University")
+  ) %>%
+  count(is_univ)
+```
+
+
+```{r, include = FALSE, eval = FALSE}
+colleges_clean %>%
+  mutate(
+    name_len = str_length(INSTNM)
+  ) %>% 
+  slice_min(name_len) 
+```
