@@ -32,8 +32,4 @@ vignettes/*.pdf
 po/*~
 # RStudio Connect folder
 rsconnect/
-
 /.quarto/
-
-# HTML files
-*.html

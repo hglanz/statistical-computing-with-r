@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Working with Strings Using stringr</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="slide-style.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Working with Strings Using <code>stringr</code>
+
+---
+
+
+
+
+
+
+class: center, middle
+# Strings
+
+&lt;img src="https://stringr.tidyverse.org/logo.png" width=300&gt;
+
+---
+
+# Strings
+
+A **string** is a bunch of **characters**.
+
+Don't confuse a **string** (many characters, one object) with a 
+**character vector** (vector of strings)
+
+
+
+```r
+my_string &lt;- "Hi, my name is Bond!"
+
+my_vector &lt;- c("Hi", "my", "name", "is", "Bond")
+
+my_string
+```
+
+```
+## [1] "Hi, my name is Bond!"
+```
+
+```r
+my_vector
+```
+
+```
+## [1] "Hi"   "my"   "name" "is"   "Bond"
+```
+
+---
+
+# Strings
+
+Common tasks:
+
+* Find which strings contain a particular pattern
+
+* Remove or replace a pattern
+
+* Edit a string (for example, make it lowercase)
+
+
+The packages `stringr` is very useful for strings!  
+  *`stringr` loads with the `tidyverse`
+
+---
+
+# Find patterns
+
+
+```r
+my_vector &lt;- c("Hello,", "my name is", "Bond", "James Bond")
+
+str_detect(my_vector, "Bond")
+str_locate(my_vector, "Bond")
+str_match(my_vector, "Bond")
+str_extract(my_vector, "Bond")
+str_subset(my_vector, "Bond")
+```
+
+---
+
+class: center, middle, invert
+
+# Exercise: What's the difference?
+
+For each of these functions, give:
+
+a) The **object structure** of the output.
+
+b) The **data type** of the output.
+
+c) A brief explanation of what they do.
+
+
+```r
+str_detect(my_vector, "Bond")
+str_locate(my_vector, "Bond")
+str_extract(my_vector, "Bond")
+str_subset(my_vector, "Bond")
+str_match(my_vector, "Bond")
+```
+
+---
+# Answers
+
+
+```r
+my_vector &lt;- c("Hello,", "my name is", "Bond", "James Bond")
+str_detect(my_vector, "Bond")
+```
+
+```
+## [1] FALSE FALSE  TRUE  TRUE
+```
+
+--
+
+Returns a **logical vector** indicating if the pattern was found in that element of the original vector.
+
+---
+
+# Answers
+
+
+```r
+my_vector &lt;- c("Hello,", "my name is", "Bond", "James Bond")
+str_match(my_vector, "Bond")
+```
+
+```
+##      [,1]  
+## [1,] NA    
+## [2,] NA    
+## [3,] "Bond"
+## [4,] "Bond"
+```
+
+--
+
+Returns a **character matrix** with either `NA` or the pattern, depending on if the pattern was found.
+
+---
+# Answers
+
+
+```r
+my_vector &lt;- c("Hello,", "my name is", "Bond", "James Bond")
+str_extract(my_vector, "Bond")
+```
+
+```
+## [1] NA     NA     "Bond" "Bond"
+```
+
+--
+
+Returns a **character vector** with either `NA` or the pattern, depending on if the pattern was found.
+
+
+---
+# Answers
+
+
+```r
+my_vector &lt;- c("Hello,", "my name is", "Bond", "James Bond")
+str_locate(my_vector, "Bond")
+```
+
+```
+##      start end
+## [1,]    NA  NA
+## [2,]    NA  NA
+## [3,]     1   4
+## [4,]     7  10
+```
+
+--
+
+Returns a **data frame** with two **numeric variables** giving either `NA` or the start and end position of the pattern.
+
+---
+# Answers
+
+
+```r
+my_vector &lt;- c("Hello,", "my name is", "Bond", "James Bond")
+str_subset(my_vector, "Bond")
+```
+
+```
+## [1] "Bond"       "James Bond"
+```
+
+--
+
+Returns a **data frame** with two **numeric variables** giving either `NA` or the start and end position of the pattern.
+
+
+---
+
+# Replace/Remove patterns
+
+
+
+```r
+my_vector &lt;- c("Hello,", "my name is", "Bond", "James Bond")
+str_remove(my_vector, "Bond")
+```
+
+```
+## [1] "Hello,"     "my name is" ""           "James "
+```
+
+```r
+str_replace(my_vector, "Bond", replacement = "Franco")
+```
+
+```
+## [1] "Hello,"       "my name is"   "Franco"       "James Franco"
+```
+
+--
+
+*Ask yourself:*  What is the output?
+
+---
+
+# Make edits
+
+
+```r
+my_string &lt;- "Hello, my name is Bond, James Bond."
+
+str_to_lower(my_string)
+```
+
+```
+## [1] "hello, my name is bond, james bond."
+```
+
+```r
+str_to_upper(my_string)
+```
+
+```
+## [1] "HELLO, MY NAME IS BOND, JAMES BOND."
+```
+
+---
+# Stringr
+
+Of course, we will not practice every single function in the `stringr` package.
+
+Refer to the `stringr` cheatsheet:  https://stringr.tidyverse.org/
+
+Use it to answer the following:
+
+
+* What is the difference between `length()` and `str_length()`?
+
+* What is the difference between `str_replace()` and `str_replace_all()`?
+
+* What is the difference between `str_trim()` and `str_trunc()`?
+
+* What is the difference between `str_sub()` and `str_subset()`?
+
+* What does the `collapse` argument do in `str_c()`?
+
+
+---
+class: center, middle, inverse
+
+# Your Turn
+
+Using your *colleges_clean* dataset, answer these questions:
+
+1. How exactly does Cal Poly's name appear in this dataset?
+
+2. How many colleges have the word "University" in their name?
+
+3. Which college has the *longest* name?  The *shortest* name?
+
+---
+
+# Hints
+
+*Hint 1:* The code below will work, but may not be quite correct.  Why?
+    
+
+```r
+str_count(colleges_clean$INSTNM, "University")
+```
+
+&lt;!-- This double counts two institutions, since they have University in their name --&gt;
+&lt;!-- twice! --&gt;
+
+*Hint 2:*  Remember that the `str_*` functions need the first argument to be a
+**vector of strings**, not a **dataset**.  You might want to use them *inside*
+functions like `filter` or `mutate`.
+
+
+```r
+colleges_clean %&gt;%
+  mutate(
+    is_CA = str_detect(INSTNM, "California")
+  )
+```
+
+
+
+
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "solarized-light",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
