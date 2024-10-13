@@ -10,8 +10,8 @@ website:
   page-navigation: true
   title: "Introduction to Statistical Computing in R"
   description: "Homepage for STAT 331 at Cal Poly"
-  site-url: "https://atheobold.github.io/stat-331-website"
-  repo-url: https://github.com/atheobold/stat-331-website
+  site-url: "https://github.com/atheobold/groupworthy-data-science"
+  repo-url: https://github.com/atheobold/groupworthy-data-science
   repo-actions: [issue]
 
   page-footer:
@@ -26,7 +26,7 @@ website:
     align: center
     tools:
       - icon: github
-        href: https://github.com/atheobold/stat-331-website
+        href: https://github.com/atheobold/groupworthy-data-science
         text: "GitHub organization"
       - icon: cloud-fill
         href: https://posit.cloud/spaces/546280/join?access_code=N-bhlJ_sTPDIaalm5SqgEzb9DnAcr67mFzQ0YcYT
@@ -95,11 +95,11 @@ website:
             text: "Lab 2 Instructions"
           - href: labs/instructions/challenge-2-instructions.qmd
             text: "Challenge 2 Instructions"
-          - href: labs/instructions/lab-3-instructions
+          - href: labs/instructions/lab-3-instructions.qmd
             text: "Lab 3 Instructions"
-          - href: labs/instructions/challenge-3-instructions
+          - href: labs/instructions/challenge-3-instructions.qmd
             text: "Challenge 3 Instructions"
-          - href: labs/instructions/lab-4-instructions
+          - href: labs/instructions/lab-4-instructions.qmd
             text: "Lab 4 & Challenge 4 Instructions"
       - section: "Portfolio"
         contents:
