@@ -4,7 +4,6 @@ format:
   revealjs:
         theme: [simple, ../style.scss]
 editor: source
-embed-resources: true
 ---
 
 ```{r setup}
