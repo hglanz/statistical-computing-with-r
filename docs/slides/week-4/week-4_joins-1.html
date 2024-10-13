@@ -8,9 +8,9 @@
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.533">
+  <meta name="generator" content="quarto-1.5.57">
 
-  <title>Introduction to Statistical Computing in R - Data Joins + Pivots + Factors</title>
+  <title>Introduction to Statistical Computing in R – Data Joins + Pivots + Factors</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -41,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -69,7 +69,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -83,7 +83,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -398,24 +398,8 @@
 </div>
 
 </section>
-<section class="slide level2">
-
-<!-- Add slide on deciding if you need to save an intermediate object. -->
-<!-- ## Save your changes! -->
-<!-- When you manipulate your data, make sure you assign your new dataset to a variable. -->
-<!-- ```{r} -->
-<!-- #| echo: true -->
-<!-- #| eval: false -->
-<!-- #| label: saving-summary-to-object -->
-<!-- cereal_potass_summary <- cereal |>  -->
-<!--   filter(type == "cold") |>  -->
-<!--   mutate(potass_per_cup = potas / cups) |>  -->
-<!--   group_by(manuf) |>  -->
-<!--   summarise(mean_potass_per_cup = mean(potass_per_cup)) -->
-<!-- ``` -->
-</section>
-<section id="monday-april-22" class="slide level2">
-<h2>Monday, April 22</h2>
+<section id="tuesday-october-15" class="slide level2">
+<h2>Tuesday, October 15</h2>
 <p>Today we will…</p>
 <ul>
 <li>Comments from Week 3</li>
@@ -424,32 +408,8 @@
 <li>Pivoting data with <code>tidyr</code></li>
 <li>Joining data with <code>dplyr</code></li>
 </ul></li>
-<li><a href="https://zoerehnberg.github.io/STAT331-S23/practice_activities/PA4.html">PA 4: Military Spending</a></li>
+<li><a href="../../group-activities/week-4/PA4-tidyr.html">PA 4: Military Spending</a></li>
 </ul>
-</section>
-<section id="comments-from-week-3" class="slide level2">
-<h2>Comments from Week 3</h2>
-<ul>
-<li><p>The <a href="https://www.tidyverse.org/packages/"><code>tidyverse</code></a> package automatically loads <code>ggplot2</code>, <code>dplyr</code>, <code>readr</code>, etc. – do not load these twice!</p></li>
-<li><p>Do not use <code>mutate()</code> + <code>distinct()</code>, when you can use <code>summarize()</code>!</p>
-<ul>
-<li>We want to pay attention to the <strong>efficiency</strong> of our code.</li>
-</ul></li>
-</ul>
-</section>
-<section id="mutate-vs-summarise" class="slide level2">
-<h2><code>mutate()</code> vs <code>summarise()</code></h2>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1"><code>mutate()</code></a></li><li><a href="#tabset-1-2"><code>summarise()</code></a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<p><img data-src="images/mutate-sketch.JPG"></p>
-</div>
-<div id="tabset-1-2">
-<p><img data-src="images/summarise-sketch.JPG" style="width:85.0%"></p>
-</div>
-</div>
-</div>
 </section>
 <section>
 <section id="data-layouts" class="title-slide slide level1 center">
@@ -465,28 +425,14 @@
 <li><strong>has different formats for different tasks.</strong></li>
 </ul>
 
-<img data-src="https://r4ds.hadley.nz/images/tidy-1.png" class="r-stretch quarto-figure-center"><p class="caption">R4DS</p></section>
-<section id="consequences-of-messy-data" class="slide level2">
-<h2>Consequences of Messy Data</h2>
-
-<img data-src="https://www.openscapes.org/img/blog/tidydata/tidydata_2.jpg" class="r-stretch quarto-figure-center"><p class="caption">Allison Horst</p><ul>
-<li><em>Tidy</em>: use the same tools in similar ways for different datasets.</li>
-<li><em>Messy</em>: create unique tools that are difficult to generalize.</li>
-</ul>
-</section>
+<img data-src="https://r4ds.hadley.nz/images/tidy-1.png" class="r-stretch"></section>
 <section id="creating-tidy-data" class="slide level2">
 <h2>Creating Tidy Data</h2>
 <p>We may need to <strong>transform</strong> our data to turn it into the <strong>version of tidy</strong> that is best for a task at hand.</p>
 
-<img data-src="https://www.openscapes.org/img/blog/tidydata/tidydata_4.jpg" class="r-stretch quarto-figure-center"><p class="caption">Allison Horst</p></section>
-<section id="creating-tidy-data-1" class="slide level2">
-<h2>Creating Tidy Data</h2>
-<p>Let’s say we want to look at <code>mean</code> <strong>cereal nutrients</strong> based on <code>shelf</code>.</p>
-<div class="fragment">
-<ul>
-<li>The data are in a <strong>wide</strong> format – a separate column for each nutrient.</li>
-<li><strong>Transforming</strong> the data will make plotting easier.</li>
-</ul>
+<img data-src="https://www.openscapes.org/img/blog/tidydata/tidydata_4.jpg" class="r-stretch quarto-figure-center"><p class="caption">Image by Allison Horst</p></section>
+<section id="cereal-data" class="slide level2">
+<h2>Cereal Data</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(liver)</span>
 <span id="cb1-2"><a></a><span class="fu">data</span>(cereal)</span>
@@ -495,7 +441,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:210px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">name</th>
@@ -631,14 +577,20 @@
 
 </div>
 </div>
+</section>
+<section id="creating-tidy-data-1" class="slide level2">
+<h2>Creating Tidy Data</h2>
+<p>Let’s say we want to look at <code>mean</code> <strong>cereal nutrients</strong> based on <code>shelf</code>.</p>
+<div class="fragment">
+<p>Currently, the data are in a <strong>wide</strong> format – a separate column for each nutrient. <strong>Transforming</strong> the data will make plotting easier.</p>
 </div>
 </section>
-<section id="creating-tidy-data-2" class="slide level2">
-<h2>Creating Tidy Data</h2>
+<section id="tidying-the-cereals-data" class="slide level2">
+<h2>Tidying the Cereals Data</h2>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Wide</a></li><li><a href="#tabset-2-2">Wide Plot</a></li><li><a href="#tabset-2-3">Long</a></li><li><a href="#tabset-2-4">Long Plot</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Wide</a></li><li><a href="#tabset-1-2">Wide Plot</a></li><li><a href="#tabset-1-3">Long</a></li><li><a href="#tabset-1-4">Long Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1">
+<div id="tabset-1-1">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -650,7 +602,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:210px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">shelf</th>
@@ -709,7 +661,7 @@
 </div>
 </div>
 </div>
-<div id="tabset-2-2">
+<div id="tabset-1-2">
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
@@ -733,7 +685,7 @@
 </div>
 </div>
 </div>
-<div id="tabset-2-3">
+<div id="tabset-1-3">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -748,7 +700,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">shelf</th>
@@ -899,7 +851,7 @@
 </div>
 </div>
 </div>
-<div id="tabset-2-4">
+<div id="tabset-1-4">
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
@@ -928,16 +880,10 @@
 <h1>Pivoting Data</h1>
 <div class="columns">
 <div class="column">
-<div class="quarto-figure quarto-figure-center">
-<figure>
 <p><img data-src="https://github.com/gadenbuie/tidyexplain/raw/main/images/static/png/original-dfs-tidy.png"></p>
-<figcaption>Kelsey Gonzalez</figcaption>
-</figure>
-</div>
 </div><div class="column">
 <p><img data-src="https://github.com/gadenbuie/tidyexplain/raw/main/images/tidyr-pivoting.gif"></p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="manual-method" class="slide level2">
 <h2>Manual Method</h2>
@@ -952,12 +898,14 @@
 <section id="manual-method-steps" class="slide level2">
 <h2>Manual Method: Steps</h2>
 <div>
+<div class="small">
 <ol start="0" type="1">
 <li class="fragment">Keep the column <code>Week</code>.</li>
 <li class="fragment">Create a new column <code>Day_of_Week</code>.</li>
 <li class="fragment">Create a new column <code>Rainfall</code> (hold daily rainfall values).</li>
 <li class="fragment">Now we have three columns – move Sunday values over.</li>
 </ol>
+</div>
 </div>
 <div class="fragment">
 <center>
@@ -967,6 +915,7 @@
 </section>
 <section id="manual-method-steps-1" class="slide level2">
 <h2>Manual Method: Steps</h2>
+<div class="small">
 <ol start="0" type="1">
 <li>Keep the column <code>Week</code>.</li>
 <li>Create a new column <code>Day_of_Week</code>.</li>
@@ -974,12 +923,14 @@
 <li>Now we have three columns – move Sunday values over.</li>
 <li>Duplicate <code>Week</code> 1-5 and copy Monday values over.</li>
 </ol>
+</div>
 <center>
 <img data-src="images/pivot_rain2.png" style="width:25.0%">
 </center>
 </section>
 <section id="manual-method-steps-2" class="slide level2">
 <h2>Manual Method: Steps</h2>
+<div class="small">
 <ol start="0" type="1">
 <li>Keep the column <code>Week</code>.</li>
 <li>Create a new column <code>Day_of_Week</code>.</li>
@@ -988,9 +939,11 @@
 <li>Duplicate <code>Week</code> 1-5 and copy Monday values over.</li>
 <li>Duplicate <code>Week</code> 1-5 and copy Tuesday values over.</li>
 </ol>
+</div>
 </section>
 <section id="manual-method-steps-3" class="slide level2">
 <h2>Manual Method: Steps</h2>
+<div class="small">
 <ol start="0" type="1">
 <li>Keep the column <code>Week</code>.</li>
 <li>Create a new column <code>Day_of_Week</code>.</li>
@@ -1000,19 +953,7 @@
 <li>Duplicate <code>Week</code> 1-5 and copy Tuesday values over.</li>
 <li>Continue for the rest of the days of the week.</li>
 </ol>
-</section>
-<section id="manual-method-steps-4" class="slide level2">
-<h2>Manual Method: Steps</h2>
-<ol start="0" type="1">
-<li>Keep the column <code>Week</code>.</li>
-<li>Create a new column <code>Day_of_Week</code>.</li>
-<li>Create a new column <code>Rainfall</code> (hold daily rainfall values).</li>
-<li>Now we have three columns – move Sunday values over.</li>
-<li>Duplicate <code>Week</code> 1-5 and copy Monday values over.</li>
-<li>Duplicate <code>Week</code> 1-5 and copy Tuesday values over.</li>
-<li>Continue for the rest of the days of the week.</li>
-<li>You may want to <code>arrange()</code> by <code>Week</code> to get the rainfall values chronological order.</li>
-</ol>
+</div>
 </section>
 <section id="computational-approach" class="slide level2">
 <h2>Computational Approach</h2>
@@ -1035,14 +976,14 @@
 <h2><code>pivot_longer()</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>slo_rainfall <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a></a>  <span class="fu">pivot_longer</span>(<span class="at">cols      =</span> Sunday<span class="sc">:</span>Saturday,</span>
+<span id="cb6-2"><a></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> Sunday<span class="sc">:</span>Saturday,</span>
 <span id="cb6-3"><a></a>               <span class="at">names_to  =</span> <span class="st">"Day_of_Week"</span>,</span>
 <span id="cb6-4"><a></a>               <span class="at">values_to =</span> <span class="st">"Daily_Rainfall"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">Week</th>
@@ -1253,7 +1194,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">manuf</th>
@@ -1373,7 +1314,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:420px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">manuf</th>
@@ -1446,7 +1387,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:420px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">manuf</th>
@@ -1530,8 +1471,7 @@
 <p><strong>Filtering Joins</strong></p>
 <p>Filter <em>observations</em> based on values in new dataframe.</p>
 <p><code>semi_join()</code>, <code>anti_join()</code></p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="keys" class="slide level2">
 <h2>Keys</h2>
@@ -1551,8 +1491,7 @@
 <p><img data-src="images/join_xy.png"></p>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/inner_join.png"></p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="inner_join-imdb-example" class="slide level2">
 <h2><code>inner_join()</code>: IMDb Example</h2>
@@ -1564,7 +1503,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:160px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -1636,7 +1575,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:160px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -1678,8 +1617,7 @@
 
 </div>
 </div>
-</div>
-</div>
+</div></div>
 <p><font size="6"></font></p><font size="6">
 <p>ID: 429, <strong>2931</strong>, 11652, 14927, 15092       ID: 429, <strong>9247</strong>, 11652, 14927, 15092</p>
 </font><p><font size="6"></font></p>
@@ -1690,7 +1628,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:160px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -1794,7 +1732,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:170px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -1866,7 +1804,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:170px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">id</th>
@@ -1906,8 +1844,7 @@
 
 </div>
 </div>
-</div>
-</div>
+</div></div>
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -1919,7 +1856,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:170px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">id</th>
@@ -1995,8 +1932,7 @@
 </div><div class="column" style="width:40%;">
 <p><font size="6"> Join by different variables on <code>dataX</code> and <code>dataY</code>: <code>join_by(a == b)</code> will match <code>dataX$a</code> to <code>dataY$b</code>.</font></p><font size="6">
 </font><p><font size="6"></font></p>
-</div>
-</div>
+</div></div>
 </div>
 </section>
 <section id="piping-joins" class="slide level2">
@@ -2046,7 +1982,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:320px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -2082,7 +2018,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:320px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -2110,8 +2046,7 @@
 
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="filtering-joins-semi_join" class="slide level2">
 <h2>Filtering Joins: <code>semi_join()</code></h2>
@@ -2126,15 +2061,14 @@
 </div>
 </div><div class="column" style="width:25%;">
 <p><img data-src="images/semi2.png"></p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="filtering-joins-semi_join-1" class="slide level2">
 <h2>Filtering Joins: <code>semi_join()</code></h2>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1"><code>semi_join()</code></a></li><li><a href="#tabset-3-2">Connection to <code>filter()</code></a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1"><code>semi_join()</code></a></li><li><a href="#tabset-2-2">Connection to <code>filter()</code></a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1">
+<div id="tabset-2-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>directors_genres <span class="sc">|&gt;</span> </span>
 <span id="cb20-2"><a></a>  <span class="fu">semi_join</span>(movies_directors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2142,7 +2076,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:320px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -2199,7 +2133,7 @@
 </div>
 <p>Movie Directors: 429, <del><strong>2931</strong></del>, 11652, 14927, 15092</p>
 </div>
-<div id="tabset-3-2">
+<div id="tabset-2-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>directors_genres <span class="sc">|&gt;</span></span>
 <span id="cb21-2"><a></a>  <span class="fu">filter</span>(director_id <span class="sc">%in%</span> movies_directors<span class="sc">$</span>director_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2207,7 +2141,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:320px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -2280,15 +2214,14 @@
 </div><div class="column" style="width:25%;">
 <p><br></p>
 <p><img data-src="images/anti2.png"></p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="filtering-joins-anti_join-1" class="slide level2">
 <h2>Filtering Joins: <code>anti_join()</code></h2>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1"><code>anti_join()</code></a></li><li><a href="#tabset-4-2">Connection to <code>filter()</code></a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1"><code>anti_join()</code></a></li><li><a href="#tabset-3-2">Connection to <code>filter()</code></a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1">
+<div id="tabset-3-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>directors_genres <span class="sc">|&gt;</span> </span>
 <span id="cb22-2"><a></a>  <span class="fu">anti_join</span>(movies_directors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2296,7 +2229,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -2323,7 +2256,7 @@
 </div>
 <p>Movie Directors: <del>429</del>, <strong>2931</strong>, <del>11652</del>, <del>14927</del>, <del>15092</del></p>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-3-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>directors_genres <span class="sc">|&gt;</span></span>
 <span id="cb23-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span>director_id <span class="sc">%in%</span> movies_directors<span class="sc">$</span>director_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2331,7 +2264,7 @@
 <div class="cell">
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; ">
-<table class="table" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">director_id</th>
@@ -2376,12 +2309,12 @@
 </ul></li>
 </ul>
 
-
-</section><div class="quarto-auto-generated-content">
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div></section>
+</div>
+</section></section>
     </div>
   </div>
 
@@ -2662,18 +2595,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -2705,7 +2627,47 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/atheobold\.github\.io\/stat-331-website");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -2742,7 +2704,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
