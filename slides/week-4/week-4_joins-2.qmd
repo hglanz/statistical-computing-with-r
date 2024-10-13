@@ -2,7 +2,7 @@
 title: "Extending Joins, Factors, Clean Variable Names"
 format: 
   revealjs:
-    theme: default
+        theme: [simple, ../style.scss]
 editor: source
 ---
 
@@ -31,7 +31,7 @@ movies_genres <- read_csv("data/movies_genres.csv")
 roles <- read_csv("data/roles.csv")
 ```
 
-## Wednesday, April 24
+## Thursday, October 17
 
 Today we will...
 
@@ -42,6 +42,26 @@ Today we will...
     -   Lifecycle Stages
 -   Lab 4: Childcare Costs in California
 
+
+## Comments from Week 3
+
++ The [`tidyverse`](https://www.tidyverse.org/packages/) package automatically loads `ggplot2`, `dplyr`, `readr`, etc. -- do not load these twice!
+
++ Do not use `mutate()` + `distinct()`, when you can use `summarize()`!
+  + We want to pay attention to the **efficiency** of our code.
+
+
+## `mutate()` vs `summarise()`
+
+::: panel-tabset
+### `mutate()`
+
+![](images/mutate-sketch.JPG)
+
+### `summarise()`
+
+![](images/summarise-sketch.JPG){width=85%}
+:::
 
 # Extensions to Relational Data
 
@@ -830,6 +850,7 @@ library(readxl)
 library(tidyverse)
 military <- read_xlsx(here::here("group-activities", 
                                  "week-4", 
+                                 "data",
                                  "gov_spending_per_capita.xlsx"),
                 sheet = "Share of Govt. spending", 
                 skip  = 7, 
@@ -949,6 +970,9 @@ A **superseded** functionality has a better alternative, but is not going away.
 
 ## [Lab 4: Childcare Costs in California](https://zoerehnberg.github.io/STAT331-S23/lab_assignments/lab4/LA4_childcare.html)
 
+## ChatGPT Example...
+
+https://chatgpt.com/share/670b0fd0-d9f0-8012-8d47-aceba68925f4
 
 
 ## To do...

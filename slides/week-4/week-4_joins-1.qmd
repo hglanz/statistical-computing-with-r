@@ -2,7 +2,7 @@
 title: "Data Joins + Pivots + Factors"
 format: 
   revealjs:
-    theme: default
+        theme: [simple, ../style.scss]
 editor: source
 ---
 
@@ -14,34 +14,7 @@ library(palmerpenguins)
 library(ggridges)
 ```
 
-<!-- Add slide on deciding if you need to save an intermediate object. -->
-
-<!-- ## Save your changes! -->
-
-<!-- When you manipulate your data, make sure you assign your new dataset to a variable. -->
-
-<!-- ```{r} -->
-
-
-<!-- #| echo: true -->
-
-<!-- #| eval: false -->
-
-<!-- #| label: saving-summary-to-object -->
-
-<!-- cereal_potass_summary <- cereal |>  -->
-
-<!--   filter(type == "cold") |>  -->
-
-<!--   mutate(potass_per_cup = potas / cups) |>  -->
-
-<!--   group_by(manuf) |>  -->
-
-<!--   summarise(mean_potass_per_cup = mean(potass_per_cup)) -->
-
-<!-- ``` -->
-
-## Monday, April 22
+## Tuesday, October 15
 
 Today we will...
 
@@ -49,29 +22,7 @@ Today we will...
 -   New Material
     -   Pivoting data with `tidyr`
     -   Joining data with `dplyr`
--   [PA 4: Military Spending](https://zoerehnberg.github.io/STAT331-S23/practice_activities/PA4.html)
-
-
-## Comments from Week 3
-
-+ The [`tidyverse`](https://www.tidyverse.org/packages/) package automatically loads `ggplot2`, `dplyr`, `readr`, etc. -- do not load these twice!
-
-+ Do not use `mutate()` + `distinct()`, when you can use `summarize()`!
-  + We want to pay attention to the **efficiency** of our code.
-
-
-## `mutate()` vs `summarise()`
-
-::: panel-tabset
-### `mutate()`
-
-![](images/mutate-sketch.JPG)
-
-### `summarise()`
-
-![](images/summarise-sketch.JPG){width=85%}
-:::
-
+-   [PA 4: Military Spending](../../group-activities/week-4/PA4-tidyr.qmd)
 
 # Data Layouts
 
@@ -83,32 +34,15 @@ Tidy data...
 -   has observations as rows and variables as columns.
 -   **has different formats for different tasks.**
 
-![R4DS](https://r4ds.hadley.nz/images/tidy-1.png)
-
-
-## Consequences of Messy Data
-
-![Allison Horst](https://www.openscapes.org/img/blog/tidydata/tidydata_2.jpg)
-
--   *Tidy*: use the same tools in similar ways for different datasets.
--   *Messy*: create unique tools that are difficult to generalize.
-
+![](https://r4ds.hadley.nz/images/tidy-1.png)
 
 ## Creating Tidy Data
 
 We may need to **transform** our data to turn it into the **version of tidy** that is best for a task at hand.
 
-![Allison Horst](https://www.openscapes.org/img/blog/tidydata/tidydata_4.jpg)
+![Image by Allison Horst](https://www.openscapes.org/img/blog/tidydata/tidydata_4.jpg)
 
-
-## Creating Tidy Data
-
-Let's say we want to look at `mean` **cereal nutrients** based on `shelf`.
-
-. . .
-
-+ The data are in a **wide** format -- a separate column for each nutrient.
-+ **Transforming** the data will make plotting easier.
+## Cereal Data 
 
 ```{r}
 #| echo: true
@@ -129,8 +63,16 @@ head(cereal) |>
   kableExtra::kable_styling(font_size = 30)
 ```
 
-
 ## Creating Tidy Data
+
+Let's say we want to look at `mean` **cereal nutrients** based on `shelf`.
+
+. . .
+
+Currently, the data are in a **wide** format -- a separate column for each
+nutrient. **Transforming** the data will make plotting easier.
+
+## Tidying the Cereals Data
 
 ::: panel-tabset
 
@@ -222,7 +164,7 @@ cereal_long |>
 
 ::: columns
 ::: column
-![Kelsey Gonzalez](https://github.com/gadenbuie/tidyexplain/raw/main/images/static/png/original-dfs-tidy.png)
+![](https://github.com/gadenbuie/tidyexplain/raw/main/images/static/png/original-dfs-tidy.png)
 :::
 
 ::: column
@@ -246,12 +188,13 @@ How would you **manually** convert this to **long format**?
 ## Manual Method: Steps
 
 ::: incremental
+::: {.small}
 0.  Keep the column `Week`.
 1.  Create a new column `Day_of_Week`.
 2.  Create a new column `Rainfall` (hold daily rainfall values).
 3.  Now we have three columns -- move Sunday values over.
 :::
-
+:::
 . . .
 
 <center> 
@@ -263,11 +206,13 @@ How would you **manually** convert this to **long format**?
 
 ## Manual Method: Steps
 
+::: {.small}
 0.  Keep the column `Week`.
 1.  Create a new column `Day_of_Week`.
 2.  Create a new column `Rainfall` (hold daily rainfall values).
 3.  Now we have three columns -- move Sunday values over.
 4.  Duplicate `Week` 1-5 and copy Monday values over.
+:::
 
 <center> 
 
@@ -277,15 +222,18 @@ How would you **manually** convert this to **long format**?
 
 ## Manual Method: Steps
 
+::: {.small}
 0.  Keep the column `Week`.
 1.  Create a new column `Day_of_Week`.
 2.  Create a new column `Rainfall` (hold daily rainfall values).
 3.  Now we have three columns -- move Sunday values over.
 4.  Duplicate `Week` 1-5 and copy Monday values over.
 5.  Duplicate `Week` 1-5 and copy Tuesday values over.
+:::
 
 ## Manual Method: Steps
 
+::: {.small}
 0.  Keep the column `Week`.
 1.  Create a new column `Day_of_Week`.
 2.  Create a new column `Rainfall` (hold daily rainfall values).
@@ -293,19 +241,7 @@ How would you **manually** convert this to **long format**?
 4.  Duplicate `Week` 1-5 and copy Monday values over.
 5.  Duplicate `Week` 1-5 and copy Tuesday values over.
 6.  Continue for the rest of the days of the week.
-
-## Manual Method: Steps
-
-0.  Keep the column `Week`.
-1.  Create a new column `Day_of_Week`.
-2.  Create a new column `Rainfall` (hold daily rainfall values).
-3.  Now we have three columns -- move Sunday values over.
-4.  Duplicate `Week` 1-5 and copy Monday values over.
-5.  Duplicate `Week` 1-5 and copy Tuesday values over.
-6.  Continue for the rest of the days of the week.
-7.  You may want to `arrange()` by `Week` to get the rainfall values chronological order.
-
-
+:::
 
 ## Computational Approach
 
@@ -330,7 +266,7 @@ Take a **wide** dataset and turn it into a **long** dataset.
 #| echo: true
 #| eval: false
 slo_rainfall |> 
-  pivot_longer(cols      = Sunday:Saturday,
+  pivot_longer(cols = Sunday:Saturday,
                names_to  = "Day_of_Week",
                values_to = "Daily_Rainfall")
 ```
