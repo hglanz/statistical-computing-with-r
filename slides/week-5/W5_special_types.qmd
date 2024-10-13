@@ -1,0 +1,1331 @@
+---
+title: "Special Data Types: Strings + Dates"
+format: 
+  revealjs:
+    theme: default
+    auto-stretch: false
+editor: source
+embed-resources: true
+---
+
+```{r setup}
+#| include: false
+#| message: false
+library(tidyverse)
+library(palmerpenguins)
+library(liver)
+data(cereal)
+```
+
+## Monday, April 29
+
+Today we will...
+
++ **Reminder: no class on Wednesday!**
++ Comments from Week 4
++ New Material
+  + String Variables
+  + Regular Expressions
++ [PA 5.1: Scrambled Message](https://zoerehnberg.github.io/STAT331-S23/practice_activities/PA5_1.html)
+
+
+## Comments from Week 4
+
+When *describing data*, include **context** as well as the data characteristics.
+
++ Where did the data come from? What years? Location? Source?
++ What is the data being used for?
++ What are the variables (in context) and observations (in context)?
+
+
+## Comments from Week 4
+
+:::: {.columns}
+::: {.column width="40%"}
+
+**Read**
+
+---------
+Average
+
+Total
+
+Which or For Each
+
+Minimum
+
+Maximum
+
+:::
+::: {.column width="60%"}
+
+**Think**
+
+---------
+
+`summarize(avg = mean())`
+
+`summarize(total = sum())`
+
+`group_by()`
+
+`slice_min()`
+
+`slice_max()`
+
+:::
+::::
+
+
+# String Variables
+
+
+## What is a string?
+
+A **string** is a bunch of **characters**.
+
+There is a difference between...
+
+<center>
+
+...a **string** (many characters, one object)...
+
+and
+
+...a **character vector** (vector of strings).
+
+</center>
+
+. . .
+
+```{r}
+#| echo: true
+my_string <- "Hi, my name is Bond!"
+my_vector <- c("Hi", "my", "name", "is", "Bond")
+```
+
+```{r}
+#| echo: true
+my_string
+```
+
+```{r}
+#| echo: true
+my_vector
+```
+
+
+## `stringr`
+
+:::: {.columns}
+::: {.column width="80%"}
+**Common tasks**
+
++ Identify strings containing a particular pattern.
++ Remove or replace a pattern.
++ Edit a string (e.g., make it lowercase).
+
+:::
+::: {.column width="20%"}
+
+```{r}
+#| fig-align: center
+knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/main/PNG/stringr.png?raw=true")
+```
+:::
+::::
+
+::: callout-note 
++ The `stringr` package loads with `tidyverse`.
++ All functions are  of the form`str_xxx()`.
+:::
+
+
+## `pattern = `
+
+The **pattern argument** appears in many `stringr` functions .
+
++ The pattern **must** be supplied inside quotes.
+
+```{r}
+#| eval: false
+#| echo: true
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+
+str_detect(my_vector, pattern = "Bond")
+str_locate(my_vector, pattern = "Bond")
+str_match(my_vector, pattern = "Bond")
+str_extract(my_vector, pattern = "Bond")
+str_subset(my_vector, pattern = "Bond")
+```
+
+<br>
+
+. . .
+
+Let's explore these functions!
+
+
+## `str_detect()`
+
+Returns a **logical vector** indicating whether the pattern was found in each element of the supplied vector.
+
+```{r}
+#| echo: true
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_detect(my_vector, pattern = "Bond")
+```
+
+. . .
+
++ Pairs well with `filter()`.
++ Works with `summarise()` + `sum` or `mean`.
+
+. . .
+
+::: {.callout-note collapse="true"}
+
+## Related Function
+
+`str_which()` returns the indexes of the strings that contain a match.
+
+:::
+
+
+## `str_match()` 
+
+Returns a **character matrix** containing either `NA` or the pattern, depending on if the pattern was found.
+
+```{r}
+#| echo: true
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_match(my_vector, pattern = "Bond")
+```
+
+. . .
+
+The matrix will have more columns if you use regex groups.
+
+```{r}
+#| echo: true
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_match(my_vector, pattern = "(.)o(.)")
+```
+
+
+## `str_extract()` 
+
+Returns a **character vector** with either `NA` or the pattern, depending on if the pattern was found.
+
+```{r}
+#| echo: true
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_extract(my_vector, pattern = "Bond")
+```
+
+. . .
+
+::: callout-warning
+
+`str_extract()` only returns the **first** pattern match.
+
+Use `str_extract_all()` to return **every** pattern match.
+
+:::
+
+
+## `str_locate()` 
+
+Returns a **dateframe** with two **numeric variables** -- the starting and ending location of the pattern.
+
++ The values are `NA` if the pattern is not found.
+
+```{r}
+#| echo: true
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_locate(my_vector, pattern = "Bond")
+```
+
+. . .
+
+::: callout-note
+
+## Related Function
+
+`str_sub()` extracts values based on a starting and ending location.
+:::
+
+
+## `str_subset()`
+
+Returns a **character vector** containing a subset of the original **character vector** consisting of the elements where the pattern was found.
+
+```{r}
+#| echo: true
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_subset(my_vector, pattern = "Bond")
+```
+
+
+
+## Try it out!
+
+```{r}
+#| eval: false
+#| echo: true
+my_vector <- c("I scream,", "you scream", "we all",
+               "scream","for","ice cream")
+
+str_detect(my_vector, pattern = "cream")
+str_locate(my_vector, pattern = "cream")
+str_match(my_vector, pattern = "cream")
+str_extract(my_vector, pattern = "cream")
+str_subset(my_vector, pattern = "cream")
+```
+
+::: callout-note
+For each of these functions, write down:
+
++ the **object structure** of the output.
++ the **data type** of the output.
++ a brief explanation of what they do.
+::::
+
+
+## Replace / Remove Patterns
+
+::: panel-tabset
+
+### `str_replace()`
+
+Replace the **first** matched pattern in each string.
+
++ Pairs well with `mutate()`.
+
+```{r}
+#| echo: true
+str_replace(my_vector, pattern = "Bond", replace = "Franco")
+```
+
+::: {.callout-note collapse="true"}
+
+## Related Function
+
+`str_replace_all()` replaces **all** matched patterns in each string.
+
+:::
+
+### `str_remove()`
+
+Remove the **first** matched pattern in each string.
+
+```{r}
+#| echo: true
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_remove(my_vector, pattern = "Bond")
+```
+
+::: {.callout-note collapse="true"}
+
+## Related Functions
+
+This is a special case of  `str_replace(x, pattern, replace = "")`.
+
+`str_remove_all()` removes **all** matched patterns in each string.
+
+:::
+
+:::
+
+
+## Edit Strings
+
+Convert letters in a string to a specific capitalization format.
+
+::: panel-tabset
+
+### lower
+
+`str_to_lower()` converts all letters in a string to lowercase.
+
+<br>
+
+```{r}
+#| echo: true
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_to_lower(my_vector)
+```
+
+### UPPER
+
+`str_to_upper()` converts all letters in a string to uppercase.
+
+<br>
+
+```{r}
+#| echo: true
+str_to_upper(my_vector)
+```
+
+### Title
+
+`str_to_title()` converts the first letter of each word to uppercase.
+
+<br>
+
+```{r}
+#| echo: true
+str_to_title(my_vector)
+```
+
+:::
+
+
+## Combine Strings
+
+::: panel-tabset
+### `str_c()`
+
+Join multiple strings into a single string.
+
+```{r}
+#| echo: true
+prompt <- "Hello, my name is"
+first  <- "James"
+last   <- "Bond"
+str_c(prompt, last, ",", first, last, sep = " ")
+```
+
+::: callout-note
+Similar to `paste()` and `paste0()`.
+:::
+
+### `str_flatten()`
+
+Combine a vector of strings into a single string.
+
+```{r}
+#| echo: true
+my_vector <- c("Hello,", "my name is", "Bond", "James Bond")
+str_flatten(my_vector, collapse = " ")
+```
+
+::: callout-note
+`str_c()` will do the same thing, but you should use `str_flatten()` instead!
+:::
+
+### `str_glue()`
+
+Use variables in the environment to create a string based on {expressions}.
+
+```{r}
+#| echo: true
+first <- "James"
+last <- "Bond"
+str_glue("My name is {last}, {first} {last}")
+```
+
+::: callout-tip
+See the R package [`glue`](https://glue.tidyverse.org/)!
+:::
+
+:::
+
+
+## Tips for String Success
+
++ Refer to the [`stringr` cheatsheet](https://posit.co/wp-content/uploads/2022/10/strings-1.pdf)
+
++ Remember that `str_xxx` functions need the first argument to be a **vector of strings**, not a **dataset**!
+  + You will use these functions *inside* `dplyr` verbs like `filter()` or `mutate()`.
+
+```{r}
+#| echo: true
+#| code-line-numbers: "2"
+#| eval: false
+cereal |> 
+  mutate(is_bran = str_detect(name, "Bran"), 
+         .after = name)
+```
+
+
+```{r}
+#| eval: true
+#| echo: false
+cereal |> 
+  mutate(is_bran = str_detect(name, "Bran"), 
+         .after = name) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "200px") |> 
+  kableExtra::kable_styling(font_size = 30)
+```
+
+
+## Tips for String Success
+
+The real power of these `str_xxx` functions comes when you specify the `pattern` using **regular expressions**!
+
+```{r}
+#| fig-align: center
+#| out-width: 70%
+knitr::include_graphics("images/regular_expressions.png")
+```
+
+
+# regex
+
+
+
+## Regular Expressions
+
+> "Regexps are a very terse language that allow you to describe patterns in strings."
+>
+> *R for Data Science*
+
+. . .
+
+Use `str_xxx` functions + **regular expressions**!
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "2"
+str_detect(string  = my_string_vector,
+           pattern = "p[ei]ck[a-z]")
+```
+
+. . .
+
+::: callout-tip
+You might encounter `gsub()`, `grep()`, etc. from Base R.
+:::
+
+
+## Regular Expressions
+
+**Regular expressions are tricky!**
+
++ There are lots of new symbols to keep straight.
++ There are a lot of cases to think through.
+
+<br>
+
+This [web app](https://spannbaueradam.shinyapps.io/r_regex_tester/) for testing R regular expressions might be handy!
+
+
+## Special Characters
+
+There is a set of characters that have a specific meaning when using regex.
+
++ The `stringr` package **does not** read these as normal characters.
++ These characters are:
+
+<center>
+
+`.` `^`  `$` `\`  `|` `*` `+` `?` `{` `}` `[` `]` `(` `)`
+
+</center>
+
+
+## Wild Card Character: `.`
+
+`.` -- matches **any** character.
+
+```{r}
+#| echo: true
+x <- c("She", "sells", "seashells", "by", "the", "seashore!")
+str_subset(x, pattern = ".ells")
+```
+
+<br>
+
+This matches strings that contain any character followed by "ells".
+
+
+## Anchor Characters: `^ $`
+
+`^` -- looks at the beginning of a string.
+
+```{r}
+#| echo: true
+x <- c("She", "sells", "seashells", "by", "the", "seashore!")
+str_subset(x, pattern = "^s")
+```
+
+This matches strings that start with "s".
+
+. . .
+
+`$` -- looks at the end of a string.
+
+```{r}
+#| echo: true
+str_subset(x, pattern = "s$")
+```
+
+This matches strings that end with "s".
+
+
+## Quantifier Characters: `? + *`
+
+`?`  -- matches when the preceding character occurs 0 or 1 times in a row.
+
+```{r}
+#| echo: true
+x <- c("shes", "shels", "shells", "shellls", "shelllls")
+str_subset(x, pattern = "shel?s")
+```
+
+. . .
+
+`+` -- ... occurs 1 or more times in a row.
+
+```{r}
+#| echo: true
+str_subset(x, pattern = "shel+s")
+```
+
+. . .
+
+`*` -- ... occurs 0 or more times in a row.
+
+```{r}
+#| echo: true
+str_subset(x, pattern = "shel*s")
+```
+
+
+## Quantifier Characters: `{}`
+
+`{n}` -- matches when the preceding character occurs exactly n times in a row.
+
+```{r}
+#| echo: true
+x <- c("shes", "shels", "shells", "shellls", "shelllls")
+str_subset(x, pattern = "shel{2}s")
+```
+
+. . .
+
+`{n,}` -- ... occures at least n times in a row.
+
+```{r}
+#| echo: true
+str_subset(x, pattern = "shel{2,}s")
+```
+
+. . .
+
+`{n,m}` -- ... occurs between n and m times in a row.
+
+```{r}
+#| echo: true
+str_subset(x, pattern = "shel{1,3}s")
+```
+
+
+## Character Groups: `()`
+
+Groups are created with `( )`.
+
++ We can specify "either" / "or" within a group using `|`.
+
+```{r}
+#| echo: true
+x <- c("Peter", "Piper", "picked", "a", "peck", "of", "pickled", "peppers!")
+str_subset(x, pattern = "p(e|i)ck")
+```
+
+<br>
+
+This matches strings that contain **either** "peck"
+ **or** "pick".
+ 
+
+## Character Classes: `[]`
+
+Character classes let you specify multiple possible characters to match on.
+
+```{r}
+#| echo: true
+x <- c("Peter", "Piper", "picked", "a", "peck", "of", "pickled", "peppers!")
+str_subset(x, pattern = "p[ei]ck")
+```
+
+. . .
+
+`[^ ]`  -- specifies characters **not** to match on (think **except**)
+
+```{r}
+#| echo: true
+str_subset(x, pattern = "p[^i]ck")
+```
+
+. . .
+
+`[Pp]` -- capitalization matters!
+
+```{r}
+#| echo: true
+str_subset(x, pattern = "^p")
+```
+
+```{r}
+#| echo: true
+str_subset(x, pattern = "^[Pp]")
+```
+
+
+## Character Classes: `[]`
+
+`[ - ]`  -- specifies a range of characters.
+
+```{r}
+#| echo: true
+x <- c("Peter", "Piper", "picked", "a", "peck", "of", "pickled", "peppers!")
+str_subset(x, pattern = "p[ei]ck[a-z]")
+```
+
+. . .
+
++ [A-Z] matches any capital letter.
++ [a-z] matches any lowercase letter.
++ [A-z] or [:alpha:] matches any letter
++ [0-9] or [:digit:] matches any number
++ See the stringr cheatsheet for more shortcuts, like [:punct:]
+
+
+## Shortcuts
+
+`\\w` -- matches any **"word"**  (`\\W` matches **not** "word") 
+
++ A "word" contains any letters and numbers.
+
+`\\d` -- matches any **digit** (`\\D` matches **not** digit) 
+
+`\\s` -- matches any **whitespace** (`\\S` matches **not** whitespace) 
+
++ Whitespace includes spaces, tabs, newlines, etc.
+
+. . .
+
+```{r}
+#| echo: true
+x <- "phone number: 1234567899"
+str_extract(x, pattern = "\\d+")
+str_extract_all(x, pattern = "\\S+")
+```
+
+
+## Try it out!
+
+What regular expressions would match words that...
+
++ end with a vowel?
++ start with x, y, or z?
++ *do not* contain x, y, or z?
++ contain [British spelling](https://www.oxfordinternationalenglish.com/differences-in-british-and-american-spelling/)?
+
+```{r}
+#| echo: true
+x <- c("zebra", "xray", "apple", "yellow",
+       "color", "colour", "summarize", "summarise")
+```
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| eval: false
+str_subset(x, "[aeiouy]$")
+str_subset(x, "^[xyz]")
+str_subset(x, "^[^xyz]+$")
+str_subset(x, "(our)|(i[sz]e)")
+```
+
+
+## Escape: `\\`
+
+To match a *special character*, you need to **escape** it.
+
+```{r}
+#| echo: true
+#| error: true
+x <- c("How", "much", "wood", "could", "a", "woodchuck", "chuck",
+       "if", "a", "woodchuck", "could", "chuck","wood?")
+str_subset(x, pattern = "?")
+```
+
+. . .
+
+Use `\\` to escape the `?` -- it is now read as a normal character.
+
+```{r}
+#| echo: true
+str_subset(x, pattern = "\\?")
+```
+
+. . .
+
+::: callout-note
+Alternatively, you could use `[]`:
+
+```{r}
+#| echo: true
+str_subset(x, pattern = "[?]")
+```
+:::
+
+
+## When in Doubt
+<br>
+```{r}
+#| fig-align: center
+#| out-width: 80%
+knitr::include_graphics("images/backslashes.png")
+```
+Use the [web app](https://spannbaueradam.shinyapps.io/r_regex_tester/) to test R regular expressions.
+
+
+## Tips for working with regex
+
++ Read the regular expressions out loud like a request.
+
+. . .
+
++ Test out your expressions on small examples first.
+
+::: {.callout-note collapse="true"}  
+### `str_view()`
+```{r}
+#| echo: true
+str_view(c("shes", "shels", "shells", "shellls", "shelllls"), "l+")
+```
+:::
+
+. . .
+
++ Use the `stringr` [cheatsheet](https://posit.co/wp-content/uploads/2022/10/strings-1.pdf).
+
+. . .
+
++ Be kind to yourself when working with regular expressions!
+
+
+# Strings in the `tidyverse`
+
+
+## `stringr` functions + `dplyr` verbs!
+
+
+```{r}
+#| include: false
+library(readxl)
+military <- read_xlsx(here::here("group-activities", 
+                                 "week-4", 
+                                 "data",
+                                 "gov_spending_per_capita.xlsx"),
+                      sheet = "Share of Govt. spending", 
+                      skip  = 7, 
+                      n_max  = 191)
+```
+
+Country names with a (capital or lowercase) "Z"?
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "2"
+military |> 
+  filter(str_detect(Country, "[Zz]")) |> 
+  distinct(Country)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+military |> 
+  filter(str_detect(Country, "[Zz]")) |> 
+  distinct(Country) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "125px") |> 
+  kableExtra::kable_styling(font_size = 25)
+```
+
+. . .
+
+The proportion of country names with a compass direction?
+
+```{r}
+#| echo: true
+#| code-line-numbers: "3-4"
+military |> 
+  distinct(Country) |> 
+  summarize(prop = mean(str_detect(Country,
+                                   "[Nn]orth|[Ss]outh|[Ee]ast|[Ww]est")))
+```
+
+
+## `matches(pattern)`
+
+Select all variables with a name that matches the supplied pattern.
+
++ Pairs well with `select()`, `rename_with()`, and `across()`.
+
+::: panel-tabset
+
+### Before
+```{r}
+#| echo: true
+military_clean <- military |> 
+  mutate(across(`1988`:`2019`, 
+                ~ na_if(.x, y = ". .")),
+         across(`1988`:`2019`, 
+                ~ na_if(.x, y = "xxx")))
+```
+
+### With regex
+```{r}
+#| echo: true
+military_clean <- military |> 
+  mutate(across(matches("[1-9]{4}"), 
+                ~ na_if(.x, y = ". .")),
+         across(matches("[1-9]{4}"), 
+                ~ na_if(.x, y = "xxx")))
+```
+
+:::
+
+
+## Messy Covid Variants!
+
+![](images/covid-data-snip.JPG)
+
+What is that variable?!
+
+<font size = 4>
+
+`[{'variant': 'Other', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 4.59}, {'variant': 'V-20DEC-01 (Alpha)', 'cumWeeklySequenced': 0.0, 'newWeeklyPercentage': 0.0}, {'variant': 'V-21APR-02 (Delta B.1.617.2)', 'cumWeeklySequenced': 0.0, 'newWeeklyPercentage': 0.0}, {'variant': 'V-21OCT-01 (Delta AY 4.2)', 'cumWeeklySequenced': 0.0, 'newWeeklyPercentage': 0.0}, {'variant': 'V-22DEC-01 (Omicron CH.1.1)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 24.56}, {'variant': 'V-22JUL-01 (Omicron BA.2.75)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 8.93}, {'variant': 'V-22OCT-01 (Omicron BQ.1)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 49.57}, {'variant': 'VOC-21NOV-01 (Omicron BA.1)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 0.02}, {'variant': 'VOC-22APR-03 (Omicron BA.4)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 0.08}, {'variant': 'VOC-22APR-04 (Omicron BA.5)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 5.59}, {'variant': 'VOC-22JAN-01 (Omicron BA.2)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 1.41}, {'variant': 'unclassified_variant', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 5.26}]`
+
+</font>
+
+
+## [PA 5.1: Scrambled Message](https://zoerehnberg.github.io/STAT331-S23/practice_activities/PA5_1.html)
+
+In this activity, you will use regex to decode a message.
+
++ Remember: `stringr` functions go *inside* `dplyr` verbs like `mutate()` and `filter()` -- use them like `as.factor`.
+
+. . .
+
++ Reminder about [indexing vectors](https://earobinson95.github.io/stat331-calpoly-text/00-prereading.html#indexing-by-location):
+
+```{r}
+#| echo: true
+x <- c("She", "sells", "seashells", "by", "the", "seashore!")
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+
+  + Grab elements out of a vector with `[]`.
+
+```{r}
+#| echo: true
+x[c(1,4,5)]
+```
+
+:::
+::: {.column width="50%"}
+
+  + To replace those elements, use `<-` to assign new values.
+
+```{r}
+#| echo: true
+x[c(1,4,5)] <- ""
+```
+
+:::
+::::
+
+
+## To do...
+
++ **PA 5.1: Scrambled Message**
+  + Due Saturday, 5/4 at 11:59pm
+
+  
+  
+## Wednesday, May 1
+
+Today we will...
+
++ Midterm Exam 5/8: What to Expect
++ New Material
+  + Working with Date & Time Variables
++ [PA 5.2: Jewel Heist](https://zoerehnberg.github.io/STAT331-S23/practice_activities/PA5_2.html)
++ [LA 5: Murder in SQL City](https://zoerehnberg.github.io/STAT331-S23/lab_assignments/lab5/LA5_murder.html)
+
+
+## [Midterm Exam](https://canvas.calpoly.edu/courses/130201/pages/midterm-exam-what-to-expect) -- Wednesday, 5/8
+
++ This is a three-part exam:
+  1. You will first complete a **General Questions** section on paper and **without your computer**.
+  2. After you turn that in, you will complete a **Short Answer** section **with your computer**.
+    + *You will have the one hour and 50 minute class period to complete the first two sections.*
+  3. The third section, **Open-Ended Analysis**, will be started in class and due **24 hours** after the end of class.
+
+
+## [Midterm Exam](https://canvas.calpoly.edu/courses/130201/pages/midterm-exam-what-to-expect) -- Wednesday, 5/8
+
++ The exam is worth approximately 90 points.
+  + Approx. 20 pts, 30 pts, and 40 pts for the three sections.
++ I will provide a `.qmd` template for the Short Answer.
++ You will create your own `.qmd` for the Open-Ended Analysis. **You are encouraged to create this ahead of time.**
+
+::: callout-caution
+
+While the coding tasks are open-resource, you will likely run out of time if you have to look everything up. Know what functions you might need and where to find documentation for implementing these functions!
+
+:::
+
+
+
+# Date + Time Variables
+
+
+## Why are dates and times tricky?
+
+When parsing dates and times, we have to consider complicating factors like...
+
++ Daylight Savings Time.
+  + One day a year is 23 hours; one day a year is 25 hours.
+  + Some places use it, some don't.
++ Leap years -- most years have 365 days, some have 366.
++ Time zones.
+
+
+## `lubridate`
+
+:::: {.columns}
+::: {.column width="80%"}
+**Common Tasks**
+
++ Convert a date-like variable ("May 8, 1995") to a date or date-time object.
+
++ Find the weekday, month, year, etc from a date-time object.
+
++ Convert between time zones.
+
+:::
+::: {.column width="20%"}
+
+```{r}
+#| fig-align: center
+knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/main/thumbs/lubridate.png?raw=true")
+```
+
+:::
+::::
+
+::: callout-note
+The `lubridate` package  **installs** with `tidyverse`, but does not **load**.
+  
+```{r}
+#| echo: true
+library(lubridate)
+```
+:::
+
+
+## `date-time` Objects
+
+There are multiple **data types** for dates and times.
+
+
++ A date:
+  + `date` or `Date`
++ A date and a time (identifies a unique instant in time):
+  + `dtm`
+  + `POSIXlt` -- stores date-times as the number of seconds since January 1, 1970 ("Unix Epoch")
+  + `POSIXct` -- stores date-times as a list with elements for second, minute, hour, day, month, year, etc.
+
+
+## Creating `date-time` Objects
+
+Create a date from individual components:
+
+```{r}
+#| echo: true
+make_date(year = 1995, month = 05, day = 08)
+```
+
+. . .
+
+Create a date from a string:
+
+```{r}
+#| echo: true
+mdy("May 8, 1995")
+```
+
+```{r}
+#| echo: true
+dmy("8-May-1995", tz = "America/Chicago")
+```
+
+```{r}
+#| echo: true
+dmy_hms("8-May-1995 9:32:12", tz = "America/Chicago")
+```
+
+```{r}
+#| echo: true
+as_datetime("95-05-08", format = "%y-%m-%d")
+```
+
+```{r}
+#| echo: true
+parse_datetime("5/8/1995", format = "%m/%d/%Y")
+```
+
+
+## Creating `date-time` Objects
+
+![](images/date_symbols.png){width=80%}
+
+
+## Common Mistake with Dates
+
+*What's wrong here?*
+
+```{r}
+#| echo: true
+as_datetime(2023-02-6)
+```
+
+<br>
+
+```{r}
+#| echo: true
+my_date <- 2023-02-6
+my_date
+```
+
+<br>
+
+. . .
+
+Make sure you use quotes!
+
++ 2,015 seconds $\approx$ 33.5 minutes
+
+
+## Extracting `date-time` Components
+
+```{r}
+#| echo: true
+bday <- ymd_hms("1993-11-20 9:32:12", tz = "America/New_York")
+bday
+```
+
+<br>
+
+:::: columns
+::: column
+```{r}
+#| echo: true
+year(bday)
+month(bday)
+day(bday)
+```
+:::
+::: column
+```{r}
+#| echo: true
+wday(bday)
+wday(bday, label = TRUE, abbr = FALSE)
+```
+:::
+::::
+
+
+## Subtraction with  `date-time` Objects
+
+Doing subtraction gives you a `difftime` object.
+
++ `difftime` objects do not always have the same units -- it depends on the scale of the objects you are working with.
+
+How old am I?
+
+```{r}
+#| echo: true
+today() - mdy(11201993)
+```
+
+How long did it take me to finish a typing challenge?
+
+```{r}
+#| echo: true
+begin <- mdy_hms("3/1/2023 13:04:34")
+finish <- mdy_hms("3/1/2023 13:06:11")
+finish - begin
+```
+
+
+## Durations and Periods
+
+**Durations** will always give the time span in an **exact number of seconds**.
+
+```{r}
+#| echo: true
+as.duration(today() - mdy(11201993))
+```
+
+```{r}
+#| echo: true
+as.duration(finish - begin)
+```
+
+. . .
+
+**Periods** will give the time span in more approximate, but **human readable times**.
+
+```{r}
+#| echo: true
+as.period(today() - mdy(11201993))
+```
+
+```{r}
+#| echo: true
+as.period(finish - begin)
+```
+
+
+## Durations and Periods
+
+We can also **add** time:
+
++ `days()`, `years()`, etc. will add a **period** of time.
++ `ddays()`, `dyears()`, etc. will add a **duration** of time.
+
+. . .
+
+Because durations use the **exact** number of seconds to represent days and years, you might get unexpected results:
+
+When is is my 99th birthday?
+
+```{r}
+#| echo: true
+mdy(11201993) + years(99)
+```
+
+```{r}
+#| echo: true
+mdy(11201993) + dyears(99)
+```
+
+
+## Time Zones
+
+**Time zones are complicated!**
+
+Specify time zones in the form:
+
++ {continent}/{city} -- “America/New_York”, “Africa/Nairobi”
++ {ocean}/{city} -- “Pacific/Auckland”
+
+. . .
+
+What time zone does R think I'm in?
+
+```{r}
+#| echo: true
+Sys.timezone()
+```
+
+
+## Time Zones
+
+You can change the time zone of a date in two ways:
+
+```{r}
+#| echo: true
+x <- ymd_hms("2024-06-01 18:00:00", tz = "Europe/Copenhagen")
+```
+
+:::panel-tabset
+
+### `with_tz()`
+
+Keeps the instant in time the same, but changes the visual representation.
+
+```{r}
+#| echo: true
+x |> 
+  with_tz()
+x |> 
+  with_tz(tzone = "Asia/Kolkata")
+```
+
+### `force_tz()`
+
+Changes the instant in time by forcing a time zone change.
+
+```{r}
+#| echo: true
+x |> 
+  force_tz()
+x |> 
+  force_tz(tzone = "Asia/Kolkata")
+```
+
+:::
+
+
+## Common Mistake with Dates
+
+When you read data in or create a new date-time object, the default time zone (if not specified) is UTC.
+
++ UTC (Universal Time Coordinated) is the same as GMT (Greenwich Mean Time).
+
+Make sure you specify your desired time zone!
+
+```{r}
+#| echo: true
+x <- mdy("11/20/1993")
+tz(x)
+```
+
+```{r}
+#| echo: true
+x <- mdy("11/20/1993", tz = "America/New_York")
+tz(x)
+```
+
+
+## [PA 5.2: Jewel Heist](https://zoerehnberg.github.io/STAT331-S23/practice_activities/PA5_2.html)
+
+Just down the road in Montecito, CA several rare jewels went missing last fall. The jewels were stolen and replaced with fakes, but detectives have not been able to solve the case. They are now calling in a data scientist to help parse their clues.
+
+Unfortunately, the date and time of the jewel heist is not known. You have been hired to crack the case. Use the clues below to discover the thief's identity.
+
+> Submit the name of the thief to the Canvas Quiz.
+
+
+
+
+
+## [Lab 5: Murder in SQL City](https://zoerehnberg.github.io/STAT331-S23/lab_assignments/lab5/LA5_murder.html)
+
+
+
+## To do...
+
++ **PA 5.2: Jewel Heist** -- due Saturday, 5/4 at 11:59pm.
+
++ **Lab 5: Murder in SQL City** -- due Saturday, 5/4 at 11:59pm.
+
++ **Read Chapter 6: Version Control**
+  + **Check-ins 6.1 + 6.2** due Monday 5/6, at 10:00am
+
+  
