@@ -36,7 +36,7 @@ able to:
 
 ------------------------------------------------------------------------
 
-# Part 1: Strings
+# Part 1: Strings {#sec-strings}
 
 Nearly always, when multiple variables are stored in a single column, they are
 stored as character variables. There are many different “levels” of working with
@@ -342,7 +342,7 @@ tibble(
 -   specifies a string to be used when combining inputs into a single string
 -   specifies whether the string should be collapsed
 
-# Part 2: Dates
+# Part 2: Dates {#sec-dates}
 
 In order to fill in an important part of our toolbox, we need to learn how to
 work with date variables. These variables feel like they should be simple and
