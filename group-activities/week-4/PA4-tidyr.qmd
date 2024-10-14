@@ -133,7 +133,7 @@ A clever way to filter out observations you **don't want** is with an
 
 **4. Use the `anti_join()` function to filter out the `Country` values we don't want in the `military_clean` data. The `by` argument needs to be filled with the name(s) of the variables that the two datasets should be joined with.**  
 Hint: To join by different variables in `data1` and `data2` you need to use 
-`by = c("a" = "b")`, which will match `data1$a` to `data2$b`.
+`by = join_by(a == b)`, which will match `data1$a` to `data2$b`.
 
 ```{r}
 #| label: filtering-out-country-values
