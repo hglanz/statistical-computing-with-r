@@ -278,7 +278,7 @@ For evidence of your continued learning, you will (1) choose Challenge assignmen
 
 For evidence of your contribution to the classroom community you may include descriptions of how you grew as a team member, screenshots of the peer reviews you completed, and screenshots of how supported your peers through posing / answering questions on Discord, etc.
 
-# Are there "guidelines" for how I should award myself a grade?
+# Are there "guidelines" for how I should award myself a grade? {#sec-grades}
 
 At the end of the term, **you're going to tell me how you did and thus what grade you earned in the course**. This will be done in your Week 10 reflection, to be submitted alongside your Final Portfolio. As I previously stated, you should think of your portfolio as the "evidence" for the grade you propose in your reflection. I will probably agree with you, because you know yourself, your work, and your understanding pretty well. If I don't, we'll talk about it.
 
