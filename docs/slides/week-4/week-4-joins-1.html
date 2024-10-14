@@ -400,8 +400,9 @@
 </section>
 <section id="tuesday-october-15" class="slide level2">
 <h2>Tuesday, October 15</h2>
-<p>Today we will…</p>
+<p>Today we will discuss…</p>
 <ul>
+<li>Discord &amp; Tokens</li>
 <li>Grade Expectations
 <ul>
 <li>Survey on Canvas</li>
@@ -414,6 +415,38 @@
 <li><a href="../../group-activities/week-4/PA4-tidyr.html">PA 4: Military Spending</a></li>
 </ul>
 </section>
+<section id="discord-deadline-extension-tokens" class="title-slide slide level1 center">
+<h1>Discord &amp; Deadline Extension Tokens</h1>
+
+</section>
+
+<section id="discord-deadline-extension-tokens-1" class="title-slide slide level1 center">
+<h1>Discord &amp; Deadline Extension Tokens</h1>
+<blockquote>
+<p>If you answer / respond to another student’s question on Discord, you will earn one additional “token” (3-day deadline extension request).</p>
+</blockquote>
+</section>
+
+<section id="grade-expectations" class="title-slide slide level1 center">
+<h1>Grade Expectations</h1>
+
+</section>
+
+<section id="grade-expectations-1" class="title-slide slide level1 center">
+<h1>Grade Expectations</h1>
+<blockquote>
+<p>The <a href="../../course-materials/course-syllabus.html#sec-grades">course syllabus</a> has been updated to reflect the grade criteria you all proposed.</p>
+</blockquote>
+</section>
+
+<section id="grade-expectations-2" class="title-slide slide level1 center">
+<h1>Grade Expectations</h1>
+<blockquote>
+<p>The <a href="../../course-materials/course-syllabus.html#sec-grades">course syllabus</a> has been updated to reflect the grade criteria you all proposed.</p>
+</blockquote>
+<p>You have until Sunday <a href="https://canvas.calpoly.edu/courses/138158/quizzes/247752">to vote</a> on whether you agree with the proposed criteria, and to suggest ways these criteria could be revised.</p>
+</section>
+
 <section>
 <section id="data-layouts" class="title-slide slide level1 center">
 <h1>Data Layouts</h1>
@@ -1870,7 +1903,7 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">inner_join</span>(directors_genres, </span>
 <span id="cb15-2"><a></a>           directors, </span>
-<span id="cb15-3"><a></a>           <span class="fu">join_by</span>(director_id <span class="sc">==</span> id))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-3"><a></a>           <span class="at">by =</span> <span class="fu">join_by</span>(director_id <span class="sc">==</span> id))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -2313,50 +2346,55 @@
 <h2><a href="../../group-activities/week-4/PA-4-tidyr.qmd">PA 4: Military Spending</a></h2>
 <p>Today you will be tidying messy data to explore the relationship between countries of the world and military spending.</p>
 </section>
-<section id="finding-ephelias-college" class="slide level2">
-<h2>Finding Ephelia’s College</h2>
-<p>This activity will require knowledge of:</p>
-<!-- - debugging code errors -->
-<!-- - function syntax -->
-<!-- - logical comparisons -->
-<!-- - dplyr verbs and when to use them -->
-<!-- - chaining steps together with the pipe operator -->
+<section id="this-activity-will-require-knowledge-of" class="slide level2">
+<h2>This activity will require knowledge of:</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="small">
+<ul>
+<li>function documentation</li>
+<li>function arguments</li>
+<li>locating missing values</li>
+<li>character vectors</li>
+<li>keys joining two datasets</li>
+<li>searching / iterating over multiple columns</li>
+<li>pivoting data from wide to long</li>
+<li>creating side-by-side boxplots</li>
+<li>locating the median on a boxplot</li>
+<li>estimating the variability from a boxplot</li>
+</ul>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:35%;">
 <p><span class="midi"><strong>None of us have all these abilities. Each of us has some of these abilities.</strong></span></p>
+</div></div>
 </section>
 <section id="dplyr-resources" class="slide level2">
 <h2>dplyr Resources</h2>
-<p>Every group should have <strong>tidyr</strong> and <strong>dplyr</strong> cheatsheets!</p>
 <div class="columns">
-<div class="column" style="width:37%;">
-<div class="fragment">
-<p><strong>On the Front</strong></p>
-<div>
-<div class="small">
+<div class="column" style="width:60%;">
+<p>Every group should have a <strong>dplyr</strong> cheatsheet!</p>
+<p><strong>On the Back</strong>: The Combine Tables section gives advice on joining two datasets</p>
 <ul>
-<li class="fragment">Column 1: grouped summaries (<code>group_by()</code> + <code>summarize()</code>)</li>
-<li class="fragment">Column 2: <code>filter()</code>ing values with logical comparisons</li>
-<li class="fragment">Column 3: <code>select()</code>ing and <code>mutate()</code>ing variables</li>
+<li>The “Filtering Join” section will be helpful when performing an <code>anti_join()</code>!</li>
 </ul>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:3%;">
+</div><div class="column" style="width:5%;">
 
-</div><div class="column" style="width:37%;">
-<div class="fragment">
-<p><strong>On the Back</strong></p>
-<div>
-<div class="small">
-<ul>
-<li class="fragment">Column 2: summary functions you might like to use with <code>summarize()</code></li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:3%;">
+</div><div class="column" style="width:35%;">
+<p><img data-src="images/dplyr-cheatsheet-back.png" alt="A picture of the dplyr cheatsheet, which contains helpful information on working with data in a variety of ways."></p>
+</div></div>
+</section>
+<section id="tidyr-resources" class="slide level2">
+<h2>tidyr Resources</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Every group should have a <strong>tidyr</strong> cheatsheet!</p>
+<p><strong>On the Front</strong>: The Reshape Data section gives advice on pivoting a dataset from wide to long</p>
+</div><div class="column" style="width:5%;">
 
-</div><div class="column" style="width:15%;">
-<p><img data-src="images/dplyr-cheatsheet.png" alt="A picture of the dplyr cheatsheet, which contains helpful information on working with data in a variety of ways."></p>
+</div><div class="column" style="width:35%;">
+<p><img data-src="images/tidyr-cheatsheet.png" alt="A picture of the tidyr cheatsheet, which contains helpful information on transforming data in a variety of ways."></p>
 </div></div>
 </section>
 <section id="task-card" class="slide level2">
@@ -2364,7 +2402,7 @@
 <p>Every group should have a <strong>task card</strong>!</p>
 <div class="fragment">
 <div class="columns">
-<div class="column" style="width:45%;">
+<div class="column" style="width:40%;">
 <p><strong>On the Front</strong></p>
 <ul>
 <li>the expectations of each role</li>
@@ -2372,12 +2410,13 @@
 </ul>
 </div><div class="column" style="width:5%;">
 
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="width:55%;">
 <div class="fragment">
 <p><strong>On the Back</strong></p>
 <ul>
-<li>advice for dealing with code errors</li>
-<li>guidelines for formatting <code>dplyr</code> code</li>
+<li>code and pictures for performing an <code>anti_join()</code></li>
+<li>code and pictures for pivoting a dataset from wide to long</li>
+<li>guidelines for formatting <code>dplyr</code> and <code>tidyr</code> code</li>
 </ul>
 </div>
 </div></div>
@@ -2385,10 +2424,6 @@
 </section>
 <section id="pair-programming-expectations" class="slide level2">
 <h2>Pair Programming Expectations</h2>
-<div class="small">
-<p>During your collaboration, you and your partner will alternate between two roles:</p>
-</div>
-<div class="fragment">
 <div class="columns">
 <div class="column" style="width:49%;">
 <p><strong>Developer</strong></p>
@@ -2420,7 +2455,6 @@
 </div>
 </div>
 </div></div>
-</div>
 </section>
 <section id="getting-started" class="slide level2">
 <h2>Getting Started</h2>
@@ -2438,7 +2472,7 @@
 </div>
 <div class="fragment">
 <div class="small">
-<p>Then, the partner who woke up the earliest starts as the Developer (typing and listening to instructions from the Coder)!</p>
+<p>Then, the partner who woke up the earliest today starts as the Developer (typing and listening to instructions from the Coder)!</p>
 <ul>
 <li>The Coder <strong>does not type</strong>.
 <ul>
@@ -2465,9 +2499,8 @@
 </section>
 <section id="submission" class="slide level2">
 <h2>Submission</h2>
-<!-- Insructions on what questions they are going to answer -->
 <ul>
-<li>Each person will input your responses to the PA4 Canvas quiz.</li>
+<li>Each person will input your responses to Canvas Questions 1, 2, and 3 into the PA4 Canvas quiz.</li>
 <li>The person who last occupied the role of Developer will download and submit the <code>PA-4.html</code> file for the group.
 <ul>
 <li>Only one submission per group!</li>

@@ -19,14 +19,38 @@ library(readxl)
 
 ## Tuesday, October 15
 
-Today we will...
+Today we will discuss...
 
+-   Discord & Tokens
 -   Grade Expectations 
     + Survey on Canvas
 -   New Material
     -   Pivoting data with `tidyr`
     -   Joining data with `dplyr`
 -   [PA 4: Military Spending](../../group-activities/week-4/PA4-tidyr.qmd)
+
+# Discord & Deadline Extension Tokens
+
+# Discord & Deadline Extension Tokens
+
+> If you answer / respond to another student's question on Discord, you will 
+> earn one additional "token" (3-day deadline extension request). 
+
+# Grade Expectations
+
+# Grade Expectations
+
+> The [course syllabus](../../course-materials/course-syllabus.qmd#sec-grades)
+> has been updated to reflect the grade criteria you all proposed. 
+
+# Grade Expectations
+
+> The [course syllabus](../../course-materials/course-syllabus.qmd#sec-grades)
+> has been updated to reflect the grade criteria you all proposed. 
+
+You have until Sunday [to vote](https://canvas.calpoly.edu/courses/138158/quizzes/247752) 
+on whether you agree with the proposed criteria, and to suggest ways these
+criteria could be revised.
 
 # Data Layouts
 
@@ -511,7 +535,7 @@ rm(con, my_dm)
 #| include: false
 #| message: false
 #| warning: false
-#| label: import-data-retreived-from-imdb
+#| label: import-data-retrieved-from-imdb
 
 actors <- read_csv("data/actors.csv")
 directors <- read_csv("data/directors.csv")
@@ -714,7 +738,7 @@ directors_subset |>
 #| code-line-numbers: "3"
 inner_join(directors_genres, 
            directors, 
-           join_by(director_id == id))
+           by = join_by(director_id == id))
 ```
 
 ```{r}
@@ -722,7 +746,7 @@ inner_join(directors_genres,
 #| echo: false
 inner_join(directors_subset,
            directors_genres_subset,
-           join_by(id == director_id)) |> 
+           by = join_by(id == director_id)) |> 
   knitr::kable() |> 
   kableExtra::scroll_box(height = "170px") |> 
   kableExtra::kable_styling(font_size = 30)
@@ -984,57 +1008,67 @@ directors_genres_subset |>
 
 Today you will be tidying messy data to explore the relationship between countries of the world and military spending.
 
-## Finding Ephelia's College
+## This activity will require knowledge of:
 
-This activity will require knowledge of:
+::: columns
+::: {.column width="60%"}
+::: {.small}
+- function documentation
+- function arguments
+- locating missing values
+- character vectors
+- keys joining two datasets
+- searching / iterating over multiple columns
+- pivoting data from wide to long
+- creating side-by-side boxplots
+- locating the median on a boxplot
+- estimating the variability from a boxplot
+:::
+:::
 
-<!-- - debugging code errors -->
-<!-- - function syntax -->
-<!-- - logical comparisons -->
-<!-- - dplyr verbs and when to use them -->
-<!-- - chaining steps together with the pipe operator -->
+::: {.column width="5%"}
+:::
 
+::: {.column width="35%"}
 [**None of us have all these abilities. Each of us has some of these abilities.**]{.midi}
+
+:::
+:::
 
 ## dplyr Resources
 
-Every group should have **tidyr** and **dplyr** cheatsheets! 
+::: columns
+::: {.column width="60%"}
+Every group should have a **dplyr** cheatsheet!
+
+**On the Back**: The Combine Tables section gives advice on joining two datasets
+
+- The "Filtering Join" section will be helpful when performing an `anti_join()`!
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="35%"}
+![](images/dplyr-cheatsheet-back.png){fig-alt="A picture of the dplyr cheatsheet, which contains helpful information on working with data in a variety of ways."}
+:::
+:::
+
+## tidyr Resources
 
 ::: columns
-::: {.column width="37%"}
-::: {.fragment}
-**On the Front**
+::: {.column width="60%"}
+Every group should have a **tidyr** cheatsheet!
 
-::: {.incremental}
-::: {.small}
-- Column 1: grouped summaries (`group_by()` + `summarize()`)
-- Column 2: `filter()`ing values with logical comparisons
-- Column 3: `select()`ing and `mutate()`ing variables
-:::
-:::
-:::
+**On the Front**: The Reshape Data section gives advice on pivoting a dataset
+from wide to long
 :::
 
-::: {.column width="3%"}
+::: {.column width="5%"}
 :::
 
-::: {.column width="37%"}
-::: {.fragment}
-**On the Back**
-
-::: {.incremental}
-::: {.small}
-- Column 2: summary functions you might like to use with `summarize()`
-:::
-:::
-:::
-:::
-
-::: {.column width="3%"}
-:::
-
-::: {.column width="15%"}
-![](images/dplyr-cheatsheet.png){fig-alt="A picture of the dplyr cheatsheet, which contains helpful information on working with data in a variety of ways."}
+::: {.column width="35%"}
+![](images/tidyr-cheatsheet.png){fig-alt="A picture of the tidyr cheatsheet, which contains helpful information on transforming data in a variety of ways."}
 
 :::
 :::
@@ -1046,7 +1080,7 @@ Every group should have a **task card**!
 . . .
 
 ::: columns
-::: {.column width="45%"}
+::: {.column width="40%"}
 **On the Front**
 
 - the expectations of each role
@@ -1056,23 +1090,18 @@ Every group should have a **task card**!
 ::: {.column width="5%"}
 :::
 
-::: {.column width="45%"}
+::: {.column width="55%"}
 ::: {.fragment}
 **On the Back**
 
-- advice for dealing with code errors 
-- guidelines for formatting `dplyr` code
+- code and pictures for performing an `anti_join()`
+- code and pictures for pivoting a dataset from wide to long
+- guidelines for formatting `dplyr` and `tidyr` code
 :::
 :::
 :::
 
 ## Pair Programming Expectations
-
-::: {.small}
-During your collaboration, you and your partner will alternate between two roles: 
-:::
-
-. . .
 
 ::: columns
 ::: {.column width="49%"}
@@ -1122,8 +1151,8 @@ First, both of you will do the following:
 . . .
 
 ::: {.small}
-Then, the partner who woke up the earliest starts as the Developer (typing and
-listening to instructions from the Coder)!
+Then, the partner who woke up the earliest today starts as the Developer (typing
+and listening to instructions from the Coder)!
 
 - The Coder **does not type**. 
   * The collaborative editing feature should allow you to track what is being 
@@ -1149,9 +1178,8 @@ You **are** permitted to use:
 
 ## Submission
 
-<!-- Insructions on what questions they are going to answer -->
-
-- Each person will input your responses to the PA4 Canvas quiz.
+- Each person will input your responses to Canvas Questions 1, 2, and 3 into 
+the PA4 Canvas quiz.
 - The person who last occupied the role of Developer will download and submit
 the `PA-4.html` file for the group.
   + Only one submission per group!
