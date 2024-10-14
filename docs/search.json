@@ -4339,7 +4339,7 @@
     "href": "slides/week-4/week-4-joins-1.html#inner_join-imdb-example-1",
     "title": "Data Joins + Pivots",
     "section": "inner_join(): IMDb Example",
-    "text": "inner_join(): IMDb Example\nWhat if our key does not have the same name?\n\n\n\ndirectors_genres\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n429\nAdventure\n0.750000\n\n\n429\nFantasy\n0.750000\n\n\n2931\nDrama\n0.714286\n\n\n2931\nAction\n0.428571\n\n\n11652\nSci-Fi\n0.500000\n\n\n11652\nAction\n0.500000\n\n\n14927\nAnimation\n1.000000\n\n\n14927\nFamily\n1.000000\n\n\n15092\nComedy\n0.545455\n\n\n15092\nCrime\n0.545455\n\n\n\n\n\n\n\n\n\ndirectors\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\n\n\n\n\n429\nAndrew\nAdamson\n\n\n9247\nZach\nBraff\n\n\n11652\nJames (I)\nCameron\n\n\n14927\nRon\nClements\n\n\n15092\nEthan\nCoen\n\n\n\n\n\n\n\n\n\n\ninner_join(directors_genres, \n           directors, \n           join_by(director_id == id))\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\ngenre\nprob\n\n\n\n\n429\nAndrew\nAdamson\nAdventure\n0.750000\n\n\n429\nAndrew\nAdamson\nFantasy\n0.750000\n\n\n11652\nJames (I)\nCameron\nSci-Fi\n0.500000\n\n\n11652\nJames (I)\nCameron\nAction\n0.500000\n\n\n14927\nRon\nClements\nAnimation\n1.000000\n\n\n14927\nRon\nClements\nFamily\n1.000000\n\n\n15092\nEthan\nCoen\nComedy\n0.545455\n\n\n15092\nEthan\nCoen\nCrime\n0.545455"
+    "text": "inner_join(): IMDb Example\nWhat if our key does not have the same name?\n\n\n\ndirectors_genres\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n429\nAdventure\n0.750000\n\n\n429\nFantasy\n0.750000\n\n\n2931\nDrama\n0.714286\n\n\n2931\nAction\n0.428571\n\n\n11652\nSci-Fi\n0.500000\n\n\n11652\nAction\n0.500000\n\n\n14927\nAnimation\n1.000000\n\n\n14927\nFamily\n1.000000\n\n\n15092\nComedy\n0.545455\n\n\n15092\nCrime\n0.545455\n\n\n\n\n\n\n\n\n\ndirectors\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\n\n\n\n\n429\nAndrew\nAdamson\n\n\n9247\nZach\nBraff\n\n\n11652\nJames (I)\nCameron\n\n\n14927\nRon\nClements\n\n\n15092\nEthan\nCoen\n\n\n\n\n\n\n\n\n\n\ninner_join(directors_genres, \n           directors, \n           by = join_by(director_id == id))\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\ngenre\nprob\n\n\n\n\n429\nAndrew\nAdamson\nAdventure\n0.750000\n\n\n429\nAndrew\nAdamson\nFantasy\n0.750000\n\n\n11652\nJames (I)\nCameron\nSci-Fi\n0.500000\n\n\n11652\nJames (I)\nCameron\nAction\n0.500000\n\n\n14927\nRon\nClements\nAnimation\n1.000000\n\n\n14927\nRon\nClements\nFamily\n1.000000\n\n\n15092\nEthan\nCoen\nComedy\n0.545455\n\n\n15092\nEthan\nCoen\nCrime\n0.545455"
   },
   {
     "objectID": "slides/week-4/week-4-joins-1.html#piping-joins",
@@ -4409,7 +4409,7 @@
     "href": "slides/week-4/week-4-joins-1.html#dplyr-resources",
     "title": "Data Joins + Pivots",
     "section": "dplyr Resources",
-    "text": "dplyr Resources\nEvery group should have tidyr and dplyr cheatsheets!\n\n\n\nOn the Front\n\n\n\nColumn 1: grouped summaries (group_by() + summarize())\nColumn 2: filter()ing values with logical comparisons\nColumn 3: select()ing and mutate()ing variables\n\n\n\n\n\n\n\n\nOn the Back\n\n\n\nColumn 2: summary functions you might like to use with summarize()"
+    "text": "dplyr Resources\n\n\nEvery group should have a dplyr cheatsheet!\nOn the Back: The Combine Tables section gives advice on joining two datasets\n\nThe “Filtering Join” section will be helpful when performing an anti_join()!"
   },
   {
     "objectID": "slides/week-4/week-4-joins-1.html#task-card",
@@ -4690,5 +4690,26 @@
     "title": "Extending Joins, Factors, Clean Variable Names",
     "section": "To do…",
     "text": "To do…\n\nLab 4: Childcare Costs in California\n\nDue Saturday (4/27) at 11:59pm\n\nRead Chapter 5: Strings + Dates\n\nCheck-in 5.1 - 5.2 due Monday (4/29) at 10:00am"
+  },
+  {
+    "objectID": "slides/week-4/week-4-joins-1.html#investigating-military-spending",
+    "href": "slides/week-4/week-4-joins-1.html#investigating-military-spending",
+    "title": "Data Joins + Pivots",
+    "section": "Investigating Military Spending",
+    "text": "Investigating Military Spending\nThis activity will require knowledge of:\n\n\n\n\nfunction documentation\nfunction arguments\nlocating missing values\ncharacter vectors\nkeys joining two datasets\nsearching / iterating over multiple columns\npivoting data from wide to long\ncreating side-by-side boxplots\nlocating the median on a boxplot\nestimating the variability from a boxplot\n\n\n\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
+  },
+  {
+    "objectID": "slides/week-4/week-4-joins-1.html#this-activity-will-require-knowledge-of",
+    "href": "slides/week-4/week-4-joins-1.html#this-activity-will-require-knowledge-of",
+    "title": "Data Joins + Pivots",
+    "section": "This activity will require knowledge of:",
+    "text": "This activity will require knowledge of:\n\n\n\n\nfunction documentation\nfunction arguments\nlocating missing values\ncharacter vectors\nkeys joining two datasets\nsearching / iterating over multiple columns\npivoting data from wide to long\ncreating side-by-side boxplots\nlocating the median on a boxplot\nestimating the variability from a boxplot\n\n\n\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
+  },
+  {
+    "objectID": "slides/week-4/week-4-joins-1.html#tidyr-resources",
+    "href": "slides/week-4/week-4-joins-1.html#tidyr-resources",
+    "title": "Data Joins + Pivots",
+    "section": "tidyr Resources",
+    "text": "tidyr Resources\n\n\nEvery group should have a tidyr cheatsheet!\nOn the Front: The Reshape Data section gives advice on pivoting a dataset from wide to long"
   }
 ]
