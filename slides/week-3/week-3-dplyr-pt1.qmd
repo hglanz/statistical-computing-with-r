@@ -1386,7 +1386,7 @@ Every group should have a **dplyr** cheatsheet!
 :::
 
 ::: {.column width="15%"}
-![](images/dplyr-cheatsheet.png){fig-alt="A picture of the dplyr cheatsheet, which contains helpful information on working with data in a variety of ways."}
+![](images/dplyr-cheatsheet-front.png){fig-alt="A picture of the dplyr cheatsheet, which contains helpful information on working with data in a variety of ways."}
 
 :::
 :::
