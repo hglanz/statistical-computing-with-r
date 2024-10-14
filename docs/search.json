@@ -3513,7 +3513,7 @@
     "href": "slides/week-4/week-4_joins-1.html#tuesday-october-15",
     "title": "Data Joins + Pivots + Factors",
     "section": "Tuesday, October 15",
-    "text": "Tuesday, October 15\nToday we will…\n\nComments from Week 3\nNew Material\n\nPivoting data with tidyr\nJoining data with dplyr\n\nPA 4: Military Spending"
+    "text": "Tuesday, October 15\nToday we will…\n\nGrade Expectations\n\nSurvey on Canvas\n\nNew Material\n\nPivoting data with tidyr\nJoining data with dplyr\n\nPA 4: Military Spending"
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#tidy-data",
@@ -3541,14 +3541,14 @@
     "href": "slides/week-4/week-4_joins-1.html#creating-tidy-data-1",
     "title": "Data Joins + Pivots + Factors",
     "section": "Creating Tidy Data",
-    "text": "Creating Tidy Data\nLet’s say we want to look at mean cereal nutrients based on shelf.\n\nCurrently, the data are in a wide format – a separate column for each nutrient. Transforming the data will make plotting easier."
+    "text": "Creating Tidy Data\nLet’s say we want to look at mean cereal nutrients based on shelf.\n\nCurrently, the data are in a wide format – a separate column for each nutrient.\nTransforming the data will make plotting easier."
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#tidying-the-cereals-data",
     "href": "slides/week-4/week-4_joins-1.html#tidying-the-cereals-data",
     "title": "Data Joins + Pivots + Factors",
     "section": "Tidying the Cereals Data",
-    "text": "Tidying the Cereals Data\n\nWideWide PlotLongLong Plot\n\n\n\n\nCode\ncereal_wide &lt;- cereal |&gt; \n  group_by(shelf) |&gt; \n  summarise(across(calories:vitamins, mean))\n\n\n\n\n\n\n\n\nshelf\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\n\n\n\n\n1\n102.5000\n2.650000\n0.60\n176.2500\n1.6850000\n15.80000\n4.800000\n75.50000\n20.00000\n\n\n2\n109.5238\n1.904762\n1.00\n145.7143\n0.9047619\n13.61905\n9.619048\n57.80952\n23.80952\n\n\n3\n107.7778\n2.861111\n1.25\n158.6111\n3.1388889\n14.50000\n6.527778\n129.83333\n35.41667\n\n\n\n\n\n\n\n\n\n\n\nCode\nmy_colors &lt;- c(\"calories_col\" = \"steelblue\", \"sugars_col\" = \"orange3\")\n\ncereal_wide |&gt; \n  ggplot() +\n  geom_point(aes(x = shelf, y = calories, color = \"calories_col\")) +\n  geom_line(aes(x = shelf, y = calories, color = \"calories_col\")) + \n  geom_point(aes(x = shelf, y = sugars, color = \"sugars_col\")) +\n  geom_line(aes(x = shelf, y = sugars, color = \"sugars_col\")) +\n  scale_color_manual(values = my_colors, labels = names(my_colors)) +\n  labs(x = \"Shelf\", y = \"\", subtitle = \"Mean Amount\", color = \"Nutrient\")\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ncereal_long&lt;- cereal |&gt; \n  pivot_longer(cols = calories:vitamins,\n               names_to = \"Nutrient\",\n               values_to = \"Amount\") |&gt; \n  group_by(shelf, Nutrient) |&gt; \n  summarise(mean_amount = mean(Amount))\n\n\n\n\n\n\n\n\nshelf\nNutrient\nmean_amount\n\n\n\n\n1\ncalories\n102.5000000\n\n\n1\ncarbo\n15.8000000\n\n\n1\nfat\n0.6000000\n\n\n1\nfiber\n1.6850000\n\n\n1\npotass\n75.5000000\n\n\n1\nprotein\n2.6500000\n\n\n1\nsodium\n176.2500000\n\n\n1\nsugars\n4.8000000\n\n\n1\nvitamins\n20.0000000\n\n\n2\ncalories\n109.5238095\n\n\n2\ncarbo\n13.6190476\n\n\n2\nfat\n1.0000000\n\n\n2\nfiber\n0.9047619\n\n\n2\npotass\n57.8095238\n\n\n2\nprotein\n1.9047619\n\n\n2\nsodium\n145.7142857\n\n\n2\nsugars\n9.6190476\n\n\n2\nvitamins\n23.8095238\n\n\n3\ncalories\n107.7777778\n\n\n3\ncarbo\n14.5000000\n\n\n3\nfat\n1.2500000\n\n\n3\nfiber\n3.1388889\n\n\n3\npotass\n129.8333333\n\n\n3\nprotein\n2.8611111\n\n\n3\nsodium\n158.6111111\n\n\n3\nsugars\n6.5277778\n\n\n3\nvitamins\n35.4166667\n\n\n\n\n\n\n\n\n\n\n\nCode\ncereal_long |&gt; \n  ggplot(aes(x = shelf, \n             y = mean_amount, \n             color = Nutrient)) +\n  geom_point() +\n  geom_line() +\n  labs(x = \"Shelf\", y = \"\", subtitle = \"Mean Amount\")"
+    "text": "Tidying the Cereals Data\n\nWideWide PlotLongLong Plot\n\n\n\n\n\nCode\ncereal_wide &lt;- cereal |&gt; \n  group_by(shelf) |&gt; \n  summarise(\n    across(.cols = calories:vitamins, \n           .fns = ~ mean(.x)\n           )\n    )\n\n\n\n\n\n\n\n\n\nshelf\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\n\n\n\n\n1\n102.5000\n2.650000\n0.60\n176.2500\n1.6850000\n15.80000\n4.800000\n75.50000\n20.00000\n\n\n2\n109.5238\n1.904762\n1.00\n145.7143\n0.9047619\n13.61905\n9.619048\n57.80952\n23.80952\n\n\n3\n107.7778\n2.861111\n1.25\n158.6111\n3.1388889\n14.50000\n6.527778\n129.83333\n35.41667\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nmy_colors &lt;- c(\"calories_col\" = \"steelblue\", \"sugars_col\" = \"orange3\")\n\ncereal_wide |&gt; \n  ggplot() +\n  geom_point(mapping = aes(x = shelf, y = calories, color = \"calories_col\")) +\n  geom_line(mapping = aes(x = shelf, y = calories, color = \"calories_col\")) + \n  geom_point(mapping = aes(x = shelf, y = sugars, color = \"sugars_col\")) +\n  geom_line(mapping = aes(x = shelf, y = sugars, color = \"sugars_col\")) +\n  scale_color_manual(values = my_colors, labels = names(my_colors)) +\n  labs(x = \"Shelf\", y = \"\", subtitle = \"Mean Amount\", color = \"Nutrient\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ncereal_long &lt;- cereal |&gt; \n  pivot_longer(cols = calories:vitamins,\n               names_to = \"Nutrient\",\n               values_to = \"Amount\") |&gt; \n  group_by(shelf, Nutrient) |&gt; \n  summarise(mean_amount = mean(Amount))\n\n\n\n\n\n\n\n\n\nshelf\nNutrient\nmean_amount\n\n\n\n\n1\ncalories\n102.5000000\n\n\n1\ncarbo\n15.8000000\n\n\n1\nfat\n0.6000000\n\n\n1\nfiber\n1.6850000\n\n\n1\npotass\n75.5000000\n\n\n1\nprotein\n2.6500000\n\n\n1\nsodium\n176.2500000\n\n\n1\nsugars\n4.8000000\n\n\n1\nvitamins\n20.0000000\n\n\n2\ncalories\n109.5238095\n\n\n2\ncarbo\n13.6190476\n\n\n2\nfat\n1.0000000\n\n\n2\nfiber\n0.9047619\n\n\n2\npotass\n57.8095238\n\n\n2\nprotein\n1.9047619\n\n\n2\nsodium\n145.7142857\n\n\n2\nsugars\n9.6190476\n\n\n2\nvitamins\n23.8095238\n\n\n3\ncalories\n107.7777778\n\n\n3\ncarbo\n14.5000000\n\n\n3\nfat\n1.2500000\n\n\n3\nfiber\n3.1388889\n\n\n3\npotass\n129.8333333\n\n\n3\nprotein\n2.8611111\n\n\n3\nsodium\n158.6111111\n\n\n3\nsugars\n6.5277778\n\n\n3\nvitamins\n35.4166667\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ncereal_long |&gt; \n  ggplot(mapping = aes(x = shelf, \n                       y = mean_amount, \n                       color = Nutrient)\n         ) +\n  geom_point() +\n  geom_line() +\n  labs(x = \"Shelf\", \n       y = \"\", \n       subtitle = \"Mean Amount\")"
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#manual-method",
@@ -3646,7 +3646,7 @@
     "href": "slides/week-4/week-4_joins-1.html#data-joins-1",
     "title": "Data Joins + Pivots + Factors",
     "section": "Data Joins",
-    "text": "Data Joins\nWe can combine (join) data tables based on their relations.\n\n\nMutating joins\nAdd variables from a new dataframe to observations in an existing dataframe.\nfull_join(), left_join(), right_join(), inner_join(), outer_join()\n\nFiltering Joins\nFilter observations based on values in new dataframe.\nsemi_join(), anti_join()"
+    "text": "Data Joins\nWe can combine (join) data tables based on their relations.\n\n\nMutating joins\nAdd variables from a new dataframe to observations in an existing dataframe.\nfull_join(), left_join(), right_join(), inner_join(), outer_join()\n\n\n\nFiltering Joins\nFilter observations based on values in new dataframe.\nsemi_join(), anti_join()"
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#keys",
@@ -3660,7 +3660,7 @@
     "href": "slides/week-4/week-4_joins-1.html#inner_join",
     "title": "Data Joins + Pivots + Factors",
     "section": "inner_join()",
-    "text": "inner_join()\nKeeps obsertvations when their keys are present in both datasets."
+    "text": "inner_join()\nKeeps observations when their keys are present in both datasets."
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#inner_join-imdb-example",
@@ -3674,7 +3674,7 @@
     "href": "slides/week-4/week-4_joins-1.html#inner_join-imdb-example-1",
     "title": "Data Joins + Pivots + Factors",
     "section": "inner_join(): IMDb Example",
-    "text": "inner_join(): IMDb Example\nWhat if our key does not have the same name?\n\n\n\ndirectors_genres\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n429\nAdventure\n0.750000\n\n\n429\nFantasy\n0.750000\n\n\n2931\nDrama\n0.714286\n\n\n2931\nAction\n0.428571\n\n\n11652\nSci-Fi\n0.500000\n\n\n11652\nAction\n0.500000\n\n\n14927\nAnimation\n1.000000\n\n\n14927\nFamily\n1.000000\n\n\n15092\nComedy\n0.545455\n\n\n15092\nCrime\n0.545455\n\n\n\n\n\n\n\n\n\ndirectors\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\n\n\n\n\n429\nAndrew\nAdamson\n\n\n9247\nZach\nBraff\n\n\n11652\nJames (I)\nCameron\n\n\n14927\nRon\nClements\n\n\n15092\nEthan\nCoen\n\n\n\n\n\n\n\n\n\n\n\n\ninner_join(directors_genres, \n           directors, \n           join_by(director_id == id))\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\ngenre\nprob\n\n\n\n\n429\nAndrew\nAdamson\nAdventure\n0.750000\n\n\n429\nAndrew\nAdamson\nFantasy\n0.750000\n\n\n11652\nJames (I)\nCameron\nSci-Fi\n0.500000\n\n\n11652\nJames (I)\nCameron\nAction\n0.500000\n\n\n14927\nRon\nClements\nAnimation\n1.000000\n\n\n14927\nRon\nClements\nFamily\n1.000000\n\n\n15092\nEthan\nCoen\nComedy\n0.545455\n\n\n15092\nEthan\nCoen\nCrime\n0.545455\n\n\n\n\n\n\n\n\n Join by different variables on dataX and dataY: join_by(a == b) will match dataX$a to dataY$b."
+    "text": "inner_join(): IMDb Example\nWhat if our key does not have the same name?\n\n\n\ndirectors_genres\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n429\nAdventure\n0.750000\n\n\n429\nFantasy\n0.750000\n\n\n2931\nDrama\n0.714286\n\n\n2931\nAction\n0.428571\n\n\n11652\nSci-Fi\n0.500000\n\n\n11652\nAction\n0.500000\n\n\n14927\nAnimation\n1.000000\n\n\n14927\nFamily\n1.000000\n\n\n15092\nComedy\n0.545455\n\n\n15092\nCrime\n0.545455\n\n\n\n\n\n\n\n\n\ndirectors\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\n\n\n\n\n429\nAndrew\nAdamson\n\n\n9247\nZach\nBraff\n\n\n11652\nJames (I)\nCameron\n\n\n14927\nRon\nClements\n\n\n15092\nEthan\nCoen\n\n\n\n\n\n\n\n\n\n\ninner_join(directors_genres, \n           directors, \n           join_by(director_id == id))\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\ngenre\nprob\n\n\n\n\n429\nAndrew\nAdamson\nAdventure\n0.750000\n\n\n429\nAndrew\nAdamson\nFantasy\n0.750000\n\n\n11652\nJames (I)\nCameron\nSci-Fi\n0.500000\n\n\n11652\nJames (I)\nCameron\nAction\n0.500000\n\n\n14927\nRon\nClements\nAnimation\n1.000000\n\n\n14927\nRon\nClements\nFamily\n1.000000\n\n\n15092\nEthan\nCoen\nComedy\n0.545455\n\n\n15092\nEthan\nCoen\nCrime\n0.545455"
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#piping-joins",
@@ -3688,7 +3688,7 @@
     "href": "slides/week-4/week-4_joins-1.html#more-mutating-joins",
     "title": "Data Joins + Pivots + Factors",
     "section": "More Mutating Joins",
-    "text": "More Mutating Joins\n\nleft_join() – keep only (and all) observations present in the left data set\nright_join() – keep only (and all) observations present in the right data set\nfull_join() – keep only (and all) observations present in both data sets"
+    "text": "More Mutating Joins\n\n\nleft_join() – keep only (and all) observations present in the left data set\nright_join() – keep only (and all) observations present in the right data set\nfull_join() – keep only (and all) observations present in both data sets"
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#more-mutating-joins-1",
@@ -3730,7 +3730,7 @@
     "href": "slides/week-4/week-4_joins-1.html#pa-4-military-spending",
     "title": "Data Joins + Pivots + Factors",
     "section": "PA 4: Military Spending",
-    "text": "PA 4: Military Spending\nToday you will be tidying messy data to explore the relationship between countries of the world and military spending.\n\nDue Wednesday, 4/24 at 10:00am"
+    "text": "PA 4: Military Spending\nToday you will be tidying messy data to explore the relationship between countries of the world and military spending."
   },
   {
     "objectID": "slides/week-4/week-4_joins-1.html#to-do",
@@ -4123,5 +4123,54 @@
     "title": "Data Wrangling with dplyr",
     "section": "Submission",
     "text": "Submission\n\nSubmit the full name of the college Ephelia will attend to the Canvas Quiz.\n\n\nEach person will input the full name of the college in the PA3 Canvas quiz.\nThe person who last occupied the role of Developer will download and submit the PA-3.html file for the group.\n\nOnly one submission per group!"
+  },
+  {
+    "objectID": "slides/week-4/week-4_joins-1.html#finding-ephelias-college",
+    "href": "slides/week-4/week-4_joins-1.html#finding-ephelias-college",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Finding Ephelia’s College",
+    "text": "Finding Ephelia’s College\nThis activity will require knowledge of:\n\n\n\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
+  },
+  {
+    "objectID": "slides/week-4/week-4_joins-1.html#dplyr-resources",
+    "href": "slides/week-4/week-4_joins-1.html#dplyr-resources",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "dplyr Resources",
+    "text": "dplyr Resources\nEvery group should have tidyr and dplyr cheatsheets!\n\n\n\nOn the Front\n\n\n\nColumn 1: grouped summaries (group_by() + summarize())\nColumn 2: filter()ing values with logical comparisons\nColumn 3: select()ing and mutate()ing variables\n\n\n\n\n\n\n\n\nOn the Back\n\n\n\nColumn 2: summary functions you might like to use with summarize()"
+  },
+  {
+    "objectID": "slides/week-4/week-4_joins-1.html#task-card",
+    "href": "slides/week-4/week-4_joins-1.html#task-card",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Task Card",
+    "text": "Task Card\nEvery group should have a task card!\n\n\n\nOn the Front\n\nthe expectations of each role\nthe norms of collaborating\n\n\n\n\n\nOn the Back\n\nadvice for dealing with code errors\nguidelines for formatting dplyr code"
+  },
+  {
+    "objectID": "slides/week-4/week-4_joins-1.html#pair-programming-expectations",
+    "href": "slides/week-4/week-4_joins-1.html#pair-programming-expectations",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Pair Programming Expectations",
+    "text": "Pair Programming Expectations\n\nDuring your collaboration, you and your partner will alternate between two roles:\n\n\n\n\nDeveloper\n\n\nReads prompt and ensures Coder understands what is being asked.\nTypes the code specified by the Coder into the Quarto document.\nRuns the code provided by the Coder.\nWorks with Coder to debug the code.\nEvaluates the output.\n\nWorks with Coder to write code comments.\n\n\n\n\n\n\nCoder\n\n\nReads out instructions or prompts\nDirects the Developer what to type.\nTalks with Developer about their ideas.\nManages resources (e.g., cheatsheets, textbook, slides).\nWorks with Developer to debug the code.\nWorks with Developer to write code comments."
+  },
+  {
+    "objectID": "slides/week-4/week-4_joins-1.html#getting-started",
+    "href": "slides/week-4/week-4_joins-1.html#getting-started",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nFirst, both of you will do the following:\n\nJoin your Practice Activity workspace in Posit Cloud\n\nYou are in a new group, so you should have a new workspace!\n\nLog-in to Posit Cloud\nOpen the PA 4: Military Spending project\nOpen the PA4-dplyr.qmd file\n\n\n\n\nThen, the partner who woke up the earliest starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
+  },
+  {
+    "objectID": "slides/week-4/week-4_joins-1.html#external-resources",
+    "href": "slides/week-4/week-4_joins-1.html#external-resources",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "External Resources",
+    "text": "External Resources\nDuring the Practice Activity, you are not permitted to use Google or ChatGPT for help.\n\n\nYou are permitted to use:\n\nthe dplyr cheatsheet,\nthe tidyr cheatsheet,\nthe course textbook, and\nthe course slides."
+  },
+  {
+    "objectID": "slides/week-4/week-4_joins-1.html#submission",
+    "href": "slides/week-4/week-4_joins-1.html#submission",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Submission",
+    "text": "Submission\n\n\nEach person will input your responses to the PA4 Canvas quiz.\nThe person who last occupied the role of Developer will download and submit the PA-4.html file for the group.\n\nOnly one submission per group!"
   }
 ]

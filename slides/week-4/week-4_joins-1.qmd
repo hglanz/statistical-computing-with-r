@@ -6,19 +6,23 @@ format:
 editor: source
 ---
 
-```{r setup}
+```{r}
 #| include: false
 #| message: false
+#| label: setup
+
 library(tidyverse)
 library(palmerpenguins)
 library(ggridges)
+library(readxl)
 ```
 
 ## Tuesday, October 15
 
 Today we will...
 
--   Comments from Week 3
+-   Grade Expectations 
+    + Survey on Canvas
 -   New Material
     -   Pivoting data with `tidyr`
     -   Joining data with `dplyr`
@@ -34,19 +38,22 @@ Tidy data...
 -   has observations as rows and variables as columns.
 -   **has different formats for different tasks.**
 
-![](https://r4ds.hadley.nz/images/tidy-1.png)
+![](https://r4ds.hadley.nz/images/tidy-1.png){fig-alt="This image shows a visual representation of the three key concepts in tidy data: variables, observations, and values. It is divided into three sections. The first section on the left highlights vertical arrows pointing down each column of a table, labeled 'variables,' showing that each column represents a different variable (country, year, cases, population). The middle section has horizontal arrows pointing across rows of the same table, labeled 'observations,' indicating that each row is an observation or data point. The third section on the right has circles around individual data points within the table, labeled 'values,' indicating the actual values for each variable in the dataset."}
 
 ## Creating Tidy Data
 
 We may need to **transform** our data to turn it into the **version of tidy** that is best for a task at hand.
 
-![Image by Allison Horst](https://www.openscapes.org/img/blog/tidydata/tidydata_4.jpg)
+![Image by Allison Horst](https://www.openscapes.org/img/blog/tidydata/tidydata_4.jpg){fig-alt="An illustration of two round, fluffy characters, one green and one purple, holding a large table between them labeled 'TIDY.' The table is held by clamps on either side labeled 'WRANGLE' in orange and pink. The green character on the left is smiling with one arm raised, while the purple character on the right is cheering with both arms up. The table represents tidy data, and the clamps labeled 'WRANGLE' suggest data manipulation or preparation."}
 
 ## Cereal Data 
 
 ```{r}
 #| echo: true
 #| eval: false
+#| label: cereal-preview-code
+#| code-line-numbers: false
+
 library(liver)
 data(cereal)
 head(cereal)
@@ -55,11 +62,14 @@ head(cereal)
 ```{r}
 #| eval: true
 #| echo: false
+#| label: cereal-preview-table
+
 library(liver)
 data(cereal)
+
 head(cereal) |> 
   knitr::kable() |> 
-  kableExtra::scroll_box(height = "210px") |> 
+  kableExtra::scroll_box(height = "450px") |> 
   kableExtra::kable_styling(font_size = 30)
 ```
 
@@ -70,7 +80,9 @@ Let's say we want to look at `mean` **cereal nutrients** based on `shelf`.
 . . .
 
 Currently, the data are in a **wide** format -- a separate column for each
-nutrient. **Transforming** the data will make plotting easier.
+nutrient. 
+
+**Transforming** the data will make plotting easier.
 
 ## Tidying the Cereals Data
 
@@ -78,26 +90,37 @@ nutrient. **Transforming** the data will make plotting easier.
 
 ## Wide
 
+::: {.small}
 ```{r}
 #| echo: true
-#| code-line-numbers: "2-3"
+#| code-line-numbers: "3-7"
 #| code-fold: true
+#| label: cereal-wide-code
+
 cereal_wide <- cereal |> 
   group_by(shelf) |> 
-  summarise(across(calories:vitamins, mean))
+  summarise(
+    across(.cols = calories:vitamins, 
+           .fns = ~ mean(.x)
+           )
+    )
 ```
+:::
 
 ```{r}
 #| eval: true
 #| echo: false
-cereal_wide|> 
+#| label: cereal-wide-table
+
+cereal_wide |> 
   knitr::kable() |> 
-  kableExtra::scroll_box(height = "210px") |> 
+  kableExtra::scroll_box(height = "400px") |> 
   kableExtra::kable_styling(font_size = 30)
 ```
 
 ## Wide Plot
 
+::: {.small}
 ```{r}
 #| echo: true
 #| code-line-numbers: "5-8"
@@ -105,35 +128,44 @@ cereal_wide|>
 #| fig-width: 6
 #| fig-align: center
 #| code-fold: true
+#| label: cereal-wide-plot
+#| fig-alt: "A line chart displaying the relationship between the mean amount of two nutrients ('calories_col' and 'sugars_col') and their corresponding shelf number (1, 2, 3). The y-axis represents the mean amount, ranging from 0 to 100, and the x-axis represents the shelf numbers (1, 2, 3). The blue line represents 'calories_col,' with a relatively flat trend around 90 across the shelves. The orange line represents 'sugars_col,' which remains close to zero across the same shelves. The legend on the right identifies the nutrient lines."
+
 my_colors <- c("calories_col" = "steelblue", "sugars_col" = "orange3")
 
 cereal_wide |> 
   ggplot() +
-  geom_point(aes(x = shelf, y = calories, color = "calories_col")) +
-  geom_line(aes(x = shelf, y = calories, color = "calories_col")) + 
-  geom_point(aes(x = shelf, y = sugars, color = "sugars_col")) +
-  geom_line(aes(x = shelf, y = sugars, color = "sugars_col")) +
+  geom_point(mapping = aes(x = shelf, y = calories, color = "calories_col")) +
+  geom_line(mapping = aes(x = shelf, y = calories, color = "calories_col")) + 
+  geom_point(mapping = aes(x = shelf, y = sugars, color = "sugars_col")) +
+  geom_line(mapping = aes(x = shelf, y = sugars, color = "sugars_col")) +
   scale_color_manual(values = my_colors, labels = names(my_colors)) +
   labs(x = "Shelf", y = "", subtitle = "Mean Amount", color = "Nutrient")
 ```
+:::
 
 ## Long
 
+::: {.small}
 ```{r}
 #| echo: true
 #| code-line-numbers: "5-6"
 #| code-fold: true
-cereal_long<- cereal |> 
+#| label: cereal-long-code
+cereal_long <- cereal |> 
   pivot_longer(cols = calories:vitamins,
                names_to = "Nutrient",
                values_to = "Amount") |> 
   group_by(shelf, Nutrient) |> 
   summarise(mean_amount = mean(Amount))
 ```
+:::
 
 ```{r}
 #| eval: true
 #| echo: false
+#| label: cereal-long-table
+
 cereal_long |> 
   knitr::kable() |> 
   kableExtra::scroll_box(height = "400px") |> 
@@ -142,21 +174,28 @@ cereal_long |>
 
 ## Long Plot
 
+::: {.small}
 ```{r}
 #| echo: true
-#| code-line-numbers: "2-4"
+#| code-line-numbers: "2-7"
 #| fig-height: 4
 #| fig-width: 6
 #| fig-align: center
 #| code-fold: true
+#| label: cereal-long-plot
+
 cereal_long |> 
-  ggplot(aes(x = shelf, 
-             y = mean_amount, 
-             color = Nutrient)) +
+  ggplot(mapping = aes(x = shelf, 
+                       y = mean_amount, 
+                       color = Nutrient)
+         ) +
   geom_point() +
   geom_line() +
-  labs(x = "Shelf", y = "", subtitle = "Mean Amount")
+  labs(x = "Shelf", 
+       y = "", 
+       subtitle = "Mean Amount")
 ```
+:::
 :::
 
 
@@ -164,11 +203,11 @@ cereal_long |>
 
 ::: columns
 ::: column
-![](https://github.com/gadenbuie/tidyexplain/raw/main/images/static/png/original-dfs-tidy.png)
+![](https://github.com/gadenbuie/tidyexplain/raw/main/images/static/png/original-dfs-tidy.png){fig-alt="Two tables side by side, illustrating the difference between 'wide' and 'long' data formats. The left table labeled 'wide' has columns: 'id,' 'x,' 'y,' and 'z.' The 'id' column contains the values 1 and 2, and the 'x,' 'y,' and 'z' columns contain the values a, b, c, d, e, and f spread across the rows. The right table labeled 'long' has columns: 'id,' 'key,' and 'val.' The 'id' column has repeated values (1 and 2), the 'key' column contains 'x,' 'y,' and 'z,' and the 'val' column contains 'a' through 'f,' corresponding to the wide table but reorganized in a 'long' format."}
 :::
 
 ::: column
-![](https://github.com/gadenbuie/tidyexplain/raw/main/images/tidyr-pivoting.gif)
+![](https://github.com/gadenbuie/tidyexplain/raw/main/images/tidyr-pivoting.gif){fig-alt="A gif showing the visual transformation of the data pictured, going from the wide format to the long format. Above the image is the R code that would produce each data layout."}
 :::
 :::
 
@@ -180,7 +219,7 @@ Consider daily rainfall observed in SLO in January 2023.
 + The data is in a human-friendly form (like a calendar).
 + Each week has a row, and each day has a column.
 
-![[Data source](cesanluisobispo.ucanr.edu)](images/slo-rainfall.jpg)
+![[Data source](cesanluisobispo.ucanr.edu)](images/slo-rainfall.jpg){fig-alt="A spreadsheet displaying a table with days of the week as column headers (Sunday to Saturday) and weeks numbered 1 to 5 in the first column. The table contains numerical values corresponding to each day of the week for each week. Some cells contain 'NA,' indicating missing values, while other cells contain numerical values like 0.12, 0.27, 4.26, and so on. Several cells contain zeros, and a few cells are left empty."}
 
 How would you **manually** convert this to **long format**?
 
@@ -199,7 +238,7 @@ How would you **manually** convert this to **long format**?
 
 <center> 
 
-![](images/pivot_rain1.png){width=25%}
+![](images/pivot_rain1.png){width=25% fig-alt="A spreadsheet displaying a table with days of the week as column headers (Sunday to Saturday) and weeks numbered 1 to 5 in the first column. The table contains numerical values corresponding to each day of the week for each week. Some cells contain 'NA,' indicating missing values, while other cells contain numerical values like 0.12, 0.27, 4.26, and so on. Several cells contain zeros, and a few cells are left empty."}
 
 </center> 
 
@@ -216,7 +255,7 @@ How would you **manually** convert this to **long format**?
 
 <center> 
 
-![](images/pivot_rain2.png){width=25%}
+![](images/pivot_rain2.png){width=25% fig-alt="A table with three columns: 'Week,' 'Day_of_Week,' and 'Rainfall.' The 'Week' column contains numbers 1 to 5, while the 'Day_of_Week' column alternates between 'Sunday' and 'Monday.' The 'Rainfall' column lists numerical values for each week and day. For Sunday, the rainfall values are 0, 0.27, 0.34, 0, and 'NA' for weeks 1 through 5, respectively. For Monday, the rainfall values are 0.12, 4.26, 0.33, 0, and 'NA' for weeks 1 through 5, respectively."}
 </center> 
 
 
@@ -245,7 +284,7 @@ How would you **manually** convert this to **long format**?
 
 ## Computational Approach
 
-![](images/slo-rainfall-sketch.png)
+![](images/slo-rainfall-sketch.png){fig-alt="A table showing rainfall data for each day of the week across five weeks, with annotations explaining how to reshape the data from wide to long format. The table has columns for 'Week,' followed by the days of the week (Sunday to Saturday), and contains numerical values representing rainfall. There are three color-coded annotations: the 'Week' column is highlighted in green, labeled 'key' with the note 'keep this column, but repeat it many times.' The day names (Sunday through Saturday) are highlighted in red with the note 'turn into new column: Day_of_Week (repeat day of week many times).' The data cells are highlighted in blue with the note 'turn into new column: Rainfall (values for each week # and day of week).'"}
 
 We can use `pivot_longer()` to turn a **wide** dataset into a **long(er)** dataset.
 
@@ -265,6 +304,9 @@ Take a **wide** dataset and turn it into a **long** dataset.
 ```{r}
 #| echo: true
 #| eval: false
+#| code-line-numbers: false
+#| label: slo-rain-pivot-longer-code
+
 slo_rainfall |> 
   pivot_longer(cols = Sunday:Saturday,
                names_to  = "Day_of_Week",
@@ -274,7 +316,10 @@ slo_rainfall |>
 ```{r}
 #| eval: true
 #| echo: false
-library(readxl)
+#| code-line-numbers: false
+#| label: slo-rain-pivot-longer-table
+
+
 slo_rainfall <- read_xlsx("data/2023-rainfall-slo.xlsx")
 
 slo_rainfall |> 
@@ -304,6 +349,9 @@ Let's say we calculate the `mean` amount of `protein` for cereals on each `shelf
 ```{r}
 #| echo: true
 #| eval: false
+#| code-line-numbers: false
+#| label: long-cereal-summary-code
+
 mean_protein <- cereal |> 
   group_by(manuf, shelf) |> 
   summarize(mean_protein = mean(protein))
@@ -312,6 +360,8 @@ mean_protein <- cereal |>
 ```{r}
 #| eval: true
 #| echo: false
+#| label: long-cereal-summary-table
+
 mean_protein <- cereal |> 
   group_by(manuf, shelf) |> 
   summarize(mean_protein = mean(protein))
@@ -332,6 +382,9 @@ We can make this dataset more easily readable...
 ```{r}
 #| eval: false
 #| echo: true
+#| label: pivot-summary-wider-code
+#| code-line-numbers: false
+
 mean_protein |> 
   arrange(shelf) |> 
   pivot_wider(id_cols = manuf,
@@ -342,6 +395,9 @@ mean_protein |>
 ```{r}
 #| eval: true
 #| echo: false
+#| label: pivot-summary-wider-table
+#| code-line-numbers: false
+
 mean_protein |> 
   arrange(shelf) |> 
   pivot_wider(id_cols = manuf,
@@ -355,11 +411,12 @@ mean_protein |>
 
 ## Better names in `pivot_wider()`
 
-
 ```{r}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "6"
+#| label: add-fancy-name-code
+
 mean_protein |> 
   arrange(shelf) |> 
   pivot_wider(id_cols = manuf,
@@ -371,6 +428,8 @@ mean_protein |>
 ```{r}
 #| eval: true
 #| echo: false
+#| label: add-fancy-name-table
+
 mean_protein |> 
   arrange(shelf) |> 
   pivot_wider(id_cols = manuf,
@@ -391,16 +450,18 @@ Multiple, interconnected tables of data are called **relational**.
 
 + It is the *relation* between datasets, not just the individual datasets themselves, that are important.
 
-![IMDb movie relational data](images/imdb_relational.png)
+![IMDb movie relational data](images/imdb_relational.png){fig-alt="A diagram depicting the relationships between various tables in a movie database. The tables and their columns are as follows. directors_genres: Contains 'director_id' (int), 'genre' (varchar), and 'prob' (float). Linked to the 'directors' table by 'director_id.' movies_directors: Contains 'director_id' (int) and 'movie_id' (int). Linked to both the 'directors' and 'movies' tables by 'director_id' and 'movie_id.' movies_genres: Contains 'movie_id' (int) and 'genre' (varchar). Linked to the 'movies' table by 'movie_id.' roles: Contains 'actor_id' (int), 'movie_id' (int), and 'role' (varchar). Linked to both the 'actors' and 'movies' tables by 'actor_id' and 'movie_id.' The following entity tables are represented at the bottom: directors: Contains 'id' (int), 'first_name' (varchar), and 'last_name' (varchar). movies: Contains 'id' (int), 'name' (varchar), 'year' (int), and 'rank' (float). actors: Contains 'id' (int), 'first_name' (varchar), 'last_name' (varchar), and 'gender' (char). Arrows represent relationships between the various tables, with foreign keys connecting them."}
 
-```{r imdb-data}
+```{r}
 #| eval: false
 #| include: false
 #| message: false
 #| warning: false
+#| label: imdb-data-import
+
 library(RMariaDB)
 library(dm)
-`
+
 # IMDb
 con <- dbConnect(
   drv = RMariaDB::MariaDB(), 
@@ -445,11 +506,12 @@ dbDisconnect(con)
 rm(con, my_dm)
 ```
 
-```{r imdb-data2}
+```{r}
 #| eval: true
 #| include: false
 #| message: false
 #| warning: false
+#| label: import-data-retreived-from-imdb
 
 actors <- read_csv("data/actors.csv")
 directors <- read_csv("data/directors.csv")
@@ -466,7 +528,7 @@ roles <- read_csv("data/roles.csv")
 We can **combine** (join) data tables based on their relations.
 
 ::: columns
-::: column
+::: {.column width="50%"}
 **Mutating joins**
 
 Add *variables* from a new dataframe to observations in an existing dataframe.
@@ -474,7 +536,10 @@ Add *variables* from a new dataframe to observations in an existing dataframe.
 `full_join()`, `left_join()`, `right_join()`, `inner_join()`, `outer_join()`
 :::
 
-::: column
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
 **Filtering Joins**
 
 Filter *observations* based on values in new dataframe.
@@ -482,7 +547,6 @@ Filter *observations* based on values in new dataframe.
 `semi_join()`, `anti_join()`
 :::
 :::
-
 
 ## Keys
 
@@ -492,19 +556,19 @@ A key uniquely identifies an observation in a data set.
 
 . . .
 
-![](images/imdb-keys.png)
+![](images/imdb-keys.png){fig-alt="A similar entity-relationship diagram (ERD) to the previous one, with the same tables and relationships between movie-related data. However, in this version, key columns in the tables are color-coded to highlight relationships. Orange highlights the 'director_id' in the 'directors_genres,' 'movies_directors,' and 'directors' tables, showing the connection between directors and their genres and movies. Blue highlights the 'movie_id' in the 'movies_directors,' 'movies_genres,' 'roles,' and 'movies' tables, showing the relationship between movies, genres, and roles. Green highlights the 'actor_id' in the 'roles' and 'actors' tables, showing the connection between actors and their roles in movies. Arrows continue to represent relationships between tables, following foreign key connections, now emphasized with the color coding."}
 
 
 ## `inner_join()`
 
-Keeps obsertvations when their keys are present in **both** datasets.
+Keeps observations when their keys are present in **both** datasets.
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](images/join_xy.png)
+![](images/join_xy.png){fig-alt="This image shows two tables on the left, labeled 'x' and 'y.' The 'x' table contains two columns: a key column with values 1, 2, and 3, and a value column with 'x1,' 'x2,' and 'x3.' The 'y' table also has two columns: a key column with values 1, 2, and 4, and a value column with 'y1,' 'y2,' and 'y3.'"}
 :::
 ::: {.column width="50%"}
-![](images/inner_join.png)
+![](images/inner_join.png){fig-alt="This table combines data from both 'x' and 'y.' based on the 'key' column. It contains three columns: 'key,' 'val_x,' and 'val_y.' For key values 1 and 2, the corresponding values from both 'x' and 'y' are shown ('x1' with 'y1' and 'x2' with 'y2'), while the third rows from both original tables are excluded due to the mismatch in key values."}
 
 :::
 ::::
@@ -644,9 +708,6 @@ directors_subset |>
 
 . . .
 
-:::: {.columns}
-::: {.column width="60%"}
-
 ```{r}
 #| eval: false
 #| echo: true
@@ -666,15 +727,6 @@ inner_join(directors_subset,
   kableExtra::scroll_box(height = "170px") |> 
   kableExtra::kable_styling(font_size = 30)
 ```
-
-:::
-::: {.column width="40%"}
-<font size = 6>
-Join by different variables on `dataX` and `dataY`: `join_by(a == b)` will match `dataX$a` to `dataY$b`.
-
-</font>
-:::
-::::
 
 ## Piping Joins
 
@@ -705,15 +757,15 @@ directors_genres |>
 
 ## More Mutating Joins
 
+::: {.small}
 -   `left_join()` -- keep only (and all) observations present in the left data set
 
 -   `right_join()` -- keep only (and all) observations present in the right data set 
 
 -   `full_join()` -- keep only (and all) observations present in **both** data sets
+:::
 
-<center>
-
-![](images/joins.png){width=70%}
+![](images/joins.png){width=50% fig-alt="Four Venn diagrams illustrating different types of joins between two datasets, labeled 'x' and 'y.' inner_join(x, y): Shows two overlapping circles with only the intersection shaded, representing records that are common to both 'x' and 'y.' left_join(x, y): Shows two overlapping circles with the left circle ('x') fully shaded and the intersection shaded, representing all records from 'x' and the matching records from 'y.' right_join(x, y): Shows two overlapping circles with the right circle ('y') fully shaded and the intersection shaded, representing all records from 'y' and the matching records from 'x.' full_join(x, y): Shows two overlapping circles with both circles fully shaded, representing all records from both 'x' and 'y,' including those without matches."}
 
 </center>
 
@@ -722,19 +774,19 @@ directors_genres |>
 
 Which directors would **remain** for each of the following?
 
-<font size = 6>
-
+::: {.small}
 -   `left_join(directors_genres, movies_directors)`
 -   `right_join(directors_genres, movies_directors)`
 -   `full_join(directors_genres, movies_directors)`
-
-</font>
+:::
 
 ::: columns
 ::: column
 ```{r}
 #| eval: false
 #| echo: true
+#| code-line-numbers: false
+
 directors_genres |> 
   distinct(director_id)
 ```
@@ -742,6 +794,7 @@ directors_genres |>
 ```{r}
 #| eval: true
 #| echo: false
+
 directors_genres_subset |> 
   distinct(director_id) |> 
   knitr::kable() |> 
@@ -755,6 +808,8 @@ directors_genres_subset |>
 ```{r}
 #| eval: false
 #| echo: true
+#| code-line-numbers: false
+
 movies_directors |> 
   distinct(director_id)
 ```
@@ -779,7 +834,7 @@ Keeps observations when their keys are present in **both** datasets, **but only 
 :::: {.columns}
 ::: {.column width="60%"}
 
-![](images/semi1.png)
+![](images/semi1.png){fig-alt="An illustration of a semi join between two tables, each with two columns. The table labeled 'x,' has a key column with values 1, 2, and 3 and a value column with 'x1,' 'x2,' and 'x3.' The table labeled 'y,' has a key column with values 1, 2, and 4 and a value column with 'y1,' 'y2,' and 'y4.'"}
 :::
 ::: {.column width="15%"}
 
@@ -792,7 +847,7 @@ Keeps observations when their keys are present in **both** datasets, **but only 
 :::
 ::: {.column width="25%"}
 
-![](images/semi2.png)
+![](images/semi2.png){fig-alt="An arrow points from the first two tables (x and y) toward the right where a single table is displayed. This table is the result of a semi join, where only the values of x that had a match in y are kept. The resulting table includes rows with matching key values from both 'x' and 'y' (keys 1 and 2), displaying only the 'x' values ('x1' and 'x2'). Rows with non-matching keys (3 and 4) are excluded."}
 
 :::
 ::::
@@ -807,6 +862,8 @@ Keeps observations when their keys are present in **both** datasets, **but only 
 ```{r}
 #| echo: true
 #| eval: false
+#| code-line-numbers: false
+
 directors_genres |> 
   semi_join(movies_directors)
 ```
@@ -827,6 +884,7 @@ Movie Directors: 429, ~~**2931**~~, 11652, 14927, 15092
 ```{r}
 #| echo: true
 #| eval: false
+#| code-line-numbers: false
 directors_genres |>
   filter(director_id %in% movies_directors$director_id)
 ```
@@ -851,7 +909,7 @@ directors_genres_subset |>
 :::: {.columns}
 ::: {.column width="60%"}
 
-![](images/semi1.png)
+![](images/semi1.png){fig-alt="Two tables on the left labeled 'x' and 'y,' each with two columns, show key-value pairs. The 'x' table contains a key column with values 1, 2, and 3 and a value column with 'x1,' 'x2,' and 'x3.' The 'y' table contains a key column with values 1, 2, and 4 and a value column with 'y1,' 'y2,' and 'y4.'"}
 :::
 ::: {.column width="15%"}
 
@@ -866,7 +924,7 @@ directors_genres_subset |>
 
 <br>
 
-![](images/anti2.png)
+![](images/anti2.png){fi-alt="An arrow points to the right, showing the result of an anti join. The resulting table includes the row from 'x' where the key (3) does not have a corresponding match in 'y.' It contains only the key-value pair (3, x3), demonstrating that the anti join keeps only the unmatched rows from the left table ('x')."}
 
 :::
 ::::
@@ -881,6 +939,8 @@ directors_genres_subset |>
 ```{r}
 #| echo: true
 #| eval: false
+#| code-line-numbers: false
+
 directors_genres |> 
   anti_join(movies_directors)
 ```
@@ -901,6 +961,8 @@ Movie Directors: ~~429~~, **2931**, ~~11652~~, ~~14927~~, ~~15092~~
 ```{r}
 #| echo: true
 #| eval: false
+#| code-line-numbers: false
+
 directors_genres |>
   filter(!director_id %in% movies_directors$director_id)
 ```
@@ -918,14 +980,180 @@ directors_genres_subset |>
 :::
 
 
-## [PA 4: Military Spending](https://zoerehnberg.github.io/STAT331-S23/practice_activities/PA4.html)
+## [PA 4: Military Spending](../../group-activities/week-4/PA-4-tidyr.qmd)
 
 Today you will be tidying messy data to explore the relationship between countries of the world and military spending.
 
-+ **Due Wednesday, 4/24 at 10:00am**
+## Finding Ephelia's College
 
+This activity will require knowledge of:
 
-## To do...
+<!-- - debugging code errors -->
+<!-- - function syntax -->
+<!-- - logical comparisons -->
+<!-- - dplyr verbs and when to use them -->
+<!-- - chaining steps together with the pipe operator -->
 
--   **PA 4: Military Spending**
-    -   Due Wednesday, 4/24 at 10:00am
+[**None of us have all these abilities. Each of us has some of these abilities.**]{.midi}
+
+## dplyr Resources
+
+Every group should have **tidyr** and **dplyr** cheatsheets! 
+
+::: columns
+::: {.column width="37%"}
+::: {.fragment}
+**On the Front**
+
+::: {.incremental}
+::: {.small}
+- Column 1: grouped summaries (`group_by()` + `summarize()`)
+- Column 2: `filter()`ing values with logical comparisons
+- Column 3: `select()`ing and `mutate()`ing variables
+:::
+:::
+:::
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="37%"}
+::: {.fragment}
+**On the Back**
+
+::: {.incremental}
+::: {.small}
+- Column 2: summary functions you might like to use with `summarize()`
+:::
+:::
+:::
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="15%"}
+![](images/dplyr-cheatsheet.png){fig-alt="A picture of the dplyr cheatsheet, which contains helpful information on working with data in a variety of ways."}
+
+:::
+:::
+
+## Task Card
+
+Every group should have a **task card**! 
+
+. . .
+
+::: columns
+::: {.column width="45%"}
+**On the Front**
+
+- the expectations of each role
+- the norms of collaborating
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+::: {.fragment}
+**On the Back**
+
+- advice for dealing with code errors 
+- guidelines for formatting `dplyr` code
+:::
+:::
+:::
+
+## Pair Programming Expectations
+
+::: {.small}
+During your collaboration, you and your partner will alternate between two roles: 
+:::
+
+. . .
+
+::: columns
+::: {.column width="49%"}
+**Developer**
+
+::: {.small}
+-   Reads prompt and ensures Coder understands what is being asked. 
+-   Types the code specified by the Coder into the Quarto document.
+-   Runs the code provided by the Coder. 
+-   Works with Coder to debug the code. 
+-   Evaluates the output.  
+-   Works with Coder to write code comments. 
+:::
+:::
+
+::: {.column width="2%"}
+:::
+
+::: {.column width="49%"}
+::: {.fragment}
+**Coder**
+
+::: {.small}
+-   Reads out instructions or prompts
+-   Directs the Developer what to type. 
+-   Talks with Developer about their ideas. 
+-   Manages resources (e.g., cheatsheets, textbook, slides). 
+-   Works with Developer to debug the code. 
+-   Works with Developer to write code comments. 
+:::
+:::
+:::
+:::
+
+## Getting Started
+
+::: {.small}
+First, both of you will do the following:
+
+- Join your Practice Activity workspace in Posit Cloud
+  * You are in a new group, so you should have a new workspace!
+- Log-in to Posit Cloud
+- Open the PA 4: Military Spending project
+- Open the `PA4-dplyr.qmd` file
+:::
+
+. . .
+
+::: {.small}
+Then, the partner who woke up the earliest starts as the Developer (typing and
+listening to instructions from the Coder)!
+
+- The Coder **does not type**. 
+  * The collaborative editing feature should allow you to track what is being 
+  typed. 
+- The Developer **only types what they are told to type**. 
+:::
+
+## External Resources
+
+During the Practice Activity, you **are not** permitted to use Google or ChatGPT
+for help. 
+
+. . .
+
+</br> 
+
+You **are** permitted to use:
+
+- the `dplyr` cheatsheet,
+- the `tidyr` cheatsheet, 
+- the course textbook, and
+- the course slides. 
+
+## Submission
+
+<!-- Insructions on what questions they are going to answer -->
+
+- Each person will input your responses to the PA4 Canvas quiz.
+- The person who last occupied the role of Developer will download and submit
+the `PA-4.html` file for the group.
+  + Only one submission per group!
+
+# Exit Ticket

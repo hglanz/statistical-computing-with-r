@@ -402,7 +402,10 @@
 <h2>Tuesday, October 15</h2>
 <p>Today we will…</p>
 <ul>
-<li>Comments from Week 3</li>
+<li>Grade Expectations
+<ul>
+<li>Survey on Canvas</li>
+</ul></li>
 <li>New Material
 <ul>
 <li>Pivoting data with <code>tidyr</code></li>
@@ -425,22 +428,22 @@
 <li><strong>has different formats for different tasks.</strong></li>
 </ul>
 
-<img data-src="https://r4ds.hadley.nz/images/tidy-1.png" class="r-stretch"></section>
+<img data-src="https://r4ds.hadley.nz/images/tidy-1.png" alt="This image shows a visual representation of the three key concepts in tidy data: variables, observations, and values. It is divided into three sections. The first section on the left highlights vertical arrows pointing down each column of a table, labeled 'variables,' showing that each column represents a different variable (country, year, cases, population). The middle section has horizontal arrows pointing across rows of the same table, labeled 'observations,' indicating that each row is an observation or data point. The third section on the right has circles around individual data points within the table, labeled 'values,' indicating the actual values for each variable in the dataset." class="r-stretch"></section>
 <section id="creating-tidy-data" class="slide level2">
 <h2>Creating Tidy Data</h2>
 <p>We may need to <strong>transform</strong> our data to turn it into the <strong>version of tidy</strong> that is best for a task at hand.</p>
 
-<img data-src="https://www.openscapes.org/img/blog/tidydata/tidydata_4.jpg" class="r-stretch quarto-figure-center"><p class="caption">Image by Allison Horst</p></section>
+<img data-src="https://www.openscapes.org/img/blog/tidydata/tidydata_4.jpg" alt="An illustration of two round, fluffy characters, one green and one purple, holding a large table between them labeled 'TIDY.' The table is held by clamps on either side labeled 'WRANGLE' in orange and pink. The green character on the left is smiling with one arm raised, while the purple character on the right is cheering with both arms up. The table represents tidy data, and the clamps labeled 'WRANGLE' suggest data manipulation or preparation." class="r-stretch quarto-figure-center"><p class="caption">Image by Allison Horst</p></section>
 <section id="cereal-data" class="slide level2">
 <h2>Cereal Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(liver)</span>
-<span id="cb1-2"><a></a><span class="fu">data</span>(cereal)</span>
-<span id="cb1-3"><a></a><span class="fu">head</span>(cereal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(liver)</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(cereal)</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cereal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:210px; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:450px; ">
 <table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
@@ -582,7 +585,8 @@
 <h2>Creating Tidy Data</h2>
 <p>Let’s say we want to look at <code>mean</code> <strong>cereal nutrients</strong> based on <code>shelf</code>.</p>
 <div class="fragment">
-<p>Currently, the data are in a <strong>wide</strong> format – a separate column for each nutrient. <strong>Transforming</strong> the data will make plotting easier.</p>
+<p>Currently, the data are in a <strong>wide</strong> format – a separate column for each nutrient.</p>
+<p><strong>Transforming</strong> the data will make plotting easier.</p>
 </div>
 </section>
 <section id="tidying-the-cereals-data" class="slide level2">
@@ -591,17 +595,23 @@
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Wide</a></li><li><a href="#tabset-1-2">Wide Plot</a></li><li><a href="#tabset-1-3">Long</a></li><li><a href="#tabset-1-4">Long Plot</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
+<div class="small">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="2-3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>cereal_wide <span class="ot">&lt;-</span> cereal <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="3-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>cereal_wide <span class="ot">&lt;-</span> cereal <span class="sc">|&gt;</span> </span>
 <span id="cb2-2"><a></a>  <span class="fu">group_by</span>(shelf) <span class="sc">|&gt;</span> </span>
-<span id="cb2-3"><a></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(calories<span class="sc">:</span>vitamins, mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb2-4"><a></a>    <span class="fu">across</span>(<span class="at">.cols =</span> calories<span class="sc">:</span>vitamins, </span>
+<span id="cb2-5"><a></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">mean</span>(.x)</span>
+<span id="cb2-6"><a></a>           )</span>
+<span id="cb2-7"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+</div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:210px; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
 <table class="table caption-top" data-quarto-postprocess="true" style="font-size: 30px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
@@ -662,6 +672,7 @@
 </div>
 </div>
 <div id="tabset-1-2">
+<div class="small">
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
@@ -669,33 +680,36 @@
 <span id="cb3-2"><a></a></span>
 <span id="cb3-3"><a></a>cereal_wide <span class="sc">|&gt;</span> </span>
 <span id="cb3-4"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb3-5"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> shelf, <span class="at">y =</span> calories, <span class="at">color =</span> <span class="st">"calories_col"</span>)) <span class="sc">+</span></span>
-<span id="cb3-6"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> shelf, <span class="at">y =</span> calories, <span class="at">color =</span> <span class="st">"calories_col"</span>)) <span class="sc">+</span> </span>
-<span id="cb3-7"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> shelf, <span class="at">y =</span> sugars, <span class="at">color =</span> <span class="st">"sugars_col"</span>)) <span class="sc">+</span></span>
-<span id="cb3-8"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> shelf, <span class="at">y =</span> sugars, <span class="at">color =</span> <span class="st">"sugars_col"</span>)) <span class="sc">+</span></span>
+<span id="cb3-5"><a></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> shelf, <span class="at">y =</span> calories, <span class="at">color =</span> <span class="st">"calories_col"</span>)) <span class="sc">+</span></span>
+<span id="cb3-6"><a></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> shelf, <span class="at">y =</span> calories, <span class="at">color =</span> <span class="st">"calories_col"</span>)) <span class="sc">+</span> </span>
+<span id="cb3-7"><a></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> shelf, <span class="at">y =</span> sugars, <span class="at">color =</span> <span class="st">"sugars_col"</span>)) <span class="sc">+</span></span>
+<span id="cb3-8"><a></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> shelf, <span class="at">y =</span> sugars, <span class="at">color =</span> <span class="st">"sugars_col"</span>)) <span class="sc">+</span></span>
 <span id="cb3-9"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> my_colors, <span class="at">labels =</span> <span class="fu">names</span>(my_colors)) <span class="sc">+</span></span>
 <span id="cb3-10"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Shelf"</span>, <span class="at">y =</span> <span class="st">""</span>, <span class="at">subtitle =</span> <span class="st">"Mean Amount"</span>, <span class="at">color =</span> <span class="st">"Nutrient"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week-4_joins-1_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" width="576"></p>
+<p><img data-src="week-4_joins-1_files/figure-revealjs/cereal-wide-plot-1.png" class="quarto-figure quarto-figure-center" alt="A line chart displaying the relationship between the mean amount of two nutrients ('calories_col' and 'sugars_col') and their corresponding shelf number (1, 2, 3). The y-axis represents the mean amount, ranging from 0 to 100, and the x-axis represents the shelf numbers (1, 2, 3). The blue line represents 'calories_col,' with a relatively flat trend around 90 across the shelves. The orange line represents 'sugars_col,' which remains close to zero across the same shelves. The legend on the right identifies the nutrient lines." width="576"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
+</div>
 <div id="tabset-1-3">
+<div class="small">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="5-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>cereal_long<span class="ot">&lt;-</span> cereal <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="5-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>cereal_long <span class="ot">&lt;-</span> cereal <span class="sc">|&gt;</span> </span>
 <span id="cb4-2"><a></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> calories<span class="sc">:</span>vitamins,</span>
 <span id="cb4-3"><a></a>               <span class="at">names_to =</span> <span class="st">"Nutrient"</span>,</span>
 <span id="cb4-4"><a></a>               <span class="at">values_to =</span> <span class="st">"Amount"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb4-5"><a></a>  <span class="fu">group_by</span>(shelf, Nutrient) <span class="sc">|&gt;</span> </span>
 <span id="cb4-6"><a></a>  <span class="fu">summarise</span>(<span class="at">mean_amount =</span> <span class="fu">mean</span>(Amount))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+</div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -852,22 +866,27 @@
 </div>
 </div>
 <div id="tabset-1-4">
+<div class="small">
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="2-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>cereal_long <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> shelf, </span>
-<span id="cb5-3"><a></a>             <span class="at">y =</span> mean_amount, </span>
-<span id="cb5-4"><a></a>             <span class="at">color =</span> Nutrient)) <span class="sc">+</span></span>
-<span id="cb5-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb5-6"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb5-7"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Shelf"</span>, <span class="at">y =</span> <span class="st">""</span>, <span class="at">subtitle =</span> <span class="st">"Mean Amount"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="2-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>cereal_long <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> shelf, </span>
+<span id="cb5-3"><a></a>                       <span class="at">y =</span> mean_amount, </span>
+<span id="cb5-4"><a></a>                       <span class="at">color =</span> Nutrient)</span>
+<span id="cb5-5"><a></a>         ) <span class="sc">+</span></span>
+<span id="cb5-6"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb5-7"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb5-8"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Shelf"</span>, </span>
+<span id="cb5-9"><a></a>       <span class="at">y =</span> <span class="st">""</span>, </span>
+<span id="cb5-10"><a></a>       <span class="at">subtitle =</span> <span class="st">"Mean Amount"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="week-4_joins-1_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center" width="576"></p>
+<p><img data-src="week-4_joins-1_files/figure-revealjs/cereal-long-plot-1.png" class="quarto-figure quarto-figure-center" width="576"></p>
 </figure>
+</div>
 </div>
 </div>
 </div>
@@ -880,9 +899,9 @@
 <h1>Pivoting Data</h1>
 <div class="columns">
 <div class="column">
-<p><img data-src="https://github.com/gadenbuie/tidyexplain/raw/main/images/static/png/original-dfs-tidy.png"></p>
+<p><img data-src="https://github.com/gadenbuie/tidyexplain/raw/main/images/static/png/original-dfs-tidy.png" alt="Two tables side by side, illustrating the difference between 'wide' and 'long' data formats. The left table labeled 'wide' has columns: 'id,' 'x,' 'y,' and 'z.' The 'id' column contains the values 1 and 2, and the 'x,' 'y,' and 'z' columns contain the values a, b, c, d, e, and f spread across the rows. The right table labeled 'long' has columns: 'id,' 'key,' and 'val.' The 'id' column has repeated values (1 and 2), the 'key' column contains 'x,' 'y,' and 'z,' and the 'val' column contains 'a' through 'f,' corresponding to the wide table but reorganized in a 'long' format."></p>
 </div><div class="column">
-<p><img data-src="https://github.com/gadenbuie/tidyexplain/raw/main/images/tidyr-pivoting.gif"></p>
+<p><img data-src="https://github.com/gadenbuie/tidyexplain/raw/main/images/tidyr-pivoting.gif" alt="A gif showing the visual transformation of the data pictured, going from the wide format to the long format. Above the image is the R code that would produce each data layout."></p>
 </div></div>
 </section>
 <section id="manual-method" class="slide level2">
@@ -893,7 +912,7 @@
 <li>Each week has a row, and each day has a column.</li>
 </ul>
 
-<img data-src="images/slo-rainfall.jpg" class="r-stretch quarto-figure-center"><p class="caption"><a href="cesanluisobispo.ucanr.edu">Data source</a></p><p>How would you <strong>manually</strong> convert this to <strong>long format</strong>?</p>
+<img data-src="images/slo-rainfall.jpg" alt="A spreadsheet displaying a table with days of the week as column headers (Sunday to Saturday) and weeks numbered 1 to 5 in the first column. The table contains numerical values corresponding to each day of the week for each week. Some cells contain 'NA,' indicating missing values, while other cells contain numerical values like 0.12, 0.27, 4.26, and so on. Several cells contain zeros, and a few cells are left empty." class="r-stretch quarto-figure-center"><p class="caption"><a href="cesanluisobispo.ucanr.edu">Data source</a></p><p>How would you <strong>manually</strong> convert this to <strong>long format</strong>?</p>
 </section>
 <section id="manual-method-steps" class="slide level2">
 <h2>Manual Method: Steps</h2>
@@ -909,7 +928,7 @@
 </div>
 <div class="fragment">
 <center>
-<p><img data-src="images/pivot_rain1.png" style="width:25.0%"></p>
+<p><img data-src="images/pivot_rain1.png" style="width:25.0%" alt="A spreadsheet displaying a table with days of the week as column headers (Sunday to Saturday) and weeks numbered 1 to 5 in the first column. The table contains numerical values corresponding to each day of the week for each week. Some cells contain 'NA,' indicating missing values, while other cells contain numerical values like 0.12, 0.27, 4.26, and so on. Several cells contain zeros, and a few cells are left empty."></p>
 </center>
 </div>
 </section>
@@ -925,7 +944,7 @@
 </ol>
 </div>
 <center>
-<img data-src="images/pivot_rain2.png" style="width:25.0%">
+<img data-src="images/pivot_rain2.png" style="width:25.0%" alt="A table with three columns: 'Week,' 'Day_of_Week,' and 'Rainfall.' The 'Week' column contains numbers 1 to 5, while the 'Day_of_Week' column alternates between 'Sunday' and 'Monday.' The 'Rainfall' column lists numerical values for each week and day. For Sunday, the rainfall values are 0, 0.27, 0.34, 0, and 'NA' for weeks 1 through 5, respectively. For Monday, the rainfall values are 0.12, 4.26, 0.33, 0, and 'NA' for weeks 1 through 5, respectively.">
 </center>
 </section>
 <section id="manual-method-steps-2" class="slide level2">
@@ -958,7 +977,7 @@
 <section id="computational-approach" class="slide level2">
 <h2>Computational Approach</h2>
 
-<img data-src="images/slo-rainfall-sketch.png" class="r-stretch"><p>We can use <code>pivot_longer()</code> to turn a <strong>wide</strong> dataset into a <strong>long(er)</strong> dataset.</p>
+<img data-src="images/slo-rainfall-sketch.png" alt="A table showing rainfall data for each day of the week across five weeks, with annotations explaining how to reshape the data from wide to long format. The table has columns for 'Week,' followed by the days of the week (Sunday to Saturday), and contains numerical values representing rainfall. There are three color-coded annotations: the 'Week' column is highlighted in green, labeled 'key' with the note 'keep this column, but repeat it many times.' The day names (Sunday through Saturday) are highlighted in red with the note 'turn into new column: Day_of_Week (repeat day of week many times).' The data cells are highlighted in blue with the note 'turn into new column: Rainfall (values for each week # and day of week).'" class="r-stretch"><p>We can use <code>pivot_longer()</code> to turn a <strong>wide</strong> dataset into a <strong>long(er)</strong> dataset.</p>
 </section>
 <section id="pivot_longer" class="slide level2">
 <h2><code>pivot_longer()</code></h2>
@@ -975,10 +994,10 @@
 <section id="pivot_longer-1" class="slide level2">
 <h2><code>pivot_longer()</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>slo_rainfall <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> Sunday<span class="sc">:</span>Saturday,</span>
-<span id="cb6-3"><a></a>               <span class="at">names_to  =</span> <span class="st">"Day_of_Week"</span>,</span>
-<span id="cb6-4"><a></a>               <span class="at">values_to =</span> <span class="st">"Daily_Rainfall"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>slo_rainfall <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> Sunday<span class="sc">:</span>Saturday,</span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to  =</span> <span class="st">"Day_of_Week"</span>,</span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Daily_Rainfall"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -1187,9 +1206,9 @@
 <h2><code>pivot_wider()</code></h2>
 <p>Let’s say we calculate the <code>mean</code> amount of <code>protein</code> for cereals on each <code>shelf</code> and for each <code>manuf</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mean_protein <span class="ot">&lt;-</span> cereal <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a></a>  <span class="fu">group_by</span>(manuf, shelf) <span class="sc">|&gt;</span> </span>
-<span id="cb7-3"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_protein =</span> <span class="fu">mean</span>(protein))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>mean_protein <span class="ot">&lt;-</span> cereal <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(manuf, shelf) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_protein =</span> <span class="fu">mean</span>(protein))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -1305,11 +1324,11 @@
 <p>We can make this dataset more easily readable…</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>mean_protein <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a></a>  <span class="fu">arrange</span>(shelf) <span class="sc">|&gt;</span> </span>
-<span id="cb8-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> manuf,</span>
-<span id="cb8-4"><a></a>              <span class="at">names_from =</span> shelf,</span>
-<span id="cb8-5"><a></a>              <span class="at">values_from =</span> mean_protein)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>mean_protein <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(shelf) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> manuf,</span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>              <span class="at">names_from =</span> shelf,</span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> mean_protein)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -1458,16 +1477,18 @@
 <li>It is the <em>relation</em> between datasets, not just the individual datasets themselves, that are important.</li>
 </ul>
 
-<img data-src="images/imdb_relational.png" class="r-stretch quarto-figure-center"><p class="caption">IMDb movie relational data</p></section>
+<img data-src="images/imdb_relational.png" alt="A diagram depicting the relationships between various tables in a movie database. The tables and their columns are as follows. directors_genres: Contains 'director_id' (int), 'genre' (varchar), and 'prob' (float). Linked to the 'directors' table by 'director_id.' movies_directors: Contains 'director_id' (int) and 'movie_id' (int). Linked to both the 'directors' and 'movies' tables by 'director_id' and 'movie_id.' movies_genres: Contains 'movie_id' (int) and 'genre' (varchar). Linked to the 'movies' table by 'movie_id.' roles: Contains 'actor_id' (int), 'movie_id' (int), and 'role' (varchar). Linked to both the 'actors' and 'movies' tables by 'actor_id' and 'movie_id.' The following entity tables are represented at the bottom: directors: Contains 'id' (int), 'first_name' (varchar), and 'last_name' (varchar). movies: Contains 'id' (int), 'name' (varchar), 'year' (int), and 'rank' (float). actors: Contains 'id' (int), 'first_name' (varchar), 'last_name' (varchar), and 'gender' (char). Arrows represent relationships between the various tables, with foreign keys connecting them." class="r-stretch quarto-figure-center"><p class="caption">IMDb movie relational data</p></section>
 <section id="data-joins-1" class="slide level2">
 <h2>Data Joins</h2>
 <p>We can <strong>combine</strong> (join) data tables based on their relations.</p>
 <div class="columns">
-<div class="column">
+<div class="column" style="width:50%;">
 <p><strong>Mutating joins</strong></p>
 <p>Add <em>variables</em> from a new dataframe to observations in an existing dataframe.</p>
 <p><code>full_join()</code>, <code>left_join()</code>, <code>right_join()</code>, <code>inner_join()</code>, <code>outer_join()</code></p>
-</div><div class="column">
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
 <p><strong>Filtering Joins</strong></p>
 <p>Filter <em>observations</em> based on values in new dataframe.</p>
 <p><code>semi_join()</code>, <code>anti_join()</code></p>
@@ -1480,17 +1501,17 @@
 <li>To combine (join) two datasets, the <strong>key</strong> needs to be present in both.</li>
 </ul>
 <div class="fragment">
-<p><img data-src="images/imdb-keys.png"></p>
+<p><img data-src="images/imdb-keys.png" alt="A similar entity-relationship diagram (ERD) to the previous one, with the same tables and relationships between movie-related data. However, in this version, key columns in the tables are color-coded to highlight relationships. Orange highlights the 'director_id' in the 'directors_genres,' 'movies_directors,' and 'directors' tables, showing the connection between directors and their genres and movies. Blue highlights the 'movie_id' in the 'movies_directors,' 'movies_genres,' 'roles,' and 'movies' tables, showing the relationship between movies, genres, and roles. Green highlights the 'actor_id' in the 'roles' and 'actors' tables, showing the connection between actors and their roles in movies. Arrows continue to represent relationships between tables, following foreign key connections, now emphasized with the color coding."></p>
 </div>
 </section>
 <section id="inner_join" class="slide level2">
 <h2><code>inner_join()</code></h2>
-<p>Keeps obsertvations when their keys are present in <strong>both</strong> datasets.</p>
+<p>Keeps observations when their keys are present in <strong>both</strong> datasets.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="images/join_xy.png"></p>
+<p><img data-src="images/join_xy.png" alt="This image shows two tables on the left, labeled 'x' and 'y.' The 'x' table contains two columns: a key column with values 1, 2, and 3, and a value column with 'x1,' 'x2,' and 'x3.' The 'y' table also has two columns: a key column with values 1, 2, and 4, and a value column with 'y1,' 'y2,' and 'y3.'"></p>
 </div><div class="column" style="width:50%;">
-<p><img data-src="images/inner_join.png"></p>
+<p><img data-src="images/inner_join.png" alt="This table combines data from both 'x' and 'y.' based on the 'key' column. It contains three columns: 'key,' 'val_x,' and 'val_y.' For key values 1 and 2, the corresponding values from both 'x' and 'y' are shown ('x1' with 'y1' and 'x2' with 'y2'), while the third rows from both original tables are excluded due to the mismatch in key values."></p>
 </div></div>
 </section>
 <section id="inner_join-imdb-example" class="slide level2">
@@ -1846,8 +1867,6 @@
 </div>
 </div></div>
 <div class="fragment">
-<div class="columns">
-<div class="column" style="width:60%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">inner_join</span>(directors_genres, </span>
 <span id="cb15-2"><a></a>           directors, </span>
@@ -1929,10 +1948,6 @@
 
 </div>
 </div>
-</div><div class="column" style="width:40%;">
-<p><font size="6"> Join by different variables on <code>dataX</code> and <code>dataY</code>: <code>join_by(a == b)</code> will match <code>dataX$a</code> to <code>dataY$b</code>.</font></p><font size="6">
-</font><p><font size="6"></font></p>
-</div></div>
 </div>
 </section>
 <section id="piping-joins" class="slide level2">
@@ -1954,30 +1969,31 @@
 </section>
 <section id="more-mutating-joins" class="slide level2">
 <h2>More Mutating Joins</h2>
+<div class="small">
 <ul>
 <li><p><code>left_join()</code> – keep only (and all) observations present in the left data set</p></li>
 <li><p><code>right_join()</code> – keep only (and all) observations present in the right data set</p></li>
 <li><p><code>full_join()</code> – keep only (and all) observations present in <strong>both</strong> data sets</p></li>
 </ul>
-<center>
-<p><img data-src="images/joins.png" style="width:70.0%"></p>
-</center>
-</section>
+</div>
+
+
+<img data-src="images/joins.png" style="width:50.0%" alt="Four Venn diagrams illustrating different types of joins between two datasets, labeled 'x' and 'y.' inner_join(x, y): Shows two overlapping circles with only the intersection shaded, representing records that are common to both 'x' and 'y.' left_join(x, y): Shows two overlapping circles with the left circle ('x') fully shaded and the intersection shaded, representing all records from 'x' and the matching records from 'y.' right_join(x, y): Shows two overlapping circles with the right circle ('y') fully shaded and the intersection shaded, representing all records from 'y' and the matching records from 'x.' full_join(x, y): Shows two overlapping circles with both circles fully shaded, representing all records from both 'x' and 'y,' including those without matches." class="r-stretch"></section>
 <section id="more-mutating-joins-1" class="slide level2">
 <h2>More Mutating Joins</h2>
 <p>Which directors would <strong>remain</strong> for each of the following?</p>
-<p><font size="6"></font></p><font size="6">
+<div class="small">
 <ul>
 <li><code>left_join(directors_genres, movies_directors)</code></li>
 <li><code>right_join(directors_genres, movies_directors)</code></li>
 <li><code>full_join(directors_genres, movies_directors)</code></li>
 </ul>
-</font><p><font size="6"></font></p>
+</div>
 <div class="columns">
 <div class="column">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>directors_genres <span class="sc">|&gt;</span> </span>
-<span id="cb18-2"><a></a>  <span class="fu">distinct</span>(director_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>directors_genres <span class="sc">|&gt;</span> </span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(director_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -2012,8 +2028,8 @@
 </div>
 </div><div class="column">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>movies_directors <span class="sc">|&gt;</span> </span>
-<span id="cb19-2"><a></a>  <span class="fu">distinct</span>(director_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>movies_directors <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(director_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -2053,14 +2069,14 @@
 <p>Keeps observations when their keys are present in <strong>both</strong> datasets, <strong>but only keeps variables from the first dataset</strong>.</p>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><img data-src="images/semi1.png"></p>
+<p><img data-src="images/semi1.png" alt="An illustration of a semi join between two tables, each with two columns. The table labeled 'x,' has a key column with values 1, 2, and 3 and a value column with 'x1,' 'x2,' and 'x3.' The table labeled 'y,' has a key column with values 1, 2, and 4 and a value column with 'y1,' 'y2,' and 'y4.'"></p>
 </div><div class="column" style="width:15%;">
 <p><br></p>
 <div class="r-fit-text">
 <p>→  </p>
 </div>
 </div><div class="column" style="width:25%;">
-<p><img data-src="images/semi2.png"></p>
+<p><img data-src="images/semi2.png" alt="An arrow points from the first two tables (x and y) toward the right where a single table is displayed. This table is the result of a semi join, where only the values of x that had a match in y are kept. The resulting table includes rows with matching key values from both 'x' and 'y' (keys 1 and 2), displaying only the 'x' values ('x1' and 'x2'). Rows with non-matching keys (3 and 4) are excluded."></p>
 </div></div>
 </section>
 <section id="filtering-joins-semi_join-1" class="slide level2">
@@ -2070,8 +2086,8 @@
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>directors_genres <span class="sc">|&gt;</span> </span>
-<span id="cb20-2"><a></a>  <span class="fu">semi_join</span>(movies_directors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>directors_genres <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">semi_join</span>(movies_directors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -2135,8 +2151,8 @@
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>directors_genres <span class="sc">|&gt;</span></span>
-<span id="cb21-2"><a></a>  <span class="fu">filter</span>(director_id <span class="sc">%in%</span> movies_directors<span class="sc">$</span>director_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>directors_genres <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(director_id <span class="sc">%in%</span> movies_directors<span class="sc">$</span>director_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -2205,7 +2221,7 @@
 <p><strong>Removes</strong> observations when their keys are present in <strong>both</strong> datasets, and <strong>only keeps variables from the first dataset</strong>.</p>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><img data-src="images/semi1.png"></p>
+<p><img data-src="images/semi1.png" alt="Two tables on the left labeled 'x' and 'y,' each with two columns, show key-value pairs. The 'x' table contains a key column with values 1, 2, and 3 and a value column with 'x1,' 'x2,' and 'x3.' The 'y' table contains a key column with values 1, 2, and 4 and a value column with 'y1,' 'y2,' and 'y4.'"></p>
 </div><div class="column" style="width:15%;">
 <p><br></p>
 <div class="r-fit-text">
@@ -2213,7 +2229,7 @@
 </div>
 </div><div class="column" style="width:25%;">
 <p><br></p>
-<p><img data-src="images/anti2.png"></p>
+<p><img data-src="images/anti2.png" data-fi-alt="An arrow points to the right, showing the result of an anti join. The resulting table includes the row from 'x' where the key (3) does not have a corresponding match in 'y.' It contains only the key-value pair (3, x3), demonstrating that the anti join keeps only the unmatched rows from the left table ('x')."></p>
 </div></div>
 </section>
 <section id="filtering-joins-anti_join-1" class="slide level2">
@@ -2223,8 +2239,8 @@
 <div class="tab-content">
 <div id="tabset-3-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>directors_genres <span class="sc">|&gt;</span> </span>
-<span id="cb22-2"><a></a>  <span class="fu">anti_join</span>(movies_directors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a>directors_genres <span class="sc">|&gt;</span> </span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(movies_directors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -2258,8 +2274,8 @@
 </div>
 <div id="tabset-3-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>directors_genres <span class="sc">|&gt;</span></span>
-<span id="cb23-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span>director_id <span class="sc">%in%</span> movies_directors<span class="sc">$</span>director_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a>directors_genres <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>director_id <span class="sc">%in%</span> movies_directors<span class="sc">$</span>director_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -2294,27 +2310,179 @@
 </div>
 </section>
 <section id="pa-4-military-spending" class="slide level2">
-<h2><a href="https://zoerehnberg.github.io/STAT331-S23/practice_activities/PA4.html">PA 4: Military Spending</a></h2>
+<h2><a href="../../group-activities/week-4/PA-4-tidyr.qmd">PA 4: Military Spending</a></h2>
 <p>Today you will be tidying messy data to explore the relationship between countries of the world and military spending.</p>
-<ul>
-<li><strong>Due Wednesday, 4/24 at 10:00am</strong></li>
-</ul>
 </section>
-<section id="to-do" class="slide level2">
-<h2>To do…</h2>
+<section id="finding-ephelias-college" class="slide level2">
+<h2>Finding Ephelia’s College</h2>
+<p>This activity will require knowledge of:</p>
+<!-- - debugging code errors -->
+<!-- - function syntax -->
+<!-- - logical comparisons -->
+<!-- - dplyr verbs and when to use them -->
+<!-- - chaining steps together with the pipe operator -->
+<p><span class="midi"><strong>None of us have all these abilities. Each of us has some of these abilities.</strong></span></p>
+</section>
+<section id="dplyr-resources" class="slide level2">
+<h2>dplyr Resources</h2>
+<p>Every group should have <strong>tidyr</strong> and <strong>dplyr</strong> cheatsheets!</p>
+<div class="columns">
+<div class="column" style="width:37%;">
+<div class="fragment">
+<p><strong>On the Front</strong></p>
+<div>
+<div class="small">
 <ul>
-<li><strong>PA 4: Military Spending</strong>
+<li class="fragment">Column 1: grouped summaries (<code>group_by()</code> + <code>summarize()</code>)</li>
+<li class="fragment">Column 2: <code>filter()</code>ing values with logical comparisons</li>
+<li class="fragment">Column 3: <code>select()</code>ing and <code>mutate()</code>ing variables</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:3%;">
+
+</div><div class="column" style="width:37%;">
+<div class="fragment">
+<p><strong>On the Back</strong></p>
+<div>
+<div class="small">
 <ul>
-<li>Due Wednesday, 4/24 at 10:00am</li>
+<li class="fragment">Column 2: summary functions you might like to use with <code>summarize()</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:3%;">
+
+</div><div class="column" style="width:15%;">
+<p><img data-src="images/dplyr-cheatsheet.png" alt="A picture of the dplyr cheatsheet, which contains helpful information on working with data in a variety of ways."></p>
+</div></div>
+</section>
+<section id="task-card" class="slide level2">
+<h2>Task Card</h2>
+<p>Every group should have a <strong>task card</strong>!</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><strong>On the Front</strong></p>
+<ul>
+<li>the expectations of each role</li>
+<li>the norms of collaborating</li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<div class="fragment">
+<p><strong>On the Back</strong></p>
+<ul>
+<li>advice for dealing with code errors</li>
+<li>guidelines for formatting <code>dplyr</code> code</li>
+</ul>
+</div>
+</div></div>
+</div>
+</section>
+<section id="pair-programming-expectations" class="slide level2">
+<h2>Pair Programming Expectations</h2>
+<div class="small">
+<p>During your collaboration, you and your partner will alternate between two roles:</p>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:49%;">
+<p><strong>Developer</strong></p>
+<div class="small">
+<ul>
+<li>Reads prompt and ensures Coder understands what is being asked.</li>
+<li>Types the code specified by the Coder into the Quarto document.</li>
+<li>Runs the code provided by the Coder.</li>
+<li>Works with Coder to debug the code.</li>
+<li>Evaluates the output.<br>
+</li>
+<li>Works with Coder to write code comments.</li>
+</ul>
+</div>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<p><strong>Coder</strong></p>
+<div class="small">
+<ul>
+<li>Reads out instructions or prompts</li>
+<li>Directs the Developer what to type.</li>
+<li>Talks with Developer about their ideas.</li>
+<li>Manages resources (e.g., cheatsheets, textbook, slides).</li>
+<li>Works with Developer to debug the code.</li>
+<li>Works with Developer to write code comments.</li>
+</ul>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+<section id="getting-started" class="slide level2">
+<h2>Getting Started</h2>
+<div class="small">
+<p>First, both of you will do the following:</p>
+<ul>
+<li>Join your Practice Activity workspace in Posit Cloud
+<ul>
+<li>You are in a new group, so you should have a new workspace!</li>
+</ul></li>
+<li>Log-in to Posit Cloud</li>
+<li>Open the PA 4: Military Spending project</li>
+<li>Open the <code>PA4-dplyr.qmd</code> file</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="small">
+<p>Then, the partner who woke up the earliest starts as the Developer (typing and listening to instructions from the Coder)!</p>
+<ul>
+<li>The Coder <strong>does not type</strong>.
+<ul>
+<li>The collaborative editing feature should allow you to track what is being typed.</li>
+</ul></li>
+<li>The Developer <strong>only types what they are told to type</strong>.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="external-resources" class="slide level2">
+<h2>External Resources</h2>
+<p>During the Practice Activity, you <strong>are not</strong> permitted to use Google or ChatGPT for help.</p>
+<div class="fragment">
+<p><br></p>
+<p>You <strong>are</strong> permitted to use:</p>
+<ul>
+<li>the <code>dplyr</code> cheatsheet,</li>
+<li>the <code>tidyr</code> cheatsheet,</li>
+<li>the course textbook, and</li>
+<li>the course slides.</li>
+</ul>
+</div>
+</section>
+<section id="submission" class="slide level2">
+<h2>Submission</h2>
+<!-- Insructions on what questions they are going to answer -->
+<ul>
+<li>Each person will input your responses to the PA4 Canvas quiz.</li>
+<li>The person who last occupied the role of Developer will download and submit the <code>PA-4.html</code> file for the group.
+<ul>
+<li>Only one submission per group!</li>
 </ul></li>
 </ul>
+</section></section>
+<section id="exit-ticket" class="title-slide slide level1 center">
+<h1>Exit Ticket</h1>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
