@@ -1009,6 +1009,8 @@ full_eras |>
 
 # `janitor` Package
 
+![Image by Allison Horst](images/janitor_clean_names.png){fig-alt="janitor::clean_names(): convert all column names to *_case! Below, a cartoon beaver putting shapes with long, messy column names (pulled from a bin labeled 'MESS' and 'not so awesome column names') into a contraption that converts them to lower snake case. The output has stylized text reading 'Way more deal-withable column names.' Learn more about clean_names and other *awesome* data cleaning tools in janitor."}
+
 
 ## Clean Variable Names with [`janitor`](https://sfirke.github.io/janitor/)
 
