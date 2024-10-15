@@ -1,5 +1,6 @@
 ---
 title: "PA 4: Military Spending"
+author: "The names of your group members go here!"
 format: html
 embed-resources: true
 code-tools: true
