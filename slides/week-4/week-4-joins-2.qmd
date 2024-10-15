@@ -35,33 +35,41 @@ roles <- read_csv("data/roles.csv")
 
 Today we will...
 
+::: {.small}
++ Debrief PA 4
++ Debrief Lab 3 & Challenge 3
+  + Reminder about Lab 3 Peer Review
 -   New Material
     -   Extensions to Relational Data
     -   Factors with `forcats`
     -   Clean Variable Names
-    -   Lifecycle Stages
--   Lab 4: Childcare Costs in California
-
-
-## Comments from Week 3
-
-+ The [`tidyverse`](https://www.tidyverse.org/packages/) package automatically loads `ggplot2`, `dplyr`, `readr`, etc. -- do not load these twice!
-
-+ Do not use `mutate()` + `distinct()`, when you can use `summarize()`!
-  + We want to pay attention to the **efficiency** of our code.
-
-
-## `mutate()` vs `summarise()`
-
-::: panel-tabset
-### `mutate()`
-
-![](images/mutate-sketch.JPG)
-
-### `summarise()`
-
-![](images/summarise-sketch.JPG){width=85%}
+    -   Package Lifecycle Stages
+-   [Lab 4: Childcare Costs in California](../../labs/instructions/lab-4-instructions.qmd)
 :::
+
+# Practice Activity 4
+
+# Lab 3 & Challenge 3
+
+<!-- ## Comments from Week 3 -->
+
+<!-- + The [`tidyverse`](https://www.tidyverse.org/packages/) package automatically loads `ggplot2`, `dplyr`, `readr`, etc. -- do not load these twice! -->
+
+<!-- + Do not use `mutate()` + `distinct()`, when you can use `summarize()`! -->
+<!--   + We want to pay attention to the **efficiency** of our code. -->
+
+
+<!-- ## `mutate()` vs `summarise()` -->
+
+<!-- ::: panel-tabset -->
+<!-- ### `mutate()` -->
+
+<!-- ![](images/mutate-sketch.JPG) -->
+
+<!-- ### `summarise()` -->
+
+<!-- ![](images/summarise-sketch.JPG){width=85%} -->
+<!-- ::: -->
 
 # Extensions to Relational Data
 
@@ -94,28 +102,35 @@ When we work with relational data, we rely on **keys**.
 
 :::: {.columns}
 ::: {.column width="50%"}
+::: {.small}
 ```{r}
 #| echo: true
 directors[1:4,]
 ```
 :::
+:::
+
 ::: {.column width="50%"}
+::: {.small}
 ```{r}
 #| echo: true
 movies_directors[1:4,]
 ```
 :::
+::: 
 ::::
 
 :::: {.columns}
 ::: {.column width="25%"}
-
 :::
+
 ::: {.column width="50%"}
+::: {.small}
 ```{r}
 #| echo: true
 movies[1:4,]
 ```
+:::
 :::
 ::::
 
@@ -129,14 +144,18 @@ knitr::include_graphics("images/multiple_joins.png")
 
 ### 1st + 2nd
 
+::: {.small}
 ```{r}
 #| echo: true
 #| eval: false
+#| code-line-numbers: false
+
 movies_directors |> 
   inner_join(directors, 
-             join_by(director_id == id))
+             by = join_by(director_id == id)
+             )
 ```
-
+:::
 
 ```{r}
 #| eval: true
@@ -146,21 +165,26 @@ movies_directors |>
              join_by(director_id == id)) |> 
   knitr::kable() |> 
   kableExtra::scroll_box(height = "400px") |> 
-  kableExtra::kable_styling(font_size = 30)
+  kableExtra::kable_styling(font_size = 25)
 ```
 
 ### + 3rd
 
+::: {.small}
 ```{r}
 #| echo: true
 #| eval: false
+#| code-line-numbers: false
 movies_directors |> 
   inner_join(directors, 
-             join_by(director_id == id)) |> 
+             by = join_by(director_id == id)
+             ) |> 
   inner_join(movies,
-             join_by(movie_id == id)) |> 
+             by = join_by(movie_id == id)
+             ) |> 
   rename(movie_name = name)
 ```
+:::
 
 ```{r}
 #| eval: true
@@ -173,7 +197,7 @@ movies_directors |>
   rename(movie_name = name) |> 
   knitr::kable() |> 
   kableExtra::scroll_box(height = "300px") |> 
-  kableExtra::kable_styling(font_size = 30)
+  kableExtra::kable_styling(font_size = 25)
 ```
 
 :::
@@ -208,6 +232,8 @@ measurements <- rodent |>
 ```{r}
 #| echo: true
 #| eval: false
+#| code-line-numbers: false
+
 species
 ```
 
@@ -217,7 +243,7 @@ species
 species |> 
   knitr::kable() |> 
   kableExtra::scroll_box(height = "300px") |> 
-  kableExtra::kable_styling(font_size = 30)
+  kableExtra::kable_styling(font_size = 25)
 ```
 
 ## Measurements
@@ -225,6 +251,8 @@ species |>
 ```{r}
 #| echo: true
 #| eval: false
+#| code-line-numbers: false
+
 measurements
 ```
 
@@ -234,32 +262,46 @@ measurements
 measurements[1:100,] |> 
   knitr::kable() |> 
   kableExtra::scroll_box(height = "300px") |> 
-  kableExtra::kable_styling(font_size = 30)
+  kableExtra::kable_styling(font_size = 25)
 ```
+:::
 
 ## Join by `species` + `genus`
 
+::: {.small}
 ```{r}
 #| echo: true
 #| eval: false
-species |> 
-  full_join(measurements,
-            join_by(species == species, 
-                    genus == genus_name))
+#| code-line-numbers: false
+
+measurements |> 
+  full_join(species,
+            by = join_by(species == species, 
+                         genus_name == genus)
+            )
 ```
+:::
 
 ```{r}
 #| eval: true
 #| echo: false
-species |> 
-  full_join(measurements[1:100,],
-            join_by(species == species, 
-                    genus == genus_name)) |> 
+measurements[1:100, ] |> 
+  full_join(species,
+            by = join_by(species == species, 
+                         genus_name == genus)
+            ) |> 
   knitr::kable() |> 
-  kableExtra::scroll_box(height = "200px") |> 
-  kableExtra::kable_styling(font_size = 30)
+  kableExtra::scroll_box(height = "300px") |> 
+  kableExtra::kable_styling(font_size = 25)
 ```
 
+. . .
+
+</br> 
+
+::: {.small}
+**What if a species was included in the `species` dataset, but not in the
+`measurement` dataset?**
 :::
 
 # Factor Variables
@@ -267,7 +309,9 @@ species |>
 
 ## What is a factor variable?
 
-Factors are used for
+</br> 
+
+In general, factors are used for: 
 
 1. categorical variables with a fixed and known set of possible values.
   + E.g., `day_born` = Sunday, Monday, Tuesday, ..., Saturday
@@ -276,15 +320,16 @@ Factors are used for
 
 ## Eras Tour
 
-Let's consider songs that Taylor Swift played on her Eras Tour.
-
-I have randomly selected 25 songs (and their albums) to consider.
+Let's consider songs that Taylor Swift played on her Eras Tour. I have randomly
+selected 25 songs (and their albums) to consider.
 
 ```{r}
 #| echo: false
+
 set.seed(2)
 
 full_eras <- read_xlsx("data/TS_data.xlsx", sheet = 1)
+
 eras_data <- full_eras |> 
   slice_sample(n = 25) |> 
   select(Song, Album)
@@ -292,33 +337,41 @@ eras_data <- full_eras |>
 
 ```{r}
 #| echo: true
-eras_data |> 
-  slice_head(n = 10)
+#| code-line-numbers: false
+
+eras_data 
 ```
 
 
 ## Creating a Factor -- Base `R`
 
-A **character** vector:
+::: panel-tabset
 
+## A **character** vector:
+
+::: {.small}
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 eras_data |> 
   pull(Album)
 ```
+:::
 
-. . .
+## A **factor** vector:
 
-A **factor** vector:
-
+::: {.small}
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 eras_data |> 
   pull(Album) |> 
-  factor()
+  as.factor()
 ```
-
-
+:::
+:::
 
 ## Creating a Factor -- Base `R`
 
@@ -331,21 +384,32 @@ When you create a factor variable from a vector...
 
 ## Creating a Factor -- Base `R`
 
-You can **specify the order of the levels** with the `level` argument.
+You can **specify the order of the levels** with the `levels` argument.
 
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+#| eval: false
+
 eras_data |> 
   pull(Album) |> 
-  factor(levels = c("Fearless","Speak Now","Red","1989",
-                    "Reputation","Lover","Folklore",
-                    "Evermore","Midnights"))
+  factor(levels = c("Fearless",
+                    "Speak Now",
+                    "Red",
+                    "1989",
+                    "Reputation",
+                    "Lover",
+                    "Folklore",
+                    "Evermore",
+                    "Midnights")
+         )
 ```
 
 ## `forcats`
 
 :::: {.columns}
 ::: {.column width="80%"}
+::: {.small}
 We use this package to...
 
 + turn character variables into factors.
@@ -354,6 +418,8 @@ We use this package to...
 
 + rename or reorder the levels of an existing factor.
 :::
+:::
+
 ::: {.column width="20%"}
 ```{r}
 #| fig-align: center
@@ -362,10 +428,11 @@ knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/main/thumb
 :::
 ::::
 
+::: {.small}
 ::: callout-note
+# `forcats` loads with `tidyverse`!
 The packages `forcats` ("for categoricals") helps wrangle categorical variables.
-
-  + `forcats` loads with `tidyverse`!
+:::
 :::
 
 
@@ -373,50 +440,75 @@ The packages `forcats` ("for categoricals") helps wrangle categorical variables.
 
 With `fct()`, the levels are automatically ordered in the **order of first appearance**.
 
+::: {.small}
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 eras_data |> 
   pull(Album) |> 
   fct()
 ```
+:::
 
+## Creating a Factor 
 
-## Creating a Factor -- NOTE
-
-To change a column type to factor, you must wrap `fct()` in a `mutate()` call.
-
+::: {.small}
 ```{r}
 #| echo: true
 #| eval: false
+#| code-line-numbers: false
 eras_data <- eras_data |> 
   mutate(Album = fct(Album))
 ```
+:::
+
+::: {.small}
+::: {.callout-warning}
+# To change a column type to factor, you must wrap `fct()` in a `mutate()` call.
+:::
+:::
 
 . . .
 
-I am just using `pull()` to display the outcome.
+</br> 
+
+::: {.small}
+I am using `pull()` to display the outcome:
 
 ```{r}
 #| echo: true
+#| code-line-numbers: false
 eras_data |> 
   pull(Album) |> 
   fct()
 ```
-
+:::
 
 ## Creating a Factor -- `fct`
 
 You can still **specify the order of the levels** with `level`.
 
+::: {.small}
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+#| eval: false
+
 eras_data |> 
   pull(Album) |> 
-  fct(levels = c("Fearless","Speak Now","Red","1989",
-                 "Reputation","Lover","Folklore",
-                 "Evermore","Midnights"))
+  fct(levels = c("Fearless",
+                 "Speak Now",
+                 "Red",
+                 "1989",
+                 "Reputation",
+                 "Lover",
+                 "Folklore",
+                 "Evermore",
+                 "Midnights")
+      )
 ```
-
+:::
 
 ## Creating a Factor -- `fct`
 
@@ -424,13 +516,23 @@ You can also **specify non-present levels**.
 
 ```{r}
 #| echo: true
+#| code-line-numbers: "3,13"
+#| eval: false
+
 eras_data |> 
   pull(Album) |> 
   fct(levels = c("Taylor Swift",
-                 "Fearless","Speak Now","Red","1989",
-                 "Reputation","Lover","Folklore",
-                 "Evermore","Midnights",
-                 "The Tortured Poets Department")) 
+                 "Fearless",
+                 "Speak Now",
+                 "Red",
+                 "1989",
+                 "Reputation",
+                 "Lover",
+                 "Folklore",
+                 "Evermore",
+                 "Midnights",
+                 "The Tortured Poets Department")
+      ) 
 ```
 
 ```{r}
@@ -447,39 +549,40 @@ eras_data <- eras_data |>
 
 ## Re-coding a Factor -- `fct_recode`
 
-Oops, we have a typo in some of our levels! We change existing levels with the syntax `<new level> = <old level>`.
+::: {.small}
+Oops, we have a typo in some of our levels! We change existing levels with the
+syntax: `"<new level>" = "<old level>"`.
+:::
 
 . . .
 
+::: {.small}
 ```{r}
 #| echo: true
-eras_data |>
-  pull(Album) |> 
-  fct_recode("folklore" = "Folklore",
-             "evermore" = "Evermore",
-             "reputation" = "Reputation")
-```
+#| code-line-numbers: false
 
-```{r}
-#| echo: false
-eras_data <- eras_data |>
+eras_data |>
   mutate(Album = fct_recode(.f = Album,
                             "folklore" = "Folklore",
                             "evermore" = "Evermore",
-                            "reputation" = "Reputation"))
+                            "reputation" = "Reputation")
+         )
 ```
-
-**Non-specified levels are not re-coded.**
-
+:::
 
 ## Re-coding a Factor -- `case_when`
 
+::: {.small}
 We have similar functionality with the `case_when()` function...
+:::
 
 . . .
 
+::: {.small}
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 eras_data |>
   mutate(Album = case_when(Album == "Folklore" ~ "folklore",
                            Album == "Evermore" ~ "evermore",
@@ -488,27 +591,34 @@ eras_data |>
          Album = fct(Album)) |> 
   pull(Album)
 ```
-
-
+:::
 
 ## Collapsing a Factor --`fct_collapse`
 
-Collapse multiple existing levels of a factor with the syntax `<new level> = c(<old levels>)`.
+::: {.small}
+Collapse multiple existing levels of a factor with the syntax:
+
+`"<new level>" = c("<old level>", "<old level>", ...)`.
+:::
 
 . . .
 
+::: {.small}
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 eras_data |> 
-  mutate(Genre = fct_collapse(.f= Album,
+  mutate(Genre = fct_collapse(.f = Album,
                        "country pop" = c("Taylor Swift", "Fearless"),
-                       "pop rock" = c("Speak Now","Red"),
-                       "electropop" = c("1989","reputation","Lover"),
-                       "folk pop" = c("folklore","evermore"),
-                       "alt-pop" = "Midnights")) |> 
+                       "pop rock" = c("Speak Now", "Red"),
+                       "electropop" = c("1989", "Reputation", "Lover"),
+                       "folk pop" = c("Folklore", "Evermore"),
+                       "alt-pop" = "Midnights")
+         ) |> 
   slice_sample(n = 6)
 ```
-
+:::
 
 ## Re-leveling a Factor --`fct_relevel`
 
@@ -520,6 +630,8 @@ Change the **order** of the levels of an existing factor.
 
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 eras_data |>
   pull(Album) |> 
   levels()
@@ -527,18 +639,28 @@ eras_data |>
 
 ### Ordered by Copies Sold
 
+::: {.small}
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+#| eval: false
+
 eras_data |> 
   pull(Album) |>
-  fct_relevel(c("Fearless","1989","Taylor Swift",
-                "Speak Now","Red","Midnights","reputation",
-                "folklore","Lover","evermore")) |> 
+  fct_relevel(c("Fearless",
+                "1989",
+                "Taylor Swift",
+                "Speak Now",
+                "Red",
+                "Midnights",
+                "Reputation",
+                "Folklore",
+                "Lover",
+                "Evermore")
+              ) |> 
   levels()
 ```
-
-Unspecified levels remain in the same order at the **end**.
-
+:::
 :::
 
 
@@ -550,143 +672,178 @@ Unspecified levels remain in the same order at the **end**.
 
 The bars follow the default factor levels.
 
+::: {.small}
 ```{r}
 #| echo: true
 #| eval: false
 #| code-line-numbers: "2"
+
 full_eras |> 
   mutate(Album = fct(Album)) |> 
-  ggplot() +
-  geom_bar(aes(y = Album,
-               fill = Album)) +
+  ggplot(mapping = aes(y = Album,
+               fill = Album)
+         ) +
+  geom_bar() +
   theme_minimal() +
   theme(legend.position = "none") +
-  labs(x = "Number of Songs",
+  labs(x = "",
        y = "",
-       subtitle = "Album",
-       title = "Songs Played on the Eras Tour")
+       title = "Number of Songs Played on the Eras Tour by Album")
 ```
+:::
 
 ### Plot
 
 ```{r}
 #| echo: false
+#| 
 full_eras |> 
   mutate(Album = fct(Album)) |> 
-  ggplot() +
-  geom_bar(aes(y = Album,
-               fill = Album)) +
+  ggplot(mapping = aes(y = Album,
+               fill = Album)
+         ) +
+  geom_bar() +
   theme_minimal() +
   theme(legend.position = "none") +
-  labs(x = "Number of Songs",
+  labs(x = "",
        y = "",
-       subtitle = "Album",
-       title = "Songs Played on the Eras Tour")
+       title = "Number of Songs Played on the Eras Tour by Album")
 ```
 
 ### Specify Levels
 
+::: {.small}
 We can order factor levels to order the bar plot.
 
 ```{r}
 #| echo: true
 #| eval: false
-#| code-line-numbers: "2-6"
+#| code-line-numbers: "2-13"
+
 full_eras |> 
   mutate(Album = fct(Album,
-                     levels = c("Fearless","Speak Now","Red",
-                                "1989","Reputation","Lover",
-                                "Folklore","Evermore",
-                                "Midnights"))) |> 
-  ggplot() +
-  geom_bar(aes(y = Album,
-               fill = Album)) +
+                     levels = c("Fearless",
+                                "Speak Now",
+                                "Red",
+                                "1989",
+                                "Reputation",
+                                "Lover",
+                                "Folklore",
+                                "Evermore",
+                                "Midnights")
+                     )
+         ) |> 
+  ggplot(mapping = aes(y = Album,
+               fill = Album)
+         ) +
+  geom_bar() +
   theme_minimal() +
   theme(legend.position = "none") +
-  labs(x = "Number of Songs",
+  labs(x = "",
        y = "",
-       subtitle = "Album",
-       title = "Songs Played on the Eras Tour")
+       title = "Number of Songs Played on the Eras Tour by Album")
 ```
+:::
 
 ### Plot
 
 ```{r}
 #| echo: false
+
 full_eras |> 
   mutate(Album = fct(Album,
-                     levels = c("Fearless","Speak Now","Red",
-                                "1989","Reputation","Lover",
-                                "Folklore","Evermore",
-                                "Midnights"))) |> 
-  ggplot() +
-  geom_bar(aes(y = Album,
-               fill = Album)) +
+                     levels = c("Fearless",
+                                "Speak Now",
+                                "Red",
+                                "1989",
+                                "Reputation",
+                                "Lover",
+                                "Folklore",
+                                "Evermore",
+                                "Midnights")
+                     )
+         ) |> 
+  ggplot(mapping = aes(y = Album,
+               fill = Album)
+         ) +
+  geom_bar() +
   theme_minimal() +
   theme(legend.position = "none") +
-  labs(x = "Number of Songs",
+  labs(x = "",
        y = "",
-       subtitle = "Album",
-       title = "Songs Played on the Eras Tour")
+       title = "Number of Songs Played on the Eras Tour by Album")
 ```
-
 :::
 
 
 ## Re-ordering Factors in `ggplot2`
 
+::: {.small}
 ```{r}
+
 full_eras <- full_eras |> 
   mutate(Album = fct(Album,
-                     levels = c("Fearless","Speak Now","Red",
-                                "1989","Reputation","Lover",
-                                "Folklore","Evermore",
-                                "Midnights")))
+                     levels = c("Fearless",
+                                "Speak Now",
+                                "Red",
+                                "1989",
+                                "Reputation",
+                                "Lover",
+                                "Folklore",
+                                "Evermore",
+                                "Midnights")
+                     )
+         )
 ```
+:::
 
 ::: panel-tabset
 
 ### Original
 
+::: {.small}
 The ridge plots follow the order of the factor levels.
 
 ```{r}
 #| echo: true
 #| eval: false
 #| code-line-numbers: "3"
+
 full_eras |> 
-  ggplot(aes(x = Length, 
-             y = Album, 
-             fill = Album)) +
+  ggplot(mapping = aes(x = Length, 
+                       y = Album, 
+                       fill = Album)
+         ) +
   geom_density_ridges() +
   theme_minimal() +
   theme(legend.position = "none")+
   labs(x = "Song Length (mins)",
        y = "",
-       subtitle = "Album",
-       title = "Songs Played on the Eras Tour")
+       title = "Length of Songs Played on the Eras Tour by Album")
 ```
+::: 
 
 ### Plot
 
 ```{r}
 #| echo: false
-library(ggridges)
+
 full_eras |> 
-  ggplot(aes(x = Length, 
-             y = Album, 
-             fill = Album)) +
+  ggplot(mapping = aes(x = Length, 
+                       y = Album, 
+                       fill = Album)
+         ) +
   geom_density_ridges() +
   theme_minimal() +
-  theme(legend.position = "none")+
+  theme(legend.position = "none") +
   labs(x = "Song Length (mins)",
        y = "",
-       subtitle = "Album",
-       title = "Songs Played on the Eras Tour")
+       title = "Length of Songs Played on the Eras Tour by Album")
 ```
 
 ### `fct_reorder()`
 
+::: {.small}
 Inside `ggplot()`, we can order factor levels by a summary value.
 
 ```{r}
@@ -698,33 +855,34 @@ full_eras |>
              y = fct_reorder(.f = Album,
                              .x = Length,
                              .fun = mean), 
-             fill = Album)) +
+             fill = Album)
+         ) +
   geom_density_ridges() +
   theme_minimal() +
-  theme(legend.position = "none")+
+  theme(legend.position = "none") +
   labs(x = "Song Length (mins)",
        y = "",
-       subtitle = "Album",
-       title = "Songs Played on the Eras Tour")
+       title = "Length of Songs Played on the Eras Tour by Album")
 ```
+::: 
 
 ### Plot
 
 ```{r}
 #| echo: false
 full_eras |> 
-  ggplot(aes(x = Length, 
+  ggplot(mapping = aes(x = Length, 
              y = fct_reorder(.f = Album,
                              .x = Length,
                              .fun = mean), 
-             fill = Album)) +
+             fill = Album)
+         ) +
   geom_density_ridges() +
   theme_minimal() +
-  theme(legend.position = "none")+
+  theme(legend.position = "none") +
   labs(x = "Song Length (mins)",
        y = "",
-       subtitle = "Album",
-       title = "Songs Played on the Eras Tour")
+       title = "Length of Songs Played on the Eras Tour by Album")
 ```
 
 :::
@@ -741,76 +899,88 @@ full_eras <- full_eras |>
   mutate(Single = if_else(Single == "Y", 1, 0))
 ```
 
+::: {.small}
 The legend follows the order of the factor levels.
 
 ```{r}
 #| echo: true
 #| eval: false
 #| code-line-numbers: "7"
+
 full_eras |> 
   filter(!Album %in% c("1989","Fearless")) |> 
   group_by(Album, Single) |> 
   summarise(avg_len = mean(Length)) |> 
-  ggplot(aes(x = Single, 
-             y = avg_len, 
-             color = Album)) +
+  ggplot(mapping = aes(x = Single, 
+                       y = avg_len, 
+                       color = Album)) +
   geom_point(size = 1.5) +
   geom_line() +
   theme_minimal() +
   scale_x_continuous(breaks = c(0,1),
-                     labels = c("No","Yes")) +
+                     labels = c("No", "Yes")
+                     ) +
   labs(y = "",
-       subtitle = "Average Song Length",
+       title = "Are Taylor Swift's Singles Shorter?",
        color = "Album")
 ```
+:::
 
 ### Plot
 
 ```{r}
 #| echo: false
+
 full_eras |> 
   filter(!Album %in% c("1989","Fearless")) |> 
   group_by(Album, Single) |> 
   summarise(avg_len = mean(Length)) |> 
-  ggplot(aes(x = Single, 
-             y = avg_len, 
-             color = Album)) +
+  ggplot(mapping = aes(x = Single, 
+                       y = avg_len, 
+                       color = Album)) +
   geom_point(size = 1.5) +
   geom_line() +
   theme_minimal() +
   scale_x_continuous(breaks = c(0,1),
-                     labels = c("No","Yes")) +
+                     labels = c("No", "Yes")
+                     ) +
   labs(y = "",
-       subtitle = "Average Song Length",
+       title = "Are Taylor Swift's Singles Shorter?",
        color = "Album")
 ```
 
 ### `fct_reorder2()`
 
+::: {.small}
 Inside `ggplot()`, we can order factor levels by the $y$ values associated with the largest $x$ values.
 
 ```{r}
 #| echo: true
 #| eval: false
 #| code-line-numbers: 7-9
+
 full_eras |> 
   filter(!Album %in% c("1989","Fearless")) |> 
   group_by(Album, Single) |> 
   summarise(avg_len = mean(Length)) |> 
-  ggplot(aes(x = Single, 
-             y = avg_len, 
-             color = fct_reorder2(.f = Album,
-                                  .x = Single,
-                                  .y = avg_len))) +
+  ggplot(mapping = aes(x = Single, 
+                       y = avg_len, 
+                       color = fct_reorder2(.f = Album,
+                                            .x = Single,
+                                            .y = avg_len)
+                       )
+         ) +
   geom_point(size = 1.5) +
   geom_line() +
   theme_minimal() +
   scale_x_continuous(breaks = c(0,1),
-                     labels = c("No","Yes")) +
+                     labels = c("No", "Yes")
+                     ) +
   labs(y = "",
-       subtitle = "Average Song Length",
+       title = "Are Taylor Swift's Singles Shorter?",
        color = "Album")
 ```
+:::
 
 ### Plot
 
@@ -837,8 +1007,6 @@ full_eras |>
 
 ::: 
 
-
-
 # `janitor` Package
 
 
@@ -863,6 +1031,7 @@ military_clean <- military |>
                 ~ na_if(.x, y = "xxx")))
 ```
 
+::: {.small}
 Data from external sources likely has variable names not ideally formatted for R.
 
 Names may...
@@ -870,19 +1039,21 @@ Names may...
 + contain spaces.
 + start with numbers.
 + start with a mix of capital and lower case letters.
+:::
 
 . . .
 
 ```{r}
 #| eval: true
 #| echo: true
+#| code-line-numbers: false
+
 names(military)[1:12]
 ```
 
-
 ## Clean Variable Names with [`janitor`](https://sfirke.github.io/janitor/)
 
-
+::: {.small}
 The `janitor` package converts all variable names in a dataset to *snake_case*.
 
 Names will...
@@ -894,13 +1065,15 @@ Names will...
 #| eval: true
 #| echo: true
 #| code-line-numbers: "3-5"
+
 library(janitor)
+
 military_clean_names <- military |> 
   clean_names()
 
 names(military_clean_names)[1:12]
 ```
-
+:::
 
 
 # Lifecycle Stages
@@ -925,26 +1098,31 @@ As packages get updated, the functions and function arguments included in those 
 
 ## Deprecated Functions
 
+::: {.small}
 A **deprecated** functionality has a better alternative available and is scheduled for removal.
 
 + You get a warning telling you what to use instead.
-
+:::
 . . .
 
+::: {.small}
 ```{r}
 #| warning: true
 #| message: true
 #| echo: true
 #| code-line-numbers: "2"
-military_clean |> 
-  filter(across(Notes:`2019`, is.na)) |> 
-  slice_head(n = 3) |> 
-  select(1:8)
-```
 
+military_clean |> 
+  filter(across(.cols = Notes:`2019`, 
+                .fns = ~ is.na(.x)
+                )
+         ) 
+```
+:::
 
 ## Deprecated Functions
 
+::: {.small}
 You **should not** use deprecated functions!
 
 Instead, we use...
@@ -953,32 +1131,33 @@ Instead, we use...
 #| echo: true
 #| code-line-numbers: "2"
 military_clean |>
-  filter(if_all(Notes:`2019`, ~ is.na(.x))) |> 
-  slice_head(n = 3) |> 
-  select(1:8)
+  filter(if_all(.cols = Notes:`2019`, 
+                .fns = ~ is.na(.x)
+                )
+         ) 
 ```
-
+:::
 
 ## Superceded Functions
 
 A **superseded** functionality has a better alternative, but is not going away.
 
 + This is a softer alternative to deprecation.
-+ A superseded function will not give a warning (since there’s no risk if you keep using it), but the documentation will give you a recommendation.
++ A superseded function will not give a warning (since there’s no risk if you
+keep using it), but the documentation will give you a recommendation.
 
+## [Lab 4: Childcare Costs in California](../../labs/instructions/lab-4-instructions.qmd)
 
+<!-- ## ChatGPT Example... -->
 
-## [Lab 4: Childcare Costs in California](https://zoerehnberg.github.io/STAT331-S23/lab_assignments/lab4/LA4_childcare.html)
-
-## ChatGPT Example...
-
-https://chatgpt.com/share/670b0fd0-d9f0-8012-8d47-aceba68925f4
-
+<!-- https://chatgpt.com/share/670b0fd0-d9f0-8012-8d47-aceba68925f4 -->
 
 ## To do...
 
 -   **Lab 4: Childcare Costs in California**
-    -   Due Saturday (4/27) at 11:59pm
+    -   Due Sunday (10/20) at 11:59pm
+-   **Challenge 4: Open-Ended Analysis**
+    -   Due Sunday (10/20) at 11:59pm
 -   **Read Chapter 5: Strings + Dates**
-    -   **Check-in 5.1 - 5.2** due Monday (4/29) at 10:00am
+    -   **Check-in 5.1 - 5.2** due Tuesday (10/22) at 12:10pm
 
