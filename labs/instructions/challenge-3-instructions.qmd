@@ -12,12 +12,13 @@ While a second course in statistics is a pre-requisite for this class, [here](ht
 
 Let’s compare the level of SET ratings for Question 3 (The professor used activities to make the class more engaging.) between senior instructors and junior instructors.
 
-**1. Create a new dataset (`teacher_evals_compare`) that accomplishes the following with *one*`dplyr` pipeline:**
+**1. Using the original `teacher_evals` dataset (not `teacher_evals_clean`), create a new dataset that accomplishes the following with *one*`dplyr` pipeline:**
 
 -   **includes responses for Question 3 only**
 -   **creates a new variable called `SET_level` that is “excellent” if the `SET_score_avg` is 4 or higher (inclusive) and “standard” otherwise**
 -   **creates a new variable called `sen_level` that is “junior” if `seniority` is 4 or less (inclusive) and “senior” otherwise**
--   **contains only the variables we are interested in –- `course_id`, `SET_level`, and `sen_level`.**
+-   **contains only the variables we are interested in –- `course_id`, `SET_level`, and `sen_level`**
+-   **saves the mutated data into a new object named `teacher_evals_compare`.**
 
 ::: callout-tip
 Helpful functions: `filter()`, `mutate()`, `if_else()`, `select()`

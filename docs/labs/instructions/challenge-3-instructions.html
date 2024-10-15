@@ -353,12 +353,13 @@ Refresher on Chi-square test of independence
 </div>
 </div>
 <p>Let’s compare the level of SET ratings for Question 3 (The professor used activities to make the class more engaging.) between senior instructors and junior instructors.</p>
-<p><strong>1. Create a new dataset (<code>teacher_evals_compare</code>) that accomplishes the following with <em>one</em><code>dplyr</code> pipeline:</strong></p>
+<p><strong>1. Using the original <code>teacher_evals</code> dataset (not <code>teacher_evals_clean</code>), create a new dataset that accomplishes the following with <em>one</em><code>dplyr</code> pipeline:</strong></p>
 <ul>
 <li><strong>includes responses for Question 3 only</strong></li>
 <li><strong>creates a new variable called <code>SET_level</code> that is “excellent” if the <code>SET_score_avg</code> is 4 or higher (inclusive) and “standard” otherwise</strong></li>
 <li><strong>creates a new variable called <code>sen_level</code> that is “junior” if <code>seniority</code> is 4 or less (inclusive) and “senior” otherwise</strong></li>
-<li><strong>contains only the variables we are interested in –- <code>course_id</code>, <code>SET_level</code>, and <code>sen_level</code>.</strong></li>
+<li><strong>contains only the variables we are interested in –- <code>course_id</code>, <code>SET_level</code>, and <code>sen_level</code></strong></li>
+<li><strong>saves the mutated data into a new object named <code>teacher_evals_compare</code>.</strong></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">

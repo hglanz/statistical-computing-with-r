@@ -4,16 +4,15 @@ title: "Challenge 3: Extending Teaching Evaluation Investigations"
 
 # Chi-Square Test of Independence
 
-Let’s compare the level of SET ratings for Question 3 (The professor used
-activities to make the class more engaging.) between senior instructors and 
-junior instructors.
+Let’s compare the level of SET ratings for Question 3 (The professor used activities to make the class more engaging.) between senior instructors and junior instructors.
 
-**1. Create a new dataset (`teacher_evals_compare`) that accomplishes the following with _one_ `dplyr` pipeline:**
+**1. Using the original `teacher_evals` dataset (not `teacher_evals_clean`), create a new dataset that accomplishes the following with *one*`dplyr` pipeline:**
 
-- **includes responses for Question 3 only**
-- **creates a new variable called `SET_level` that is “excellent” if the `SET_score_avg` is 4 or higher (inclusive) and “standard” otherwise**
-- **creates a new variable called `sen_level` that is “junior” if `seniority` is 4 or less (inclusive) and “senior” otherwise** 
-- **contains only the variables we are interested in –- `course_id`, `SET_level`, and `sen_level`.**
+-   **includes responses for Question 3 only**
+-   **creates a new variable called `SET_level` that is “excellent” if the `SET_score_avg` is 4 or higher (inclusive) and “standard” otherwise**
+-   **creates a new variable called `sen_level` that is “junior” if `seniority` is 4 or less (inclusive) and “senior” otherwise**
+-   **contains only the variables we are interested in –- `course_id`, `SET_level`, and `sen_level`**
+-   **saves the mutated data into a new object named `teacher_evals_compare`.**
 
 ::: callout-tip
 Helpful functions: `filter()`, `mutate()`, `if_else()`, `select()`
@@ -29,15 +28,12 @@ Helpful functions: `filter()`, `mutate()`, `if_else()`, `select()`
 
 ![](https://atheobold.github.io/groupworthy-data-science/labs/instructions/images/challenge-3-plot-to-recreate.png)
 
-
 ::: callout-tip
 Helpful geometric object and arguments: `geom_bar(stat = ..., position = ...)`
 
-You **should not** have to do any more data manipulation to create this plot. 
+You **should not** have to do any more data manipulation to create this plot.
 
-Note that getting the general structure and reader friendly labels is the first
-step. The next step is to figure out the labels of the bars and the theme of the
-plot.
+Note that getting the general structure and reader friendly labels is the first step. The next step is to figure out the labels of the bars and the theme of the plot.
 :::
 
 ```{r}
@@ -62,11 +58,7 @@ Note that the `chisq.test()` function does not take a formula / data specificati
 
 # Study Critique
 
-Part of the impetus behind this study was to investigate characteristics of a
-course or an instructor that might affect student evaluations of teaching that
-are **not** explicitly related to teaching effectiveness. For instance, it has
-been shown that gender identity and gender express affect student evaluations of
-teaching ([an example](https://link.springer.com/article/10.1007/s10755-014-9313-4?nr_email_referer=1)).
+Part of the impetus behind this study was to investigate characteristics of a course or an instructor that might affect student evaluations of teaching that are **not** explicitly related to teaching effectiveness. For instance, it has been shown that gender identity and gender express affect student evaluations of teaching ([an example](https://link.springer.com/article/10.1007/s10755-014-9313-4?nr_email_referer=1)).
 
 **5. If you were to conduct this study at Cal Poly, what are two other variables you would like to collect that you think might be related to student evaluations? These should be course or instructor characteristics that were not collected in this study.**
 
