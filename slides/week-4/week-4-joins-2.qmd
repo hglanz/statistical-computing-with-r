@@ -166,6 +166,12 @@ names(military_clean_names)[1:12]
 <!-- ![](images/summarise-sketch.JPG){width=85%} -->
 <!-- ::: -->
 
+# Don't Forget to Complete Your Lab 3 Code Review
+
+> Make sure your feedback follows the [code review guidelines](../../code-review/code-review-guidelines.qmd). 
+
+> Insert your review into the comment box! 
+
 # Extensions to Relational Data
 
 ## Relational Data
