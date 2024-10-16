@@ -2245,28 +2245,28 @@
     "href": "labs/instructions/lab-5-instructions.html",
     "title": "Lab 5: Factors in Visualizations",
     "section": "",
-    "text": "Download starter .qmd file\nWe will be working with the survey.csv data from Lab 2: Exploring Rodents with ggplot2\nlibrary(tidyverse)\nlibrary(lubridate)\n\n# fix the file path for your file folder structure\nsurveys &lt;- read_csv(\"../lab2/surveys.csv\")\n\nError: '../lab2/surveys.csv' does not exist in current working directory ('/Users/allisontheobold/Documents/Research/IUSE/groupworthy-data-science/labs/instructions').\nThis lab comes from the plotting “best practices” that I’ve learned over the years. The main inspiration is Will Chase’s 2020 RStudio Conference Presentation – Glamour of Graphics."
+    "text": "This lab comes from the plotting “best practices” that I’ve learned over the years. The main inspiration is Will Chase’s 2020 RStudio Conference Presentation – Glamour of Graphics."
   },
   {
     "objectID": "labs/instructions/lab-5-instructions.html#revisiting-lab-2-exploring-rodents-with-ggplot2",
     "href": "labs/instructions/lab-5-instructions.html#revisiting-lab-2-exploring-rodents-with-ggplot2",
     "title": "Lab 5: Factors in Visualizations",
     "section": "1 Revisiting Lab 2: Exploring Rodents with ggplot2",
-    "text": "1 Revisiting Lab 2: Exploring Rodents with ggplot2\nLet’s start with the side-by-side boxplots you created in Lab 2 to visualize the distribution of weight within each species (not species ID!).\n\nsurveys |&gt; \n  ggplot(mapping = aes(x = weight,\n                       y = species)) + \n  geom_jitter(color = \"steelblue\",\n              alpha = 0.05) + \n  geom_boxplot(alpha = 0.2,\n               outlier.shape = NA)\n\nError in eval(expr, envir, enclos): object 'surveys' not found\n\n\nAs you should expect with a character variable, the boxplots go in alphabetical order. This looks rather jumbled, so let’s put our factor skills to work!\n1. Reorder the boxplots so the weights go in descending order.\n\n\n\n\n\n\nCaution\n\n\n\nYou are required to use functions from forcats to complete this task.\n\n\n2. Now that you’ve reordered, let’s fix our axis labels and title. Make sure your labels/title are meaningful. Also, let’s take Will Chase’s advice and move the y-axis label to the top of the plot."
+    "text": "1 Revisiting Lab 2: Exploring Rodents with ggplot2\nLet’s start with the side-by-side boxplots you created in Lab 2 to visualize the distribution of weight within each species (not species ID!).\n\nsurveys |&gt; \n  ggplot(mapping = aes(x = weight,\n                       y = species)) + \n  geom_jitter(color = \"steelblue\",\n              alpha = 0.05) + \n  geom_boxplot(alpha = 0.2,\n               outlier.shape = NA)\n\n\n\n\n\n\n\n\nAs you should expect with a character variable, the boxplots go in alphabetical order. This looks rather jumbled, so let’s put our factor skills to work!\n1. Reorder the boxplots so the weights go in descending order.\n\n\n\n\n\n\nCaution\n\n\n\nYou are required to use functions from forcats to complete this task.\n\n\n2. Now that you’ve reordered, let’s fix our axis labels and title. Make sure your labels/title are meaningful. Also, let’s take Will Chase’s advice and move the y-axis label to the top of the plot."
   },
   {
     "objectID": "labs/instructions/lab-5-instructions.html#time-series-plot",
     "href": "labs/instructions/lab-5-instructions.html#time-series-plot",
     "title": "Lab 5: Factors in Visualizations",
-    "section": "2 Time-Series Plot",
-    "text": "2 Time-Series Plot\n\n\n\n\n\n\nWarning\n\n\n\nThis is a new section, meaning you will create a new plot. In other words, this is not a continuation of the boxplot from above.\n\n\nThis week, we are focusing on learning skills related to dates, but we have yet to make a very common type of plot – the time-series plot. We’ll use this plot to motivate a second type of factor reordering!\n3. Create a visualization of how weights vary for each genus over the duration of the study.\n\n\n\n\n\n\nTip\n\n\n\nWhat variables do you need and what are their variable types? What aesthetic would it make sense to map each variable to? Sketch it out first!\nAvoid using faceting here.\n\n\nAlright, there are a lot of measurements over time! Let’s use our dplyr skills to summarize each year and plot the summaries.\n4. Calculate and plot the mean weight for each year (for each genus).\nThis should look much less busy! However, you should notice that the legend still goes in alphabetical order.\n5. Reorder the legend line colors so the weights go in descending order.\n\n\n\n\n\n\nCaution\n\n\n\nYou are required to use functions from forcats to complete this task.\n\n\n6. Now that you’ve reordered the lines, look at your labels and title. Let’s give the legend, axes, and plot new titles and move the y-axis label to the top of the plot."
+    "section": "1.2 Time-Series Plot",
+    "text": "1.2 Time-Series Plot\n\n\n\n\n\n\nWarning\n\n\n\nThis is a new section, meaning you will create a new plot. In other words, this is not a continuation of the boxplot from above.\n\n\nThis week, we are focusing on learning skills related to dates, but we have yet to make a very common type of plot – the time-series plot. We’ll use this plot to motivate a second type of factor reordering!\n3. Create a visualization of how weights vary for each genus over the duration of the study.\n\n\n\n\n\n\nTip\n\n\n\nWhat variables do you need and what are their variable types? What aesthetic would it make sense to map each variable to? Sketch it out first!\nAvoid using faceting here.\n\n\nAlright, there are a lot of measurements over time! Let’s use our dplyr skills to summarize each year and plot the summaries.\n4. Calculate and plot the mean weight for each year (for each genus).\nThis should look much less busy! However, you should notice that the legend still goes in alphabetical order.\n5. Reorder the legend line colors so the weights go in descending order.\n\n\n\n\n\n\nCaution\n\n\n\nYou are required to use functions from forcats to complete this task.\n\n\n6. Now that you’ve reordered the lines, look at your labels and title. Let’s give the legend, axes, and plot new titles and move the y-axis label to the top of the plot."
   },
   {
     "objectID": "labs/instructions/lab-5-instructions.html#caputures-over-the-week",
     "href": "labs/instructions/lab-5-instructions.html#caputures-over-the-week",
     "title": "Lab 5: Factors in Visualizations",
-    "section": "3 Caputures over the Week",
-    "text": "3 Caputures over the Week\nFor our final exploration, we will consider the number of rodents captured throughout the week – transitioning to visualizations of categorical variables.\n7. Sketch out a game plan for visualizing the number of rodents captured each day of the week. Include your game plan below.\n\n8. Implement your game plan and create a visualization of the number of rodents captured each day of the week.\nAs you might have expected, the ordering of the days of the week is not what we would like.\n9. Change the order of the day of the week to go Monday through Sunday.\n\n\n\n\n\n\nNote\n\n\n\nYou can choose to keep the days named as they are (e.g., Mon, Sun), or you can choose to rename the days to their full names (e.g., Monday, Sunday).\n\n\n\n\n\n\n\n\nWarning\n\n\n\nYour plot should not make people tilt their heads to read it! Be mindful in choosing which variable goes on which axis and if / how you use axis labels.\n\n\nIt should be very clear that there are more rodents captured on the weekend than during the week. But, let’s explore if this is still the case if we use a “Weekday” / “Weekend” classification system instead.\n10. Collapse Monday through Friday into a \"Weekday\" level, and collapse Saturday and Sunday into a \"Weekend\" level. Plot the number of rodents captured between the two groups.\n\n\n\n\n\n\nWarning\n\n\n\nYour plot should not make people tilt their heads to read it! Be mindful in choosing which variable goes on which axis and if / how you use axis labels.\n\n\n\n\n\n\n\n\n\nCaution\n\n\n\nDon’t forget to submit your final project group formation survey this week! Due at the same time as this lab!"
+    "section": "1.3 Caputures over the Week",
+    "text": "1.3 Caputures over the Week\nFor our final exploration, we will consider the number of rodents captured throughout the week – transitioning to visualizations of categorical variables.\n\n\n\n\n\n\nWarning\n\n\n\nYour plots should not make people tilt their heads to read it! Be mindful in choosing which variable goes on which axis and if / how you use axis labels.\n\n\n7. Create a visualization of the number of rodents captured each day of the week.\nAs you might have expected, the ordering of the days of the week is not what we would like.\n8. Change the order of the day of the week to go Monday through Sunday.\n\n\n\n\n\n\nNote\n\n\n\nYou can choose to keep the days named as they are (e.g., Mon, Sun), or you can choose to rename the days to their full names (e.g., Monday, Sunday).\n\n\nIt should be very clear that there are more rodents captured on the weekend than during the week. But, let’s explore if this is still the case if we use a “Weekday” / “Weekend” classification system instead.\n10. Collapse Monday through Friday into a \"Weekday\" level, and collapse Saturday and Sunday into a \"Weekend\" level. Plot the number of rodents captured between the two groups."
   },
   {
     "objectID": "labs/instructions/lab-1-instructions.html",
@@ -4743,5 +4743,271 @@
     "title": "Extending Joins, Factors, Clean Variable Names",
     "section": "Take 3-minutes to…",
     "text": "Take 3-minutes to…\nWrite down what each line of this code is doing.\n\nmilitary_clean %&gt;% \n  filter(\n    if_all(.cols = `1988`:`2019`, \n           .fns = ~ is.na(.x)\n           ), \n    !is.na(Country)\n    ) %&gt;% \n  pull(Country)"
+  },
+  {
+    "objectID": "group-activities/week-5/PA-5-strings.html",
+    "href": "group-activities/week-5/PA-5-strings.html",
+    "title": "PA 5.1: Scrambled Message",
+    "section": "",
+    "text": "library(tidyverse)"
+  },
+  {
+    "objectID": "group-activities/week-5/PA-5-strings.html#read-in-the-scret-message",
+    "href": "group-activities/week-5/PA-5-strings.html#read-in-the-scret-message",
+    "title": "PA 5.1: Scrambled Message",
+    "section": "Read in the Scret Message",
+    "text": "Read in the Scret Message\n\nmessage_data &lt;- read_csv(\"https://github.com/earobinson95/stat331-calpoly/raw/master/practice-activities/data/scrambled_message.txt\")"
+  },
+  {
+    "objectID": "group-activities/week-5/PA-5-strings.html#extracting-the-secret-message",
+    "href": "group-activities/week-5/PA-5-strings.html#extracting-the-secret-message",
+    "title": "PA 5.1: Scrambled Message",
+    "section": "Extracting the Secret Message",
+    "text": "Extracting the Secret Message\nFor this activity, we will practice using the stringr functions on a character vector. In the code below, we extract the Word column from the message_data, which is then stored as a character vector. With the character vector, you can use indexing (e.g., message[1]) to extract elements.\n\nmessage &lt;- message_data |&gt; \n  pull(Word)\n\nclass(message)\n\n[1] \"character\"\n\n\nIn this activity, a “word” is a set of characters with no white space. That is, even though many of elements of the scrambled mess vector are nonsense, and some have punctuation, you can consider each element to be a “word”."
+  },
+  {
+    "objectID": "group-activities/week-5/PA-5-strings.html#warm-up-exercises",
+    "href": "group-activities/week-5/PA-5-strings.html#warm-up-exercises",
+    "title": "PA 5.1: Scrambled Message",
+    "section": "Warm-up exercises",
+    "text": "Warm-up exercises\n\n\nHow many characters are in the scrambled message?\n\n\nHow many words are in the scrambled message?\n\n\nPrint out every word in the scrambled message that starts with the letter “m”.\n\n\n\nPrint out every word in the scrambled message that ends with the letter “z”\n\n\nPrint out the punctuation symbols that are present in the scrambled message.\n\n\nPrint out the longest word in the scrambled message."
+  },
+  {
+    "objectID": "group-activities/week-5/PA-5-strings.html#decode-the-message",
+    "href": "group-activities/week-5/PA-5-strings.html#decode-the-message",
+    "title": "PA 5.1: Scrambled Message",
+    "section": "Decode the Message",
+    "text": "Decode the Message\nComplete the following steps to decode the message.\n\nRemove any spaces before or after each word.\n\n\nNo word should be longer than 16 characters. Drop all extra characters off the end of each word.\n\n\nAny time you see the word “ugh”, with any number of h’s, followed by a punctuation mark, delete this.\n\n\nReplace all instances of exactly 2 a’s with exactly 2 e’s.\n\n\n\nReplace all z’s with t’s.\n\n\nEvery word that ends in b, change that to a y.\n\n\nEvery word that starts with k (or K), change that to a v (or V).\n\n\nRecombine all your words into a message.\n\n\nFind the movie this quote is from.\n\n\nCanvas Quiz Submission\nWhat is the name of the movie the quote is from?"
+  },
+  {
+    "objectID": "group-activities/week-5/PA-5-dates.html",
+    "href": "group-activities/week-5/PA-5-dates.html",
+    "title": "PA 5.2: Jewel Heist",
+    "section": "",
+    "text": "library(tidyverse)"
+  },
+  {
+    "objectID": "group-activities/week-5/PA-5-dates.html#solve-the-mystery",
+    "href": "group-activities/week-5/PA-5-dates.html#solve-the-mystery",
+    "title": "PA 5.2: Jewel Heist",
+    "section": "Solve the Mystery",
+    "text": "Solve the Mystery\nJust down the road in Montecito, CA several rare jewels went missing. The jewels were stolen and replaced with fakes, but detectives have not been able to solve the case. They are now calling in a data scientist to help parse their clues.\nA camera was located near the building where the jewels went missing, so the detectives have provided you with a list of people who may have entered the building. This list includes the date and time they were spotted on the camera, in Pacific Standard Time (PST).\nUnfortunately, the date and time of the jewel heist is not known. You have been hired to crack the case. Use the clues below to discover the thief’s identity.\n\nsuspects &lt;- read_csv(\"https://raw.githubusercontent.com/zoerehnberg/STAT331-S23/main/practice_activities/suspects.csv\")\n\ndim(suspects)\n\n[1] 214   3\n\n# 214 total suspects\n\n\n\nThe crime was committed in Montecito, CA, so we need to make sure the time zone for these dates are correct. Modify the Time.Spotted variable to have the correct time zone.\n\n\nBased on the cleaning schedule for the room where the jewels are held, the heist was not committed in the morning.\n\n\n# After this step you should have 112 suspects left\n\n\nThe room where the heist was committed is closed on Tuesdays and Thursdays (and there were no signs of forced entry), so the heist did not happen on those days.\n\n\n# After this step you should have 78 suspects left\n\n\n\nIt is believed that the heist was committed within 5 weeks (35 days) of Thanksgiving 2022. Hint: Pay attention to time zones!\n\n\n# After this step you should have 11 suspects left\n\n\nThe detectives partially decoded a message from the thief to a notorious fence in Iceland. In it, the thief said the job would be done “after the sun sets for you, but before midnight.” Hint: When does the sun set in Iceland at that time of year?\n\n\n# After this step you should have 4 suspects left\n\n\nThe thief left behind a receipt at the scene of the crime. The receipt is smudged, but the day of the month is shown to be 22. It is thought that the heist took place no more than three days after the receipt was issued.\n\n\n# After this step you should have 2 suspects left\n\n\n\nThe thief is amused by your efforts and has sent you a cryptic clue:\n\n\n“The exact number of seconds between midnight on Jan 1, 1970 and the time I arrived on the scene is divisible by 6.”\n\n\n# You should end with 1 suspect left"
+  },
+  {
+    "objectID": "group-activities/week-5/PA-5-dates.html#canvas-quiz-submission",
+    "href": "group-activities/week-5/PA-5-dates.html#canvas-quiz-submission",
+    "title": "PA 5.2: Jewel Heist",
+    "section": "Canvas Quiz Submission",
+    "text": "Canvas Quiz Submission\nWho is the thief? Only one name should remain."
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-ggplot.html",
+    "href": "group-activities/week-2/PA-2-ggplot.html",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "",
+    "text": "Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to solve this puzzle, you will need to use the skills of each member of your group.\nSome advice: If you aren’t sure how to make a specific plot or how to customize a look over the class text for this week and make use of the ggplot2 cheatsheet."
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-ggplot.html#groupwork-protocols",
+    "href": "group-activities/week-2/PA-2-ggplot.html#groupwork-protocols",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Groupwork Protocols",
+    "text": "Groupwork Protocols\nDuring the Practice Activity, you and your partner will alternate between two roles—Developer and Coder.\nWhen you are the Developer, you will type into the Quarto document in RStudio. However, you do not type your own ideas. Instead, you type what the Coder tells you to type. You are permitted to ask the Coder clarifying questions, and, if both of you have a question, you are permitted to ask the professor. You are expected to run the code provided by the Coder and, if necessary, to work with the Coder to debug the code. Once the code runs, you are expected to collaborate with the Coder to write code comments that describe the actions taken by your code.\nWhen you are the Coder, you are responsible for reading the instructions / prompts and directing the Developer what to type in the Quarto document. You are responsible for managing the resources your group has available to you (e.g., cheatsheet, textbook). If necessary, you should work with the Developer to debug the code you specified. Once the code runs, you are expected to collaborate with the Developer to write code comments that describe the actions taken by your code.\n\nGroup Norms\nRemember, your group is expected to adhere to the following norms:\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nNo cross-talk with other groups."
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-ggplot.html#step-1-install-the-palmerpenguins-package",
+    "href": "group-activities/week-2/PA-2-ggplot.html#step-1-install-the-palmerpenguins-package",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 1: Install the palmerpenguins Package",
+    "text": "Step 1: Install the palmerpenguins Package\nWe will be creating visualizations using the ggplot2 package.\nFor this activity, we will be exploring the penguins data from the palmerpenguins package, which has fantastic documentation with really awesome artwork. So, you will need to install the palmerpenguins package. Run the following code in your console:\ninstall.packages(\"palmerpenguins\")"
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-ggplot.html#step-2-create-a-set-up-code-chunk",
+    "href": "group-activities/week-2/PA-2-ggplot.html#step-2-create-a-set-up-code-chunk",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 2: Create a Set-up Code Chunk",
+    "text": "Step 2: Create a Set-up Code Chunk\n\nLocate the code chunk at the beginning of your document (directly under the YAML).\nName the code chunk setup (with the hashpipe #|)\nSpecify the code chunk options (with the hashpipe #|) that the messages from loading in the packages should not be included.\nLoad in the tidyverse or ggplot2 package.\nLoad in the palmerpenguins package."
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-ggplot.html#step-3-accessing-the-penguins-dataset",
+    "href": "group-activities/week-2/PA-2-ggplot.html#step-3-accessing-the-penguins-dataset",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 3: Accessing the penguins Dataset",
+    "text": "Step 3: Accessing the penguins Dataset\nI like to tangibly see the data set I will be working with so let’s pull the penguins data into the R environment. Run the code below and you should see the penguins data appear in the top right Environment tab.\n\ndata(penguins)\n\nWarning in data(penguins): data set 'penguins' not found"
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-ggplot.html#step-4-get-to-know-the-data",
+    "href": "group-activities/week-2/PA-2-ggplot.html#step-4-get-to-know-the-data",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 4: Get to Know the Data",
+    "text": "Step 4: Get to Know the Data\nWhat variables are included in these data? What units are the variables measured in? What does each row represent?"
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-ggplot.html#step-5-barchart",
+    "href": "group-activities/week-2/PA-2-ggplot.html#step-5-barchart",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 5: Barchart",
+    "text": "Step 5: Barchart\nUse ggplot2 to draw a barchart of different species included in the dataset."
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-ggplot.html#step-6-scatterplot",
+    "href": "group-activities/week-2/PA-2-ggplot.html#step-6-scatterplot",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 6: Scatterplot",
+    "text": "Step 6: Scatterplot\nUse ggplot2 to create a scatterplot of the relationship between the bill length (bill_length_mm) and bill depth (bill_depth_mm)."
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-ggplot.html#step-7-adding-a-categorical-variable",
+    "href": "group-activities/week-2/PA-2-ggplot.html#step-7-adding-a-categorical-variable",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 7: Adding A Categorical Variable",
+    "text": "Step 7: Adding A Categorical Variable\n\nBuilding off of the plot you made in Step 6, add an aesthetic to differentiate the species of the penguins in the scatterplot by color."
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-ggplot.html#step-8-adding-another-categorical-variable",
+    "href": "group-activities/week-2/PA-2-ggplot.html#step-8-adding-another-categorical-variable",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Step 8: Adding Another Categorical Variable",
+    "text": "Step 8: Adding Another Categorical Variable\nBuilding off of the plot you made in Step 7, add the location of the penguins ( island) to your visualization. There may be more than one method to address this, however, one method will more easily allow you to address the questions below."
+  },
+  {
+    "objectID": "group-activities/week-3/PA-3-task-card.html",
+    "href": "group-activities/week-3/PA-3-task-card.html",
+    "title": "PA 3 Task Card – Finding Ephelia’s College",
+    "section": "",
+    "text": "Today you will use the dplyr package to clean some data. We will then use that cleaned data to figure out what college Ephelia has been accepted to.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to solve this puzzle, you will need to use the skills of each member of your group."
+  },
+  {
+    "objectID": "group-activities/week-3/PA-3-task-card.html#group-roles",
+    "href": "group-activities/week-3/PA-3-task-card.html#group-roles",
+    "title": "PA 3 Task Card – Finding Ephelia’s College",
+    "section": "Group Roles",
+    "text": "Group Roles\nWhen you are the Developer, you will type into the Quarto document in RStudio. However, you do not type your own ideas. Instead, you type what the Coder tells you to type. You are permitted to ask the Coder clarifying questions, and, if both of you have a question, you are permitted to ask the professor. You are expected to run the code provided by the Coder and, if necessary, to work with the Coder to debug the code. Once the code runs, you are expected to collaborate with the Coder to write code comments that describe the actions taken by your code.\nWhen you are the Coder, you are responsible for reading the instructions / prompts and directing the Developer what to type in the Quarto document. You are responsible for managing the resources your group has available to you (e.g., cheatsheet, textbook). If necessary, you should work with the Developer to debug the code you specified. Once the code runs, you are expected to collaborate with the Developer to write code comments that describe the actions taken by your code."
+  },
+  {
+    "objectID": "group-activities/week-3/PA-3-task-card.html#group-norms",
+    "href": "group-activities/week-3/PA-3-task-card.html#group-norms",
+    "title": "PA 3 Task Card – Finding Ephelia’s College",
+    "section": "Group Norms",
+    "text": "Group Norms\nRemember, your group is expected to adhere to the following norms:\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nBe open minded.\nNo cross-talk with other groups.\nCommunicate with each other!"
+  },
+  {
+    "objectID": "group-activities/week-3/PA-3-task-card.html#dealing-with-errors",
+    "href": "group-activities/week-3/PA-3-task-card.html#dealing-with-errors",
+    "title": "PA 3 Task Card – Finding Ephelia’s College",
+    "section": "Dealing with Errors",
+    "text": "Dealing with Errors\nAs you work through this PA, you will encounter some code that does not work as you want it to. Don’t despair! Errors (when R is unable to run your code) and bugs (when the code doesn’t do what you hoped) are a natural part of coding. Even the best of the best deal with these problems regularly - learning to track down the issue is a skill that you can learn and practice.\nErrors can be sneaky - check results often!\nIf a chunk of code runs smoothly without giving you an error or warning this does not necessarily mean it accomplished the desired task.\nIt is a good habit to check the results of your code every time you finish a task. In general, I would recommend completing the following tasks every time you write a code chunk.\n\nInclude a comment at the beginning of the code chunk that briefly states the purpose of the chunk. Comments in the code chunks come after # signs. These comments will remind later readers—which might be your future self!—what the desired output of the code chunk is.\nIf you created a new object, take a look at it! You can inspect the object by either clicking its name in your Environment tab or by typing its name into the console. Make sure it looks about how you expect. Do not type code to inspect the object in your Quarto file, as that is not code that needs to be saved!\nIf you created or updated a data frame, make sure your edits did what you hoped. Use the Environment or the head() function to investigate your changes."
+  },
+  {
+    "objectID": "group-activities/week-3/PA-3-task-card.html#code-formatting",
+    "href": "group-activities/week-3/PA-3-task-card.html#code-formatting",
+    "title": "PA 3 Task Card – Finding Ephelia’s College",
+    "section": "Code Formatting",
+    "text": "Code Formatting\nDon’t forget, writing “tidy” and “well documented” code are two of the learning targets for this course. As such, I would strongly encourage you to use every opportunity to practice these skills.\nAs you are writing code for this assignment, make sure your code follows the tidyverse style guide for dplyr code. Specifically, your code should:\n\nuse whitespace liberally\n\nbefore & after every = sign\nafter every ,\nbefore every |&gt;\n\nuse new lines liberally\n\nafter every |&gt;\nafter , when needed (if code is more than 80 characters in length)"
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-task-card.html",
+    "href": "group-activities/week-2/PA-2-task-card.html",
+    "title": "PA2 Task Card - Using Data Visualization to Find the Penguins",
+    "section": "",
+    "text": "Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to solve this puzzle, you will need to use the skills of each member of your group."
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-task-card.html#group-roles",
+    "href": "group-activities/week-2/PA-2-task-card.html#group-roles",
+    "title": "PA2 Task Card - Using Data Visualization to Find the Penguins",
+    "section": "Group Roles",
+    "text": "Group Roles\nWhen you are the Developer, you will type into the Quarto document in RStudio. However, you do not type your own ideas. Instead, you type what the Coder tells you to type. You are permitted to ask the Coder clarifying questions, and, if both of you have a question, you are permitted to ask the professor. You are expected to run the code provided by the Coder and, if necessary, to work with the Coder to debug the code. Once the code runs, you are expected to collaborate with the Coder to write code comments that describe the actions taken by your code.\nWhen you are the Coder, you are responsible for reading the instructions / prompts and directing the Developer what to type in the Quarto document. You are responsible for managing the resources your group has available to you (e.g., cheatsheet, textbook). If necessary, you should work with the Developer to debug the code you specified. Once the code runs, you are expected to collaborate with the Developer to write code comments that describe the actions taken by your code."
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-task-card.html#group-norms",
+    "href": "group-activities/week-2/PA-2-task-card.html#group-norms",
+    "title": "PA2 Task Card - Using Data Visualization to Find the Penguins",
+    "section": "Group Norms",
+    "text": "Group Norms\nRemember, your group is expected to adhere to the following norms:\n\nThink and work together. Do not divide the work.\nYou are smarter together.\nBe open minded.\nNo cross-talk with other groups.\nCommunicate with each other!"
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-task-card.html#tidy-code",
+    "href": "group-activities/week-2/PA-2-task-card.html#tidy-code",
+    "title": "PA2 Task Card - Using Data Visualization to Find the Penguins",
+    "section": "Tidy Code",
+    "text": "Tidy Code\nAs you are writing code for this assignment, make sure your code follows the tidyverse style guide for ggplot code. Specifically, your code should:\n\nuse whitespace liberally\n\nbefore & after every = sign\nafter every ,\nbefore every +\n\nuse new lines liberally\n\nafter every +\nafter , when needed (if code is more than 80 characters in length)"
+  },
+  {
+    "objectID": "group-activities/week-2/PA-2-task-card.html#well-documented-code",
+    "href": "group-activities/week-2/PA-2-task-card.html#well-documented-code",
+    "title": "PA2 Task Card - Using Data Visualization to Find the Penguins",
+    "section": "Well Documented Code",
+    "text": "Well Documented Code\nInclude a comment at the beginning of the code chunk that briefly states the purpose of the chunk (comments come after # signs). In addition, if your code involves many steps or steps you needed to look up / get help on, I would encourage you to write a code comment on what is happening in these lines.\n\nggplot(data = penguins, \n       mapping = aes(x = species, \n                     fill = species\n       ) +\n# use fill instead of color to get the bars filled entirely with color (instead of just on the outside)\n  \n  geom_bar() +\n  labs(x = \"\", \n       y = \"\", \n       title = \"Number of Penguins Captured in the Palmer Archipelago\") +\n# remove axis titles and put that information in the title where it is easier to read\n  \n  theme(legend.position = \"none\")\n# to remove the legend position, since the fill information is already included on the x-axis"
+  },
+  {
+    "objectID": "group-activities/week-4/PA-4-tidyr.html",
+    "href": "group-activities/week-4/PA-4-tidyr.html",
+    "title": "PA 4: Military Spending",
+    "section": "",
+    "text": "library(readxl) \nlibrary(tidyverse)\nToday you will be tidying messy data to explore the relationship between countries of the world and military spending. You can find the gov_spending_per_capita.xlsx data included in the data folder.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group."
+  },
+  {
+    "objectID": "group-activities/week-4/PA-4-tidyr.html#data-description",
+    "href": "group-activities/week-4/PA-4-tidyr.html#data-description",
+    "title": "PA 4: Military Spending",
+    "section": "Data Description",
+    "text": "Data Description\nWe will be using data from the Stockholm International Peace Research Institute (SIPRI). The SIPRI Military Expenditure Database is an open source data set containing time series on the military spending of countries from 1949–2019. The database is updated annually, which may include updates to data from previous years.\nMilitary expenditure is presented in many ways:\n\nin local currency and in US $ (both from 2018 and current);\nin terms of financial years and calendar years;\nas a share of GDP and per capita.\n\nThe availability of data varies considerably by country, but we note that data is available from at least the late 1950s for a majority of countries that were independent at the time. Estimates for regional military expenditure have been extended backwards depending on availability of data, but no estimates for total world military expenditure are available before 1988 due to the lack of data from the Soviet Union.\nSIPRI military expenditure data is based on open sources only."
+  },
+  {
+    "objectID": "group-activities/week-4/PA-4-tidyr.html#data-import",
+    "href": "group-activities/week-4/PA-4-tidyr.html#data-import",
+    "title": "PA 4: Military Spending",
+    "section": "Data Import",
+    "text": "Data Import\nFirst, you should notice that there are ten different sheets included in the dataset. We are interested in the sheet labeled “Share of Govt. spending”, which contains information about the share of all government spending that is allocated to the military.\nNext, you’ll notice that there are notes about the data in the first six rows. Ugh! Also notice that the last six rows are footnotes about the data. Ugh!\nRather than copying this one sheet into a new Excel file and deleting the first and last few rows, let’s learn something new about the read_xlsx() function!\nThe read_xlsx() function has several useful arguments:\n\nsheet: specify the name of the sheet that you want to use. The name must be passed in as a string (in quotations)!\nskip: specify the number of rows you want to skip before reading in the data.\nn_max: specify the maximum number of rows of data to read in.\n\n1. Modify the code below (potentially including the file path) to read the military expenditures data into your workspace.\n\nmilitary &lt;- read_xlsx(here::here(\"data\", \n                                 \"gov_spending_per_capita.xlsx\"), \n                      sheet = , \n                      skip  = , \n                      n_max = )\n\nError: `path` does not exist: '/Users/allisontheobold/Documents/Research/IUSE/groupworthy-data-science/data/gov_spending_per_capita.xlsx'\n\n\nI would highly recommend you open the dataset in Excel, so you can see the data layout! ## Data Cleaning\nIn addition to NAs, missing values were coded in two other ways.\n2. What are the two ways missing values were coded?\nHint: information in the top 6 rows of the excel sheet will help you answer this question.\n3. Now that we know how missing values were coded, let’s read in the data again. This time use the na argument to specify the values that need to be replaced with NAs.\nHint: You need to specify the values to replace with NAs as a character string (e.g., c(\"a\", \"b\"))\n\nmilitary &lt;- read_xlsx(here::here(\"data\", \n                                 \"gov_spending_per_capita.xlsx\"), \n                      sheet = , \n                      skip  = , \n                      n_max = , \n                      na = c()\n                      )\n\nError: `path` does not exist: '/Users/allisontheobold/Documents/Research/IUSE/groupworthy-data-science/data/gov_spending_per_capita.xlsx'\n\n\n\nIf you give the Country column a look, you’ll see there are names of continents and regions included. These names are only included to make it simpler to find countries, as they contain no data.\nLuckily for us, these region names were also stored in the “Regional totals” sheet. We can use the Region column of this dataset to filter out the names we don’t want.\nRun the code below to read in the “Regional totals” data.\n\ncont_region &lt;- read_xlsx(here::here(\"data\", \n                                    \"gov_spending_per_capita.xlsx\"), \n                      sheet = \"Regional totals\", \n                      skip = 14) |&gt; \n  filter(Region != \"World total (including Iraq)\", \n         Region != \"World total (excluding Iraq)\")\n\nError: `path` does not exist: '/Users/allisontheobold/Documents/Research/IUSE/groupworthy-data-science/data/gov_spending_per_capita.xlsx'\n\n\nA clever way to filter out observations you don’t want is with an anti_join(). This function will return all of the rows of one dataset without a match in another dataset.\n4. Use the anti_join() function to filter out the Country values we don’t want in the military_clean data. The by argument needs to be filled with the name(s) of the variables that the two datasets should be joined with.\nHint: To join by different variables in data1 and data2 you need to use by = join_by(a == b), which will match data1$a to data2$b.\n\nCanvas Question #1\n5. Complete the code below to figure out what four regions were NOT removed from the military_clean data set?\nHint: the regions that were not removed have missing values for every column except Country.\n\nmilitary_clean |&gt; \n  filter(if_all(.cols = , \n                .fns = )\n         )\n\nError in eval(expr, envir, enclos): object 'military_clean' not found"
+  },
+  {
+    "objectID": "group-activities/week-4/PA-4-tidyr.html#data-organization",
+    "href": "group-activities/week-4/PA-4-tidyr.html#data-organization",
+    "title": "PA 4: Military Spending",
+    "section": "Data Organization",
+    "text": "Data Organization\n\nWe are interested in comparing the military expenditures of countries in Eastern Europe. Our desired plot looks something like this:\n\n\n\nDesired plot: Countries from Central Asia used for demonstration – your plot will have different countries and spending values.\n\n\nUnfortunately, if we want a point representing the spending for every country and year, we need every year to be a single column!\nTo tidy a dataset like this, we need to pivot the columns of years from wide format to long format. To do this process we need three arguments:\n\ncols: The set of columns that represent values, not variables. In these data, those are all the columns from 1988 to 2019.\nnames_to: The name of the variable that should be created to move these columns into. In these data, this could be \"Year\".\nvalues_to: The name of the variable that should be created to move these column’s values into. In these data, this could be labeled \"Spending\".\n\nThese form the three required arguments for the pivot_longer() function.\n6. Pivot the cleaned up military data set to a “longer” orientation. Save this new “long” version as a new object called military_long.\nHint: Do not overwrite your cleaned up dataset!"
+  },
+  {
+    "objectID": "group-activities/week-4/PA-4-tidyr.html#data-visualization",
+    "href": "group-activities/week-4/PA-4-tidyr.html#data-visualization",
+    "title": "PA 4: Military Spending",
+    "section": "Data Visualization",
+    "text": "Data Visualization\n\nNow that we’ve transformed the data, let’s create a plot to explore military spending across Eastern European countries.\n7. Create side-by-side boxplots to explore the military spending between Eastern European countries.\nHint 1: Place the Country variable on an axis that makes it easier to read the labels!\nHint 2: Make sure you change the plot title and axis labels to accurately represent the plot.\n\n# Countries to include in the plot!\neastern_europe &lt;- c(\"Armenia\", \n                    \"Azerbaijan\",\n                    \"Belarus\", \n                    \"Georgia\", \n                    \"Moldova\", \n                    \"Russia\", \n                    \"Ukraine\")\n\n\nCanvas Question 2 & Question 3\n8. Looking at the plot you created above, which Eastern European country had the second highest median military expenditure?.\n9. Looking at the plot you created above, which Eastern European country had the largest variability in military expenditures over time?"
+  },
+  {
+    "objectID": "group-activities/week-3/PA-3-dplyr.html",
+    "href": "group-activities/week-3/PA-3-dplyr.html",
+    "title": "PA 3: Identify the Mystery College 🏫",
+    "section": "",
+    "text": "Today you will use the dplyr package to clean some data. We will then use that cleaned data to figure out what college Ephelia has been accepted to.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group."
+  },
+  {
+    "objectID": "group-activities/week-3/PA-3-dplyr.html#data-download-package-loading",
+    "href": "group-activities/week-3/PA-3-dplyr.html#data-download-package-loading",
+    "title": "PA 3: Identify the Mystery College 🏫",
+    "section": "Data Download & Package Loading",
+    "text": "Data Download & Package Loading\nFirst, we declare our package dependencies and load the data.\nThe data loading function read_csv() will give you an outpouring of helpful information about the dataset. If you do not see the word “error”, there is nothing to be concerned about.\n\nlibrary(tidyverse)\n\ncolleges &lt;- read_csv(\"https://www.dropbox.com/s/bt5hvctdevhbq6j/colleges.csv?dl=1\")\n\nTake a look at the variables in your downloaded data by running the following code. This tells reports the data type for each column in the dataset.\n\nglimpse(colleges)"
+  },
+  {
+    "objectID": "group-activities/week-3/PA-3-dplyr.html#data-cleaning",
+    "href": "group-activities/week-3/PA-3-dplyr.html#data-cleaning",
+    "title": "PA 3: Identify the Mystery College 🏫",
+    "section": "Data Cleaning",
+    "text": "Data Cleaning\nNow we will clean the data. Alas, each of the R chunks in this section will cause an error and / or do the desired task incorrectly. Even the chunks that run without error are not correct! You will need to find the mistake and correct it to complete the intended action.\nStep 1: There are too many variables in this data set. We don’t need all of them. Narrow your data set down to only:\n\nINSTNM name of the institution\nCITY city, STABBR state, and ZIP ZIP code of the institution\nADM_RATE admissions rate\nSAT_AVG average SAT score\nUGDS number of undergraduate students\nTUITIONFEE_IN in- and TUITIONFEE_OUT out-of-state tuition\nCONTROL Whether the school is public or private\nREGION region of the school.\n\n\ncolleges_clean1 &lt;- colleges | &gt;  \n  select(INSTNM, \n         CITY, \n         STABBR, \n         ZIP,\n         ADM_RATE, \n         SAT_AVG, \n         UGDS,\n         TUITIONFEE_IN, \n         TUITIONFEE_OUT\n         CONTROL,\n         REGION) \n\nStep 2: Remove the schools that are private and for-profit (category 3).\n\ncolleges_clean2 &lt;- colleges_clean1 |&gt; \n  filter(CONTROL == 3)\n\nStep 3: Adjust the appropriate variables to be numeric, using as.numeric().\n\ncolleges_clean3 &lt;- colleges_clean2 |&gt; \n  mutate(TUITIONFEE_IN  = numeric(TUITIONFEE_IN),\n         TUITIONFEE_OUT = numeric(TUITIONFEE_OUT),\n         SAT_AVG        = numeric(SAT_AVG),\n         UGDS           = numeric(UGDS),\n         ADM_RATE       = numeric(ADM_RATE)) \n\n\nStep 4: Adjust the appropriate variables to be factors, using as.factor().\n\ncolleges_clean4 &lt;- colleges_clean3 |&gt;\n  mutate(CONTROL = as.character(CONTROL),\n         REGION  = as.character(REGION))\n\nStep 5: Create a new variable called TUITION_DIFF which contains the difference between out-of-state and in-state costs.\n\ncolleges_clean5 &lt;- colleges_clean4 |&gt; \n    TUITION_DIFF = TUITIONFEE_OUT - TUITIONFEE_IN\n\nStep 6: Remove every row with missing data.\n\ncolleges_clean6 &lt;- colleges_clean5 |&gt; \n  drop.na()\n\nAt this point we’ve made six different datasets, but notice each of these steps started with colleges_clean &lt;- colleges_clean |&gt;. That is pretty redundant! Instead, we could have performed all these tasks as one long “pipeline.”\nStep 7: Combine your (fixed) code chunks into a single code chunk that carries out all of the steps necessary to clean the data.\nThink about coding efficiency – you should not have multiple calls to the same function!\n\n# Code combining ALL of your previous steps into ONE pipeline\n\ncolleges_clean &lt;- colleges |&gt;"
+  },
+  {
+    "objectID": "labs/instructions/lab-5-instructions.html#revisiting-side-by-side-boxplots",
+    "href": "labs/instructions/lab-5-instructions.html#revisiting-side-by-side-boxplots",
+    "title": "Lab 5: Factors in Visualizations",
+    "section": "1.1 Revisiting Side-by-Side Boxplots",
+    "text": "1.1 Revisiting Side-by-Side Boxplots\nLet’s start with the side-by-side boxplots you created in Lab 2 to visualize the distribution of weight within each species (not species ID!).\n\nsurveys |&gt; \n  ggplot(mapping = aes(x = weight,\n                       y = species)) + \n  geom_jitter(color = \"steelblue\",\n              alpha = 0.05) + \n  geom_boxplot(alpha = 0.2,\n               outlier.shape = NA) \n\n\n\n\n\n\n\n\nAs you should expect with a character variable, the boxplots go in alphabetical order. This looks rather jumbled, so let’s put our factor skills to work!\n1. Reorder the boxplots so the weights go in descending order.\n\n\n\n\n\n\nCaution\n\n\n\nYou are required to use functions from forcats to complete this task.\n\n\n2. Now that you’ve reordered, let’s fix our axis labels and title. Make sure your labels contain important information (e.g., units). Let’s take Will Chase’s advice and incorporate the y-axis label into the plot title–make your title fun!"
+  },
+  {
+    "objectID": "labs/instructions/lab-5-instructions.html#challenge-5-getting-creative",
+    "href": "labs/instructions/lab-5-instructions.html#challenge-5-getting-creative",
+    "title": "Lab 5: Factors in Visualizations",
+    "section": "1.4 Challenge 5 – Getting Creative",
+    "text": "1.4 Challenge 5 – Getting Creative\nFind one of your favorite pieces of graphical artwork. You are welcome to choose whatever medium you want (e.g., paintings, digital art, photography, graffiti), the only requirement is the art you pick needs to have colors.\n\n\n\nOnce you’ve found your artwork, upload the image to this color picker app: https://imagecolorpicker.com/\nThe app should give you a palette with 10 colors selected from the image, but you can also manually click on any location in the plot and get the color.\nNow that you have a set of colors, use the scale_color_manual()](https://ggplot2.tidyverse.org/reference/scale_manual.html) function to incorporate the colors from this artwork into the plots you made for Lab 5."
   }
 ]
