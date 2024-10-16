@@ -50,9 +50,13 @@ Today we will...
 
 # Practice Activity 4
 
+![](images/frustrated-about-r.png){fig-alt="A frustrated little monster sits on the ground with his hat next to him, saying 'I just need a minute.' Looking on empathetically is the R logo, with the word 'Error' in many different styles behind it."}
+
 ## Take 3-minutes to...
 
-Write down what each line of this code is doing. 
+Write down *in plain language* what each line of this code is doing. 
+
+</br> 
 
 ```{r}
 #| eval: false
@@ -62,7 +66,7 @@ Write down what each line of this code is doing.
 
 military_clean %>% 
   filter(
-    if_all(.cols = `1988`:`2019`, 
+    if_all(.cols = -Country, 
            .fns = ~ is.na(.x)
            ), 
     !is.na(Country)
@@ -229,6 +233,8 @@ movies[1:4,]
 ```{r}
 #| out-width: "90%"
 #| fig-align: center
+#| fig-alt: "The image illustrates a relational database schema involving three tables: movies_directors, directors, and movies. The movies_directors table has two columns: director_id (int) and movie_id (int). The directors table contains id (int), first_name (char), and last_name (char), while the movies table includes id (int), name (char), year (int), and rank (float). A caution is noted, highlighting that there are two columns named id, but they store different types of information. The goal is to keep only observations that appear in all three datasets, which requires using two calls to the inner_join() function. There's also a suggestion to rename the column name in the final dataset, which would contain columns like director_id, movie_id, first_name, last_name, name, year, and rank."
+
 knitr::include_graphics("images/multiple_joins.png")
 ```
 
@@ -513,6 +519,8 @@ We use this package to...
 ::: {.column width="20%"}
 ```{r}
 #| fig-align: center
+#| fig-alt: "The image shows a hexagonal logo with a brown border featuring a group of black cats resting inside a cardboard box. The cats appear relaxed, laying on top of one another, with their eyes closed or half-open. The word forcats is written on the side of the box in a light brown color. This image represents the logo of the R package forcats, which is typically used for handling categorical variables (factors) in data analysis within the R programming environment."
+
 knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/main/thumbs/forcats.png?raw=true")
 ```
 :::
@@ -1107,14 +1115,14 @@ As packages get updated, the functions and function arguments included in those 
 + The accepted syntax for a function may change.
 + A function/functionality may disappear.
 
-![[Learn more about lifecycle stages](https://lifecycle.r-lib.org/articles/stages.html) of packages, functions, function arguments in R.](images/lifecycle.png)
+![[Learn more about lifecycle stages](https://lifecycle.r-lib.org/articles/stages.html) of packages, functions, function arguments in R.](images/lifecycle.png){fig-alt="The image shows a flow diagram representing the lifecycle stages of a feature or process. It consists of four colored boxes with arrows connecting them. The green box in the center labeled stable is the main stage. To the left, an orange box labeled experimental has an arrow pointing toward stable, indicating that experimental features can progress to become stable. From stable, one arrow points upward to another orange box labeled deprecated, indicating that stable features can become deprecated. Another arrow points right to a dark blue box labeled superseded, showing that stable features can also be replaced or superseded."}
 
 
 ## Lifceycle Stages
 
 <center>
 
-![](images/summarize_lifecycle.png){width=70%}
+![](images/summarize_lifecycle.png){width=70% fig-alt="The image shows the documentation for the summarise() (or summarize(), using the American spelling) function in R, commonly used in the dplyr package for data manipulation. The summarise() function is used to create summary statistics for data frames or tibbles. The key arguments include .data, which is the data frame or tibble input, and ..., which represents name-value pairs of summary functions. The .by and .groups arguments are optional and used to control grouping behavior in the summarization. A key point in the documentation is that returning values with size 0 or greater than 1 in summary functions, such as min(), n(), or sum(), was deprecated as of version 1.1.0. Instead, users are encouraged to use the reframe() function, which replaces the deprecated behavior. The lifecycle badge marks the deprecation of this feature, ensuring that users know that previous versions' behavior should be updated for compatibility with future versions of the package."}
 
 </center>
 
@@ -1168,18 +1176,41 @@ A **superseded** functionality has a better alternative, but is not going away.
 + A superseded function will not give a warning (since there’s no risk if you
 keep using it), but the documentation will give you a recommendation.
 
-## [Lab 4: Childcare Costs in California](../../labs/instructions/lab-4-instructions.qmd)
+# [Lab 4: Childcare Costs in California](../../labs/instructions/lab-4-instructions.qmd)
 
-<!-- ## ChatGPT Example... -->
+::: columns
+::: {.column width="40%"}
 
-<!-- https://chatgpt.com/share/670b0fd0-d9f0-8012-8d47-aceba68925f4 -->
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+![](images/childcare-cost-map.png){fig-alt="The image is a color-coded map of the United States, showing the cost of childcare across different states. The map uses a gradient scale from light green (representing lower costs around $5,000) to dark blue (representing higher costs around $21,000). States with the most expensive childcare, such as Massachusetts ($21,019) and Washington, D.C. ($20,913), are shaded in dark blue, indicating the highest costs. States with lower costs, such as Mississippi ($5,436) and Alabama ($6,001), are shaded in light green. The map's data comes from the Economic Policy Institute, with the source indicated as Money Scoop, and was created using Datawrapper."}
+:::
+:::
+
+## ChatGPT to the Rescue! 
+
+::: columns
+::: {.column width="40%"}
+> [collapse the CA regions into the 10 Census regions](https://chatgpt.com/c/67103b47-d8ec-8012-bb72-5cb0467ebe18)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+![](images/ca-counties.png){fig-alt="The image displays a map of California divided into regions based on the 2020 Census, along with a table listing the counties in each region. The map on the left uses different colors to highlight each of the 10 regions, with areas such as the San Francisco Bay Area and South Coast labeled. A legend at the bottom of the map assigns numbers and colors to each region: Superior California, North Coast, San Francisco Bay Area, Northern San Joaquin Valley, Central Coast, Southern San Joaquin Valley, Inland Empire, Los Angeles County, Orange County, and San Diego/Imperial. On the right side, a table lists the regions by number and their respective counties. For example, Region 1 includes counties like Butte, Colusa, and El Dorado, while Region 8 consists solely of Los Angeles County. Other regions contain a mix of multiple counties, such as Region 3, which includes Alameda, Contra Costa, and San Francisco."}
+:::
+:::
 
 ## To do...
 
 -   **Lab 4: Childcare Costs in California**
     -   Due Sunday (10/20) at 11:59pm
--   **Challenge 4: Open-Ended Analysis**
-    -   Due Sunday (10/20) at 11:59pm
 -   **Read Chapter 5: Strings + Dates**
-    -   **Check-in 5.1 - 5.2** due Tuesday (10/22) at 12:10pm
+    -   **Check-in 5.1** due Tuesday (10/22) at 12:10pm
+    -   **Check-in 5.2** due Thursday (10/24) at 12:10pm
 

@@ -427,14 +427,15 @@
 <section id="practice-activity-4" class="title-slide slide level1 center">
 <h1>Practice Activity 4</h1>
 
-</section>
+<img data-src="images/frustrated-about-r.png" alt="A frustrated little monster sits on the ground with his hat next to him, saying 'I just need a minute.' Looking on empathetically is the R logo, with the word 'Error' in many different styles behind it." class="r-stretch"></section>
 <section id="take-3-minutes-to" class="slide level2">
 <h2>Take 3-minutes to…</h2>
-<p>Write down what each line of this code is doing.</p>
+<p>Write down <em>in plain language</em> what each line of this code is doing.</p>
+<p><br></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>military_clean <span class="sc">%&gt;%</span> </span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">if_all</span>(<span class="at">.cols =</span> <span class="st">`</span><span class="at">1988</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">2019</span><span class="st">`</span>, </span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">if_all</span>(<span class="at">.cols =</span> <span class="sc">-</span>Country, </span>
 <span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">is.na</span>(.x)</span>
 <span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>           ), </span>
 <span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(Country)</span>
@@ -595,7 +596,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/multiple_joins.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+<p><img data-src="images/multiple_joins.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="The image illustrates a relational database schema involving three tables: movies_directors, directors, and movies. The movies_directors table has two columns: director_id (int) and movie_id (int). The directors table contains id (int), first_name (char), and last_name (char), while the movies table includes id (int), name (char), year (int), and rank (float). A caution is noted, highlighting that there are two columns named id, but they store different types of information. The goal is to keep only observations that appear in all three datasets, which requires using two calls to the inner_join() function. There's also a suggestion to rename the column name in the final dataset, which would contain columns like director_id, movie_id, first_name, last_name, name, year, and rank."></p>
 </figure>
 </div>
 </div>
@@ -3276,7 +3277,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://github.com/rstudio/hex-stickers/blob/main/thumbs/forcats.png?raw=true" class="quarto-figure quarto-figure-center"></p>
+<p><img data-src="https://github.com/rstudio/hex-stickers/blob/main/thumbs/forcats.png?raw=true" class="quarto-figure quarto-figure-center" alt="The image shows a hexagonal logo with a brown border featuring a group of black cats resting inside a cardboard box. The cats appear relaxed, laying on top of one another, with their eyes closed or half-open. The word forcats is written on the side of the box in a light brown color. This image represents the logo of the R package forcats, which is typically used for handling categorical variables (factors) in data analysis within the R programming environment."></p>
 </figure>
 </div>
 </div>
@@ -3779,11 +3780,11 @@
 <li>A function/functionality may disappear.</li>
 </ul>
 
-<img data-src="images/lifecycle.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://lifecycle.r-lib.org/articles/stages.html">Learn more about lifecycle stages</a> of packages, functions, function arguments in R.</p></section>
+<img data-src="images/lifecycle.png" alt="The image shows a flow diagram representing the lifecycle stages of a feature or process. It consists of four colored boxes with arrows connecting them. The green box in the center labeled stable is the main stage. To the left, an orange box labeled experimental has an arrow pointing toward stable, indicating that experimental features can progress to become stable. From stable, one arrow points upward to another orange box labeled deprecated, indicating that stable features can become deprecated. Another arrow points right to a dark blue box labeled superseded, showing that stable features can also be replaced or superseded." class="r-stretch quarto-figure-center"><p class="caption"><a href="https://lifecycle.r-lib.org/articles/stages.html">Learn more about lifecycle stages</a> of packages, functions, function arguments in R.</p></section>
 <section id="lifceycle-stages-1" class="slide level2">
 <h2>Lifceycle Stages</h2>
 <center>
-<p><img data-src="images/summarize_lifecycle.png" style="width:70.0%"></p>
+<p><img data-src="images/summarize_lifecycle.png" style="width:70.0%" alt="The image shows the documentation for the summarise() (or summarize(), using the American spelling) function in R, commonly used in the dplyr package for data manipulation. The summarise() function is used to create summary statistics for data frames or tibbles. The key arguments include .data, which is the data frame or tibble input, and ..., which represents name-value pairs of summary functions. The .by and .groups arguments are optional and used to control grouping behavior in the summarization. A key point in the documentation is that returning values with size 0 or greater than 1 in summary functions, such as min(), n(), or sum(), was deprecated as of version 1.1.0. Instead, users are encouraged to use the reframe() function, which replaces the deprecated behavior. The lifecycle badge marks the deprecation of this feature, ensuring that users know that previous versions' behavior should be updated for compatibility with future versions of the package."></p>
 </center>
 </section>
 <section id="deprecated-functions" class="slide level2">
@@ -3889,11 +3890,31 @@
 <li>This is a softer alternative to deprecation.</li>
 <li>A superseded function will not give a warning (since there’s no risk if you keep using it), but the documentation will give you a recommendation.</li>
 </ul>
+</section></section>
+<section>
+<section id="lab-4-childcare-costs-in-california" class="title-slide slide level1 center">
+<h1><a href="../../labs/instructions/lab-4-instructions.html">Lab 4: Childcare Costs in California</a></h1>
+<div class="columns">
+<div class="column" style="width:40%;">
+
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
+<p><img data-src="images/childcare-cost-map.png" alt="The image is a color-coded map of the United States, showing the cost of childcare across different states. The map uses a gradient scale from light green (representing lower costs around $5,000) to dark blue (representing higher costs around $21,000). States with the most expensive childcare, such as Massachusetts ($21,019) and Washington, D.C. ($20,913), are shaded in dark blue, indicating the highest costs. States with lower costs, such as Mississippi ($5,436) and Alabama ($6,001), are shaded in light green. The map's data comes from the Economic Policy Institute, with the source indicated as Money Scoop, and was created using Datawrapper."></p>
+</div></div>
 </section>
-<section id="lab-4-childcare-costs-in-california" class="slide level2">
-<h2><a href="../../labs/instructions/lab-4-instructions.html">Lab 4: Childcare Costs in California</a></h2>
-<!-- ## ChatGPT Example... -->
-<!-- https://chatgpt.com/share/670b0fd0-d9f0-8012-8d47-aceba68925f4 -->
+<section id="chatgpt-to-the-rescue" class="slide level2">
+<h2>ChatGPT to the Rescue!</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<blockquote>
+<p><a href="https://chatgpt.com/c/67103b47-d8ec-8012-bb72-5cb0467ebe18">collapse the CA regions into the 10 Census regions</a></p>
+</blockquote>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
+<p><img data-src="images/ca-counties.png" alt="The image displays a map of California divided into regions based on the 2020 Census, along with a table listing the counties in each region. The map on the left uses different colors to highlight each of the 10 regions, with areas such as the San Francisco Bay Area and South Coast labeled. A legend at the bottom of the map assigns numbers and colors to each region: Superior California, North Coast, San Francisco Bay Area, Northern San Joaquin Valley, Central Coast, Southern San Joaquin Valley, Inland Empire, Los Angeles County, Orange County, and San Diego/Imperial. On the right side, a table lists the regions by number and their respective counties. For example, Region 1 includes counties like Butte, Colusa, and El Dorado, while Region 8 consists solely of Los Angeles County. Other regions contain a mix of multiple counties, such as Region 3, which includes Alameda, Contra Costa, and San Francisco."></p>
+</div></div>
 </section>
 <section id="to-do" class="slide level2">
 <h2>To do…</h2>
@@ -3902,13 +3923,10 @@
 <ul>
 <li>Due Sunday (10/20) at 11:59pm</li>
 </ul></li>
-<li><strong>Challenge 4: Open-Ended Analysis</strong>
-<ul>
-<li>Due Sunday (10/20) at 11:59pm</li>
-</ul></li>
 <li><strong>Read Chapter 5: Strings + Dates</strong>
 <ul>
-<li><strong>Check-in 5.1 - 5.2</strong> due Tuesday (10/22) at 12:10pm</li>
+<li><strong>Check-in 5.1</strong> due Tuesday (10/22) at 12:10pm</li>
+<li><strong>Check-in 5.2</strong> due Thursday (10/24) at 12:10pm</li>
 </ul></li>
 </ul>
 
