@@ -1,0 +1,166 @@
+---
+title: "PA 5.1: Scrambled Message"
+author: "The names of your group members go here!"
+format: html
+embed-resources: true
+code-tools: true
+toc: true
+editor: source
+execute: 
+  error: true
+  echo: true
+  message: false
+  warning: false
+---
+
+```{r}
+#| label: setup
+
+library(tidyverse)
+```
+
+## Read in the Scret Message
+
+```{r}
+#| label: read-in-secret-message-data
+#| message: false
+
+message_data <- read_csv("https://github.com/earobinson95/stat331-calpoly/raw/master/practice-activities/data/scrambled_message.txt")
+```
+
+## Extracting the Secret Message
+
+For this activity, we will practice using the `stringr` functions on a 
+character vector. In the code below, we extract the `Word` column from the 
+`message_data`, which is then stored as a character vector. With the character
+vector, you can use indexing (e.g., `message[1]`) to extract elements. 
+
+```{r}
+#| label: convert-message-to-vector
+
+message <- message_data |> 
+  pull(Word)
+
+class(message)
+```
+
+*In this activity, a "word" is a set of characters with no white space. That is, even though many of elements of the scrambled mess vector are nonsense, and some have punctuation, you can consider each element to be a "word".*
+
+## Warm-up exercises
+
+<!-- The person whose woke up first today starts as the Developer (typing and
+listening to instructions from the Coder)!  -->
+
+1.  How many characters are in the scrambled message?
+
+```{r}
+#| label: count-characters
+
+```
+
+2.  How many words are in the scrambled message?
+
+```{r}
+#| label: count-characters
+
+```
+
+3.  Print out every word in the scrambled message that starts with the letter "m".
+
+```{r}
+#| label: words-starting-with-m
+
+```
+
+<!-- Switch roles! Coder becomes Developer, Developer becomes Coder. -->
+
+4.  Print out every word in the scrambled message that ends with the letter "z"
+
+```{r}
+#| label: words-ending-with-z
+
+```
+
+5.  Print out the punctuation symbols that are present in the scrambled message.
+
+```{r}
+#| label: find-punctuation
+
+```
+
+6.  Print out the longest word in the scrambled message.
+
+```{r}
+#| label: longest-word
+
+```
+
+<!-- Switch roles! Coder becomes Developer, Developer becomes Coder. -->
+
+## Decode the Message
+
+Complete the following steps to decode the message.
+
+1.  Remove any spaces before or after each word.
+
+```{r}
+#| label: remove-spaces
+ 
+```
+
+2.  No word should be longer than 16 characters. Drop all extra characters off the end of each word.
+
+```{r}
+#| label: truncate-strings-to-16-characters
+ 
+```
+
+3.  Any time you see the word "ugh", with any number of h's, followed by a punctuation mark, delete this.
+
+```{r}
+#| label: delete-ughs
+ 
+```
+
+4.  Replace all instances of exactly 2 a's with exactly 2 e's.
+
+```{r}
+#| label: replace-two-as-with-two-es
+ 
+```
+
+<!-- Switch roles! Coder becomes Developer, Developer becomes Coder. -->
+
+5.  Replace all z's with t's.
+
+```{r}
+#| label: replace-zs-with-ts
+ 
+```
+
+6.  Every word that ends in b, change that to a y.
+
+```{r}
+#| label: change-b-ending-to-y
+ 
+```
+
+7.  Every word that starts with k (or K), change that to a v (or V).
+
+```{r}
+#| label: change-kK-start-to-a-vV
+ 
+```
+
+8.  Recombine all your words into a message.
+
+```{r}
+#| label: combine-words-back-into-a-message
+ 
+```
+
+9.  Find the movie this quote is from.
+
+### Canvas Quiz Submission
+
+What is the name of the movie the quote is from?
