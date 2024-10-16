@@ -17,7 +17,7 @@ execute:
 
 ## Step 1: Making a Copy from GitHub Classroom
 
-You can access the Lab 4 materials through the [Lab 4 assignment on GitHub Classroom](https://classroom.github.com/a/c8Mh2QmE). We're going to follow the same steps as last week to make your own copy of this repository:
+You can access the Lab 4 materials through the [Lab 4 assignment on GitHub Classroom](https://classroom.github.com/a/o-PfOckY). We're going to follow the same steps as last week to make your own copy of this repository:
 
 <!-- Update link to GH Classroom assignment -->
 
@@ -202,15 +202,28 @@ summary(reg_mod1)
 
 **10. Do you have evidence to conclude there is a relationship between the median household income and the median weekly cost of center-based childcare for infants in California? Cite values from your `summary()` output to support your claim!**
 
-## Challenge 4: Open-Ended Analysis
+## There is no Challenge this week! 
 
-**Investigate the full-time median price for childcare in a center-based setting versus the full-time median price for childcare in a family (in-home) setting in California. Pay close attention to the different developmental stages. Support your answer with one table of summary statistics and one visualization.**
+Please take this time to try your best to recreate the plot I provided in
+Question 6! 
 
-::: callout-tip
-+ Aim for about 150-300 words.
-  + You should (1) introduce the data and the topic you are investigating, 
-  (2) discuss your table and plot, and (3) conclude.
-+ This should read like a mini-report! 
-+ Don't just have a summary table or plot show up "out of the blue" -- make sure to build up to them with text, describe what they show, and provide captions.
-:::
+- Can you match my colors? 
+- Can you get the legend in the same order?
+- Can you get the facet names to match and be in the same order?
+
+Could you even make the plot better? Could you add dollar signs to the y-axis 
+labels? I might suggest you look into the 
+[scales package](https://scales.r-lib.org/reference/label_currency.html).
+
+<!-- ## Challenge 4: Open-Ended Analysis -->
+
+<!-- **Investigate the full-time median price for childcare in a center-based setting versus the full-time median price for childcare in a family (in-home) setting in California. Pay close attention to the different developmental stages. Support your answer with one table of summary statistics and one visualization.** -->
+
+<!-- ::: callout-tip -->
+<!-- + Aim for about 150-300 words. -->
+<!--   + You should (1) introduce the data and the topic you are investigating,  -->
+<!--   (2) discuss your table and plot, and (3) conclude. -->
+<!-- + This should read like a mini-report!  -->
+<!-- + Don't just have a summary table or plot show up "out of the blue" -- make sure to build up to them with text, describe what they show, and provide captions. -->
+<!-- ::: -->
 
