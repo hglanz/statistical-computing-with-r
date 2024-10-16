@@ -26,7 +26,7 @@ countries of the world and military spending. You can find the
 
 ***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.***
 
-<!-- The person whose given name comes first alphabetically starts as the Developer (typing and
+<!-- The person whose woke up first today starts as the Developer (typing and
 listening to instructions from the Coder)!  -->
 
 ## Data Description
@@ -84,6 +84,7 @@ military <- read_xlsx(here::here("data",
                       n_max = )
 ```
 
+*I would highly recommend you open the dataset in Excel, so you can see the data layout!*
 ## Data Cleaning
 
 In addition to `NA`s, missing values were coded in two other ways.
@@ -143,15 +144,17 @@ Hint: To join by different variables in `data1` and `data2` you need to use
 
 ### Canvas Question #1
 
-**5. What four regions were NOT removed from the `military_clean` data set?** 
+**5. Complete the code below to figure out what four regions were NOT removed from the `military_clean` data set?**  
+*Hint: the regions that were not removed have missing values for every column except `Country`.* 
 
 ```{r}
 #| label: inspecting-what-regions-were-not-removed
 
+military_clean |> 
+  filter(if_all(.cols = , 
+                .fns = )
+         )
 ```
-
-Hint 1: To answer this question, think about what uniquely separates the rows for the regions from the rows for the countries.
-Hint 2: You will find the following functions helpful: `filter()`, `if_all()`, `is.na`
 
 ## Data Organization
 
