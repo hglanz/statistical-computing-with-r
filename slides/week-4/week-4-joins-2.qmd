@@ -181,7 +181,7 @@ When we work with relational data, we rely on **keys**.
 
 ## IMDb Movies Data
 
-![](images/imdb-keys.png)
+![](images/imdb-keys.png){fig-alt="A diagram depicting the relationships between various tables in a movie database. The tables and their columns are as follows. directors_genres: Contains 'director_id' (int), 'genre' (varchar), and 'prob' (float). Linked to the 'directors' table by 'director_id.' movies_directors: Contains 'director_id' (int) and 'movie_id' (int). Linked to both the 'directors' and 'movies' tables by 'director_id' and 'movie_id.' movies_genres: Contains 'movie_id' (int) and 'genre' (varchar). Linked to the 'movies' table by 'movie_id.' roles: Contains 'actor_id' (int), 'movie_id' (int), and 'role' (varchar). Linked to both the 'actors' and 'movies' tables by 'actor_id' and 'movie_id.' The following entity tables are represented at the bottom: directors: Contains 'id' (int), 'first_name' (varchar), and 'last_name' (varchar). movies: Contains 'id' (int), 'name' (varchar), 'year' (int), and 'rank' (float). actors: Contains 'id' (int), 'first_name' (varchar), 'last_name' (varchar), and 'gender' (char). Arrows represent relationships between the various tables, with foreign keys connecting them."}
 
 **How can we find each director's active years?**
 
