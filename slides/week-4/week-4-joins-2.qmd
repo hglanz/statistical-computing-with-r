@@ -49,6 +49,27 @@ Today we will...
 
 # Practice Activity 4
 
+## Take 3-minutes to...
+
+Write down what each line of this code is doing. 
+
+```{r}
+#| eval: false
+#| echo: true
+#| label: if-all-code-from-PA
+#| code-line-numbers: false
+
+military_clean %>% 
+  filter(
+    if_all(.cols = `1988`:`2019`, 
+           .fns = ~ is.na(.x)
+           ), 
+    !is.na(Country)
+    ) %>% 
+  pull(Country)
+```
+
+
 # Lab 3 & Challenge 3
 
 <!-- ## Comments from Week 3 -->

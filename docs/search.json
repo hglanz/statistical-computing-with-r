@@ -4736,5 +4736,12 @@
       "Labs",
       "Lab 4 & Challenge 4 Instructions"
     ]
+  },
+  {
+    "objectID": "slides/week-4/week-4-joins-2.html#take-3-minutes-to",
+    "href": "slides/week-4/week-4-joins-2.html#take-3-minutes-to",
+    "title": "Extending Joins, Factors, Clean Variable Names",
+    "section": "Take 3-minutes to…",
+    "text": "Take 3-minutes to…\nWrite down what each line of this code is doing.\n\nmilitary_clean %&gt;% \n  filter(\n    if_all(.cols = `1988`:`2019`, \n           .fns = ~ is.na(.x)\n           ), \n    !is.na(Country)\n    ) %&gt;% \n  pull(Country)"
   }
 ]

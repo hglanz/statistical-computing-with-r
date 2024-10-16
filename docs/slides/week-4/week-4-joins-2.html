@@ -419,11 +419,25 @@
 </ul>
 </div>
 </section>
+<section>
 <section id="practice-activity-4" class="title-slide slide level1 center">
 <h1>Practice Activity 4</h1>
 
 </section>
-
+<section id="take-3-minutes-to" class="slide level2">
+<h2>Take 3-minutes to…</h2>
+<p>Write down what each line of this code is doing.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>military_clean <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">if_all</span>(<span class="at">.cols =</span> <span class="st">`</span><span class="at">1988</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">2019</span><span class="st">`</span>, </span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">is.na</span>(.x)</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>           ), </span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(Country)</span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Country)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
 <section id="lab-3-challenge-3" class="title-slide slide level1 center">
 <h1>Lab 3 &amp; Challenge 3</h1>
 <!-- ## Comments from Week 3 -->
@@ -473,7 +487,7 @@
 <div class="column" style="width:50%;">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>directors[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>directors[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
      id first_name last_name
@@ -488,7 +502,7 @@
 </div><div class="column" style="width:50%;">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>movies_directors[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>movies_directors[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 2
   director_id movie_id
@@ -507,7 +521,7 @@
 </div><div class="column" style="width:50%;">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>movies[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>movies[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 4
      id name           year  rank
@@ -535,10 +549,10 @@
 <div id="tabset-1-3">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>movies_directors <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(directors, </span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">join_by</span>(director_id <span class="sc">==</span> id)</span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>             )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>movies_directors <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(directors, </span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">join_by</span>(director_id <span class="sc">==</span> id)</span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>             )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell">
@@ -810,14 +824,14 @@
 <div id="tabset-1-4">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>movies_directors <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(directors, </span>
-<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">join_by</span>(director_id <span class="sc">==</span> id)</span>
-<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>             ) <span class="sc">|&gt;</span> </span>
-<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(movies,</span>
-<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">join_by</span>(movie_id <span class="sc">==</span> id)</span>
-<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a>             ) <span class="sc">|&gt;</span> </span>
-<span id="cb8-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">movie_name =</span> name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>movies_directors <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(directors, </span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">join_by</span>(director_id <span class="sc">==</span> id)</span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>             ) <span class="sc">|&gt;</span> </span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(movies,</span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">join_by</span>(movie_id <span class="sc">==</span> id)</span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a>             ) <span class="sc">|&gt;</span> </span>
+<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">movie_name =</span> name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell">
@@ -1226,7 +1240,7 @@
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>species</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>species</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -1334,7 +1348,7 @@
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>measurements</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>measurements</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -2064,11 +2078,11 @@
 <h2>Join by <code>species</code> + <code>genus</code></h2>
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>measurements <span class="sc">|&gt;</span> </span>
-<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(species,</span>
-<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">join_by</span>(species <span class="sc">==</span> species, </span>
-<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>                         genus_name <span class="sc">==</span> genus)</span>
-<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>measurements <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(species,</span>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">join_by</span>(species <span class="sc">==</span> species, </span>
+<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a>                         genus_name <span class="sc">==</span> genus)</span>
+<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell">
@@ -3104,7 +3118,7 @@
 <h2>Eras Tour</h2>
 <p>Let’s consider songs that Taylor Swift played on her Eras Tour. I have randomly selected 25 songs (and their albums) to consider.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>eras_data </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>eras_data </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 25 × 2
    Song               Album     
@@ -3131,8 +3145,8 @@
 <div id="tabset-3-1">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
-<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Red"        "Reputation" "Lover"      "Midnights"  "1989"      
  [6] "Fearless"   "Reputation" "Folklore"   "Midnights"  "Evermore"  
@@ -3146,9 +3160,9 @@
 <div id="tabset-3-2">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
-<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span> </span>
-<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.factor</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.factor</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] Red        Reputation Lover      Midnights  1989       Fearless  
  [7] Reputation Folklore   Midnights  Evermore   Evermore   Lover     
@@ -3176,18 +3190,18 @@
 <h2>Creating a Factor – Base <code>R</code></h2>
 <p>You can <strong>specify the order of the levels</strong> with the <code>levels</code> argument.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
-<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span> </span>
-<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">factor</span>(<span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Fearless"</span>,</span>
-<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Speak Now"</span>,</span>
-<span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Red"</span>,</span>
-<span id="cb18-6"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"1989"</span>,</span>
-<span id="cb18-7"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Reputation"</span>,</span>
-<span id="cb18-8"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Lover"</span>,</span>
-<span id="cb18-9"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Folklore"</span>,</span>
-<span id="cb18-10"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Evermore"</span>,</span>
-<span id="cb18-11"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Midnights"</span>)</span>
-<span id="cb18-12"><a aria-hidden="true" tabindex="-1"></a>         )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span> </span>
+<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">factor</span>(<span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Fearless"</span>,</span>
+<span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Speak Now"</span>,</span>
+<span id="cb19-5"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Red"</span>,</span>
+<span id="cb19-6"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"1989"</span>,</span>
+<span id="cb19-7"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Reputation"</span>,</span>
+<span id="cb19-8"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Lover"</span>,</span>
+<span id="cb19-9"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Folklore"</span>,</span>
+<span id="cb19-10"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Evermore"</span>,</span>
+<span id="cb19-11"><a aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Midnights"</span>)</span>
+<span id="cb19-12"><a aria-hidden="true" tabindex="-1"></a>         )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="forcats" class="slide level2">
@@ -3234,9 +3248,9 @@
 <p>With <code>fct()</code>, the levels are automatically ordered in the <strong>order of first appearance</strong>.</p>
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
-<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span> </span>
-<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span> </span>
+<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] Red        Reputation Lover      Midnights  1989       Fearless  
  [7] Reputation Folklore   Midnights  Evermore   Evermore   Lover     
@@ -3252,8 +3266,8 @@
 <h2>Creating a Factor</h2>
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="ot">&lt;-</span> eras_data <span class="sc">|&gt;</span> </span>
-<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Album =</span> <span class="fu">fct</span>(Album))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="ot">&lt;-</span> eras_data <span class="sc">|&gt;</span> </span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Album =</span> <span class="fu">fct</span>(Album))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="small">
@@ -3276,9 +3290,9 @@
 <div class="small">
 <p>I am using <code>pull()</code> to display the outcome:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
-<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span> </span>
-<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span> </span>
+<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] Red        Reputation Lover      Midnights  1989       Fearless  
  [7] Reputation Folklore   Midnights  Evermore   Evermore   Lover     
@@ -3296,18 +3310,18 @@
 <p>You can still <strong>specify the order of the levels</strong> with <code>level</code>.</p>
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
-<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span> </span>
-<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct</span>(<span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Fearless"</span>,</span>
-<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Speak Now"</span>,</span>
-<span id="cb24-5"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Red"</span>,</span>
-<span id="cb24-6"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"1989"</span>,</span>
-<span id="cb24-7"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Reputation"</span>,</span>
-<span id="cb24-8"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Lover"</span>,</span>
-<span id="cb24-9"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Folklore"</span>,</span>
-<span id="cb24-10"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Evermore"</span>,</span>
-<span id="cb24-11"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Midnights"</span>)</span>
-<span id="cb24-12"><a aria-hidden="true" tabindex="-1"></a>      )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span> </span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct</span>(<span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Fearless"</span>,</span>
+<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Speak Now"</span>,</span>
+<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Red"</span>,</span>
+<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"1989"</span>,</span>
+<span id="cb25-7"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Reputation"</span>,</span>
+<span id="cb25-8"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Lover"</span>,</span>
+<span id="cb25-9"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Folklore"</span>,</span>
+<span id="cb25-10"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Evermore"</span>,</span>
+<span id="cb25-11"><a aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Midnights"</span>)</span>
+<span id="cb25-12"><a aria-hidden="true" tabindex="-1"></a>      )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -3315,20 +3329,20 @@
 <h2>Creating a Factor – <code>fct</code></h2>
 <p>You can also <strong>specify non-present levels</strong>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="3,13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>eras_data <span class="sc">|&gt;</span> </span>
-<span id="cb25-2"><a></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span> </span>
-<span id="cb25-3"><a></a>  <span class="fu">fct</span>(<span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Taylor Swift"</span>,</span>
-<span id="cb25-4"><a></a>                 <span class="st">"Fearless"</span>,</span>
-<span id="cb25-5"><a></a>                 <span class="st">"Speak Now"</span>,</span>
-<span id="cb25-6"><a></a>                 <span class="st">"Red"</span>,</span>
-<span id="cb25-7"><a></a>                 <span class="st">"1989"</span>,</span>
-<span id="cb25-8"><a></a>                 <span class="st">"Reputation"</span>,</span>
-<span id="cb25-9"><a></a>                 <span class="st">"Lover"</span>,</span>
-<span id="cb25-10"><a></a>                 <span class="st">"Folklore"</span>,</span>
-<span id="cb25-11"><a></a>                 <span class="st">"Evermore"</span>,</span>
-<span id="cb25-12"><a></a>                 <span class="st">"Midnights"</span>,</span>
-<span id="cb25-13"><a></a>                 <span class="st">"The Tortured Poets Department"</span>)</span>
-<span id="cb25-14"><a></a>      ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26" data-code-line-numbers="3,13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>eras_data <span class="sc">|&gt;</span> </span>
+<span id="cb26-2"><a></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span> </span>
+<span id="cb26-3"><a></a>  <span class="fu">fct</span>(<span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Taylor Swift"</span>,</span>
+<span id="cb26-4"><a></a>                 <span class="st">"Fearless"</span>,</span>
+<span id="cb26-5"><a></a>                 <span class="st">"Speak Now"</span>,</span>
+<span id="cb26-6"><a></a>                 <span class="st">"Red"</span>,</span>
+<span id="cb26-7"><a></a>                 <span class="st">"1989"</span>,</span>
+<span id="cb26-8"><a></a>                 <span class="st">"Reputation"</span>,</span>
+<span id="cb26-9"><a></a>                 <span class="st">"Lover"</span>,</span>
+<span id="cb26-10"><a></a>                 <span class="st">"Folklore"</span>,</span>
+<span id="cb26-11"><a></a>                 <span class="st">"Evermore"</span>,</span>
+<span id="cb26-12"><a></a>                 <span class="st">"Midnights"</span>,</span>
+<span id="cb26-13"><a></a>                 <span class="st">"The Tortured Poets Department"</span>)</span>
+<span id="cb26-14"><a></a>      ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="re-coding-a-factor-fct_recode" class="slide level2">
@@ -3339,12 +3353,12 @@
 <div class="fragment">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span></span>
-<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Album =</span> <span class="fu">fct_recode</span>(<span class="at">.f =</span> Album,</span>
-<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a>                            <span class="st">"folklore"</span> <span class="ot">=</span> <span class="st">"Folklore"</span>,</span>
-<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a>                            <span class="st">"evermore"</span> <span class="ot">=</span> <span class="st">"Evermore"</span>,</span>
-<span id="cb26-5"><a aria-hidden="true" tabindex="-1"></a>                            <span class="st">"reputation"</span> <span class="ot">=</span> <span class="st">"Reputation"</span>)</span>
-<span id="cb26-6"><a aria-hidden="true" tabindex="-1"></a>         )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span></span>
+<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Album =</span> <span class="fu">fct_recode</span>(<span class="at">.f =</span> Album,</span>
+<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a>                            <span class="st">"folklore"</span> <span class="ot">=</span> <span class="st">"Folklore"</span>,</span>
+<span id="cb27-4"><a aria-hidden="true" tabindex="-1"></a>                            <span class="st">"evermore"</span> <span class="ot">=</span> <span class="st">"Evermore"</span>,</span>
+<span id="cb27-5"><a aria-hidden="true" tabindex="-1"></a>                            <span class="st">"reputation"</span> <span class="ot">=</span> <span class="st">"Reputation"</span>)</span>
+<span id="cb27-6"><a aria-hidden="true" tabindex="-1"></a>         )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 25 × 2
    Song               Album     
@@ -3373,13 +3387,13 @@
 <div class="fragment">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span></span>
-<span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Album =</span> <span class="fu">case_when</span>(Album <span class="sc">==</span> <span class="st">"Folklore"</span> <span class="sc">~</span> <span class="st">"folklore"</span>,</span>
-<span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a>                           Album <span class="sc">==</span> <span class="st">"Evermore"</span> <span class="sc">~</span> <span class="st">"evermore"</span>,</span>
-<span id="cb28-4"><a aria-hidden="true" tabindex="-1"></a>                           Album <span class="sc">==</span> <span class="st">"Reputation"</span> <span class="sc">~</span> <span class="st">"reputation"</span>,</span>
-<span id="cb28-5"><a aria-hidden="true" tabindex="-1"></a>                           <span class="at">.default =</span> Album),</span>
-<span id="cb28-6"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">Album =</span> <span class="fu">fct</span>(Album)) <span class="sc">|&gt;</span> </span>
-<span id="cb28-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span></span>
+<span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Album =</span> <span class="fu">case_when</span>(Album <span class="sc">==</span> <span class="st">"Folklore"</span> <span class="sc">~</span> <span class="st">"folklore"</span>,</span>
+<span id="cb29-3"><a aria-hidden="true" tabindex="-1"></a>                           Album <span class="sc">==</span> <span class="st">"Evermore"</span> <span class="sc">~</span> <span class="st">"evermore"</span>,</span>
+<span id="cb29-4"><a aria-hidden="true" tabindex="-1"></a>                           Album <span class="sc">==</span> <span class="st">"Reputation"</span> <span class="sc">~</span> <span class="st">"reputation"</span>,</span>
+<span id="cb29-5"><a aria-hidden="true" tabindex="-1"></a>                           <span class="at">.default =</span> Album),</span>
+<span id="cb29-6"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">Album =</span> <span class="fu">fct</span>(Album)) <span class="sc">|&gt;</span> </span>
+<span id="cb29-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] Red        reputation Lover      Midnights  1989       Fearless  
  [7] reputation folklore   Midnights  evermore   evermore   Lover     
@@ -3401,15 +3415,15 @@
 <div class="fragment">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
-<span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Genre =</span> <span class="fu">fct_collapse</span>(<span class="at">.f =</span> Album,</span>
-<span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a>                       <span class="st">"country pop"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Taylor Swift"</span>, <span class="st">"Fearless"</span>),</span>
-<span id="cb30-4"><a aria-hidden="true" tabindex="-1"></a>                       <span class="st">"pop rock"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Speak Now"</span>, <span class="st">"Red"</span>),</span>
-<span id="cb30-5"><a aria-hidden="true" tabindex="-1"></a>                       <span class="st">"electropop"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"1989"</span>, <span class="st">"Reputation"</span>, <span class="st">"Lover"</span>),</span>
-<span id="cb30-6"><a aria-hidden="true" tabindex="-1"></a>                       <span class="st">"folk pop"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Folklore"</span>, <span class="st">"Evermore"</span>),</span>
-<span id="cb30-7"><a aria-hidden="true" tabindex="-1"></a>                       <span class="st">"alt-pop"</span> <span class="ot">=</span> <span class="st">"Midnights"</span>)</span>
-<span id="cb30-8"><a aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">|&gt;</span> </span>
-<span id="cb30-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
+<span id="cb31-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Genre =</span> <span class="fu">fct_collapse</span>(<span class="at">.f =</span> Album,</span>
+<span id="cb31-3"><a aria-hidden="true" tabindex="-1"></a>                       <span class="st">"country pop"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Taylor Swift"</span>, <span class="st">"Fearless"</span>),</span>
+<span id="cb31-4"><a aria-hidden="true" tabindex="-1"></a>                       <span class="st">"pop rock"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Speak Now"</span>, <span class="st">"Red"</span>),</span>
+<span id="cb31-5"><a aria-hidden="true" tabindex="-1"></a>                       <span class="st">"electropop"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"1989"</span>, <span class="st">"Reputation"</span>, <span class="st">"Lover"</span>),</span>
+<span id="cb31-6"><a aria-hidden="true" tabindex="-1"></a>                       <span class="st">"folk pop"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Folklore"</span>, <span class="st">"Evermore"</span>),</span>
+<span id="cb31-7"><a aria-hidden="true" tabindex="-1"></a>                       <span class="st">"alt-pop"</span> <span class="ot">=</span> <span class="st">"Midnights"</span>)</span>
+<span id="cb31-8"><a aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">|&gt;</span> </span>
+<span id="cb31-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   Song                                    Album      Genre      
@@ -3433,9 +3447,9 @@
 <div class="tab-content">
 <div id="tabset-4-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span></span>
-<span id="cb32-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span> </span>
-<span id="cb32-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">levels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span></span>
+<span id="cb33-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span> </span>
+<span id="cb33-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">levels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Taylor Swift"                  "Fearless"                     
  [3] "Speak Now"                     "Red"                          
@@ -3449,20 +3463,20 @@
 <div id="tabset-4-2">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
-<span id="cb34-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span></span>
-<span id="cb34-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct_relevel</span>(<span class="fu">c</span>(<span class="st">"Fearless"</span>,</span>
-<span id="cb34-4"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"1989"</span>,</span>
-<span id="cb34-5"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Taylor Swift"</span>,</span>
-<span id="cb34-6"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Speak Now"</span>,</span>
-<span id="cb34-7"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Red"</span>,</span>
-<span id="cb34-8"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Midnights"</span>,</span>
-<span id="cb34-9"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Reputation"</span>,</span>
-<span id="cb34-10"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Folklore"</span>,</span>
-<span id="cb34-11"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Lover"</span>,</span>
-<span id="cb34-12"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Evermore"</span>)</span>
-<span id="cb34-13"><a aria-hidden="true" tabindex="-1"></a>              ) <span class="sc">|&gt;</span> </span>
-<span id="cb34-14"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">levels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a aria-hidden="true" tabindex="-1"></a>eras_data <span class="sc">|&gt;</span> </span>
+<span id="cb35-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Album) <span class="sc">|&gt;</span></span>
+<span id="cb35-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct_relevel</span>(<span class="fu">c</span>(<span class="st">"Fearless"</span>,</span>
+<span id="cb35-4"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"1989"</span>,</span>
+<span id="cb35-5"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Taylor Swift"</span>,</span>
+<span id="cb35-6"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Speak Now"</span>,</span>
+<span id="cb35-7"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Red"</span>,</span>
+<span id="cb35-8"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Midnights"</span>,</span>
+<span id="cb35-9"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Reputation"</span>,</span>
+<span id="cb35-10"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Folklore"</span>,</span>
+<span id="cb35-11"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Lover"</span>,</span>
+<span id="cb35-12"><a aria-hidden="true" tabindex="-1"></a>                <span class="st">"Evermore"</span>)</span>
+<span id="cb35-13"><a aria-hidden="true" tabindex="-1"></a>              ) <span class="sc">|&gt;</span> </span>
+<span id="cb35-14"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">levels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3478,17 +3492,17 @@
 <p>The bars follow the default factor levels.</p>
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>full_eras <span class="sc">|&gt;</span> </span>
-<span id="cb35-2"><a></a>  <span class="fu">mutate</span>(<span class="at">Album =</span> <span class="fu">fct</span>(Album)) <span class="sc">|&gt;</span> </span>
-<span id="cb35-3"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Album,</span>
-<span id="cb35-4"><a></a>               <span class="at">fill =</span> Album)</span>
-<span id="cb35-5"><a></a>         ) <span class="sc">+</span></span>
-<span id="cb35-6"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb35-7"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb35-8"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb35-9"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>,</span>
-<span id="cb35-10"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb35-11"><a></a>       <span class="at">title =</span> <span class="st">"Number of Songs Played on the Eras Tour by Album"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>full_eras <span class="sc">|&gt;</span> </span>
+<span id="cb36-2"><a></a>  <span class="fu">mutate</span>(<span class="at">Album =</span> <span class="fu">fct</span>(Album)) <span class="sc">|&gt;</span> </span>
+<span id="cb36-3"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Album,</span>
+<span id="cb36-4"><a></a>               <span class="at">fill =</span> Album)</span>
+<span id="cb36-5"><a></a>         ) <span class="sc">+</span></span>
+<span id="cb36-6"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb36-7"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb36-8"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb36-9"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb36-10"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb36-11"><a></a>       <span class="at">title =</span> <span class="st">"Number of Songs Played on the Eras Tour by Album"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3497,7 +3511,7 @@
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="week-4-joins-2_files/figure-revealjs/unnamed-chunk-35-1.png" width="960"></p>
+<p><img data-src="week-4-joins-2_files/figure-revealjs/unnamed-chunk-36-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -3507,28 +3521,28 @@
 <div class="small">
 <p>We can order factor levels to order the bar plot.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36" data-code-line-numbers="2-13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>full_eras <span class="sc">|&gt;</span> </span>
-<span id="cb36-2"><a></a>  <span class="fu">mutate</span>(<span class="at">Album =</span> <span class="fu">fct</span>(Album,</span>
-<span id="cb36-3"><a></a>                     <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Fearless"</span>,</span>
-<span id="cb36-4"><a></a>                                <span class="st">"Speak Now"</span>,</span>
-<span id="cb36-5"><a></a>                                <span class="st">"Red"</span>,</span>
-<span id="cb36-6"><a></a>                                <span class="st">"1989"</span>,</span>
-<span id="cb36-7"><a></a>                                <span class="st">"Reputation"</span>,</span>
-<span id="cb36-8"><a></a>                                <span class="st">"Lover"</span>,</span>
-<span id="cb36-9"><a></a>                                <span class="st">"Folklore"</span>,</span>
-<span id="cb36-10"><a></a>                                <span class="st">"Evermore"</span>,</span>
-<span id="cb36-11"><a></a>                                <span class="st">"Midnights"</span>)</span>
-<span id="cb36-12"><a></a>                     )</span>
-<span id="cb36-13"><a></a>         ) <span class="sc">|&gt;</span> </span>
-<span id="cb36-14"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Album,</span>
-<span id="cb36-15"><a></a>               <span class="at">fill =</span> Album)</span>
-<span id="cb36-16"><a></a>         ) <span class="sc">+</span></span>
-<span id="cb36-17"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb36-18"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb36-19"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb36-20"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>,</span>
-<span id="cb36-21"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb36-22"><a></a>       <span class="at">title =</span> <span class="st">"Number of Songs Played on the Eras Tour by Album"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37" data-code-line-numbers="2-13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>full_eras <span class="sc">|&gt;</span> </span>
+<span id="cb37-2"><a></a>  <span class="fu">mutate</span>(<span class="at">Album =</span> <span class="fu">fct</span>(Album,</span>
+<span id="cb37-3"><a></a>                     <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Fearless"</span>,</span>
+<span id="cb37-4"><a></a>                                <span class="st">"Speak Now"</span>,</span>
+<span id="cb37-5"><a></a>                                <span class="st">"Red"</span>,</span>
+<span id="cb37-6"><a></a>                                <span class="st">"1989"</span>,</span>
+<span id="cb37-7"><a></a>                                <span class="st">"Reputation"</span>,</span>
+<span id="cb37-8"><a></a>                                <span class="st">"Lover"</span>,</span>
+<span id="cb37-9"><a></a>                                <span class="st">"Folklore"</span>,</span>
+<span id="cb37-10"><a></a>                                <span class="st">"Evermore"</span>,</span>
+<span id="cb37-11"><a></a>                                <span class="st">"Midnights"</span>)</span>
+<span id="cb37-12"><a></a>                     )</span>
+<span id="cb37-13"><a></a>         ) <span class="sc">|&gt;</span> </span>
+<span id="cb37-14"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Album,</span>
+<span id="cb37-15"><a></a>               <span class="at">fill =</span> Album)</span>
+<span id="cb37-16"><a></a>         ) <span class="sc">+</span></span>
+<span id="cb37-17"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb37-18"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb37-19"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb37-20"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb37-21"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb37-22"><a></a>       <span class="at">title =</span> <span class="st">"Number of Songs Played on the Eras Tour by Album"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3537,7 +3551,7 @@
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="week-4-joins-2_files/figure-revealjs/unnamed-chunk-37-1.png" width="960"></p>
+<p><img data-src="week-4-joins-2_files/figure-revealjs/unnamed-chunk-38-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -3558,17 +3572,17 @@
 <div class="small">
 <p>The ridge plots follow the order of the factor levels.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>full_eras <span class="sc">|&gt;</span> </span>
-<span id="cb37-2"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Length, </span>
-<span id="cb37-3"><a></a>                       <span class="at">y =</span> Album, </span>
-<span id="cb37-4"><a></a>                       <span class="at">fill =</span> Album)</span>
-<span id="cb37-5"><a></a>         ) <span class="sc">+</span></span>
-<span id="cb37-6"><a></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
-<span id="cb37-7"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb37-8"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
-<span id="cb37-9"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Song Length (mins)"</span>,</span>
-<span id="cb37-10"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb37-11"><a></a>       <span class="at">title =</span> <span class="st">"Length of Songs Played on the Eras Tour by Album"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>full_eras <span class="sc">|&gt;</span> </span>
+<span id="cb38-2"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Length, </span>
+<span id="cb38-3"><a></a>                       <span class="at">y =</span> Album, </span>
+<span id="cb38-4"><a></a>                       <span class="at">fill =</span> Album)</span>
+<span id="cb38-5"><a></a>         ) <span class="sc">+</span></span>
+<span id="cb38-6"><a></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb38-7"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb38-8"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb38-9"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Song Length (mins)"</span>,</span>
+<span id="cb38-10"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb38-11"><a></a>       <span class="at">title =</span> <span class="st">"Length of Songs Played on the Eras Tour by Album"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3577,7 +3591,7 @@
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="week-4-joins-2_files/figure-revealjs/unnamed-chunk-40-1.png" width="960"></p>
+<p><img data-src="week-4-joins-2_files/figure-revealjs/unnamed-chunk-41-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -3587,19 +3601,19 @@
 <div class="small">
 <p>Inside <code>ggplot()</code>, we can order factor levels by a summary value.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38" data-code-line-numbers="3-5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>full_eras <span class="sc">|&gt;</span> </span>
-<span id="cb38-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Length, </span>
-<span id="cb38-3"><a></a>             <span class="at">y =</span> <span class="fu">fct_reorder</span>(<span class="at">.f =</span> Album,</span>
-<span id="cb38-4"><a></a>                             <span class="at">.x =</span> Length,</span>
-<span id="cb38-5"><a></a>                             <span class="at">.fun =</span> mean), </span>
-<span id="cb38-6"><a></a>             <span class="at">fill =</span> Album)</span>
-<span id="cb38-7"><a></a>         ) <span class="sc">+</span></span>
-<span id="cb38-8"><a></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
-<span id="cb38-9"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb38-10"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb38-11"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Song Length (mins)"</span>,</span>
-<span id="cb38-12"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb38-13"><a></a>       <span class="at">title =</span> <span class="st">"Length of Songs Played on the Eras Tour by Album"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39" data-code-line-numbers="3-5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>full_eras <span class="sc">|&gt;</span> </span>
+<span id="cb39-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Length, </span>
+<span id="cb39-3"><a></a>             <span class="at">y =</span> <span class="fu">fct_reorder</span>(<span class="at">.f =</span> Album,</span>
+<span id="cb39-4"><a></a>                             <span class="at">.x =</span> Length,</span>
+<span id="cb39-5"><a></a>                             <span class="at">.fun =</span> mean), </span>
+<span id="cb39-6"><a></a>             <span class="at">fill =</span> Album)</span>
+<span id="cb39-7"><a></a>         ) <span class="sc">+</span></span>
+<span id="cb39-8"><a></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb39-9"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb39-10"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb39-11"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Song Length (mins)"</span>,</span>
+<span id="cb39-12"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb39-13"><a></a>       <span class="at">title =</span> <span class="st">"Length of Songs Played on the Eras Tour by Album"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3608,7 +3622,7 @@
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="week-4-joins-2_files/figure-revealjs/unnamed-chunk-42-1.png" width="960"></p>
+<p><img data-src="week-4-joins-2_files/figure-revealjs/unnamed-chunk-43-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -3626,22 +3640,22 @@
 <div class="small">
 <p>The legend follows the order of the factor levels.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39" data-code-line-numbers="7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>full_eras <span class="sc">|&gt;</span> </span>
-<span id="cb39-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span>Album <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"1989"</span>,<span class="st">"Fearless"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb39-3"><a></a>  <span class="fu">group_by</span>(Album, Single) <span class="sc">|&gt;</span> </span>
-<span id="cb39-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_len =</span> <span class="fu">mean</span>(Length)) <span class="sc">|&gt;</span> </span>
-<span id="cb39-5"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Single, </span>
-<span id="cb39-6"><a></a>                       <span class="at">y =</span> avg_len, </span>
-<span id="cb39-7"><a></a>                       <span class="at">color =</span> Album)) <span class="sc">+</span></span>
-<span id="cb39-8"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb39-9"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb39-10"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb39-11"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
-<span id="cb39-12"><a></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"No"</span>, <span class="st">"Yes"</span>)</span>
-<span id="cb39-13"><a></a>                     ) <span class="sc">+</span></span>
-<span id="cb39-14"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb39-15"><a></a>       <span class="at">title =</span> <span class="st">"Are Taylor Swift's Singles Shorter?"</span>,</span>
-<span id="cb39-16"><a></a>       <span class="at">color =</span> <span class="st">"Album"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40" data-code-line-numbers="7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>full_eras <span class="sc">|&gt;</span> </span>
+<span id="cb40-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span>Album <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"1989"</span>,<span class="st">"Fearless"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb40-3"><a></a>  <span class="fu">group_by</span>(Album, Single) <span class="sc">|&gt;</span> </span>
+<span id="cb40-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_len =</span> <span class="fu">mean</span>(Length)) <span class="sc">|&gt;</span> </span>
+<span id="cb40-5"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Single, </span>
+<span id="cb40-6"><a></a>                       <span class="at">y =</span> avg_len, </span>
+<span id="cb40-7"><a></a>                       <span class="at">color =</span> Album)) <span class="sc">+</span></span>
+<span id="cb40-8"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb40-9"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb40-10"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb40-11"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb40-12"><a></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"No"</span>, <span class="st">"Yes"</span>)</span>
+<span id="cb40-13"><a></a>                     ) <span class="sc">+</span></span>
+<span id="cb40-14"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb40-15"><a></a>       <span class="at">title =</span> <span class="st">"Are Taylor Swift's Singles Shorter?"</span>,</span>
+<span id="cb40-16"><a></a>       <span class="at">color =</span> <span class="st">"Album"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3650,7 +3664,7 @@
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="week-4-joins-2_files/figure-revealjs/unnamed-chunk-45-1.png" width="960"></p>
+<p><img data-src="week-4-joins-2_files/figure-revealjs/unnamed-chunk-46-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -3660,26 +3674,26 @@
 <div class="small">
 <p>Inside <code>ggplot()</code>, we can order factor levels by the <span class="math inline">\(y\)</span> values associated with the largest <span class="math inline">\(x\)</span> values.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40" data-code-line-numbers="7-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>full_eras <span class="sc">|&gt;</span> </span>
-<span id="cb40-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span>Album <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"1989"</span>,<span class="st">"Fearless"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb40-3"><a></a>  <span class="fu">group_by</span>(Album, Single) <span class="sc">|&gt;</span> </span>
-<span id="cb40-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_len =</span> <span class="fu">mean</span>(Length)) <span class="sc">|&gt;</span> </span>
-<span id="cb40-5"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Single, </span>
-<span id="cb40-6"><a></a>                       <span class="at">y =</span> avg_len, </span>
-<span id="cb40-7"><a></a>                       <span class="at">color =</span> <span class="fu">fct_reorder2</span>(<span class="at">.f =</span> Album,</span>
-<span id="cb40-8"><a></a>                                            <span class="at">.x =</span> Single,</span>
-<span id="cb40-9"><a></a>                                            <span class="at">.y =</span> avg_len)</span>
-<span id="cb40-10"><a></a>                       )</span>
-<span id="cb40-11"><a></a>         ) <span class="sc">+</span></span>
-<span id="cb40-12"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb40-13"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb40-14"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb40-15"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
-<span id="cb40-16"><a></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"No"</span>, <span class="st">"Yes"</span>)</span>
-<span id="cb40-17"><a></a>                     ) <span class="sc">+</span></span>
-<span id="cb40-18"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb40-19"><a></a>       <span class="at">title =</span> <span class="st">"Are Taylor Swift's Singles Shorter?"</span>,</span>
-<span id="cb40-20"><a></a>       <span class="at">color =</span> <span class="st">"Album"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41" data-code-line-numbers="7-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>full_eras <span class="sc">|&gt;</span> </span>
+<span id="cb41-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span>Album <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"1989"</span>,<span class="st">"Fearless"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb41-3"><a></a>  <span class="fu">group_by</span>(Album, Single) <span class="sc">|&gt;</span> </span>
+<span id="cb41-4"><a></a>  <span class="fu">summarise</span>(<span class="at">avg_len =</span> <span class="fu">mean</span>(Length)) <span class="sc">|&gt;</span> </span>
+<span id="cb41-5"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Single, </span>
+<span id="cb41-6"><a></a>                       <span class="at">y =</span> avg_len, </span>
+<span id="cb41-7"><a></a>                       <span class="at">color =</span> <span class="fu">fct_reorder2</span>(<span class="at">.f =</span> Album,</span>
+<span id="cb41-8"><a></a>                                            <span class="at">.x =</span> Single,</span>
+<span id="cb41-9"><a></a>                                            <span class="at">.y =</span> avg_len)</span>
+<span id="cb41-10"><a></a>                       )</span>
+<span id="cb41-11"><a></a>         ) <span class="sc">+</span></span>
+<span id="cb41-12"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb41-13"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb41-14"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb41-15"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb41-16"><a></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"No"</span>, <span class="st">"Yes"</span>)</span>
+<span id="cb41-17"><a></a>                     ) <span class="sc">+</span></span>
+<span id="cb41-18"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb41-19"><a></a>       <span class="at">title =</span> <span class="st">"Are Taylor Swift's Singles Shorter?"</span>,</span>
+<span id="cb41-20"><a></a>       <span class="at">color =</span> <span class="st">"Album"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3688,7 +3702,7 @@
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="week-4-joins-2_files/figure-revealjs/unnamed-chunk-47-1.png" width="960"></p>
+<p><img data-src="week-4-joins-2_files/figure-revealjs/unnamed-chunk-48-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -3715,7 +3729,7 @@
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(military)[<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(military)[<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Country"        "Notes"          "Reporting year" "1988"          
  [5] "1989"           "1990"           "1991"           "1992"          
@@ -3734,12 +3748,12 @@
 <li>have spaces filled in with <code>_</code>.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43" data-code-line-numbers="3-5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="fu">library</span>(janitor)</span>
-<span id="cb43-2"><a></a></span>
-<span id="cb43-3"><a></a>military_clean_names <span class="ot">&lt;-</span> military <span class="sc">|&gt;</span> </span>
-<span id="cb43-4"><a></a>  <span class="fu">clean_names</span>()</span>
-<span id="cb43-5"><a></a></span>
-<span id="cb43-6"><a></a><span class="fu">names</span>(military_clean_names)[<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44" data-code-line-numbers="3-5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="fu">library</span>(janitor)</span>
+<span id="cb44-2"><a></a></span>
+<span id="cb44-3"><a></a>military_clean_names <span class="ot">&lt;-</span> military <span class="sc">|&gt;</span> </span>
+<span id="cb44-4"><a></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb44-5"><a></a></span>
+<span id="cb44-6"><a></a><span class="fu">names</span>(military_clean_names)[<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "country"        "notes"          "reporting_year" "x1988"         
  [5] "x1989"          "x1990"          "x1991"          "x1992"         
@@ -3779,11 +3793,11 @@
 <div class="fragment">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>military_clean <span class="sc">|&gt;</span> </span>
-<span id="cb45-2"><a></a>  <span class="fu">filter</span>(<span class="fu">across</span>(<span class="at">.cols =</span> Notes<span class="sc">:</span><span class="st">`</span><span class="at">2019</span><span class="st">`</span>, </span>
-<span id="cb45-3"><a></a>                <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">is.na</span>(.x)</span>
-<span id="cb45-4"><a></a>                )</span>
-<span id="cb45-5"><a></a>         ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>military_clean <span class="sc">|&gt;</span> </span>
+<span id="cb46-2"><a></a>  <span class="fu">filter</span>(<span class="fu">across</span>(<span class="at">.cols =</span> Notes<span class="sc">:</span><span class="st">`</span><span class="at">2019</span><span class="st">`</span>, </span>
+<span id="cb46-3"><a></a>                <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">is.na</span>(.x)</span>
+<span id="cb46-4"><a></a>                )</span>
+<span id="cb46-5"><a></a>         ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Using `across()` in `filter()` was deprecated in dplyr 1.0.8.
 ℹ Please use `if_any()` or `if_all()` instead.</code></pre>
@@ -3827,11 +3841,11 @@
 <p>You <strong>should not</strong> use deprecated functions!</p>
 <p>Instead, we use…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>military_clean <span class="sc">|&gt;</span></span>
-<span id="cb48-2"><a></a>  <span class="fu">filter</span>(<span class="fu">if_all</span>(<span class="at">.cols =</span> Notes<span class="sc">:</span><span class="st">`</span><span class="at">2019</span><span class="st">`</span>, </span>
-<span id="cb48-3"><a></a>                <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">is.na</span>(.x)</span>
-<span id="cb48-4"><a></a>                )</span>
-<span id="cb48-5"><a></a>         ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>military_clean <span class="sc">|&gt;</span></span>
+<span id="cb49-2"><a></a>  <span class="fu">filter</span>(<span class="fu">if_all</span>(<span class="at">.cols =</span> Notes<span class="sc">:</span><span class="st">`</span><span class="at">2019</span><span class="st">`</span>, </span>
+<span id="cb49-3"><a></a>                <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">is.na</span>(.x)</span>
+<span id="cb49-4"><a></a>                )</span>
+<span id="cb49-5"><a></a>         ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 18 × 35
    Country      Notes `Reporting year` `1988` `1989` `1990` `1991` `1992` `1993`
