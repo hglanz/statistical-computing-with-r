@@ -410,7 +410,7 @@
     "href": "slides/week-4/week-4-joins-2.html#clean-variable-names-with-janitor",
     "title": "Extending Joins, Factors, Clean Variable Names",
     "section": "Clean Variable Names with janitor",
-    "text": "Clean Variable Names with janitor\n\nData from external sources likely has variable names not ideally formatted for R.\nNames may…\n\ncontain spaces.\nstart with numbers.\nstart with a mix of capital and lower case letters.\n\n\n\n\nnames(military)[1:12]\n\n [1] \"Country\"        \"Notes\"          \"Reporting year\" \"1988\"          \n [5] \"1989\"           \"1990\"           \"1991\"           \"1992\"          \n [9] \"1993\"           \"1994\"           \"1995\"           \"1996\""
+    "text": "Clean Variable Names with janitor\n\nData from external sources likely has variable names not ideally formatted for R.\nNames may…\n\ncontain spaces.\nstart with numbers.\nstart with a mix of capital and lower case letters.\n\n\n\n\nnames(military_clean)[1:12]\n\n [1] \"Country\"        \"Notes\"          \"Reporting year\" \"1988\"          \n [5] \"1989\"           \"1990\"           \"1991\"           \"1992\"          \n [9] \"1993\"           \"1994\"           \"1995\"           \"1996\""
   },
   {
     "objectID": "slides/week-4/week-4-joins-2.html#clean-variable-names-with-janitor-1",
