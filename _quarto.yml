@@ -99,6 +99,10 @@ website:
             text: "Challenge 3 Instructions"
           - href: labs/instructions/lab-4-instructions.qmd
             text: "Lab 4 & Challenge 4 Instructions"
+      - section: "Gallary of Student Work"
+        contents:
+          - href: labs/exemplars/student-work.qmd
+            text: "Exemplary Student Work"
       - section: "Portfolio"
         contents:
           - href: portfolio/portfolio-instructions.qmd

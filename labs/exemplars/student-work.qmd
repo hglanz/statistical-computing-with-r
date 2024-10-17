@@ -1,0 +1,60 @@
+---
+title: "Gallary of Exemplary Student Work"
+---
+
+```{r}
+#| label: setup-read-in-data
+#| message: false
+#| echo: false
+
+library(tidyverse)
+survey_data <- read_csv(here::here("labs", 
+                                   "student",
+                                   "data", 
+                                   "surveys.csv")
+                        )
+```
+
+# Challenge 2
+
+This code is brought to us by Zack Kramer! I think this code is so special
+because Zack managed to specify **every** annotation within *one* call to 
+the `annotate()` function---very efficient! 
+
+```{r}
+#| label: challenge-3-spicy
+
+ggplot(data = survey_data,
+       mapping = aes(x = weight, y = species)) + 
+  geom_boxplot(aes(color = genus),
+               outliers = FALSE) + 
+  scale_colour_brewer(palette = "Set1") +
+  annotate("text", y = 1:14, x = 250, label = c("Neomota",
+                                                "Chaetodipus",
+                                                "Peromyscus",
+                                                "Perognathus",
+                                                "Reithrodontomys",
+                                                "Sigmodon",
+                                                "Onychomys",
+                                                "Peromyscus",
+                                                "Reithrodontomys",
+                                                "Dipodomys",
+                                                "Dipodomys",
+                                                "Chaetodipus",
+                                                "Dipodomys",
+                                                "Onychromys")) +
+  theme(legend.position = "none") +
+  labs(title = "Rodent Weight Distribution by Species",
+       x = "Weight (g)",
+       y = "")
+```
+
+
+# Lab 3
+
+
+# Challenge 3
+
+
+
+
