@@ -35,18 +35,34 @@ roles <- read_csv("data/roles.csv")
 
 Today we will...
 
+::: columns
+::: {.column width="55%"}
 ::: {.small}
 - Debrief PA 4
   + Describe the Code
   + Clean Column Names  
 - Debrief Lab 3 & Challenge 3
+  + Common Themes
+  + Package Lifecycle Stages
+  + Expectations for Tools Used
   + Reminder about Lab 3 Peer Review
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+::: {.small}
 -   New Material
     -   Extensions to Relational Data
     -   Factors with `forcats`
-    -   Package Lifecycle Stages
 -   [Lab 4: Childcare Costs in California](../../labs/instructions/lab-4-instructions.qmd)
 :::
+:::
+:::
+
+
 
 # Practice Activity 4
 
@@ -144,27 +160,157 @@ names(military_clean_names)[1:12]
 :::
 
 
-# Lab 3 & Challenge 3
+## Lab 3 Common Themes
 
-<!-- ## Comments from Week 3 -->
+::: {.small}
+::: {.incremental}
++ **Q1:** The [`tidyverse`](https://www.tidyverse.org/packages/) package automatically loads `ggplot2`, `dplyr`, `readr`, etc. -- do not load these twice!
 
-<!-- + The [`tidyverse`](https://www.tidyverse.org/packages/) package automatically loads `ggplot2`, `dplyr`, `readr`, etc. -- do not load these twice! -->
+- **Q3:** Where did these data come from? How were they collected? What is the
+context of these data?
+  + **Challenge 3:** When reaching a conclusion with the hypothesis test, what
+  does Question 3 refer to?
+- Saving an f*$# load of objects 
+  + Not outputting the results
+:::
+:::
 
-<!-- + Do not use `mutate()` + `distinct()`, when you can use `summarize()`! -->
-<!--   + We want to pay attention to the **efficiency** of our code. -->
+## Lab 3 Common Themes
+
+::: {.small}
+- **Q5 & Q7**: Not using the "correct" function syntax
+
+```{r}
+#| eval: false
+#| echo: true
+#| label: correct-syntax-across
+#| code-line-numbers: false
+
+if_any(.cols = everything(), .fns = ~ is.na(.x))
+```
+:::
+
+::: {.small}
+::: {.incremental}
+- Not using `.x` to specify where the `.cols` input should go will go awry 
+  when there are **multiple** function inputs. 
+- Using named arguments (e.g., `.cols = `, `.fns = `) makes your code more
+readable and is part of the code formatting guidelines for this class. 
+
+</br>
+
+- Think about "efficient" ways to do things
+  + **Q5**: Are you using the same function `across()` multiple columns?
+  + **Q6**: Can you calculate multiple summary statistics in one pipeline?
+  + **Q10-12**: Is there a way you can get **both** the max *and* min in one
+  pipeline?
+:::
+:::
+
+# Lifecycle Stages
+
+## Lifceycle Stages
+
+As packages get updated, the functions and function arguments included in those packages will change.
+
++ The accepted syntax for a function may change.
++ A function/functionality may disappear.
+
+![[Learn more about lifecycle stages](https://lifecycle.r-lib.org/articles/stages.html) of packages, functions, function arguments in R.](images/lifecycle.png){fig-alt="The image shows a flow diagram representing the lifecycle stages of a feature or process. It consists of four colored boxes with arrows connecting them. The green box in the center labeled stable is the main stage. To the left, an orange box labeled experimental has an arrow pointing toward stable, indicating that experimental features can progress to become stable. From stable, one arrow points upward to another orange box labeled deprecated, indicating that stable features can become deprecated. Another arrow points right to a dark blue box labeled superseded, showing that stable features can also be replaced or superseded."}
 
 
-<!-- ## `mutate()` vs `summarise()` -->
+## Lifceycle Stages
 
-<!-- ::: panel-tabset -->
-<!-- ### `mutate()` -->
+<center>
 
-<!-- ![](images/mutate-sketch.JPG) -->
+![](images/summarize_lifecycle.png){width=70% fig-alt="The image shows the documentation for the summarise() (or summarize(), using the American spelling) function in R, commonly used in the dplyr package for data manipulation. The summarise() function is used to create summary statistics for data frames or tibbles. The key arguments include .data, which is the data frame or tibble input, and ..., which represents name-value pairs of summary functions. The .by and .groups arguments are optional and used to control grouping behavior in the summarization. A key point in the documentation is that returning values with size 0 or greater than 1 in summary functions, such as min(), n(), or sum(), was deprecated as of version 1.1.0. Instead, users are encouraged to use the reframe() function, which replaces the deprecated behavior. The lifecycle badge marks the deprecation of this feature, ensuring that users know that previous versions' behavior should be updated for compatibility with future versions of the package."}
 
-<!-- ### `summarise()` -->
+</center>
 
-<!-- ![](images/summarise-sketch.JPG){width=85%} -->
-<!-- ::: -->
+## Deprecated Functions
+
+::: {.small}
+A **deprecated** functionality has a better alternative available and is scheduled for removal.
+
++ You get a warning telling you what to use instead.
+:::
+. . .
+
+::: {.small}
+```{r}
+#| warning: true
+#| message: true
+#| echo: true
+#| code-line-numbers: "2"
+
+military_clean |> 
+  filter(across(.cols = Notes:`2019`, 
+                .fns = ~ is.na(.x)
+                )
+         ) 
+```
+:::
+
+## Deprecated Functions
+
+::: {.small}
+You **should not** use deprecated functions!
+
+Instead, we use...
+
+```{r}
+#| echo: true
+#| code-line-numbers: "2"
+military_clean |>
+  filter(if_all(.cols = Notes:`2019`, 
+                .fns = ~ is.na(.x)
+                )
+         ) 
+```
+:::
+
+## Superceded Functions
+
+A **superseded** functionality has a better alternative, but is not going away.
+
++ This is a softer alternative to deprecation.
++ A superseded function will not give a warning (since there’s no risk if you
+keep using it), but the documentation will give you a recommendation for what
+to use instead.
+
+## What is my job?
+
+</br> 
+
+::: columns
+::: {.column width="40%"}
+::: {.fragment}
+**Teaching you stuff**
+
+</br> 
+
+(Thoughtfully) choosing what to teach and how to teach it.
+::: 
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+::: {.fragment}
+**Assessing what you've learned**
+
+</br> 
+
+What do you understand about the tools I've taught you? 
+
+::: {.fragment}
+This **is not** the same as assessing if you figured out a way to 
+accomplish a given task.
+::: 
+:::
+:::
+:::
 
 # Don't Forget to Complete Your Lab 3 Code Review
 
@@ -377,7 +523,7 @@ measurements[1:100,] |>
 #| code-line-numbers: false
 
 measurements |> 
-  full_join(species,
+  left_join(species,
             by = join_by(species == species, 
                          genus_name == genus)
             )
@@ -388,7 +534,7 @@ measurements |>
 #| eval: true
 #| echo: false
 measurements[1:100, ] |> 
-  full_join(species,
+  left_join(species,
             by = join_by(species == species, 
                          genus_name == genus)
             ) |> 
@@ -1110,77 +1256,6 @@ full_eras |>
 ```
 
 ::: 
-
-
-# Lifecycle Stages
-
-## Lifceycle Stages
-
-As packages get updated, the functions and function arguments included in those packages will change.
-
-+ The accepted syntax for a function may change.
-+ A function/functionality may disappear.
-
-![[Learn more about lifecycle stages](https://lifecycle.r-lib.org/articles/stages.html) of packages, functions, function arguments in R.](images/lifecycle.png){fig-alt="The image shows a flow diagram representing the lifecycle stages of a feature or process. It consists of four colored boxes with arrows connecting them. The green box in the center labeled stable is the main stage. To the left, an orange box labeled experimental has an arrow pointing toward stable, indicating that experimental features can progress to become stable. From stable, one arrow points upward to another orange box labeled deprecated, indicating that stable features can become deprecated. Another arrow points right to a dark blue box labeled superseded, showing that stable features can also be replaced or superseded."}
-
-
-## Lifceycle Stages
-
-<center>
-
-![](images/summarize_lifecycle.png){width=70% fig-alt="The image shows the documentation for the summarise() (or summarize(), using the American spelling) function in R, commonly used in the dplyr package for data manipulation. The summarise() function is used to create summary statistics for data frames or tibbles. The key arguments include .data, which is the data frame or tibble input, and ..., which represents name-value pairs of summary functions. The .by and .groups arguments are optional and used to control grouping behavior in the summarization. A key point in the documentation is that returning values with size 0 or greater than 1 in summary functions, such as min(), n(), or sum(), was deprecated as of version 1.1.0. Instead, users are encouraged to use the reframe() function, which replaces the deprecated behavior. The lifecycle badge marks the deprecation of this feature, ensuring that users know that previous versions' behavior should be updated for compatibility with future versions of the package."}
-
-</center>
-
-## Deprecated Functions
-
-::: {.small}
-A **deprecated** functionality has a better alternative available and is scheduled for removal.
-
-+ You get a warning telling you what to use instead.
-:::
-. . .
-
-::: {.small}
-```{r}
-#| warning: true
-#| message: true
-#| echo: true
-#| code-line-numbers: "2"
-
-military_clean |> 
-  filter(across(.cols = Notes:`2019`, 
-                .fns = ~ is.na(.x)
-                )
-         ) 
-```
-:::
-
-## Deprecated Functions
-
-::: {.small}
-You **should not** use deprecated functions!
-
-Instead, we use...
-
-```{r}
-#| echo: true
-#| code-line-numbers: "2"
-military_clean |>
-  filter(if_all(.cols = Notes:`2019`, 
-                .fns = ~ is.na(.x)
-                )
-         ) 
-```
-:::
-
-## Superceded Functions
-
-A **superseded** functionality has a better alternative, but is not going away.
-
-+ This is a softer alternative to deprecation.
-+ A superseded function will not give a warning (since there’s no risk if you
-keep using it), but the documentation will give you a recommendation.
 
 # [Lab 4: Childcare Costs in California](../../labs/instructions/lab-4-instructions.qmd)
 
