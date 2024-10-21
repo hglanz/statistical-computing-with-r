@@ -13,13 +13,41 @@ survey_data <- read_csv(here::here("labs",
                                    "data", 
                                    "surveys.csv")
                         )
+
+teacher_evals <- read_csv(here::here("labs", 
+                                     "student",
+                                     "data",
+                                     "teacher_evals.csv")
+                          )
+
+# From student's lab
+teacher_evals_clean <- teacher_evals |>
+  rename(sex = gender) |>
+  select(course_id,
+         teacher_id,
+         question_no,
+         no_participants,
+         resp_share,
+         SET_score_avg,
+         percent_failed_cur,
+         academic_degree,
+         seniority,
+         sex
+         ) |>
+  mutate(
+    course_id = as.factor(course_id),
+    teacher_id = as.factor(teacher_id),
+    sex = as.factor(sex),
+    academic_degree = as.factor(academic_degree),
+    question_no = as.integer(question_no)
+  ) |>
+  filter(no_participants >= 10)
+
 ```
 
 # Challenge 2
 
-This code is brought to us by Zack Kramer! I think this code is so special
-because Zack managed to specify **every** annotation within *one* call to 
-the `annotate()` function---very efficient! 
+This code is brought to us by Zack Kramer! I think this code is so special because Zack managed to specify **every** annotation within *one* call to the `annotate()` function---very efficient!
 
 ```{r}
 #| label: challenge-3-spicy
@@ -49,12 +77,50 @@ ggplot(data = survey_data,
        y = "")
 ```
 
-
 # Lab 3
 
+This code is brought to us by a student who wishes to remain 
+anonymous. What I appreciated about their code is both their
+efficiency and their concise output!
 
-# Challenge 3
+**3. Provide a brief overview (~4 sentences) of the dataset.**
 
+*This data set contains the metrics generated from students’ teacher evaluations at a University in Poland during the winter semester of the 2020-2021 academic year. The data set is 8015 by 22, representing 8015 observations with 22 variables. Each row of data corresponds to a specific teacher, their class identifier and an evaluation question. And for each of these, the average score of the question, the teacher’s information, and additional student metrics are observed.* 
 
+**6. How many unique instructors and unique courses are present in the cleaned dataset?**
+
+```{r}
+teacher_evals_clean |>
+  summarise(unique_teachers = n_distinct(teacher_id),
+            unique_courses = n_distinct(course_id),
+            unique_combinations = n_distinct(course_id,teacher_id))
+```
+
+**9. Each course seems to have used a different subset of the nine evaluation questions. How many teacher-course combinations asked all nine questions?**
+
+```{r}
+teacher_evals_clean |>
+  group_by(course_id, teacher_id) |>
+  summarise(question_count = n_distinct(question_no), 
+            .groups = "drop") |>
+  filter(question_count == 9) |>
+  count() |>
+  rename(teacher_course = n)
+
+```
+
+**10. Which instructors had the highest and lowest average rating for Question 1 (I learnt a lot during the course.) across all their courses?**
+
+```{r}
+teacher_evals_clean |>
+  group_by(teacher_id) |>
+  filter(question_no == 901) |>
+  summarize(avg_q1_score = mean(SET_score_avg), 
+            .groups = "drop") |>
+  filter(avg_q1_score == min(avg_q1_score) |
+            avg_q1_score == max(avg_q1_score))
+```
+
+# Lab 4
 
 

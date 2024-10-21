@@ -363,7 +363,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#challenge-2" id="toc-challenge-2" class="nav-link active" data-scroll-target="#challenge-2">Challenge 2</a></li>
   <li><a href="#lab-3" id="toc-lab-3" class="nav-link" data-scroll-target="#lab-3">Lab 3</a></li>
-  <li><a href="#challenge-3" id="toc-challenge-3" class="nav-link" data-scroll-target="#challenge-3">Challenge 3</a></li>
+  <li><a href="#lab-4" id="toc-lab-4" class="nav-link" data-scroll-target="#lab-4">Lab 4</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/groupworthy-data-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -427,9 +427,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="lab-3" class="level1">
 <h1>Lab 3</h1>
+<p>This code is brought to us by a student who wishes to remain anonymous. What I appreciated about their code is both their efficiency and their concise output!</p>
+<p><strong>3. Provide a brief overview (~4 sentences) of the dataset.</strong></p>
+<p><em>This data set contains the metrics generated from students’ teacher evaluations at a University in Poland during the winter semester of the 2020-2021 academic year. The data set is 8015 by 22, representing 8015 observations with 22 variables. Each row of data corresponds to a specific teacher, their class identifier and an evaluation question. And for each of these, the average score of the question, the teacher’s information, and additional student metrics are observed.</em></p>
+<p><strong>6. How many unique instructors and unique courses are present in the cleaned dataset?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>teacher_evals_clean <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">unique_teachers =</span> <span class="fu">n_distinct</span>(teacher_id),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">unique_courses =</span> <span class="fu">n_distinct</span>(course_id),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">unique_combinations =</span> <span class="fu">n_distinct</span>(course_id,teacher_id))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  unique_teachers unique_courses unique_combinations
+            &lt;int&gt;          &lt;int&gt;               &lt;int&gt;
+1             297            939                1094</code></pre>
+</div>
+</div>
+<p><strong>9. Each course seems to have used a different subset of the nine evaluation questions. How many teacher-course combinations asked all nine questions?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>teacher_evals_clean <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(course_id, teacher_id) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">question_count =</span> <span class="fu">n_distinct</span>(question_no), </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(question_count <span class="sc">==</span> <span class="dv">9</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>() <span class="sc">|&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">teacher_course =</span> n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  teacher_course
+           &lt;int&gt;
+1             49</code></pre>
+</div>
+</div>
+<p><strong>10. Which instructors had the highest and lowest average rating for Question 1 (I learnt a lot during the course.) across all their courses?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>teacher_evals_clean <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(teacher_id) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(question_no <span class="sc">==</span> <span class="dv">901</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_q1_score =</span> <span class="fu">mean</span>(SET_score_avg), </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(avg_q1_score <span class="sc">==</span> <span class="fu">min</span>(avg_q1_score) <span class="sc">|</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>            avg_q1_score <span class="sc">==</span> <span class="fu">max</span>(avg_q1_score))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 82 × 2
+   teacher_id avg_q1_score
+   &lt;fct&gt;             &lt;dbl&gt;
+ 1 3471                  5
+ 2 3513                  5
+ 3 3543                  5
+ 4 3608                  5
+ 5 3662                  5
+ 6 3682                  5
+ 7 37013                 5
+ 8 37023                 5
+ 9 37026                 5
+10 37988                 5
+# ℹ 72 more rows</code></pre>
+</div>
+</div>
 </section>
-<section id="challenge-3" class="level1">
-<h1>Challenge 3</h1>
+<section id="lab-4" class="level1">
+<h1>Lab 4</h1>
 
 
 </section>
