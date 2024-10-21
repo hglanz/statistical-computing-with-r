@@ -19,7 +19,7 @@ execute:
 library(tidyverse)
 ```
 
-## Read in the Scret Message
+## Read in the Secret Message
 
 ```{r}
 #| label: read-in-secret-message-data
