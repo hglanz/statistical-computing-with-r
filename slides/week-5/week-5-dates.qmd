@@ -6,6 +6,17 @@ format:
 editor: source
 ---
 
+```{r}
+#| include: false
+#| message: false
+#| label: setup
+
+library(tidyverse)
+library(palmerpenguins)
+
+```
+
+
 ## Wednesday, May 1
 
 Today we will...
