@@ -407,9 +407,62 @@
 <li>New material
 <ul>
 <li>String variables</li>
+<li>Functions for working with strings</li>
 <li>Regular expressions</li>
 </ul></li>
 <li><a href="../../group-activities/week-5/PA-5-strings.html">PA 5.1: Scrambled Message</a></li>
+</ul>
+</section>
+<section id="week-5-layout" class="title-slide slide level1 center">
+<h1>Week 5 Layout</h1>
+
+</section>
+
+<section id="week-5-layout-1" class="title-slide slide level1 center">
+<h1>Week 5 Layout</h1>
+<ul>
+<li>Today: Strings with <code>stringr</code>
+<ul>
+<li>Practice Activity: Decoding a Message</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Thursday: Dates with <code>lubridate</code>
+<ul>
+<li>Practice Activity: Jewel Heist</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Lab Assignment Solving a Murder Mystery
+<ul>
+<li>Using <code>dplyr</code> + <code>stringr</code> + <code>ludridate</code></li>
+</ul></li>
+</ul>
+</div>
+</section>
+
+<section id="week-6-layout" class="title-slide slide level1 center">
+<h1>Week 6 Layout</h1>
+
+</section>
+
+<section id="week-6-layout-1" class="title-slide slide level1 center">
+<h1>Week 6 Layout</h1>
+<ul>
+<li>Tuesday: Writing Basic Functions
+<ul>
+<li>Practice Activity</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Thursday: Midterm Portfolio Work Session
+<ul>
+<li>Midterm Portfolios Due Saturday, November 2</li>
+</ul></li>
 </ul>
 <!-- ## Comments from Week 4 -->
 <!-- :::: {.columns} -->
@@ -432,7 +485,9 @@
 <!-- `slice_max()` -->
 <!-- ::: -->
 <!-- :::: -->
+</div>
 </section>
+
 <section>
 <section id="string-variables" class="title-slide slide level1 center">
 <h1>String Variables</h1>
@@ -2979,7 +3034,15 @@
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="small">
-
+<ul>
+<li>indexing vectors</li>
+<li><code>stringr</code> functions for previewing string contents</li>
+<li>regular expressions for locating patterns</li>
+<li><code>stringr</code> functions for removing whitespace</li>
+<li><code>stringr</code> functions for truncating strings</li>
+<li><code>stringr</code> functions for replacing patterns</li>
+<li><code>stringr</code> functions for combining multiple strings</li>
+</ul>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -2987,8 +3050,8 @@
 <p><span class="midi"><strong>None of us have all these abilities. Each of us has some of these abilities.</strong></span></p>
 </div></div>
 </section>
-<section id="a-refresher-on-indexing-vectors" class="slide level2">
-<h2>A Refresher on <a href="https://earobinson95.github.io/stat331-calpoly-text/00-prereading.html#indexing-by-location">Indexing Vectors</a>:</h2>
+<section id="a-refresher-on-indexing-vectors-with" class="slide level2">
+<h2>A Refresher on <a href="https://earobinson95.github.io/stat331-calpoly-text/00-prereading.html#indexing-by-location">Indexing Vectors</a> with <code>[]</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"She"</span>,</span>
 <span id="cb79-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="st">"sells"</span>,</span>
@@ -3001,7 +3064,7 @@
 <div class="column" style="width:50%;">
 <div class="fragment">
 <ul>
-<li>Grab elements out of a vector with <code>[]</code>.</li>
+<li>Grab elements out of a vector with indices.</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3013,10 +3076,58 @@
 </div><div class="column" style="width:50%;">
 <div class="fragment">
 <ul>
-<li>To replace those elements, use <code>&lt;-</code> to assign new values.</li>
+<li>Grab elements out of a vector with logicals.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">5</span>)] <span class="ot">&lt;-</span> <span class="st">"Cats"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "She" "by"  "the"</code></pre>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="translating-into-stringr" class="slide level2">
+<h2>Translating into <code>stringr</code></h2>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"She"</span>,</span>
+<span id="cb84-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="st">"sells"</span>,</span>
+<span id="cb84-3"><a aria-hidden="true" tabindex="-1"></a>       <span class="st">"seashells"</span>,</span>
+<span id="cb84-4"><a aria-hidden="true" tabindex="-1"></a>       <span class="st">"by"</span>, </span>
+<span id="cb84-5"><a aria-hidden="true" tabindex="-1"></a>       <span class="st">"the"</span>,</span>
+<span id="cb84-6"><a aria-hidden="true" tabindex="-1"></a>       <span class="st">"seashore!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="small">
+<p>Detect what strings have a certain pattern:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a aria-hidden="true" tabindex="-1"></a>x[</span>
+<span id="cb85-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_detect</span>(x, </span>
+<span id="cb85-3"><a aria-hidden="true" tabindex="-1"></a>             <span class="at">pattern =</span> <span class="st">"ll"</span>)</span>
+<span id="cb85-4"><a aria-hidden="true" tabindex="-1"></a>  ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "sells"     "seashells"</code></pre>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:3%;">
+
+</div><div class="column" style="width:52%;">
+<div class="fragment">
+<div class="small">
+<p>Replace that pattern with a different pattern:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">str_replace_all</span>(x, </span>
+<span id="cb87-2"><a aria-hidden="true" tabindex="-1"></a>                     <span class="at">pattern =</span> <span class="st">"ll"</span>, </span>
+<span id="cb87-3"><a aria-hidden="true" tabindex="-1"></a>                     <span class="at">replacement =</span> <span class="st">"zz"</span>)</span>
+<span id="cb87-4"><a aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "She"       "sezzs"     "seashezzs" "by"        "the"       "seashore!"</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div></div>
@@ -3049,6 +3160,10 @@
 </div><div class="column" style="width:55%;">
 <div class="fragment">
 <p><strong>On the Back</strong></p>
+<ul>
+<li><code>stringr</code> functions for different tasks</li>
+<li>Regular expressions for different tasks</li>
+</ul>
 </div>
 </div></div>
 </div>
@@ -3100,7 +3215,7 @@
 </div>
 <div class="fragment">
 <div class="small">
-<p>Then, the partner who woke up the earliest today starts as the Developer (typing and listening to instructions from the Coder)!</p>
+<p>Then, the partner who <em>currently</em> has the most pets starts as the Developer (typing and listening to instructions from the Coder)!</p>
 <ul>
 <li>The Coder <strong>does not type</strong>.
 <ul>
@@ -3113,8 +3228,7 @@
 </section>
 <section id="external-resources" class="slide level2">
 <h2>External Resources</h2>
-<p>During the Practice Activity, you <strong>are not</strong> permitted to use Google or ChatGPT for help.</p>
-<div class="fragment">
+<p>During the Practice Activity, you <strong>are not</strong> permitted to use Google, ChatGPT, or websites for regular expressions for help. . . .</p>
 <p><br></p>
 <p>You <strong>are</strong> permitted to use:</p>
 <ul>
@@ -3123,7 +3237,6 @@
 <li>the course textbook, and</li>
 <li>the course slides.</li>
 </ul>
-</div>
 </section>
 <section id="submission" class="slide level2">
 <h2>Submission</h2>

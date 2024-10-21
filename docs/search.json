@@ -4210,7 +4210,7 @@
     "href": "slides/week-5/week-5-strings.html#monday-april-29",
     "title": "Using stringr to Work with Strings",
     "section": "Monday, April 29",
-    "text": "Monday, April 29\nToday we will…\n\nNew layout this week\nWhat you can expect in Week 6\nNew material\n\nString variables\nRegular expressions\n\nPA 5.1: Scrambled Message"
+    "text": "Monday, April 29\nToday we will…\n\nNew layout this week\nWhat you can expect in Week 6\nNew material\n\nString variables\nFunctions for working with strings\nRegular expressions\n\nPA 5.1: Scrambled Message"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#what-is-a-string",
@@ -4483,14 +4483,14 @@
     "href": "slides/week-5/week-5-strings.html#this-activity-will-require-knowledge-of",
     "title": "Using stringr to Work with Strings",
     "section": "This activity will require knowledge of:",
-    "text": "This activity will require knowledge of:\n\n\n\n\n\n\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
+    "text": "This activity will require knowledge of:\n\n\n\n\nindexing vectors\nstringr functions for previewing string contents\nregular expressions for locating patterns\nstringr functions for removing whitespace\nstringr functions for truncating strings\nstringr functions for replacing patterns\nstringr functions for combining multiple strings\n\n\n\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#a-refresher-on-indexing-vectors",
     "href": "slides/week-5/week-5-strings.html#a-refresher-on-indexing-vectors",
     "title": "Using stringr to Work with Strings",
     "section": "A Refresher on Indexing Vectors:",
-    "text": "A Refresher on Indexing Vectors:\n\nx &lt;- c(\"She\",\n       \"sells\",\n       \"seashells\",\n       \"by\", \n       \"the\",\n       \"seashore!\")\n\n\n\n\n\nGrab elements out of a vector with [].\n\n\nx[c(1, 4, 5)]\n\n[1] \"She\" \"by\"  \"the\"\n\n\n\n\n\n\nTo replace those elements, use &lt;- to assign new values.\n\n\nx[c(1, 4, 5)] &lt;- \"Cats\""
+    "text": "A Refresher on Indexing Vectors:\n\nx &lt;- c(\"She\",\n       \"sells\",\n       \"seashells\",\n       \"by\", \n       \"the\",\n       \"seashore!\")\n\n\n\n\n\nGrab elements out of a vector with indices and [].\n\n\nx[c(1, 4, 5)]\n\n[1] \"She\" \"by\"  \"the\"\n\n\n\n\n\n\nGrab elements out of a vector with logicals and [].\n\n\nx[c(TRUE, FALSE, FALSE, TRUE, TRUE, FALSE)]\n\n[1] \"She\" \"by\"  \"the\""
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#stringr-resources",
@@ -4504,7 +4504,7 @@
     "href": "slides/week-5/week-5-strings.html#task-card",
     "title": "Using stringr to Work with Strings",
     "section": "Task Card",
-    "text": "Task Card\nEvery group should have a task card!\n\n\n\nOn the Front\n\nthe expectations of each role\nthe norms of collaborating\n\n\n\n\n\nOn the Back"
+    "text": "Task Card\nEvery group should have a task card!\n\n\n\nOn the Front\n\nthe expectations of each role\nthe norms of collaborating\n\n\n\n\n\nOn the Back\n\nstringr functions for different tasks\nRegular expressions for different tasks"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#pair-programming-expectations",
@@ -4518,14 +4518,14 @@
     "href": "slides/week-5/week-5-strings.html#getting-started",
     "title": "Using stringr to Work with Strings",
     "section": "Getting Started",
-    "text": "Getting Started\n\nFirst, both of you will do the following:\n\nJoin your Practice Activity workspace in Posit Cloud\nLog-in to Posit Cloud\nOpen the PA 5: Decode Message project\nOpen the PA5-stringr.qmd file\n\n\n\n\nThen, the partner who woke up the earliest today starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
+    "text": "Getting Started\n\nFirst, both of you will do the following:\n\nJoin your Practice Activity workspace in Posit Cloud\nLog-in to Posit Cloud\nOpen the PA 5: Decode Message project\nOpen the PA5-stringr.qmd file\n\n\n\n\nThen, the partner who currently has the most pets starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#external-resources",
     "href": "slides/week-5/week-5-strings.html#external-resources",
     "title": "Using stringr to Work with Strings",
     "section": "External Resources",
-    "text": "External Resources\nDuring the Practice Activity, you are not permitted to use Google or ChatGPT for help.\n\n\nYou are permitted to use:\n\nthe stringr cheatsheet,\nthe task card,\nthe course textbook, and\nthe course slides."
+    "text": "External Resources\nDuring the Practice Activity, you are not permitted to use Google, ChatGPT, or websites for regular expressions for help. . . .\n\nYou are permitted to use:\n\nthe stringr cheatsheet,\nthe task card,\nthe course textbook, and\nthe course slides."
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#submission",
@@ -4582,5 +4582,26 @@
     "title": "PA 4 Task Card – Military Spending",
     "section": "Code Formatting",
     "text": "Code Formatting\nDon’t forget, writing “tidy” and “well documented” code are two of the learning targets for this course. As such, I would strongly encourage you to use every opportunity to practice these skills.\nAs you are writing code for this assignment, make sure your code follows the tidyverse style guide for dplyr code. Specifically, your code should:\n\nuse whitespace liberally\n\nbefore & after every = sign\nafter every ,\nbefore every |&gt;\n\nuse new lines liberally\n\nafter every |&gt;\nafter , when needed (if code is more than 80 characters in length)"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#section",
+    "href": "slides/week-5/week-5-strings.html#section",
+    "title": "Using stringr to Work with Strings",
+    "section": "",
+    "text": "To replace those elements, use &lt;- to assign new values.\n\n\nx[c(1, 4, 5)] &lt;- \"Cats\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#a-refresher-on-indexing-vectors-with",
+    "href": "slides/week-5/week-5-strings.html#a-refresher-on-indexing-vectors-with",
+    "title": "Using stringr to Work with Strings",
+    "section": "A Refresher on Indexing Vectors with []",
+    "text": "A Refresher on Indexing Vectors with []\n\nx &lt;- c(\"She\",\n       \"sells\",\n       \"seashells\",\n       \"by\", \n       \"the\",\n       \"seashore!\")\n\n\n\n\n\nGrab elements out of a vector with indices.\n\n\nx[c(1, 4, 5)]\n\n[1] \"She\" \"by\"  \"the\"\n\n\n\n\n\n\nGrab elements out of a vector with logicals.\n\n\nx[c(TRUE, FALSE, FALSE, TRUE, TRUE, FALSE)]\n\n[1] \"She\" \"by\"  \"the\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#translating-into-stringr",
+    "href": "slides/week-5/week-5-strings.html#translating-into-stringr",
+    "title": "Using stringr to Work with Strings",
+    "section": "Translating into stringr",
+    "text": "Translating into stringr\n\n\nx &lt;- c(\"She\",\n       \"sells\",\n       \"seashells\",\n       \"by\", \n       \"the\",\n       \"seashore!\")\n\n\n\n\n\nDetect what strings have a certain pattern:\n\nx[\n  str_detect(x, \n             pattern = \"ll\")\n  ]\n\n[1] \"sells\"     \"seashells\"\n\n\n\n\n\n\n\n\nReplace that pattern with a different pattern:\n\nx &lt;- str_replace_all(x, \n                     pattern = \"ll\", \n                     replacement = \"zz\")\nx\n\n[1] \"She\"       \"sezzs\"     \"seashezzs\" \"by\"        \"the\"       \"seashore!\""
   }
 ]
