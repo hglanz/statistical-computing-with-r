@@ -15,7 +15,7 @@ Northwestern University's Knight Lab wanted to help sharpen users' database skil
 
 The relational data you will be working with contains tables with different pieces of information pertinent to the crime - people, social media check-ins, driver's licenses, crime scene reports, police interviews, and more!
 
-![Database schema](https://mystery.knightlab.com/schema.png){fig-alt=""}
+![Database schema](https://mystery.knightlab.com/schema.png)
 
 Solve the murder mystery, showing **all of your work in this document**. Your document and code must be well organized, easy to follow, and reproducible.
 
@@ -44,8 +44,7 @@ library(tidyverse)
 # If purrr is not detected, install the package
 if (!"purrr" %in% installed.packages()) install.packages("purrr")
 
-### CHANGE TO MY GITHUB
-source("https://raw.githubusercontent.com/zoerehnberg/STAT331-S23/main/challenges/bCH_murder_setup.R")
+source("https://raw.githubusercontent.com/atheobold/groupworthy-data-science/main/labs/instructions/lab-5-setup.R")
 ```
 
 ## Solve the Crime
