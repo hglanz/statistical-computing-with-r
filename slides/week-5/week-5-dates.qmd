@@ -1,0 +1,365 @@
+---
+title: "Using `lubridate` to Work with Dates"
+format: 
+  revealjs:
+        theme: [simple, ../style.scss]
+editor: source
+---
+
+## Wednesday, May 1
+
+Today we will...
+
+-   Midterm Portfolio
+  + What to Expect
+  + How to Get Started
+-   New Material
+    -   Working with Date & Time Variables
+-   [PA 5.2: Jewel Heist](../../group-activities/week-5/PA-5.2-task-card.qmd)
+
+<!-- -   [LA 5: Murder in SQL City]() -->
+
+<!-- Change to Midterm Portfolios -->
+
+<!-- ## [Midterm Exam](https://canvas.calpoly.edu/courses/130201/pages/midterm-exam-what-to-expect) -- Wednesday, 5/8 -->
+
+<!-- + This is a three-part exam: -->
+
+<!--   1. You will first complete a **General Questions** section on paper and **without your computer**. -->
+
+<!--   2. After you turn that in, you will complete a **Short Answer** section **with your computer**. -->
+
+<!--     + *You will have the one hour and 50 minute class period to complete the first two sections.* -->
+
+<!--   3. The third section, **Open-Ended Analysis**, will be started in class and due **24 hours** after the end of class. -->
+
+<!-- ## [Midterm Exam](https://canvas.calpoly.edu/courses/130201/pages/midterm-exam-what-to-expect) -- Wednesday, 5/8 -->
+
+<!-- + The exam is worth approximately 90 points. -->
+
+<!--   + Approx. 20 pts, 30 pts, and 40 pts for the three sections. -->
+
+<!-- + I will provide a `.qmd` template for the Short Answer. -->
+
+<!-- + You will create your own `.qmd` for the Open-Ended Analysis. **You are encouraged to create this ahead of time.** -->
+
+<!-- ::: callout-caution -->
+
+<!-- While the coding tasks are open-resource, you will likely run out of time if you have to look everything up. Know what functions you might need and where to find documentation for implementing these functions! -->
+
+<!-- ::: -->
+
+# Date + Time Variables
+
+## Why are dates and times tricky?
+
+When parsing dates and times, we have to consider complicating factors like...
+
+-   Daylight Savings Time.
+    -   One day a year is 23 hours; one day a year is 25 hours.
+    -   Some places use it, some don't.
+-   Leap years -- most years have 365 days, some have 366.
+-   Time zones.
+
+## `lubridate`
+
+::::: columns
+::: {.column width="80%"}
+**Common Tasks**
+
+-   Convert a date-like variable ("May 8, 1995") to a date or date-time object.
+
+-   Find the weekday, month, year, etc from a date-time object.
+
+-   Convert between time zones.
+:::
+
+::: {.column width="20%"}
+```{r}
+#| fig-align: center
+knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/main/thumbs/lubridate.png?raw=true")
+```
+:::
+:::::
+
+::: callout-note
+The `lubridate` package **installs** with `tidyverse`, but does not **load**.
+
+```{r}
+#| echo: true
+library(lubridate)
+```
+:::
+
+## `date-time` Objects
+
+There are multiple **data types** for dates and times.
+
+-   A date:
+    -   `date` or `Date`
+-   A date and a time (identifies a unique instant in time):
+    -   `dtm`
+    -   `POSIXlt` -- stores date-times as the number of seconds since January 1, 1970 ("Unix Epoch")
+    -   `POSIXct` -- stores date-times as a list with elements for second, minute, hour, day, month, year, etc.
+
+## Creating `date-time` Objects
+
+Create a date from individual components:
+
+```{r}
+#| echo: true
+make_date(year = 1995, month = 05, day = 08)
+```
+
+. . .
+
+Create a date from a string:
+
+```{r}
+#| echo: true
+mdy("May 8, 1995")
+```
+
+```{r}
+#| echo: true
+dmy("8-May-1995", tz = "America/Chicago")
+```
+
+```{r}
+#| echo: true
+dmy_hms("8-May-1995 9:32:12", tz = "America/Chicago")
+```
+
+```{r}
+#| echo: true
+as_datetime("95-05-08", format = "%y-%m-%d")
+```
+
+```{r}
+#| echo: true
+parse_datetime("5/8/1995", format = "%m/%d/%Y")
+```
+
+## Creating `date-time` Objects
+
+![](images/date_symbols.png){width="80%"}
+
+## Common Mistake with Dates
+
+*What's wrong here?*
+
+```{r}
+#| echo: true
+as_datetime(2023-02-6)
+```
+
+<br>
+
+```{r}
+#| echo: true
+my_date <- 2023-02-6
+my_date
+```
+
+<br>
+
+. . .
+
+Make sure you use quotes!
+
+-   2,015 seconds $\approx$ 33.5 minutes
+
+## Extracting `date-time` Components
+
+```{r}
+#| echo: true
+bday <- ymd_hms("1993-11-20 9:32:12", tz = "America/New_York")
+bday
+```
+
+<br>
+
+::::: columns
+::: column
+```{r}
+#| echo: true
+year(bday)
+month(bday)
+day(bday)
+```
+:::
+
+::: column
+```{r}
+#| echo: true
+wday(bday)
+wday(bday, label = TRUE, abbr = FALSE)
+```
+:::
+:::::
+
+## Subtraction with `date-time` Objects
+
+Doing subtraction gives you a `difftime` object.
+
+-   `difftime` objects do not always have the same units -- it depends on the scale of the objects you are working with.
+
+How old am I?
+
+```{r}
+#| echo: true
+today() - mdy(11201993)
+```
+
+How long did it take me to finish a typing challenge?
+
+```{r}
+#| echo: true
+begin <- mdy_hms("3/1/2023 13:04:34")
+finish <- mdy_hms("3/1/2023 13:06:11")
+finish - begin
+```
+
+## Durations and Periods
+
+**Durations** will always give the time span in an **exact number of seconds**.
+
+```{r}
+#| echo: true
+as.duration(today() - mdy(11201993))
+```
+
+```{r}
+#| echo: true
+as.duration(finish - begin)
+```
+
+. . .
+
+**Periods** will give the time span in more approximate, but **human readable times**.
+
+```{r}
+#| echo: true
+as.period(today() - mdy(11201993))
+```
+
+```{r}
+#| echo: true
+as.period(finish - begin)
+```
+
+## Durations and Periods
+
+We can also **add** time:
+
+-   `days()`, `years()`, etc. will add a **period** of time.
+-   `ddays()`, `dyears()`, etc. will add a **duration** of time.
+
+. . .
+
+Because durations use the **exact** number of seconds to represent days and years, you might get unexpected results:
+
+When is is my 99th birthday?
+
+```{r}
+#| echo: true
+mdy(11201993) + years(99)
+```
+
+```{r}
+#| echo: true
+mdy(11201993) + dyears(99)
+```
+
+## Time Zones
+
+**Time zones are complicated!**
+
+Specify time zones in the form:
+
+-   {continent}/{city} -- “America/New_York”, “Africa/Nairobi”
+-   {ocean}/{city} -- “Pacific/Auckland”
+
+. . .
+
+What time zone does R think I'm in?
+
+```{r}
+#| echo: true
+Sys.timezone()
+```
+
+## Time Zones
+
+You can change the time zone of a date in two ways:
+
+```{r}
+#| echo: true
+x <- ymd_hms("2024-06-01 18:00:00", tz = "Europe/Copenhagen")
+```
+
+::: panel-tabset
+### `with_tz()`
+
+Keeps the instant in time the same, but changes the visual representation.
+
+```{r}
+#| echo: true
+x |> 
+  with_tz()
+x |> 
+  with_tz(tzone = "Asia/Kolkata")
+```
+
+### `force_tz()`
+
+Changes the instant in time by forcing a time zone change.
+
+```{r}
+#| echo: true
+x |> 
+  force_tz()
+x |> 
+  force_tz(tzone = "Asia/Kolkata")
+```
+:::
+
+## Common Mistake with Dates
+
+When you read data in or create a new date-time object, the default time zone (if not specified) is UTC.
+
+-   UTC (Universal Time Coordinated) is the same as GMT (Greenwich Mean Time).
+
+Make sure you specify your desired time zone!
+
+```{r}
+#| echo: true
+x <- mdy("11/20/1993")
+tz(x)
+```
+
+```{r}
+#| echo: true
+x <- mdy("11/20/1993", tz = "America/New_York")
+tz(x)
+```
+
+## [PA 5.2: Jewel Heist](https://zoerehnberg.github.io/STAT331-S23/practice_activities/PA5_2.html)
+
+Just down the road in Montecito, CA several rare jewels went missing last fall. The jewels were stolen and replaced with fakes, but detectives have not been able to solve the case. They are now calling in a data scientist to help parse their clues.
+
+Unfortunately, the date and time of the jewel heist is not known. You have been hired to crack the case. Use the clues below to discover the thief's identity.
+
+> Submit the name of the thief to the Canvas Quiz.
+
+## [Lab 5: Murder in SQL City](https://zoerehnberg.github.io/STAT331-S23/lab_assignments/lab5/LA5_murder.html)
+
+## To do...
+
+-   **PA 5.2: Jewel Heist** -- due Saturday, 5/4 at 11:59pm.
+
+-   **Lab 5: Murder in SQL City** -- due Saturday, 5/4 at 11:59pm.
+
+-   **Read Chapter 6: Version Control**
+
+    -   **Check-ins 6.1 + 6.2** due Monday 5/6, at 10:00am

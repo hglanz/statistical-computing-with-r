@@ -4204,5 +4204,334 @@
     "title": "Data Wrangling with dplyr",
     "section": "Submission",
     "text": "Submission\n\nSubmit the full name of the college Ephelia will attend to the Canvas Quiz.\n\n\nEach person will input the full name of the college in the PA3 Canvas quiz.\nThe person who last occupied the role of Developer will download and submit the PA-3.html file for the group.\n\nOnly one submission per group!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#monday-april-29",
+    "href": "slides/week-5/week-5-strings.html#monday-april-29",
+    "title": "Using stringr to Work with Strings",
+    "section": "Monday, April 29",
+    "text": "Monday, April 29\nToday we will…\n\nNew layout this week\nWhat you can expect in Week 6\nNew material\n\nString variables\nRegular expressions\n\nPA 5.1: Scrambled Message"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#what-is-a-string",
+    "href": "slides/week-5/week-5-strings.html#what-is-a-string",
+    "title": "Using stringr to Work with Strings",
+    "section": "What is a string?",
+    "text": "What is a string?\nA string is a bunch of characters.\n\nThere is a difference between…\n\n…a string (many characters, one object)…\nand\n…a character vector (vector of strings).\n\n\n\n\nmy_string &lt;- \"Hi, my name is Bond!\"\nmy_string\n\n[1] \"Hi, my name is Bond!\"\n\n\n\n\n\nmy_vector &lt;- c(\"Hi\", \"my\", \"name\", \"is\", \"Bond\")\nmy_vector\n\n[1] \"Hi\"   \"my\"   \"name\" \"is\"   \"Bond\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#stringr",
+    "href": "slides/week-5/week-5-strings.html#stringr",
+    "title": "Using stringr to Work with Strings",
+    "section": "stringr",
+    "text": "stringr\n\n\nCommon tasks\n\nIdentify strings containing a particular pattern.\nRemove or replace a pattern.\nEdit a string (e.g., make it lowercase).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe stringr package loads with tidyverse.\nAll functions are of the form str_xxx()."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#pattern",
+    "href": "slides/week-5/week-5-strings.html#pattern",
+    "title": "Using stringr to Work with Strings",
+    "section": "pattern =",
+    "text": "pattern =\nThe pattern argument appears in many stringr functions.\n\nThe pattern must be supplied inside quotes.\n\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_detect(my_vector, pattern = \"Bond\")\nstr_locate(my_vector, pattern = \"James Bond\")\nstr_match(my_vector, pattern = \"[bB]ond\")\nstr_extract(my_vector, pattern = \"[jJ]ames [bB]ond\")\n\n\n\nLet’s explore these functions!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#str_detect",
+    "href": "slides/week-5/week-5-strings.html#str_detect",
+    "title": "Using stringr to Work with Strings",
+    "section": "str_detect()",
+    "text": "str_detect()\nReturns a logical vector indicating whether the pattern was found in each element of the supplied vector.\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\nstr_detect(my_vector, pattern = \"Bond\")\n\n[1] FALSE FALSE  TRUE  TRUE\n\n\n\n\nPairs well with filter().\nWorks with summarise() + sum or mean.\n\n\n\n\n\n\n\n\n\nRelated Function\n\n\nstr_which() returns the indexes of the strings that contain a match."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#str_match",
+    "href": "slides/week-5/week-5-strings.html#str_match",
+    "title": "Using stringr to Work with Strings",
+    "section": "str_match()",
+    "text": "str_match()\nReturns a character matrix containing either NA or the pattern, depending on if the pattern was found.\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_match(my_vector, pattern = \"Bond\")\n\n     [,1]  \n[1,] NA    \n[2,] NA    \n[3,] \"Bond\"\n[4,] \"Bond\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#str_extract",
+    "href": "slides/week-5/week-5-strings.html#str_extract",
+    "title": "Using stringr to Work with Strings",
+    "section": "str_extract()",
+    "text": "str_extract()\nReturns a character vector with either NA or the pattern, depending on if the pattern was found.\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_extract(my_vector, pattern = \"Bond\")\n\n[1] NA     NA     \"Bond\" \"Bond\"\n\n\n\n\n\n\n\n\n\nWarning\n\n\nstr_extract() only returns the first pattern match.\nUse str_extract_all() to return every pattern match."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#str_locate",
+    "href": "slides/week-5/week-5-strings.html#str_locate",
+    "title": "Using stringr to Work with Strings",
+    "section": "str_locate()",
+    "text": "str_locate()\n\nReturns a dateframe with two numeric variables – the starting and ending location of the pattern. The values are NA if the pattern is not found.\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_locate(my_vector, pattern = \"Bond\")\n\n     start end\n[1,]    NA  NA\n[2,]    NA  NA\n[3,]     1   4\n[4,]     7  10\n\n\n\n\n\n\n\n\n\n\n\nRelated Function\n\n\nstr_sub() extracts values based on a starting and ending location."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#str_subset",
+    "href": "slides/week-5/week-5-strings.html#str_subset",
+    "title": "Using stringr to Work with Strings",
+    "section": "str_subset()",
+    "text": "str_subset()\nReturns a character vector containing a subset of the original character vector consisting of the elements where the pattern was found.\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_subset(my_vector, pattern = \"Bond\")\n\n[1] \"Bond\"       \"James Bond\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#try-it-out",
+    "href": "slides/week-5/week-5-strings.html#try-it-out",
+    "title": "Using stringr to Work with Strings",
+    "section": "Try it out!",
+    "text": "Try it out!\n\n\nmy_vector &lt;- c(\"I scream,\", \n               \"you scream\", \n               \"we all\",\n               \"scream\",\n               \"for\",\n               \"ice cream\")\n\nstr_detect(my_vector, pattern = \"cream\")\nstr_locate(my_vector, pattern = \"cream\")\nstr_match(my_vector, pattern = \"cream\")\nstr_extract(my_vector, pattern = \"cream\")\nstr_subset(my_vector, pattern = \"cream\")\n\n\n\n\n\n\n\nNote\n\n\nFor each of these functions, write down:\n\nthe object structure of the output.\nthe data type of the output.\na brief explanation of what they do."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#replace-remove-patterns",
+    "href": "slides/week-5/week-5-strings.html#replace-remove-patterns",
+    "title": "Using stringr to Work with Strings",
+    "section": "Replace / Remove Patterns",
+    "text": "Replace / Remove Patterns\n\nstr_replace()str_remove()\n\n\nReplace the first matched pattern in each string.\n\nPairs well with mutate().\n\n\nstr_replace(my_vector, \n            pattern = \"Bond\", \n            replace = \"Franco\")\n\n[1] \"Hello,\"       \"my name is\"   \"Franco\"       \"James Franco\"\n\n\n\n\n\n\n\n\n\nRelated Function\n\n\nstr_replace_all() replaces all matched patterns in each string.\n\n\n\n\n\nRemove the first matched pattern in each string.\n\nstr_remove(my_vector, \n           pattern = \"Bond\")\n\n[1] \"Hello,\"     \"my name is\" \"\"           \"James \"    \n\n\n\n\n\n\n\n\n\nRelated Functions\n\n\nThis is a special case of str_replace(x, pattern, replacement = \"\").\nstr_remove_all() removes all matched patterns in each string."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#edit-strings",
+    "href": "slides/week-5/week-5-strings.html#edit-strings",
+    "title": "Using stringr to Work with Strings",
+    "section": "Edit Strings",
+    "text": "Edit Strings\nConvert letters in a string to a specific capitalization format.\n\nlowerUPPERTitle\n\n\nstr_to_lower() converts all letters in a string to lowercase.\n\n\nstr_to_lower(my_vector)\n\n[1] \"hello,\"     \"my name is\" \"bond\"       \"james bond\"\n\n\n\n\nstr_to_upper() converts all letters in a string to uppercase.\n\n\nstr_to_upper(my_vector)\n\n[1] \"HELLO,\"     \"MY NAME IS\" \"BOND\"       \"JAMES BOND\"\n\n\n\n\nstr_to_title() converts the first letter of each word to uppercase.\n\n\nstr_to_title(my_vector)\n\n[1] \"Hello,\"     \"My Name Is\" \"Bond\"       \"James Bond\"\n\n\n\n\n\n\n\n\nThis is handy for axis labels!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#combine-strings",
+    "href": "slides/week-5/week-5-strings.html#combine-strings",
+    "title": "Using stringr to Work with Strings",
+    "section": "Combine Strings",
+    "text": "Combine Strings\n\nstr_c()str_flatten()str_glue()\n\n\nJoin multiple strings into a single string.\n\nprompt &lt;- \"Hello, my name is\"\nfirst  &lt;- \"James\"\nlast   &lt;- \"Bond\"\nstr_c(prompt, last, \",\", first, last, sep = \" \")\n\n[1] \"Hello, my name is Bond , James Bond\"\n\n\n\n\n\n\n\n\nNote\n\n\nSimilar to paste() and paste0().\n\n\n\n\n\nCombine a vector of strings into a single string.\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_flatten(my_vector, collapse = \" \")\n\n[1] \"Hello, my name is Bond James Bond\"\n\n\n\n\n\n\n\n\nNote\n\n\nstr_c() with sep = \"\" will do the same thing, but I would recommending using str_flatten() instead!\n\n\n\n\n\nUse variables in the environment to create a string based on {expressions}.\n\nfirst &lt;- \"James\"\nlast &lt;- \"Bond\"\nstr_glue(\"My name is {last}, {first} {last}\")\n\nMy name is Bond, James Bond\n\n\n\n\n\n\n\n\nTip\n\n\nFor more details, I would recommend looking up the glue R package!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#tips-for-string-success",
+    "href": "slides/week-5/week-5-strings.html#tips-for-string-success",
+    "title": "Using stringr to Work with Strings",
+    "section": "Tips for String Success",
+    "text": "Tips for String Success\n\nRefer to the stringr cheatsheet\nRemember that str_xxx functions need the first argument to be a vector of strings, not a dataset!\n\nYou will use these functions inside dplyr verbs like filter() or mutate().\n\n\n\ncereal |&gt; \n  mutate(is_bran = str_detect(name, \"Bran\"), \n         .after = name)\n\n\n\n\n\n\n\nname\nis_bran\nmanuf\ntype\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\nshelf\nweight\ncups\nrating\n\n\n\n\n100% Bran\nTRUE\nN\ncold\n70\n4\n1\n130\n10.0\n5.0\n6\n280\n25\n3\n1.00\n0.33\n68.40297\n\n\n100% Natural Bran\nTRUE\nQ\ncold\n120\n3\n5\n15\n2.0\n8.0\n8\n135\n0\n3\n1.00\n1.00\n33.98368\n\n\nAll-Bran\nTRUE\nK\ncold\n70\n4\n1\n260\n9.0\n7.0\n5\n320\n25\n3\n1.00\n0.33\n59.42551\n\n\nAll-Bran with Extra Fiber\nTRUE\nK\ncold\n50\n4\n0\n140\n14.0\n8.0\n0\n330\n25\n3\n1.00\n0.50\n93.70491\n\n\nAlmond Delight\nFALSE\nR\ncold\n110\n2\n2\n200\n1.0\n14.0\n8\n-1\n25\n3\n1.00\n0.75\n34.38484\n\n\nApple Cinnamon Cheerios\nFALSE\nG\ncold\n110\n2\n2\n180\n1.5\n10.5\n10\n70\n25\n1\n1.00\n0.75\n29.50954\n\n\nApple Jacks\nFALSE\nK\ncold\n110\n2\n0\n125\n1.0\n11.0\n14\n30\n25\n2\n1.00\n1.00\n33.17409\n\n\nBasic 4\nFALSE\nG\ncold\n130\n3\n2\n210\n2.0\n18.0\n8\n100\n25\n3\n1.33\n0.75\n37.03856\n\n\nBran Chex\nTRUE\nR\ncold\n90\n2\n1\n200\n4.0\n15.0\n6\n125\n25\n1\n1.00\n0.67\n49.12025\n\n\nBran Flakes\nTRUE\nP\ncold\n90\n3\n0\n210\n5.0\n13.0\n5\n190\n25\n3\n1.00\n0.67\n53.31381\n\n\nCap'n'Crunch\nFALSE\nQ\ncold\n120\n1\n2\n220\n0.0\n12.0\n12\n35\n25\n2\n1.00\n0.75\n18.04285\n\n\nCheerios\nFALSE\nG\ncold\n110\n6\n2\n290\n2.0\n17.0\n1\n105\n25\n1\n1.00\n1.25\n50.76500\n\n\nCinnamon Toast Crunch\nFALSE\nG\ncold\n120\n1\n3\n210\n0.0\n13.0\n9\n45\n25\n2\n1.00\n0.75\n19.82357\n\n\nClusters\nFALSE\nG\ncold\n110\n3\n2\n140\n2.0\n13.0\n7\n105\n25\n3\n1.00\n0.50\n40.40021\n\n\nCocoa Puffs\nFALSE\nG\ncold\n110\n1\n1\n180\n0.0\n12.0\n13\n55\n25\n2\n1.00\n1.00\n22.73645\n\n\nCorn Chex\nFALSE\nR\ncold\n110\n2\n0\n280\n0.0\n22.0\n3\n25\n25\n1\n1.00\n1.00\n41.44502\n\n\nCorn Flakes\nFALSE\nK\ncold\n100\n2\n0\n290\n1.0\n21.0\n2\n35\n25\n1\n1.00\n1.00\n45.86332\n\n\nCorn Pops\nFALSE\nK\ncold\n110\n1\n0\n90\n1.0\n13.0\n12\n20\n25\n2\n1.00\n1.00\n35.78279\n\n\nCount Chocula\nFALSE\nG\ncold\n110\n1\n1\n180\n0.0\n12.0\n13\n65\n25\n2\n1.00\n1.00\n22.39651\n\n\nCracklin' Oat Bran\nTRUE\nK\ncold\n110\n3\n3\n140\n4.0\n10.0\n7\n160\n25\n3\n1.00\n0.50\n40.44877\n\n\nCream of Wheat (Quick)\nFALSE\nN\nhot\n100\n3\n0\n80\n1.0\n21.0\n0\n-1\n0\n2\n1.00\n1.00\n64.53382\n\n\nCrispix\nFALSE\nK\ncold\n110\n2\n0\n220\n1.0\n21.0\n3\n30\n25\n3\n1.00\n1.00\n46.89564\n\n\nCrispy Wheat & Raisins\nFALSE\nG\ncold\n100\n2\n1\n140\n2.0\n11.0\n10\n120\n25\n3\n1.00\n0.75\n36.17620\n\n\nDouble Chex\nFALSE\nR\ncold\n100\n2\n0\n190\n1.0\n18.0\n5\n80\n25\n3\n1.00\n0.75\n44.33086\n\n\nFroot Loops\nFALSE\nK\ncold\n110\n2\n1\n125\n1.0\n11.0\n13\n30\n25\n2\n1.00\n1.00\n32.20758\n\n\nFrosted Flakes\nFALSE\nK\ncold\n110\n1\n0\n200\n1.0\n14.0\n11\n25\n25\n1\n1.00\n0.75\n31.43597\n\n\nFrosted Mini-Wheats\nFALSE\nK\ncold\n100\n3\n0\n0\n3.0\n14.0\n7\n100\n25\n2\n1.00\n0.80\n58.34514\n\n\nFruit & Fibre Dates; Walnuts; and Oats\nFALSE\nP\ncold\n120\n3\n2\n160\n5.0\n12.0\n10\n200\n25\n3\n1.25\n0.67\n40.91705\n\n\nFruitful Bran\nTRUE\nK\ncold\n120\n3\n0\n240\n5.0\n14.0\n12\n190\n25\n3\n1.33\n0.67\n41.01549\n\n\nFruity Pebbles\nFALSE\nP\ncold\n110\n1\n1\n135\n0.0\n13.0\n12\n25\n25\n2\n1.00\n0.75\n28.02576\n\n\nGolden Crisp\nFALSE\nP\ncold\n100\n2\n0\n45\n0.0\n11.0\n15\n40\n25\n1\n1.00\n0.88\n35.25244\n\n\nGolden Grahams\nFALSE\nG\ncold\n110\n1\n1\n280\n0.0\n15.0\n9\n45\n25\n2\n1.00\n0.75\n23.80404\n\n\nGrape Nuts Flakes\nFALSE\nP\ncold\n100\n3\n1\n140\n3.0\n15.0\n5\n85\n25\n3\n1.00\n0.88\n52.07690\n\n\nGrape-Nuts\nFALSE\nP\ncold\n110\n3\n0\n170\n3.0\n17.0\n3\n90\n25\n3\n1.00\n0.25\n53.37101\n\n\nGreat Grains Pecan\nFALSE\nP\ncold\n120\n3\n3\n75\n3.0\n13.0\n4\n100\n25\n3\n1.00\n0.33\n45.81172\n\n\nHoney Graham Ohs\nFALSE\nQ\ncold\n120\n1\n2\n220\n1.0\n12.0\n11\n45\n25\n2\n1.00\n1.00\n21.87129\n\n\nHoney Nut Cheerios\nFALSE\nG\ncold\n110\n3\n1\n250\n1.5\n11.5\n10\n90\n25\n1\n1.00\n0.75\n31.07222\n\n\nHoney-comb\nFALSE\nP\ncold\n110\n1\n0\n180\n0.0\n14.0\n11\n35\n25\n1\n1.00\n1.33\n28.74241\n\n\nJust Right Crunchy Nuggets\nFALSE\nK\ncold\n110\n2\n1\n170\n1.0\n17.0\n6\n60\n100\n3\n1.00\n1.00\n36.52368\n\n\nJust Right Fruit & Nut\nFALSE\nK\ncold\n140\n3\n1\n170\n2.0\n20.0\n9\n95\n100\n3\n1.30\n0.75\n36.47151\n\n\nKix\nFALSE\nG\ncold\n110\n2\n1\n260\n0.0\n21.0\n3\n40\n25\n2\n1.00\n1.50\n39.24111\n\n\nLife\nFALSE\nQ\ncold\n100\n4\n2\n150\n2.0\n12.0\n6\n95\n25\n2\n1.00\n0.67\n45.32807\n\n\nLucky Charms\nFALSE\nG\ncold\n110\n2\n1\n180\n0.0\n12.0\n12\n55\n25\n2\n1.00\n1.00\n26.73451\n\n\nMaypo\nFALSE\nA\nhot\n100\n4\n1\n0\n0.0\n16.0\n3\n95\n25\n2\n1.00\n1.00\n54.85092\n\n\nMuesli Raisins; Dates; & Almonds\nFALSE\nR\ncold\n150\n4\n3\n95\n3.0\n16.0\n11\n170\n25\n3\n1.00\n1.00\n37.13686\n\n\nMuesli Raisins; Peaches; & Pecans\nFALSE\nR\ncold\n150\n4\n3\n150\n3.0\n16.0\n11\n170\n25\n3\n1.00\n1.00\n34.13976\n\n\nMueslix Crispy Blend\nFALSE\nK\ncold\n160\n3\n2\n150\n3.0\n17.0\n13\n160\n25\n3\n1.50\n0.67\n30.31335\n\n\nMulti-Grain Cheerios\nFALSE\nG\ncold\n100\n2\n1\n220\n2.0\n15.0\n6\n90\n25\n1\n1.00\n1.00\n40.10596\n\n\nNut&Honey Crunch\nFALSE\nK\ncold\n120\n2\n1\n190\n0.0\n15.0\n9\n40\n25\n2\n1.00\n0.67\n29.92429\n\n\nNutri-Grain Almond-Raisin\nFALSE\nK\ncold\n140\n3\n2\n220\n3.0\n21.0\n7\n130\n25\n3\n1.33\n0.67\n40.69232\n\n\nNutri-grain Wheat\nFALSE\nK\ncold\n90\n3\n0\n170\n3.0\n18.0\n2\n90\n25\n3\n1.00\n1.00\n59.64284\n\n\nOatmeal Raisin Crisp\nFALSE\nG\ncold\n130\n3\n2\n170\n1.5\n13.5\n10\n120\n25\n3\n1.25\n0.50\n30.45084\n\n\nPost Nat. Raisin Bran\nTRUE\nP\ncold\n120\n3\n1\n200\n6.0\n11.0\n14\n260\n25\n3\n1.33\n0.67\n37.84059\n\n\nProduct 19\nFALSE\nK\ncold\n100\n3\n0\n320\n1.0\n20.0\n3\n45\n100\n3\n1.00\n1.00\n41.50354\n\n\nPuffed Rice\nFALSE\nQ\ncold\n50\n1\n0\n0\n0.0\n13.0\n0\n15\n0\n3\n0.50\n1.00\n60.75611\n\n\nPuffed Wheat\nFALSE\nQ\ncold\n50\n2\n0\n0\n1.0\n10.0\n0\n50\n0\n3\n0.50\n1.00\n63.00565\n\n\nQuaker Oat Squares\nFALSE\nQ\ncold\n100\n4\n1\n135\n2.0\n14.0\n6\n110\n25\n3\n1.00\n0.50\n49.51187\n\n\nQuaker Oatmeal\nFALSE\nQ\nhot\n100\n5\n2\n0\n2.7\n-1.0\n-1\n110\n0\n1\n1.00\n0.67\n50.82839\n\n\nRaisin Bran\nTRUE\nK\ncold\n120\n3\n1\n210\n5.0\n14.0\n12\n240\n25\n2\n1.33\n0.75\n39.25920\n\n\nRaisin Nut Bran\nTRUE\nG\ncold\n100\n3\n2\n140\n2.5\n10.5\n8\n140\n25\n3\n1.00\n0.50\n39.70340\n\n\nRaisin Squares\nFALSE\nK\ncold\n90\n2\n0\n0\n2.0\n15.0\n6\n110\n25\n3\n1.00\n0.50\n55.33314\n\n\nRice Chex\nFALSE\nR\ncold\n110\n1\n0\n240\n0.0\n23.0\n2\n30\n25\n1\n1.00\n1.13\n41.99893\n\n\nRice Krispies\nFALSE\nK\ncold\n110\n2\n0\n290\n0.0\n22.0\n3\n35\n25\n1\n1.00\n1.00\n40.56016\n\n\nShredded Wheat\nFALSE\nN\ncold\n80\n2\n0\n0\n3.0\n16.0\n0\n95\n0\n1\n0.83\n1.00\n68.23588\n\n\nShredded Wheat 'n'Bran\nTRUE\nN\ncold\n90\n3\n0\n0\n4.0\n19.0\n0\n140\n0\n1\n1.00\n0.67\n74.47295\n\n\nShredded Wheat spoon size\nFALSE\nN\ncold\n90\n3\n0\n0\n3.0\n20.0\n0\n120\n0\n1\n1.00\n0.67\n72.80179\n\n\nSmacks\nFALSE\nK\ncold\n110\n2\n1\n70\n1.0\n9.0\n15\n40\n25\n2\n1.00\n0.75\n31.23005\n\n\nSpecial K\nFALSE\nK\ncold\n110\n6\n0\n230\n1.0\n16.0\n3\n55\n25\n1\n1.00\n1.00\n53.13132\n\n\nStrawberry Fruit Wheats\nFALSE\nN\ncold\n90\n2\n0\n15\n3.0\n15.0\n5\n90\n25\n2\n1.00\n1.00\n59.36399\n\n\nTotal Corn Flakes\nFALSE\nG\ncold\n110\n2\n1\n200\n0.0\n21.0\n3\n35\n100\n3\n1.00\n1.00\n38.83975\n\n\nTotal Raisin Bran\nTRUE\nG\ncold\n140\n3\n1\n190\n4.0\n15.0\n14\n230\n100\n3\n1.50\n1.00\n28.59278\n\n\nTotal Whole Grain\nFALSE\nG\ncold\n100\n3\n1\n200\n3.0\n16.0\n3\n110\n100\n3\n1.00\n1.00\n46.65884\n\n\nTriples\nFALSE\nG\ncold\n110\n2\n1\n250\n0.0\n21.0\n3\n60\n25\n3\n1.00\n0.75\n39.10617\n\n\nTrix\nFALSE\nG\ncold\n110\n1\n1\n140\n0.0\n13.0\n12\n25\n25\n2\n1.00\n1.00\n27.75330\n\n\nWheat Chex\nFALSE\nR\ncold\n100\n3\n1\n230\n3.0\n17.0\n3\n115\n25\n1\n1.00\n0.67\n49.78744\n\n\nWheaties\nFALSE\nG\ncold\n100\n3\n1\n200\n3.0\n17.0\n3\n110\n25\n1\n1.00\n1.00\n51.59219\n\n\nWheaties Honey Gold\nFALSE\nG\ncold\n110\n2\n1\n200\n1.0\n16.0\n8\n60\n25\n1\n1.00\n0.75\n36.18756"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#tips-for-string-success-1",
+    "href": "slides/week-5/week-5-strings.html#tips-for-string-success-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "Tips for String Success",
+    "text": "Tips for String Success\nThe real power of these str_xxx functions comes when you specify the pattern using regular expressions!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#regular-expressions",
+    "href": "slides/week-5/week-5-strings.html#regular-expressions",
+    "title": "Using stringr to Work with Strings",
+    "section": "Regular Expressions",
+    "text": "Regular Expressions\n\n“Regexps are a very terse language that allow you to describe patterns in strings.”\nR for Data Science\n\n\nUse str_xxx functions + regular expressions!\n\nstr_detect(string  = my_string_vector,\n           pattern = \"p[ei]ck[a-z]\")\n\n\n\n\n\n\n\n\n\nTip\n\n\nYou might encounter gsub(), grep(), etc. from Base R, but I would highly recommending using functions from the stringr package instead."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#regular-expressions-1",
+    "href": "slides/week-5/week-5-strings.html#regular-expressions-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "Regular Expressions",
+    "text": "Regular Expressions\nRegular expressions are tricky!\n\nThere are lots of new symbols to keep straight.\nThere are a lot of cases to think through.\n\n\nThis web app for testing R regular expressions might be handy!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#special-characters",
+    "href": "slides/week-5/week-5-strings.html#special-characters",
+    "title": "Using stringr to Work with Strings",
+    "section": "Special Characters",
+    "text": "Special Characters\nThere is a set of characters that have a specific meaning when using regex.\n\nThe stringr package does not read these as normal characters.\nThese characters are:\n\n\n. ^ $ \\ | * + ? { } [ ] ( )"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#wild-card-character-.",
+    "href": "slides/week-5/week-5-strings.html#wild-card-character-.",
+    "title": "Using stringr to Work with Strings",
+    "section": "Wild Card Character: .",
+    "text": "Wild Card Character: .\nThis character can match any character.\n\nx &lt;- c(\"She\", \n       \"sells\", \n       \"seashells\", \n       \"by\", \n       \"the\", \n       \"seashore!\")\n\nstr_subset(x, pattern = \".ells\")\n\n[1] \"sells\"     \"seashells\"\n\n\n\nThis matches strings that contain any character followed by “ells”."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#anchor-characters",
+    "href": "slides/week-5/week-5-strings.html#anchor-characters",
+    "title": "Using stringr to Work with Strings",
+    "section": "Anchor Characters: ^ $",
+    "text": "Anchor Characters: ^ $\n\n^ – looks at the beginning of a string.\n\nx &lt;- c(\"She\", \n       \"sells\", \n       \"seashells\", \n       \"by\", \n       \"the\", \n       \"seashore!\")\n\nstr_subset(x, pattern = \"^s\")\n\n[1] \"sells\"     \"seashells\" \"seashore!\"\n\n\nThis matches strings that start with “s”.\n\n\n\n$ – looks at the end of a string.\n\nx &lt;- c(\"She\", \n       \"sells\", \n       \"seashells\", \n       \"by\", \n       \"the\", \n       \"seashore!\")\n\nstr_subset(x, pattern = \"s$\")\n\n[1] \"sells\"     \"seashells\"\n\n\nThis matches strings that end with “s”."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#quantifier-characters",
+    "href": "slides/week-5/week-5-strings.html#quantifier-characters",
+    "title": "Using stringr to Work with Strings",
+    "section": "Quantifier Characters: ? + *",
+    "text": "Quantifier Characters: ? + *\n\n? – matches when the preceding character occurs 0 or 1 times in a row.\n\nx &lt;- c(\"shes\", \n       \"shels\", \n       \"shells\", \n       \"shellls\", \n       \"shelllls\")\n\nstr_subset(x, pattern = \"shel?s\")\n\n[1] \"shes\"  \"shels\"\n\n\n\n\n\n+ – occurs 1 or more times in a row.\n\nstr_subset(x, pattern = \"shel+s\")\n\n[1] \"shels\"    \"shells\"   \"shellls\"  \"shelllls\"\n\n\n\n\n\n\n* – occurs 0 or more times in a row.\n\nstr_subset(x, pattern = \"shel*s\")\n\n[1] \"shes\"     \"shels\"    \"shells\"   \"shellls\"  \"shelllls\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#quantifier-characters-1",
+    "href": "slides/week-5/week-5-strings.html#quantifier-characters-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "Quantifier Characters: {}",
+    "text": "Quantifier Characters: {}\n\n{n} – matches when the preceding character occurs exactly n times in a row.\n\nx &lt;- c(\"shes\", \n       \"shels\", \n       \"shells\", \n       \"shellls\", \n       \"shelllls\")\n\nstr_subset(x, pattern = \"shel{2}s\")\n\n[1] \"shells\"\n\n\n\n\n\n{n,} – occurs at least n times in a row.\n\nstr_subset(x, pattern = \"shel{2,}s\")\n\n[1] \"shells\"   \"shellls\"  \"shelllls\"\n\n\n\n\n\n\n{n,m} – occurs between n and m times in a row.\n\nstr_subset(x, pattern = \"shel{1,3}s\")\n\n[1] \"shels\"   \"shells\"  \"shellls\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#character-groups",
+    "href": "slides/week-5/week-5-strings.html#character-groups",
+    "title": "Using stringr to Work with Strings",
+    "section": "Character Groups: ()",
+    "text": "Character Groups: ()\nGroups are created with ( ).\n\nWe can specify “either” / “or” within a group using |.\n\n\nx &lt;- c(\"Peter\", \n       \"Piper\", \n       \"picked\", \n       \"a\", \n       \"peck\",\n       \"of\", \n       \"pickled\",\n       \"peppers!\")\n\nstr_subset(x, pattern = \"p(e|i)ck\")\n\n[1] \"picked\"  \"peck\"    \"pickled\"\n\n\n\nThis matches strings that contain either “peck” or “pick”."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#character-classes",
+    "href": "slides/week-5/week-5-strings.html#character-classes",
+    "title": "Using stringr to Work with Strings",
+    "section": "Character Classes: []",
+    "text": "Character Classes: []\n\nCharacter classes let you specify multiple possible characters to match on.\n\nx &lt;- c(\"Peter\", \n       \"Piper\", \n       \"picked\", \n       \"a\",\n       \"peck\",\n       \"of\",\n       \"pickled\",\n       \"peppers!\")\n\nstr_subset(x, pattern = \"p[ei]ck\")\n\n[1] \"picked\"  \"peck\"    \"pickled\"\n\n\n\n\n\n\n\n\n\n\nWhy use [] instead of ()?\n\n\n() is better for making groups of characters, plus you can only use a | with (). [] is better for referencing multiple characters, plus you can only use a ^ with []…"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#character-classes-1",
+    "href": "slides/week-5/week-5-strings.html#character-classes-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "Character Classes: []",
+    "text": "Character Classes: []\n[ - ] – specifies a range of characters.\n\nx &lt;- c(\"Peter\", \n       \"Piper\", \n       \"picked\", \n       \"a\",\n       \"peck\",\n       \"of\",\n       \"pickled\",\n       \"peppers!\")\n\nstr_subset(x, pattern = \"p[ei]ck[a-z]\")\n\n[1] \"picked\"  \"pickled\"\n\n\n\n\n\n[A-Z] matches any capital letter.\n[a-z] matches any lowercase letter.\n[A-z] or [:alpha:] matches any letter\n[0-9] or [:digit:] matches any number"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#shortcuts",
+    "href": "slides/week-5/week-5-strings.html#shortcuts",
+    "title": "Using stringr to Work with Strings",
+    "section": "Shortcuts",
+    "text": "Shortcuts\n\n\n\\\\w – matches any “word” (\\\\W matches not “word”)\n\nA “word” contains any letters and numbers.\n\n\\\\d – matches any digit (\\\\D matches not digit)\n\\\\s – matches any whitespace (\\\\S matches not whitespace)\n\nWhitespace includes spaces, tabs, newlines, etc.\n\n\n\n\n\n\nx &lt;- \"phone number: 1234567899\"\n\nstr_extract(x, pattern = \"\\\\d+\")\n\n[1] \"1234567899\"\n\nstr_extract_all(x, pattern = \"\\\\S+\")\n\n[[1]]\n[1] \"phone\"      \"number:\"    \"1234567899\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#try-it-out-1",
+    "href": "slides/week-5/week-5-strings.html#try-it-out-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "Try it out!",
+    "text": "Try it out!\nWhat regular expressions would match words that…\n\n\n\nend with a vowel?\nstart with x, y, or z?\ndo not contain x, y, or z?\ncontain British spelling?\n\n\n\n\n\nx &lt;- c(\"zebra\", \n       \"xray\", \n       \"apple\", \n       \"yellow\",\n       \"color\", \n       \"colour\",\n       \"summarize\",\n       \"summarise\")"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#escape",
+    "href": "slides/week-5/week-5-strings.html#escape",
+    "title": "Using stringr to Work with Strings",
+    "section": "Escape: \\\\",
+    "text": "Escape: \\\\\nTo match a special character, you need to escape it.\n\nx &lt;- c(\"How\",\n       \"much\", \n       \"wood\",\n       \"could\",\n       \"a\",\n       \"woodchuck\",\n       \"chuck\",\n       \"if\",\n       \"a\",\n       \"woodchuck\",\n       \"could\",\n       \"chuck\",\n       \"wood?\")\n\nstr_subset(x, pattern = \"?\")\n\nError in stri_subset_regex(string, pattern, omit_na = TRUE, negate = negate, : Syntax error in regex pattern. (U_REGEX_RULE_SYNTAX, context=`?`)"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#when-in-doubt",
+    "href": "slides/week-5/week-5-strings.html#when-in-doubt",
+    "title": "Using stringr to Work with Strings",
+    "section": "When in Doubt",
+    "text": "When in Doubt\n\n\nUse the web app to test R regular expressions."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#tips-for-working-with-regex",
+    "href": "slides/week-5/week-5-strings.html#tips-for-working-with-regex",
+    "title": "Using stringr to Work with Strings",
+    "section": "Tips for working with regex",
+    "text": "Tips for working with regex\n\nRead the regular expressions out loud like a request.\n\n\n\nTest out your expressions on small examples first.\n\n\n\n\n\n\n\nstr_view()\n\n\n\nstr_view(c(\"shes\", \"shels\", \"shells\", \"shellls\", \"shelllls\"), \"l+\")\n\n[2] │ she&lt;l&gt;s\n[3] │ she&lt;ll&gt;s\n[4] │ she&lt;lll&gt;s\n[5] │ she&lt;llll&gt;s\n\n\n\n\n\n\n\n\nUse the stringr cheatsheet.\n\n\n\n\nBe kind to yourself when working with regular expressions!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#stringr-functions-dplyr-verbs",
+    "href": "slides/week-5/week-5-strings.html#stringr-functions-dplyr-verbs",
+    "title": "Using stringr to Work with Strings",
+    "section": "stringr functions + dplyr verbs!",
+    "text": "stringr functions + dplyr verbs!\nCountry names with a (capital or lowercase) “Z”?\n\nmilitary |&gt; \n  filter(str_detect(Country, \"[Zz]\")) |&gt; \n  distinct(Country)\n\n\n\n\n\n\n\nCountry\n\n\n\n\nMozambique\n\n\nTanzania\n\n\nZambia\n\n\nZimbabwe\n\n\nBelize\n\n\nBrazil\n\n\nVenezuela\n\n\nKazakhstan\n\n\nKyrgyzstan\n\n\nUzbekistan\n\n\nNew Zealand\n\n\nBosnia-Herzegovina\n\n\nCzechia\n\n\nCzechoslovakia\n\n\nAzerbaijan\n\n\nSwitzerland\n\n\n\n\n\n\n\n\nThe proportion of country names with a compass direction?\n\nmilitary |&gt; \n  distinct(Country) |&gt; \n  summarize(prop = mean(str_detect(Country,\n                                   pattern = \"[Nn]orth|[Ss]outh|[Ee]ast|[Ww]est\")))\n\n# A tibble: 1 × 1\n    prop\n   &lt;dbl&gt;\n1 0.0789"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#matchespattern",
+    "href": "slides/week-5/week-5-strings.html#matchespattern",
+    "title": "Using stringr to Work with Strings",
+    "section": "matches(pattern)",
+    "text": "matches(pattern)\nSelect all variables with a name that matches the supplied pattern.\n\nPairs well with select(), rename_with(), and across().\n\n\nBeforeWith regex\n\n\n\nmilitary_clean &lt;- military |&gt; \n  mutate(across(`1988`:`2019`, \n                ~ na_if(.x, y = \". .\")),\n         across(`1988`:`2019`, \n                ~ na_if(.x, y = \"xxx\")))\n\n\n\n\nmilitary_clean &lt;- military |&gt; \n  mutate(across(matches(\"[1-9]{4}\"), \n                ~ na_if(.x, y = \". .\")),\n         across(matches(\"[1-9]{4}\"), \n                ~ na_if(.x, y = \"xxx\")))"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#messy-covid-variants",
+    "href": "slides/week-5/week-5-strings.html#messy-covid-variants",
+    "title": "Using stringr to Work with Strings",
+    "section": "Messy Covid Variants!",
+    "text": "Messy Covid Variants!\n\nWhat is that variable?!\n\n[{'variant': 'Other', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 4.59}, {'variant': 'V-20DEC-01 (Alpha)', 'cumWeeklySequenced': 0.0, 'newWeeklyPercentage': 0.0}, {'variant': 'V-21APR-02 (Delta B.1.617.2)', 'cumWeeklySequenced': 0.0, 'newWeeklyPercentage': 0.0}, {'variant': 'V-21OCT-01 (Delta AY 4.2)', 'cumWeeklySequenced': 0.0, 'newWeeklyPercentage': 0.0}, {'variant': 'V-22DEC-01 (Omicron CH.1.1)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 24.56}, {'variant': 'V-22JUL-01 (Omicron BA.2.75)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 8.93}, {'variant': 'V-22OCT-01 (Omicron BQ.1)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 49.57}, {'variant': 'VOC-21NOV-01 (Omicron BA.1)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 0.02}, {'variant': 'VOC-22APR-03 (Omicron BA.4)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 0.08}, {'variant': 'VOC-22APR-04 (Omicron BA.5)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 5.59}, {'variant': 'VOC-22JAN-01 (Omicron BA.2)', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 1.41}, {'variant': 'unclassified_variant', 'cumWeeklySequenced': 2366843.0, 'newWeeklyPercentage': 5.26}]"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#pa-5.1-scrambled-message",
+    "href": "slides/week-5/week-5-strings.html#pa-5.1-scrambled-message",
+    "title": "Using stringr to Work with Strings",
+    "section": "PA 5.1: Scrambled Message",
+    "text": "PA 5.1: Scrambled Message\nIn this activity, you will use functions from the stringr package and regex to decode a message."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#to-do",
+    "href": "slides/week-5/week-5-strings.html#to-do",
+    "title": "Using stringr to Work with Strings",
+    "section": "To do…",
+    "text": "To do…\n\nPA 5.1: Scrambled Message\n\nDue Thursday, October 24 at 12:10pm\n\nCheck-in 5.2: Functions from lubridate\n\nDue Thursday, October 24 at 12:10pm"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#related-function-1",
+    "href": "slides/week-5/week-5-strings.html#related-function-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "Related Function",
+    "text": "Related Function\nstr_sub() extracts values based on a starting and ending location."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#capitalization-matters",
+    "href": "slides/week-5/week-5-strings.html#capitalization-matters",
+    "title": "Using stringr to Work with Strings",
+    "section": "Capitalization matters!",
+    "text": "Capitalization matters!\n[^ ] – specifies characters not to match on (think except)\n\nstr_subset(x, pattern = \"p[^i]ck\")\n\n[1] \"peck\"\n\n\n\n\nstr_subset(x, pattern = \"^p\")\n\n[1] \"picked\"   \"peck\"     \"pickled\"  \"peppers!\"\n\n\n\nstr_subset(x, pattern = \"^[Pp]\")\n\n[1] \"Peter\"    \"Piper\"    \"picked\"   \"peck\"     \"pickled\"  \"peppers!\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#some-possible-solutions",
+    "href": "slides/week-5/week-5-strings.html#some-possible-solutions",
+    "title": "Using stringr to Work with Strings",
+    "section": "Some Possible Solutions…",
+    "text": "Some Possible Solutions…\n\nstr_subset(x, \"[aeiouy]$\")\nstr_subset(x, \"^[xyz]\")\nstr_subset(x, \"^[^xyz]+$\")\nstr_subset(x, \"(our)|(i[sz]e)\")"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#escape-1",
+    "href": "slides/week-5/week-5-strings.html#escape-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "Escape: \\\\",
+    "text": "Escape: \\\\\nUse \\\\ to escape the ? – it is now read as a normal character.\n\nstr_subset(x, pattern = \"\\\\?\")\n\n[1] \"wood?\"\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nAlternatively, you could use []:\n\nstr_subset(x, pattern = \"[?]\")\n\n[1] \"wood?\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#this-activity-will-require-knowledge-of",
+    "href": "slides/week-5/week-5-strings.html#this-activity-will-require-knowledge-of",
+    "title": "Using stringr to Work with Strings",
+    "section": "This activity will require knowledge of:",
+    "text": "This activity will require knowledge of:\n\n\n\n\n\n\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#a-refresher-on-indexing-vectors",
+    "href": "slides/week-5/week-5-strings.html#a-refresher-on-indexing-vectors",
+    "title": "Using stringr to Work with Strings",
+    "section": "A Refresher on Indexing Vectors:",
+    "text": "A Refresher on Indexing Vectors:\n\nx &lt;- c(\"She\",\n       \"sells\",\n       \"seashells\",\n       \"by\", \n       \"the\",\n       \"seashore!\")\n\n\n\n\n\nGrab elements out of a vector with [].\n\n\nx[c(1, 4, 5)]\n\n[1] \"She\" \"by\"  \"the\"\n\n\n\n\n\n\nTo replace those elements, use &lt;- to assign new values.\n\n\nx[c(1, 4, 5)] &lt;- \"Cats\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#stringr-resources",
+    "href": "slides/week-5/week-5-strings.html#stringr-resources",
+    "title": "Using stringr to Work with Strings",
+    "section": "stringr Resources",
+    "text": "stringr Resources\n\n\nEvery group should have a stringr cheatsheet!\nOn the Front:"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#task-card",
+    "href": "slides/week-5/week-5-strings.html#task-card",
+    "title": "Using stringr to Work with Strings",
+    "section": "Task Card",
+    "text": "Task Card\nEvery group should have a task card!\n\n\n\nOn the Front\n\nthe expectations of each role\nthe norms of collaborating\n\n\n\n\n\nOn the Back"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#pair-programming-expectations",
+    "href": "slides/week-5/week-5-strings.html#pair-programming-expectations",
+    "title": "Using stringr to Work with Strings",
+    "section": "Pair Programming Expectations",
+    "text": "Pair Programming Expectations\n\n\nDeveloper\n\n\nReads prompt and ensures Coder understands what is being asked.\nTypes the code specified by the Coder into the Quarto document.\nRuns the code provided by the Coder.\nWorks with Coder to debug the code.\nEvaluates the output.\n\nWorks with Coder to write code comments.\n\n\n\n\n\n\nCoder\n\n\nReads out instructions or prompts\nDirects the Developer what to type.\nTalks with Developer about their ideas.\nManages resources (e.g., cheatsheets, textbook, slides).\nWorks with Developer to debug the code.\nWorks with Developer to write code comments."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#getting-started",
+    "href": "slides/week-5/week-5-strings.html#getting-started",
+    "title": "Using stringr to Work with Strings",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nFirst, both of you will do the following:\n\nJoin your Practice Activity workspace in Posit Cloud\nLog-in to Posit Cloud\nOpen the PA 5: Decode Message project\nOpen the PA5-stringr.qmd file\n\n\n\n\nThen, the partner who woke up the earliest today starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#external-resources",
+    "href": "slides/week-5/week-5-strings.html#external-resources",
+    "title": "Using stringr to Work with Strings",
+    "section": "External Resources",
+    "text": "External Resources\nDuring the Practice Activity, you are not permitted to use Google or ChatGPT for help.\n\n\nYou are permitted to use:\n\nthe stringr cheatsheet,\nthe task card,\nthe course textbook, and\nthe course slides."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#submission",
+    "href": "slides/week-5/week-5-strings.html#submission",
+    "title": "Using stringr to Work with Strings",
+    "section": "Submission",
+    "text": "Submission\n\nSubmit the name of the movie the quote is from.\n\n\nEach person will input the full name of the movie the scrambled message is from.\nThe person who last occupied the role of Developer will download and submit the PA-5.html file for the group.\n\nOnly one submission per group!"
   }
 ]
