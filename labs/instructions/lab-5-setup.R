@@ -7,14 +7,14 @@ table_names <- c("crime_scene_report",
                  "interview",
                  "person")
 
-url_base <- "https://raw.githubusercontent.com/zoerehnberg/STAT331-S23/main/challenges/bCH_murder_data/"
+url_base <- "https://raw.githubusercontent.com/atheobold/groupworthy-data-science/refs/heads/main/labs/instructions/data/lab-5-data/"
 
 # Function to paste the URL with the name of the table, 
 # Store the resulting table in the Global Environment
 read_in_tables <- function(x){ 
   assign(x, 
          value = readr::read_csv(
-           str_flatten(url_base, x, ".csv")
+           str_c(url_base, x, ".csv", sep = "")
            ), 
          envir = .GlobalEnv)
 }
