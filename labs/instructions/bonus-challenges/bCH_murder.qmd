@@ -15,8 +15,6 @@ execute:
   warning: false
 ---
 
-[Download starter .qmd file](bCH_murder.qmd)
-
 For this challenge, you will be using table joins to solve a murder mystery.
 
 **Guilty Party(ies): **
