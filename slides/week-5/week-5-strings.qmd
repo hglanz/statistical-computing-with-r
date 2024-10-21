@@ -1278,7 +1278,15 @@ x
 ::: {.column width="60%"}
 Every group should have a **stringr** cheatsheet!
 
+::: {.small}
 **On the Front**: 
+
+- Detecting matches (e.g., Does a string have a specific pattern?)
+- Subsetting strings (e.g., Extract strings with specific patterns!)
+- Managing lengths (e.g., How long are the strings? Removing whitespace!)
+- Mutating strings (e.g., Replace specific patterns!)
+- Join & Flatten (e.g., Collapsing multiple strings into a single string!)
+:::
 :::
 
 ::: {.column width="5%"}
@@ -1311,8 +1319,14 @@ Every group should have a **task card**!
 ::: {.fragment}
 **On the Back**
 
-- `stringr` functions for different tasks
-- Regular expressions for different tasks
+::: {.small}
+- `stringr` functions for different tasks you may encounter
+- Regular expressions for different tasks you may encounter
+  + Matching patterns (e.g., `[:punct:]`, `\\w`)
+  + Special characters (e.g., `^`, `$`)
+  + Creating groups of characters (e.g., `[Kk]`)
+  + Repeated patters (e.g., `?`, `+`, `{2}`)
+:::
 :::
 :::
 :::
@@ -1359,14 +1373,14 @@ First, both of you will do the following:
 
 - Join your Practice Activity workspace in Posit Cloud
 - Log-in to Posit Cloud
-- Open the PA 5: Decode Message project
-- Open the `PA5-stringr.qmd` file
+- Open the PA 5: Decode Secret Message project
+- Open the `PA-5-stringr.qmd` file
 :::
 
 . . .
 
 ::: {.small}
-Then, the partner who *currently* has the most pets starts as the Developer (typing
+Then, the partner who has the most pets starts as the Developer (typing
 and listening to instructions from the Coder)!
 
 - The Coder **does not type**. 
@@ -1393,9 +1407,8 @@ You **are** permitted to use:
 
 > Submit the name of the movie the quote is from. 
 
-- Each person will input the full name of the movie the scrambled message is from. 
-- The person who last occupied the role of Developer will download and submit
-the `PA-5.html` file for the group.
+- Each person will input the full name of the movie the scrambled message is from into the PA5 quiz. 
+- The person who last occupied the role of Developer will download and submitthe `PA-5.html` file for the group.
   + Only one submission per group!
 
 # Exit Ticket

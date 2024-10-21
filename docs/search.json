@@ -4497,14 +4497,14 @@
     "href": "slides/week-5/week-5-strings.html#stringr-resources",
     "title": "Using stringr to Work with Strings",
     "section": "stringr Resources",
-    "text": "stringr Resources\n\n\nEvery group should have a stringr cheatsheet!\nOn the Front:"
+    "text": "stringr Resources\n\n\nEvery group should have a stringr cheatsheet!\n\nOn the Front:\n\nDetecting matches (e.g., Does a string have a specific pattern?)\nSubsetting strings (e.g., Extract strings with specific patterns!)\nManaging lengths (e.g., How long are the strings? Removing whitespace!)\nMutating strings (e.g., Replace specific patterns!)\nJoin & Flatten (e.g., Collapsing multiple strings into a single string!)"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#task-card",
     "href": "slides/week-5/week-5-strings.html#task-card",
     "title": "Using stringr to Work with Strings",
     "section": "Task Card",
-    "text": "Task Card\nEvery group should have a task card!\n\n\n\nOn the Front\n\nthe expectations of each role\nthe norms of collaborating\n\n\n\n\n\nOn the Back\n\nstringr functions for different tasks\nRegular expressions for different tasks"
+    "text": "Task Card\nEvery group should have a task card!\n\n\n\nOn the Front\n\nthe expectations of each role\nthe norms of collaborating\n\n\n\n\n\nOn the Back\n\n\nstringr functions for different tasks you may encounter\nRegular expressions for different tasks you may encounter\n\nMatching patterns (e.g., [:punct:], \\\\w)\nSpecial characters (e.g., ^, $)\nCreating groups of characters (e.g., [Kk])\nRepeated patters (e.g., ?, +, {2})"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#pair-programming-expectations",
@@ -4518,7 +4518,7 @@
     "href": "slides/week-5/week-5-strings.html#getting-started",
     "title": "Using stringr to Work with Strings",
     "section": "Getting Started",
-    "text": "Getting Started\n\nFirst, both of you will do the following:\n\nJoin your Practice Activity workspace in Posit Cloud\nLog-in to Posit Cloud\nOpen the PA 5: Decode Message project\nOpen the PA5-stringr.qmd file\n\n\n\n\nThen, the partner who currently has the most pets starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
+    "text": "Getting Started\n\nFirst, both of you will do the following:\n\nJoin your Practice Activity workspace in Posit Cloud\nLog-in to Posit Cloud\nOpen the PA 5: Decode Secret Message project\nOpen the PA-5-stringr.qmd file\n\n\n\n\nThen, the partner who has the most pets starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#external-resources",
@@ -4532,7 +4532,7 @@
     "href": "slides/week-5/week-5-strings.html#submission",
     "title": "Using stringr to Work with Strings",
     "section": "Submission",
-    "text": "Submission\n\nSubmit the name of the movie the quote is from.\n\n\nEach person will input the full name of the movie the scrambled message is from.\nThe person who last occupied the role of Developer will download and submit the PA-5.html file for the group.\n\nOnly one submission per group!"
+    "text": "Submission\n\nSubmit the name of the movie the quote is from.\n\n\nEach person will input the full name of the movie the scrambled message is from into the PA5 quiz.\nThe person who last occupied the role of Developer will download and submitthe PA-5.html file for the group.\n\nOnly one submission per group!"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html",
