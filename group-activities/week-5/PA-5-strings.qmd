@@ -48,7 +48,7 @@ class(message)
 
 ## Warm-up exercises
 
-<!-- The person whose woke up first today starts as the Developer (typing and
+<!-- The person who has the most pets starts as the Developer (typing and
 listening to instructions from the Coder)!  -->
 
 1.  How many characters are in the scrambled message?
