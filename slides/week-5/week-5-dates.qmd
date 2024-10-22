@@ -25,7 +25,7 @@ Today we will...
     + How to Get Started
 -   New Material
     -   Working with Date & Time Variables
--   [PA 5.2: Jewel Heist](../../group-activities/week-5/PA-5-strings.qmd)    
+-   [PA 5.2: Jewel Heist](../../group-activities/week-5/PA-5-dates.qmd)    
 
 # Midterm Portfolios
 
