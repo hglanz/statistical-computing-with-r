@@ -23,7 +23,6 @@ For this lab, you will be joining and filtering related datasets to solve a murd
 You can access the Lab 5 materials through the [Lab 5 GitHub Repository](https://github.com/Statistical-Computing-with-R/lab-5). 
 
 This week, to get a copy of the repository, we're going to follow a slightly different process. Use these steps to fork your own copy of the Lab 5 repository, then clone that repository into RStudio: [List of Steps to Fork GitHub Repository](https://scribehow.com/shared/Forking_a_GitHub_Repository__TKGOvrrYQ1GMfYCafxercg)
-:::
 
 ## Step 2: Making a Small Change
 
