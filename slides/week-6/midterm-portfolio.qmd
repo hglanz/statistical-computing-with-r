@@ -1,0 +1,16 @@
+---
+title: "Midterm Portfolio Work Session"
+format: 
+  revealjs:
+        theme: [simple, ../style.scss]
+editor: source
+---
+
+
+<!-- Feedback from Grade Expectation quiz: -->
+
+<!-- - I am wondering if there is a specific number for the amount of assignments that constitutes all but a few for when phrasing like this is used in the grading criteria.¬ -->
+
+<!-- - I'm confused by what counts as progression and pushing yourself, how is that measured. I think for me I would like a specific amount of challenges and maybe a growth over time of challenging oneself. -->
+
+<!-- While this would be good, this is hard to measure and to show when arguing for our grades. (group collaboration) -->
