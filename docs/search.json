@@ -2338,7 +2338,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\nData Joins + Pivots\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\nWorking with Categorical Variables\nExtending Joins, Factors, Clean Variable Names\nPA4 Due by 12pm\nLab 4 Instructions\nLink to Assignmenton GitHub Classroom Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\nUsing stringr to Work with Strings\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\n\nPA5 Due by 12pm\nLab 5 Instructions\nChallenge 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 10/31\nPortfolio Party\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n\n\n\n\n\n\n\nThurs, 11/7\n\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 Instructions\nChallenge 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\nData Joins + Pivots\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\nWorking with Categorical Variables\nExtending Joins, Factors, Clean Variable Names\nPA4 Due by 12pm\nLab 4 Instructions\nLink to Assignmenton GitHub Classroom Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\nUsing stringr to Work with Strings\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\nUsing lubridate to Work with Dates\nPA5 Due by 12pm\nLab 5 Instructions\nChallenge 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 10/31\nPortfolio Party\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n\n\n\n\n\n\n\nThurs, 11/7\n\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 Instructions\nChallenge 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -4784,7 +4784,7 @@
     "href": "slides/week-5/week-5-dates.html#pa-5.2-jewel-heist",
     "title": "Using lubridate to Work with Dates",
     "section": "PA 5.2: Jewel Heist",
-    "text": "PA 5.2: Jewel Heist\nJust down the road in Montecito, CA several rare jewels went missing last fall. The jewels were stolen and replaced with fakes, but detectives have not been able to solve the case. They are now calling in a data scientist to help parse their clues.\nUnfortunately, the date and time of the jewel heist is not known. You have been hired to crack the case. Use the clues below to discover the thief’s identity.\n\nSubmit the name of the thief to the Canvas Quiz."
+    "text": "PA 5.2: Jewel Heist"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#lab-5-murder-in-sql-city",
@@ -4834,5 +4834,54 @@
     "title": "Using lubridate to Work with Dates",
     "section": "How old am I?",
     "text": "How old am I?\n\ntoday() - mdy(01141989)\n\nTime difference of 13064 days\n\n\n\n\nHow long did it take me to type this slide?\n\nbegin &lt;- mdy_hms(\"10/21/2024 20:40:34\")\nfinish &lt;- mdy_hms(\"10/21/2024 20:43:11\")\n\nfinish - begin\n\nTime difference of 2.616667 mins"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html",
+    "href": "slides/week-5/week-5-dates.html",
+    "title": "Using lubridate to Work with Dates",
+    "section": "",
+    "text": "Today we will…\n\nMidterm Portfolio\nWhat to Expect\nHow to Get Started\nNew Material\n\nWorking with Date & Time Variables\n\nPA 5.2: Jewel Heist"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#this-activity-will-require-knowledge-of",
+    "href": "slides/week-5/week-5-dates.html#this-activity-will-require-knowledge-of",
+    "title": "Using lubridate to Work with Dates",
+    "section": "This activity will require knowledge of:",
+    "text": "This activity will require knowledge of:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#lubridate-resources",
+    "href": "slides/week-5/week-5-dates.html#lubridate-resources",
+    "title": "Using lubridate to Work with Dates",
+    "section": "lubridate Resources",
+    "text": "lubridate Resources\n\n\nEvery group should have a lubridate cheatsheet!\n\nOn the Front:"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#task-card",
+    "href": "slides/week-5/week-5-dates.html#task-card",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Task Card",
+    "text": "Task Card\nEvery group should have a task card!\n\n\n\nOn the Front\n\nthe expectations of each role\nthe norms of collaborating\n\n\n\n\n\nOn the Back"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#pair-programming-expectations",
+    "href": "slides/week-5/week-5-dates.html#pair-programming-expectations",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Pair Programming Expectations",
+    "text": "Pair Programming Expectations\n\n\nDeveloper\n\n\nReads prompt and ensures Coder understands what is being asked.\nTypes the code specified by the Coder into the Quarto document.\nRuns the code provided by the Coder.\nWorks with Coder to debug the code.\nEvaluates the output.\n\nWorks with Coder to write code comments.\n\n\n\n\n\n\nCoder\n\n\nReads out instructions or prompts\nDirects the Developer what to type.\nTalks with Developer about their ideas.\nManages resources (e.g., cheatsheets, textbook, slides).\nWorks with Developer to debug the code.\nWorks with Developer to write code comments."
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#getting-started-1",
+    "href": "slides/week-5/week-5-dates.html#getting-started-1",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nFirst, both of you will do the following:\n\nJoin your Practice Activity workspace in Posit Cloud\nLog-in to Posit Cloud\nOpen the PA 6: Jewel Heist project\nOpen the PA-6-lubridate.qmd file\n\n\n\n\nThen, the partner who got the most sleep starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#submission",
+    "href": "slides/week-5/week-5-dates.html#submission",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Submission",
+    "text": "Submission\n\nSubmit the name of the thief to the Canvas Quiz.\n\n\nEach person will input the full name of the theif into the PA6 quiz.\nThe person who last occupied the role of Developer will download and submitthe PA-6.html file for the group.\n\nOnly one submission per group!"
   }
 ]
