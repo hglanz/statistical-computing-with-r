@@ -400,14 +400,16 @@
 <h2>Thursday, October 24</h2>
 <p>Today we will…</p>
 <ul>
-<li>Midterm Portfolio</li>
+<li>Midterm Portfolio
+<ul>
 <li>What to Expect</li>
 <li>How to Get Started</li>
+</ul></li>
 <li>New Material
 <ul>
 <li>Working with Date &amp; Time Variables</li>
 </ul></li>
-<li><a href="../../group-activities/week-5/PA-5.2-task-card.docx">PA 5.2: Jewel Heist</a></li>
+<li><a href="../../group-activities/week-5/PA-5-strings.html">PA 5.2: Jewel Heist</a></li>
 </ul>
 </section>
 <section>
@@ -417,9 +419,33 @@
 </section>
 <section id="what-to-expect" class="slide level2">
 <h2>What to Expect</h2>
+<p>You will create a Midterm Portfolio, with code covering the learning targets we have covered thus far in the course.</p>
+<div class="fragment">
+<ul>
+<li>Your code will be pulled from your Lab and Challenge assignments.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>You will write reflections on how you’ve:
+<ul>
+<li>revised your thinking</li>
+<li>extended your thinking</li>
+<li>supported and collaborated with your peers</li>
+</ul></li>
+</ul>
+</div>
 </section>
 <section id="getting-started" class="slide level2">
 <h2>Getting Started</h2>
+<div>
+<ol type="1">
+<li class="fragment"><p>Follow <a href="https://scribehow.com/shared/Forking_a_GitHub_Repository__TKGOvrrYQ1GMfYCafxercg">these directions</a> to fork a copy of the <a href="https://github.com/atheobold/STAT331_portfolio_template">Final Portfolio repository</a>.</p></li>
+<li class="fragment"><p>Clone the repository into RStudio.</p></li>
+<li class="fragment"><p>Open the <code>reflection_template.qmd</code> file and give it a read!</p></li>
+<li class="fragment"><p>Start finding exerpts of code you wrote for the Labs or Challenges that fit each learning target.</p></li>
+</ol>
+</div>
 </section></section>
 <section>
 <section id="date-time-variables" class="title-slide slide level1 center">
@@ -453,7 +479,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://github.com/rstudio/hex-stickers/blob/main/thumbs/lubridate.png?raw=true" class="quarto-figure quarto-figure-center"></p>
+<p><img data-src="https://github.com/rstudio/hex-stickers/blob/main/thumbs/lubridate.png?raw=true" class="quarto-figure quarto-figure-center" alt="The image shows the hex logo for the lubridate R package. The logo is a green hexagon with a stylized calendar in the center. The calendar has a small clock icon overlapping its bottom left corner, symbolizing time-related functions. The text 'lubridate' appears prominently below the calendar icon within the hexagon. Lubridate is commonly used in R for working with date and time data."></p>
 </figure>
 </div>
 </div>
@@ -579,7 +605,10 @@
 </div>
 </div>
 </div></div>
+<p><br></p>
+<div class="centered">
 <p><strong><em>What’s wrong here?</em></strong></p>
+</div>
 <p><br></p>
 <div class="fragment">
 <p>Make sure you use quotes!</p>
@@ -649,7 +678,7 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">today</span>() <span class="sc">-</span> <span class="fu">mdy</span>(<span class="dv">01141989</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 13064 days</code></pre>
+<pre><code>Time difference of 13065 days</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -676,7 +705,7 @@
 <span id="cb33-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">today</span>() <span class="sc">-</span> <span class="fu">mdy</span>(<span class="dv">01141989</span>)</span>
 <span id="cb33-3"><a aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "1128729600s (~35.77 years)"</code></pre>
+<pre><code>[1] "1128816000s (~35.77 years)"</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:3%;">
@@ -689,7 +718,7 @@
 <span id="cb35-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">today</span>() <span class="sc">-</span> <span class="fu">mdy</span>(<span class="dv">01141989</span>)</span>
 <span id="cb35-3"><a aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "13064d 0H 0M 0S"</code></pre>
+<pre><code>[1] "13065d 0H 0M 0S"</code></pre>
 </div>
 </div>
 </div>
@@ -819,9 +848,18 @@
 <p>*UTC is the same as GMT (Greenwich Mean Time)</p>
 </div>
 </div>
-</section>
-<section id="pa-5.2-jewel-heist" class="slide level2">
-<h2><a href="../../group-activities/week-5/PA-5-dates.html">PA 5.2: Jewel Heist</a></h2>
+</section></section>
+<section>
+<section id="pa-5.2-jewel-heist" class="title-slide slide level1 center">
+<h1><a href="../../group-activities/week-5/PA-5-dates.html">PA 5.2: Jewel Heist</a></h1>
+<div class="columns">
+<div class="column" style="width:40%;">
+
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
+<p><img data-src="images/jewels.png" alt="The image displays five colorful gemstones placed on a dark surface. Each gem has a distinct color and shape. A rectangular green gem (emerald-like) on the left. A round white gem (resembling a diamond) at the top. An oval pink gem in the center. An oval blue gem in the foreground. An oval yellow gem in the background on the right. The gems are cut and polished, reflecting light and showing their intricate facets. They appear to represent a variety of precious stones with vibrant colors."></p>
+</div></div>
 <!-- Just down the road in Montecito, CA several rare jewels went missing last fall. The jewels were stolen and replaced with fakes, but detectives have not been able to solve the case. They are now calling in a data scientist to help parse their clues. -->
 <!-- Unfortunately, the date and time of the jewel heist is not known. You have been hired to crack the case. Use the clues below to discover the thief's identity. -->
 </section>
@@ -855,7 +893,7 @@
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:35%;">
-<p><img data-src="images/lubridate-cheatsheet.png" alt=""></p>
+<p><img data-src="images/lubridate-cheatsheet.png" alt="The image is a cheat sheet for the lubridate R package, titled 'Dates and times with lubridate::CHEATSHEET.' It is packed with key information on working with dates and times using lubridate, displayed in a visually organized format."></p>
 </div></div>
 </section>
 <section id="task-card" class="slide level2">
@@ -960,13 +998,22 @@
 <section>
 <section id="lab-5-murder-in-sql-city" class="title-slide slide level1 center">
 <h1><a href="../../labs/instructions/challenge-5-instructions.html">Lab 5: Murder in SQL City</a></h1>
+<div class="columns">
+<div class="column" style="width:40%;">
 
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
+<p><img data-src="images/murder-in-sql-city.png" alt="The image depicts a detective scene where a person wearing a trench coat and a wide-brimmed hat is standing in front of a bulletin board. The board contains various items connected by red strings, including a map, a photograph of mountains, a newspaper article with a photo of a person, a police badge, and a sticky note with the number '1992' on it. This setup is commonly associated with solving a mystery or crime, where clues are visually linked to help unravel the case. The detective appears to be analyzing these clues."></p>
+</div></div>
 </section>
 <section id="to-do" class="slide level2">
 <h2>To do…</h2>
 <ul>
-<li><strong>Lab 5: Murder in SQL City</strong></li>
+<li><strong>Lab 5: Murder in SQL City</strong>
+<ul>
 <li>due Sunday, October 27 at 11:59pm</li>
+</ul></li>
 <li><strong>Read Chapter 6: Version Control</strong>
 <ul>
 <li><strong>Check-ins 6.1</strong> due Tuesday, October 29, at 12:10pm</li>

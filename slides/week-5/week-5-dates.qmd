@@ -13,7 +13,6 @@ editor: source
 
 library(tidyverse)
 library(palmerpenguins)
-
 ```
 
 
@@ -22,17 +21,42 @@ library(palmerpenguins)
 Today we will...
 
 -   Midterm Portfolio
-  + What to Expect
-  + How to Get Started
+    + What to Expect
+    + How to Get Started
 -   New Material
     -   Working with Date & Time Variables
--   [PA 5.2: Jewel Heist](../../group-activities/week-5/PA-5.2-task-card.qmd)
+-   [PA 5.2: Jewel Heist](../../group-activities/week-5/PA-5-strings.qmd)    
 
 # Midterm Portfolios
 
 ## What to Expect
 
+You will create a Midterm Portfolio, with code covering the
+learning targets we have covered thus far in the course. 
+
+. . .
+
+- Your code will be pulled from your Lab and Challenge
+assignments. 
+
+. . .
+
+- You will write reflections on how you've:
+  + revised your thinking
+  + extended your thinking
+  + supported and collaborated with your peers
+  
 ## Getting Started
+
+::: {.incremental}
+1. Follow [these directions](https://scribehow.com/shared/Forking_a_GitHub_Repository__TKGOvrrYQ1GMfYCafxercg) to fork a copy of the [Final Portfolio repository](https://github.com/atheobold/STAT331_portfolio_template). 
+
+2. Clone the repository into RStudio. 
+
+3. Open the `reflection_template.qmd` file and give it a read!
+
+4. Start finding exerpts of code you wrote for the Labs or Challenges that fit each learning target. 
+:::
 
 # Date + Time Variables
 
@@ -60,7 +84,8 @@ When parsing dates and times, we have to consider complicating factors like...
 ::: {.column width="20%"}
 ```{r}
 #| fig-align: center
-#| fig-alt: ""
+#| fig-alt: "The image shows the hex logo for the lubridate R package. The logo is a green hexagon with a stylized calendar in the center. The calendar has a small clock icon overlapping its bottom left corner, symbolizing time-related functions. The text 'lubridate' appears prominently below the calendar icon within the hexagon. Lubridate is commonly used in R for working with date and time data."
+
 knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/main/thumbs/lubridate.png?raw=true")
 ```
 :::
@@ -182,7 +207,11 @@ my_date
 :::
 :::
 
+</br>
+
+::: {.centered}
 ***What's wrong here?***
+:::
 
 <br>
 
@@ -455,7 +484,20 @@ tz(x)
 *UTC is the same as GMT (Greenwich Mean Time)
 :::
 
-## [PA 5.2: Jewel Heist](../../group-activities/week-5/PA-5-dates.qmd)
+# [PA 5.2: Jewel Heist](../../group-activities/week-5/PA-5-dates.qmd) 
+
+::: columns
+::: {.column width="40%"}
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+![](images/jewels.png){fig-alt="The image displays five colorful gemstones placed on a dark surface. Each gem has a distinct color and shape. A rectangular green gem (emerald-like) on the left. A round white gem (resembling a diamond) at the top. An oval pink gem in the center. An oval blue gem in the foreground. An oval yellow gem in the background on the right. The gems are cut and polished, reflecting light and showing their intricate facets. They appear to represent a variety of precious stones with vibrant colors."}
+:::
+:::
 
 <!-- Just down the road in Montecito, CA several rare jewels went missing last fall. The jewels were stolen and replaced with fakes, but detectives have not been able to solve the case. They are now calling in a data scientist to help parse their clues. -->
 
@@ -501,8 +543,7 @@ Every group should have a **lubridate** cheatsheet!
 :::
 
 ::: {.column width="35%"}
-![](images/lubridate-cheatsheet.png){fig-alt=""}
-
+![](images/lubridate-cheatsheet.png){fig-alt="The image is a cheat sheet for the lubridate R package, titled 'Dates and times with lubridate::CHEATSHEET.' It is packed with key information on working with dates and times using lubridate, displayed in a visually organized format."}
 :::
 :::
 
@@ -604,9 +645,22 @@ and listening to instructions from the Coder)!
 
 # [Lab 5: Murder in SQL City](../../labs/instructions/challenge-5-instructions.qmd)
 
+::: columns
+::: {.column width="40%"}
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+![](images/murder-in-sql-city.png){fig-alt="The image depicts a detective scene where a person wearing a trench coat and a wide-brimmed hat is standing in front of a bulletin board. The board contains various items connected by red strings, including a map, a photograph of mountains, a newspaper article with a photo of a person, a police badge, and a sticky note with the number '1992' on it. This setup is commonly associated with solving a mystery or crime, where clues are visually linked to help unravel the case. The detective appears to be analyzing these clues."}
+:::
+:::
+
 ## To do...
 
 -   **Lab 5: Murder in SQL City**
-  + due Sunday, October 27 at 11:59pm
-- **Read Chapter 6: Version Control**
-  + **Check-ins 6.1** due Tuesday, October 29, at 12:10pm
+    + due Sunday, October 27 at 11:59pm
+- **Introductions to Writing Functions in R**
+   + **Check-ins 6.1** due Tuesday, October 29, at 12:10pm
