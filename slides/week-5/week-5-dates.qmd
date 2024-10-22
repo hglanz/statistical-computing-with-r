@@ -17,7 +17,7 @@ library(palmerpenguins)
 ```
 
 
-## Wednesday, May 1
+## Thursday, October 24
 
 Today we will...
 
@@ -28,37 +28,11 @@ Today we will...
     -   Working with Date & Time Variables
 -   [PA 5.2: Jewel Heist](../../group-activities/week-5/PA-5.2-task-card.qmd)
 
-<!-- -   [LA 5: Murder in SQL City]() -->
+# Midterm Portfolios
 
-<!-- Change to Midterm Portfolios -->
+## What to Expect
 
-<!-- ## [Midterm Exam](https://canvas.calpoly.edu/courses/130201/pages/midterm-exam-what-to-expect) -- Wednesday, 5/8 -->
-
-<!-- + This is a three-part exam: -->
-
-<!--   1. You will first complete a **General Questions** section on paper and **without your computer**. -->
-
-<!--   2. After you turn that in, you will complete a **Short Answer** section **with your computer**. -->
-
-<!--     + *You will have the one hour and 50 minute class period to complete the first two sections.* -->
-
-<!--   3. The third section, **Open-Ended Analysis**, will be started in class and due **24 hours** after the end of class. -->
-
-<!-- ## [Midterm Exam](https://canvas.calpoly.edu/courses/130201/pages/midterm-exam-what-to-expect) -- Wednesday, 5/8 -->
-
-<!-- + The exam is worth approximately 90 points. -->
-
-<!--   + Approx. 20 pts, 30 pts, and 40 pts for the three sections. -->
-
-<!-- + I will provide a `.qmd` template for the Short Answer. -->
-
-<!-- + You will create your own `.qmd` for the Open-Ended Analysis. **You are encouraged to create this ahead of time.** -->
-
-<!-- ::: callout-caution -->
-
-<!-- While the coding tasks are open-resource, you will likely run out of time if you have to look everything up. Know what functions you might need and where to find documentation for implementing these functions! -->
-
-<!-- ::: -->
+## Getting Started
 
 # Date + Time Variables
 
@@ -76,8 +50,6 @@ When parsing dates and times, we have to consider complicating factors like...
 
 ::::: columns
 ::: {.column width="80%"}
-**Common Tasks**
-
 -   Convert a date-like variable ("May 8, 1995") to a date or date-time object.
 
 -   Find the weekday, month, year, etc from a date-time object.
@@ -88,18 +60,14 @@ When parsing dates and times, we have to consider complicating factors like...
 ::: {.column width="20%"}
 ```{r}
 #| fig-align: center
+#| fig-alt: ""
 knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/main/thumbs/lubridate.png?raw=true")
 ```
 :::
 :::::
 
 ::: callout-note
-The `lubridate` package **installs** with `tidyverse`, but does not **load**.
-
-```{r}
-#| echo: true
-library(lubridate)
-```
+The `lubridate` package **installs** and **loads** with the `tidyverse`. 
 :::
 
 ## `date-time` Objects
@@ -119,58 +87,102 @@ Create a date from individual components:
 
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 make_date(year = 1995, month = 05, day = 08)
 ```
 
+## Create a `date-time` Object from a String
+
+::: {.small}
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+mdy("August 29, 1991")
+```
+:::
+
 . . .
 
-Create a date from a string:
-
+::: {.small}
 ```{r}
 #| echo: true
-mdy("May 8, 1995")
-```
+#| code-line-numbers: false
 
+dmy("29-August-1991", 
+    tz = "America/Denver")
+```
+:::
+
+. . .
+
+::: {.small}
 ```{r}
 #| echo: true
-dmy("8-May-1995", tz = "America/Chicago")
-```
+#| code-line-numbers: false
 
+dmy_hms("29-August-1991 9:32:12", 
+        tz = "America/Denver")
+```
+:::
+
+. . .
+
+::: {.small}
 ```{r}
 #| echo: true
-dmy_hms("8-May-1995 9:32:12", tz = "America/Chicago")
-```
+#| code-line-numbers: false
 
+as_datetime("91-08-29", 
+            format = "%y-%m-%d")
+```
+:::
+
+. . .
+
+::: {.small}
 ```{r}
 #| echo: true
-as_datetime("95-05-08", format = "%y-%m-%d")
-```
+#| code-line-numbers: false
 
-```{r}
-#| echo: true
-parse_datetime("5/8/1995", format = "%m/%d/%Y")
+parse_datetime("8/29/1991", 
+               format = "%m/%d/%Y")
 ```
+:::
 
 ## Creating `date-time` Objects
 
-![](images/date_symbols.png){width="80%"}
+![](images/date_symbols.png){width="80%" fig-alt=""}
 
 ## Common Mistake with Dates
 
-*What's wrong here?*
-
+::: columns
+::: {.column width="48%"}
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 as_datetime(2023-02-6)
 ```
 
-<br>
+:::
 
+::: {.column width="3%"}
+:::
+
+::: {.column width="48%"}
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 my_date <- 2023-02-6
 my_date
 ```
+:::
+:::
+
+***What's wrong here?***
 
 <br>
 
@@ -184,112 +196,165 @@ Make sure you use quotes!
 
 ```{r}
 #| echo: true
-bday <- ymd_hms("1993-11-20 9:32:12", tz = "America/New_York")
+#| code-line-numbers: false
+
+bday <- ymd_hms("1989-01-14 12:03:12", 
+                tz = "America/Denver")
 bday
 ```
 
-<br>
+. . .
+
+</br> 
 
 ::::: columns
 ::: column
+::: {.small}
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 year(bday)
 month(bday)
 day(bday)
 ```
 :::
+:::
 
 ::: column
+::: {.small}
+::: {.fragment}
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 wday(bday)
-wday(bday, label = TRUE, abbr = FALSE)
+
+wday(bday, 
+     label = TRUE, 
+     abbr = FALSE)
 ```
+:::
+:::
 :::
 :::::
 
 ## Subtraction with `date-time` Objects
 
-Doing subtraction gives you a `difftime` object.
+Doing subtraction gives you a `difftime` object. 
 
--   `difftime` objects do not always have the same units -- it depends on the scale of the objects you are working with.
+`difftime` objects do not always have the same units -- it depends on the scale of the objects you are working with.
 
-How old am I?
+## How old am I?
 
 ```{r}
 #| echo: true
-today() - mdy(11201993)
+#| code-line-numbers: false
+
+today() - mdy(01141989)
 ```
 
-How long did it take me to finish a typing challenge?
+. . .
+
+</br> 
+
+How long did it take me to type this slide?
 
 ```{r}
 #| echo: true
-begin <- mdy_hms("3/1/2023 13:04:34")
-finish <- mdy_hms("3/1/2023 13:06:11")
+#| code-line-numbers: false
+
+begin <- mdy_hms("10/21/2024 20:40:34")
+finish <- mdy_hms("10/21/2024 20:43:11")
+
 finish - begin
 ```
 
 ## Durations and Periods
 
+::: columns
+::: {.column width="48%"}
 **Durations** will always give the time span in an **exact number of seconds**.
 
 ```{r}
 #| echo: true
-as.duration(today() - mdy(11201993))
+#| code-line-numbers: false
+
+as.duration(
+  today() - mdy(01141989)
+            )
 ```
 
-```{r}
-#| echo: true
-as.duration(finish - begin)
-```
+:::
 
-. . .
+::: {.column width="3%"}
+:::
 
+::: {.column width="48%"}
+::: {.fragment}
 **Periods** will give the time span in more approximate, but **human readable times**.
 
 ```{r}
 #| echo: true
-as.period(today() - mdy(11201993))
-```
+#| code-line-numbers: false
 
-```{r}
-#| echo: true
-as.period(finish - begin)
+as.period(
+  today() - mdy(01141989)
+  )
 ```
+:::
+:::
+:::
 
 ## Durations and Periods
 
-We can also **add** time:
+::: columns
+::: {.column width="40%"}
+We can also **add** time to `date-time` objects:
 
 -   `days()`, `years()`, etc. will add a **period** of time.
 -   `ddays()`, `dyears()`, etc. will add a **duration** of time.
+:::
 
-. . .
+::: {.column width="5%"}
+:::
 
-Because durations use the **exact** number of seconds to represent days and years, you might get unexpected results:
+::: {.column width="55%"}
+::: {.fragment}
+Because durations use the **exact** number of seconds to represent days and years, you might get unexpected results. 
+
+</br> 
 
 When is is my 99th birthday?
 
 ```{r}
 #| echo: true
-mdy(11201993) + years(99)
+#| code-line-numbers: false
+
+mdy(01141989) + years(99)
 ```
 
 ```{r}
 #| echo: true
-mdy(11201993) + dyears(99)
+#| code-line-numbers: false
+
+mdy(01141989) + dyears(99)
 ```
+:::
+:::
+:::
 
-## Time Zones
 
-**Time zones are complicated!**
+## Time Zones...
+
+...are complicated! 
+
+</br> 
 
 Specify time zones in the form:
 
--   {continent}/{city} -- “America/New_York”, “Africa/Nairobi”
--   {ocean}/{city} -- “Pacific/Auckland”
+-   {continent}/{city} -- "America/Denver", "Africa/Nairobi"
+-   {ocean}/{city} -- "Pacific/Auckland"
 
 . . .
 
@@ -297,6 +362,8 @@ What time zone does R think I'm in?
 
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 Sys.timezone()
 ```
 
@@ -306,71 +373,240 @@ You can change the time zone of a date in two ways:
 
 ```{r}
 #| echo: true
-x <- ymd_hms("2024-06-01 18:00:00", tz = "Europe/Copenhagen")
+#| code-line-numbers: false
+
+x <- ymd_hms("2024-10-24 18:00:00", 
+             tz = "Europe/Copenhagen")
 ```
 
-::: panel-tabset
-### `with_tz()`
+. . .
 
+::: columns
+::: {.column width="48%"}
+`with_tz()`
+
+::: {.small}
 Keeps the instant in time the same, but changes the visual representation.
 
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 x |> 
   with_tz()
+
 x |> 
   with_tz(tzone = "Asia/Kolkata")
 ```
+:::
+:::
 
-### `force_tz()`
+::: {.column width="3%"}
+:::
 
+::: {.column width="48%"}
+::: {.fragment}
+`force_tz()`
+
+::: {.small}
 Changes the instant in time by forcing a time zone change.
 
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 x |> 
   force_tz()
+
 x |> 
   force_tz(tzone = "Asia/Kolkata")
 ```
 :::
+:::
+:::
+:::
 
 ## Common Mistake with Dates
 
-When you read data in or create a new date-time object, the default time zone (if not specified) is UTC.
+When you read data in or create a new date-time object, the default time zone (if not specified) is UTC (Universal Time Coordinated)*.  
 
--   UTC (Universal Time Coordinated) is the same as GMT (Greenwich Mean Time).
+. . .
 
-Make sure you specify your desired time zone!
+So, make sure you specify your desired time zone!
 
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+
 x <- mdy("11/20/1993")
 tz(x)
 ```
 
 ```{r}
 #| echo: true
-x <- mdy("11/20/1993", tz = "America/New_York")
+#| code-line-numbers: false
+
+x <- mdy("11/20/1993", 
+         tz = "America/Los_Angeles")
 tz(x)
 ```
 
-## [PA 5.2: Jewel Heist](https://zoerehnberg.github.io/STAT331-S23/practice_activities/PA5_2.html)
+::: {.small}
+*UTC is the same as GMT (Greenwich Mean Time)
+:::
 
-Just down the road in Montecito, CA several rare jewels went missing last fall. The jewels were stolen and replaced with fakes, but detectives have not been able to solve the case. They are now calling in a data scientist to help parse their clues.
+## [PA 5.2: Jewel Heist](../../group-activities/week-5/PA-5-dates.qmd)
 
-Unfortunately, the date and time of the jewel heist is not known. You have been hired to crack the case. Use the clues below to discover the thief's identity.
+<!-- Just down the road in Montecito, CA several rare jewels went missing last fall. The jewels were stolen and replaced with fakes, but detectives have not been able to solve the case. They are now calling in a data scientist to help parse their clues. -->
+
+<!-- Unfortunately, the date and time of the jewel heist is not known. You have been hired to crack the case. Use the clues below to discover the thief's identity. -->
+
+## This activity will require knowledge of:
+
+::: columns
+::: {.column width="60%"}
+::: {.small}
+<!-- - indexing vectors -->
+<!-- - `stringr` functions for previewing string contents -->
+<!-- - regular expressions for locating patterns -->
+<!-- - `stringr` functions for removing whitespace -->
+<!-- - `stringr` functions for truncating strings  -->
+<!-- - `stringr` functions for replacing patterns -->
+<!-- - `stringr` functions for combining multiple strings  -->
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="35%"}
+[**None of us have all these abilities. Each of us has some of these abilities.**]{.midi}
+
+:::
+:::
+
+## lubridate Resources
+
+::: columns
+::: {.column width="60%"}
+Every group should have a **lubridate** cheatsheet!
+
+::: {.small}
+**On the Front**: 
+
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="35%"}
+![](images/lubridate-cheatsheet.png){fig-alt=""}
+
+:::
+:::
+
+## Task Card
+
+Every group should have a **task card**! 
+
+. . .
+
+::: columns
+::: {.column width="40%"}
+**On the Front**
+
+- the expectations of each role
+- the norms of collaborating
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+::: {.fragment}
+**On the Back**
+
+::: {.small}
+
+:::
+:::
+:::
+:::
+
+## Pair Programming Expectations
+
+::: columns
+::: {.column width="49%"}
+**Developer**
+
+::: {.small}
+-   Reads prompt and ensures Coder understands what is being asked. 
+-   Types the code specified by the Coder into the Quarto document.
+-   Runs the code provided by the Coder. 
+-   Works with Coder to debug the code. 
+-   Evaluates the output.  
+-   Works with Coder to write code comments. 
+:::
+:::
+
+::: {.column width="2%"}
+:::
+
+::: {.column width="49%"}
+::: {.fragment}
+**Coder**
+
+::: {.small}
+-   Reads out instructions or prompts
+-   Directs the Developer what to type. 
+-   Talks with Developer about their ideas. 
+-   Manages resources (e.g., cheatsheets, textbook, slides). 
+-   Works with Developer to debug the code. 
+-   Works with Developer to write code comments. 
+:::
+:::
+:::
+:::
+
+## Getting Started
+
+::: {.small}
+First, both of you will do the following:
+
+- Join your Practice Activity workspace in Posit Cloud
+- Log-in to Posit Cloud
+- Open the PA 6: Jewel Heist project
+- Open the `PA-6-lubridate.qmd` file
+:::
+
+. . .
+
+::: {.small}
+Then, the partner who got the most sleep starts as the Developer (typing
+and listening to instructions from the Coder)!
+
+- The Coder **does not type**. 
+  * The collaborative editing feature should allow you to track what is being 
+  typed. 
+- The Developer **only types what they are told to type**. 
+:::
+
+## Submission
 
 > Submit the name of the thief to the Canvas Quiz.
 
-## [Lab 5: Murder in SQL City](https://zoerehnberg.github.io/STAT331-S23/lab_assignments/lab5/LA5_murder.html)
+- Each person will input the full name of the theif into the PA6 quiz. 
+- The person who last occupied the role of Developer will download and submitthe `PA-6.html` file for the group.
+  + Only one submission per group!
+
+# Exit Ticket
+
+# [Lab 5: Murder in SQL City](../../labs/instructions/challenge-5-instructions.qmd)
 
 ## To do...
 
--   **PA 5.2: Jewel Heist** -- due Saturday, 5/4 at 11:59pm.
-
--   **Lab 5: Murder in SQL City** -- due Saturday, 5/4 at 11:59pm.
-
--   **Read Chapter 6: Version Control**
-
-    -   **Check-ins 6.1 + 6.2** due Monday 5/6, at 10:00am
+-   **Lab 5: Murder in SQL City**
+  + due Sunday, October 27 at 11:59pm
+- **Read Chapter 6: Version Control**
+  + **Check-ins 6.1** due Tuesday, October 29, at 12:10pm
