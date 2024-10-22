@@ -376,8 +376,8 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="stringr"><code>stringr</code></h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 38%">
-<col style="width: 61%">
+<col style="width: 48%">
+<col style="width: 51%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -385,40 +385,34 @@ ul.task-list li input[type="checkbox"] {
 <td><strong>stringr</strong></td>
 </tr>
 <tr class="even">
-<td>Replace <code>pattern</code> with <code>replacement</code></td>
-<td><code>str_replace(x, pattern, replacement)</code> and <code>str_replace_all(x, pattern, replacement)</code></td>
-</tr>
-<tr class="odd">
-<td>Convert case</td>
-<td><code>str_to_lower(x)</code>, <code>str_to_upper(x)</code> , <code>str_to_title(x)</code></td>
-</tr>
-<tr class="even">
 <td>Find the length of a string</td>
 <td><code>str_length()</code></td>
 </tr>
 <tr class="odd">
 <td>Strip whitespace from start/end</td>
-<td><code>str_trim(x)</code> , <code>str_squish(x)</code></td>
+<td><p><code>str_trim(x)</code></p>
+<p><code>str_squish(x)</code></p></td>
 </tr>
 <tr class="even">
 <td>Pad strings to a specific length</td>
-<td><code>str_pad(x, …)</code></td>
+<td><code>str_pad(x, side = ...)</code></td>
 </tr>
 <tr class="odd">
-<td>Subset a string from index a to b</td>
+<td>Subset a string from index <code>a</code> to <code>b</code></td>
 <td><code>str_sub(x, a, b)</code></td>
 </tr>
 <tr class="even">
 <td>Test if the string contains a pattern</td>
-<td><code>str_detect(x, pattern)</code></td>
+<td><code>str_detect(x, pattern = ...)</code></td>
 </tr>
 <tr class="odd">
 <td>Count how many times a pattern appears in the string</td>
-<td><code>str_count(x, pattern)</code></td>
+<td><code>str_count(x, pattern = ...)</code></td>
 </tr>
 <tr class="even">
-<td>Detect a match at the start/end of the string</td>
-<td><code>str_starts(x, pattern)</code> , <code>str_ends(x, pattern)</code></td>
+<td>Replace <code>pattern</code> with <code>replacement</code></td>
+<td><p><code>str_replace(x, pattern = ...,  replacement = ...)</code></p>
+<p><code>str_replace_all(x, pattern = ...,  replacement = ...)</code></p></td>
 </tr>
 </tbody>
 </table>

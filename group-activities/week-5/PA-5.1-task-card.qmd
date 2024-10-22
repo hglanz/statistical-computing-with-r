@@ -4,7 +4,7 @@ editor: source
 format: docx
 ---
 
-Today you will use the `stringr` package to work with a character vector to decode a message.
+Today you will use the `stringr` package to work with a character vector to decode a secret message.
 
 ***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to solve this puzzle, you will need to use the skills of each member of your group.***
 
