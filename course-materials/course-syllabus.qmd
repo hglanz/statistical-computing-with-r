@@ -11,8 +11,8 @@ format:
 editor: source
 ---
 
-::: columns
-::: {.column width="55%"}
+::::::: columns
+:::: {.column width="55%"}
 ::: {style="font-size: 2em; color: #000000;"}
 Statistical Computing with R[^1]
 :::
@@ -26,7 +26,7 @@ TR 12:10pm - 2:00pm
 **Website:**
 
 <https://canvas.calpoly.edu>
-:::
+::::
 
 ::: {.column width="5%"}
 :::
@@ -34,13 +34,13 @@ TR 12:10pm - 2:00pm
 ::: {.column width="40%"}
 ![Image by Alison Horst](../images/r-flowers.png){fig-alt="Two round creatures painting and decorating the R logo with flowers."}
 :::
-:::
+:::::::
 
 [^1]: The classroom is a dynamic learning community. If necessary, I may make changes to the syllabus as the semester goes on to best suit the needs of all students. I promise to notify you in advance if I make any changes. Any changes to the syllabus made after the first day of class will be indicated in [**red**]{style="color: #FF0000;"}.
 
 </br>
 
-::: columns
+:::::: columns
 ::: {.column width="55%"}
 **Dr. Allison Theobold** (they / them)
 
@@ -59,13 +59,13 @@ TR 12:10pm - 2:00pm
 ::: {.column width="40%"}
 ![](/images/headshot-theobold.jpg){width="200"}
 :::
-:::
+::::::
 
 </br>
 
 # What will you learn?
 
-::: columns
+:::::::: columns
 ::: {.column width="30%"}
 Have you ever wondered...
 
@@ -89,13 +89,13 @@ There is not an expectation that you have seen R before, only that you have some
 ::: {.column width="30%"}
 In this course, we will learn the foundational skills for programming in R and a variety of skills for working with data. We will then build on these skills to consider how to write programs which are more efficient.
 :::
-:::
+::::::::
 
 # How will you learn?
 
 In order to learn statistical computing, it's not enough to simply listen to your professor talk about statistical computing—you must do statistical computing. So, to learn the concepts in this course, you'll be doing a variety of active learning tasks both inside and outside of class:
 
-::: columns
+:::::::: columns
 ::: {.column width="30%"}
 [**Before class,**]{style="color: #34605f; font-size: 1.25em"}\
 you'll complete **Preview Activities** / **Check-ins** which will guide you through your first contact with new concepts. Practice Activities involve readings, videos, and exercises to build your basic skill fluency. For example, you might be asked to read a chapter from the course textbook, watch a few videos discussing some concepts from the chapter, and then complete some preliminary exercises to get you started thinking about how to apply the concepts in the context of real data.
@@ -118,7 +118,7 @@ you can reinforce the material through **Lab Assignments**, which are an opportu
 
 Each Lab Assignment will have **Challenge Problems**, which asks you to extend the skills you've learned in class in some way. Frequently, you have the choice of what you would like to learn. The only requirement is that you extend your thinking in some (measurable) way.
 :::
-:::
+::::::::
 
 # How will you know how well you are doing?
 
@@ -128,7 +128,7 @@ The grading scheme we'll be using is probably unlike what you've had in previous
 
 </br>
 
-::: columns
+:::::::::: columns
 ::: {.column width="28%"}
 [**Preview Activities**]{style="color: #34605f; font-size: 1.25em"}\
 will be scored as Complete or Incomplete. You'll receive credit for a Preview Activity as long as:
@@ -169,7 +169,7 @@ Each Challenge Problem will receive a single holistic score on the **SGN rubric*
 
 **Challenges are due every Sunday by midnight.**
 :::
-:::
+::::::::::
 
 ## Revisions
 
@@ -288,13 +288,13 @@ We will generate the descriptions / expectations of these grades together after 
 | Letter Grade             | Description of Work and Participation                                                                                                                                                                                                                                                                                                                                   |
 +==========================+=========================================================================================================================================================================================================================================================================================================================================================================+
 | **A**\                   | ::: {style="color: red"}                                                                                                                                                                                                                                                                                                                                                |
-| (Superior Achievement)   | **Learning Targets:** [Meets the criteria for a B and also demonstrates proficiency with DVS-3, DVS-7, and PE-3, demonstrating proficiency with nearly every learning target.]{style="color: #FF0000;"} \                                                                                                                                                               |
+| (Superior Achievement)   | **Learning Targets:** [Meets the criteria for a B and also demonstrates proficiency with DVS-3, DVS-7, and PE-3, demonstrating proficiency with nearly every learning target.]{style="color: #FF0000;"}\                                                                                                                                                                |
 |                          | \                                                                                                                                                                                                                                                                                                                                                                       |
 |                          | **Revising Thinking:** Submits revisions for *all but a few* assignments, includes thoughtful reflections on why revisions are being requested, demonstrating an understanding of the "bigger picture" ideas. Takes all feedback into account (including problems receiving an S) and incorporates into future assignments. **\                                         |
 |                          | \                                                                                                                                                                                                                                                                                                                                                                       |
-|                          | Extending Thinking:** *Frequently* making an effort to push oneself, attempting and succeeding at more difficult challenge problems—quality over quantity. **\                                                                                                                                                                                                          |
+|                          | Extending Thinking:** *Consistently* making an effort to push oneself, attempting and succeeding at more difficult challenge problems, and incorporating what is learned into future assignments. **\                                                                                                                                                                   |
 |                          | \                                                                                                                                                                                                                                                                                                                                                                       |
-|                          | Collaborative Group Member:** Is *always* patient and respectful when collaborating, follows coder / developer roles, excellent communication, willing to discuss and listen, open to new ideas, not controlling.\                                                                                                                                                      |
+|                          | Collaborative Group Member:** Is *always* patient and respectful when collaborating, makes a concerted effort to follow coder / developer roles, excellent communication, willing to discuss and listen, open to new ideas, not controlling.\                                                                                                                           |
 |                          | **\                                                                                                                                                                                                                                                                                                                                                                     |
 |                          | Peer-Code Review:** *Every week* provides specific, constructive feedback, which is honest and kind and demonstrates a desire to help others grow.                                                                                                                                                                                                                      |
 |                          | :::                                                                                                                                                                                                                                                                                                                                                                     |
@@ -304,7 +304,7 @@ We will generate the descriptions / expectations of these grades together after 
 |                          | \                                                                                                                                                                                                                                                                                                                                                                       |
 |                          | **Revising Thinking:** Submits revisions for *most* assignments (more than half), includes reflections on why revisions are being requested but reflections may miss some of the "bigger picture" ideas. These mistakes are fixed in future assignments, but additional feedback provided (on problems receiving an S) is not incorporated into future assignments. **\ |
 |                          | \                                                                                                                                                                                                                                                                                                                                                                       |
-|                          | Extending Thinking:** *Sometimes* making an effort to push oneself, attempting and succeeding at more difficult challenge problems, but more often completing the easier challenges—quantity over quality. **\                                                                                                                                                          |
+|                          | Extending Thinking:** *Sometimes* making an effort to push oneself, attempting and succeeding at more difficult challenge problems. *Sometimes* what is learned is incorporated into future assignments. **\                                                                                                                                                            |
 |                          | \                                                                                                                                                                                                                                                                                                                                                                       |
 |                          | Collaborative Group Member:** Is *always* patient and respectful when collaborating, excellent communication *mostly* follows coder / developer roles, but sometimes performs tasks outside their role.\                                                                                                                                                                |
 |                          | **\                                                                                                                                                                                                                                                                                                                                                                     |
@@ -582,8 +582,8 @@ I will listen and believe you if someone is threatening you. I will help you get
 
 The following learning targets speak to the big content ideas I’m designing this course for you to learn. I think these are probably exhaustive, and you will find that many of these targets overlap with each other.
 
-::: columns
-::: {.column width="45%"}
+::::::::::: columns
+::::: {.column width="45%"}
 ::: {style="font-size: 1.5em; color: #34605f;"}
 Working with Data
 :::
@@ -603,12 +603,12 @@ Reproducibility
 -   **R-1**: I can create professional looking, reproducible analyses using RStudio projects, Quarto documents, and the `here` package <!-- we will want to add a target about file structure --> <!-- we will want to add a target about version control -->
 -   **R-2**: I can write well documented[^2] and tidy code[^3]
 -   **R-3**: I can write robust programs[^4] that are resistant to changes in inputs
-:::
+:::::
 
 ::: {.column width="10%"}
 :::
 
-::: {.column width="45%"}
+:::::: {.column width="45%"}
 ::: {style="font-size: 1.5em; color: #34605f;"}
 Data Visualization & Summarization
 :::
@@ -636,8 +636,8 @@ Data Simulation & Statistical Models
 
 -   **DSSM-1**: I can simulate data from a variety of distributions
 -   **DSSM-2**: I can conduct common statistical analyses in R
-:::
-:::
+::::::
+:::::::::::
 
 [^2]: "well documented" code has elements of the following:
 

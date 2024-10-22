@@ -4749,7 +4749,7 @@
     "href": "slides/week-5/week-5-dates.html#durations-and-periods",
     "title": "Using lubridate to Work with Dates",
     "section": "Durations and Periods",
-    "text": "Durations and Periods\n\n\nDurations will always give the time span in an exact number of seconds.\n\nas.duration(\n  today() - mdy(01141989)\n            )\n\n[1] \"1128729600s (~35.77 years)\"\n\n\n\n\n\n\nPeriods will give the time span in more approximate, but human readable times.\n\nas.period(\n  today() - mdy(01141989)\n  )\n\n[1] \"13064d 0H 0M 0S\""
+    "text": "Durations and Periods\n\n\nDurations will always give the time span in an exact number of seconds.\n\nas.duration(\n  today() - mdy(01141989)\n            )\n\n[1] \"1128816000s (~35.77 years)\"\n\n\n\n\n\n\nPeriods will give the time span in more approximate, but human readable times.\n\nas.period(\n  today() - mdy(01141989)\n  )\n\n[1] \"13065d 0H 0M 0S\""
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#durations-and-periods-1",
@@ -4812,14 +4812,14 @@
     "href": "slides/week-5/week-5-dates.html#what-to-expect",
     "title": "Using lubridate to Work with Dates",
     "section": "What to Expect",
-    "text": "What to Expect"
+    "text": "What to Expect\nYou will create a Midterm Portfolio, with code covering the learning targets we have covered thus far in the course.\n\n\nYour code will be pulled from your Lab and Challenge assignments.\n\n\n\n\nYou will write reflections on how you’ve:\n\nrevised your thinking\nextended your thinking\nsupported and collaborated with your peers"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#getting-started",
     "href": "slides/week-5/week-5-dates.html#getting-started",
     "title": "Using lubridate to Work with Dates",
     "section": "Getting Started",
-    "text": "Getting Started"
+    "text": "Getting Started\n\n\nFollow these directions to fork a copy of the Final Portfolio repository.\nClone the repository into RStudio.\nOpen the reflection_template.qmd file and give it a read!\nStart finding exerpts of code you wrote for the Labs or Challenges that fit each learning target."
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#create-a-date-time-object-from-a-string",
@@ -4833,7 +4833,7 @@
     "href": "slides/week-5/week-5-dates.html#how-old-am-i",
     "title": "Using lubridate to Work with Dates",
     "section": "How old am I?",
-    "text": "How old am I?\n\ntoday() - mdy(01141989)\n\nTime difference of 13064 days\n\n\n\n\nHow long did it take me to type this slide?\n\nbegin &lt;- mdy_hms(\"10/21/2024 20:40:34\")\nfinish &lt;- mdy_hms(\"10/21/2024 20:43:11\")\n\nfinish - begin\n\nTime difference of 2.616667 mins"
+    "text": "How old am I?\n\ntoday() - mdy(01141989)\n\nTime difference of 13065 days\n\n\n\n\nHow long did it take me to type this slide?\n\nbegin &lt;- mdy_hms(\"10/21/2024 20:40:34\")\nfinish &lt;- mdy_hms(\"10/21/2024 20:43:11\")\n\nfinish - begin\n\nTime difference of 2.616667 mins"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html",
