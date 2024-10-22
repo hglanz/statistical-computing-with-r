@@ -4231,42 +4231,42 @@
     "href": "slides/week-5/week-5-strings.html#pattern",
     "title": "Using stringr to Work with Strings",
     "section": "pattern =",
-    "text": "pattern =\nThe pattern argument appears in many stringr functions.\n\nThe pattern must be supplied inside quotes.\n\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_detect(my_vector, pattern = \"Bond\")\nstr_locate(my_vector, pattern = \"James Bond\")\nstr_match(my_vector, pattern = \"[bB]ond\")\nstr_extract(my_vector, pattern = \"[jJ]ames [bB]ond\")\n\n\n\nLet’s explore these functions!"
+    "text": "pattern =\nThe pattern argument appears in many stringr functions.\n\nThe pattern must be supplied inside quotes.\n\n\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_detect(my_vector, pattern = \"Bond\")\nstr_locate(my_vector, pattern = \"James Bond\")\nstr_match(my_vector, pattern = \"[bB]ond\")\nstr_extract(my_vector, pattern = \"[jJ]ames [bB]ond\")\n\n\n\n\nLet’s explore these functions!"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#str_detect",
     "href": "slides/week-5/week-5-strings.html#str_detect",
     "title": "Using stringr to Work with Strings",
     "section": "str_detect()",
-    "text": "str_detect()\nReturns a logical vector indicating whether the pattern was found in each element of the supplied vector.\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\nstr_detect(my_vector, pattern = \"Bond\")\n\n[1] FALSE FALSE  TRUE  TRUE\n\n\n\n\nPairs well with filter().\nWorks with summarise() + sum or mean.\n\n\n\n\n\n\n\n\n\nRelated Function\n\n\nstr_which() returns the indexes of the strings that contain a match."
+    "text": "str_detect()\nReturns a logical vector indicating whether the pattern was found in each element of the supplied vector.\n\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\nstr_detect(my_vector, pattern = \"Bond\")\n\n[1] FALSE FALSE  TRUE  TRUE\n\n\n\n\n\n\nPairs well with filter().\nWorks with summarise() + sum (to get total matches) or mean (to get proportion of matches).\n\n\n\n\n\n\n\n\n\n\n\nRelated Function\n\n\nstr_which() returns the indexes of the strings that contain a match."
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#str_match",
     "href": "slides/week-5/week-5-strings.html#str_match",
     "title": "Using stringr to Work with Strings",
     "section": "str_match()",
-    "text": "str_match()\nReturns a character matrix containing either NA or the pattern, depending on if the pattern was found.\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_match(my_vector, pattern = \"Bond\")\n\n     [,1]  \n[1,] NA    \n[2,] NA    \n[3,] \"Bond\"\n[4,] \"Bond\""
+    "text": "str_match()\nReturns a character matrix containing either NA or the pattern, depending on if the pattern was found.\n\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_match(my_vector, pattern = \"Bond\")\n\n     [,1]  \n[1,] NA    \n[2,] NA    \n[3,] \"Bond\"\n[4,] \"Bond\""
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#str_extract",
     "href": "slides/week-5/week-5-strings.html#str_extract",
     "title": "Using stringr to Work with Strings",
     "section": "str_extract()",
-    "text": "str_extract()\nReturns a character vector with either NA or the pattern, depending on if the pattern was found.\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_extract(my_vector, pattern = \"Bond\")\n\n[1] NA     NA     \"Bond\" \"Bond\"\n\n\n\n\n\n\n\n\n\nWarning\n\n\nstr_extract() only returns the first pattern match.\nUse str_extract_all() to return every pattern match."
+    "text": "str_extract()\nReturns a character vector with either NA or the pattern, depending on if the pattern was found.\n\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_extract(my_vector, pattern = \"Bond\")\n\n[1] NA     NA     \"Bond\" \"Bond\"\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\nstr_extract() only returns the first pattern match.\nUse str_extract_all() to return every pattern match."
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#str_locate",
     "href": "slides/week-5/week-5-strings.html#str_locate",
     "title": "Using stringr to Work with Strings",
     "section": "str_locate()",
-    "text": "str_locate()\n\nReturns a dateframe with two numeric variables – the starting and ending location of the pattern. The values are NA if the pattern is not found.\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_locate(my_vector, pattern = \"Bond\")\n\n     start end\n[1,]    NA  NA\n[2,]    NA  NA\n[3,]     1   4\n[4,]     7  10\n\n\n\n\n\n\n\n\n\n\n\nRelated Function\n\n\nstr_sub() extracts values based on a starting and ending location."
+    "text": "str_locate()\nReturns a dateframe with two numeric variables – the starting and ending location of the pattern. The values are NA if the pattern is not found.\n\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_locate(my_vector, pattern = \"Bond\")\n\n     start end\n[1,]    NA  NA\n[2,]    NA  NA\n[3,]     1   4\n[4,]     7  10\n\n\n\n\n\n\n\n\n\n\n\nRelated Function\n\n\nstr_sub() extracts values based on a starting and ending location."
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#str_subset",
     "href": "slides/week-5/week-5-strings.html#str_subset",
     "title": "Using stringr to Work with Strings",
     "section": "str_subset()",
-    "text": "str_subset()\nReturns a character vector containing a subset of the original character vector consisting of the elements where the pattern was found.\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_subset(my_vector, pattern = \"Bond\")\n\n[1] \"Bond\"       \"James Bond\""
+    "text": "str_subset()\nReturns a character vector containing a subset of the original character vector consisting of the elements where the pattern was found.\n\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_subset(my_vector, pattern = \"Bond\")\n\n[1] \"Bond\"       \"James Bond\""
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#try-it-out",
@@ -4280,7 +4280,7 @@
     "href": "slides/week-5/week-5-strings.html#replace-remove-patterns",
     "title": "Using stringr to Work with Strings",
     "section": "Replace / Remove Patterns",
-    "text": "Replace / Remove Patterns\n\nstr_replace()str_remove()\n\n\nReplace the first matched pattern in each string.\n\nPairs well with mutate().\n\n\nstr_replace(my_vector, \n            pattern = \"Bond\", \n            replace = \"Franco\")\n\n[1] \"Hello,\"       \"my name is\"   \"Franco\"       \"James Franco\"\n\n\n\n\n\n\n\n\n\nRelated Function\n\n\nstr_replace_all() replaces all matched patterns in each string.\n\n\n\n\n\nRemove the first matched pattern in each string.\n\nstr_remove(my_vector, \n           pattern = \"Bond\")\n\n[1] \"Hello,\"     \"my name is\" \"\"           \"James \"    \n\n\n\n\n\n\n\n\n\nRelated Functions\n\n\nThis is a special case of str_replace(x, pattern, replacement = \"\").\nstr_remove_all() removes all matched patterns in each string."
+    "text": "Replace / Remove Patterns\n\nstr_replace()str_remove()\n\n\n\nReplace the first matched pattern in each string.\n\nPairs well with mutate().\n\n\nstr_replace(my_vector, \n            pattern = \"Bond\", \n            replace = \"Franco\")\n\n[1] \"Hello,\"       \"my name is\"   \"Franco\"       \"James Franco\"\n\n\n\n\n\n\n\n\n\n\n\nRelated Function\n\n\nstr_replace_all() replaces all matched patterns in each string.\n\n\n\n\n\n\n\nRemove the first matched pattern in each string.\n\nstr_remove(my_vector, \n           pattern = \"Bond\")\n\n[1] \"Hello,\"     \"my name is\" \"\"           \"James \"    \n\n\n\n\n\n\n\n\n\n\n\nRelated Functions\n\n\nThis is a special case of str_replace(x, pattern, replacement = \"\").\nstr_remove_all() removes all matched patterns in each string."
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#edit-strings",
@@ -4294,7 +4294,7 @@
     "href": "slides/week-5/week-5-strings.html#combine-strings",
     "title": "Using stringr to Work with Strings",
     "section": "Combine Strings",
-    "text": "Combine Strings\n\nstr_c()str_flatten()str_glue()\n\n\nJoin multiple strings into a single string.\n\nprompt &lt;- \"Hello, my name is\"\nfirst  &lt;- \"James\"\nlast   &lt;- \"Bond\"\nstr_c(prompt, last, \",\", first, last, sep = \" \")\n\n[1] \"Hello, my name is Bond , James Bond\"\n\n\n\n\n\n\n\n\nNote\n\n\nSimilar to paste() and paste0().\n\n\n\n\n\nCombine a vector of strings into a single string.\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_flatten(my_vector, collapse = \" \")\n\n[1] \"Hello, my name is Bond James Bond\"\n\n\n\n\n\n\n\n\nNote\n\n\nstr_c() with sep = \"\" will do the same thing, but I would recommending using str_flatten() instead!\n\n\n\n\n\nUse variables in the environment to create a string based on {expressions}.\n\nfirst &lt;- \"James\"\nlast &lt;- \"Bond\"\nstr_glue(\"My name is {last}, {first} {last}\")\n\nMy name is Bond, James Bond\n\n\n\n\n\n\n\n\nTip\n\n\nFor more details, I would recommend looking up the glue R package!"
+    "text": "Combine Strings\n\nstr_c()str_flatten()str_glue()\n\n\nJoin multiple strings into a single character vector.\n\nprompt &lt;- \"Hello, my name is\"\nfirst  &lt;- \"James\"\nlast   &lt;- \"Bond\"\nstr_c(prompt, last, \",\", first, last, sep = \" \")\n\n[1] \"Hello, my name is Bond , James Bond\"\n\n\n\n\n\n\n\n\nNote\n\n\nSimilar to paste() and paste0().\n\n\n\n\n\nCombine a vector of strings into a single string.\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_flatten(my_vector, collapse = \" \")\n\n[1] \"Hello, my name is Bond James Bond\"\n\n\n\n\nUse variables in the environment to create a string based on {expressions}.\n\nfirst &lt;- \"James\"\nlast &lt;- \"Bond\"\nstr_glue(\"My name is {last}, {first} {last}\")\n\nMy name is Bond, James Bond\n\n\n\n\n\n\n\n\nTip\n\n\nFor more details, I would recommend looking up the glue R package!"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#tips-for-string-success",
@@ -4322,7 +4322,7 @@
     "href": "slides/week-5/week-5-strings.html#regular-expressions-1",
     "title": "Using stringr to Work with Strings",
     "section": "Regular Expressions",
-    "text": "Regular Expressions\nRegular expressions are tricky!\n\nThere are lots of new symbols to keep straight.\nThere are a lot of cases to think through.\n\n\nThis web app for testing R regular expressions might be handy!"
+    "text": "Regular Expressions\n…are tricky!\n\nThere are lots of new symbols to keep straight.\nThere are a lot of cases to think through.\n\n\nThis web app for testing R regular expressions might be handy!"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#special-characters",
@@ -4343,7 +4343,7 @@
     "href": "slides/week-5/week-5-strings.html#anchor-characters",
     "title": "Using stringr to Work with Strings",
     "section": "Anchor Characters: ^ $",
-    "text": "Anchor Characters: ^ $\n\n^ – looks at the beginning of a string.\n\nx &lt;- c(\"She\", \n       \"sells\", \n       \"seashells\", \n       \"by\", \n       \"the\", \n       \"seashore!\")\n\nstr_subset(x, pattern = \"^s\")\n\n[1] \"sells\"     \"seashells\" \"seashore!\"\n\n\nThis matches strings that start with “s”.\n\n\n\n$ – looks at the end of a string.\n\nx &lt;- c(\"She\", \n       \"sells\", \n       \"seashells\", \n       \"by\", \n       \"the\", \n       \"seashore!\")\n\nstr_subset(x, pattern = \"s$\")\n\n[1] \"sells\"     \"seashells\"\n\n\nThis matches strings that end with “s”."
+    "text": "Anchor Characters: ^ $\n\n\n\n^ – looks at the beginning of a string.\n\nx &lt;- c(\"She\", \n       \"sells\", \n       \"seashells\", \n       \"by\", \n       \"the\", \n       \"seashore!\")\n\nstr_subset(x, pattern = \"^s\")\n\n[1] \"sells\"     \"seashells\" \"seashore!\"\n\n\nThis matches strings that start with “s”.\n\n\n\n\n\n\n$ – looks at the end of a string.\n\nx &lt;- c(\"She\", \n       \"sells\", \n       \"seashells\", \n       \"by\", \n       \"the\", \n       \"seashore!\")\n\nstr_subset(x, pattern = \"s$\")\n\n[1] \"sells\"     \"seashells\"\n\n\nThis matches strings that end with “s”."
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#quantifier-characters",
@@ -4364,28 +4364,28 @@
     "href": "slides/week-5/week-5-strings.html#character-groups",
     "title": "Using stringr to Work with Strings",
     "section": "Character Groups: ()",
-    "text": "Character Groups: ()\nGroups are created with ( ).\n\nWe can specify “either” / “or” within a group using |.\n\n\nx &lt;- c(\"Peter\", \n       \"Piper\", \n       \"picked\", \n       \"a\", \n       \"peck\",\n       \"of\", \n       \"pickled\",\n       \"peppers!\")\n\nstr_subset(x, pattern = \"p(e|i)ck\")\n\n[1] \"picked\"  \"peck\"    \"pickled\"\n\n\n\nThis matches strings that contain either “peck” or “pick”."
+    "text": "Character Groups: ()\n\nGroups are created with ( ).\n\nWe can specify “either” / “or” within a group using |.\n\n\nx &lt;- c(\"Peter\", \n       \"Piper\", \n       \"picked\", \n       \"a\", \n       \"peck\",\n       \"of\", \n       \"pickled\",\n       \"peppers!\")\n\nstr_subset(x, pattern = \"p(e|i)ck\")\n\n[1] \"picked\"  \"peck\"    \"pickled\"\n\n\n\n\n\nThis matches strings that contain either “peck” or “pick”."
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#character-classes",
     "href": "slides/week-5/week-5-strings.html#character-classes",
     "title": "Using stringr to Work with Strings",
     "section": "Character Classes: []",
-    "text": "Character Classes: []\n\nCharacter classes let you specify multiple possible characters to match on.\n\nx &lt;- c(\"Peter\", \n       \"Piper\", \n       \"picked\", \n       \"a\",\n       \"peck\",\n       \"of\",\n       \"pickled\",\n       \"peppers!\")\n\nstr_subset(x, pattern = \"p[ei]ck\")\n\n[1] \"picked\"  \"peck\"    \"pickled\"\n\n\n\n\n\n\n\n\n\n\nWhy use [] instead of ()?\n\n\n() is better for making groups of characters, plus you can only use a | with (). [] is better for referencing multiple characters, plus you can only use a ^ with []…"
+    "text": "Character Classes: []\n\nCharacter classes let you specify multiple possible characters to match on.\n\nx &lt;- c(\"Peter\", \n       \"Piper\", \n       \"picked\", \n       \"a\",\n       \"peck\",\n       \"of\",\n       \"pickled\",\n       \"peppers!\")\n\nstr_subset(x, pattern = \"p[ei]ck\")\n\n[1] \"picked\"  \"peck\"    \"pickled\"\n\n\n\n\n\n\n\n\n\n\nWhy use [] instead of ()?\n\n\n() is better for making groups of characters, plus you can only use a | with ().\n[] is better for referencing multiple characters, plus you can only use a ^ with []…"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#character-classes-1",
     "href": "slides/week-5/week-5-strings.html#character-classes-1",
     "title": "Using stringr to Work with Strings",
     "section": "Character Classes: []",
-    "text": "Character Classes: []\n[ - ] – specifies a range of characters.\n\nx &lt;- c(\"Peter\", \n       \"Piper\", \n       \"picked\", \n       \"a\",\n       \"peck\",\n       \"of\",\n       \"pickled\",\n       \"peppers!\")\n\nstr_subset(x, pattern = \"p[ei]ck[a-z]\")\n\n[1] \"picked\"  \"pickled\"\n\n\n\n\n\n[A-Z] matches any capital letter.\n[a-z] matches any lowercase letter.\n[A-z] or [:alpha:] matches any letter\n[0-9] or [:digit:] matches any number"
+    "text": "Character Classes: []\n\n[ - ] – specifies a range of characters.\n\nx &lt;- c(\"Peter\", \n       \"Piper\", \n       \"picked\", \n       \"a\",\n       \"peck\",\n       \"of\",\n       \"pickled\",\n       \"peppers!\")\n\nstr_subset(x, pattern = \"p[ei]ck[a-z]\")\n\n[1] \"picked\"  \"pickled\"\n\n\n\n\n\n\n[A-Z] matches any capital letter.\n[a-z] matches any lowercase letter.\n[A-z] or [:alpha:] matches any letter\n[0-9] or [:digit:] matches any number"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#shortcuts",
     "href": "slides/week-5/week-5-strings.html#shortcuts",
     "title": "Using stringr to Work with Strings",
     "section": "Shortcuts",
-    "text": "Shortcuts\n\n\n\\\\w – matches any “word” (\\\\W matches not “word”)\n\nA “word” contains any letters and numbers.\n\n\\\\d – matches any digit (\\\\D matches not digit)\n\\\\s – matches any whitespace (\\\\S matches not whitespace)\n\nWhitespace includes spaces, tabs, newlines, etc.\n\n\n\n\n\n\nx &lt;- \"phone number: 1234567899\"\n\nstr_extract(x, pattern = \"\\\\d+\")\n\n[1] \"1234567899\"\n\nstr_extract_all(x, pattern = \"\\\\S+\")\n\n[[1]]\n[1] \"phone\"      \"number:\"    \"1234567899\""
+    "text": "Shortcuts\n\n\n\\\\w – matches any “word” (\\\\W matches not “word”)\n\nA “word” contains any letters and numbers.\n\n\\\\d – matches any digit (\\\\D matches not digit)\n\\\\s – matches any whitespace (\\\\S matches not whitespace)\n\nWhitespace includes spaces, tabs, newlines, etc.\n\n\n\n\n\n\n\nx &lt;- \"phone number: 1234567899\"\n\nstr_extract(x, pattern = \"\\\\d+\")\n\n[1] \"1234567899\"\n\nstr_extract_all(x, pattern = \"\\\\S+\")\n\n[[1]]\n[1] \"phone\"      \"number:\"    \"1234567899\""
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#try-it-out-1",
@@ -4399,7 +4399,7 @@
     "href": "slides/week-5/week-5-strings.html#escape",
     "title": "Using stringr to Work with Strings",
     "section": "Escape: \\\\",
-    "text": "Escape: \\\\\nTo match a special character, you need to escape it.\n\nx &lt;- c(\"How\",\n       \"much\", \n       \"wood\",\n       \"could\",\n       \"a\",\n       \"woodchuck\",\n       \"chuck\",\n       \"if\",\n       \"a\",\n       \"woodchuck\",\n       \"could\",\n       \"chuck\",\n       \"wood?\")\n\nstr_subset(x, pattern = \"?\")\n\nError in stri_subset_regex(string, pattern, omit_na = TRUE, negate = negate, : Syntax error in regex pattern. (U_REGEX_RULE_SYNTAX, context=`?`)"
+    "text": "Escape: \\\\\n\nTo match a special character, you need to escape it.\n\nx &lt;- c(\"How\",\n       \"much\", \n       \"wood\",\n       \"could\",\n       \"a\",\n       \"woodchuck\",\n       \"chuck\",\n       \"if\",\n       \"a\",\n       \"woodchuck\",\n       \"could\",\n       \"chuck\",\n       \"wood?\")\n\nstr_subset(x, pattern = \"?\")\n\nError in stri_subset_regex(string, pattern, omit_na = TRUE, negate = negate, : Syntax error in regex pattern. (U_REGEX_RULE_SYNTAX, context=`?`)"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#when-in-doubt",
@@ -4413,7 +4413,7 @@
     "href": "slides/week-5/week-5-strings.html#tips-for-working-with-regex",
     "title": "Using stringr to Work with Strings",
     "section": "Tips for working with regex",
-    "text": "Tips for working with regex\n\nRead the regular expressions out loud like a request.\n\n\n\nTest out your expressions on small examples first.\n\n\n\n\n\n\n\nstr_view()\n\n\n\nstr_view(c(\"shes\", \"shels\", \"shells\", \"shellls\", \"shelllls\"), \"l+\")\n\n[2] │ she&lt;l&gt;s\n[3] │ she&lt;ll&gt;s\n[4] │ she&lt;lll&gt;s\n[5] │ she&lt;llll&gt;s\n\n\n\n\n\n\n\n\nUse the stringr cheatsheet.\n\n\n\n\nBe kind to yourself when working with regular expressions!"
+    "text": "Tips for working with regex\n\nRead the regular expressions out loud like a request.\n\n\n\nTest out your expressions on small examples first.\n\n\n\n\n\n\n\nstr_view()\n\n\n\nstr_view(c(\"shes\", \"shels\", \"shells\", \"shellls\", \"shelllls\"), \"l+\")\n\n[2] │ she&lt;l&gt;s\n[3] │ she&lt;ll&gt;s\n[4] │ she&lt;lll&gt;s\n[5] │ she&lt;llll&gt;s\n\n\n\n\n\n\n\n\nUse the stringr cheatsheet.\n\n\n\n\nBe kind to yourself!"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#stringr-functions-dplyr-verbs",
@@ -4462,14 +4462,14 @@
     "href": "slides/week-5/week-5-strings.html#capitalization-matters",
     "title": "Using stringr to Work with Strings",
     "section": "Capitalization matters!",
-    "text": "Capitalization matters!\n[^ ] – specifies characters not to match on (think except)\n\nstr_subset(x, pattern = \"p[^i]ck\")\n\n[1] \"peck\"\n\n\n\n\nstr_subset(x, pattern = \"^p\")\n\n[1] \"picked\"   \"peck\"     \"pickled\"  \"peppers!\"\n\n\n\nstr_subset(x, pattern = \"^[Pp]\")\n\n[1] \"Peter\"    \"Piper\"    \"picked\"   \"peck\"     \"pickled\"  \"peppers!\""
+    "text": "Capitalization matters!\n[^ ] – specifies characters not to match on (think except)\n\nstr_subset(x, pattern = \"p[^i]ck\")\n\n[1] \"peck\"\n\n\n\n\n\nstr_subset(x, pattern = \"^p\")\n\n[1] \"picked\"   \"peck\"     \"pickled\"  \"peppers!\"\n\n\n\n\n\n\nstr_subset(x, pattern = \"^[^p]\")\n\n[1] \"Peter\" \"Piper\" \"a\"     \"of\""
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#some-possible-solutions",
     "href": "slides/week-5/week-5-strings.html#some-possible-solutions",
     "title": "Using stringr to Work with Strings",
     "section": "Some Possible Solutions…",
-    "text": "Some Possible Solutions…\n\nstr_subset(x, \"[aeiouy]$\")\nstr_subset(x, \"^[xyz]\")\nstr_subset(x, \"^[^xyz]+$\")\nstr_subset(x, \"(our)|(i[sz]e)\")"
+    "text": "Some Possible Solutions…\n\nend with a vowel?\n\n\nstr_subset(x, \"[aeiouy]$\")\n\n\nstart with x, y, or z?\n\n\nstr_subset(x, \"^[xyz]\")\n\n\ndo not contain x, y, or z?\n\n\nstr_subset(x, \"[^xyz]\")\n\n\ncontain British spelling?\n\n\nstr_subset(x, \"(our)|(i[sz]e)\")"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#escape-1",
@@ -4532,7 +4532,7 @@
     "href": "slides/week-5/week-5-strings.html#submission",
     "title": "Using stringr to Work with Strings",
     "section": "Submission",
-    "text": "Submission\n\nSubmit the name of the movie the quote is from.\n\n\nEach person will input the full name of the movie the scrambled message is from into the PA5 quiz.\nThe person who last occupied the role of Developer will download and submitthe PA-5.html file for the group.\n\nOnly one submission per group!"
+    "text": "Submission\n\nSubmit the name of the movie the quote is from.\n\n\nEach person will input the full name of the movie the scrambled message is from into the PA5 quiz.\nThe person who last occupied the role of Developer will download and submit the PA-5.html file for the group.\n\nOnly one submission per group!"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html",
@@ -4728,7 +4728,7 @@
     "href": "slides/week-5/week-5-dates.html#common-mistake-with-dates",
     "title": "Using lubridate to Work with Dates",
     "section": "Common Mistake with Dates",
-    "text": "Common Mistake with Dates\n\n\n\nas_datetime(2023-02-6)\n\n[1] \"1970-01-01 00:33:35 UTC\"\n\n\n\n\n\n\nmy_date &lt;- 2023-02-6\nmy_date\n\n[1] 2015\n\n\n\nWhat’s wrong here?\n\n\nMake sure you use quotes!\n\n2,015 seconds \\(\\approx\\) 33.5 minutes"
+    "text": "Common Mistake with Dates\n\n\n\nas_datetime(2023-02-6)\n\n[1] \"1970-01-01 00:33:35 UTC\"\n\n\n\n\n\n\nmy_date &lt;- 2023-02-6\nmy_date\n\n[1] 2015\n\n\n\n\n\nWhat’s wrong here?\n\n\n\nMake sure you use quotes!\n\n2,015 seconds \\(\\approx\\) 33.5 minutes"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#extracting-date-time-components",
@@ -4798,14 +4798,14 @@
     "href": "slides/week-5/week-5-dates.html#to-do",
     "title": "Using lubridate to Work with Dates",
     "section": "To do…",
-    "text": "To do…\n\nLab 5: Murder in SQL City\ndue Sunday, October 27 at 11:59pm\nRead Chapter 6: Version Control\n\nCheck-ins 6.1 due Tuesday, October 29, at 12:10pm"
+    "text": "To do…\n\nLab 5: Murder in SQL City\n\ndue Sunday, October 27 at 11:59pm\n\nRead Chapter 6: Version Control\n\nCheck-ins 6.1 due Tuesday, October 29, at 12:10pm"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#thursday-october-24",
     "href": "slides/week-5/week-5-dates.html#thursday-october-24",
     "title": "Using lubridate to Work with Dates",
     "section": "Thursday, October 24",
-    "text": "Thursday, October 24\nToday we will…\n\nMidterm Portfolio\nWhat to Expect\nHow to Get Started\nNew Material\n\nWorking with Date & Time Variables\n\nPA 5.2: Jewel Heist"
+    "text": "Thursday, October 24\nToday we will…\n\nMidterm Portfolio\n\nWhat to Expect\nHow to Get Started\n\nNew Material\n\nWorking with Date & Time Variables\n\nPA 5.2: Jewel Heist"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#what-to-expect",
@@ -4883,5 +4883,19 @@
     "title": "Using lubridate to Work with Dates",
     "section": "Submission",
     "text": "Submission\n\nSubmit the name of the thief to the Canvas Quiz.\n\n\nEach person will input the full name of the theif into the PA6 quiz.\nThe person who last occupied the role of Developer will download and submitthe PA-6.html file for the group.\n\nOnly one submission per group!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#what-do-you-mean-by-the-first-match",
+    "href": "slides/week-5/week-5-strings.html#what-do-you-mean-by-the-first-match",
+    "title": "Using stringr to Work with Strings",
+    "section": "What do you mean by the first match?",
+    "text": "What do you mean by the first match?\nSuppose we had a slightly different vector…\n\nalt_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond, James Bond\")\n\n\nIf we were to extract every instance of \"Bond\" from the vector…\n\n\n\n\nstr_extract(alt_vector, \n            pattern = \"Bond\")\n\n[1] NA     NA     \"Bond\"\n\n\n\n\n\n\n\n\n\nstr_extract_all(alt_vector, \n                pattern = \"Bond\")\n\n[[1]]\ncharacter(0)\n\n[[2]]\ncharacter(0)\n\n[[3]]\n[1] \"Bond\" \"Bond\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#matches-you-dont-want",
+    "href": "slides/week-5/week-5-strings.html#matches-you-dont-want",
+    "title": "Using stringr to Work with Strings",
+    "section": "Matches you don’t want",
+    "text": "Matches you don’t want\n[^ ] – specifies characters not to match on (think except)\n\nstr_subset(x, pattern = \"p[^i]ck\")\n\n[1] \"peck\"\n\n\n\n\n\nstr_subset(x, pattern = \"^p\")\n\n[1] \"picked\"   \"peck\"     \"pickled\"  \"peppers!\"\n\n\n\n\n\n\nstr_subset(x, pattern = \"^[^p]\")\n\n[1] \"Peter\" \"Piper\" \"a\"     \"of\""
   }
 ]
