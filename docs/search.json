@@ -3538,7 +3538,7 @@
     "href": "slides/week-5/week-5-dates.html#thursday-october-24",
     "title": "Using lubridate to Work with Dates",
     "section": "Thursday, October 24",
-    "text": "Thursday, October 24\nToday we will…\n\nMidterm Portfolio\n\nWhat to Expect\nHow to Get Started\n\nNew Material\n\nWorking with Date & Time Variables\n\nPA 5.2: Jewel Heist"
+    "text": "Thursday, October 24\nToday we will…\n\nDebrief Lab 4\n\nLab 4 Peer Code Review\n\nMidterm Portfolio\n\nWhat to Expect\nHow to Get Started\n\nNew Material\n\nWorking with Date & Time Variables\n\nPA 5.2: Jewel Heist"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#what-to-expect",
@@ -3671,14 +3671,14 @@
     "href": "slides/week-5/week-5-dates.html#lubridate-resources",
     "title": "Using lubridate to Work with Dates",
     "section": "lubridate Resources",
-    "text": "lubridate Resources\n\n\nEvery group should have a lubridate cheatsheet!\n\nOn the Front:"
+    "text": "lubridate Resources\n\n\nEvery group should have a lubridate cheatsheet!\n\nOn the Front:\n\nThe middle column has functions related to “getting components” of dates\nThe bottom right corner has functions related to time zones\n\n\nOn the Back:\n\nThe left column has functions related to adding / subtracting “periods” to / from dates\nThe right column has functions related to creating and using intervals of time"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#task-card",
     "href": "slides/week-5/week-5-dates.html#task-card",
     "title": "Using lubridate to Work with Dates",
     "section": "Task Card",
-    "text": "Task Card\nEvery group should have a task card!\n\n\n\nOn the Front\n\nthe expectations of each role\nthe norms of collaborating\n\n\n\n\n\nOn the Back"
+    "text": "Task Card\nEvery group should have a task card!\n\n\n\nOn the Front\n\nthe expectations of each role\nthe norms of collaborating\n\n\n\n\n\nOn the Back\n\n\nlubridate functions for different tasks you may encounter"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#pair-programming-expectations",
@@ -3692,14 +3692,14 @@
     "href": "slides/week-5/week-5-dates.html#getting-started-1",
     "title": "Using lubridate to Work with Dates",
     "section": "Getting Started",
-    "text": "Getting Started\n\nFirst, both of you will do the following:\n\nJoin your Practice Activity workspace in Posit Cloud\nLog-in to Posit Cloud\nOpen the PA 6: Jewel Heist project\nOpen the PA-6-lubridate.qmd file\n\n\n\n\nThen, the partner who got the most sleep starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
+    "text": "Getting Started\nThe partner who got the most sleep starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#submission",
     "href": "slides/week-5/week-5-dates.html#submission",
     "title": "Using lubridate to Work with Dates",
     "section": "Submission",
-    "text": "Submission\n\nSubmit the name of the thief to the Canvas Quiz.\n\n\nEach person will input the full name of the theif into the PA6 quiz.\nThe person who last occupied the role of Developer will download and submitthe PA-6.html file for the group.\n\nOnly one submission per group!"
+    "text": "Submission\n\nSubmit the name of the thief to the Canvas Quiz.\n\n\nEach person will input the full name of the theif into the PA 5.2 quiz.\nThe person who last occupied the role of Developer will download and submit the PA-5-dates.html file for the group.\n\nOnly one submission per group!"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#to-do",

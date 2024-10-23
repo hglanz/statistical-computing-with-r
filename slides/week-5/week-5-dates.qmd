@@ -20,12 +20,26 @@ library(palmerpenguins)
 
 Today we will...
 
+-   Debrief Lab 4
+    + Lab 4 Peer Code Review
 -   Midterm Portfolio
     + What to Expect
     + How to Get Started
 -   New Material
     -   Working with Date & Time Variables
 -   [PA 5.2: Jewel Heist](../../group-activities/week-5/PA-5-dates.qmd)    
+
+# Lab 4
+
+# Don't forget to complete your Lab 4 code review!
+
+# Don't forget to complete your Lab 4 code review!
+
+</br> 
+
+> Make sure your feedback follows the [code review guidelines](../../code-review/code-review-guidelines.qmd). 
+
+> Insert your review into the comment box! 
 
 # Midterm Portfolios
 
@@ -536,6 +550,16 @@ Every group should have a **lubridate** cheatsheet!
 ::: {.small}
 **On the Front**: 
 
+- The middle column has functions related to "getting components" of dates
+- The bottom right corner has functions related to time zones
+
+::: {.fragment}
+**On the Back**: 
+
+- The left column has functions related to adding / subtracting "periods" to / 
+from dates
+- The right column has functions related to creating and using intervals of time
+:::
 :::
 :::
 
@@ -569,42 +593,12 @@ Every group should have a **task card**!
 **On the Back**
 
 ::: {.small}
+- `lubridate` functions for different tasks you may encounter
 
 :::
-:::
-:::
-:::
-
-## Pair Programming Expectations
-
-::: columns
-::: {.column width="49%"}
-**Developer**
 
 ::: {.small}
--   Reads prompt and ensures Coder understands what is being asked. 
--   Types the code specified by the Coder into the Quarto document.
--   Runs the code provided by the Coder. 
--   Works with Coder to debug the code. 
--   Evaluates the output.  
--   Works with Coder to write code comments. 
-:::
-:::
 
-::: {.column width="2%"}
-:::
-
-::: {.column width="49%"}
-::: {.fragment}
-**Coder**
-
-::: {.small}
--   Reads out instructions or prompts
--   Directs the Developer what to type. 
--   Talks with Developer about their ideas. 
--   Manages resources (e.g., cheatsheets, textbook, slides). 
--   Works with Developer to debug the code. 
--   Works with Developer to write code comments. 
 :::
 :::
 :::
@@ -612,33 +606,21 @@ Every group should have a **task card**!
 
 ## Getting Started
 
-::: {.small}
-First, both of you will do the following:
-
-- Join your Practice Activity workspace in Posit Cloud
-- Log-in to Posit Cloud
-- Open the PA 6: Jewel Heist project
-- Open the `PA-6-lubridate.qmd` file
-:::
-
-. . .
-
-::: {.small}
-Then, the partner who got the most sleep starts as the Developer (typing
+The partner who got the most sleep starts as the Developer (typing
 and listening to instructions from the Coder)!
 
 - The Coder **does not type**. 
   * The collaborative editing feature should allow you to track what is being 
   typed. 
 - The Developer **only types what they are told to type**. 
-:::
 
 ## Submission
 
 > Submit the name of the thief to the Canvas Quiz.
 
-- Each person will input the full name of the theif into the PA6 quiz. 
-- The person who last occupied the role of Developer will download and submitthe `PA-6.html` file for the group.
+- Each person will input the full name of the theif into the PA 5.2 quiz. 
+- The person who last occupied the role of Developer will download and submit 
+the `PA-5-dates.html` file for the group.
   + Only one submission per group!
 
 # Exit Ticket
