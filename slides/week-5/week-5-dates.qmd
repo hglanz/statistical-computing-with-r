@@ -69,7 +69,7 @@ assignments.
 
 3. Open the `reflection_template.qmd` file and give it a read!
 
-4. Start finding exerpts of code you wrote for the Labs or Challenges that fit each learning target. 
+4. Start finding excerpts of code you wrote for the Labs or Challenges that fit each learning target. 
 :::
 
 # Date + Time Variables
