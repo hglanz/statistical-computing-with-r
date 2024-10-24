@@ -1816,140 +1816,223 @@
     "text": "1.3 Caputures over the Week\nFor our final exploration, we will consider the number of rodents captured throughout the week – transitioning to visualizations of categorical variables.\n\n\n\n\n\n\nWarning\n\n\n\nYour plots should not make people tilt their heads to read it! Be mindful in choosing which variable goes on which axis and if / how you use axis labels.\n\n\n7. Create a visualization of the number of rodents captured each day of the week.\nAs you might have expected, the ordering of the days of the week is not what we would like.\n8. Change the order of the day of the week to go Monday through Sunday.\n\n\n\n\n\n\nNote\n\n\n\nYou can choose to keep the days named as they are (e.g., Mon, Sun), or you can choose to rename the days to their full names (e.g., Monday, Sunday).\n\n\nIt should be very clear that there are more rodents captured on the weekend than during the week. But, let’s explore if this is still the case if we use a “Weekday” / “Weekend” classification system instead.\n10. Collapse Monday through Friday into a \"Weekday\" level, and collapse Saturday and Sunday into a \"Weekend\" level. Plot the number of rodents captured between the two groups."
   },
   {
-    "objectID": "labs/instructions/challenge-5-instructions.html",
-    "href": "labs/instructions/challenge-5-instructions.html",
-    "title": "Lab 5: Murder in SQL City",
+    "objectID": "weeks/week-0-discord.html",
+    "href": "weeks/week-0-discord.html",
+    "title": "Course Set-up and Structure",
     "section": "",
-    "text": "For this lab, you will be joining and filtering related datasets to solve a murder mystery!"
+    "text": "Welcome!\nIn this coursework, you’ll get set up with the Class Discord, learn about what is expected of you each week, and hear some tips from me about how to succeed.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 0 - Course Set-up"
+    ]
   },
   {
-    "objectID": "labs/instructions/challenge-5-instructions.html#step-1-making-a-copy-from-github-classroom",
-    "href": "labs/instructions/challenge-5-instructions.html#step-1-making-a-copy-from-github-classroom",
-    "title": "Lab 5: Murder in SQL City",
-    "section": "1.1 Step 1: Making a Copy from GitHub Classroom",
-    "text": "1.1 Step 1: Making a Copy from GitHub Classroom\nYou can access the Lab 5 materials through the Lab 5 GitHub Repository.\nThis week, to get a copy of the repository, we’re going to follow a slightly different process. Use these steps to fork your own copy of the Lab 5 repository, then clone that repository into RStudio: List of Steps to Fork GitHub Repository :::"
+    "objectID": "weeks/week-0-discord.html#course-todos",
+    "href": "weeks/week-0-discord.html#course-todos",
+    "title": "Course Set-up and Structure",
+    "section": "0.1 Course TODOs",
+    "text": "0.1 Course TODOs\n📖 Readings: 15 minutes\n💻 Activities: 0 min\n✅ Check-ins: 3",
+    "crumbs": [
+      "Weekly materials",
+      "Week 0 - Course Set-up"
+    ]
   },
   {
-    "objectID": "labs/instructions/challenge-5-instructions.html#step-2-making-a-small-change",
-    "href": "labs/instructions/challenge-5-instructions.html#step-2-making-a-small-change",
-    "title": "Lab 5: Murder in SQL City",
-    "section": "1.2 Step 2: Making a Small Change",
-    "text": "1.2 Step 2: Making a Small Change\nNow, find the lab-5-student.qmd file in the “Files” tab in the lower right hand corner. Click on this file to open it.\nAt the top of the document (in the YAML) there is an author line that says \"Your name here!\". Change this to be your name and save your file either by clicking on the blue floppy disk or with a shortcut (command / control + s)."
+    "objectID": "weeks/week-0-discord.html#join-the-server",
+    "href": "weeks/week-0-discord.html#join-the-server",
+    "title": "Course Set-up and Structure",
+    "section": "2.1 Join the server",
+    "text": "2.1 Join the server\nJoin the Stat 331 Server (https://discord.gg/cvHfDEp7CG) to start experimenting with the interface.\nWhen you join the server, you will be given some suggestions to get started.\n\nI recommend you click through these - and in particular, it is probably a good idea to download the desktop version of Discord, and perhaps to install it on your phone if you wish.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 0 - Course Set-up"
+    ]
   },
   {
-    "objectID": "labs/instructions/challenge-5-instructions.html#step-3-pushing-your-lab-to-github",
-    "href": "labs/instructions/challenge-5-instructions.html#step-3-pushing-your-lab-to-github",
-    "title": "Lab 5: Murder in SQL City",
-    "section": "1.3 Step 3: Pushing Your Lab to GitHub",
-    "text": "1.3 Step 3: Pushing Your Lab to GitHub\nNow for our last step, we need to commit the files to our repo."
+    "objectID": "weeks/week-0-discord.html#set-up-your-account",
+    "href": "weeks/week-0-discord.html#set-up-your-account",
+    "title": "Course Set-up and Structure",
+    "section": "2.2 Set up your account",
+    "text": "2.2 Set up your account\n\nVerify your email\nTo use this Discord server, you must have a verified email.\nNobody (including your professors) will be able to see this email, and it does not have to be your Cal Poly email. This is simply to keep the server from being overrun by temporary accounts.\n\n\nCreate your identity\nThe first thing you should do is decide what name and picture you would like to use.\n\nI would like to strongly encourage you to use your real name and picture, so that everyone can get to know you. However, if you prefer to remain anonymous, you are free to do so.\n\n(Please do not be like Regina and use the name of another student, however!\nThis kind of impersonation will result in a permanent ban from the server.)\n\n\nDecide about privacy and notifications\nThe default settings on the channel are probably just fine for you.\nFeel free to make any changes that work for you, though.\nYou can change your message notifications:\n\nYou can edit your privacy settings, although most things are already private:\n\n\n\nConnect other apps\nYou can connect other apps to Discord, either for productivity or just for fun.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 0 - Course Set-up"
+    ]
   },
   {
-    "objectID": "labs/instructions/challenge-5-instructions.html#step-4-lets-get-started",
-    "href": "labs/instructions/challenge-5-instructions.html#step-4-lets-get-started",
-    "title": "Lab 5: Murder in SQL City",
-    "section": "1.4 Step 4: Let’s get started!",
-    "text": "1.4 Step 4: Let’s get started!"
+    "objectID": "weeks/week-0-discord.html#using-the-channels",
+    "href": "weeks/week-0-discord.html#using-the-channels",
+    "title": "Course Set-up and Structure",
+    "section": "2.3 Using the Channels",
+    "text": "2.3 Using the Channels\nThe server is made up of many channels. Some are text chatrooms, while some are “Voice Channels” that connect you via audio to everyone else in the channel.\n\nText Channels\nUse the #general channel for anything and everything:\n\nIf your question is about course logistics, rather than the material itself, consider using the #class-logistics channel:\n\nYou can use the specific weekly channels to ask questions about the material…\n\n… or the specific lab assignment.\n\nNotice that you can use tick marks (```), like in R Markdown, to make your code appear in a formatted code box.\n\n\nPrivate messages\nIt is also easy to send private messages, to your professor or to each other. These private messages can also easily be used to launch a private video chat and / or screen sharing.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 0 - Course Set-up"
+    ]
   },
   {
-    "objectID": "labs/instructions/challenge-5-instructions.html#access-the-data",
-    "href": "labs/instructions/challenge-5-instructions.html#access-the-data",
-    "title": "Lab 5: Murder in SQL City",
-    "section": "3.1 Access the Data",
-    "text": "3.1 Access the Data\nThis code chunk will read in all of the tables of data for you. Don’t modify or remove this!\n\nlibrary(tidyverse)\n\n# If purrr is not detected, install the package\nif (!\"purrr\" %in% installed.packages()) install.packages(\"purrr\")\n\nsource(\"https://raw.githubusercontent.com/atheobold/groupworthy-data-science/main/labs/instructions/lab-5-setup.R\")"
+    "objectID": "weeks/week-0-discord.html#creating-your-own-server",
+    "href": "weeks/week-0-discord.html#creating-your-own-server",
+    "title": "Course Set-up and Structure",
+    "section": "2.4 Creating your own server",
+    "text": "2.4 Creating your own server\nLast but not least - for the teams you are a part of, you may want to use Discord to communicate with each other about the weekly assignments. You can do this by creating your own server! You can easily hop between servers during work parties, to ask each other questions or just to take a break and chat about life.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 0 - Course Set-up"
+    ]
   },
   {
-    "objectID": "labs/instructions/challenge-5-instructions.html#solve-the-crime",
-    "href": "labs/instructions/challenge-5-instructions.html#solve-the-crime",
-    "title": "Lab 5: Murder in SQL City",
-    "section": "3.2 Solve the Crime",
-    "text": "3.2 Solve the Crime\n\n3.2.1 Crime Scene Report\nDetective Wickham reaches out to you…\n\nA crime has taken place and I need your help! There was a murder in SQL City sometime on January 15, 2018. Could you retrieve the crime scene report from the police department’s database and follow the clues to find the person responsible for the murder?!\n\n\n# Code for looking at the relevant crime scene report.\n\nFollow the evidence to the person responsible for the murder, building a report as you go.\n\n\n\n\n\n\nCaution\n\n\n\nMake sure you check for interviews with any suspects!\n\n\n\n\n\n\n\n\nAnd the final suspect is…\n\n\n\nput the name of the person responsible for the murder here."
+    "objectID": "weeks/week-0-discord.html#see-you-at-the-party",
+    "href": "weeks/week-0-discord.html#see-you-at-the-party",
+    "title": "Course Set-up and Structure",
+    "section": "2.5 See you at the Party!",
+    "text": "2.5 See you at the Party!",
+    "crumbs": [
+      "Weekly materials",
+      "Week 0 - Course Set-up"
+    ]
   },
   {
-    "objectID": "portfolio/portfolio-instructions.html",
-    "href": "portfolio/portfolio-instructions.html",
-    "title": "Portfolio Instructions",
+    "objectID": "weeks/week-0-discord.html#check-in-1.5-discord-server",
+    "href": "weeks/week-0-discord.html#check-in-1.5-discord-server",
+    "title": "Course Set-up and Structure",
+    "section": "2.6 ✅ Check-in 1.5: Discord Server",
+    "text": "2.6 ✅ Check-in 1.5: Discord Server\nIntroduce yourself in the “Introductions” channel of the Discord Server.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 0 - Course Set-up"
+    ]
+  },
+  {
+    "objectID": "weeks/week-0-discord.html#what-your-typical-week-will-look-like",
+    "href": "weeks/week-0-discord.html#what-your-typical-week-will-look-like",
+    "title": "Course Set-up and Structure",
+    "section": "3.1 What your typical week will look like",
+    "text": "3.1 What your typical week will look like\n\nCoursework\nEach week, you will be expected to work through a sequence of readings, videos, and preview activities. (Much like this one!)\nThese are meant to replace the in-class lecture experience; thus, you should plan to devote about 1 - 3 hours a week to this coursework.\n\n\nPreview Activities\nDue Tuesdays before the beginning of class (at 12pm)\nBefore class, you’ll complete Preview Activities which will guide you through your first contact with new concepts.\nThese will involve readings, videos, along with exercises to build your basic skill fluency. For example, you might be asked to read a chapter from the course textbook, watch a few videos discussing some concepts from the chapter, and then asked to complete some preliminary exercises intended to get you started thinking about how to apply the concepts from the chapter in the context of real data.\nYou’ll submit these exercises online, so that class time can be customized based on your understanding.\n\n\nPractice Activities\nDue Wednesdays at midnight\nDuring class, you’ll be working with your classmates to complete Practice Activities, which take your Preview Activities a step further. You will collaborate with your team to solve a puzzle, requiring that you accomplish a series of tasks, each of which applies the statistical computing concepts from that week. The purpose of in-class time is for you to be doing statistical computing, with me there to guide you if / when you get lost.\nThe course meetings on Tuesdays will have at least 1-hour dedicated to working on these practice activities, where you will work in your team. This allows for you to have the ability to ask me questions during the early stages of the activity.\n\n\nLab Assignments\nDue Sundays at midnight\nAfter class, you can reinforce the material through Lab Assignments, which are an opportunity to demonstrate mastery of the skills that you’ve learned. If you got something wrong, don’t worry! You’ll have a chance to try again.\nLabs will be submitted on Canvas. All revisions to Lab Assignments will be submitted to the same Canvas portal as the original assignment.\n\n\nChallenges\nDue Sundays at midnight\nEach Lab Assignment will have a Challenge Problem, which asks you to extend the skills you’ve learned in class in some way. Frequently, you have the choice of what you would like to learn. The only requirement is that you extend your thinking in some (measurable) way.\nAlthough you may discuss ideas with your classmates and seek help from the usual sources, all code and text absolutely must be your own.\nChallenges will be submitted on Canvas. All revisions to Challenges will be submitted to the same Canvas portal as the original assignment.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 0 - Course Set-up"
+    ]
+  },
+  {
+    "objectID": "weeks/week-0-discord.html#check-in-1.1-syllabus-quiz",
+    "href": "weeks/week-0-discord.html#check-in-1.1-syllabus-quiz",
+    "title": "Course Set-up and Structure",
+    "section": "3.2 ✅ Check-in 1.1: Syllabus Quiz",
+    "text": "3.2 ✅ Check-in 1.1: Syllabus Quiz\nQuestion 1: Where can you visit me for student hours?\n\nIn person\nZoom\nDiscord\nCanvas\n\nQuestion 2: In this course, Preview Activities are due by 12pm every ____. Practice Activities are due by 12pm every ____. Lab Assignments and Challenges are due by midnight every ____.\nQuestion 3: If you have a question about the course content, what is the best first step?\n\nPost your question on Discord in the appropriate channel\nSend Dr. Theobold an email\nGo to student hours on Tuesday or Thursday\nGoogle it\n\nQuestion 4: You are permitted to submit up to ____ assignments late.\nQuestion 5: If you need to submit an assignment late, you must do which of the following?\n\nemail Dr. Theobold to request a deadline extension\nsubmit a deadline extension request to the Google Form linked in the syllabus (and on Canvas)\nrequest an extension before the deadline has passed\ncomplete the assignment no later than 3-days after the original deadline\n\nQuestion 6: If you receive a “Growing” on a Lab Assignment problem, what should you do?\n\nread the comments and complete revisions on the problems receiving a “Growing”\ncomplete revisions on the problems receiving a “Growing”\nread the comments and complete revisions on the entire assignment\nnothing\n\nQuestion 7: For revisions on Lab Assignments and Challenges to be eligible for a regrade they need to be turned in with:\n\nyour new answers\nyour original answers\nreflections on how your learning progressed from your initial attempt\nnothing\n\nQuestion 8: You have finished the week’s Practice Assignment, and you want to know if you did it right. You ask your friend, and they say, “Oh, I got Luke Skywalker as my answer.” This is a violation of Academic Honesty policy.\nQuestion 9: You have been working on Lab 3 for what feels like forever and it seems like you are making little to no progress. You type the prompt into Google and “Wham!” the first result is a Stack Overflow page with a solution. You copy-and-paste the solution from the Stack Overflow page into your Challenge submission and do not reference that you used an outside source. You have violated the Academic Honesty policy.\nQuestion 10: You have been getting frustrated with finding an error in your code for hours and finally decide to paste your own generated code into ChatGPT and ask it to help you debug. ChatGPT immediately finds a missing parenthesis. You have violated the Academic Honesty policy.\nQuestion 11 You have been studying for another class, the deadline for Lab 2 is in an hour and you haven’t even started. Instead of using a “grace day”, you choose to copy the assignment into ChatGPT and ask it to write code to accomplish the tasks. ChatGPT spits out code with a style/format different from what we learned in class; you copy it into your Quarto code chunks and it runs so you render your assignment and turn it in anyway. You have violated the Academic Honesty policy.\nQuestion 12: Name one of the course learning targets that makes you excited.\nQuestion 13: Name one of the course learning targets that makes you nervous.\nQuestion 14: Why are you taking this class? What do you hope to learn?",
+    "crumbs": [
+      "Weekly materials",
+      "Week 0 - Course Set-up"
+    ]
+  },
+  {
+    "objectID": "weeks/week-0-discord.html#take-the-coursework-pages-as-seriously-as-you-take-in-person-lecture.",
+    "href": "weeks/week-0-discord.html#take-the-coursework-pages-as-seriously-as-you-take-in-person-lecture.",
+    "title": "Course Set-up and Structure",
+    "section": "5.1 Take the Coursework pages as seriously as you take in-person lecture.",
+    "text": "5.1 Take the Coursework pages as seriously as you take in-person lecture.\nFlipped classrooms puts you in the driver seat of mastering the course material. It can be tempting to cut corners to save yourself time, but this will likely result in you having a less complete understanding of the material.\nI encourage you to commit to giving the Coursework segments the same level of attention that you would ordinarily give to in-class lecture. Put the same effort into the Preview Activities that you would if you were sitting in a classroom. In return for your efforts, I promise to choose required videos and readings carefully, so that I do not waste your time.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 0 - Course Set-up"
+    ]
+  },
+  {
+    "objectID": "weeks/week-0-discord.html#google-is-your-friend.",
+    "href": "weeks/week-0-discord.html#google-is-your-friend.",
+    "title": "Course Set-up and Structure",
+    "section": "5.2 Google is your friend.",
+    "text": "5.2 Google is your friend.\nThe R community has an enormous arsenal of online learning resources. I’ve linked a few on the “Extra Resources” module in Canvas, but you can always find more!\n\nLearn to:\n\nGoogle for tutorials and examples\nUse ChatGPT to ask questions\nUse Stack Overflow for proposed solutions to people’s questions",
+    "crumbs": [
+      "Weekly materials",
+      "Week 0 - Course Set-up"
+    ]
+  },
+  {
+    "objectID": "weeks/week-0-discord.html#use-your-classmates-for-your-benefit",
+    "href": "weeks/week-0-discord.html#use-your-classmates-for-your-benefit",
+    "title": "Course Set-up and Structure",
+    "section": "5.3 Use your classmates for your benefit!",
+    "text": "5.3 Use your classmates for your benefit!\nThis course makes use of team-based learning. Every week you will work in a team with a peer. Over the course of the quarter you will work with many different people. Each of these people can be a resource for you and you can be a resource for them!\nI encourage you to establish study buddies and / or study groups early in the quarter, even if you don’t know anyone yet. The class Discord server is a great way to get started. I also hope you will be proactive about setting up your own video chat sessions, phone calls, Google Docs, group chats, etc. (How many different platforms can you talk about Stat 331 on? Facebook? Snapchat? Instagram? TikTok? Bumble???)\nI hope that we will all be purposeful and creative about finding ways to work as a team.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 0 - Course Set-up"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html",
+    "href": "weeks/week-1-quarto.html",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
     "section": "",
-    "text": "A portfolio is a collection of work that gives information about the person doing the work. Artists and architects, for example, have portfolios that show the range and scope of what they do, and by looking through their portfolios, you get a sense of who this person is, how they have grown as a professional, what they have produced, and what they are capable of producing.\nThat’s the spirit intended for the STAT 331 Portfolio. In your portfolio, you will give a curated collection of your best work along with reflections that tell the story of your growth from the first day of classes all the way to the end. Your goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content mastery, evidence of continued learning, and growth as a team member that goes with a particular grade. I will read your portfolio carefully, and if you make a convincing case for a grade, that’s the grade you’ll receive.",
+    "text": "The theme of this lesson is good management of your files and data. In part two of this week’s coursework you will learn how to identify folders and paths, and create Quarto documents.",
     "crumbs": [
-      "Portfolio",
-      "Portfolio Instructions"
+      "Weekly materials",
+      "Week 1, Part 2 - Quarto"
     ]
   },
   {
-    "objectID": "portfolio/portfolio-instructions.html#what-is-the-portfolio-and-how-will-it-be-used",
-    "href": "portfolio/portfolio-instructions.html#what-is-the-portfolio-and-how-will-it-be-used",
-    "title": "Portfolio Instructions",
+    "objectID": "weeks/week-1-quarto.html#file-management",
+    "href": "weeks/week-1-quarto.html#file-management",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "1.1 File Management",
+    "text": "1.1 File Management\nAs boring as it sounds, file management is arguably one of the most important skills a data scientist should have. The reproducibility of a project depends just as much on the way in which the project was stored as the computing tools used. While using R and Quarto make an important step in creating a reproducible analysis, there are other pieces that are arguably just as important—such as file management.\nBelieve it or not, your computer has multiple locations** where files can be stored. There has been a bit of a generational shift as computers have evolved: the “file system” metaphor itself is outdated because no one uses physical files anymore. [This article]((https://futurism.com/the-byte/gen-z-kids-file-systems) makes the argument that with modern search capabilities, most people use their computers as a laundry hamper instead of as a nice, organized filing cabinet. However, the laundry hamper approach doesn’t play nicely with working in R and creating Quarto documents.\nIn this class, we will store files according to the Project TIER protocol. More specifically, you will have:\n\na “Stat 331” folder in your Documents folder, containing all your materials associated with STAT 331\na sub-folder for each week (e.g., Week 1, Week 2)\nseparate folders within each week for each assignment (e.g., Practice Activity, Lab)\na separate R Studio Project (and GitHub repository) associated with each assignment\n\nFor example, if you come to my office for help on your lab assignment for Week 2, I would expect your files to look like this:\n\nFile Storage on WindowsFile Storage on a Mac\n\n\n\nI have six total folders in my Documents, one of which is a folder named “STAT 331.”\n\nInside my STAT 331 folder is a sub-folder named “Week 1,” which also has a sub-folder (a sub-sub-folder) named “Lab 1.” You can tell what folders Lab 1 lives inside based on the information included at the top of the screen. This is called a “file path,” which tells your computer where a folder / file lives on the computer.\nOn a PC, every file lives on the C Drive, so the “full path” to get to my Lab 1 folder would be:\nC:/Users/atheobold/Documents/STAT 331/Week 1/Lab 1\n\n\n\nI have six total folders in my Documents, one of which is a folder named “STAT 331.” Inside this folder is a sub-folder named “Week 1,” which also has a sub-folder (a sub-sub-folder) named “Lab 1.”\nOn a Mac, every file lives on the hard drive (it doesn’t have letters like a PC), so the “full path” to get to my Lab 1 folder would be:\n/Users/atheobold/Documents/STAT 331/Week 1/Lab 1",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1, Part 2 - Quarto"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#check-in-1.3-stat-331-folder",
+    "href": "weeks/week-1-quarto.html#check-in-1.3-stat-331-folder",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "1.2 ✅ Check-in 1.3: Stat 331 Folder",
+    "text": "1.2 ✅ Check-in 1.3: Stat 331 Folder\nTake a screenshot of your class directory, showing:\n\nthe location of your Stat 331 folder\na Week 1 sub-folder\na Lab 1 sub-sub-folder (inside the Week 1 folder)\n\n\n\n\n\n\n\nYour folder cannot synch with anything online!\n\n\n\nYour STAT 331 folder cannot be in a folder stored on OneDrive or iCloud! Storing your folder in this location will cause your code to periodically not run and I cannot help you fix it.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1, Part 2 - Quarto"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#downloading-quarto",
+    "href": "weeks/week-1-quarto.html#downloading-quarto",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "2.1 Downloading Quarto",
+    "text": "2.1 Downloading Quarto\nThe software associated with Quarto is automatically downloaded with the newest versions of RStudio. So, if you are using the most up to date version of RStudio (as instructed in Part 1 of this week’s coursework), you should already have Quarto installed on your computer. But, let’s test it out.\nTo ensure you have Quarto installed, carry out the following process:\n\nOpen RStudio\nClick on “File” (in the upper navigation bar)\nSelect “New File” (in the dropdown options)\nSelect “Quarto Document…” (in the dropdown option)\n\n \nIf you have Quarto installed, you should be prompted with the following menu:\n\nIf, instead, you receive a message saying Quarto is not installed on your computer, you need to download Quarto: https://quarto.org/docs/download/",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1, Part 2 - Quarto"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#introduction-to-quarto",
+    "href": "weeks/week-1-quarto.html#introduction-to-quarto",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "2.2 Introduction to Quarto",
+    "text": "2.2 Introduction to Quarto\n\n📖 Required Reading: Intro to Quarto\n\n\nHTML Documents\nWe will exclusively use HTML documents in this course. If you are interested in learning more about formatting options for Quarto HTML documents, I would recommend checking out:\n\na discussion of the basics of formatting HTML documents in Quarto\nthe list of all HTML Ffrmatting pptions for Quarto documents",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1, Part 2 - Quarto"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#check-in-1.4-quarto-documents",
+    "href": "weeks/week-1-quarto.html#check-in-1.4-quarto-documents",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "2.3 ✅ Check-in: 1.4 Quarto Documents",
+    "text": "2.3 ✅ Check-in: 1.4 Quarto Documents\nQuestion 1: What are the options at the top of a Quarto document (between the --- and --- symbols) called?\n\nXML\nYAML\nREML\nTOML\n\nQuestion 2: What symbols create an R code chunk?\n\n```\n{r}\n```{r}\n`{r}`\n\nQuestion 3: What symbol defines a heading?\n\n$\n_\n*\n#\n\nQuestion 4: When working in a Quarto document, the [visual / source] editor will display the raw Quarto document, whereas the [visual / source] will display the document as it will appear when it is rendered.\nQuestion 5: To produce an HTML report from your Quarto document, you need to click the ____ button.\n\nVisual\nRender\nRender on Save\nSave",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1, Part 2 - Quarto"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Statistical Computing in R",
     "section": "",
-    "text": "A portfolio is a collection of work that gives information about the person doing the work. Artists and architects, for example, have portfolios that show the range and scope of what they do, and by looking through their portfolios, you get a sense of who this person is, how they have grown as a professional, what they have produced, and what they are capable of producing.\nThat’s the spirit intended for the STAT 331 Portfolio. In your portfolio, you will give a curated collection of your best work along with reflections that tell the story of your growth from the first day of classes all the way to the end. Your goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content mastery, evidence of continued learning, and growth as a team member that goes with a particular grade. I will read your portfolio carefully, and if you make a convincing case for a grade, that’s the grade you’ll receive.",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\nData Joins + Pivots\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\nWorking with Categorical Variables\nExtending Joins, Factors, Clean Variable Names\nPA4 Due by 12pm\nLab 4 Instructions\nLink to Assignmenton GitHub Classroom Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\nUsing stringr to Work with Strings\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\nUsing lubridate to Work with Dates\nPA5 Due by 12pm\nLab 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 10/31\nPortfolio Party\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n\n\n\n\n\n\n\nThurs, 11/7\n\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 Instructions\nChallenge 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
     "crumbs": [
-      "Portfolio",
-      "Portfolio Instructions"
-    ]
-  },
-  {
-    "objectID": "portfolio/portfolio-instructions.html#key-information",
-    "href": "portfolio/portfolio-instructions.html#key-information",
-    "title": "Portfolio Instructions",
-    "section": "Key information",
-    "text": "Key information\nFormat: You’ll put all of your work — both the artifacts of past work and the responses to the writing prompts — into one GitHub repository. If you choose for this repository to be public, you only need to provide me with the link to the repo. If you choose for this repository to be private, you will need to add me as a collaborator to your repo.\nTemplate: Here is a template repository you can use to guide how you should organize your portfolio: https://github.com/atheobold/STAT331_portfolio_template\nDue date: The portfolio is due the Saturday before finals week. No deadline extensions are available for the Final Portfolio.\nWhat to include: Your portfolio needs to contain all of the following:\n\nFinal grade reflection: this is a document housing examples of code you’ve written which demonstrate your achievement of the course’s learning objectives, reflections about how you revised your thinking throughout the course, examples of how you extended your thinking, and reflections and examples of how you grew as a collaborator.\nSupporting artifacts – These are all of the assignments you reference in your final grade reflection. You are able to use any Lab or Challenge assignment submitted, but please keep these focused, and be selective.\nEssay responses. Write brief responses to each of the essay prompts listed below under Essays. Put each essay response on its own page. (All of the “Lightning Round” responses should go on the same page, however.)",
-    "crumbs": [
-      "Portfolio",
-      "Portfolio Instructions"
-    ]
-  },
-  {
-    "objectID": "portfolio/portfolio-instructions.html#final-grade-reflection",
-    "href": "portfolio/portfolio-instructions.html#final-grade-reflection",
-    "title": "Portfolio Instructions",
-    "section": "Final grade reflection",
-    "text": "Final grade reflection\nThis component is a self-evaluation of your performance in the class. Your goal is to state clearly what grade you think you have earned in the course, and convincingly argue that you have met the criteria for that grade. Please be thoughtful, honest, and reflective, but also brief and focused.\nThis reflection will be done in the reflection_template.qmd file provided in the repository. The structure of the document is as follows:\n\nWhat grade did you earn? State it clearly in one sentence. You can include plus/minus modifiers; see below about those.\nFor each of the learning targets, carefully select examples of your code that demonstrate concretely and directly your proficiency with the given target.\n\n\nSome learning targets ask for one example, some ask for two examples, and some ask for specific examples relative to particular data types.\nYour Lab assignments and Challenge problems should be a primary source of these examples, but you can also include other items. Anything that supports your argument for a grade can be submitted.\nYou must indicate where the code you provided came from, including the title of the assignment and problem number either next to the code title (e.g., xlsx\nLab 2 Question 1) or as a code comment at the top of the code chunk.\nNote, your code is not expected to run! The execute options at the top of the Quarto file are set to eval: false. Thus, you do not need to load in any packages or datasets in your reflection.\n\n\nHow did you meet that grade’s requirements? The requirements for grades are found in the course syllabus section of the syllabus. Review the criteria carefully. Then, explain how you have satisfied the criteria for the grade you are saying you’ve earned. Be specific and thorough. List each criterion you have met and how you know you’ve met it. Refer to specific artifacts or examples in the Portfolio that support your case. Again, keep it brief and focused on concrete evidence that the criteria have been met.\nWhat else? There may be some other criteria that figures into your grade request that isn’t explicitly listed in the syllabus. If so, state the criteria you’re thinking of, explain why they are useful criteria for your grade determination, and then explain how well you met those criteria (and provide evidence in the artifacts, if applicable). As with the syllabus criteria, be focused, specific, and thorough — and refer to specific artifacts that provide evidence.\n\nPlus/minus grades: You may argue to add a “+” or “-” modifier to your grade. Generally speaking a “+” added to a letter grade means you’ve met all the criteria for the letter grade along with a significant amount, but not all, of the criteria for the next letter grade up. And a “-” means that you have met the requirements for a letter grade but only in a way that you believe is a bare minimum, or you’ve met almost all the requirements for the letter grade except for a small number of minor criteria.",
-    "crumbs": [
-      "Portfolio",
-      "Portfolio Instructions"
-    ]
-  },
-  {
-    "objectID": "portfolio/portfolio-instructions.html#revisions",
-    "href": "portfolio/portfolio-instructions.html#revisions",
-    "title": "Portfolio Instructions",
-    "section": "Revisions",
-    "text": "Revisions\nYou can revise any Lab Assignment or Challenge one additional time before including it in the portfolio. If you do so, please note:\n\nDo not submit the revised Lab Assignment or Challenge to Canvas. Just put the revision in the Portfolio.\nIf you chose to complete an additional revision for the Portfolio, please indicate this to me. For example in the reference to the code location, indicate a revision has been made (e.g., right_join() - Challenge 4 (Revised))\nYou won’t get any additional feedback for revisions done for the Portfolio. If you want feedback on a solution, submit it as an ordinary homework revision.",
-    "crumbs": [
-      "Portfolio",
-      "Portfolio Instructions"
-    ]
-  },
-  {
-    "objectID": "portfolio/portfolio-instructions.html#essays",
-    "href": "portfolio/portfolio-instructions.html#essays",
-    "title": "Portfolio Instructions",
-    "section": "Essays",
-    "text": "Essays\nIn your Portfolio repository, there is a folder labeled essays which includes three separate .qmd files. You are expected to address the essay prompt(s) in each file.\n\nGrowth as a data scientist: Describe how you have improved as a practitioner and student of data science this quarter through your work in the course. Focus specifically on data science concepts and the skills we employed in learning them. Don’t just give a laundry list of topics that you learned (those are in the syllabus, so we know them already). Focus instead on a small number of specific areas of growth for you that happened in STAT 331. Identify at least one artifact in your portfolio that illustrates each area of growth. Explain in this essay how this artifact shows growth in the way you are describing.\nThe power of efficiency: As we’ve said in the class efficiency is a pivotal component of statistical computing (and data science). In this essay, give an explanation of what that term “efficiency” means in relation to statistical computing and describe some places where you encountered efficiency and understood its importance. Include: What is the definition of “efficiency”? What does efficiency look like in statistical computing / data science? What does efficiency allow you to do? Why is efficiency important? Where did you encounter efficiency, and what were some “a-ha” moments you had about efficiency? (For the latter, tie each a-ha moment to an artifact in the portfolio.)\nLightning round: Answer each of the following questions with one sentence including a brief explanation.\n\nFinish the sentence with another student’s name: “If [Student] doesn’t earn an A, then nobody should, because…” Explain your choice and your reasoning.\nWhat was the most difficult part of the class for you? List a general topic, a specific problem, a kind of work we did, etc. and explain why.\nWhat was the easiest part of the class for you? Explain why.\nWhat part of the class surprised or interested you the most? Explain why.\nGive one piece of advice to a student just beginning a quarter of STAT 331 that will help them be successful in learning.",
-    "crumbs": [
-      "Portfolio",
-      "Portfolio Instructions"
-    ]
-  },
-  {
-    "objectID": "portfolio/portfolio-instructions.html#about-time-and-effort",
-    "href": "portfolio/portfolio-instructions.html#about-time-and-effort",
-    "title": "Portfolio Instructions",
-    "section": "About time and effort",
-    "text": "About time and effort\nAs your instructor, I understand and respect that you have spent a great deal of time and effort on this course and will probably continue to do so until the end of the quarter. It’s possible that STAT 331 has been the most challenging course on your schedule this quarter, perhaps in your entire college career so far. I want you to know that I see you, I respect your efforts, and it’s extremely fulfilling to see you respond to the challenges and grow.\nI also want to be clear that while the time and effort spent on the class are vitally important, they are not explicitly part of the grade criteria you find in the syllabus. So, when you make the case for your grade in the portfolio, I respectfully ask that you keep your argument focused on concrete evidence of understanding of the learning targets and engagement with the class.\nYou are free to discuss your investment in time and effort in the essay questions if you like, or apart from the portfolio if that makes more sense. But when making the case for your grade, the focus needs to be on the results of your investment of time and effort. Did your efforts result in several exemplary solutions through the quarter? If so, put a subset of them in the Portfolio. Did the time you spend on coursework result in being an engaged collaborator during Practice Activities? If so, document how your efforts made you a valuable group member.",
-    "crumbs": [
-      "Portfolio",
-      "Portfolio Instructions"
-    ]
-  },
-  {
-    "objectID": "portfolio/portfolio-instructions.html#questions-you-might-have",
-    "href": "portfolio/portfolio-instructions.html#questions-you-might-have",
-    "title": "Portfolio Instructions",
-    "section": "Questions you might have",
-    "text": "Questions you might have\n\nQ: What if you disagree with our final grade reflection?\n\nA: There are two ways this might happen.\n\nYou ask for a grade that is higher than the evidence supports. That is, you grade yourself too highly, for example you believe you earned an A in the course, but I do not feel the evidence you’ve provided supports this grade. If this occurs in your Midterm Portfolio, I will discuss this with you in your 5-minute Midterm Portfolio meeting.I’ll tell you what grade I would have given you based on the evidence you provided in the portfolio. You can then use this feedback when constructing your final portfolio. If I believe the grade you’ve proposed in your Final Portfolio does not reflect the evidence you’ve provided, I will discuss this with you in your 5-minute Final Portfolio meeting. I’ll tell you what grade I would have given you based on the evidence you provided in the portfolio, and then give you the chance to provide additional evidence and explanations for your grade request. In our meeting, if you still think your grade request is correct, you’ll have the chance to walk me through your materials and reasoning. Afterwards, I might agree with you. But if we still disagree, we will try to come to an agreement on the highest grade that the evidence supports. I have faith that we’ll be able to come to a mutually-agreeable result. But, if we can’t, I will assign the grade that in my estimation is the highest grade supported by the evidence, and my determination will be final. However, again, I will exhaust all other options before simply overriding your grade determination.\nYou ask for a grade that was lower than your actual performance indicates. That is, you “lowball” yourself, for example you say you earned a B when in fact I think you earned an A-. In this case, I will award you the grade I think you earned, and then just inform you that I’ve done so (and why).\n\nIn my experience, the second situation happens significantly more frequently than the first.\n\n\n\nQ: Is there a limit on the number of artifacts I can include to support my grade?\n\nA: There is no strict limit, but please be selective.\nQuality, not quantity is what we are after. We do not want every assignment in our portfolio! Typically you should be able to give a complete portfolio in fewer than 8 assignments with judicious selection of homework solutions and other work. A handful of homework solutions that clearly indicate your attainment of the grade criteria is just as good as, if not better than, a massive binder of mediocre examples.\n\n\n\nQ: How specific or detailed do I need to be on some of the criteria? For example, do I need to list all the dates when I answered someone’s question on Discord?\n\nA: This isn’t filing your taxes, so a precise down-to-the-minute accounting of your work isn’t necessary.\nDetails and your reasoning are more important than precision and completeness here. For example if you made a handful of supportive comments in Discord, pick a few and tell me about them. What was the question about? What did you say? Why was that comment an example of “helpful feedback”? (Do you know that it was helpful?) Remember the purpose is to make a convincing case that you’ve earned a particular grade.\n\n\n\nQ: Would someone actually make a case that they earned a “D” in the class?\n\nA: Yes, if the person is honest and there’s not enough evidence to make the case for a “C”.\nIf you’re in that situation, be honest and don’t overreach just because the consequences are significant.\n\n\n\nQ: How long should the essays be?\n\nA: You should put serious effort into each of the essays and give thorough, detailed, and thoughtful responses — without going overboard and writing more than you need.\nThere is no hard word or character count here, but if you are writing less than half a page using ordinary font and line spacing, then you probably need to spend more time carefully reflecting on the question; if you are writing more than two pages for a single essay, you might consider editing it down for clarity. As always, put yourself in the shoes of your readers and then use your judgment as a writer.\n\n\n\nQ: What if you do not submit a final portfolio?\n\nA: If you do not complete a Final Portfolio submission, your grade will be at my discretion.\nI will use your Midterm Portfolio as well as completion of assignments from Week 7 - 10 to guide my decision.\nI’ll add more questions and answers in this space as they come up.",
-    "crumbs": [
-      "Portfolio",
-      "Portfolio Instructions"
+      "Course information",
+      "Schedule"
     ]
   },
   {
@@ -2268,224 +2351,141 @@
     "text": "Discussion\n\nWhat do you think this game was about? What was its purpose?\nWhat did your group did that made you cooperate more successfully?\nWhat did your group did that made cooperation harder?\nWhat are some behaviors that could be implemented in the future to make cooperation easier?"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Statistical Computing in R",
+    "objectID": "portfolio/portfolio-instructions.html",
+    "href": "portfolio/portfolio-instructions.html",
+    "title": "Portfolio Instructions",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\nData Joins + Pivots\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\nWorking with Categorical Variables\nExtending Joins, Factors, Clean Variable Names\nPA4 Due by 12pm\nLab 4 Instructions\nLink to Assignmenton GitHub Classroom Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\nUsing stringr to Work with Strings\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\nUsing lubridate to Work with Dates\nPA5 Due by 12pm\nLab 5 Instructions\nChallenge 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 10/31\nPortfolio Party\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own dataframe functions\n\n\n\n\n\n\n\nThurs, 11/7\n\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 Instructions\nChallenge 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
+    "text": "A portfolio is a collection of work that gives information about the person doing the work. Artists and architects, for example, have portfolios that show the range and scope of what they do, and by looking through their portfolios, you get a sense of who this person is, how they have grown as a professional, what they have produced, and what they are capable of producing.\nThat’s the spirit intended for the STAT 331 Portfolio. In your portfolio, you will give a curated collection of your best work along with reflections that tell the story of your growth from the first day of classes all the way to the end. Your goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content mastery, evidence of continued learning, and growth as a team member that goes with a particular grade. I will read your portfolio carefully, and if you make a convincing case for a grade, that’s the grade you’ll receive.",
     "crumbs": [
-      "Course information",
-      "Schedule"
+      "Portfolio",
+      "Portfolio Instructions"
     ]
   },
   {
-    "objectID": "weeks/week-1-quarto.html",
-    "href": "weeks/week-1-quarto.html",
-    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "objectID": "portfolio/portfolio-instructions.html#what-is-the-portfolio-and-how-will-it-be-used",
+    "href": "portfolio/portfolio-instructions.html#what-is-the-portfolio-and-how-will-it-be-used",
+    "title": "Portfolio Instructions",
     "section": "",
-    "text": "The theme of this lesson is good management of your files and data. In part two of this week’s coursework you will learn how to identify folders and paths, and create Quarto documents.",
+    "text": "A portfolio is a collection of work that gives information about the person doing the work. Artists and architects, for example, have portfolios that show the range and scope of what they do, and by looking through their portfolios, you get a sense of who this person is, how they have grown as a professional, what they have produced, and what they are capable of producing.\nThat’s the spirit intended for the STAT 331 Portfolio. In your portfolio, you will give a curated collection of your best work along with reflections that tell the story of your growth from the first day of classes all the way to the end. Your goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content mastery, evidence of continued learning, and growth as a team member that goes with a particular grade. I will read your portfolio carefully, and if you make a convincing case for a grade, that’s the grade you’ll receive.",
     "crumbs": [
-      "Weekly materials",
-      "Week 1, Part 2 - Quarto"
+      "Portfolio",
+      "Portfolio Instructions"
     ]
   },
   {
-    "objectID": "weeks/week-1-quarto.html#file-management",
-    "href": "weeks/week-1-quarto.html#file-management",
-    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
-    "section": "1.1 File Management",
-    "text": "1.1 File Management\nAs boring as it sounds, file management is arguably one of the most important skills a data scientist should have. The reproducibility of a project depends just as much on the way in which the project was stored as the computing tools used. While using R and Quarto make an important step in creating a reproducible analysis, there are other pieces that are arguably just as important—such as file management.\nBelieve it or not, your computer has multiple locations** where files can be stored. There has been a bit of a generational shift as computers have evolved: the “file system” metaphor itself is outdated because no one uses physical files anymore. [This article]((https://futurism.com/the-byte/gen-z-kids-file-systems) makes the argument that with modern search capabilities, most people use their computers as a laundry hamper instead of as a nice, organized filing cabinet. However, the laundry hamper approach doesn’t play nicely with working in R and creating Quarto documents.\nIn this class, we will store files according to the Project TIER protocol. More specifically, you will have:\n\na “Stat 331” folder in your Documents folder, containing all your materials associated with STAT 331\na sub-folder for each week (e.g., Week 1, Week 2)\nseparate folders within each week for each assignment (e.g., Practice Activity, Lab)\na separate R Studio Project (and GitHub repository) associated with each assignment\n\nFor example, if you come to my office for help on your lab assignment for Week 2, I would expect your files to look like this:\n\nFile Storage on WindowsFile Storage on a Mac\n\n\n\nI have six total folders in my Documents, one of which is a folder named “STAT 331.”\n\nInside my STAT 331 folder is a sub-folder named “Week 1,” which also has a sub-folder (a sub-sub-folder) named “Lab 1.” You can tell what folders Lab 1 lives inside based on the information included at the top of the screen. This is called a “file path,” which tells your computer where a folder / file lives on the computer.\nOn a PC, every file lives on the C Drive, so the “full path” to get to my Lab 1 folder would be:\nC:/Users/atheobold/Documents/STAT 331/Week 1/Lab 1\n\n\n\nI have six total folders in my Documents, one of which is a folder named “STAT 331.” Inside this folder is a sub-folder named “Week 1,” which also has a sub-folder (a sub-sub-folder) named “Lab 1.”\nOn a Mac, every file lives on the hard drive (it doesn’t have letters like a PC), so the “full path” to get to my Lab 1 folder would be:\n/Users/atheobold/Documents/STAT 331/Week 1/Lab 1",
+    "objectID": "portfolio/portfolio-instructions.html#key-information",
+    "href": "portfolio/portfolio-instructions.html#key-information",
+    "title": "Portfolio Instructions",
+    "section": "Key information",
+    "text": "Key information\nFormat: You’ll put all of your work — both the artifacts of past work and the responses to the writing prompts — into one GitHub repository. If you choose for this repository to be public, you only need to provide me with the link to the repo. If you choose for this repository to be private, you will need to add me as a collaborator to your repo.\nTemplate: Here is a template repository you can use to guide how you should organize your portfolio: https://github.com/atheobold/STAT331_portfolio_template\nDue date: The portfolio is due the Saturday before finals week. No deadline extensions are available for the Final Portfolio.\nWhat to include: Your portfolio needs to contain all of the following:\n\nFinal grade reflection: this is a document housing examples of code you’ve written which demonstrate your achievement of the course’s learning objectives, reflections about how you revised your thinking throughout the course, examples of how you extended your thinking, and reflections and examples of how you grew as a collaborator.\nSupporting artifacts – These are all of the assignments you reference in your final grade reflection. You are able to use any Lab or Challenge assignment submitted, but please keep these focused, and be selective.\nEssay responses. Write brief responses to each of the essay prompts listed below under Essays. Put each essay response on its own page. (All of the “Lightning Round” responses should go on the same page, however.)",
     "crumbs": [
-      "Weekly materials",
-      "Week 1, Part 2 - Quarto"
+      "Portfolio",
+      "Portfolio Instructions"
     ]
   },
   {
-    "objectID": "weeks/week-1-quarto.html#check-in-1.3-stat-331-folder",
-    "href": "weeks/week-1-quarto.html#check-in-1.3-stat-331-folder",
-    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
-    "section": "1.2 ✅ Check-in 1.3: Stat 331 Folder",
-    "text": "1.2 ✅ Check-in 1.3: Stat 331 Folder\nTake a screenshot of your class directory, showing:\n\nthe location of your Stat 331 folder\na Week 1 sub-folder\na Lab 1 sub-sub-folder (inside the Week 1 folder)\n\n\n\n\n\n\n\nYour folder cannot synch with anything online!\n\n\n\nYour STAT 331 folder cannot be in a folder stored on OneDrive or iCloud! Storing your folder in this location will cause your code to periodically not run and I cannot help you fix it.",
+    "objectID": "portfolio/portfolio-instructions.html#final-grade-reflection",
+    "href": "portfolio/portfolio-instructions.html#final-grade-reflection",
+    "title": "Portfolio Instructions",
+    "section": "Final grade reflection",
+    "text": "Final grade reflection\nThis component is a self-evaluation of your performance in the class. Your goal is to state clearly what grade you think you have earned in the course, and convincingly argue that you have met the criteria for that grade. Please be thoughtful, honest, and reflective, but also brief and focused.\nThis reflection will be done in the reflection_template.qmd file provided in the repository. The structure of the document is as follows:\n\nWhat grade did you earn? State it clearly in one sentence. You can include plus/minus modifiers; see below about those.\nFor each of the learning targets, carefully select examples of your code that demonstrate concretely and directly your proficiency with the given target.\n\n\nSome learning targets ask for one example, some ask for two examples, and some ask for specific examples relative to particular data types.\nYour Lab assignments and Challenge problems should be a primary source of these examples, but you can also include other items. Anything that supports your argument for a grade can be submitted.\nYou must indicate where the code you provided came from, including the title of the assignment and problem number either next to the code title (e.g., xlsx\nLab 2 Question 1) or as a code comment at the top of the code chunk.\nNote, your code is not expected to run! The execute options at the top of the Quarto file are set to eval: false. Thus, you do not need to load in any packages or datasets in your reflection.\n\n\nHow did you meet that grade’s requirements? The requirements for grades are found in the course syllabus section of the syllabus. Review the criteria carefully. Then, explain how you have satisfied the criteria for the grade you are saying you’ve earned. Be specific and thorough. List each criterion you have met and how you know you’ve met it. Refer to specific artifacts or examples in the Portfolio that support your case. Again, keep it brief and focused on concrete evidence that the criteria have been met.\nWhat else? There may be some other criteria that figures into your grade request that isn’t explicitly listed in the syllabus. If so, state the criteria you’re thinking of, explain why they are useful criteria for your grade determination, and then explain how well you met those criteria (and provide evidence in the artifacts, if applicable). As with the syllabus criteria, be focused, specific, and thorough — and refer to specific artifacts that provide evidence.\n\nPlus/minus grades: You may argue to add a “+” or “-” modifier to your grade. Generally speaking a “+” added to a letter grade means you’ve met all the criteria for the letter grade along with a significant amount, but not all, of the criteria for the next letter grade up. And a “-” means that you have met the requirements for a letter grade but only in a way that you believe is a bare minimum, or you’ve met almost all the requirements for the letter grade except for a small number of minor criteria.",
     "crumbs": [
-      "Weekly materials",
-      "Week 1, Part 2 - Quarto"
+      "Portfolio",
+      "Portfolio Instructions"
     ]
   },
   {
-    "objectID": "weeks/week-1-quarto.html#downloading-quarto",
-    "href": "weeks/week-1-quarto.html#downloading-quarto",
-    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
-    "section": "2.1 Downloading Quarto",
-    "text": "2.1 Downloading Quarto\nThe software associated with Quarto is automatically downloaded with the newest versions of RStudio. So, if you are using the most up to date version of RStudio (as instructed in Part 1 of this week’s coursework), you should already have Quarto installed on your computer. But, let’s test it out.\nTo ensure you have Quarto installed, carry out the following process:\n\nOpen RStudio\nClick on “File” (in the upper navigation bar)\nSelect “New File” (in the dropdown options)\nSelect “Quarto Document…” (in the dropdown option)\n\n \nIf you have Quarto installed, you should be prompted with the following menu:\n\nIf, instead, you receive a message saying Quarto is not installed on your computer, you need to download Quarto: https://quarto.org/docs/download/",
+    "objectID": "portfolio/portfolio-instructions.html#revisions",
+    "href": "portfolio/portfolio-instructions.html#revisions",
+    "title": "Portfolio Instructions",
+    "section": "Revisions",
+    "text": "Revisions\nYou can revise any Lab Assignment or Challenge one additional time before including it in the portfolio. If you do so, please note:\n\nDo not submit the revised Lab Assignment or Challenge to Canvas. Just put the revision in the Portfolio.\nIf you chose to complete an additional revision for the Portfolio, please indicate this to me. For example in the reference to the code location, indicate a revision has been made (e.g., right_join() - Challenge 4 (Revised))\nYou won’t get any additional feedback for revisions done for the Portfolio. If you want feedback on a solution, submit it as an ordinary homework revision.",
     "crumbs": [
-      "Weekly materials",
-      "Week 1, Part 2 - Quarto"
+      "Portfolio",
+      "Portfolio Instructions"
     ]
   },
   {
-    "objectID": "weeks/week-1-quarto.html#introduction-to-quarto",
-    "href": "weeks/week-1-quarto.html#introduction-to-quarto",
-    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
-    "section": "2.2 Introduction to Quarto",
-    "text": "2.2 Introduction to Quarto\n\n📖 Required Reading: Intro to Quarto\n\n\nHTML Documents\nWe will exclusively use HTML documents in this course. If you are interested in learning more about formatting options for Quarto HTML documents, I would recommend checking out:\n\na discussion of the basics of formatting HTML documents in Quarto\nthe list of all HTML Ffrmatting pptions for Quarto documents",
+    "objectID": "portfolio/portfolio-instructions.html#essays",
+    "href": "portfolio/portfolio-instructions.html#essays",
+    "title": "Portfolio Instructions",
+    "section": "Essays",
+    "text": "Essays\nIn your Portfolio repository, there is a folder labeled essays which includes three separate .qmd files. You are expected to address the essay prompt(s) in each file.\n\nGrowth as a data scientist: Describe how you have improved as a practitioner and student of data science this quarter through your work in the course. Focus specifically on data science concepts and the skills we employed in learning them. Don’t just give a laundry list of topics that you learned (those are in the syllabus, so we know them already). Focus instead on a small number of specific areas of growth for you that happened in STAT 331. Identify at least one artifact in your portfolio that illustrates each area of growth. Explain in this essay how this artifact shows growth in the way you are describing.\nThe power of efficiency: As we’ve said in the class efficiency is a pivotal component of statistical computing (and data science). In this essay, give an explanation of what that term “efficiency” means in relation to statistical computing and describe some places where you encountered efficiency and understood its importance. Include: What is the definition of “efficiency”? What does efficiency look like in statistical computing / data science? What does efficiency allow you to do? Why is efficiency important? Where did you encounter efficiency, and what were some “a-ha” moments you had about efficiency? (For the latter, tie each a-ha moment to an artifact in the portfolio.)\nLightning round: Answer each of the following questions with one sentence including a brief explanation.\n\nFinish the sentence with another student’s name: “If [Student] doesn’t earn an A, then nobody should, because…” Explain your choice and your reasoning.\nWhat was the most difficult part of the class for you? List a general topic, a specific problem, a kind of work we did, etc. and explain why.\nWhat was the easiest part of the class for you? Explain why.\nWhat part of the class surprised or interested you the most? Explain why.\nGive one piece of advice to a student just beginning a quarter of STAT 331 that will help them be successful in learning.",
     "crumbs": [
-      "Weekly materials",
-      "Week 1, Part 2 - Quarto"
+      "Portfolio",
+      "Portfolio Instructions"
     ]
   },
   {
-    "objectID": "weeks/week-1-quarto.html#check-in-1.4-quarto-documents",
-    "href": "weeks/week-1-quarto.html#check-in-1.4-quarto-documents",
-    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
-    "section": "2.3 ✅ Check-in: 1.4 Quarto Documents",
-    "text": "2.3 ✅ Check-in: 1.4 Quarto Documents\nQuestion 1: What are the options at the top of a Quarto document (between the --- and --- symbols) called?\n\nXML\nYAML\nREML\nTOML\n\nQuestion 2: What symbols create an R code chunk?\n\n```\n{r}\n```{r}\n`{r}`\n\nQuestion 3: What symbol defines a heading?\n\n$\n_\n*\n#\n\nQuestion 4: When working in a Quarto document, the [visual / source] editor will display the raw Quarto document, whereas the [visual / source] will display the document as it will appear when it is rendered.\nQuestion 5: To produce an HTML report from your Quarto document, you need to click the ____ button.\n\nVisual\nRender\nRender on Save\nSave",
+    "objectID": "portfolio/portfolio-instructions.html#about-time-and-effort",
+    "href": "portfolio/portfolio-instructions.html#about-time-and-effort",
+    "title": "Portfolio Instructions",
+    "section": "About time and effort",
+    "text": "About time and effort\nAs your instructor, I understand and respect that you have spent a great deal of time and effort on this course and will probably continue to do so until the end of the quarter. It’s possible that STAT 331 has been the most challenging course on your schedule this quarter, perhaps in your entire college career so far. I want you to know that I see you, I respect your efforts, and it’s extremely fulfilling to see you respond to the challenges and grow.\nI also want to be clear that while the time and effort spent on the class are vitally important, they are not explicitly part of the grade criteria you find in the syllabus. So, when you make the case for your grade in the portfolio, I respectfully ask that you keep your argument focused on concrete evidence of understanding of the learning targets and engagement with the class.\nYou are free to discuss your investment in time and effort in the essay questions if you like, or apart from the portfolio if that makes more sense. But when making the case for your grade, the focus needs to be on the results of your investment of time and effort. Did your efforts result in several exemplary solutions through the quarter? If so, put a subset of them in the Portfolio. Did the time you spend on coursework result in being an engaged collaborator during Practice Activities? If so, document how your efforts made you a valuable group member.",
     "crumbs": [
-      "Weekly materials",
-      "Week 1, Part 2 - Quarto"
+      "Portfolio",
+      "Portfolio Instructions"
     ]
   },
   {
-    "objectID": "weeks/week-0-discord.html",
-    "href": "weeks/week-0-discord.html",
-    "title": "Course Set-up and Structure",
+    "objectID": "portfolio/portfolio-instructions.html#questions-you-might-have",
+    "href": "portfolio/portfolio-instructions.html#questions-you-might-have",
+    "title": "Portfolio Instructions",
+    "section": "Questions you might have",
+    "text": "Questions you might have\n\nQ: What if you disagree with our final grade reflection?\n\nA: There are two ways this might happen.\n\nYou ask for a grade that is higher than the evidence supports. That is, you grade yourself too highly, for example you believe you earned an A in the course, but I do not feel the evidence you’ve provided supports this grade. If this occurs in your Midterm Portfolio, I will discuss this with you in your 5-minute Midterm Portfolio meeting.I’ll tell you what grade I would have given you based on the evidence you provided in the portfolio. You can then use this feedback when constructing your final portfolio. If I believe the grade you’ve proposed in your Final Portfolio does not reflect the evidence you’ve provided, I will discuss this with you in your 5-minute Final Portfolio meeting. I’ll tell you what grade I would have given you based on the evidence you provided in the portfolio, and then give you the chance to provide additional evidence and explanations for your grade request. In our meeting, if you still think your grade request is correct, you’ll have the chance to walk me through your materials and reasoning. Afterwards, I might agree with you. But if we still disagree, we will try to come to an agreement on the highest grade that the evidence supports. I have faith that we’ll be able to come to a mutually-agreeable result. But, if we can’t, I will assign the grade that in my estimation is the highest grade supported by the evidence, and my determination will be final. However, again, I will exhaust all other options before simply overriding your grade determination.\nYou ask for a grade that was lower than your actual performance indicates. That is, you “lowball” yourself, for example you say you earned a B when in fact I think you earned an A-. In this case, I will award you the grade I think you earned, and then just inform you that I’ve done so (and why).\n\nIn my experience, the second situation happens significantly more frequently than the first.\n\n\n\nQ: Is there a limit on the number of artifacts I can include to support my grade?\n\nA: There is no strict limit, but please be selective.\nQuality, not quantity is what we are after. We do not want every assignment in our portfolio! Typically you should be able to give a complete portfolio in fewer than 8 assignments with judicious selection of homework solutions and other work. A handful of homework solutions that clearly indicate your attainment of the grade criteria is just as good as, if not better than, a massive binder of mediocre examples.\n\n\n\nQ: How specific or detailed do I need to be on some of the criteria? For example, do I need to list all the dates when I answered someone’s question on Discord?\n\nA: This isn’t filing your taxes, so a precise down-to-the-minute accounting of your work isn’t necessary.\nDetails and your reasoning are more important than precision and completeness here. For example if you made a handful of supportive comments in Discord, pick a few and tell me about them. What was the question about? What did you say? Why was that comment an example of “helpful feedback”? (Do you know that it was helpful?) Remember the purpose is to make a convincing case that you’ve earned a particular grade.\n\n\n\nQ: Would someone actually make a case that they earned a “D” in the class?\n\nA: Yes, if the person is honest and there’s not enough evidence to make the case for a “C”.\nIf you’re in that situation, be honest and don’t overreach just because the consequences are significant.\n\n\n\nQ: How long should the essays be?\n\nA: You should put serious effort into each of the essays and give thorough, detailed, and thoughtful responses — without going overboard and writing more than you need.\nThere is no hard word or character count here, but if you are writing less than half a page using ordinary font and line spacing, then you probably need to spend more time carefully reflecting on the question; if you are writing more than two pages for a single essay, you might consider editing it down for clarity. As always, put yourself in the shoes of your readers and then use your judgment as a writer.\n\n\n\nQ: What if you do not submit a final portfolio?\n\nA: If you do not complete a Final Portfolio submission, your grade will be at my discretion.\nI will use your Midterm Portfolio as well as completion of assignments from Week 7 - 10 to guide my decision.\nI’ll add more questions and answers in this space as they come up.",
+    "crumbs": [
+      "Portfolio",
+      "Portfolio Instructions"
+    ]
+  },
+  {
+    "objectID": "labs/instructions/challenge-5-instructions.html",
+    "href": "labs/instructions/challenge-5-instructions.html",
+    "title": "Lab 5: Murder in SQL City",
     "section": "",
-    "text": "Welcome!\nIn this coursework, you’ll get set up with the Class Discord, learn about what is expected of you each week, and hear some tips from me about how to succeed.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 0 - Course Set-up"
-    ]
+    "text": "For this lab, you will be joining and filtering related datasets to solve a murder mystery!"
   },
   {
-    "objectID": "weeks/week-0-discord.html#course-todos",
-    "href": "weeks/week-0-discord.html#course-todos",
-    "title": "Course Set-up and Structure",
-    "section": "0.1 Course TODOs",
-    "text": "0.1 Course TODOs\n📖 Readings: 15 minutes\n💻 Activities: 0 min\n✅ Check-ins: 3",
-    "crumbs": [
-      "Weekly materials",
-      "Week 0 - Course Set-up"
-    ]
+    "objectID": "labs/instructions/challenge-5-instructions.html#step-1-making-a-copy-from-github-classroom",
+    "href": "labs/instructions/challenge-5-instructions.html#step-1-making-a-copy-from-github-classroom",
+    "title": "Lab 5: Murder in SQL City",
+    "section": "1.1 Step 1: Making a Copy from GitHub Classroom",
+    "text": "1.1 Step 1: Making a Copy from GitHub Classroom\nYou can access the Lab 5 materials through the Lab 5 GitHub Repository.\nThis week, to get a copy of the repository, we’re going to follow a slightly different process. Use these steps to fork your own copy of the Lab 5 repository, then clone that repository into RStudio: List of Steps to Fork GitHub Repository"
   },
   {
-    "objectID": "weeks/week-0-discord.html#join-the-server",
-    "href": "weeks/week-0-discord.html#join-the-server",
-    "title": "Course Set-up and Structure",
-    "section": "2.1 Join the server",
-    "text": "2.1 Join the server\nJoin the Stat 331 Server (https://discord.gg/cvHfDEp7CG) to start experimenting with the interface.\nWhen you join the server, you will be given some suggestions to get started.\n\nI recommend you click through these - and in particular, it is probably a good idea to download the desktop version of Discord, and perhaps to install it on your phone if you wish.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 0 - Course Set-up"
-    ]
+    "objectID": "labs/instructions/challenge-5-instructions.html#step-2-making-a-small-change",
+    "href": "labs/instructions/challenge-5-instructions.html#step-2-making-a-small-change",
+    "title": "Lab 5: Murder in SQL City",
+    "section": "1.2 Step 2: Making a Small Change",
+    "text": "1.2 Step 2: Making a Small Change\nNow, find the lab-5-student.qmd file in the “Files” tab in the lower right hand corner. Click on this file to open it.\nAt the top of the document (in the YAML) there is an author line that says \"Your name here!\". Change this to be your name and save your file either by clicking on the blue floppy disk or with a shortcut (command / control + s)."
   },
   {
-    "objectID": "weeks/week-0-discord.html#set-up-your-account",
-    "href": "weeks/week-0-discord.html#set-up-your-account",
-    "title": "Course Set-up and Structure",
-    "section": "2.2 Set up your account",
-    "text": "2.2 Set up your account\n\nVerify your email\nTo use this Discord server, you must have a verified email.\nNobody (including your professors) will be able to see this email, and it does not have to be your Cal Poly email. This is simply to keep the server from being overrun by temporary accounts.\n\n\nCreate your identity\nThe first thing you should do is decide what name and picture you would like to use.\n\nI would like to strongly encourage you to use your real name and picture, so that everyone can get to know you. However, if you prefer to remain anonymous, you are free to do so.\n\n(Please do not be like Regina and use the name of another student, however!\nThis kind of impersonation will result in a permanent ban from the server.)\n\n\nDecide about privacy and notifications\nThe default settings on the channel are probably just fine for you.\nFeel free to make any changes that work for you, though.\nYou can change your message notifications:\n\nYou can edit your privacy settings, although most things are already private:\n\n\n\nConnect other apps\nYou can connect other apps to Discord, either for productivity or just for fun.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 0 - Course Set-up"
-    ]
+    "objectID": "labs/instructions/challenge-5-instructions.html#step-3-pushing-your-lab-to-github",
+    "href": "labs/instructions/challenge-5-instructions.html#step-3-pushing-your-lab-to-github",
+    "title": "Lab 5: Murder in SQL City",
+    "section": "1.3 Step 3: Pushing Your Lab to GitHub",
+    "text": "1.3 Step 3: Pushing Your Lab to GitHub\nNow for our last step, we need to commit the files to our repo."
   },
   {
-    "objectID": "weeks/week-0-discord.html#using-the-channels",
-    "href": "weeks/week-0-discord.html#using-the-channels",
-    "title": "Course Set-up and Structure",
-    "section": "2.3 Using the Channels",
-    "text": "2.3 Using the Channels\nThe server is made up of many channels. Some are text chatrooms, while some are “Voice Channels” that connect you via audio to everyone else in the channel.\n\nText Channels\nUse the #general channel for anything and everything:\n\nIf your question is about course logistics, rather than the material itself, consider using the #class-logistics channel:\n\nYou can use the specific weekly channels to ask questions about the material…\n\n… or the specific lab assignment.\n\nNotice that you can use tick marks (```), like in R Markdown, to make your code appear in a formatted code box.\n\n\nPrivate messages\nIt is also easy to send private messages, to your professor or to each other. These private messages can also easily be used to launch a private video chat and / or screen sharing.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 0 - Course Set-up"
-    ]
+    "objectID": "labs/instructions/challenge-5-instructions.html#step-4-lets-get-started",
+    "href": "labs/instructions/challenge-5-instructions.html#step-4-lets-get-started",
+    "title": "Lab 5: Murder in SQL City",
+    "section": "1.4 Step 4: Let’s get started!",
+    "text": "1.4 Step 4: Let’s get started!"
   },
   {
-    "objectID": "weeks/week-0-discord.html#creating-your-own-server",
-    "href": "weeks/week-0-discord.html#creating-your-own-server",
-    "title": "Course Set-up and Structure",
-    "section": "2.4 Creating your own server",
-    "text": "2.4 Creating your own server\nLast but not least - for the teams you are a part of, you may want to use Discord to communicate with each other about the weekly assignments. You can do this by creating your own server! You can easily hop between servers during work parties, to ask each other questions or just to take a break and chat about life.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 0 - Course Set-up"
-    ]
+    "objectID": "labs/instructions/challenge-5-instructions.html#access-the-data",
+    "href": "labs/instructions/challenge-5-instructions.html#access-the-data",
+    "title": "Lab 5: Murder in SQL City",
+    "section": "3.1 Access the Data",
+    "text": "3.1 Access the Data\nThis code chunk will read in all of the tables of data for you. Don’t modify or remove this!\n\nlibrary(tidyverse)\n\n# If purrr is not detected, install the package\nif (!\"purrr\" %in% installed.packages()) install.packages(\"purrr\")\n\nsource(\"https://raw.githubusercontent.com/atheobold/groupworthy-data-science/main/labs/instructions/lab-5-setup.R\")"
   },
   {
-    "objectID": "weeks/week-0-discord.html#see-you-at-the-party",
-    "href": "weeks/week-0-discord.html#see-you-at-the-party",
-    "title": "Course Set-up and Structure",
-    "section": "2.5 See you at the Party!",
-    "text": "2.5 See you at the Party!",
-    "crumbs": [
-      "Weekly materials",
-      "Week 0 - Course Set-up"
-    ]
-  },
-  {
-    "objectID": "weeks/week-0-discord.html#check-in-1.5-discord-server",
-    "href": "weeks/week-0-discord.html#check-in-1.5-discord-server",
-    "title": "Course Set-up and Structure",
-    "section": "2.6 ✅ Check-in 1.5: Discord Server",
-    "text": "2.6 ✅ Check-in 1.5: Discord Server\nIntroduce yourself in the “Introductions” channel of the Discord Server.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 0 - Course Set-up"
-    ]
-  },
-  {
-    "objectID": "weeks/week-0-discord.html#what-your-typical-week-will-look-like",
-    "href": "weeks/week-0-discord.html#what-your-typical-week-will-look-like",
-    "title": "Course Set-up and Structure",
-    "section": "3.1 What your typical week will look like",
-    "text": "3.1 What your typical week will look like\n\nCoursework\nEach week, you will be expected to work through a sequence of readings, videos, and preview activities. (Much like this one!)\nThese are meant to replace the in-class lecture experience; thus, you should plan to devote about 1 - 3 hours a week to this coursework.\n\n\nPreview Activities\nDue Tuesdays before the beginning of class (at 12pm)\nBefore class, you’ll complete Preview Activities which will guide you through your first contact with new concepts.\nThese will involve readings, videos, along with exercises to build your basic skill fluency. For example, you might be asked to read a chapter from the course textbook, watch a few videos discussing some concepts from the chapter, and then asked to complete some preliminary exercises intended to get you started thinking about how to apply the concepts from the chapter in the context of real data.\nYou’ll submit these exercises online, so that class time can be customized based on your understanding.\n\n\nPractice Activities\nDue Wednesdays at midnight\nDuring class, you’ll be working with your classmates to complete Practice Activities, which take your Preview Activities a step further. You will collaborate with your team to solve a puzzle, requiring that you accomplish a series of tasks, each of which applies the statistical computing concepts from that week. The purpose of in-class time is for you to be doing statistical computing, with me there to guide you if / when you get lost.\nThe course meetings on Tuesdays will have at least 1-hour dedicated to working on these practice activities, where you will work in your team. This allows for you to have the ability to ask me questions during the early stages of the activity.\n\n\nLab Assignments\nDue Sundays at midnight\nAfter class, you can reinforce the material through Lab Assignments, which are an opportunity to demonstrate mastery of the skills that you’ve learned. If you got something wrong, don’t worry! You’ll have a chance to try again.\nLabs will be submitted on Canvas. All revisions to Lab Assignments will be submitted to the same Canvas portal as the original assignment.\n\n\nChallenges\nDue Sundays at midnight\nEach Lab Assignment will have a Challenge Problem, which asks you to extend the skills you’ve learned in class in some way. Frequently, you have the choice of what you would like to learn. The only requirement is that you extend your thinking in some (measurable) way.\nAlthough you may discuss ideas with your classmates and seek help from the usual sources, all code and text absolutely must be your own.\nChallenges will be submitted on Canvas. All revisions to Challenges will be submitted to the same Canvas portal as the original assignment.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 0 - Course Set-up"
-    ]
-  },
-  {
-    "objectID": "weeks/week-0-discord.html#check-in-1.1-syllabus-quiz",
-    "href": "weeks/week-0-discord.html#check-in-1.1-syllabus-quiz",
-    "title": "Course Set-up and Structure",
-    "section": "3.2 ✅ Check-in 1.1: Syllabus Quiz",
-    "text": "3.2 ✅ Check-in 1.1: Syllabus Quiz\nQuestion 1: Where can you visit me for student hours?\n\nIn person\nZoom\nDiscord\nCanvas\n\nQuestion 2: In this course, Preview Activities are due by 12pm every ____. Practice Activities are due by 12pm every ____. Lab Assignments and Challenges are due by midnight every ____.\nQuestion 3: If you have a question about the course content, what is the best first step?\n\nPost your question on Discord in the appropriate channel\nSend Dr. Theobold an email\nGo to student hours on Tuesday or Thursday\nGoogle it\n\nQuestion 4: You are permitted to submit up to ____ assignments late.\nQuestion 5: If you need to submit an assignment late, you must do which of the following?\n\nemail Dr. Theobold to request a deadline extension\nsubmit a deadline extension request to the Google Form linked in the syllabus (and on Canvas)\nrequest an extension before the deadline has passed\ncomplete the assignment no later than 3-days after the original deadline\n\nQuestion 6: If you receive a “Growing” on a Lab Assignment problem, what should you do?\n\nread the comments and complete revisions on the problems receiving a “Growing”\ncomplete revisions on the problems receiving a “Growing”\nread the comments and complete revisions on the entire assignment\nnothing\n\nQuestion 7: For revisions on Lab Assignments and Challenges to be eligible for a regrade they need to be turned in with:\n\nyour new answers\nyour original answers\nreflections on how your learning progressed from your initial attempt\nnothing\n\nQuestion 8: You have finished the week’s Practice Assignment, and you want to know if you did it right. You ask your friend, and they say, “Oh, I got Luke Skywalker as my answer.” This is a violation of Academic Honesty policy.\nQuestion 9: You have been working on Lab 3 for what feels like forever and it seems like you are making little to no progress. You type the prompt into Google and “Wham!” the first result is a Stack Overflow page with a solution. You copy-and-paste the solution from the Stack Overflow page into your Challenge submission and do not reference that you used an outside source. You have violated the Academic Honesty policy.\nQuestion 10: You have been getting frustrated with finding an error in your code for hours and finally decide to paste your own generated code into ChatGPT and ask it to help you debug. ChatGPT immediately finds a missing parenthesis. You have violated the Academic Honesty policy.\nQuestion 11 You have been studying for another class, the deadline for Lab 2 is in an hour and you haven’t even started. Instead of using a “grace day”, you choose to copy the assignment into ChatGPT and ask it to write code to accomplish the tasks. ChatGPT spits out code with a style/format different from what we learned in class; you copy it into your Quarto code chunks and it runs so you render your assignment and turn it in anyway. You have violated the Academic Honesty policy.\nQuestion 12: Name one of the course learning targets that makes you excited.\nQuestion 13: Name one of the course learning targets that makes you nervous.\nQuestion 14: Why are you taking this class? What do you hope to learn?",
-    "crumbs": [
-      "Weekly materials",
-      "Week 0 - Course Set-up"
-    ]
-  },
-  {
-    "objectID": "weeks/week-0-discord.html#take-the-coursework-pages-as-seriously-as-you-take-in-person-lecture.",
-    "href": "weeks/week-0-discord.html#take-the-coursework-pages-as-seriously-as-you-take-in-person-lecture.",
-    "title": "Course Set-up and Structure",
-    "section": "5.1 Take the Coursework pages as seriously as you take in-person lecture.",
-    "text": "5.1 Take the Coursework pages as seriously as you take in-person lecture.\nFlipped classrooms puts you in the driver seat of mastering the course material. It can be tempting to cut corners to save yourself time, but this will likely result in you having a less complete understanding of the material.\nI encourage you to commit to giving the Coursework segments the same level of attention that you would ordinarily give to in-class lecture. Put the same effort into the Preview Activities that you would if you were sitting in a classroom. In return for your efforts, I promise to choose required videos and readings carefully, so that I do not waste your time.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 0 - Course Set-up"
-    ]
-  },
-  {
-    "objectID": "weeks/week-0-discord.html#google-is-your-friend.",
-    "href": "weeks/week-0-discord.html#google-is-your-friend.",
-    "title": "Course Set-up and Structure",
-    "section": "5.2 Google is your friend.",
-    "text": "5.2 Google is your friend.\nThe R community has an enormous arsenal of online learning resources. I’ve linked a few on the “Extra Resources” module in Canvas, but you can always find more!\n\nLearn to:\n\nGoogle for tutorials and examples\nUse ChatGPT to ask questions\nUse Stack Overflow for proposed solutions to people’s questions",
-    "crumbs": [
-      "Weekly materials",
-      "Week 0 - Course Set-up"
-    ]
-  },
-  {
-    "objectID": "weeks/week-0-discord.html#use-your-classmates-for-your-benefit",
-    "href": "weeks/week-0-discord.html#use-your-classmates-for-your-benefit",
-    "title": "Course Set-up and Structure",
-    "section": "5.3 Use your classmates for your benefit!",
-    "text": "5.3 Use your classmates for your benefit!\nThis course makes use of team-based learning. Every week you will work in a team with a peer. Over the course of the quarter you will work with many different people. Each of these people can be a resource for you and you can be a resource for them!\nI encourage you to establish study buddies and / or study groups early in the quarter, even if you don’t know anyone yet. The class Discord server is a great way to get started. I also hope you will be proactive about setting up your own video chat sessions, phone calls, Google Docs, group chats, etc. (How many different platforms can you talk about Stat 331 on? Facebook? Snapchat? Instagram? TikTok? Bumble???)\nI hope that we will all be purposeful and creative about finding ways to work as a team.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 0 - Course Set-up"
-    ]
+    "objectID": "labs/instructions/challenge-5-instructions.html#solve-the-crime",
+    "href": "labs/instructions/challenge-5-instructions.html#solve-the-crime",
+    "title": "Lab 5: Murder in SQL City",
+    "section": "3.2 Solve the Crime",
+    "text": "3.2 Solve the Crime\n\n3.2.1 Crime Scene Report\nDetective Wickham reaches out to you…\n\nA crime has taken place and I need your help! There was a murder in SQL City sometime on January 15, 2018. Could you retrieve the crime scene report from the police department’s database and follow the clues to find the person responsible for the murder?!\n\n\n# Code for looking at the relevant crime scene report.\n\nFollow the evidence to the person responsible for the murder, building a report as you go.\n\n\n\n\n\n\nCaution\n\n\n\nMake sure you check for interviews with any suspects!\n\n\n\n\n\n\n\n\nAnd the final suspect is…\n\n\n\nput the name of the person responsible for the murder here."
   },
   {
     "objectID": "labs/instructions/lab-1-instructions.html",
@@ -2931,7 +2931,7 @@
     "href": "group-activities/week-4/PA-4-tidyr.html#data-import",
     "title": "PA 4: Military Spending",
     "section": "Data Import",
-    "text": "Data Import\nFirst, you should notice that there are ten different sheets included in the dataset. We are interested in the sheet labeled “Share of Govt. spending”, which contains information about the share of all government spending that is allocated to the military.\nNext, you’ll notice that there are notes about the data in the first six rows. Ugh! Also notice that the last six rows are footnotes about the data. Ugh!\nRather than copying this one sheet into a new Excel file and deleting the first and last few rows, let’s learn something new about the read_xlsx() function!\nThe read_xlsx() function has several useful arguments:\n\nsheet: specify the name of the sheet that you want to use. The name must be passed in as a string (in quotations)!\nskip: specify the number of rows you want to skip before reading in the data.\nn_max: specify the maximum number of rows of data to read in.\n\n1. Modify the code below (potentially including the file path) to read the military expenditures data into your workspace.\n\nmilitary &lt;- read_xlsx(here::here(\"data\", \n                                 \"gov_spending_per_capita.xlsx\"), \n                      sheet = , \n                      skip  = , \n                      n_max = )\n\nError: `path` does not exist: '/Users/atheobol/Documents/Current Research/IUSE/groupworthy-data-science/data/gov_spending_per_capita.xlsx'\n\n\nI would highly recommend you open the dataset in Excel, so you can see the data layout! ## Data Cleaning\nIn addition to NAs, missing values were coded in two other ways.\n2. What are the two ways missing values were coded?\nHint: information in the top 6 rows of the excel sheet will help you answer this question.\n3. Now that we know how missing values were coded, let’s read in the data again. This time use the na argument to specify the values that need to be replaced with NAs.\nHint: You need to specify the values to replace with NAs as a character string (e.g., c(\"a\", \"b\"))\n\nmilitary &lt;- read_xlsx(here::here(\"data\", \n                                 \"gov_spending_per_capita.xlsx\"), \n                      sheet = , \n                      skip  = , \n                      n_max = , \n                      na = c()\n                      )\n\nError: `path` does not exist: '/Users/atheobol/Documents/Current Research/IUSE/groupworthy-data-science/data/gov_spending_per_capita.xlsx'\n\n\n\nIf you give the Country column a look, you’ll see there are names of continents and regions included. These names are only included to make it simpler to find countries, as they contain no data.\nLuckily for us, these region names were also stored in the “Regional totals” sheet. We can use the Region column of this dataset to filter out the names we don’t want.\nRun the code below to read in the “Regional totals” data.\n\ncont_region &lt;- read_xlsx(here::here(\"data\", \n                                    \"gov_spending_per_capita.xlsx\"), \n                      sheet = \"Regional totals\", \n                      skip = 14) |&gt; \n  filter(Region != \"World total (including Iraq)\", \n         Region != \"World total (excluding Iraq)\")\n\nError: `path` does not exist: '/Users/atheobol/Documents/Current Research/IUSE/groupworthy-data-science/data/gov_spending_per_capita.xlsx'\n\n\nA clever way to filter out observations you don’t want is with an anti_join(). This function will return all of the rows of one dataset without a match in another dataset.\n4. Use the anti_join() function to filter out the Country values we don’t want in the military_clean data. The by argument needs to be filled with the name(s) of the variables that the two datasets should be joined with.\nHint: To join by different variables in data1 and data2 you need to use by = join_by(a == b), which will match data1$a to data2$b.\n\nCanvas Question #1\n5. Complete the code below to figure out what four regions were NOT removed from the military_clean data set?\nHint: the regions that were not removed have missing values for every column except Country.\n\nmilitary_clean |&gt; \n  filter(if_all(.cols = , \n                .fns = )\n         )\n\nError in eval(expr, envir, enclos): object 'military_clean' not found"
+    "text": "Data Import\nFirst, you should notice that there are ten different sheets included in the dataset. We are interested in the sheet labeled “Share of Govt. spending”, which contains information about the share of all government spending that is allocated to the military.\nNext, you’ll notice that there are notes about the data in the first six rows. Ugh! Also notice that the last six rows are footnotes about the data. Ugh!\nRather than copying this one sheet into a new Excel file and deleting the first and last few rows, let’s learn something new about the read_xlsx() function!\nThe read_xlsx() function has several useful arguments:\n\nsheet: specify the name of the sheet that you want to use. The name must be passed in as a string (in quotations)!\nskip: specify the number of rows you want to skip before reading in the data.\nn_max: specify the maximum number of rows of data to read in.\n\n1. Modify the code below (potentially including the file path) to read the military expenditures data into your workspace.\n\nmilitary &lt;- read_xlsx(here::here(\"data\", \n                                 \"gov_spending_per_capita.xlsx\"), \n                      sheet = , \n                      skip  = , \n                      n_max = )\n\nError: `path` does not exist: '/Users/allisontheobold/Documents/Research/IUSE/groupworthy-data-science/data/gov_spending_per_capita.xlsx'\n\n\nI would highly recommend you open the dataset in Excel, so you can see the data layout! ## Data Cleaning\nIn addition to NAs, missing values were coded in two other ways.\n2. What are the two ways missing values were coded?\nHint: information in the top 6 rows of the excel sheet will help you answer this question.\n3. Now that we know how missing values were coded, let’s read in the data again. This time use the na argument to specify the values that need to be replaced with NAs.\nHint: You need to specify the values to replace with NAs as a character string (e.g., c(\"a\", \"b\"))\n\nmilitary &lt;- read_xlsx(here::here(\"data\", \n                                 \"gov_spending_per_capita.xlsx\"), \n                      sheet = , \n                      skip  = , \n                      n_max = , \n                      na = c()\n                      )\n\nError: `path` does not exist: '/Users/allisontheobold/Documents/Research/IUSE/groupworthy-data-science/data/gov_spending_per_capita.xlsx'\n\n\n\nIf you give the Country column a look, you’ll see there are names of continents and regions included. These names are only included to make it simpler to find countries, as they contain no data.\nLuckily for us, these region names were also stored in the “Regional totals” sheet. We can use the Region column of this dataset to filter out the names we don’t want.\nRun the code below to read in the “Regional totals” data.\n\ncont_region &lt;- read_xlsx(here::here(\"data\", \n                                    \"gov_spending_per_capita.xlsx\"), \n                      sheet = \"Regional totals\", \n                      skip = 14) |&gt; \n  filter(Region != \"World total (including Iraq)\", \n         Region != \"World total (excluding Iraq)\")\n\nError: `path` does not exist: '/Users/allisontheobold/Documents/Research/IUSE/groupworthy-data-science/data/gov_spending_per_capita.xlsx'\n\n\nA clever way to filter out observations you don’t want is with an anti_join(). This function will return all of the rows of one dataset without a match in another dataset.\n4. Use the anti_join() function to filter out the Country values we don’t want in the military_clean data. The by argument needs to be filled with the name(s) of the variables that the two datasets should be joined with.\nHint: To join by different variables in data1 and data2 you need to use by = join_by(a == b), which will match data1$a to data2$b.\n\nCanvas Question #1\n5. Complete the code below to figure out what four regions were NOT removed from the military_clean data set?\nHint: the regions that were not removed have missing values for every column except Country.\n\nmilitary_clean |&gt; \n  filter(if_all(.cols = , \n                .fns = )\n         )\n\nError in eval(expr, envir, enclos): object 'military_clean' not found"
   },
   {
     "objectID": "group-activities/week-4/PA-4-tidyr.html#data-organization",
@@ -3538,7 +3538,7 @@
     "href": "slides/week-5/week-5-dates.html#thursday-october-24",
     "title": "Using lubridate to Work with Dates",
     "section": "Thursday, October 24",
-    "text": "Thursday, October 24\nToday we will…\n\nMidterm Portfolio\n\nWhat to Expect\nHow to Get Started\n\nNew Material\n\nWorking with Date & Time Variables\n\nPA 5.2: Jewel Heist"
+    "text": "Thursday, October 24\nToday we will…\n\nReminder About Lab 3 / Challenge 3 Revisions\nDebrief Lab 4\n\nLab 4 Peer Code Review\n\nMidterm Portfolio\n\nWhat to Expect\nHow to Get Started\n\nNew Material\n\nWorking with Date & Time Variables\n\nPA 5.2: Jewel Heist"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#what-to-expect",
@@ -3552,7 +3552,7 @@
     "href": "slides/week-5/week-5-dates.html#getting-started",
     "title": "Using lubridate to Work with Dates",
     "section": "Getting Started",
-    "text": "Getting Started\n\n\nFollow these directions to fork a copy of the Final Portfolio repository.\nClone the repository into RStudio.\nOpen the reflection_template.qmd file and give it a read!\nStart finding exerpts of code you wrote for the Labs or Challenges that fit each learning target."
+    "text": "Getting Started\n\n\nFollow these directions to fork a copy of the Final Portfolio repository.\nClone the repository into RStudio.\nOpen the reflection_template.qmd file and give it a read!\nStart finding excerpts of code you wrote for the Labs or Challenges that fit each learning target."
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#why-are-dates-and-times-tricky",
@@ -3622,14 +3622,14 @@
     "href": "slides/week-5/week-5-dates.html#how-old-am-i",
     "title": "Using lubridate to Work with Dates",
     "section": "How old am I?",
-    "text": "How old am I?\n\ntoday() - mdy(01141989)\n\nTime difference of 13065 days\n\n\n\n\nHow long did it take me to type this slide?\n\nbegin &lt;- mdy_hms(\"10/21/2024 20:40:34\")\nfinish &lt;- mdy_hms(\"10/21/2024 20:43:11\")\n\nfinish - begin\n\nTime difference of 2.616667 mins"
+    "text": "How old am I?\n\ntoday() - mdy(01141989)\n\nTime difference of 13067 days\n\n\n\n\nHow long did it take me to type this slide?\n\nbegin &lt;- mdy_hms(\"10/21/2024 20:40:34\")\nfinish &lt;- mdy_hms(\"10/21/2024 20:43:11\")\n\nfinish - begin\n\nTime difference of 2.616667 mins"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#durations-and-periods",
     "href": "slides/week-5/week-5-dates.html#durations-and-periods",
     "title": "Using lubridate to Work with Dates",
     "section": "Durations and Periods",
-    "text": "Durations and Periods\n\n\nDurations will always give the time span in an exact number of seconds.\n\nas.duration(\n  today() - mdy(01141989)\n            )\n\n[1] \"1128816000s (~35.77 years)\"\n\n\n\n\n\n\nPeriods will give the time span in more approximate, but human readable times.\n\nas.period(\n  today() - mdy(01141989)\n  )\n\n[1] \"13065d 0H 0M 0S\""
+    "text": "Durations and Periods\n\n\nDurations will always give the time span in an exact number of seconds.\n\nas.duration(\n  today() - mdy(01141989)\n            )\n\n[1] \"1128988800s (~35.78 years)\"\n\n\n\n\n\n\nPeriods will give the time span in more approximate, but human readable times.\n\nas.period(\n  today() - mdy(01141989)\n  )\n\n[1] \"13067d 0H 0M 0S\""
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#durations-and-periods-1",
@@ -3664,42 +3664,35 @@
     "href": "slides/week-5/week-5-dates.html#this-activity-will-require-knowledge-of",
     "title": "Using lubridate to Work with Dates",
     "section": "This activity will require knowledge of:",
-    "text": "This activity will require knowledge of:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
+    "text": "This activity will require knowledge of:\n\n\nConverting time zones\nExtracting components of a date\nFiltering based on date components\nMaking intervals of time\nFiltering values that fall into an interval\nFinding the duration between two dates\nModulus division\n\n\nNone of us have all these abilities. Each of us has some of these abilities."
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#lubridate-resources",
     "href": "slides/week-5/week-5-dates.html#lubridate-resources",
     "title": "Using lubridate to Work with Dates",
     "section": "lubridate Resources",
-    "text": "lubridate Resources\n\n\nEvery group should have a lubridate cheatsheet!\n\nOn the Front:"
+    "text": "lubridate Resources\n\n\nEvery group should have a lubridate cheatsheet!\n\nOn the Front:\n\nMiddle Column – functions related to “getting components” of dates\nBottom Right – functions related to time zones\n\n\n\n\nOn the Back:\n\nLeft Column – functions related to adding / subtracting “periods” to / from dates\nRight Column – functions related to creating and using intervals of time"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#task-card",
     "href": "slides/week-5/week-5-dates.html#task-card",
     "title": "Using lubridate to Work with Dates",
     "section": "Task Card",
-    "text": "Task Card\nEvery group should have a task card!\n\n\n\nOn the Front\n\nthe expectations of each role\nthe norms of collaborating\n\n\n\n\n\nOn the Back"
-  },
-  {
-    "objectID": "slides/week-5/week-5-dates.html#pair-programming-expectations",
-    "href": "slides/week-5/week-5-dates.html#pair-programming-expectations",
-    "title": "Using lubridate to Work with Dates",
-    "section": "Pair Programming Expectations",
-    "text": "Pair Programming Expectations\n\n\nDeveloper\n\n\nReads prompt and ensures Coder understands what is being asked.\nTypes the code specified by the Coder into the Quarto document.\nRuns the code provided by the Coder.\nWorks with Coder to debug the code.\nEvaluates the output.\n\nWorks with Coder to write code comments.\n\n\n\n\n\n\nCoder\n\n\nReads out instructions or prompts\nDirects the Developer what to type.\nTalks with Developer about their ideas.\nManages resources (e.g., cheatsheets, textbook, slides).\nWorks with Developer to debug the code.\nWorks with Developer to write code comments."
+    "text": "Task Card\nEvery group should have a task card!\n\n\n\nOn the Front\n\nthe expectations of each role\nthe norms of collaborating\n\n\n\n\n\nOn the Back\n\n\nlubridate functions for different tasks you may encounter"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#getting-started-1",
     "href": "slides/week-5/week-5-dates.html#getting-started-1",
     "title": "Using lubridate to Work with Dates",
     "section": "Getting Started",
-    "text": "Getting Started\n\nFirst, both of you will do the following:\n\nJoin your Practice Activity workspace in Posit Cloud\nLog-in to Posit Cloud\nOpen the PA 6: Jewel Heist project\nOpen the PA-6-lubridate.qmd file\n\n\n\n\nThen, the partner who got the most sleep starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
+    "text": "Getting Started\nThe partner who got the most sleep starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#submission",
     "href": "slides/week-5/week-5-dates.html#submission",
     "title": "Using lubridate to Work with Dates",
     "section": "Submission",
-    "text": "Submission\n\nSubmit the name of the thief to the Canvas Quiz.\n\n\nEach person will input the full name of the theif into the PA6 quiz.\nThe person who last occupied the role of Developer will download and submitthe PA-6.html file for the group.\n\nOnly one submission per group!"
+    "text": "Submission\n\nSubmit the name of the thief to the Canvas Quiz.\n\n\nEach person will input the full name of the thief into the PA 5.2 quiz.\nThe person who last occupied the role of Developer will download and submit the PA-5-dates.html file for the group.\n\nOnly one submission per group!"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#to-do",
@@ -4295,5 +4288,33 @@
     "title": "Using stringr to Work with Strings",
     "section": "To do…",
     "text": "To do…\n\nPA 5.1: Scrambled Message\n\nDue Thursday, October 24 at 12:10pm\n\nCheck-in 5.2: Functions from lubridate\n\nDue Thursday, October 24 at 12:10pm"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#common-mishaps",
+    "href": "slides/week-5/week-5-dates.html#common-mishaps",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Common Mishaps",
+    "text": "Common Mishaps\n\n\n\nQ1: Who collected these data? When were the data collected?\nQ4: Column titles of 2008 and 2018 are not descriptive!\n\nCreating column names that describe the values stored in those columns!\nThe names_prefix = argument to pivot_wider() can help you make better column names!\nDVS-6: I can create tables which make my summaries clear to the reader\n\nQ4: Unless you specify .groups = \"drop\" within summarize() your table still is grouped!\n\ngroup_by() + summarize() only drops the first group.\nIf you have two variables inside group_by(), then the data will still be grouped by the second variable!\n\nQ7: The data description contains important information!\n\nmc_toddler – Aggregated weekly, full-time median price charged for Center-based Care for toddlers.\nmhi_2018 – Median household income expressed in 2018 dollars."
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#other-big-picture-code-feedback",
+    "href": "slides/week-5/week-5-dates.html#other-big-picture-code-feedback",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Other “Big Picture” Code Feedback",
+    "text": "Other “Big Picture” Code Feedback\n\n\nI strongly recommend against nested functions, as they are difficult for people to understand what your code is doing. Having two lines is not less efficient and is more readable.\n\n\nmutate(age_group = fct_relevel(fct_recode(age_group,\n                                          \"Infant\" = \"mc_infant\",\n                                          \"Toddler\" = \"mc_toddler\",\n                                          \"Preschool\" = \"mc_preschool\"),\n                                \"Infant\",\n                                \"Toddler\",\n                                \"Preschool\"))\n\n\n\n\n\n\nCan you do this entire process in one pipeline?\n\n\nca_counties &lt;- counties |&gt;\n  filter(state_name == \"California\")\n\nca_childcare &lt;- childcare_costs |&gt;\n  inner_join(ca_counties)"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#saving-objects-that-arent-worth-saving",
+    "href": "slides/week-5/week-5-dates.html#saving-objects-that-arent-worth-saving",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Saving Objects That Aren’t Worth Saving",
+    "text": "Saving Objects That Aren’t Worth Saving\n\n\nWe should only save objects that we need to use later!\n\n\nlowest_child_care_price_2018 &lt;- ca_childcare |&gt;\n  filter(study_year == 2018) |&gt;\n  group_by(region) |&gt;   \n  summarise(median_infant_price = median(mc_infant)) |&gt; \n  slice_min(order_by = median_infant_price)\n\nlowest_child_care_price_2018"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#recreating-the-plot",
+    "href": "slides/week-5/week-5-dates.html#recreating-the-plot",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Recreating the Plot",
+    "text": "Recreating the Plot\n\nDVS-2: I use plot modifications to make my visualizations clearer to the reader\n\n\n\nFacets ordered based on developmental stage not alphabetically\nOrdering colors in the legend so they appear in the same order as the lines in the plot.\n\n\n\n\nDVS-3: I show creativity in my visualizations\n\n\n\nExploring different color themes\n\nPersonally, I like the \"Accent\" palette from the RColorBrewer package, but you might like others!\nGetting 10 colors is hard! I would recommend looking into the colorRampPalette() function to get more colors.\n\n\n\n\n\n\n\nExploring different plot themes\n\nPersonally, I like theme_bw(), but you might like others!"
   }
 ]
