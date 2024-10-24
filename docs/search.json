@@ -3622,14 +3622,14 @@
     "href": "slides/week-5/week-5-dates.html#how-old-am-i",
     "title": "Using lubridate to Work with Dates",
     "section": "How old am I?",
-    "text": "How old am I?\n\ntoday() - mdy(01141989)\n\nTime difference of 13066 days\n\n\n\n\nHow long did it take me to type this slide?\n\nbegin &lt;- mdy_hms(\"10/21/2024 20:40:34\")\nfinish &lt;- mdy_hms(\"10/21/2024 20:43:11\")\n\nfinish - begin\n\nTime difference of 2.616667 mins"
+    "text": "How old am I?\n\ntoday() - mdy(01141989)\n\nTime difference of 13067 days\n\n\n\n\nHow long did it take me to type this slide?\n\nbegin &lt;- mdy_hms(\"10/21/2024 20:40:34\")\nfinish &lt;- mdy_hms(\"10/21/2024 20:43:11\")\n\nfinish - begin\n\nTime difference of 2.616667 mins"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#durations-and-periods",
     "href": "slides/week-5/week-5-dates.html#durations-and-periods",
     "title": "Using lubridate to Work with Dates",
     "section": "Durations and Periods",
-    "text": "Durations and Periods\n\n\nDurations will always give the time span in an exact number of seconds.\n\nas.duration(\n  today() - mdy(01141989)\n            )\n\n[1] \"1128902400s (~35.77 years)\"\n\n\n\n\n\n\nPeriods will give the time span in more approximate, but human readable times.\n\nas.period(\n  today() - mdy(01141989)\n  )\n\n[1] \"13066d 0H 0M 0S\""
+    "text": "Durations and Periods\n\n\nDurations will always give the time span in an exact number of seconds.\n\nas.duration(\n  today() - mdy(01141989)\n            )\n\n[1] \"1128988800s (~35.78 years)\"\n\n\n\n\n\n\nPeriods will give the time span in more approximate, but human readable times.\n\nas.period(\n  today() - mdy(01141989)\n  )\n\n[1] \"13067d 0H 0M 0S\""
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#durations-and-periods-1",
@@ -4309,5 +4309,12 @@
     "title": "Using lubridate to Work with Dates",
     "section": "Saving Objects That Aren’t Worth Saving",
     "text": "Saving Objects That Aren’t Worth Saving\n\n\nWe should only save objects that we need to use later!\n\n\nlowest_child_care_price_2018 &lt;- ca_childcare |&gt;\n  filter(study_year == 2018) |&gt;\n  group_by(region) |&gt;   \n  summarise(median_infant_price = median(mc_infant)) |&gt; \n  slice_min(order_by = median_infant_price)\n\nlowest_child_care_price_2018"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#recreating-the-plot",
+    "href": "slides/week-5/week-5-dates.html#recreating-the-plot",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Recreating the Plot",
+    "text": "Recreating the Plot\n\nDVS-2: I use plot modifications to make my visualizations clearer to the reader\n\n\n\nFacets ordered based on developmental stage not alphabetically\nOrdering colors in the legend so they appear in the same order as the lines in the plot.\n\n\n\n\nDVS-3: I show creativity in my visualizations\n\n\n\nExploring different color themes\n\nPersonally, I like the \"Accent\" palette from the RColorBrewer package, but you might like others!\nGetting 10 colors is hard! I would recommend looking into the colorRampPalette() function to get more colors.\n\n\n\n\n\n\n\nExploring different plot themes\n\nPersonally, I like theme_bw(), but you might like others!"
   }
 ]

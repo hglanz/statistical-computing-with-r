@@ -64,6 +64,36 @@ still is grouped!
 :::
 :::
 
+## Recreating the Plot
+
+> DVS-2: I use plot modifications to make my visualizations clearer to the
+> reader
+
+::: {.small}
+- Facets ordered based on developmental stage **not** alphabetically
+- Ordering colors in the legend so they appear in the same order as the lines
+in the plot. 
+:::
+
+. . .
+
+> DVS-3: I show creativity in my visualizations
+
+::: {.small}
+- Exploring different color themes
+    + Personally, I like the `"Accent"` palette from the RColorBrewer package, 
+    but you might like others! 
+    + Getting 10 colors is hard! I would recommend looking into the 
+    `colorRampPalette()` function to get more colors. 
+:::
+
+. . .
+
+::: {.small}
+- Exploring different plot themes
+    + Personally, I like `theme_bw()`, but you might like others! 
+:::
+
 ## Other "Big Picture" Code Feedback
 
 ::: {.small}
