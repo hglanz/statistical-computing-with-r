@@ -20,6 +20,7 @@ library(palmerpenguins)
 
 Today we will...
 
+-   Reminder About Lab 3 / Challenge 3 Revisions
 -   Debrief Lab 4
     + Lab 4 Peer Code Review
 -   Midterm Portfolio
@@ -29,7 +30,108 @@ Today we will...
     -   Working with Date & Time Variables
 -   [PA 5.2: Jewel Heist](../../group-activities/week-5/PA-5-dates.qmd)    
 
+# Lab 3 / Challenge 3 Revisions
+
+# Lab 3 / Challenge 3 Revisions
+
+> Revisions are due by Friday
+
+. . .
+
+Any problem receiving a "Growing" can be revised and submitted for additional
+feedback
+
 # Lab 4
+
+## Common Mishaps
+
+::: {.incremental}
+::: {.small}
+- **Q1**: Who collected these data? When were the data collected?
+- **Q4**: Column titles of `2008` and `2018` are not descriptive! 
+    + Creating column names that **describe** the values stored in those columns!
+    + The `names_prefix = ` argument to `pivot_wider()` can help you make better column names! 
+    + DVS-6: I can create tables which make my summaries clear to the reader
+- **Q4**: Unless you specify `.groups = "drop"` within `summarize()` your table 
+still is grouped! 
+    + `group_by()` + `summarize()` only drops the first group. 
+    + If you have two variables inside `group_by()`, then the data will still 
+    be grouped by the second variable!
+- **Q7**: The data description contains important information! 
+    + `mc_toddler` -- Aggregated weekly, full-time **median** price charged for
+    Center-based Care for toddlers.
+    + `mhi_2018` -- **Median** household income expressed in 2018 dollars.
+:::
+:::
+
+## Other "Big Picture" Code Feedback
+
+::: {.small}
+> I strongly recommend against nested functions, as they are difficult for
+people to understand what your code is doing. Having two lines is not less
+efficient and is more readable. 
+
+```{r}
+#| eval: false
+#| echo: true
+#| label: nested-functions-from-student-code
+#| code-line-numbers: "|1"
+
+mutate(age_group = fct_relevel(fct_recode(age_group,
+                                          "Infant" = "mc_infant",
+                                          "Toddler" = "mc_toddler",
+                                          "Preschool" = "mc_preschool"),
+                                "Infant",
+                                "Toddler",
+                                "Preschool"))
+```
+::: 
+
+</br>
+
+. . .
+
+::: {.small}
+> Can you do this entire process in *one* pipeline?
+
+```{r}
+#| eval: false
+#| echo: true
+#| label: multiple-lines-instead-of-one-from-student-code
+#| code-line-numbers: false
+
+ca_counties <- counties |>
+  filter(state_name == "California")
+
+ca_childcare <- childcare_costs |>
+  inner_join(ca_counties)
+```
+:::
+
+
+## Saving Objects That Aren't Worth Saving
+
+::: {.small}
+> We should only save objects that we need to use later! 
+
+```{r}
+#| eval: false
+#| echo: true
+#| label: intermediate-object-from-student-code
+#| code-line-numbers: "|7"
+
+lowest_child_care_price_2018 <- ca_childcare |>
+  filter(study_year == 2018) |>
+  group_by(region) |>   
+  summarise(median_infant_price = median(mc_infant)) |> 
+  slice_min(order_by = median_infant_price)
+
+lowest_child_care_price_2018
+```
+
+
+:::
+
 
 # Don't forget to complete your Lab 4 code review!
 
@@ -519,27 +621,18 @@ tz(x)
 
 ## This activity will require knowledge of:
 
-::: columns
-::: {.column width="60%"}
 ::: {.small}
-<!-- - indexing vectors -->
-<!-- - `stringr` functions for previewing string contents -->
-<!-- - regular expressions for locating patterns -->
-<!-- - `stringr` functions for removing whitespace -->
-<!-- - `stringr` functions for truncating strings  -->
-<!-- - `stringr` functions for replacing patterns -->
-<!-- - `stringr` functions for combining multiple strings  -->
-:::
-:::
-
-::: {.column width="5%"}
+- Converting time zones
+- Extracting components of a date
+- Filtering based on date components
+- Making intervals of time
+- Filtering values that fall into an interval
+- Finding the duration between two dates
+- Modulus division
 :::
 
-::: {.column width="35%"}
 [**None of us have all these abilities. Each of us has some of these abilities.**]{.midi}
 
-:::
-:::
 
 ## lubridate Resources
 
@@ -550,15 +643,17 @@ Every group should have a **lubridate** cheatsheet!
 ::: {.small}
 **On the Front**: 
 
-- The middle column has functions related to "getting components" of dates
-- The bottom right corner has functions related to time zones
+- **Middle Column** -- functions related to "getting components" of dates
+- **Bottom Right** -- functions related to time zones
+:::
 
 ::: {.fragment}
+::: {.small}
 **On the Back**: 
 
-- The left column has functions related to adding / subtracting "periods" to / 
+- **Left Column** -- functions related to adding / subtracting "periods" to / 
 from dates
-- The right column has functions related to creating and using intervals of time
+- **Right Column** -- functions related to creating and using intervals of time
 :::
 :::
 :::
@@ -618,12 +713,10 @@ and listening to instructions from the Coder)!
 
 > Submit the name of the thief to the Canvas Quiz.
 
-- Each person will input the full name of the theif into the PA 5.2 quiz. 
+- Each person will input the full name of the thief into the PA 5.2 quiz. 
 - The person who last occupied the role of Developer will download and submit 
 the `PA-5-dates.html` file for the group.
   + Only one submission per group!
-
-# Exit Ticket
 
 # [Lab 5: Murder in SQL City](../../labs/instructions/challenge-5-instructions.qmd)
 
