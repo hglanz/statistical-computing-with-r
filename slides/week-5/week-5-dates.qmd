@@ -767,5 +767,3 @@ the `PA-5-dates.html` file for the group.
 
 -   **Lab 5: Murder in SQL City**
     + due Sunday, October 27 at 11:59pm
-- **Introductions to Writing Functions in R**
-   + **Check-ins 6.1** due Tuesday, October 29, at 12:10pm
