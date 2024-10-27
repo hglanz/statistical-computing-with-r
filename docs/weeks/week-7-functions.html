@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Computing in R – Introduction to Statistical Computing in R</title>
+<title>Writing User-Defined Functions in R – Introduction to Statistical Computing in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./course-materials/computing-access.html" rel="next">
-<link href="./course-materials/course-team.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -82,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-materials/course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Writing User-Defined Functions in R</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -96,8 +128,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/r-flowers.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/r-flowers.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/groupworthy-data-science" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
@@ -114,52 +146,52 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-team.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course-team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Teaching team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/computing-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course_resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course_resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Resources</span></a>
   </div>
 </li>
@@ -176,61 +208,61 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-0-discord.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-0-discord.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 0 - Course Set-up</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-1-r-rstudio.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-1-r-rstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1, Part 1 - R &amp; RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-1-quarto.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-1-quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1, Part 2 - Quarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-1-version-control.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-1-version-control.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1, Part 3 - Version Control</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-2-ggplot.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-2-ggplot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2, Part 1 - ggplot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-2-projects-data-import.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-2-projects-data-import.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2, Part 2 - Data Import</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-3-dplyr.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-3-dplyr.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 3 - dplyr</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-4-reshaping-joining.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-4-reshaping-joining.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 4, Part 1 - Data Transformation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-4-factors.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-4-factors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 4, Part 2 - Factors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-5-strings-dates.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-5-strings-dates.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 5 - Strings &amp; Dates</span></a>
   </div>
 </li>
@@ -247,37 +279,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/lab-1-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/instructions/lab-1-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1 &amp; Challenge 1 Instructions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/lab-2-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/instructions/lab-2-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 2 Instructions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/challenge-2-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/instructions/challenge-2-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Challenge 2 Instructions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/lab-3-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/instructions/lab-3-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 3 Instructions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/challenge-3-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/instructions/challenge-3-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Challenge 3 Instructions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/lab-4-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/instructions/lab-4-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 4 &amp; Challenge 4 Instructions</span></a>
   </div>
 </li>
@@ -294,7 +326,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/exemplars/student-work.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/exemplars/student-work.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exemplary Student Work</span></a>
   </div>
 </li>
@@ -311,7 +343,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./portfolio/portfolio-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../portfolio/portfolio-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Portfolio Instructions</span></a>
   </div>
 </li>
@@ -322,15 +354,34 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-1-why-write-a-function" id="toc-part-1-why-write-a-function" class="nav-link active" data-scroll-target="#part-1-why-write-a-function"><span class="header-section-number">1</span> Part 1: Why Write a Function?</a></li>
+  <li><a href="#writing-functions" id="toc-writing-functions" class="nav-link" data-scroll-target="#writing-functions"><span class="header-section-number">2</span> Writing Functions</a>
+  <ul class="collapse">
+  <li><a href="#preview-activity-7" id="toc-preview-activity-7" class="nav-link" data-scroll-target="#preview-activity-7"><span class="header-section-number">2.1</span> ✅ <strong>Preview Activity 7</strong></a>
+  <ul class="collapse">
+  <li><a href="#part-1-writing-simple-functions" id="toc-part-1-writing-simple-functions" class="nav-link" data-scroll-target="#part-1-writing-simple-functions">Part 1 – Writing Simple Functions</a></li>
+  <li><a href="#part-2-predicting-function-behavior" id="toc-part-2-predicting-function-behavior" class="nav-link" data-scroll-target="#part-2-predicting-function-behavior">Part 2 – Predicting Function Behavior</a></li>
+  <li><a href="#part-3-global-environments" id="toc-part-3-global-environments" class="nav-link" data-scroll-target="#part-3-global-environments">Part 3 – Global Environments</a></li>
+  </ul></li>
+  <li><a href="#styling-functions" id="toc-styling-functions" class="nav-link" data-scroll-target="#styling-functions"><span class="header-section-number">2.2</span> Styling Functions</a>
+  <ul class="collapse">
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/groupworthy-data-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-materials/course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Statistical Computing in R</h1>
+<h1 class="title">Writing User-Defined Functions in R</h1>
 </div>
 
 
@@ -347,343 +398,186 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.</p>
-<!-- TODO: Switch to spreadsheet for content (like Mine and Maria do) -->
-<table class="caption-top table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 12%">
-<col style="width: 23%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Date</th>
-<th>Topic &amp; Preview Activities</th>
-<th>Lecture Slides</th>
-<th>Practice Activity</th>
-<th>Lab &amp; Challenge</th>
-<th>Portfolio</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>Mon, 9/23</td>
-<td><a href="./weeks/week-0-discord.html" title="Course Set-up Instructions">Course Set-up</a></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>Tues, 9/24</td>
-<td><p><a href="./weeks/week-1-r-rstudio.html">Intro to R &amp; RStudio</a></p>
-<p><a href="./weeks/week-1-quarto.html">Intro to Quarto</a></p></td>
-<td><a href="./slides/week-1/week-1-intro-R.html" title="Welcome to STAT 331 &amp; Intro to R">Welcome to STAT 331 &amp; Intro to R</a></td>
-<td><p><a href="./group-activities/week-1/broken-circles.html" title="Broken Circles Group Warm-up">Broken Circles Group Warm-up</a></p>
-<p><a href="./group-activities/pair-programming-norms.html" title="Creating Pair Programming Norms">Creating Pair Programming Norms</a></p>
-<p><a href="./group-activities/week-1/data-cleaning-viz-steps.html" title="Data Cleaning, Visualization Puzzle">Data Cleaning, Visualization Puzzle</a></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 9/26</td>
-<td><a href="./weeks/week-1-version-control.html">Intro to Version Control</a></td>
-<td><a href="./slides/week-1/week-1-intro-version-control.html" title="Intro to Quarto &amp; Version Control">Intro to Quarto &amp; Version Control</a></td>
-<td></td>
-<td><p><a href="./labs/instructions/lab-1-instructions.html">Lab 1 &amp; Challenge 1 Instructions</a></p>
-<p><a href="https://classroom.github.com/a/j-bckA7U" title="Lab 1 &amp; Challenge 1 Assignment on GitHub Classroom">Link to Assignment on GitHub Classroom</a> (due 9/29)</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Tuesday, 10/1</td>
-<td><p><a href="./weeks/week-2-ggplot.html" title="Data Visualization with ggplot2">Data Visualization with ggplot2</a></p>
-<p><a href="./weeks/week-2-projects-data-import.html" title="Data Import &amp; R Projects">Data Import &amp; R Projects</a></p></td>
-<td><a href="./slides/week-2/week-2-ggplot.html" title="Basics of Graphics">Basics of Graphics</a></td>
-<td>Look for email from Posit Cloud to access PA2</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 10/3</td>
-<td></td>
-<td><a href="./slides/week-2/week-2-import.html" title="Tidy Data, Importing Data &amp; More Advanced Graphics">Tidy Data, Importing Data &amp; More Advanced Graphics</a></td>
-<td>PA 2 Due by 12pm</td>
-<td><p><a href="./labs/instructions/lab-2-instructions.html" title="Lab 2 Instructions">Lab 2 Instructions</a></p>
-<p><a href="./labs/instructions/challenge-2-instructions.html" title="Challenge 2 Instructions">Challenge 2 Instructions</a></p>
-<p><a href="https://classroom.github.com/a/43CxhKej" title="Lab 2 &amp; Challenge 2 Assignment on GitHub Classroom">Link to Assignment on GitHub Classroom</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 10/6</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Lab 2 &amp; Challenge 2 Due by 11:59pm</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Tues, 10/8</td>
-<td><a href="./weeks/week-3-dplyr.html" title="Data Wrangling with dplyr">Data Wrangling with dplyr</a></td>
-<td><a href="./slides/week-3/week-3-dplyr-pt1.html" title="Data Wrangling with dplyr">Data Wrangling with dplyr</a></td>
-<td>Look for email from Posit Cloud to access PA3</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 10/10</td>
-<td></td>
-<td><a href="./slides/week-3/week-3-dplyr-pt2.html" title="Extending Data Wrangling Verbs">Extending Data Wrangling Verbs</a></td>
-<td>PA3 Due by 12pm</td>
-<td><p><a href="./labs/instructions/lab-3-instructions.html" title="Lab 3 Instructions">Lab 3 Instructions</a></p>
-<p><a href="./labs/instructions/challenge-3-instructions.html" title="Challenge 3 Instructions">Challenge 3 Instructions</a></p>
-<p><a href="https://classroom.github.com/a/qwGgpcu4" title="Link to Assignment on GitHub Classroom">Link to Assignment on GitHub Classroom</a></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sunday, 10/13</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 3 &amp; Challenge 3 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 2 Peer Code Review Due (Guidelines)">Lab 2 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Tues, 10/15</td>
-<td><a href="./weeks/week-4-reshaping-joining.html" title="Data Joins and Transformations with tidyr">Data Joins and Transformations with tidyr</a></td>
-<td><a href="./slides/week-4/week-4-joins-1.html" title="Data Joins + Pivots">Data Joins + Pivots</a></td>
-<td>Look for email from Posit Cloud to access PA4</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 10/17</td>
-<td><a href="./weeks/week-4-factors.html" title="Working with Categorical Variables">Working with Categorical Variables</a></td>
-<td><a href="./slides/week-4/week-4-joins-2.html" title="Extending Joins, Factors, Clean Variable Names">Extending Joins, Factors, Clean Variable Names</a></td>
-<td>PA4 Due by 12pm</td>
-<td><p><a href="./labs/instructions/lab-4-instructions.html" title="Lab 4 Instructions">Lab 4 Instructions</a></p>
-<p><a href="https://classroom.github.com/a/o-PfOckY" title="Link to Assignmenton GitHub Classroom Repository">Link to Assignmenton GitHub Classroom Repository</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 10/20</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 4 &amp; Challenge 4 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 3 Peer Code Review Due (Guidelines)">Lab 3 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Tues, 10/22</td>
-<td><a href="./weeks/week-5-strings-dates.html" title="Working with Strings">Working with Strings</a></td>
-<td><a href="./slides/week-5/week-5-strings.html" title="Using stringr to Work with Strings">Using <code>stringr</code> to Work with Strings</a></td>
-<td>Look for email from Posit Cloud to access PA5</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 10/24</td>
-<td><a href="./weeks/week-5-strings-dates.html" title="Working with Dates">Working with Dates</a></td>
-<td><a href="./slides/week-5/week-5-dates.html" title="Using lubridate to Work with Dates">Using <code>lubridate</code> to Work with Dates</a></td>
-<td>PA5 Due by 12pm</td>
-<td><p><a href="./labs/instructions/challenge-5-instructions.html" title="Lab 5 Instructions">Lab 5 Instructions</a></p>
-<p><a href="https://github.com/Statistical-Computing-with-R/lab-5" title="Link to GitHub Repository">Link to GitHub Repository</a></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sun, 10/27</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 5 &amp; Challenge 5 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 4 Peer Code Review Due (Guidelines)">Lab 4 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Tues, 10/29</td>
-<td>Portfolio Week!</td>
-<td>Starting Your Portfolio</td>
-<td></td>
-<td></td>
-<td><a href="./portfolio/midterm-portfolio-targets.html" title="Midterm Portfolio Targets &amp; Grade Expectations">Midterm Portfolio Targets &amp; Grade Expectations</a></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 10/31</td>
-<td>Portfolio Week!</td>
-<td>Finishing Your Portfolio</td>
-<td></td>
-<td></td>
-<td><a href="./portfolio/portfolio-instructions.html" title="Portfolio Instructions">Portfolio Instructions</a></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 11/3</td>
-<td></td>
-<td></td>
-<td></td>
-<td><a href="./code-review/code-review-guidelines.html" title="Lab 5 Peer Code Review Due (Guidelines)">Lab 5 Peer Code Review Due (Guidelines)</a></td>
-<td>Midterm Portfolio Due</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>Tues, 11/5</td>
-<td><a href="./weeks/week-7-vector-functions.html" title="Writing your own simple (vector) functions">Writing your own simple (vector) functions</a></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 11/7</td>
-<td>Writing your own dataframe functions</td>
-<td></td>
-<td></td>
-<td><p>Lab 7 Instructions</p>
-<p>Challenge 7 Instructions</p>
-<p>Link to GitHub Repository</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sun, 11/10</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Lab 7 &amp; Challenge 7 Due by 11:59pm</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Tues, 11/12</td>
-<td>Introduction to Iteration</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 11/14</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 8 Instructions</p>
-<p>Challenge 8 Instructions</p>
-<p>Link to GitHub Repository</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 11/17</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 8 &amp; Challenge 8 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 7 Peer Code Review Due (Guidelines)">Lab 7 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>Tues, 11/19</td>
-<td>Webscraping</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 11/21</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 9 Instructions</p>
-<p>Challenge 9 Instructions</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sun, 11/24</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 9 &amp; Challenge 9 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 8 Peer Code Review Due (Guidelines)">Lab 8 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td>Fall Break</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td>Tues, 12/3</td>
-<td>Distributions &amp; Simulation</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 12/5</td>
-<td>Portfolio Party</td>
-<td></td>
-<td></td>
-<td><a href="./code-review/code-review-guidelines.html" title="Lab 9 Peer Code Review Due (Guidelines)">Lab 9 Peer Code Review Due (Guidelines)</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sat, 12/7</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>Final Portfolio Due</td>
-</tr>
-<tr class="even">
-<td>Finals Week</td>
-<td>Mon, 12/9, 10:10am - 1pm</td>
-<td>10-minute Portfolio Conferences</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>This week you will learn to:</p>
+<ul>
+<li><p>Write your own functions in R</p></li>
+<li><p>Make good decisions about function arguments and returns</p></li>
+<li><p>Include side effects and / or error messages in your functions</p></li>
+<li><p>Extend your use of good R coding style</p></li>
+</ul>
+<hr>
+<section id="watch-videos-20-minutes" class="level4">
+<h4 class="anchored" data-anchor-id="watch-videos-20-minutes">▶️ Watch Videos: 20 minutes</h4>
+</section>
+<section id="readings-60-75-minutes" class="level4">
+<h4 class="anchored" data-anchor-id="readings-60-75-minutes">📖 Readings: 60-75 minutes</h4>
+</section>
+<section id="preview-activities-2" class="level4">
+<h4 class="anchored" data-anchor-id="preview-activities-2">✅ Preview Activities: 2</h4>
+<hr>
+</section>
+<section id="part-1-why-write-a-function" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Part 1: Why Write a Function?</h1>
+<p>You might be coming into this chapter wondering, “Why would I write a function?”. Especially, if thus far you’ve been able to do everything with built-in functions and / or reusing your code a few times.</p>
+<p>The critical motivation behind functions is the “don’t repeat yourself” (DRY) principle. In general, “you should consider writing a function whenever copied and pasted your code <strong>more than twice</strong> (i.e.&nbsp;you now have three copies of the same code)” (Wickham &amp; Grolemund, 2020).</p>
+<p>One of my favorite papers, <em>Best Practices for Scientific Computing</em>, summarizes this idea in a slightly different way:</p>
+<blockquote class="blockquote">
+<p>Anything that is repeated in two or more places is more difficult to maintain. Every time a change or correction is made, multiple locations must be updated, which increases the chance of errors and inconsistencies. To avoid this, programmers follow the DRY Principle, which applies to both data and code.</p>
+</blockquote>
+<p>The DRY Principle applies at two scales: small and large. At small scales, researchers (<strong>you</strong>) should work to modularize code instead of copying and pasting. Modularizing your code helps you remember what the code is doing as a single mental chunk. This makes your code easier to understand, since there is less to remember! Another perk is that your modularized code can also be more easily re-purposed for other projects. At larger scales, it is vital that scientific programmers (<strong>you</strong>) re-use code instead of rewriting it (Wilson et al., 2014).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reading more about scientific computing “best practices”
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are interested in reading more about these “best practices” you can find the article here: <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745" class="uri">https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745</a></p>
+</div>
+</div>
+</section>
+<section id="writing-functions" class="level1 page-columns page-full" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Writing Functions</h1>
+<p>📖 <a href="https://r4ds.hadley.nz/functions.html">Recommended Reading: <em>R4DS</em> – Functions</a></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Le2ngDEHaXs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div></div><p>▶️ <a href="http://somup.com/crh6eXFmMK">Recommended Video: Why write a function? – 5 minutes</a></p>
+<p>▶️ <a href="http://somup.com/crh6euFmNj">Recommended Video: Components of a function – 10 minutes</a></p>
+<p>▶️ <a href="http://somup.com/crh6eBFmNK">Recommended Video: Function environments – 6 minutes</a></p>
+<p>💻 <a href="https://rstudio.cloud/learn/primers/6">Required Tutorial: RStudio Primer – Writing Functions</a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I <strong>highly recommend</strong> you work through <em>every</em> tutorial except Loops!</p>
+</div>
+</div>
+<section id="preview-activity-7" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="preview-activity-7"><span class="header-section-number">2.1</span> ✅ <strong>Preview Activity 7</strong></h2>
+<section id="part-1-writing-simple-functions" class="level3">
+<h3 class="anchored" data-anchor-id="part-1-writing-simple-functions">Part 1 – Writing Simple Functions</h3>
+<p>Fill in the necessary code to write a function called <code>times_seven()</code>. The function should take a single argument (<code>x</code>) and multiply the input by 7.</p>
+<ul>
+<li>This function should check that the argument is numeric.</li>
+<li>This function should also excitedly announce (print) “I love sevens!” if the argument to the function is a 7.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>times_seven <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stopifnot</span>(___)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(___){</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(___)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(___)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="part-2-predicting-function-behavior" class="level3">
+<h3 class="anchored" data-anchor-id="part-2-predicting-function-behavior">Part 2 – Predicting Function Behavior</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>add_or_subtract <span class="ot">&lt;-</span> <span class="cf">function</span>(first_num, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">second_num =</span> <span class="dv">2</span>, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">type =</span> <span class="st">"add"</span>) {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (type <span class="sc">==</span> <span class="st">"add"</span>) {</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    first_num <span class="sc">+</span> second_num</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (type <span class="sc">==</span> <span class="st">"subtract"</span>) {</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    first_num <span class="sc">-</span> second_num</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"Please choose `add` or `subtract` as the type."</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For the four calls to the <code>add_or_subtract()</code> function, which of the following will be output?</p>
+<ol type="i">
+<li>1</li>
+<li>-1</li>
+<li>30</li>
+<li>An error defined by the function <code>add_or_subtract()</code></li>
+<li>An error defined in a different function, which is called inside the <code>add_or_subtract()</code> function</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_or_subtract</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="at">type =</span> <span class="st">"subtract"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">add_or_subtract</span>(<span class="st">"orange"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">add_or_subtract</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="at">type =</span> <span class="st">"multiply"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="part-3-global-environments" class="level3">
+<h3 class="anchored" data-anchor-id="part-3-global-environments">Part 3 – Global Environments</h3>
+<p>Consider the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>first_num <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>second_num <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">add_or_subtract</span>(first_num, <span class="at">second_num =</span> <span class="dv">4</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>result_2 <span class="ot">&lt;-</span> <span class="fu">add_or_subtract</span>(first_num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In your Global Environment, what is the value of…</p>
+<ol type="a">
+<li><code>first_num</code></li>
+<li><code>second_num</code></li>
+<li><code>result</code></li>
+<li><code>result_2</code></li>
+</ol>
+</section>
+</section>
+<section id="styling-functions" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="styling-functions"><span class="header-section-number">2.2</span> Styling Functions</h2>
+<p>Part of writing reproducible and shareable code is following good <strong>style guidelines</strong>. Mostly, this means choosing good object names and using white space in a consistent and clear way.</p>
+<p>You should have already read the sections of the Tidyverse Style Guide relevant to piping, plotting, and naming objects. This week we are extending these style guides to functions.</p>
+<p>I would <strong>highly recommend</strong> reading through the style guide for naming functions, what to do with long lines, and the use of comments. The guide can be found here: <a href="https://style.tidyverse.org/functions.html" class="uri">https://style.tidyverse.org/functions.html</a></p>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<p>Designing functions is somewhat subjective, but there are a few principles that apply:</p>
+<ol type="1">
+<li>Choose a good, descriptive <strong>names</strong>
+<ul>
+<li>Your function name should describe what it does, and usually involves a verb.</li>
+<li>Your argument names should be simple and / or descriptive.</li>
+<li>Names of variables in the body of the function should be descriptive.</li>
+</ul></li>
+<li>Output should be <strong>very predictable</strong>
+<ul>
+<li>Your function should always <em>return</em> the same object type, no matter what input it gets.</li>
+<li>Your function should expect certain objects or object types as <em>input</em>, and give errors when it does not get them.</li>
+<li>Your function should give errors or warnings for common mistakes.</li>
+<li>Default values of arguments should only be used when there is a clear common choice.</li>
+</ul></li>
+<li>The body of the function should be <strong>easy to read</strong>.
+<ul>
+<li>Code should use <a href="https://style.tidyverse.org/">good style principles</a>.</li>
+<li>There should be occasional comments to explain the purpose of the steps.</li>
+<li>Complicated steps, or steps that are repeated many times, should be written into <strong>separate functions</strong> (sometimes called <em>helper functions</em>).</li>
+</ul></li>
+<li>Functions should be <strong>self-contained</strong>.
+<ul>
+<li>They should not rely on any information besides what is given as input.</li>
+<li><em>(Relying on other functions</em> is fine, though)</li>
+<li>They should not alter the Global Environment</li>
+<li><em>Functions should <strong>never</strong> load or install packages!</em></li>
+</ul></li>
+</ol>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1250,18 +1144,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./course-materials/course-team.html" class="pagination-link" aria-label="Teaching team">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Teaching team</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./course-materials/computing-access.html" class="pagination-link" aria-label="Access">
-        <span class="nav-page-text">Access</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1270,7 +1152,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/groupworthy-data-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/groupworthy-data-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
