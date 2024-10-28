@@ -5,38 +5,28 @@
     <lastmod>2024-10-16T21:36:09.795Z</lastmod>
   </url>
   <url>
-<<<<<<< HEAD
-    <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-4/week-4-joins-2.html</loc>
-    <lastmod>2024-10-17T17:54:55.200Z</lastmod>
-=======
     <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-5/week-5-strings.html</loc>
-    <lastmod>2024-10-23T00:49:10.188Z</lastmod>
+    <lastmod>2024-10-24T23:15:00.818Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-4/week-4-joins-1.html</loc>
-    <lastmod>2024-10-14T18:54:48.450Z</lastmod>
->>>>>>> 568dd68c7d8e57ba8da20d14d3144bde97797b6e
+    <lastmod>2024-10-16T21:36:09.818Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-5/week-5-dates.html</loc>
-    <lastmod>2024-10-24T23:16:10.247Z</lastmod>
+    <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-2/week-2-ggplot.html</loc>
+    <lastmod>2024-10-02T22:19:25.241Z</lastmod>
   </url>
   <url>
-<<<<<<< HEAD
-    <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-3/week-3-dplyr-pt2.html</loc>
-    <lastmod>2024-10-10T18:45:31.867Z</lastmod>
-=======
     <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-2/week-2-import.html</loc>
-    <lastmod>2024-10-03T16:35:14.950Z</lastmod>
->>>>>>> 568dd68c7d8e57ba8da20d14d3144bde97797b6e
+    <lastmod>2024-10-02T22:50:41.355Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/weeks/week-7-vector-functions.html</loc>
-    <lastmod>2024-10-27T21:08:58.245Z</lastmod>
+    <loc>https://github.com/atheobold/groupworthy-data-science/group-activities/week-5/PA-5-strings.html</loc>
+    <lastmod>2024-10-21T14:57:48.038Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/lab-3-instructions.html</loc>
-    <lastmod>2024-10-09T23:46:01.809Z</lastmod>
+    <loc>https://github.com/atheobold/groupworthy-data-science/labs/exemplars/student-work.html</loc>
+    <lastmod>2024-10-28T21:46:02.369Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/group-activities/week-1/data-cleaning-viz-steps.html</loc>
@@ -48,16 +38,19 @@
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/lab-4-instructions.html</loc>
-    <lastmod>2024-10-28T21:30:18.897Z</lastmod>
+    <lastmod>2024-10-28T21:48:48.639Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/group-activities/week-4/PA-4-tidyr.html</loc>
-<<<<<<< HEAD
-    <lastmod>2024-10-16T21:36:09.692Z</lastmod>
+    <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/lab-7-instructions.html</loc>
+    <lastmod>2024-10-28T21:52:28.248Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/lab-2-instructions.html</loc>
-    <lastmod>2024-10-09T23:46:01.807Z</lastmod>
+    <loc>https://github.com/atheobold/groupworthy-data-science/group-activities/week-1/base-r.html</loc>
+    <lastmod>2024-08-21T18:31:45.315Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/atheobold/groupworthy-data-science/weeks/week-2-ggplot.html</loc>
+    <lastmod>2024-09-03T13:32:13.189Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/group-activities/week-2/PA-2-ggplot.html</loc>
@@ -76,39 +69,8 @@
     <lastmod>2024-09-23T20:31:33.796Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/challenge-3-instructions.html</loc>
-    <lastmod>2024-10-16T21:36:09.725Z</lastmod>
-=======
-    <lastmod>2024-10-16T02:03:02.170Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/lab-2-instructions.html</loc>
-    <lastmod>2024-10-09T15:30:00.310Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/group-activities/week-7/PA-7-functions.html</loc>
-    <lastmod>2024-06-04T20:40:55.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/weeks/week-7-data-frame-functions.html</loc>
-    <lastmod>2024-10-28T17:00:52.395Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/weeks/week-1-version-control.html</loc>
-    <lastmod>2024-09-23T00:18:46.561Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/challenge-2-instructions.html</loc>
-    <lastmod>2024-10-06T21:38:25.847Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/labs/exemplars/student-work.html</loc>
-    <lastmod>2024-10-22T15:32:29.270Z</lastmod>
-  </url>
-  <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/code-review/code-review-guidelines.html</loc>
-    <lastmod>2024-09-04T01:11:31.869Z</lastmod>
->>>>>>> 568dd68c7d8e57ba8da20d14d3144bde97797b6e
+    <lastmod>2024-09-03T13:32:27.134Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/weeks/week-2-projects-data-import.html</loc>
@@ -124,7 +86,6 @@
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/portfolio/portfolio-instructions.html</loc>
-<<<<<<< HEAD
     <lastmod>2024-09-23T22:15:10.708Z</lastmod>
   </url>
   <url>
@@ -146,29 +107,6 @@
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/course-materials/computing-access.html</loc>
     <lastmod>2024-08-17T13:59:28.490Z</lastmod>
-=======
-    <lastmod>2024-09-24T17:32:13.006Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/group-activities/week-2/expert-designer.html</loc>
-    <lastmod>2024-08-16T17:29:29.904Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/group-activities/pair-programming-norms.html</loc>
-    <lastmod>2024-09-30T23:23:34.578Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/course-materials/course-team.html</loc>
-    <lastmod>2024-06-20T21:08:40.091Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/course-materials/course-support.html</loc>
-    <lastmod>2024-06-20T21:02:54.463Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/course-materials/computing-access.html</loc>
-    <lastmod>2024-06-20T21:20:58.641Z</lastmod>
->>>>>>> 568dd68c7d8e57ba8da20d14d3144bde97797b6e
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/course-materials/course-overview.html</loc>
@@ -176,7 +114,6 @@
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/course-materials/course-syllabus.html</loc>
-<<<<<<< HEAD
     <lastmod>2024-10-22T13:20:40.609Z</lastmod>
   </url>
   <url>
@@ -189,7 +126,7 @@
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/index.html</loc>
-    <lastmod>2024-10-27T21:08:58.237Z</lastmod>
+    <lastmod>2024-10-28T21:52:28.243Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-6/midterm-portfolio.html</loc>
@@ -202,37 +139,10 @@
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/portfolio/midterm-portfolio-targets.html</loc>
     <lastmod>2024-10-24T23:52:19.098Z</lastmod>
-=======
-    <lastmod>2024-10-22T15:32:29.133Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/course-materials/course_resources.html</loc>
-    <lastmod>2024-06-20T21:00:55.861Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/group-activities/week-1/broken-circles.html</loc>
-    <lastmod>2024-09-23T01:14:43.025Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/index.html</loc>
-    <lastmod>2024-10-28T17:00:28.946Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-6/midterm-portfolio.html</loc>
-    <lastmod>2024-10-22T15:32:29.292Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/weeks/week-1-quarto.html</loc>
-    <lastmod>2024-09-23T00:05:52.431Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/portfolio/midterm-portfolio-targets.html</loc>
-    <lastmod>2024-10-27T18:00:11.232Z</lastmod>
->>>>>>> 568dd68c7d8e57ba8da20d14d3144bde97797b6e
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/challenge-5-instructions.html</loc>
-    <lastmod>2024-10-22T23:51:40.385Z</lastmod>
+    <lastmod>2024-10-24T23:15:00.817Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/lab-1-instructions.html</loc>
@@ -243,13 +153,12 @@
     <lastmod>2024-10-07T21:53:30.784Z</lastmod>
   </url>
   <url>
-<<<<<<< HEAD
-    <loc>https://github.com/atheobold/groupworthy-data-science/code-review/code-review-guidelines.html</loc>
-    <lastmod>2024-09-03T13:32:27.134Z</lastmod>
+    <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/challenge-7-instructions.html</loc>
+    <lastmod>2024-10-28T21:52:28.244Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/labs/exemplars/student-work.html</loc>
-    <lastmod>2024-10-28T21:46:02.369Z</lastmod>
+    <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/challenge-3-instructions.html</loc>
+    <lastmod>2024-10-16T21:36:09.725Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/challenge-2-instructions.html</loc>
@@ -258,50 +167,22 @@
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/weeks/week-1-version-control.html</loc>
     <lastmod>2024-09-23T20:31:33.797Z</lastmod>
-=======
-    <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/challenge-7-instructions.html</loc>
-    <lastmod>2024-06-04T20:40:55.000Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/challenge-3-instructions.html</loc>
-    <lastmod>2024-10-15T16:41:15.162Z</lastmod>
+    <loc>https://github.com/atheobold/groupworthy-data-science/weeks/week-7-data-frame-functions.html</loc>
+    <lastmod>2024-10-28T21:52:28.253Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/weeks/week-1-r-rstudio.html</loc>
-    <lastmod>2024-09-22T23:57:35.419Z</lastmod>
+    <loc>https://github.com/atheobold/groupworthy-data-science/group-activities/week-7/PA-7-functions.html</loc>
+    <lastmod>2024-10-28T21:52:28.242Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-1/week-1-intro-version-control.html</loc>
-    <lastmod>2024-09-28T20:07:29.326Z</lastmod>
+    <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/lab-2-instructions.html</loc>
+    <lastmod>2024-10-09T23:46:01.807Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/weeks/week-3-dplyr.html</loc>
-    <lastmod>2024-09-06T19:59:34.783Z</lastmod>
->>>>>>> 568dd68c7d8e57ba8da20d14d3144bde97797b6e
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/weeks/week-7-df-functions.html</loc>
-    <lastmod>2024-10-27T21:08:58.244Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/weeks/week-2-ggplot.html</loc>
-<<<<<<< HEAD
-    <lastmod>2024-09-03T13:32:13.189Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/group-activities/week-1/base-r.html</loc>
-    <lastmod>2024-08-21T18:31:45.315Z</lastmod>
-=======
-    <lastmod>2024-09-01T21:19:52.240Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/group-activities/week-1/base-r.html</loc>
-    <lastmod>2024-08-18T19:33:35.270Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/lab-7-instructions.html</loc>
-    <lastmod>2024-06-04T20:40:55.000Z</lastmod>
->>>>>>> 568dd68c7d8e57ba8da20d14d3144bde97797b6e
+    <loc>https://github.com/atheobold/groupworthy-data-science/group-activities/week-4/PA-4-tidyr.html</loc>
+    <lastmod>2024-10-16T21:36:09.692Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/weeks/week-5-strings-dates.html</loc>
@@ -320,43 +201,27 @@
     <lastmod>2024-10-16T21:36:09.689Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/group-activities/week-5/PA-5-strings.html</loc>
-    <lastmod>2024-10-21T14:57:48.038Z</lastmod>
+    <loc>https://github.com/atheobold/groupworthy-data-science/labs/instructions/lab-3-instructions.html</loc>
+    <lastmod>2024-10-09T23:46:01.809Z</lastmod>
   </url>
   <url>
-<<<<<<< HEAD
-    <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-2/week-2-import.html</loc>
-    <lastmod>2024-10-02T22:50:41.355Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-2/week-2-ggplot.html</loc>
-    <lastmod>2024-10-02T22:19:25.241Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-4/week-4-joins-1.html</loc>
-    <lastmod>2024-10-16T21:36:09.818Z</lastmod>
-=======
     <loc>https://github.com/atheobold/groupworthy-data-science/weeks/week-7-vector-functions.html</loc>
-    <lastmod>2024-10-27T17:56:48.939Z</lastmod>
->>>>>>> 568dd68c7d8e57ba8da20d14d3144bde97797b6e
+    <lastmod>2024-10-27T21:08:58.245Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-3/week-3-dplyr-pt2.html</loc>
-    <lastmod>2024-10-10T15:49:22.442Z</lastmod>
+    <lastmod>2024-10-10T18:45:31.867Z</lastmod>
   </url>
-<<<<<<< HEAD
-=======
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-5/week-5-dates.html</loc>
-    <lastmod>2024-10-27T18:00:11.232Z</lastmod>
+    <lastmod>2024-10-24T23:16:10.247Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-4/week-4-joins-2.html</loc>
-    <lastmod>2024-10-22T15:32:29.284Z</lastmod>
+    <lastmod>2024-10-17T17:54:55.200Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/atheobold/groupworthy-data-science/slides/week-7/W7_functions.html</loc>
-    <lastmod>2024-06-04T20:40:55.000Z</lastmod>
+    <lastmod>2024-10-28T21:52:28.249Z</lastmod>
   </url>
->>>>>>> 568dd68c7d8e57ba8da20d14d3144bde97797b6e
 </urlset>
