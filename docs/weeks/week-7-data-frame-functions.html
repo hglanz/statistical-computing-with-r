@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Computing in R – Introduction to Statistical Computing in R</title>
+<title>Writing Data Frame &amp; Plot Functions in R – Introduction to Statistical Computing in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./course-materials/computing-access.html" rel="next">
-<link href="./course-materials/course-team.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -82,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-materials/course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Writing Data Frame &amp; Plot Functions in R</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -96,8 +128,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/r-flowers.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/r-flowers.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/atheobold/groupworthy-data-science" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
@@ -114,52 +146,52 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course-team.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course-team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Teaching team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/computing-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-materials/course_resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-materials/course_resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Resources</span></a>
   </div>
 </li>
@@ -176,61 +208,61 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-0-discord.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-0-discord.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 0 - Course Set-up</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-1-r-rstudio.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-1-r-rstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1, Part 1 - R &amp; RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-1-quarto.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-1-quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1, Part 2 - Quarto</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-1-version-control.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-1-version-control.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1, Part 3 - Version Control</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-2-ggplot.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-2-ggplot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2, Part 1 - ggplot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-2-projects-data-import.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-2-projects-data-import.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2, Part 2 - Data Import</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-3-dplyr.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-3-dplyr.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 3 - dplyr</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-4-reshaping-joining.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-4-reshaping-joining.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 4, Part 1 - Data Transformation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-4-factors.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-4-factors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 4, Part 2 - Factors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weeks/week-5-strings-dates.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-5-strings-dates.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 5 - Strings &amp; Dates</span></a>
   </div>
 </li>
@@ -247,37 +279,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/lab-1-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/instructions/lab-1-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1 &amp; Challenge 1 Instructions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/lab-2-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/instructions/lab-2-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 2 Instructions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/challenge-2-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/instructions/challenge-2-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Challenge 2 Instructions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/lab-3-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/instructions/lab-3-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 3 Instructions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/challenge-3-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/instructions/challenge-3-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Challenge 3 Instructions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/instructions/lab-4-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/instructions/lab-4-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 4 &amp; Challenge 4 Instructions</span></a>
   </div>
 </li>
@@ -294,7 +326,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/exemplars/student-work.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/exemplars/student-work.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exemplary Student Work</span></a>
   </div>
 </li>
@@ -311,7 +343,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./portfolio/portfolio-instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../portfolio/portfolio-instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Portfolio Instructions</span></a>
   </div>
 </li>
@@ -322,15 +354,33 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#writing-data-frame-functions-in-r" id="toc-writing-data-frame-functions-in-r" class="nav-link active" data-scroll-target="#writing-data-frame-functions-in-r"><span class="header-section-number">1</span> Writing Data Frame Functions in R</a>
+  <ul class="collapse">
+  <li><a href="#required-reading-r4ds-functions" id="toc-required-reading-r4ds-functions" class="nav-link" data-scroll-target="#required-reading-r4ds-functions">📖 Required Reading: <em>R4DS</em> – Functions</a></li>
+  <li><a href="#tidy-evaluation" id="toc-tidy-evaluation" class="nav-link" data-scroll-target="#tidy-evaluation"><span class="header-section-number">1.1</span> Tidy Evaluation</a>
+  <ul class="collapse">
+  <li><a href="#check-in-7.2-writing-data-frame-functions" id="toc-check-in-7.2-writing-data-frame-functions" class="nav-link" data-scroll-target="#check-in-7.2-writing-data-frame-functions">✅ <strong>Check-in 7.2: Writing Data Frame Functions</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#writing-plotting-functions-in-r" id="toc-writing-plotting-functions-in-r" class="nav-link" data-scroll-target="#writing-plotting-functions-in-r"><span class="header-section-number">2</span> Writing Plotting Functions in R</a>
+  <ul class="collapse">
+  <li><a href="#required-reading-r4ds-functions-1" id="toc-required-reading-r4ds-functions-1" class="nav-link" data-scroll-target="#required-reading-r4ds-functions-1">📖 Required Reading: <em>R4DS</em> – Functions</a></li>
+  <li><a href="#check-in-7.2-writing-data-frame-functions-1" id="toc-check-in-7.2-writing-data-frame-functions-1" class="nav-link" data-scroll-target="#check-in-7.2-writing-data-frame-functions-1">✅ <strong>Check-in 7.2: Writing Data Frame Functions</strong></a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/groupworthy-data-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-materials/course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Statistical Computing in R</h1>
+<h1 class="title">Writing Data Frame &amp; Plot Functions in R</h1>
 </div>
 
 
@@ -347,343 +397,181 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.</p>
-<!-- TODO: Switch to spreadsheet for content (like Mine and Maria do) -->
-<table class="caption-top table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 12%">
-<col style="width: 23%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Date</th>
-<th>Topic &amp; Preview Activities</th>
-<th>Lecture Slides</th>
-<th>Practice Activity</th>
-<th>Lab &amp; Challenge</th>
-<th>Portfolio</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>Mon, 9/23</td>
-<td><a href="./weeks/week-0-discord.html" title="Course Set-up Instructions">Course Set-up</a></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>Tues, 9/24</td>
-<td><p><a href="./weeks/week-1-r-rstudio.html">Intro to R &amp; RStudio</a></p>
-<p><a href="./weeks/week-1-quarto.html">Intro to Quarto</a></p></td>
-<td><a href="./slides/week-1/week-1-intro-R.html" title="Welcome to STAT 331 &amp; Intro to R">Welcome to STAT 331 &amp; Intro to R</a></td>
-<td><p><a href="./group-activities/week-1/broken-circles.html" title="Broken Circles Group Warm-up">Broken Circles Group Warm-up</a></p>
-<p><a href="./group-activities/pair-programming-norms.html" title="Creating Pair Programming Norms">Creating Pair Programming Norms</a></p>
-<p><a href="./group-activities/week-1/data-cleaning-viz-steps.html" title="Data Cleaning, Visualization Puzzle">Data Cleaning, Visualization Puzzle</a></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 9/26</td>
-<td><a href="./weeks/week-1-version-control.html">Intro to Version Control</a></td>
-<td><a href="./slides/week-1/week-1-intro-version-control.html" title="Intro to Quarto &amp; Version Control">Intro to Quarto &amp; Version Control</a></td>
-<td></td>
-<td><p><a href="./labs/instructions/lab-1-instructions.html">Lab 1 &amp; Challenge 1 Instructions</a></p>
-<p><a href="https://classroom.github.com/a/j-bckA7U" title="Lab 1 &amp; Challenge 1 Assignment on GitHub Classroom">Link to Assignment on GitHub Classroom</a> (due 9/29)</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Tuesday, 10/1</td>
-<td><p><a href="./weeks/week-2-ggplot.html" title="Data Visualization with ggplot2">Data Visualization with ggplot2</a></p>
-<p><a href="./weeks/week-2-projects-data-import.html" title="Data Import &amp; R Projects">Data Import &amp; R Projects</a></p></td>
-<td><a href="./slides/week-2/week-2-ggplot.html" title="Basics of Graphics">Basics of Graphics</a></td>
-<td>Look for email from Posit Cloud to access PA2</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 10/3</td>
-<td></td>
-<td><a href="./slides/week-2/week-2-import.html" title="Tidy Data, Importing Data &amp; More Advanced Graphics">Tidy Data, Importing Data &amp; More Advanced Graphics</a></td>
-<td>PA 2 Due by 12pm</td>
-<td><p><a href="./labs/instructions/lab-2-instructions.html" title="Lab 2 Instructions">Lab 2 Instructions</a></p>
-<p><a href="./labs/instructions/challenge-2-instructions.html" title="Challenge 2 Instructions">Challenge 2 Instructions</a></p>
-<p><a href="https://classroom.github.com/a/43CxhKej" title="Lab 2 &amp; Challenge 2 Assignment on GitHub Classroom">Link to Assignment on GitHub Classroom</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 10/6</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Lab 2 &amp; Challenge 2 Due by 11:59pm</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Tues, 10/8</td>
-<td><a href="./weeks/week-3-dplyr.html" title="Data Wrangling with dplyr">Data Wrangling with dplyr</a></td>
-<td><a href="./slides/week-3/week-3-dplyr-pt1.html" title="Data Wrangling with dplyr">Data Wrangling with dplyr</a></td>
-<td>Look for email from Posit Cloud to access PA3</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 10/10</td>
-<td></td>
-<td><a href="./slides/week-3/week-3-dplyr-pt2.html" title="Extending Data Wrangling Verbs">Extending Data Wrangling Verbs</a></td>
-<td>PA3 Due by 12pm</td>
-<td><p><a href="./labs/instructions/lab-3-instructions.html" title="Lab 3 Instructions">Lab 3 Instructions</a></p>
-<p><a href="./labs/instructions/challenge-3-instructions.html" title="Challenge 3 Instructions">Challenge 3 Instructions</a></p>
-<p><a href="https://classroom.github.com/a/qwGgpcu4" title="Link to Assignment on GitHub Classroom">Link to Assignment on GitHub Classroom</a></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sunday, 10/13</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 3 &amp; Challenge 3 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 2 Peer Code Review Due (Guidelines)">Lab 2 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Tues, 10/15</td>
-<td><a href="./weeks/week-4-reshaping-joining.html" title="Data Joins and Transformations with tidyr">Data Joins and Transformations with tidyr</a></td>
-<td><a href="./slides/week-4/week-4-joins-1.html" title="Data Joins + Pivots">Data Joins + Pivots</a></td>
-<td>Look for email from Posit Cloud to access PA4</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 10/17</td>
-<td><a href="./weeks/week-4-factors.html" title="Working with Categorical Variables">Working with Categorical Variables</a></td>
-<td><a href="./slides/week-4/week-4-joins-2.html" title="Extending Joins, Factors, Clean Variable Names">Extending Joins, Factors, Clean Variable Names</a></td>
-<td>PA4 Due by 12pm</td>
-<td><p><a href="./labs/instructions/lab-4-instructions.html" title="Lab 4 Instructions">Lab 4 Instructions</a></p>
-<p><a href="https://classroom.github.com/a/o-PfOckY" title="Link to Assignmenton GitHub Classroom Repository">Link to Assignmenton GitHub Classroom Repository</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 10/20</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 4 &amp; Challenge 4 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 3 Peer Code Review Due (Guidelines)">Lab 3 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Tues, 10/22</td>
-<td><a href="./weeks/week-5-strings-dates.html" title="Working with Strings">Working with Strings</a></td>
-<td><a href="./slides/week-5/week-5-strings.html" title="Using stringr to Work with Strings">Using <code>stringr</code> to Work with Strings</a></td>
-<td>Look for email from Posit Cloud to access PA5</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 10/24</td>
-<td><a href="./weeks/week-5-strings-dates.html" title="Working with Dates">Working with Dates</a></td>
-<td><a href="./slides/week-5/week-5-dates.html" title="Using lubridate to Work with Dates">Using <code>lubridate</code> to Work with Dates</a></td>
-<td>PA5 Due by 12pm</td>
-<td><p><a href="./labs/instructions/challenge-5-instructions.html" title="Lab 5 Instructions">Lab 5 Instructions</a></p>
-<p><a href="https://github.com/Statistical-Computing-with-R/lab-5" title="Link to GitHub Repository">Link to GitHub Repository</a></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sun, 10/27</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 5 &amp; Challenge 5 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 4 Peer Code Review Due (Guidelines)">Lab 4 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Tues, 10/29</td>
-<td>Portfolio Week!</td>
-<td>Starting Your Portfolio</td>
-<td></td>
-<td></td>
-<td><a href="./portfolio/midterm-portfolio-targets.html" title="Midterm Portfolio Targets &amp; Grade Expectations">Midterm Portfolio Targets &amp; Grade Expectations</a></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 10/31</td>
-<td>Portfolio Week!</td>
-<td>Finishing Your Portfolio</td>
-<td></td>
-<td></td>
-<td><a href="./portfolio/portfolio-instructions.html" title="Portfolio Instructions">Portfolio Instructions</a></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 11/3</td>
-<td></td>
-<td></td>
-<td></td>
-<td><a href="./code-review/code-review-guidelines.html" title="Lab 5 Peer Code Review Due (Guidelines)">Lab 5 Peer Code Review Due (Guidelines)</a></td>
-<td>Midterm Portfolio Due</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>Tues, 11/5</td>
-<td><a href="./weeks/week-7-vector-functions.html" title="Writing your own simple (vector) functions">Writing your own simple (vector) functions</a></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 11/7</td>
-<td><a href="./weeks/week-7-data-frame-functions.html" title="Writing your own dataframe functions">Writing your own dataframe functions</a></td>
-<td></td>
-<td></td>
-<td><p>Lab 7 Instructions</p>
-<p>Challenge 7 Instructions</p>
-<p>Link to GitHub Repository</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sun, 11/10</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Lab 7 &amp; Challenge 7 Due by 11:59pm</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Tues, 11/12</td>
-<td>Introduction to Iteration</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Thurs, 11/14</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 8 Instructions</p>
-<p>Challenge 8 Instructions</p>
-<p>Link to GitHub Repository</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sun, 11/17</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 8 &amp; Challenge 8 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 7 Peer Code Review Due (Guidelines)">Lab 7 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>Tues, 11/19</td>
-<td>Webscraping</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 11/21</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 9 Instructions</p>
-<p>Challenge 9 Instructions</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sun, 11/24</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Lab 9 &amp; Challenge 9 Due by 11:59pm</p>
-<p><a href="./code-review/code-review-guidelines.html" title="Lab 8 Peer Code Review Due (Guidelines)">Lab 8 Peer Code Review Due (Guidelines)</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td>Fall Break</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td>Tues, 12/3</td>
-<td>Distributions &amp; Simulation</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thurs, 12/5</td>
-<td>Portfolio Party</td>
-<td></td>
-<td></td>
-<td><a href="./code-review/code-review-guidelines.html" title="Lab 9 Peer Code Review Due (Guidelines)">Lab 9 Peer Code Review Due (Guidelines)</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Sat, 12/7</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>Final Portfolio Due</td>
-</tr>
-<tr class="even">
-<td>Finals Week</td>
-<td>Mon, 12/9, 10:10am - 1pm</td>
-<td>10-minute Portfolio Conferences</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>The second half of this week’s coursework focuses on writing functions that work with <em>data frames</em>.</p>
+<p>By the end of the week you should have a grasp of:</p>
+<ul>
+<li><p>What the “embracing” (<code>{ }</code>) operator is</p></li>
+<li><p>How to use the <code>{ }</code> operator in data frame functions</p></li>
+<li><p>Why we need to use the <code>{ }</code> operator when writing data frame functions</p></li>
+</ul>
+<hr>
+<section id="watch-videos-20-minutes" class="level4">
+<h4 class="anchored" data-anchor-id="watch-videos-20-minutes">▶️ Watch Videos: 20 minutes</h4>
+</section>
+<section id="readings-60-75-minutes" class="level4">
+<h4 class="anchored" data-anchor-id="readings-60-75-minutes">📖 Readings: 60-75 minutes</h4>
+</section>
+<section id="preview-activities-1-broken-into-two-parts" class="level4">
+<h4 class="anchored" data-anchor-id="preview-activities-1-broken-into-two-parts">✅ Preview Activities: 1 (broken into two parts)</h4>
+<hr>
+</section>
+<section id="writing-data-frame-functions-in-r" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Writing Data Frame Functions in R</h1>
+<section id="required-reading-r4ds-functions" class="level3">
+<h3 class="anchored" data-anchor-id="required-reading-r4ds-functions">📖 <a href="https://r4ds.hadley.nz/functions#data-frame-functions">Required Reading: <em>R4DS</em> – Functions</a></h3>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Read only Section 3 (Data frame functions)!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+<section id="tidy-evaluation" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="tidy-evaluation"><span class="header-section-number">1.1</span> Tidy Evaluation</h2>
+<p>Writing functions that work with data frames <strong>and</strong> call on the functions we’ve become used to (e.g., <code>filter()</code>, <code>select()</code>, <code>summarise()</code>) requires we learn about tidy evaluation. To write these functions you will need to know, at a high level, whether the function you are trying to incorporate uses data masking or tidy selection.</p>
+<p>At a high level, data masking is used in functions like <code>arrange()</code>, <code>filter()</code>, and <code>summarize()</code> that compute with variables. Whereas, tidy selection is used for functions like <code>select()</code> and <code>rename()</code> that select variables.</p>
+<p>Your intuition about which functions use tidy evaluation should be good for many of these functions. If you can input <code>c(var1, var2, var3)</code> into the function (e.g., <code>select(mtcars, c(vs, am, gear))</code>), then the function uses tidy selection! If you <strong>cannot</strong> input <code>c(var1, var2, var3)</code> into the function, then the function is performing computations on the data and uses data masking.</p>
+<p>If you are interested in learning more about tidy evaluation, I would highly recommend:</p>
+<ul>
+<li>this <a href="https://youtu.be/2BXPLnLMTYo?si=ry4tHOD77DWagvxn">video by Jenny Bryan</a>
+<ul>
+<li>I do want to note that this video is from 2019 and some things have changed since then. Namely, we used to need to use the <code>enquo()</code> function to inject<br>
+variable names into <code>dplyr</code> functions, whereas we now use embracing <code>{{}}</code>. 🤗</li>
+</ul></li>
+<li>this <a href="https://dplyr.tidyverse.org/articles/programming.html#:~:text=arrange()%20%2C%20count()%20%2C%20filter,my_variable%20not%20df%24my_variable%20">vignette for tidy evaluation with <code>dplyr</code></a></li>
+</ul>
+<section id="check-in-7.2-writing-data-frame-functions" class="level3">
+<h3 class="anchored" data-anchor-id="check-in-7.2-writing-data-frame-functions">✅ <strong>Check-in 7.2: Writing Data Frame Functions</strong></h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data Structure
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note for Questions 1 &amp; 2, I am assuming the <code>flight</code> data has a similar structure to the <code>nycflights</code> data from the openintro R package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(openintro<span class="sc">::</span>nycflights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 16
+   year month   day dep_time dep_delay arr_time arr_delay carrier tailnum flight
+  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;int&gt;
+1  2013     6    30      940        15     1216        -4 VX      N626VA     407
+2  2013     5     7     1657        -3     2104        10 DL      N3760C     329
+3  2013    12     8      859        -1     1238        11 DL      N712TW     422
+4  2013     5    14     1841        -4     2122       -34 DL      N914DL    2391
+5  2013     7    21     1102        -3     1230        -8 9E      N823AY    3652
+6  2013     1     1     1817        -3     2008         3 AA      N3AXAA     353
+# ℹ 6 more variables: origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
+#   hour &lt;dbl&gt;, minute &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Question 1</strong>: Fill in the code below to write a function that finds all flights that were cancelled or delayed by more than a user supplied number of hours:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>filter_severe <span class="ot">&lt;-</span> <span class="cf">function</span>(df, hours) { </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(dep_delay _____)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>nycflights <span class="sc">|&gt;</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter_severe</span>(<span class="at">hours =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Question 2</strong>: Fill in the code below to write a function that converts the user supplied variable that uses clock time (e.g., <code>dep_time</code>, <code>arr_time</code>, etc.) into a decimal time (i.e.&nbsp;hours + (minutes / 60)).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>standardize_time <span class="ot">&lt;-</span> <span class="cf">function</span>(df, time_var) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Times are stored as 2008 for 8</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>( {{ time_var }} <span class="sc">:</span><span class="er">=</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>              <span class="fu">as.numeric</span>(</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                <span class="do">## Grab first two numbers for hour</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                <span class="fu">str_sub</span>(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                  {{ time_var }}, </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">start =</span> <span class="dv">1</span>, </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">end =</span> <span class="dv">2</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                ) <span class="sc">+</span>  </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>              <span class="fu">as.numeric</span>(</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                <span class="do">## Grab second two numbers for minutes</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                <span class="fu">str_sub</span>(</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>                  {{ time_var }}, </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                  <span class="at">start =</span> <span class="dv">3</span>, </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                  <span class="at">end =</span> <span class="dv">4</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>                ) <span class="sc">/</span> <span class="dv">60</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>nycflights <span class="sc">|&gt;</span> </span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">standardize_time</span>(arr_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Question 3</strong>: For each of the following functions determine if the function uses data-masking or tidy-selection:</p>
+<ul>
+<li><code>distinct()</code></li>
+<li><code>count()</code></li>
+<li><code>group_by()</code></li>
+<li><code>select()</code></li>
+<li><code>rename_with()</code></li>
+<li><code>across()</code></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="writing-plotting-functions-in-r" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Writing Plotting Functions in R</h1>
+<section id="required-reading-r4ds-functions-1" class="level3">
+<h3 class="anchored" data-anchor-id="required-reading-r4ds-functions-1">📖 <a href="https://r4ds.hadley.nz/functions#plot-functions">Required Reading: <em>R4DS</em> – Functions</a></h3>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Read only Section 4 (Data frame functions)!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+<section id="check-in-7.2-writing-data-frame-functions-1" class="level3">
+<h3 class="anchored" data-anchor-id="check-in-7.2-writing-data-frame-functions-1">✅ <strong>Check-in 7.2: Writing Data Frame Functions</strong></h3>
+<p><strong>Question 4</strong>: Fill in the code below to build a rich plotting function which:</p>
+<ul>
+<li>draws a scatterplot given dataset and x and y variables,</li>
+<li>adds a line of best fit (i.e.&nbsp;a linear model with no standard errors)</li>
+<li>add a title.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>scatterplot <span class="ot">&lt;-</span> <span class="cf">function</span>(df, x_var, y_var) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  label <span class="ot">&lt;-</span> rlang<span class="sc">::</span><span class="fu">englue</span>(<span class="st">"A scatterplot of _____ and _____, including a line of best fit."</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">|&gt;</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> _____, </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                         <span class="at">y =</span> _____</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                         )</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>           ) <span class="sc">+</span> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, _____) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> _____)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1250,18 +1138,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./course-materials/course-team.html" class="pagination-link" aria-label="Teaching team">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Teaching team</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./course-materials/computing-access.html" class="pagination-link" aria-label="Access">
-        <span class="nav-page-text">Access</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1270,7 +1146,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/groupworthy-data-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/groupworthy-data-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

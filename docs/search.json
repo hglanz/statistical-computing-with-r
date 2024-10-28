@@ -4400,5 +4400,439 @@
     "title": "PA 5.1 Task Card – Decode the Scrambled Message",
     "section": "Regex – As input into stringr functions",
     "text": "Regex – As input into stringr functions\n\n\n\n\n\n\n\nTask\nRegular Expression\n\n\n\n\nFind a set of characters\n\"[abc]\" — matches any single character a, b, or c\n\"[A-z]\" — matches all upper and lower case letters\n\n\nMatch any character\n\"\\\\.\"\n\n\nLocate punctuation\n\"[:punct:]\"\n\n\nLocate words\n\"\\\\w\"\n\n\nLocate anything alphanumeric\n\"[:alnum:]\"\n\n\nStarts with a z\n\"^z\"\n\n\nEnds with a w\n\"w$\"\n\n\nDoes not contain a z\n[^z]\n\n\nFind Repeated Patterns - Vague\n\n* means repeat between 0 and inf times\n+ means 1 or more times\n? means 0 or 1 times – most useful when you’re looking for something optional\n\n\n\nFind repeated patterns - Specific\n\n{a} means repeat exactly a times\n{a, b} means repeat between a and b times"
+  },
+  {
+    "objectID": "weeks/week-7-data-frame-functions.html",
+    "href": "weeks/week-7-data-frame-functions.html",
+    "title": "Writing Data Frame & Plot Functions in R",
+    "section": "",
+    "text": "The second half of this week’s coursework focuses on writing functions that work with data frames.\nBy the end of the week you should have a grasp of:"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html",
+    "href": "slides/week-7/W7_functions.html",
+    "title": "Writing Functions",
+    "section": "",
+    "text": "Today we will…\n\nRemember: Group Formation Survey due tonight!\nNew Material\n\nFunction Basics\nVariable Scope + Environment\n\nPA 7: Writing Functions"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#monday-may-13",
+    "href": "slides/week-7/W7_functions.html#monday-may-13",
+    "title": "Writing Functions",
+    "section": "",
+    "text": "Today we will…\n\nRemember: Group Formation Survey due tonight!\nNew Material\n\nFunction Basics\nVariable Scope + Environment\n\nPA 7: Writing Functions"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#why-write-functions",
+    "href": "slides/week-7/W7_functions.html#why-write-functions",
+    "title": "Writing Functions",
+    "section": "Why write functions?",
+    "text": "Why write functions?\nFunctions allow you to automate common tasks!\n\nWe’ve been using functions since Day 1, but when we write our own, we can customize them!\nHave you found yourself copy-pasting code and only changing small parts?\n\n. . .\nWriting functions has 3 big advantages over copy-paste:\n\nYour code is easier to read.\nTo change your analysis, simply change one function.\nYou avoid mistakes from copy-paste."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#function-syntax",
+    "href": "slides/week-7/W7_functions.html#function-syntax",
+    "title": "Writing Functions",
+    "section": "Function Syntax",
+    "text": "Function Syntax"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#function-syntax-1",
+    "href": "slides/week-7/W7_functions.html#function-syntax-1",
+    "title": "Writing Functions",
+    "section": "Function Syntax",
+    "text": "Function Syntax"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#a-very-simple-function",
+    "href": "slides/week-7/W7_functions.html#a-very-simple-function",
+    "title": "Writing Functions",
+    "section": "A (very) Simple Function",
+    "text": "A (very) Simple Function\nLet’s define the function.\n\nYou must run the code to define the function just once.\n\n\nadd_two &lt;- function(x){\n  x + 2\n}\n\n\n. . .\nLet’s call the function!\n\nadd_two(5)\n\n[1] 7"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#naming-add_two--",
+    "href": "slides/week-7/W7_functions.html#naming-add_two--",
+    "title": "Writing Functions",
+    "section": "Naming: add_two <-",
+    "text": "Naming: add_two &lt;-\nThe name of the function is chosen by the author.\n\nadd_two &lt;- function(x){\n  x + 2\n}\n\n. . .\nCaution: Function names have no inherent meaning.\n\nThe name you give to a function does not affect what the function does.\n\n\nadd_three &lt;- function(x){\n  x + 7\n}\n\n\nadd_three(5)\n\n[1] 12"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#arguments",
+    "href": "slides/week-7/W7_functions.html#arguments",
+    "title": "Writing Functions",
+    "section": "Arguments",
+    "text": "Arguments\nThe argument(s) of the function are chosen by the author.\n\nArguments are how we pass external values into the function.\nThey are temporary variables that only exist inside the function body.\n\n\n\n\nWe give them general names:\n\nx, y, z – vectors\ndf – dataframe\ni, j – indices\n\n\n\n\n\nadd_two &lt;- function(x){\n  x + 2\n}"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#arguments-1",
+    "href": "slides/week-7/W7_functions.html#arguments-1",
+    "title": "Writing Functions",
+    "section": "Arguments",
+    "text": "Arguments\n\nOptional argumentsRequired arguments\n\n\nIf we supply a default value when defining the function, the argument is optional when calling the function.\n\nadd_something &lt;- function(x, something = 2){\n  return(x + something)\n}\n\n\nIf a value is not supplied, something defaults to 2.\n\n\nadd_something(x = 5)\n\n[1] 7\n\n\n\nadd_something(x = 5, something = 6)\n\n[1] 11\n\n\n\n\nIf we do not supply a default value when defining the function, the argument is required when calling the function.\n\nadd_something &lt;- function(x, something){\n  x + something\n}\n\nadd_something(x = 2)\n\nError in add_something(x = 2): argument \"something\" is missing, with no default"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#body",
+    "href": "slides/week-7/W7_functions.html#body",
+    "title": "Writing Functions",
+    "section": "Body: {  }",
+    "text": "Body: {  }\nThe body of the function is where the action happens.\n\nThe body must be specified within a set of curly brackets.\nThe code in the body will be executed (in order) whenever the function is called.\n\n\nadd_two &lt;- function(x){\n  x + 2\n}"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#output-return",
+    "href": "slides/week-7/W7_functions.html#output-return",
+    "title": "Writing Functions",
+    "section": "Output: return()",
+    "text": "Output: return()\nYour function will give back what would normally print out…\n\nadd_two &lt;- function(x){\n  x + 2\n}\n\n\n\n\n\n7 + 2\n\n[1] 9\n\n\n\n\nadd_two(7)\n\n[1] 9\n\n\n\n\n\n. . .\n…but it’s better to be explicit and use return().\n\nadd_two &lt;- function(x){\n  return(x + 2)\n}"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#output-return-1",
+    "href": "slides/week-7/W7_functions.html#output-return-1",
+    "title": "Writing Functions",
+    "section": "Output: return()",
+    "text": "Output: return()\nIf you need to return more than one object from a function, wrap those objects in a list.\n\nmin_max &lt;- function(x){\n  lowest &lt;- min(x)\n  highest &lt;- max(x)\n  return(list(lowest, highest))\n}\n\nvec &lt;- c( 346,547,865,346,6758,78,79,362)\nmin_max(vec)\n\n[[1]]\n[1] 78\n\n[[2]]\n[1] 6758"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#input-validation",
+    "href": "slides/week-7/W7_functions.html#input-validation",
+    "title": "Writing Functions",
+    "section": "Input Validation",
+    "text": "Input Validation\nWhen a function requires an input of a specific data type, check that the supplied argument is valid.\n\n stopifnot()  if() + stop() Multiple validations\n\n\n\nadd_something &lt;- function(x, something){\n  stopifnot(is.numeric(x))\n  return(x + something)\n}\n\nadd_something(x = \"statistics\", something = 5)\n\nError in add_something(x = \"statistics\", something = 5): is.numeric(x) is not TRUE\n\n\n\n\n\nadd_something &lt;- function(x, something){\n  if(!is.numeric(x)){\n    stop(\"Please provide a numeric input for the x argument.\")\n  }\n  return(x + something)\n}\n\nadd_something(x = \"statistics\", something = 5)\n\nError in add_something(x = \"statistics\", something = 5): Please provide a numeric input for the x argument.\n\n\n\n\n\nadd_something &lt;- function(x, something){\n  if(!is.numeric(x) | !is.numeric(something)){\n    stop(\"Please provide numeric inputs for both arguments.\")\n  }\n  return(x + something)\n}\n\nadd_something(x = 2, something = \"R\")\n\nError in add_something(x = 2, something = \"R\"): Please provide numeric inputs for both arguments.\n\n\n\nadd_something &lt;- function(x, something){\n  stopifnot(is.numeric(x), is.numeric(something))\n  return(x + something)\n}\n\nadd_something(x = \"statistics\", something = \"R\")\n\nError in add_something(x = \"statistics\", something = \"R\"): is.numeric(x) is not TRUE"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#variable-scope",
+    "href": "slides/week-7/W7_functions.html#variable-scope",
+    "title": "Writing Functions",
+    "section": "Variable Scope",
+    "text": "Variable Scope\nThe location (environment) in which we can find and access a variable is called its scope.\n\nWe need to think about the scope of variables when we write functions.\nWhat variables can we access inside a function?\nWhat variables can we access outside a function?"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#global-environment",
+    "href": "slides/week-7/W7_functions.html#global-environment",
+    "title": "Writing Functions",
+    "section": "Global Environment",
+    "text": "Global Environment\n\nThe top right pane of Rstudio shows you the global environment.\n\nThis is the current state of all objects you have created.\nThese objects can be accessed anywhere.\n\n\n\nknitr::include_graphics(\"images/environment.jpg\")"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#function-environment",
+    "href": "slides/week-7/W7_functions.html#function-environment",
+    "title": "Writing Functions",
+    "section": "Function Environment",
+    "text": "Function Environment\n\nThe code inside a function executes in the function environment.\n\nFunction arguments and any variables created inside the function only exist inside the function.\n\nThey disappear when the function code is complete.\n\nWhat happens in the function environment does not affect things in the global environment."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#function-environment-1",
+    "href": "slides/week-7/W7_functions.html#function-environment-1",
+    "title": "Writing Functions",
+    "section": "Function Environment",
+    "text": "Function Environment\nWe cannot access variables created inside a function outside of the function.\n\nadd_two &lt;- function(x) {\n  my_result &lt;- x + 2\n  return(my_result)\n}\n\nadd_two(9)\n\n[1] 11\n\nmy_result\n\nError in eval(expr, envir, enclos): object 'my_result' not found"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#name-masking",
+    "href": "slides/week-7/W7_functions.html#name-masking",
+    "title": "Writing Functions",
+    "section": "Name Masking",
+    "text": "Name Masking\nName masking occurs when an object in the function environment has the same name as an object in the global environment.\n\nadd_two &lt;- function(x) {\n  my_result &lt;- x + 2\n  return(my_result)\n}\n\n\nmy_result &lt;- 2000\n\n. . .\nThe my_result created inside the function is different from the my_result created outside.\n\n\n\nadd_two(5)\n\n[1] 7\n\n\n\n\nmy_result\n\n[1] 2000"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#dynamic-lookup",
+    "href": "slides/week-7/W7_functions.html#dynamic-lookup",
+    "title": "Writing Functions",
+    "section": "Dynamic Lookup",
+    "text": "Dynamic Lookup\nFunctions look for objects FIRST in the function environment and SECOND in the global environment.\n\nIf the object doesn’t exist in either, the code will give an error.\n\n\n\n\nadd_two &lt;- function() {\n  return(x + 2)\n}\n\nadd_two()\n\nError in add_two(): object 'x' not found\n\n\n\n\nx &lt;- 10\n\nadd_two()\n\n[1] 12\n\n\n\n\n. . .\nIt is not good practice to rely on global environment objects inside a function!"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#debugging-1",
+    "href": "slides/week-7/W7_functions.html#debugging-1",
+    "title": "Writing Functions",
+    "section": "Debugging",
+    "text": "Debugging\nYou will make mistakes (create bugs) when coding.\n\nUnfortunately, it becomes more and more complicated to debug your code as your code gets more sophisticated.\nThis is especially true with functions!"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#debugging-strategies",
+    "href": "slides/week-7/W7_functions.html#debugging-strategies",
+    "title": "Writing Functions",
+    "section": "Debugging Strategies",
+    "text": "Debugging Strategies\n\nInteractive coding\n\nHighlight lines within your function and run them one-by-one to see what happens.\n\n\n. . .\n\nprint() debugging\n\nAdd print() statements throughout your code to make sure the values are what you expect.\n\n\n. . .\n\nRubber Ducking\n\nVerbally explain your code line by line to a rubber duck (or a human)."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#debugging-strategies-1",
+    "href": "slides/week-7/W7_functions.html#debugging-strategies-1",
+    "title": "Writing Functions",
+    "section": "Debugging Strategies",
+    "text": "Debugging Strategies\nWhen you have a concept that you want to turn into a function…\n\nWrite a simple example of the code without the function framework.\nGeneralize the example by assigning variables.\nWrite the code into a function.\nCall the function on the desired arguments\n\nThis structure allows you to address issues as you go."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#an-example",
+    "href": "slides/week-7/W7_functions.html#an-example",
+    "title": "Writing Functions",
+    "section": "An Example",
+    "text": "An Example\nWrite a function called find_car_make() that takes in the name of a car and returns the “make” of the car (the company that created it).\n\nfind_car_make(\"Toyota Camry\") should return “Toyota”.\nfind_car_make(\"Ford Anglica\") should return “Ford”."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#an-example-1",
+    "href": "slides/week-7/W7_functions.html#an-example-1",
+    "title": "Writing Functions",
+    "section": "An Example",
+    "text": "An Example\n\nSimple ExamplesGeneralizeWrite + Call Funciton\n\n\n\nmake &lt;- str_extract(string = \"Toyota Camry\",\n                    pattern = \"[:alpha:]*\")\nmake\n\n[1] \"Toyota\"\n\nmake &lt;- str_extract(string = \"Ford Anglica\",\n                    pattern = \"[:alpha:]*\")\nmake\n\n[1] \"Ford\"\n\n\n\n\n\ncar_name &lt;- \"Toyota Camry\"\n\nmake &lt;- str_extract(string = car_name, \n                    pattern = \"[:alpha:]*\")\nmake\n\n[1] \"Toyota\"\n\n\n\n\n\nfind_car_make &lt;- function(car_name){\n  make &lt;- str_extract(string = car_name, \n                      pattern = \"[:alpha:]*\")\n  return(make)\n}\n\n\nfind_car_make(\"Toyota Camry\")\n\n[1] \"Toyota\"\n\nfind_car_make(\"Ford Anglica\")\n\n[1] \"Ford\""
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#pa-7-writing-functions",
+    "href": "slides/week-7/W7_functions.html#pa-7-writing-functions",
+    "title": "Writing Functions",
+    "section": "PA 7: Writing Functions",
+    "text": "PA 7: Writing Functions\nYou will write a few small functions and use them to unscramble a message!"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#to-do",
+    "href": "slides/week-7/W7_functions.html#to-do",
+    "title": "Writing Functions",
+    "section": "To do…",
+    "text": "To do…\n\nPC1: Group Project Formation Survey\n\nDue TODAY – Monday, 5/13 at 11:59pm.\n\nPA 7: Writing Functions\n\nDue Wednesday, 5/15 at 10:00am."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#wednesday-may-15",
+    "href": "slides/week-7/W7_functions.html#wednesday-may-15",
+    "title": "Writing Functions",
+    "section": "Wednesday, May 15",
+    "text": "Wednesday, May 15\nToday we will…\n\nDiscuss Groupt Project + Group Contract\nNew Material\n\nCalling Functions on Datasets\nThinking About Missing Data\n\nLab 7: Functions and Fish"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#group-project-details",
+    "href": "slides/week-7/W7_functions.html#group-project-details",
+    "title": "Writing Functions",
+    "section": "Group Project Details",
+    "text": "Group Project Details\nCheck out the Canvas page outlining the group project!\n\n\nGroups have been assigned.\nYour group contract is due on Monday!"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#last-time",
+    "href": "slides/week-7/W7_functions.html#last-time",
+    "title": "Writing Functions",
+    "section": "Last Time…",
+    "text": "Last Time…\nWe wrote a function called find_car_make() that takes in the name of a car and returns the “make” of the car (the company that created it).\n\nfind_car_make(\"Toyota Camry\") returns “Toyota”.\nfind_car_make(\"Ford Anglica\") returns “Ford”.\n\n\nfind_car_make &lt;- function(car_name){\n  make &lt;- str_extract(string = car_name, \n                      pattern = \"[:alpha:]*\")\n  return(make)\n}"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#pair-our-function-with-dplyr",
+    "href": "slides/week-7/W7_functions.html#pair-our-function-with-dplyr",
+    "title": "Writing Functions",
+    "section": "Pair Our Function with dplyr",
+    "text": "Pair Our Function with dplyr\nConsider the mtcars data.\n\ndata(mtcars)\nhead(mtcars, n = 3)\n\n               mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\n\n\n. . .\nLet’s use our new function:\n\nmtcars |&gt; \n  rownames_to_column(\"make_model\") |&gt; \n  mutate(make = find_car_make(make_model),\n         .after = make_model) |&gt; \n  head(n = 3)\n\n     make_model   make  mpg cyl disp  hp drat    wt  qsec vs am gear carb\n1     Mazda RX4  Mazda 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\n2 Mazda RX4 Wag  Mazda 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\n3    Datsun 710 Datsun 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#recall-the-penguins-data",
+    "href": "slides/week-7/W7_functions.html#recall-the-penguins-data",
+    "title": "Writing Functions",
+    "section": "Recall the penguins Data",
+    "text": "Recall the penguins Data\n\nlibrary(palmerpenguins)\ndata(penguins)\npenguins |&gt; \n  head()\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#function-to-standardize-data",
+    "href": "slides/week-7/W7_functions.html#function-to-standardize-data",
+    "title": "Writing Functions",
+    "section": "Function to Standardize Data",
+    "text": "Function to Standardize Data\nWe want to take in a vector of numbers and standardize it – make all values be between 0 and 1.\n. . .\n\nstd_to_01 &lt;- function(var) {\n  stopifnot(is.numeric(var))\n  \n  num &lt;- var - min(var, na.rm = TRUE)\n  denom &lt;- max(var, na.rm = TRUE) - min(var, na.rm = TRUE)\n  \n  return(num / denom)\n}"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#standardizing-variables",
+    "href": "slides/week-7/W7_functions.html#standardizing-variables",
+    "title": "Writing Functions",
+    "section": "Standardizing Variables",
+    "text": "Standardizing Variables\nIs it a good idea to standardize (scale) variables in a data analysis?\n\n\nWhy standardize?\n\nEasier to compare across variables.\nEasier to model – standardizes the amount of variability.\n\n\nWhy not standardize?\n\nMore difficult to interpret the values.\n\n\n\n. . .\nE.g., a penguin with a bill length of 35 mm (std to 0.11) and a mass of 5500 g (std to 0.78)."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#pair-our-function-with-dplyr-1",
+    "href": "slides/week-7/W7_functions.html#pair-our-function-with-dplyr-1",
+    "title": "Writing Functions",
+    "section": "Pair Our Function with dplyr",
+    "text": "Pair Our Function with dplyr\nLet’s standardize penguin measurements.\n\npenguins |&gt; \n  mutate(bill_length_mm    = std_to_01(bill_length_mm), \n         bill_depth_mm     = std_to_01(bill_depth_mm), \n         flipper_length_mm = std_to_01(flipper_length_mm), \n         body_mass_g       = std_to_01(body_mass_g))\n\n\nUgh. Still copy-pasting!\n\n. . .\nRecall across()!\n\npenguins |&gt; \n  mutate(across(.cols = bill_length_mm:body_mass_g,\n                .fns = ~ std_to_01(.x))) |&gt; \n  slice_head(n = 4)\n\n# A tibble: 4 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;\n1 Adelie  Torgersen          0.255         0.667             0.153       0.292\n2 Adelie  Torgersen          0.269         0.512             0.237       0.306\n3 Adelie  Torgersen          0.298         0.583             0.390       0.153\n4 Adelie  Torgersen         NA            NA                NA          NA    \n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#use-variables-as-function-arguments",
+    "href": "slides/week-7/W7_functions.html#use-variables-as-function-arguments",
+    "title": "Writing Functions",
+    "section": "Use variables as function arguments?",
+    "text": "Use variables as function arguments?\n\nstd_column_01 &lt;- function(data, variable) {\n  stopifnot(is.data.frame(data))\n  \n  data &lt;- data |&gt; \n    mutate(variable = std_to_01(variable))\n  return(data)\n}\n\n\n\n\n\n\n\nNote\n\n\n\nI used the existing function std_to_01() inside the new function for clarity!\n\n\n. . .\nBut it didn’t work…\n\nstd_column_01(penguins, body_mass_g)\n\nError in `mutate()`:\nℹ In argument: `variable = std_to_01(variable)`.\nCaused by error:\n! object 'body_mass_g' not found"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#tidy-evaluation",
+    "href": "slides/week-7/W7_functions.html#tidy-evaluation",
+    "title": "Writing Functions",
+    "section": "Tidy Evaluation",
+    "text": "Tidy Evaluation\nFunctions using unquoted variable names as arguments are said to use nonstandard evaluation or tidy evaluation.\n\n\nTidy:\n\npenguins |&gt; \n  pull(body_mass_g)\n\n  OR\n\npenguins$body_mass_g\n\n\nUntidy:\n\npenguins[, \"body_mass_g\"]\n\n  OR\n\npenguins[[\"body_mass_g\"]]\n\n\n\n\n. . .\nTidy evaluation isn’t naturally supported when writing your own functions."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#defused-r-code",
+    "href": "slides/week-7/W7_functions.html#defused-r-code",
+    "title": "Writing Functions",
+    "section": "Defused R Code",
+    "text": "Defused R Code\nWhen a piece of code is defused, R doesn’t return its value like normal.\n\nInstead it returns an expression that describes how to evaluate it.\n\n. . .\n\n\nEvaluated code:\n\n1 + 1\n\n[1] 2\n\n\n\nDefused code:\n\nexpr(1 + 1)\n\n1 + 1\n\n\n\n\n. . .\nWe produce defused code when we use tidy evaluation and our own functions don’t know how to handle it."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#solution-1",
+    "href": "slides/week-7/W7_functions.html#solution-1",
+    "title": "Writing Functions",
+    "section": "Solution 1",
+    "text": "Solution 1\nDon’t use tidy evaluation in your own functions.\n\nThis is more complicated to read and use, but it’s safe.\n\n\nstd_column_01 &lt;- function(data, variable) {\n  stopifnot(is.data.frame(data))\n  \n  data[[variable]] &lt;- std_to_01(data[[variable]])\n  return(data)\n}\n\nstd_column_01(penguins, \"bill_length_mm\")"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#solution-2-rlang",
+    "href": "slides/week-7/W7_functions.html#solution-2-rlang",
+    "title": "Writing Functions",
+    "section": "Solution 2: rlang",
+    "text": "Solution 2: rlang\nUse the rlang package!\n\n\n\nThis package provides operators that simplify writing functions around tidyverse pipelines.\n\n\n\nknitr::include_graphics(\"https://github.com/rstudio/hex-stickers/blob/main/thumbs/rlang.png?raw=true\")\n\n\n\n\n\n\n\n\n\n\n\nRead more about using this package for function writing here!"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#solution-2-rlang-1",
+    "href": "slides/week-7/W7_functions.html#solution-2-rlang-1",
+    "title": "Writing Functions",
+    "section": "Solution 2: rlang",
+    "text": "Solution 2: rlang\nTwo ways to get around the issue of defused code:\n\nEmbrace Operator ({ })\n\n\nWith { }, you can transport a variable from one function to another.\n\n. . .\n\nDefuse and Inject\n\n\nYou can first use enquo(arg) to defuse the variable.\nThen use !!arg to inject the variable."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#solution-2-rlang-2",
+    "href": "slides/week-7/W7_functions.html#solution-2-rlang-2",
+    "title": "Writing Functions",
+    "section": "Solution 2: rlang",
+    "text": "Solution 2: rlang\nIf we use either of these solutions, we also need to use the walrus operator (:=).\n\nThis means we have to use := instead of = in any dplyr verb containing one of these rlang fixes."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#recall-our-broken-function",
+    "href": "slides/week-7/W7_functions.html#recall-our-broken-function",
+    "title": "Writing Functions",
+    "section": "Recall Our Broken Function",
+    "text": "Recall Our Broken Function\n\nstd_column_01 &lt;- function(data, variable) {\n  stopifnot(is.data.frame(data))\n  \n  data &lt;- data |&gt; \n    mutate(variable = std_to_01(variable))\n  return(data)\n}\n\nstd_column_01(penguins, body_mass_g)\n\nError in `mutate()`:\nℹ In argument: `variable = std_to_01(variable)`.\nCaused by error:\n! object 'body_mass_g' not found\n\n\n\nThe code is defused, so mutate() doesn’t know what body_mass_g is.\nWe need to modify variable to make this work correctly!"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#fixing-our-broken-function",
+    "href": "slides/week-7/W7_functions.html#fixing-our-broken-function",
+    "title": "Writing Functions",
+    "section": "Fixing Our Broken Function",
+    "text": "Fixing Our Broken Function\n\nEmbrace OperatorDefuse + Inject\n\n\n\nstd_column_01 &lt;- function(data, variable) {\n  stopifnot(is.data.frame(data))\n\n  data &lt;- data |&gt;\n    mutate({{variable}} := std_to_01({{variable}}))\n  return(data)\n}\n\nstd_column_01(penguins, body_mass_g)\n\n\n\n# A tibble: 6 × 7\n  species island    bill_length_mm bill_depth_mm body_mass_g sex     year\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7       0.292 male    2007\n2 Adelie  Torgersen           39.5          17.4       0.306 female  2007\n3 Adelie  Torgersen           40.3          18         0.153 female  2007\n4 Adelie  Torgersen           NA            NA        NA     &lt;NA&gt;    2007\n5 Adelie  Torgersen           36.7          19.3       0.208 female  2007\n6 Adelie  Torgersen           39.3          20.6       0.264 male    2007\n\n\n\n\n\nstd_column_01 &lt;- function(data, variable) {\n  stopifnot(is.data.frame(data))\n  \n  variable &lt;- enquo(variable)\n\n  data &lt;- data |&gt;\n    mutate(!!variable := std_to_01(!!variable))\n  return(data)\n}\n\nstd_column_01(penguins, body_mass_g)\n\n\n\n# A tibble: 6 × 7\n  species island    bill_length_mm bill_depth_mm body_mass_g sex     year\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7       0.292 male    2007\n2 Adelie  Torgersen           39.5          17.4       0.306 female  2007\n3 Adelie  Torgersen           40.3          18         0.153 female  2007\n4 Adelie  Torgersen           NA            NA        NA     &lt;NA&gt;    2007\n5 Adelie  Torgersen           36.7          19.3       0.208 female  2007\n6 Adelie  Torgersen           39.3          20.6       0.264 male    2007"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#inject-multiple-variables",
+    "href": "slides/week-7/W7_functions.html#inject-multiple-variables",
+    "title": "Writing Functions",
+    "section": "Inject Multiple Variables",
+    "text": "Inject Multiple Variables\nWhat if I want to modify multiple columns?\n\nUse across()!\n\n\nstd_column_01 &lt;- function(data, variables) {\n  stopifnot(is.data.frame(data))\n  \n  data &lt;- data |&gt; \n    mutate(across(.cols = {{variables}},\n                  .fns = ~ std_to_01(.x)))\n  return(data)\n}\n\nstd_column_01(penguins, bill_length_mm:body_mass_g)\n\n\n\n# A tibble: 5 × 7\n  species island    bill_length_mm bill_depth_mm body_mass_g sex     year\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;\n1 Adelie  Torgersen          0.255         0.667       0.292 male    2007\n2 Adelie  Torgersen          0.269         0.512       0.306 female  2007\n3 Adelie  Torgersen          0.298         0.583       0.153 female  2007\n4 Adelie  Torgersen         NA            NA          NA     &lt;NA&gt;    2007\n5 Adelie  Torgersen          0.167         0.738       0.208 female  2007"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#types-of-missing-data",
+    "href": "slides/week-7/W7_functions.html#types-of-missing-data",
+    "title": "Writing Functions",
+    "section": "Types of Missing Data",
+    "text": "Types of Missing Data\n\nMissing Completely at Random (MCAR)\n\nNo difference between missing and observed values.\nMissing observations are a random subset of all observations.\n\nMissing at Random (MAR)\n\nSystematic difference between missing and observed values, but can be entirely explained by other observed variables.\n\nMissing Not at Random (MNAR)\n\nMissingness is directly related to the unobserved value."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#types-of-missing-data-1",
+    "href": "slides/week-7/W7_functions.html#types-of-missing-data-1",
+    "title": "Writing Functions",
+    "section": "Types of Missing Data",
+    "text": "Types of Missing Data\nConsider a study of depression.\n\nMissing Completely at Random (MCAR)\n\nSome subjects have missing lab values because a batch of samples was processed improperly.\n\nMissing at Random (MAR)\n\nSubjects who identify as men are less likely to complete a survey on depression severity.\n\nMissing Not at Random (MNAR)\n\nSubjects with more severe depression are less likely to complete a survey on depression severity."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#when-we-remove-missing-data",
+    "href": "slides/week-7/W7_functions.html#when-we-remove-missing-data",
+    "title": "Writing Functions",
+    "section": "When we remove missing data…",
+    "text": "When we remove missing data…\nWe implicitly assume observations are missing completely at random!\n\nWe might be mostly removing data from subjects who identify as men.\nWe might be mostly removing data from subjects with severe depression.\nWe are inadvertently making our data less representative.\n\n. . .\nWe need to take more care when dealing with missing values!"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#dealing-with-missing-data",
+    "href": "slides/week-7/W7_functions.html#dealing-with-missing-data",
+    "title": "Writing Functions",
+    "section": "Dealing with Missing Data",
+    "text": "Dealing with Missing Data\n\nLook for patterns!\n\nDo observations with missing values have similar traits?\n\n\n. . .\n\nConsider outside explanations!\n\nWhy might missing data exist?\nShould we have a “missing” category in our analysis?\n\n\n. . .\n\nCan we impute values?\n\nIf depression is MCAR within gender, age, and education level, then the distribution of depression will be similar for people of the same gender, age, and education level."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#lab-7-functions-fish",
+    "href": "slides/week-7/W7_functions.html#lab-7-functions-fish",
+    "title": "Writing Functions",
+    "section": "Lab 7: Functions + Fish",
+    "text": "Lab 7: Functions + Fish\n\nknitr::include_graphics(\"https://github.com/earobinson95/stat331-calpoly/blob/master/lab-assignments/lab7/images/blackfoot_river.jpg?raw=true\")"
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#to-do-1",
+    "href": "slides/week-7/W7_functions.html#to-do-1",
+    "title": "Writing Functions",
+    "section": "To do…",
+    "text": "To do…\n\nLab 7: Functions + Fish\n\nDue Saturday, 5/18 at 11:59pm.\n\nRead Chapter 8: Functional Programming\n\nCheck-in 8.1 due Monday 5/20 at 10:00am.\n\nFinal Project Group Contract\n\nDue Monday, 5/20 at 11:59pm."
+  },
+  {
+    "objectID": "group-activities/week-7/PA-7-functions.html",
+    "href": "group-activities/week-7/PA-7-functions.html",
+    "title": "PA 7: Writing Functions",
+    "section": "",
+    "text": "Download starter .qmd template\nYou will write several small functions, then use them to unscramble a message. Many of the functions have been started for you below, but none of them are complete as is.\n1. Write code to manipulate the vector of numbers nums. Your code should divide each element in the vector by the smallest element and round the results to the nearest whole number. This code should not be a function.\n\nnums &lt;- 3:12\n\n2. Turn your code from Q1 into a function called divide_and_round(). Fill in the skeleton below.\n\ndivide_and_round &lt;- function(vec){\n  \n}\n\n3. Test your function by running the code below.\n\ntest &lt;- c(5:10, NA)\ndivide_and_round(test)\n\nNULL\n\n\n4. Write code to manipulate the vector of numbers nums. Your code should, for each element, return TRUE if the number is NOT divisible by 9 or 12, and return FALSE otherwise. This code should not be a function.\n\n# Write your code for Q4 here.\n\n5. Turn your code from Q4 into a function called no_nines_or_twelves().\n\n# Write your code for Q5 here.\n\n6. Test your function by running the code below.\n\ntest &lt;- c(3:12*5, NA)\nno_nines_or_twelves(test)\n\nError in no_nines_or_twelves(test): could not find function \"no_nines_or_twelves\"\n\n\n7. Write a function called every_other(). This function should take in a vector and return every other value in the vector. Include an optional argument called start which lets you choose where to start skipping; that is, if start = 1, the function returns the 1st, 3rd, 5th, etc. values and if start = 2, the function returns the 2nd, 4th, 6th, etc. values. Fill in the skeleton below.\n\n\n\n\n\n\nWarning\n\n\n\nDo not use a for() loop to do this! Accomplish this with the seq_along() function, bracket subsetting ([]), and modulus arithmetic (%%).\n\n\n\nevery_other &lt;- function(vec){\n  \n  if(start == 2){\n\n    \n  } else if(start == 1) {\n\n    \n  }\n  \n}\n\n8. Test your function by running the code below.\n\ntest &lt;- c(1:10)\n\nevery_other(test)\n\nError in start == 2: comparison (==) is possible only for atomic and list types\n\nevery_other(test, start = 2)\n\nError in every_other(test, start = 2): unused argument (start = 2)\n\n\n9. Write a function called shorten(). This function should take in a vector, drop all values BEFORE the cumulative sum is greater than a provided number, and return the remaining values from the original vector.\n\n\n\n\n\n\nWarning\n\n\n\nDo not use a while() loop to do this! Accomplish this with the cumsum() function and bracketing.\n\n\n\n# Write your code for Q9 here.\n\n10. Write code to test your function.\n\n# Write code to test the shorten() function here.\n\n11. Once you have written your four functions correctly, run the following code:\n\nmy_vec &lt;- c(39, 1.87, 48, 11, 8, 45, 21, 5, 12, 33, 9, 11, 108,\n            4, 18, 5, 16, 17, 8, 48, 27, 24, 4, 22, 12, 27, 23,\n            46, 42, 35, 15, 34, 36, 26, 18, 10, 18.21, 72.04,\n            36.9, 41.81, 29, 89.75, 34.03, 20.18, 48.74, 15.76,\n            31.86, 83.6, 43.55, 39.99, 23.55, 8.54, 24.71, 22.02,\n            9.71, 62.14, 35.46, 16.61, 15.66, 21.29, 30.52,\n            201.07, 45.81, 7.85, 30.13, 34.14, 22.62, 10.2, 6.02,\n            30.12, 10.64, 31.72, 24.57, 14.43, 43.37, 89.93,\n            44.72, 51.32, 13.62, 45.56, 22.96, 7.05, 29.99, 41.38,\n            26.59, 23.04, 19.82, 50.73, 39.56, 43.79, 30.22, 85.85,\n            5.78, 78.85, 29.52, 66.27, 44.06, 27.28, 24.43, 64.32,\n            3.35, 67.45, 46.72, 48.44, 48.65, 33.3, 40.28, 19.04)\n\nmy_vec &lt;- every_other(my_vec, start = 2)\n\nError in every_other(my_vec, start = 2): unused argument (start = 2)\n\n# Should have 54 elements! \n\nmy_vec &lt;- divide_and_round(my_vec)\n\nmy_vec &lt;- every_other(my_vec, start = 1)\n\nError in every_other(my_vec, start = 1): unused argument (start = 1)\n\n# Should have 27 elements!\n\nmy_vec &lt;- shorten(my_vec, 350)\n\nError in shorten(my_vec, 350): could not find function \"shorten\"\n\n# Should have 12 elements!\n\nmy_vec &lt;- my_vec[no_nines_or_twelves(my_vec)]\n\nError in no_nines_or_twelves(my_vec): could not find function \"no_nines_or_twelves\"\n\n# Should have 6 elements! \n\nmy_vec &lt;- sort(my_vec)\n\nmy_vec\n\nNULL\n\n\n\n\n\n\n\n\nCanvas Submission\n\n\n\nIf you have done everything correctly, your final vector will be six numbers long. Google these six numbers to find a TV show as your final answer and submit to Canvas."
+  },
+  {
+    "objectID": "labs/instructions/challenge-7-instructions.html",
+    "href": "labs/instructions/challenge-7-instructions.html",
+    "title": "Challenge 7: Incorporating Multiple Inputs",
+    "section": "",
+    "text": "Download .qmd starter file\nDownload BlackfootFish.csv\nThis is a continuation of Lab 7: Functions + Fish.\n\nlibrary(tidyverse)\nfish &lt;- read.csv(\"BlackfootFish.csv\")\n\nError in file(file, \"rt\"): cannot open the connection\n\n\n\n\n\n\n\n\n\n\n\nA frequently used measurement for fish health is a condition index (Wikipedia article). The following simple equation can be used to calculate the approximate condition index of a fish:\n\\[\\text{condition index} = \\frac{weight}{length^3} \\times 100\\]\n1. There are specific units required for the calculation of a condition index – length must be in centimeters and weight must be in grams. The weight data for the Blackfoot River fish were collected in grams; the length data were collected in millimeters. Transform the length data to the correct units.\n\n# Code for 1\n\n2. Replace impossible length and weight measurements with NAs. Do some research on the 4 species of trout included in these data to determine what measurements are unlikely or impossible. Write a function to handle this process.\nYour function should accept at least three inputs:\n\na vector of measurements,\nthe minimum value you believe is “reasonable,”\nthe maximum value you believe is “reasonable.”\n\nIf a value falls outside these bounds, you should replace it with an NA.\n\n\n\n\n\n\nTip\n\n\n\nIf you are struggling with the structure of your function, I would suggest reading the Mutating Function from R4DS.\n\n\nUse your function to modify the length and weight columns of the BlackfootFish data set, removing values you believe are unreasonable.\n\n# Code for 2\n\n3. Write a function to calculate the condition index of a fish, given inputs of weight and length.\n\n\n\n\n\n\nWarning\n\n\n\nConsider whether your function will accept vectors as inputs or if it will accept variable names as inputs!\n\n\n\n# Code for 3\n\n4. Make a thoughtful visualization of how fish conditions have varied over the duration of this study.\n\n# Code for 4"
+  },
+  {
+    "objectID": "labs/instructions/lab-7-instructions.html",
+    "href": "labs/instructions/lab-7-instructions.html",
+    "title": "Lab 7: Functions + Fish",
+    "section": "",
+    "text": "Download .qmd starter file\nDownload BlackfootFish.csv\nThe goal of this lab is learn more about exploring missing data and writing modular code.\nlibrary(tidyverse)\nfish &lt;- read.csv(\"BlackfootFish.csv\")\n\nError in file(file, \"rt\"): cannot open the connection"
+  },
+  {
+    "objectID": "labs/instructions/lab-7-instructions.html#the-data",
+    "href": "labs/instructions/lab-7-instructions.html#the-data",
+    "title": "Lab 7: Functions + Fish",
+    "section": "The Data",
+    "text": "The Data\nThis lab’s data concerns mark-recapture data on four species of trout from the Blackfoot River outside of Helena, Montana. These four species are rainbow trout (RBT), westslope cutthroat trout (WCT), bull trout, and brown trout.\n\nMark-recapture is a common method used by ecologists to estimate a population’s size when it is impossible to conduct a census (count every animal). This method works by tagging animals with a tracking device so that scientists can track their movement and presence."
+  },
+  {
+    "objectID": "labs/instructions/lab-7-instructions.html#data-exploration",
+    "href": "labs/instructions/lab-7-instructions.html#data-exploration",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Data Exploration",
+    "text": "Data Exploration\nThe measurements of each captured fish were taken by a biologist on a raft in the river. The lack of a laboratory setting opens the door to the possibility of measurement errors.\n1. Let’s look for missing values in the dataset. Output ONE table that answers BOTH of the following questions:\n\nHow many observations have missing values?\nWhat variable(s) have missing values present?\n\n\n\n\n\n\n\nTip\n\n\n\nHint: use across().\n\n\n\n# Code for Q1.\n\n2. Create ONE thoughtful visualization that explores the frequency of missing values across the different years, sections, and trips.\n\n# Code for Q2."
+  },
+  {
+    "objectID": "labs/instructions/lab-7-instructions.html#rescaling-the-data",
+    "href": "labs/instructions/lab-7-instructions.html#rescaling-the-data",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Rescaling the Data",
+    "text": "Rescaling the Data\nIf I wanted to rescale every quantitative variable in my dataset so that they only have values between 0 and 1, I could use this formula:\n\n\\[y_{scaled} = \\frac{y_i - min\\{y_1, y_2,..., y_n\\}}{max\\{y_1, y_2,..., y_n\\}\n- min\\{y_1, y_2,..., y_n\\}}\\]\n\nI might write the following R code to carry out the rescaling procedure for the length and weight columns of the BlackfoorFish data:\n\nfish &lt;- fish |&gt; \n  mutate(length = (length - min(length, na.rm = TRUE)) / \n           (max(length, na.rm = TRUE) - min(length, na.rm = TRUE)), \n         weight = (weight - min(weight, na.rm = TRUE)) / \n           (max(weight, na.rm = TRUE) - min(length, na.rm = TRUE)))\n\nThis process of duplicating an action multiple times can make it difficult to understand the intent of the process. Additionally, it can make it very difficult to spot mistakes.\n3. What is the mistake I made in the above rescaling code?\nWhen you find yourself copy-pasting lines of code, it’s time to write a function, instead!\n4. Transform the repeated process above into a rescale_01() function. Your function should…\n\n… take a single vector as input.\n… return the rescaled vector.\n\n\n\n\n\n\n\nTip\n\n\n\nThink about the efficiency of your function. Are you calling the same function multiple times?\nLook into the function range().\n\n\n\n# Code for Q4 and Q5.\n\n5. Let’s incorporate some input validation into your function. Modify your previous code so that the function stops if …\n\n… the input vector is not numeric.\n… the length of the input vector is not greater than 1.\n\n\n\n\n\n\n\nTip\n\n\n\nDo not create a new code chunk here – simply add these stops to your function above!"
+  },
+  {
+    "objectID": "labs/instructions/lab-7-instructions.html#test-your-function",
+    "href": "labs/instructions/lab-7-instructions.html#test-your-function",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Test Your Function",
+    "text": "Test Your Function\n6. Run the code below to test your function. Verify that the maximum of your rescaled vector is 1 and the minimum is 0!\n\nx &lt;- c(1:25, NA)\n\nrescaled &lt;- rescale_01(x)\n\nError in rescale_01(x): could not find function \"rescale_01\"\n\nmin(rescaled, na.rm = TRUE)\n\nError in eval(expr, envir, enclos): object 'rescaled' not found\n\nmax(rescaled, na.rm = TRUE)\n\nError in eval(expr, envir, enclos): object 'rescaled' not found\n\n\nNext, let’s test the function on the length column of the BlackfootFish data.\n7. The code below makes a histogram of the original values of length. Add a plot of the rescaled values of length. Output your plots side-by-side, so the reader can confirm the only aspect that has changed is the scale.\n\n\n\n\n\n\nWarning\n\n\n\nThis will require you to call your rescale_01() function within a mutate() statement in order to create a length_scaled variable.\n\n\n\n\n\n\n\n\nTip\n\n\n\n\nSet the y-axis limits for both plots to go from 0 to 4000 to allow for direct comparison across plots.\nPay attention to binwidth!\nLook for a Quarto code-chunk option to put the plots side-by-side.\n\n\n\n\nfish |&gt;  \n  ggplot(aes(x = length)) + \n  geom_histogram(binwidth = 45) +\n  labs(x = \"Original Values of Fish Length (mm)\") +\n  scale_y_continuous(limits = c(0,4000))\n\nError in eval(expr, envir, enclos): object 'fish' not found\n\n# Code for Q7 plot."
+  },
+  {
+    "objectID": "labs/instructions/lab-7-instructions.html#use-variables-within-a-dataset",
+    "href": "labs/instructions/lab-7-instructions.html#use-variables-within-a-dataset",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Use Variables within a Dataset",
+    "text": "Use Variables within a Dataset\nSuppose you would like for your rescale() function to perform operations on a variable within a dataset. Ideally, your function would take in a dataframe and a variable name as inputs and return a dataframe where the variable has been rescaled.\n8. Create a rescale_column() function that accepts two arguments: (1) a dataframe and (2) the name(s) of the variable(s) to be rescaled. The body of the function should call the original rescale_01() function you wrote previously. Your solution MUST use one of the rlang options from class.\n\n\n\n\n\n\nTip\n\n\n\nIf you are struggling with this task, I recommend looking here and at the slides from class on Wednesday!\n\n\n\n# Code for Q8.\n\n9. Use your rescale_column() function to rescale both the length and weight columns.\n\n\n\n\n\n\nWarning\n\n\n\nI expect that you carry out this process by calling the rescale_column() function only ONE time!\n\n\n\n# original values\nfish |&gt; \n select(length:weight) |&gt; \n head()\n\nError in eval(expr, envir, enclos): object 'fish' not found\n\n# rescaled values\n\n# Code for Q9."
+  },
+  {
+    "objectID": "labs/instructions/lab-7-instructions.html#condition-index",
+    "href": "labs/instructions/lab-7-instructions.html#condition-index",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Condition Index",
+    "text": "Condition Index\nA frequently used measurement for fish health is a condition index (Wikipedia). The following equation can be used to calculate the approximate condition index of a fish:\n\\[\\text{condition index} = \\frac{weight}{length^3} \\times 100\\]\n10. When calculating the condition index, fish length must be in centimeters and fish weight must be in grams. The weight data for the Blackfoot River fish were collected in grams, but the length data were collected in millimeters. Transform the length data to the correct units.\n\n# Code for Q10.\n\n11. Collecting data of this sort can be very messy! Write a function that will replace unlikely length and weight measurements with NA. Your function should accept at least three inputs:\n\na vector of measurements,\nthe minimum reasonable value,\nthe maximum reasonable value.\n\n\n\n\n\n\n\nTip\n\n\n\nIf you are struggling with the structure of your function, I would suggest reading the Mutating Function from R4DS.\n\n\n\n# Code for Q11.\n\n12. After consulting the Montana Record Table for the 4 species of trout included in these data, I have conjectured that it is unlikely to have measurements for fish below 5 cm and above 80 cm in length or below 10 g and above 4,000 g in weight. Use your function to modify the length and weight columns of the fish dataset based on my cutoffs.\n\n# Code for Q12.\n\n13. Write a function to calculate the condition index of a fish, given inputs of weight and length. Use your modified fish dataset\n\n\n\n\n\n\nWarning\n\n\n\nConsider whether your function will accept vectors as inputs or if it will accept variable names as inputs!\n\n\n\n# Code for Q13.\n\n14. Make a thoughtful visualization of how fish conditions have varied over the duration of this study.\n\n\n\n\n\n\nTo be thoughtful…\n\n\n\n… you need to use at least a third variable!\n\n\n\n# Code for Q14."
+  },
+  {
+    "objectID": "weeks/week-7-data-frame-functions.html#tidy-evaluation-1",
+    "href": "weeks/week-7-data-frame-functions.html#tidy-evaluation-1",
+    "title": "Writing Data Frame & Plot Functions in R",
+    "section": "1.1 Tidy Evaluation",
+    "text": "1.1 Tidy Evaluation\nWriting functions that work with data frames and call on the functions we’ve become used to (e.g., filter(), select(), summarise()) requires we learn about tidy evaluation. To write these functions you will need to know, at a high level, whether the function you are trying to incorporate uses data masking or tidy selection.\nAt a high level, data masking is used in functions like arrange(), filter(), and summarize() that compute with variables. Whereas, tidy selection is used for functions like select() and rename() that select variables.\nYour intuition about which functions use tidy evaluation should be good for many of these functions. If you can input c(var1, var2, var3) into the function (e.g., select(mtcars, c(vs, am, gear))), then the function uses tidy selection! If you cannot input c(var1, var2, var3) into the function, then the function is performing computations on the data and uses data masking.\nIf you are interested in learning more about tidy evaluation, I would highly recommend:\n\nthis video by Jenny Bryan\n\nI do want to note that this video is from 2019 and some things have changed since then. Namely, we used to need to use the enquo() function to inject\nvariable names into dplyr functions, whereas we now use embracing {{}}. 🤗\n\nthis vignette for tidy evaluation with dplyr\n\n\n✅ Check-in 7.2: Writing Data Frame Functions\n\n\n\n\n\n\nData Structure\n\n\n\nNote for Questions 1 & 2, I am assuming the flight data has a similar structure to the nycflights data from the openintro R package.\n\nhead(openintro::nycflights)\n\n# A tibble: 6 × 16\n   year month   day dep_time dep_delay arr_time arr_delay carrier tailnum flight\n  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;int&gt;\n1  2013     6    30      940        15     1216        -4 VX      N626VA     407\n2  2013     5     7     1657        -3     2104        10 DL      N3760C     329\n3  2013    12     8      859        -1     1238        11 DL      N712TW     422\n4  2013     5    14     1841        -4     2122       -34 DL      N914DL    2391\n5  2013     7    21     1102        -3     1230        -8 9E      N823AY    3652\n6  2013     1     1     1817        -3     2008         3 AA      N3AXAA     353\n# ℹ 6 more variables: origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,\n#   hour &lt;dbl&gt;, minute &lt;dbl&gt;\n\n\n\n\nQuestion 1: Fill in the code below to write a function that finds all flights that were cancelled or delayed by more than a user supplied number of hours:\n\nfilter_severe &lt;- function(df, hours) { \n  df |&gt; \n    filter(dep_delay _____)\n}\n\n\nnycflights |&gt; \n  filter_severe(hours = 2)\n\nQuestion 2: Fill in the code below to write a function that converts the user supplied variable that uses clock time (e.g., dep_time, arr_time, etc.) into a decimal time (i.e. hours + (minutes / 60)).\n\nstandardize_time &lt;- function(df, time_var) {\n  df |&gt; \n    # Times are stored as 2008 for 8\n    mutate( {{ time_var }} := \n              as.numeric(\n                ## Grab first two numbers for hour\n                str_sub(\n                  {{ time_var }}, \n                  start = 1, \n                  end = 2)\n                ) +  \n              as.numeric(\n                ## Grab second two numbers for minutes\n                str_sub(\n                  {{ time_var }}, \n                  start = 3, \n                  end = 4)\n                ) / 60\n            )\n  \n}\n\nnycflights |&gt; \n  standardize_time(arr_time)\n\nQuestion 3: For each of the following functions determine if the function uses data-masking or tidy-selection:\n\ndistinct()\ncount()\ngroup_by()\nselect()\nrename_with()\nacross()"
+  },
+  {
+    "objectID": "weeks/week-7-data-frame-functions.html#tidy-evaluation",
+    "href": "weeks/week-7-data-frame-functions.html#tidy-evaluation",
+    "title": "Writing Data Frame & Plot Functions in R",
+    "section": "1.1 Tidy Evaluation",
+    "text": "1.1 Tidy Evaluation\nWriting functions that work with data frames and call on the functions we’ve become used to (e.g., filter(), select(), summarise()) requires we learn about tidy evaluation. To write these functions you will need to know, at a high level, whether the function you are trying to incorporate uses data masking or tidy selection.\nAt a high level, data masking is used in functions like arrange(), filter(), and summarize() that compute with variables. Whereas, tidy selection is used for functions like select() and rename() that select variables.\nYour intuition about which functions use tidy evaluation should be good for many of these functions. If you can input c(var1, var2, var3) into the function (e.g., select(mtcars, c(vs, am, gear))), then the function uses tidy selection! If you cannot input c(var1, var2, var3) into the function, then the function is performing computations on the data and uses data masking.\nIf you are interested in learning more about tidy evaluation, I would highly recommend:\n\nthis video by Jenny Bryan\n\nI do want to note that this video is from 2019 and some things have changed since then. Namely, we used to need to use the enquo() function to inject\nvariable names into dplyr functions, whereas we now use embracing {{}}. 🤗\n\nthis vignette for tidy evaluation with dplyr\n\n\n✅ Check-in 7.2: Writing Data Frame Functions\n\n\n\n\n\n\nData Structure\n\n\n\nNote for Questions 1 & 2, I am assuming the flight data has a similar structure to the nycflights data from the openintro R package.\n\nhead(openintro::nycflights)\n\n# A tibble: 6 × 16\n   year month   day dep_time dep_delay arr_time arr_delay carrier tailnum flight\n  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;int&gt;\n1  2013     6    30      940        15     1216        -4 VX      N626VA     407\n2  2013     5     7     1657        -3     2104        10 DL      N3760C     329\n3  2013    12     8      859        -1     1238        11 DL      N712TW     422\n4  2013     5    14     1841        -4     2122       -34 DL      N914DL    2391\n5  2013     7    21     1102        -3     1230        -8 9E      N823AY    3652\n6  2013     1     1     1817        -3     2008         3 AA      N3AXAA     353\n# ℹ 6 more variables: origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,\n#   hour &lt;dbl&gt;, minute &lt;dbl&gt;\n\n\n\n\nQuestion 1: Fill in the code below to write a function that finds all flights that were cancelled or delayed by more than a user supplied number of hours:\n\nfilter_severe &lt;- function(df, hours) { \n  df |&gt; \n    filter(dep_delay _____)\n}\n\n\nnycflights |&gt; \n  filter_severe(hours = 2)\n\nQuestion 2: Fill in the code below to write a function that converts the user supplied variable that uses clock time (e.g., dep_time, arr_time, etc.) into a decimal time (i.e. hours + (minutes / 60)).\n\nstandardize_time &lt;- function(df, time_var) {\n  df |&gt; \n    # Times are stored as 2008 for 8\n    mutate( {{ time_var }} := \n              as.numeric(\n                ## Grab first two numbers for hour\n                str_sub(\n                  {{ time_var }}, \n                  start = 1, \n                  end = 2)\n                ) +  \n              as.numeric(\n                ## Grab second two numbers for minutes\n                str_sub(\n                  {{ time_var }}, \n                  start = 3, \n                  end = 4)\n                ) / 60\n            )\n  \n}\n\nnycflights |&gt; \n  standardize_time(arr_time)\n\nQuestion 3: For each of the following functions determine if the function uses data-masking or tidy-selection:\n\ndistinct()\ncount()\ngroup_by()\nselect()\nrename_with()\nacross()"
   }
 ]
