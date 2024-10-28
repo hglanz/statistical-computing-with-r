@@ -14,3 +14,9 @@ editor: source
 <!-- - I'm confused by what counts as progression and pushing yourself, how is that measured. I think for me I would like a specific amount of challenges and maybe a growth over time of challenging oneself. -->
 
 <!-- While this would be good, this is hard to measure and to show when arguing for our grades. (group collaboration) -->
+
+# Reflections for Lab / Challenge Revisions
+
+<!-- show examples of really good reflections -->
+
+Reflection I added information about where the data comes from, which is important because without any context data can easily be taken as universal fact, and including context is necessary to show the specific situation the data was collected. In this case, being collected during COVID could have big implications, and without noting that it would be easy to extrapolate these results to other years as well.
