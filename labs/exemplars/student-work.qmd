@@ -1,51 +1,32 @@
 ---
 title: "Gallary of Exemplary Student Work"
+execute: 
+  warning: false
+  message: false
+  echo: true
 ---
 
 ```{r}
-#| label: setup-read-in-data
-#| message: false
+#| label: set-up-packages
 #| echo: false
 
 library(tidyverse)
+```
+
+
+# Challenge 2
+
+```{r}
+#| label: data-for-lab-2
+#| echo: false
+
 survey_data <- read_csv(here::here("labs", 
                                    "student",
                                    "data", 
                                    "surveys.csv")
                         )
 
-teacher_evals <- read_csv(here::here("labs", 
-                                     "student",
-                                     "data",
-                                     "teacher_evals.csv")
-                          )
-
-# From student's lab
-teacher_evals_clean <- teacher_evals |>
-  rename(sex = gender) |>
-  select(course_id,
-         teacher_id,
-         question_no,
-         no_participants,
-         resp_share,
-         SET_score_avg,
-         percent_failed_cur,
-         academic_degree,
-         seniority,
-         sex
-         ) |>
-  mutate(
-    course_id = as.factor(course_id),
-    teacher_id = as.factor(teacher_id),
-    sex = as.factor(sex),
-    academic_degree = as.factor(academic_degree),
-    question_no = as.integer(question_no)
-  ) |>
-  filter(no_participants >= 10)
-
 ```
-
-# Challenge 2
 
 This code is brought to us by Zack Kramer! I think this code is so special because Zack managed to specify **every** annotation within *one* call to the `annotate()` function---very efficient!
 
@@ -79,13 +60,46 @@ ggplot(data = survey_data,
 
 # Lab 3
 
-This code is brought to us by a student who wishes to remain 
-anonymous. What I appreciated about their code is both their
-efficiency and their concise output!
+```{r}
+#| label: data-for-lab-3
+#| echo: false
+teacher_evals <- read_csv(here::here("labs", 
+                                     "student",
+                                     "data",
+                                     "teacher_evals.csv")
+                          )
 
-**3. Provide a brief overview (~4 sentences) of the dataset.**
+# From student's lab
+teacher_evals_clean <- teacher_evals |>
+  rename(sex = gender) |>
+  select(course_id,
+         teacher_id,
+         question_no,
+         no_participants,
+         resp_share,
+         SET_score_avg,
+         percent_failed_cur,
+         academic_degree,
+         seniority,
+         sex
+         ) |>
+  mutate(
+    course_id = as.factor(course_id),
+    teacher_id = as.factor(teacher_id),
+    sex = as.factor(sex),
+    academic_degree = as.factor(academic_degree),
+    question_no = as.integer(question_no)
+  ) |>
+  filter(no_participants >= 10)
+```
 
-*This data set contains the metrics generated from students’ teacher evaluations at a University in Poland during the winter semester of the 2020-2021 academic year. The data set is 8015 by 22, representing 8015 observations with 22 variables. Each row of data corresponds to a specific teacher, their class identifier and an evaluation question. And for each of these, the average score of the question, the teacher’s information, and additional student metrics are observed.* 
+
+This code is brought to us by a student who wishes to remain anonymous. What I
+appreciated about their code is both their efficiency and their concise output!
+
+**3. Provide a brief overview (\~4 sentences) of the dataset.**
+
+*This data set contains the metrics generated from students’ teacher evaluations at a University in Poland during the winter semester of the 2020-2021 academic year. The data set is 8015 by 22, representing 8015 observations with 22 variables. Each row of data corresponds to a specific teacher, their class identifier and an evaluation question. And for each of these, the average score of the question, the teacher’s information, and additional student metrics are observed.*
 
 **6. How many unique instructors and unique courses are present in the cleaned dataset?**
 
@@ -123,4 +137,217 @@ teacher_evals_clean |>
 
 # Lab 4
 
+```{r}
+#| label: data-for-lab-4
+#| echo: false
 
+childcare_costs <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv')
+
+counties <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv')
+
+ca_childcare <- counties |>
+  filter(state_abbreviation == "CA") |>
+  inner_join(childcare_costs,
+             by = "county_fips_code") %>% 
+    mutate(region = fct_collapse(county_name,
+                               `Superior California` = c("Butte County", 
+                                                         "Colusa County", 
+                                                         "El Dorado County", 
+                                                         "Glenn County", 
+                                                         "Lassen County", 
+                                                         "Modoc County", 
+                                                         "Nevada County", 
+                                                         "Placer County", 
+                                                         "Plumas County", 
+                                                         "Sacramento County", 
+                                                         "Shasta County", 
+                                                         "Sierra County", 
+                                                         "Siskiyou County", 
+                                                         "Sutter County", 
+                                                         "Tehama County", 
+                                                         "Yolo County", 
+                                                         "Yuba County"),
+                               `North Coast` = c("Del Norte County", 
+                                                 "Humboldt County", 
+                                                 "Lake County", 
+                                                 "Mendocino County", 
+                                                 "Napa County", 
+                                                 "Sonoma County", 
+                                                 "Trinity County"),
+                               `San Francisco Bay Area` = c("Alameda County", 
+                                                            "Contra Costa County",
+                                                            "Marin County",
+                                                            "San Francisco County",
+                                                            "San Mateo County",
+                                                            "Santa Clara County",
+                                                            "Solano County"),
+                               `Northern San Joaquin Valley` = c("Alpine County",
+                                                                 "Amador County",
+                                                                 "Calaveras County",
+                                                                 "Madera County",
+                                                                 "Mariposa County",
+                                                                 "Merced County",
+                                                                 "Mono County", 
+                                                                 "San Joaquin County",
+                                                                 "Stanislaus County",
+                                                                 "Tuolumne County"),
+                               `Central Coast` = c("Monterey County", 
+                                                   "San Benito County", 
+                                                   "San Luis Obispo County", 
+                                                   "Santa Barbara County", 
+                                                   "Santa Cruz County",
+                                                   "Ventura County"),
+                               `Southern San Joaquin Valley` = c("Fresno County",
+                                                                 "Inyo County", 
+                                                                 "Kern County",
+                                                                 "Kings County",
+                                                                 "Tulare County"),
+                               `Inland Empire` = c("Riverside County",
+                                                   "San Bernardino County"),
+                               `Los Angeles County` = c("Los Angeles County"),
+                               `Orange County` = c("Orange County"),
+                               `San Diego - Imperial` = c("Imperial County",
+                                                          "San Diego County")
+                               )
+         )
+
+## Needed for Tillman's solution
+median_inc <- ca_childcare |>
+  filter(study_year %in% c(2008, 2018)) |>
+  group_by(region, study_year) |>
+  summarize(median_household_income = median(mhi_2018)) |>
+  pivot_wider(names_from = study_year, values_from = median_household_income)
+```
+
+**4. Let's consider the median household income of each region, and how that income has changed over time. Create a table with ten rows, one for each region, and two columns, one for 2008 and one for 2018. The cells should contain the `median` of the median household income (expressed in 2018 dollars) of the `region` and the `study_year`. Arrange the rows by 2018 values.**
+
+This code is brought to us by Oliver Lane & Cassandra Miller! What I appreciate
+about their code is how their tables have descriptive titles! 
+
+**Oliver's Code**: 
+
+```{r}
+ca_childcare |>
+  filter(study_year %in% c(2008, 2018)) |>
+  group_by(region, study_year) |>
+  summarise(median_income = median(mhi_2018, na.rm = TRUE), .groups = 'drop') |>
+  pivot_wider(names_from = study_year,
+              values_from = median_income,
+              names_prefix = "median_income_") |>
+  arrange(desc(median_income_2018))
+```
+
+**Cassandra's Code**: 
+
+```{r}
+median_income_by_region <- ca_childcare |> 
+  filter(study_year %in% c(2008, 2018)) |> 
+  group_by(region, study_year) |> 
+  summarise(median_income = median(mhi_2018, na.rm = TRUE), .groups = 'drop') |> 
+  pivot_wider(names_from = study_year, values_from = median_income, names_prefix = "Income_")
+
+```
+
+
+**5. Which California `region` had the lowest `median` full-time median weekly price for center-based childcare for infants in 2018? Does this `region` correspond to the `region` with the lowest `median` income in 2018 that you found in Q4?**
+
+This code is brought to us by Eva Moylan & Tillman Erb! What I appreciate
+about their code is how they went above and beyond by including **both** the 
+median price of center-based childcare for infants **and** median household
+income for each region. 
+
+**Eva's Code**: 
+
+```{r}
+ca_childcare |>
+  group_by(region, study_year) |>
+  summarize(mhi_2018 = median(mhi_2018), #values now are median for each year at each county
+            mc_infant = median(mc_infant),
+            .groups = 'drop') |>
+  filter(study_year == 2018) |>
+  pivot_wider(id_cols = "region", #region stays from original table orientation 
+              names_from = study_year,
+              values_from = c(mhi_2018,
+                              mc_infant)) |> 
+  slice_min(mc_infant_2018) #Superior CA has the lowest med childcare for infants in 2018
+```
+
+**Tillman's Code**: 
+
+```{r}
+ca_childcare |>
+  filter(study_year == 2018) |>
+  group_by(region) |>
+  summarize(median_weekly_cc_price = median(mc_infant)) |>
+  arrange(median_weekly_cc_price) |>
+  inner_join(select(median_inc, -`2008`)) |>
+  rename(median_household_income =`2018`)
+```
+
+**6. The following plot shows, for all ten regions, the change over time of the full-time median price for center-based childcare for infants, toddlers, and preschoolers. Recreate the plot. You do not have to replicate the exact colors or theme, but your plot should have the same content, including the order of the facets and legend, reader-friendly labels, axes breaks, and a loess smoother.**
+
+This code is brought to us by Isabel Villafuerte! What I appreciate
+about their code is the reordering of the facets and legend, adding dollar 
+signs to the y-axis labels, and dodging the x-axis labels (a clever way to not
+need to remove some labels!). 
+
+```{r}
+ca_childcare |>
+  filter(study_year >= 2008) |>
+  pivot_longer(cols = c(mc_infant,
+                        mc_toddler,
+                        mc_preschool),
+               names_to = "age_demo",
+               values_to = "median_weekly_price") |>
+  mutate(age_demo = fct_recode(age_demo,
+                               "Infant" = "mc_infant",
+                               "Toddler" = "mc_toddler",
+                               "Preschool" = "mc_preschool"),
+         age_demo = fct_relevel(age_demo,
+                                 "Infant",
+                                 "Toddler",
+                                 "Preschool")
+         ) |> 
+ggplot(mapping = aes (x = study_year,
+                        y = median_weekly_price,
+                      color = fct_reorder2(region,
+                                           .x = study_year,
+                                           .y = median_weekly_price))) +
+  geom_point() +
+  geom_smooth(method = "loess",
+              se = TRUE) +
+  facet_wrap(~age_demo) +
+  labs(x = "Study Year",
+       y = "",
+       title = "Weekly Median Price for Center-Based Childcare ($)",
+       color = "California Region") +
+  scale_x_continuous(breaks = seq(2008,
+                                  2018,
+                                  by = 2)) +
+  guides(x = guide_axis(n.dodge = 2)) +
+  theme_bw() +
+  scale_y_continuous(limits = c(0,
+                                500),
+                     labels = scales::label_dollar())
+```
+
+**7. Create a scatterplot showing the relationship between median household income (expressed in 2018 dollars) and the full-time median weekly price charged for center-based childcare for an infant in California. Overlay a linear regression line (lm) to show the trend.**
+
+This code is brought to us by Oliver Lane & Cassandra Miller! What I appreciate
+about their plot is their use of color, themes, and thoughtful plot titles! 
+
+```{r}
+ggplot(ca_childcare, aes(x = mhi_2018, y = mc_infant)) +
+  geom_point(alpha = 0.6, color = "steelblue") +  # Scatterplot points
+  geom_smooth(method = "lm", se = TRUE, color = "darkred", linetype = "dashed") + 
+  theme_bw() +
+  labs(
+    title = "Household Income vs. Infant Care Prices",
+    x = "Median Household Income (dollars)",
+    y = "",
+    subtitle = "Median Weekly Price for Infant Care (dollars)"
+  ) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold") 
+  )
+```
