@@ -2647,7 +2647,7 @@
     "href": "portfolio/portfolio-instructions.html",
     "title": "Portfolio Instructions",
     "section": "",
-    "text": "A portfolio is a collection of work that gives information about the person doing the work. Artists and architects, for example, have portfolios that show the range and scope of what they do, and by looking through their portfolios, you get a sense of who this person is, how they have grown as a professional, what they have produced, and what they are capable of producing.\nThat’s the spirit intended for the STAT 331 Portfolio. In your portfolio, you will give a curated collection of your best work along with reflections that tell the story of your growth from the first day of classes all the way to the end. Your goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content mastery, evidence of continued learning, and growth as a team member that goes with a particular grade. I will read your portfolio carefully, and if you make a convincing case for a grade, that’s the grade you’ll receive.",
+    "text": "A portfolio is a collection of work that gives information about the person doing the work. Artists and architects, for example, have portfolios that show the range and scope of what they do, and by looking through their portfolios, you get a sense of who this person is, how they have grown as a professional, what they have produced, and what they are capable of producing.\nThat’s the spirit intended for the STAT 331 Portfolio. In your portfolio, you will give a curated collection of your best work along with reflections that tell the story of your growth from the first day of classes all the way to the end. Your goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content proficiency, evidence of continued learning, and growth as a team member that goes with a particular grade. I will read your portfolio carefully, and if you make a convincing case for a grade, that’s the grade you’ll receive.",
     "crumbs": [
       "Portfolio",
       "Portfolio Instructions"
@@ -2658,7 +2658,7 @@
     "href": "portfolio/portfolio-instructions.html#what-is-the-portfolio-and-how-will-it-be-used",
     "title": "Portfolio Instructions",
     "section": "",
-    "text": "A portfolio is a collection of work that gives information about the person doing the work. Artists and architects, for example, have portfolios that show the range and scope of what they do, and by looking through their portfolios, you get a sense of who this person is, how they have grown as a professional, what they have produced, and what they are capable of producing.\nThat’s the spirit intended for the STAT 331 Portfolio. In your portfolio, you will give a curated collection of your best work along with reflections that tell the story of your growth from the first day of classes all the way to the end. Your goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content mastery, evidence of continued learning, and growth as a team member that goes with a particular grade. I will read your portfolio carefully, and if you make a convincing case for a grade, that’s the grade you’ll receive.",
+    "text": "A portfolio is a collection of work that gives information about the person doing the work. Artists and architects, for example, have portfolios that show the range and scope of what they do, and by looking through their portfolios, you get a sense of who this person is, how they have grown as a professional, what they have produced, and what they are capable of producing.\nThat’s the spirit intended for the STAT 331 Portfolio. In your portfolio, you will give a curated collection of your best work along with reflections that tell the story of your growth from the first day of classes all the way to the end. Your goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content proficiency, evidence of continued learning, and growth as a team member that goes with a particular grade. I will read your portfolio carefully, and if you make a convincing case for a grade, that’s the grade you’ll receive.",
     "crumbs": [
       "Portfolio",
       "Portfolio Instructions"
@@ -3050,7 +3050,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\nData Joins + Pivots\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\nWorking with Categorical Variables\nExtending Joins, Factors, Clean Variable Names\nPA4 Due by 12pm\nLab 4 Instructions\nLink to Assignmenton GitHub Classroom Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\nUsing stringr to Work with Strings\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\nUsing lubridate to Work with Dates\nPA5 Due by 12pm\nLab 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nPortfolio Week!\nStarting Your Portfolio\n\n\nMidterm Portfolio Targets & Grade Expectations\n\n\n\nThurs, 10/31\nPortfolio Week!\nFinishing Your Portfolio\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 11/7\nWriting your own dataframe functions\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 Instructions\nChallenge 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\nData Joins + Pivots\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\nWorking with Categorical Variables\nExtending Joins, Factors, Clean Variable Names\nPA4 Due by 12pm\nLab 4 Instructions\nLink to Assignmenton GitHub Classroom Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\nUsing stringr to Work with Strings\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\nUsing lubridate to Work with Dates\nPA5 Due by 12pm\nLab 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nPortfolio Week!\nTips for Starting Your Portfolio\n\n\nMidterm Portfolio Targets & Grade Expectations\n\n\n\nThurs, 10/31\nPortfolio Week!\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 11/7\nWriting your own dataframe functions\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 Instructions\nChallenge 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -4792,5 +4792,68 @@
     "title": "Writing Functions",
     "section": "To do…",
     "text": "To do…\n\nLab 7: Functions + Fish\n\nDue Saturday, 5/18 at 11:59pm.\n\nRead Chapter 8: Functional Programming\n\nCheck-in 8.1 due Monday 5/20 at 10:00am.\n\nFinal Project Group Contract\n\nDue Monday, 5/20 at 11:59pm."
+  },
+  {
+    "objectID": "slides/week-6/midterm-portfolio.html#when-locating-code",
+    "href": "slides/week-6/midterm-portfolio.html#when-locating-code",
+    "title": "Midterm Portfolio Work Week",
+    "section": "When locating code…",
+    "text": "When locating code…\n\nfind 1-2 high quality examples (quality &gt; quantity)\nfind examples that hit on multiple learning targets at the same time"
+  },
+  {
+    "objectID": "slides/week-6/midterm-portfolio.html#for-example..",
+    "href": "slides/week-6/midterm-portfolio.html#for-example..",
+    "title": "Midterm Portfolio Work Week",
+    "section": "For example..",
+    "text": "For example..\n\nthe code below could be used to demonstrate proficiency with:\n\n\n\nWD-2 – in two places (select() and starts_with())!\nWD-7\n\n\n\n\n\nWD-4\nR-2 (tidy code)\nPE-4 (the |&gt; is a “modern tool”)\n\n\n\nca_childcare |&gt;\n  select(study_year,\n         mc_infant,\n         mc_toddler,\n         mc_preschool,\n         region\n         ) |&gt;\n  pivot_longer(cols = starts_with(\"mc_\"), \n               names_to = \"age\", \n               values_to = \"median_income\"\n               ) |&gt; \n  mutate(age = fct_relevel(age, \n                          \"mc_infant\",\n                          \"mc_toddler\",\n                          \"mc_preschool\")\n        )"
+  },
+  {
+    "objectID": "slides/week-6/midterm-portfolio.html#revising-your-thinking-1",
+    "href": "slides/week-6/midterm-portfolio.html#revising-your-thinking-1",
+    "title": "Midterm Portfolio Work Week",
+    "section": "Revising Your Thinking",
+    "text": "Revising Your Thinking\n\n“I am wondering if there is a specific number for the amount of assignments that constitutes all but a few for when phrasing like this is used in the grading criteria.”\n\n\n\nNo, but to me this indicates that you are submitting revisions frequently, especially for the “bigger” problems where additional feedback is warranted.\n\n\n\nIt’s possible that you are selective in the problems you choose to revise and submit for additional feedback. This criteria does not say “Revises entire assignment.”!"
+  },
+  {
+    "objectID": "slides/week-6/midterm-portfolio.html#includes-thoughtful-reflections-on-why-revisions-are-being-requested.",
+    "href": "slides/week-6/midterm-portfolio.html#includes-thoughtful-reflections-on-why-revisions-are-being-requested.",
+    "title": "Midterm Portfolio Work Week",
+    "section": "“Includes thoughtful reflections on why revisions are being requested.”",
+    "text": "“Includes thoughtful reflections on why revisions are being requested.”\n\n\n\n“I added information about where the data comes from, which is important. because without any context data can easily be taken as universal fact, and including context is necessary to show the specific situation the data was collected. In this case, being collected during COVID could have big implications, and without noting that it would be easy to extrapolate these results to other years as well.”\n\n\n\n\n\nDemonstrating an understanding of the “bigger picture” ideas!"
+  },
+  {
+    "objectID": "slides/week-6/midterm-portfolio.html#extending-your-thinking-1",
+    "href": "slides/week-6/midterm-portfolio.html#extending-your-thinking-1",
+    "title": "Midterm Portfolio Work Week",
+    "section": "Extending Your Thinking",
+    "text": "Extending Your Thinking\n\n“I’m confused by what counts as progression and pushing yourself, how is that measured. I think for me I would like a specific amount of challenges and maybe a growth over time of challenging oneself.”\n\n\n\nYou are making an argument about how you have extended your thinking—“pushing yourself” looks different for everyone."
+  },
+  {
+    "objectID": "slides/week-6/midterm-portfolio.html#supporting-your-peers-1",
+    "href": "slides/week-6/midterm-portfolio.html#supporting-your-peers-1",
+    "title": "Midterm Portfolio Work Week",
+    "section": "Supporting Your Peers",
+    "text": "Supporting Your Peers\n\n“While this would be good [following the collaborative protocol], this is hard to measure and to show when arguing for our grades.”\n\n\n\n\n\n\nWhat have you learned about collaboration through the groupwork protocol?\n\nHow have you grown as a collaborator?\n\nHow have you supported your peers through code review?\n\nDo you have a specific code review you are proud of? Show me!\n\nSupporting your peers on Discord can look a variety of ways!\n\nDid you ask questions that others could learn from?\nDid you answer someone’s question?"
+  },
+  {
+    "objectID": "slides/week-6/midterm-portfolio.html#determining-your-grade-1",
+    "href": "slides/week-6/midterm-portfolio.html#determining-your-grade-1",
+    "title": "Midterm Portfolio Work Week",
+    "section": "Determining Your Grade",
+    "text": "Determining Your Grade\n\nI believe my grade equivalent to course work evidenced below to be an __.\n\n\nYour goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content proficiency, evidence of continued learning, and growth as a team member that goes with a particular grade."
+  },
+  {
+    "objectID": "slides/week-6/midterm-portfolio.html#plus-minus-modifiers",
+    "href": "slides/week-6/midterm-portfolio.html#plus-minus-modifiers",
+    "title": "Midterm Portfolio Work Week",
+    "section": "Plus / Minus Modifiers",
+    "text": "Plus / Minus Modifiers\n\n\n\n+\n\nYou’ve met all the criteria for the letter grade along with a significant amount, but not all, of the criteria for the next letter grade up.\n\n\n\n\n\n\n-\n\nYou have met the requirements for a letter grade but only in a way that you believe is a bare minimum.\nYou’ve met almost all the requirements for the letter grade except for a small number of minor criteria."
+  },
+  {
+    "objectID": "slides/week-6/midterm-portfolio.html#what-if-you-dont-agree",
+    "href": "slides/week-6/midterm-portfolio.html#what-if-you-dont-agree",
+    "title": "Midterm Portfolio Work Week",
+    "section": "What if you don’t agree?",
+    "text": "What if you don’t agree?\nThere are two ways this might happen.\n\n\n\n\nYou ask for a grade that is higher than the evidence supports.\n\n\nThat is, you grade yourself too highly. For example, you believe you earned an A in the course, but I do not feel the evidence you’ve provided supports this grade.\n\n\nIn this case, I’ll tell you what grade I would have given you based on the evidence you provided in the portfolio. You can then use this feedback when constructing your Final Portfolio.\n\n\n\n\n\n\n\n\n\nYou ask for a grade that was lower than your actual performance indicates.\n\n\nThat is, you “lowball” yourself, for example you say you earned a B when in fact I think you earned an A-.\n\n\nIn this case, I will tell you what grade I believe you have earned and why."
   }
 ]

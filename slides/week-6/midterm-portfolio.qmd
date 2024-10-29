@@ -1,22 +1,273 @@
 ---
-title: "Midterm Portfolio Work Session"
+title: "Midterm Portfolio Work Week"
 format: 
   revealjs:
         theme: [simple, ../style.scss]
 editor: source
 ---
 
+# Step 1: Fork the [Final Portfolio Repository](https://github.com/atheobold/STAT331_portfolio_template)
 
-<!-- Feedback from Grade Expectation quiz: -->
+# Step 2: Clone your copy into RStudio
 
-<!-- - I am wondering if there is a specific number for the amount of assignments that constitutes all but a few for when phrasing like this is used in the grading criteria.¬ -->
+# Step 3: Look over the `reflection_template.qmd` file
 
-<!-- - I'm confused by what counts as progression and pushing yourself, how is that measured. I think for me I would like a specific amount of challenges and maybe a growth over time of challenging oneself. -->
+# Step 4: Start finding code that demonstrate each learning target
 
-<!-- While this would be good, this is hard to measure and to show when arguing for our grades. (group collaboration) -->
+. . .
 
-# Reflections for Lab / Challenge Revisions
+> You can use **any** code from your Lab or Challenge assignments. 
 
-<!-- show examples of really good reflections -->
 
-Reflection I added information about where the data comes from, which is important because without any context data can easily be taken as universal fact, and including context is necessary to show the specific situation the data was collected. In this case, being collected during COVID could have big implications, and without noting that it would be easy to extrapolate these results to other years as well.
+## When locating code...
+
+
+-   find 1-2 **high quality** examples (quality \> quantity)
+-   find examples that hit on **multiple** learning targets at the same time
+
+## For example..
+
+::: {.small}
+the code below could be used to demonstrate proficiency
+with: 
+
+::: columns
+::: {.column width="45%"}
+- WD-2 -- in two places (`select()` and `starts_with()`)!
+- WD-7
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="50%"}
+- WD-4
+- R-2 (tidy code)
+- PE-4 (the `|>` is a "modern tool")
+
+:::
+:::
+
+```{r}
+#| echo: true
+#| eval: false
+#| label: example-student-code
+#| code-line-numbers: "|2|8|8-11|12-16"
+
+ca_childcare |>
+  select(study_year,
+         mc_infant,
+         mc_toddler,
+         mc_preschool,
+         region
+         ) |>
+  pivot_longer(cols = starts_with("mc_"), 
+               names_to = "age", 
+               values_to = "median_income"
+               ) |> 
+  mutate(age = fct_relevel(age, 
+                          "mc_infant",
+                          "mc_toddler",
+                          "mc_preschool")
+        )
+```
+:::
+
+# Revising Your Thinking
+
+## Revising Your Thinking 
+
+> "I am wondering if there is a specific number for the amount of assignments
+> that constitutes [all but a few]{.underline} for when phrasing like this is
+> used in the grading criteria."
+
+. . .
+
+</br>
+
+No, but *to me* this indicates that you are submitting revisions frequently, 
+especially for the "bigger" problems where additional feedback is warranted.
+
+. . .
+
+</br> 
+
+It's possible that you are selective in the problems you choose to revise 
+and submit for additional feedback. This criteria does not say "Revises entire
+assignment."!
+
+
+
+## "Includes thoughtful reflections on why revisions are being requested."
+
+. . .
+
+::: {.small}
+> "I added information about where the data comes from, which is important.
+> because without any context data can easily be taken as universal fact, and
+> including context is necessary to show the specific situation the data was
+> collected. In this case, being collected during COVID could have big
+> implications, and without noting that it would be easy to extrapolate these
+> results to other years as well."
+:::
+
+. . .
+
+</br> 
+
+Demonstrating an understanding of the “bigger picture” ideas!
+
+# "Takes all feedback into account...
+
+> (including problems receiving an S) and incorporates into future assignments."
+
+# Extending Your Thinking
+
+## Extending Your Thinking 
+
+> "I'm confused by what counts as progression and pushing yourself, how is that
+> measured. I think for me I would like a specific amount of challenges and
+> maybe a growth over time of challenging oneself."
+
+. . .
+
+</br> 
+
+You are making an argument about how you have extended your
+thinking---"pushing yourself" looks different for everyone. 
+
+# Supporting Your Peers
+
+## Supporting Your Peers
+
+> "While this would be good [following the collaborative protocol], this is hard
+> to measure and to show when arguing for our grades."
+
+. . .
+
+</br>
+
+::: {.incremental}
+::: {.small}
+- What have you learned about collaboration through the groupwork protocol?
+  + How have you grown as a collaborator?
+- How have you supported your peers through code review?
+  + Do you have a specific code review you are proud of? Show me! 
+- Supporting your peers on Discord can look a variety of ways!
+  + Did you ask questions that others could learn from?
+  + Did you answer someone's question?
+:::
+:::
+
+# Determining Your Grade
+
+## Determining Your Grade
+
+> I believe my grade equivalent to course work evidenced below to be an __.
+
+. . .
+
+Your goal is to argue, convincingly and with concrete evidence, that you have
+met the criteria for both content proficiency, evidence of continued learning, 
+and growth as a team member that goes with a particular grade. 
+
+## Plus / Minus Modifiers
+
+::: columns
+::: {.column width="48%"}
+::: {.fragment}
+**+**
+
+- You’ve met all the criteria for the letter grade along with a significant
+amount, but not all, of the criteria for the next letter grade up. 
+:::
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+::: {.fragment}
+**-** 
+
+- You have met the requirements for a letter grade but only in a way that you
+believe is a bare minimum. 
+- You’ve met almost all the requirements for the letter grade except for a small
+number of minor criteria.
+:::
+:::
+:::
+
+
+## What if you don't agree?
+
+There are two ways this might happen.
+
+
+::: columns
+::: {.column width="48%"}
+:::{.fragment}
+::: {.small}
+***You ask for a grade that is higher than the evidence supports.***
+
+</br>
+
+::: {.fragment}
+That is, you grade yourself too highly. For example, you believe you earned an A
+in the course, but I do not feel the evidence you’ve provided supports this
+grade.
+
+</br>
+
+::: {.fragment}
+In this case, I’ll tell you what grade I would have given you based on the
+evidence you provided in the portfolio. You can then use this feedback when
+constructing your Final Portfolio.
+:::
+:::
+:::
+:::
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+:::{.fragment}
+::: {.small}
+***You ask for a grade that was lower than your actual performance indicates.***
+
+</br>
+
+:::{.fragment}
+That is, you "lowball" yourself, for example you say you earned a B when in fact
+I think you earned an A-.
+
+</br>
+
+::: {.fragment}
+In this case, I will tell you what grade I believe
+you have earned and why.
+:::
+:::
+:::
+:::
+:::
+:::
+
+
+# Midterm Portfolio Meetings
+
+. . .
+
+> Will occur on Thrusday of next week.
+
+. . .
+
+</br> 
+</br> 
+
+Sign-up for your time here: [link to Google Sheet](https://docs.google.com/spreadsheets/d/1b4fUfPIT_05niJlpHNnne_y5HXXB-43Nzph6_FWZf80/edit?usp=sharing)
+
+
+
