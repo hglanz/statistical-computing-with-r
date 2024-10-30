@@ -2643,6 +2643,86 @@
     ]
   },
   {
+    "objectID": "portfolio/midterm-portfolio-targets.html",
+    "href": "portfolio/midterm-portfolio-targets.html",
+    "title": "Midterm Portfolio Learning Targets & Grade Expectations",
+    "section": "",
+    "text": "The following learning targets have been covered in Weeks 1-5 of this course. When locating code that “fits” into these learning targets I would like for you to:\n\nfind 1-2 high quality examples (quality &gt; quantity)\nfind examples that hit on multiple learning targets at the same time\n\nFor example, the code below could be used to demonstrate proficiency with:\n\n\n\nWD-2 – in two places (select() and starts_with())!\nWD-7\n\n\n\n\n\nWD-4\nR-2 (tidy code)\nPE-4 (the |&gt; is a “modern tool”)\n\n\n\n\nca_childcare |&gt;\n  select(study_year,\n         mc_infant,\n         mc_toddler,\n         mc_preschool,\n         region\n         ) |&gt;\n  pivot_longer(cols = starts_with(\"mc_\"), \n               names_to = \"age\", \n               values_to = \"median_income\"\n               ) |&gt; \n  mutate(age = fct_relevel(age, \n                          \"mc_infant\",\n                          \"mc_toddler\",\n                          \"mc_preschool\")\n        )\n\n\n\n\nWorking with Data\n\n\nWD-1: I can import data from a variety of formats (e.g., csv, xlsx, txt)\nWD-2: I can select necessary columns from a dataset\nWD-3: I can filter rows from a dataset for a variety of data types (e.g., numeric, factor, date, character)\nWD-4: I can modify existing variables and create new variables in a dataset for a variety of data types (e.g., numeric, factor, date, character)\nWD-5: I can use mutating joins from the tidyr package to combine multiple datasets\nWD-6: I can use filtering joins from the dplyr package to filter rows from a dataset\nWD-7: I can pivot datasets from long to wide and visa versa\n\n\nReproducibility\n\n\nR-1: I can create professional looking, reproducible analyses using RStudio projects, Quarto documents, and the here package  \nR-2: I can write well documented1 and tidy code2\nR-3: I can write robust programs3 that are resistant to changes in inputs\n\n\n\n\n\nData Visualization & Summarization\n\n\nDVS-1: I can create visualizations for a variety of variable types (e.g., numeric, character, date)\nDVS-2: I use plot modifications to make my visualizations clearer to the reader\nDVS-3: I show creativity in my visualizations\nDVS-4: I can calculate numerical summaries of variables\nDVS-5: I can calculate numerical summaries of variables across multiple groups\nDVS-6: I can create tables which make my summaries clear to the reader\n\n\nProgram Efficiency\n\n\nPE-1: I can write concise code which does not repeat itself.\nPE-4: I can use modern tools4 when carrying out my analysis."
+  },
+  {
+    "objectID": "portfolio/midterm-portfolio-targets.html#footnotes",
+    "href": "portfolio/midterm-portfolio-targets.html#footnotes",
+    "title": "Midterm Portfolio Learning Targets & Grade Expectations",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n“well documented” code has elements of the following:\n\ncode comments (e.g., # function to rescale columns between 0 and 1)\ncode chunk names (using the #| lab: option)\nsections in Quarto file which describe the process(es) being implemented\n\n↩︎\n“tidy code” is code which adheres to the tidyverse style guidelines↩︎\nThe follow are some examples of code I would consider “robust”:\n\nusing column names rather than column positions\nincluding function stops when writing functions\nusing processes that don’t depend on you remembering a particular sequence of steps (e.g., arrange() then slice() versus slice_max())\n\n↩︎\nThe following are some examples of tools I would consider are “modern”:\n\nfunctions which are not superseded\nfunctions which are not deprecated\nusing the pipe operator to decrease the number of intermediate objects created\n\n↩︎"
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html",
+    "href": "weeks/week-1-quarto.html",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "",
+    "text": "The theme of this lesson is good management of your files and data. In part two of this week’s coursework you will learn how to identify folders and paths, and create Quarto documents.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1, Part 2 - Quarto"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#file-management",
+    "href": "weeks/week-1-quarto.html#file-management",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "1.1 File Management",
+    "text": "1.1 File Management\nAs boring as it sounds, file management is arguably one of the most important skills a data scientist should have. The reproducibility of a project depends just as much on the way in which the project was stored as the computing tools used. While using R and Quarto make an important step in creating a reproducible analysis, there are other pieces that are arguably just as important—such as file management.\nBelieve it or not, your computer has multiple locations** where files can be stored. There has been a bit of a generational shift as computers have evolved: the “file system” metaphor itself is outdated because no one uses physical files anymore. [This article]((https://futurism.com/the-byte/gen-z-kids-file-systems) makes the argument that with modern search capabilities, most people use their computers as a laundry hamper instead of as a nice, organized filing cabinet. However, the laundry hamper approach doesn’t play nicely with working in R and creating Quarto documents.\nIn this class, we will store files according to the Project TIER protocol. More specifically, you will have:\n\na “Stat 331” folder in your Documents folder, containing all your materials associated with STAT 331\na sub-folder for each week (e.g., Week 1, Week 2)\nseparate folders within each week for each assignment (e.g., Practice Activity, Lab)\na separate R Studio Project (and GitHub repository) associated with each assignment\n\nFor example, if you come to my office for help on your lab assignment for Week 2, I would expect your files to look like this:\n\nFile Storage on WindowsFile Storage on a Mac\n\n\n\nI have six total folders in my Documents, one of which is a folder named “STAT 331.”\n\nInside my STAT 331 folder is a sub-folder named “Week 1,” which also has a sub-folder (a sub-sub-folder) named “Lab 1.” You can tell what folders Lab 1 lives inside based on the information included at the top of the screen. This is called a “file path,” which tells your computer where a folder / file lives on the computer.\nOn a PC, every file lives on the C Drive, so the “full path” to get to my Lab 1 folder would be:\nC:/Users/atheobold/Documents/STAT 331/Week 1/Lab 1\n\n\n\nI have six total folders in my Documents, one of which is a folder named “STAT 331.” Inside this folder is a sub-folder named “Week 1,” which also has a sub-folder (a sub-sub-folder) named “Lab 1.”\nOn a Mac, every file lives on the hard drive (it doesn’t have letters like a PC), so the “full path” to get to my Lab 1 folder would be:\n/Users/atheobold/Documents/STAT 331/Week 1/Lab 1",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1, Part 2 - Quarto"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#check-in-1.3-stat-331-folder",
+    "href": "weeks/week-1-quarto.html#check-in-1.3-stat-331-folder",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "1.2 ✅ Check-in 1.3: Stat 331 Folder",
+    "text": "1.2 ✅ Check-in 1.3: Stat 331 Folder\nTake a screenshot of your class directory, showing:\n\nthe location of your Stat 331 folder\na Week 1 sub-folder\na Lab 1 sub-sub-folder (inside the Week 1 folder)\n\n\n\n\n\n\n\nYour folder cannot synch with anything online!\n\n\n\nYour STAT 331 folder cannot be in a folder stored on OneDrive or iCloud! Storing your folder in this location will cause your code to periodically not run and I cannot help you fix it.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1, Part 2 - Quarto"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#downloading-quarto",
+    "href": "weeks/week-1-quarto.html#downloading-quarto",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "2.1 Downloading Quarto",
+    "text": "2.1 Downloading Quarto\nThe software associated with Quarto is automatically downloaded with the newest versions of RStudio. So, if you are using the most up to date version of RStudio (as instructed in Part 1 of this week’s coursework), you should already have Quarto installed on your computer. But, let’s test it out.\nTo ensure you have Quarto installed, carry out the following process:\n\nOpen RStudio\nClick on “File” (in the upper navigation bar)\nSelect “New File” (in the dropdown options)\nSelect “Quarto Document…” (in the dropdown option)\n\n \nIf you have Quarto installed, you should be prompted with the following menu:\n\nIf, instead, you receive a message saying Quarto is not installed on your computer, you need to download Quarto: https://quarto.org/docs/download/",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1, Part 2 - Quarto"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#introduction-to-quarto",
+    "href": "weeks/week-1-quarto.html#introduction-to-quarto",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "2.2 Introduction to Quarto",
+    "text": "2.2 Introduction to Quarto\n\n📖 Required Reading: Intro to Quarto\n\n\nHTML Documents\nWe will exclusively use HTML documents in this course. If you are interested in learning more about formatting options for Quarto HTML documents, I would recommend checking out:\n\na discussion of the basics of formatting HTML documents in Quarto\nthe list of all HTML Ffrmatting pptions for Quarto documents",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1, Part 2 - Quarto"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1-quarto.html#check-in-1.4-quarto-documents",
+    "href": "weeks/week-1-quarto.html#check-in-1.4-quarto-documents",
+    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
+    "section": "2.3 ✅ Check-in: 1.4 Quarto Documents",
+    "text": "2.3 ✅ Check-in: 1.4 Quarto Documents\nQuestion 1: What are the options at the top of a Quarto document (between the --- and --- symbols) called?\n\nXML\nYAML\nREML\nTOML\n\nQuestion 2: What symbols create an R code chunk?\n\n```\n{r}\n```{r}\n`{r}`\n\nQuestion 3: What symbol defines a heading?\n\n$\n_\n*\n#\n\nQuestion 4: When working in a Quarto document, the [visual / source] editor will display the raw Quarto document, whereas the [visual / source] will display the document as it will appear when it is rendered.\nQuestion 5: To produce an HTML report from your Quarto document, you need to click the ____ button.\n\nVisual\nRender\nRender on Save\nSave",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1, Part 2 - Quarto"
+    ]
+  },
+  {
     "objectID": "portfolio/portfolio-instructions.html",
     "href": "portfolio/portfolio-instructions.html",
     "title": "Portfolio Instructions",
@@ -3057,84 +3137,67 @@
     ]
   },
   {
-    "objectID": "weeks/week-1-quarto.html",
-    "href": "weeks/week-1-quarto.html",
-    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
-    "section": "",
-    "text": "The theme of this lesson is good management of your files and data. In part two of this week’s coursework you will learn how to identify folders and paths, and create Quarto documents.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1, Part 2 - Quarto"
-    ]
+    "objectID": "slides/week-6/midterm-portfolio.html#when-locating-code",
+    "href": "slides/week-6/midterm-portfolio.html#when-locating-code",
+    "title": "Midterm Portfolio Work Week",
+    "section": "When locating code…",
+    "text": "When locating code…\n\nfind 1-2 high quality examples (quality &gt; quantity)\nfind examples that hit on multiple learning targets at the same time"
   },
   {
-    "objectID": "weeks/week-1-quarto.html#file-management",
-    "href": "weeks/week-1-quarto.html#file-management",
-    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
-    "section": "1.1 File Management",
-    "text": "1.1 File Management\nAs boring as it sounds, file management is arguably one of the most important skills a data scientist should have. The reproducibility of a project depends just as much on the way in which the project was stored as the computing tools used. While using R and Quarto make an important step in creating a reproducible analysis, there are other pieces that are arguably just as important—such as file management.\nBelieve it or not, your computer has multiple locations** where files can be stored. There has been a bit of a generational shift as computers have evolved: the “file system” metaphor itself is outdated because no one uses physical files anymore. [This article]((https://futurism.com/the-byte/gen-z-kids-file-systems) makes the argument that with modern search capabilities, most people use their computers as a laundry hamper instead of as a nice, organized filing cabinet. However, the laundry hamper approach doesn’t play nicely with working in R and creating Quarto documents.\nIn this class, we will store files according to the Project TIER protocol. More specifically, you will have:\n\na “Stat 331” folder in your Documents folder, containing all your materials associated with STAT 331\na sub-folder for each week (e.g., Week 1, Week 2)\nseparate folders within each week for each assignment (e.g., Practice Activity, Lab)\na separate R Studio Project (and GitHub repository) associated with each assignment\n\nFor example, if you come to my office for help on your lab assignment for Week 2, I would expect your files to look like this:\n\nFile Storage on WindowsFile Storage on a Mac\n\n\n\nI have six total folders in my Documents, one of which is a folder named “STAT 331.”\n\nInside my STAT 331 folder is a sub-folder named “Week 1,” which also has a sub-folder (a sub-sub-folder) named “Lab 1.” You can tell what folders Lab 1 lives inside based on the information included at the top of the screen. This is called a “file path,” which tells your computer where a folder / file lives on the computer.\nOn a PC, every file lives on the C Drive, so the “full path” to get to my Lab 1 folder would be:\nC:/Users/atheobold/Documents/STAT 331/Week 1/Lab 1\n\n\n\nI have six total folders in my Documents, one of which is a folder named “STAT 331.” Inside this folder is a sub-folder named “Week 1,” which also has a sub-folder (a sub-sub-folder) named “Lab 1.”\nOn a Mac, every file lives on the hard drive (it doesn’t have letters like a PC), so the “full path” to get to my Lab 1 folder would be:\n/Users/atheobold/Documents/STAT 331/Week 1/Lab 1",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1, Part 2 - Quarto"
-    ]
+    "objectID": "slides/week-6/midterm-portfolio.html#for-example..",
+    "href": "slides/week-6/midterm-portfolio.html#for-example..",
+    "title": "Midterm Portfolio Work Week",
+    "section": "For example..",
+    "text": "For example..\n\nthe code below could be used to demonstrate proficiency with:\n\n\n\nWD-2 – in two places (select() and starts_with())!\nWD-7\n\n\n\n\n\nWD-4\nR-2 (tidy code)\nPE-4 (the |&gt; is a “modern tool”)\n\n\n\nca_childcare |&gt;\n  select(study_year,\n         mc_infant,\n         mc_toddler,\n         mc_preschool,\n         region\n         ) |&gt;\n  pivot_longer(cols = starts_with(\"mc_\"), \n               names_to = \"age\", \n               values_to = \"median_income\"\n               ) |&gt; \n  mutate(age = fct_relevel(age, \n                          \"mc_infant\",\n                          \"mc_toddler\",\n                          \"mc_preschool\")\n        )"
   },
   {
-    "objectID": "weeks/week-1-quarto.html#check-in-1.3-stat-331-folder",
-    "href": "weeks/week-1-quarto.html#check-in-1.3-stat-331-folder",
-    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
-    "section": "1.2 ✅ Check-in 1.3: Stat 331 Folder",
-    "text": "1.2 ✅ Check-in 1.3: Stat 331 Folder\nTake a screenshot of your class directory, showing:\n\nthe location of your Stat 331 folder\na Week 1 sub-folder\na Lab 1 sub-sub-folder (inside the Week 1 folder)\n\n\n\n\n\n\n\nYour folder cannot synch with anything online!\n\n\n\nYour STAT 331 folder cannot be in a folder stored on OneDrive or iCloud! Storing your folder in this location will cause your code to periodically not run and I cannot help you fix it.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1, Part 2 - Quarto"
-    ]
+    "objectID": "slides/week-6/midterm-portfolio.html#revising-your-thinking-1",
+    "href": "slides/week-6/midterm-portfolio.html#revising-your-thinking-1",
+    "title": "Midterm Portfolio Work Week",
+    "section": "Revising Your Thinking",
+    "text": "Revising Your Thinking\n\n“I am wondering if there is a specific number for the amount of assignments that constitutes all but a few for when phrasing like this is used in the grading criteria.”\n\n\n\nNo, but to me this indicates that you are submitting revisions frequently, especially for the “bigger” problems where additional feedback is warranted.\n\n\nIt’s possible that you are selective in the problems you choose to revise and submit for additional feedback. This criteria does not say “Revises entire assignment.”!"
   },
   {
-    "objectID": "weeks/week-1-quarto.html#downloading-quarto",
-    "href": "weeks/week-1-quarto.html#downloading-quarto",
-    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
-    "section": "2.1 Downloading Quarto",
-    "text": "2.1 Downloading Quarto\nThe software associated with Quarto is automatically downloaded with the newest versions of RStudio. So, if you are using the most up to date version of RStudio (as instructed in Part 1 of this week’s coursework), you should already have Quarto installed on your computer. But, let’s test it out.\nTo ensure you have Quarto installed, carry out the following process:\n\nOpen RStudio\nClick on “File” (in the upper navigation bar)\nSelect “New File” (in the dropdown options)\nSelect “Quarto Document…” (in the dropdown option)\n\n \nIf you have Quarto installed, you should be prompted with the following menu:\n\nIf, instead, you receive a message saying Quarto is not installed on your computer, you need to download Quarto: https://quarto.org/docs/download/",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1, Part 2 - Quarto"
-    ]
+    "objectID": "slides/week-6/midterm-portfolio.html#includes-thoughtful-reflections-on-why-revisions-are-being-requested.",
+    "href": "slides/week-6/midterm-portfolio.html#includes-thoughtful-reflections-on-why-revisions-are-being-requested.",
+    "title": "Midterm Portfolio Work Week",
+    "section": "“Includes thoughtful reflections on why revisions are being requested.”",
+    "text": "“Includes thoughtful reflections on why revisions are being requested.”\n\n\n\n“I added information about where the data comes from, which is important. because without any context data can easily be taken as universal fact, and including context is necessary to show the specific situation the data was collected. In this case, being collected during COVID could have big implications, and without noting that it would be easy to extrapolate these results to other years as well.”\n\n\n\n\n\nDemonstrating an understanding of the “bigger picture” ideas!"
   },
   {
-    "objectID": "weeks/week-1-quarto.html#introduction-to-quarto",
-    "href": "weeks/week-1-quarto.html#introduction-to-quarto",
-    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
-    "section": "2.2 Introduction to Quarto",
-    "text": "2.2 Introduction to Quarto\n\n📖 Required Reading: Intro to Quarto\n\n\nHTML Documents\nWe will exclusively use HTML documents in this course. If you are interested in learning more about formatting options for Quarto HTML documents, I would recommend checking out:\n\na discussion of the basics of formatting HTML documents in Quarto\nthe list of all HTML Ffrmatting pptions for Quarto documents",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1, Part 2 - Quarto"
-    ]
+    "objectID": "slides/week-6/midterm-portfolio.html#extending-your-thinking-1",
+    "href": "slides/week-6/midterm-portfolio.html#extending-your-thinking-1",
+    "title": "Midterm Portfolio Work Week",
+    "section": "Extending Your Thinking",
+    "text": "Extending Your Thinking\n\n“I’m confused by what counts as progression and pushing yourself, how is that measured. I think for me I would like a specific amount of challenges and maybe a growth over time of challenging oneself.”\n\n\n\nYou are making an argument about how you have extended your thinking—“pushing yourself” looks different for everyone."
   },
   {
-    "objectID": "weeks/week-1-quarto.html#check-in-1.4-quarto-documents",
-    "href": "weeks/week-1-quarto.html#check-in-1.4-quarto-documents",
-    "title": "Week 1, Part 2: Reproducible Analyses with Quarto",
-    "section": "2.3 ✅ Check-in: 1.4 Quarto Documents",
-    "text": "2.3 ✅ Check-in: 1.4 Quarto Documents\nQuestion 1: What are the options at the top of a Quarto document (between the --- and --- symbols) called?\n\nXML\nYAML\nREML\nTOML\n\nQuestion 2: What symbols create an R code chunk?\n\n```\n{r}\n```{r}\n`{r}`\n\nQuestion 3: What symbol defines a heading?\n\n$\n_\n*\n#\n\nQuestion 4: When working in a Quarto document, the [visual / source] editor will display the raw Quarto document, whereas the [visual / source] will display the document as it will appear when it is rendered.\nQuestion 5: To produce an HTML report from your Quarto document, you need to click the ____ button.\n\nVisual\nRender\nRender on Save\nSave",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1, Part 2 - Quarto"
-    ]
+    "objectID": "slides/week-6/midterm-portfolio.html#supporting-your-peers-1",
+    "href": "slides/week-6/midterm-portfolio.html#supporting-your-peers-1",
+    "title": "Midterm Portfolio Work Week",
+    "section": "Supporting Your Peers",
+    "text": "Supporting Your Peers\n\n“While this would be good [following the collaborative protocol], this is hard to measure and to show when arguing for our grades.”\n\n\n\n\n\n\nWhat have you learned about collaboration through the groupwork protocol?\n\nHow have you grown as a collaborator?\n\nHow have you supported your peers through code review?\n\nDo you have a specific code review you are proud of? Show me!\n\nSupporting your peers on Discord can look a variety of ways!\n\nDid you ask questions that others could learn from?\nDid you answer someone’s question?"
   },
   {
-    "objectID": "portfolio/midterm-portfolio-targets.html",
-    "href": "portfolio/midterm-portfolio-targets.html",
-    "title": "Midterm Portfolio Learning Targets & Grade Expectations",
-    "section": "",
-    "text": "The following learning targets have been covered in Weeks 1-5 of this course. When locating code that “fits” into these learning targets I would like for you to:\n\nfind 1-2 high quality examples (quality &gt; quantity)\nfind examples that hit on multiple learning targets at the same time\n\nFor example, the code below could be used to demonstrate proficiency with:\n\n\n\nWD-2 – in two places (select() and starts_with())!\nWD-7\n\n\n\n\n\nWD-4\nR-2 (tidy code)\nPE-4 (the |&gt; is a “modern tool”)\n\n\n\n\nca_childcare |&gt;\n  select(study_year,\n         mc_infant,\n         mc_toddler,\n         mc_preschool,\n         region\n         ) |&gt;\n  pivot_longer(cols = starts_with(\"mc_\"), \n               names_to = \"age\", \n               values_to = \"median_income\"\n               ) |&gt; \n  mutate(age = fct_relevel(age, \n                          \"mc_infant\",\n                          \"mc_toddler\",\n                          \"mc_preschool\")\n        )\n\n\n\n\nWorking with Data\n\n\nWD-1: I can import data from a variety of formats (e.g., csv, xlsx, txt)\nWD-2: I can select necessary columns from a dataset\nWD-3: I can filter rows from a dataset for a variety of data types (e.g., numeric, factor, date, character)\nWD-4: I can modify existing variables and create new variables in a dataset for a variety of data types (e.g., numeric, factor, date, character)\nWD-5: I can use mutating joins from the tidyr package to combine multiple datasets\nWD-6: I can use filtering joins from the dplyr package to filter rows from a dataset\nWD-7: I can pivot datasets from long to wide and visa versa\n\n\nReproducibility\n\n\nR-1: I can create professional looking, reproducible analyses using RStudio projects, Quarto documents, and the here package  \nR-2: I can write well documented1 and tidy code2\nR-3: I can write robust programs3 that are resistant to changes in inputs\n\n\n\n\n\nData Visualization & Summarization\n\n\nDVS-1: I can create visualizations for a variety of variable types (e.g., numeric, character, date)\nDVS-2: I use plot modifications to make my visualizations clearer to the reader\nDVS-3: I show creativity in my visualizations\nDVS-4: I can calculate numerical summaries of variables\nDVS-5: I can calculate numerical summaries of variables across multiple groups\nDVS-6: I can create tables which make my summaries clear to the reader\n\n\nProgram Efficiency\n\n\nPE-1: I can write concise code which does not repeat itself.\nPE-4: I can use modern tools4 when carrying out my analysis."
+    "objectID": "slides/week-6/midterm-portfolio.html#determining-your-grade-1",
+    "href": "slides/week-6/midterm-portfolio.html#determining-your-grade-1",
+    "title": "Midterm Portfolio Work Week",
+    "section": "Determining Your Grade",
+    "text": "Determining Your Grade\n\nI believe my grade equivalent to course work evidenced below to be an __.\n\n\nYour goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content proficiency, evidence of continued learning, and growth as a team member that goes with a particular grade."
   },
   {
-    "objectID": "portfolio/midterm-portfolio-targets.html#footnotes",
-    "href": "portfolio/midterm-portfolio-targets.html#footnotes",
-    "title": "Midterm Portfolio Learning Targets & Grade Expectations",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\n“well documented” code has elements of the following:\n\ncode comments (e.g., # function to rescale columns between 0 and 1)\ncode chunk names (using the #| lab: option)\nsections in Quarto file which describe the process(es) being implemented\n\n↩︎\n“tidy code” is code which adheres to the tidyverse style guidelines↩︎\nThe follow are some examples of code I would consider “robust”:\n\nusing column names rather than column positions\nincluding function stops when writing functions\nusing processes that don’t depend on you remembering a particular sequence of steps (e.g., arrange() then slice() versus slice_max())\n\n↩︎\nThe following are some examples of tools I would consider are “modern”:\n\nfunctions which are not superseded\nfunctions which are not deprecated\nusing the pipe operator to decrease the number of intermediate objects created\n\n↩︎"
+    "objectID": "slides/week-6/midterm-portfolio.html#plus-minus-modifiers",
+    "href": "slides/week-6/midterm-portfolio.html#plus-minus-modifiers",
+    "title": "Midterm Portfolio Work Week",
+    "section": "Plus / Minus Modifiers",
+    "text": "Plus / Minus Modifiers\n\n\n\n+\n\nYou’ve met all the criteria for the letter grade along with a significant amount, but not all, of the criteria for the next letter grade up.\n\n\n\n\n\n\n-\n\nYou have met the requirements for a letter grade but only in a way that you believe is a bare minimum.\nYou’ve met almost all the requirements for the letter grade except for a small number of minor criteria."
+  },
+  {
+    "objectID": "slides/week-6/midterm-portfolio.html#what-if-you-dont-agree",
+    "href": "slides/week-6/midterm-portfolio.html#what-if-you-dont-agree",
+    "title": "Midterm Portfolio Work Week",
+    "section": "What if you don’t agree?",
+    "text": "What if you don’t agree?\nThere are two ways this might happen.\n\n\n\n\nYou ask for a grade that is higher than the evidence supports.\n\n\nThat is, you grade yourself too highly. For example, you believe you earned an A in the course, but I do not feel the evidence you’ve provided supports this grade.\n\n\nIn this case, I’ll tell you what grade I would have given you based on the evidence you provided in the portfolio. You can then use this feedback when constructing your Final Portfolio.\n\n\n\n\n\n\n\n\n\nYou ask for a grade that was lower than your actual performance indicates.\n\n\nThat is, you “lowball” yourself, for example you say you earned a B when in fact I think you earned an A-.\n\n\nIn this case, I will tell you what grade I believe you have earned and why."
   },
   {
     "objectID": "labs/instructions/challenge-5-instructions.html",
@@ -4119,14 +4182,14 @@
     "href": "slides/week-5/week-5-dates.html#how-old-am-i",
     "title": "Using lubridate to Work with Dates",
     "section": "How old am I?",
-    "text": "How old am I?\n\ntoday() - mdy(01141989)\n\nTime difference of 13071 days\n\n\n\n\nHow long did it take me to type this slide?\n\nbegin &lt;- mdy_hms(\"10/21/2024 20:40:34\")\nfinish &lt;- mdy_hms(\"10/21/2024 20:43:11\")\n\nfinish - begin\n\nTime difference of 2.616667 mins"
+    "text": "How old am I?\n\ntoday() - mdy(01141989)\n\nTime difference of 13073 days\n\n\n\n\nHow long did it take me to type this slide?\n\nbegin &lt;- mdy_hms(\"10/21/2024 20:40:34\")\nfinish &lt;- mdy_hms(\"10/21/2024 20:43:11\")\n\nfinish - begin\n\nTime difference of 2.616667 mins"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#durations-and-periods",
     "href": "slides/week-5/week-5-dates.html#durations-and-periods",
     "title": "Using lubridate to Work with Dates",
     "section": "Durations and Periods",
-    "text": "Durations and Periods\n\n\nDurations will always give the time span in an exact number of seconds.\n\nas.duration(\n  today() - mdy(01141989)\n            )\n\n[1] \"1129334400s (~35.79 years)\"\n\n\n\n\n\n\nPeriods will give the time span in more approximate, but human readable times.\n\nas.period(\n  today() - mdy(01141989)\n  )\n\n[1] \"13071d 0H 0M 0S\""
+    "text": "Durations and Periods\n\n\nDurations will always give the time span in an exact number of seconds.\n\nas.duration(\n  today() - mdy(01141989)\n            )\n\n[1] \"1129507200s (~35.79 years)\"\n\n\n\n\n\n\nPeriods will give the time span in more approximate, but human readable times.\n\nas.period(\n  today() - mdy(01141989)\n  )\n\n[1] \"13073d 0H 0M 0S\""
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#durations-and-periods-1",
@@ -4792,68 +4855,5 @@
     "title": "Writing Functions",
     "section": "To do…",
     "text": "To do…\n\nLab 7: Functions + Fish\n\nDue Saturday, 5/18 at 11:59pm.\n\nRead Chapter 8: Functional Programming\n\nCheck-in 8.1 due Monday 5/20 at 10:00am.\n\nFinal Project Group Contract\n\nDue Monday, 5/20 at 11:59pm."
-  },
-  {
-    "objectID": "slides/week-6/midterm-portfolio.html#when-locating-code",
-    "href": "slides/week-6/midterm-portfolio.html#when-locating-code",
-    "title": "Midterm Portfolio Work Week",
-    "section": "When locating code…",
-    "text": "When locating code…\n\nfind 1-2 high quality examples (quality &gt; quantity)\nfind examples that hit on multiple learning targets at the same time"
-  },
-  {
-    "objectID": "slides/week-6/midterm-portfolio.html#for-example..",
-    "href": "slides/week-6/midterm-portfolio.html#for-example..",
-    "title": "Midterm Portfolio Work Week",
-    "section": "For example..",
-    "text": "For example..\n\nthe code below could be used to demonstrate proficiency with:\n\n\n\nWD-2 – in two places (select() and starts_with())!\nWD-7\n\n\n\n\n\nWD-4\nR-2 (tidy code)\nPE-4 (the |&gt; is a “modern tool”)\n\n\n\n\nca_childcare |&gt;\n  select(study_year,\n         mc_infant,\n         mc_toddler,\n         mc_preschool,\n         region\n         ) |&gt;\n  pivot_longer(cols = starts_with(\"mc_\"), \n               names_to = \"age\", \n               values_to = \"median_income\"\n               ) |&gt; \n  mutate(age = fct_relevel(age, \n                          \"mc_infant\",\n                          \"mc_toddler\",\n                          \"mc_preschool\")\n        )"
-  },
-  {
-    "objectID": "slides/week-6/midterm-portfolio.html#revising-your-thinking-1",
-    "href": "slides/week-6/midterm-portfolio.html#revising-your-thinking-1",
-    "title": "Midterm Portfolio Work Week",
-    "section": "Revising Your Thinking",
-    "text": "Revising Your Thinking\n\n“I am wondering if there is a specific number for the amount of assignments that constitutes all but a few for when phrasing like this is used in the grading criteria.”\n\n. . .\n\nNo, but to me this indicates that you are submitting revisions frequently, especially for the “bigger” problems where additional feedback is warranted.\n. . .\nIt’s possible that you are selective in the problems you choose to revise and submit for additional feedback. This criteria does not say “Revises entire assignment.”!"
-  },
-  {
-    "objectID": "slides/week-6/midterm-portfolio.html#includes-thoughtful-reflections-on-why-revisions-are-being-requested.",
-    "href": "slides/week-6/midterm-portfolio.html#includes-thoughtful-reflections-on-why-revisions-are-being-requested.",
-    "title": "Midterm Portfolio Work Week",
-    "section": "“Includes thoughtful reflections on why revisions are being requested.”",
-    "text": "“Includes thoughtful reflections on why revisions are being requested.”\n. . .\n\n\n“I added information about where the data comes from, which is important. because without any context data can easily be taken as universal fact, and including context is necessary to show the specific situation the data was collected. In this case, being collected during COVID could have big implications, and without noting that it would be easy to extrapolate these results to other years as well.”\n\n\n. . .\n\nDemonstrating an understanding of the “bigger picture” ideas!"
-  },
-  {
-    "objectID": "slides/week-6/midterm-portfolio.html#extending-your-thinking-1",
-    "href": "slides/week-6/midterm-portfolio.html#extending-your-thinking-1",
-    "title": "Midterm Portfolio Work Week",
-    "section": "Extending Your Thinking",
-    "text": "Extending Your Thinking\n\n“I’m confused by what counts as progression and pushing yourself, how is that measured. I think for me I would like a specific amount of challenges and maybe a growth over time of challenging oneself.”\n\n. . .\n\nYou are making an argument about how you have extended your thinking—“pushing yourself” looks different for everyone."
-  },
-  {
-    "objectID": "slides/week-6/midterm-portfolio.html#supporting-your-peers-1",
-    "href": "slides/week-6/midterm-portfolio.html#supporting-your-peers-1",
-    "title": "Midterm Portfolio Work Week",
-    "section": "Supporting Your Peers",
-    "text": "Supporting Your Peers\n\n“While this would be good [following the collaborative protocol], this is hard to measure and to show when arguing for our grades.”\n\n. . .\n\n\n\n\nWhat have you learned about collaboration through the groupwork protocol?\n\nHow have you grown as a collaborator?\n\nHow have you supported your peers through code review?\n\nDo you have a specific code review you are proud of? Show me!\n\nSupporting your peers on Discord can look a variety of ways!\n\nDid you ask questions that others could learn from?\nDid you answer someone’s question?"
-  },
-  {
-    "objectID": "slides/week-6/midterm-portfolio.html#determining-your-grade-1",
-    "href": "slides/week-6/midterm-portfolio.html#determining-your-grade-1",
-    "title": "Midterm Portfolio Work Week",
-    "section": "Determining Your Grade",
-    "text": "Determining Your Grade\n\nI believe my grade equivalent to course work evidenced below to be an __.\n\n. . .\nYour goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content proficiency, evidence of continued learning, and growth as a team member that goes with a particular grade."
-  },
-  {
-    "objectID": "slides/week-6/midterm-portfolio.html#plus-minus-modifiers",
-    "href": "slides/week-6/midterm-portfolio.html#plus-minus-modifiers",
-    "title": "Midterm Portfolio Work Week",
-    "section": "Plus / Minus Modifiers",
-    "text": "Plus / Minus Modifiers\n\n\n\n+\n\nYou’ve met all the criteria for the letter grade along with a significant amount, but not all, of the criteria for the next letter grade up.\n\n\n\n\n\n\n-\n\nYou have met the requirements for a letter grade but only in a way that you believe is a bare minimum.\nYou’ve met almost all the requirements for the letter grade except for a small number of minor criteria."
-  },
-  {
-    "objectID": "slides/week-6/midterm-portfolio.html#what-if-you-dont-agree",
-    "href": "slides/week-6/midterm-portfolio.html#what-if-you-dont-agree",
-    "title": "Midterm Portfolio Work Week",
-    "section": "What if you don’t agree?",
-    "text": "What if you don’t agree?\nThere are two ways this might happen.\n\n\n\n\nYou ask for a grade that is higher than the evidence supports.\n\n\nThat is, you grade yourself too highly. For example, you believe you earned an A in the course, but I do not feel the evidence you’ve provided supports this grade.\n\n\nIn this case, I’ll tell you what grade I would have given you based on the evidence you provided in the portfolio. You can then use this feedback when constructing your Final Portfolio.\n\n\n\n\n\n\n\n\n\nYou ask for a grade that was lower than your actual performance indicates.\n\n\nThat is, you “lowball” yourself, for example you say you earned a B when in fact I think you earned an A-.\n\n\nIn this case, I will tell you what grade I believe you have earned and why."
   }
 ]
