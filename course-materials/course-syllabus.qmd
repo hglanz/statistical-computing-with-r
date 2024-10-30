@@ -643,7 +643,7 @@ Data Simulation & Statistical Models
 
     -   code comments (e.g., \# function to rescale columns between 0 and 1)
 
-    -   code chunk names (using the `#| lab:` option)
+    -   code chunk names (using the `#| label:` option)
 
     -   sections in Quarto file which describe the process(es) being implemented
 

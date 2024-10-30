@@ -4805,42 +4805,42 @@
     "href": "slides/week-6/midterm-portfolio.html#for-example..",
     "title": "Midterm Portfolio Work Week",
     "section": "For example..",
-    "text": "For example..\n\nthe code below could be used to demonstrate proficiency with:\n\n\n\nWD-2 – in two places (select() and starts_with())!\nWD-7\n\n\n\n\n\nWD-4\nR-2 (tidy code)\nPE-4 (the |&gt; is a “modern tool”)\n\n\n\nca_childcare |&gt;\n  select(study_year,\n         mc_infant,\n         mc_toddler,\n         mc_preschool,\n         region\n         ) |&gt;\n  pivot_longer(cols = starts_with(\"mc_\"), \n               names_to = \"age\", \n               values_to = \"median_income\"\n               ) |&gt; \n  mutate(age = fct_relevel(age, \n                          \"mc_infant\",\n                          \"mc_toddler\",\n                          \"mc_preschool\")\n        )"
+    "text": "For example..\n\nthe code below could be used to demonstrate proficiency with:\n\n\n\nWD-2 – in two places (select() and starts_with())!\nWD-7\n\n\n\n\n\nWD-4\nR-2 (tidy code)\nPE-4 (the |&gt; is a “modern tool”)\n\n\n\n\nca_childcare |&gt;\n  select(study_year,\n         mc_infant,\n         mc_toddler,\n         mc_preschool,\n         region\n         ) |&gt;\n  pivot_longer(cols = starts_with(\"mc_\"), \n               names_to = \"age\", \n               values_to = \"median_income\"\n               ) |&gt; \n  mutate(age = fct_relevel(age, \n                          \"mc_infant\",\n                          \"mc_toddler\",\n                          \"mc_preschool\")\n        )"
   },
   {
     "objectID": "slides/week-6/midterm-portfolio.html#revising-your-thinking-1",
     "href": "slides/week-6/midterm-portfolio.html#revising-your-thinking-1",
     "title": "Midterm Portfolio Work Week",
     "section": "Revising Your Thinking",
-    "text": "Revising Your Thinking\n\n“I am wondering if there is a specific number for the amount of assignments that constitutes all but a few for when phrasing like this is used in the grading criteria.”\n\n\n\nNo, but to me this indicates that you are submitting revisions frequently, especially for the “bigger” problems where additional feedback is warranted.\n\n\n\nIt’s possible that you are selective in the problems you choose to revise and submit for additional feedback. This criteria does not say “Revises entire assignment.”!"
+    "text": "Revising Your Thinking\n\n“I am wondering if there is a specific number for the amount of assignments that constitutes all but a few for when phrasing like this is used in the grading criteria.”\n\n. . .\n\nNo, but to me this indicates that you are submitting revisions frequently, especially for the “bigger” problems where additional feedback is warranted.\n. . .\nIt’s possible that you are selective in the problems you choose to revise and submit for additional feedback. This criteria does not say “Revises entire assignment.”!"
   },
   {
     "objectID": "slides/week-6/midterm-portfolio.html#includes-thoughtful-reflections-on-why-revisions-are-being-requested.",
     "href": "slides/week-6/midterm-portfolio.html#includes-thoughtful-reflections-on-why-revisions-are-being-requested.",
     "title": "Midterm Portfolio Work Week",
     "section": "“Includes thoughtful reflections on why revisions are being requested.”",
-    "text": "“Includes thoughtful reflections on why revisions are being requested.”\n\n\n\n“I added information about where the data comes from, which is important. because without any context data can easily be taken as universal fact, and including context is necessary to show the specific situation the data was collected. In this case, being collected during COVID could have big implications, and without noting that it would be easy to extrapolate these results to other years as well.”\n\n\n\n\n\nDemonstrating an understanding of the “bigger picture” ideas!"
+    "text": "“Includes thoughtful reflections on why revisions are being requested.”\n. . .\n\n\n“I added information about where the data comes from, which is important. because without any context data can easily be taken as universal fact, and including context is necessary to show the specific situation the data was collected. In this case, being collected during COVID could have big implications, and without noting that it would be easy to extrapolate these results to other years as well.”\n\n\n. . .\n\nDemonstrating an understanding of the “bigger picture” ideas!"
   },
   {
     "objectID": "slides/week-6/midterm-portfolio.html#extending-your-thinking-1",
     "href": "slides/week-6/midterm-portfolio.html#extending-your-thinking-1",
     "title": "Midterm Portfolio Work Week",
     "section": "Extending Your Thinking",
-    "text": "Extending Your Thinking\n\n“I’m confused by what counts as progression and pushing yourself, how is that measured. I think for me I would like a specific amount of challenges and maybe a growth over time of challenging oneself.”\n\n\n\nYou are making an argument about how you have extended your thinking—“pushing yourself” looks different for everyone."
+    "text": "Extending Your Thinking\n\n“I’m confused by what counts as progression and pushing yourself, how is that measured. I think for me I would like a specific amount of challenges and maybe a growth over time of challenging oneself.”\n\n. . .\n\nYou are making an argument about how you have extended your thinking—“pushing yourself” looks different for everyone."
   },
   {
     "objectID": "slides/week-6/midterm-portfolio.html#supporting-your-peers-1",
     "href": "slides/week-6/midterm-portfolio.html#supporting-your-peers-1",
     "title": "Midterm Portfolio Work Week",
     "section": "Supporting Your Peers",
-    "text": "Supporting Your Peers\n\n“While this would be good [following the collaborative protocol], this is hard to measure and to show when arguing for our grades.”\n\n\n\n\n\n\nWhat have you learned about collaboration through the groupwork protocol?\n\nHow have you grown as a collaborator?\n\nHow have you supported your peers through code review?\n\nDo you have a specific code review you are proud of? Show me!\n\nSupporting your peers on Discord can look a variety of ways!\n\nDid you ask questions that others could learn from?\nDid you answer someone’s question?"
+    "text": "Supporting Your Peers\n\n“While this would be good [following the collaborative protocol], this is hard to measure and to show when arguing for our grades.”\n\n. . .\n\n\n\n\nWhat have you learned about collaboration through the groupwork protocol?\n\nHow have you grown as a collaborator?\n\nHow have you supported your peers through code review?\n\nDo you have a specific code review you are proud of? Show me!\n\nSupporting your peers on Discord can look a variety of ways!\n\nDid you ask questions that others could learn from?\nDid you answer someone’s question?"
   },
   {
     "objectID": "slides/week-6/midterm-portfolio.html#determining-your-grade-1",
     "href": "slides/week-6/midterm-portfolio.html#determining-your-grade-1",
     "title": "Midterm Portfolio Work Week",
     "section": "Determining Your Grade",
-    "text": "Determining Your Grade\n\nI believe my grade equivalent to course work evidenced below to be an __.\n\n\nYour goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content proficiency, evidence of continued learning, and growth as a team member that goes with a particular grade."
+    "text": "Determining Your Grade\n\nI believe my grade equivalent to course work evidenced below to be an __.\n\n. . .\nYour goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content proficiency, evidence of continued learning, and growth as a team member that goes with a particular grade."
   },
   {
     "objectID": "slides/week-6/midterm-portfolio.html#plus-minus-modifiers",
