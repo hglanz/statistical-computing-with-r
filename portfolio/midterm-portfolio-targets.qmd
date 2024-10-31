@@ -80,7 +80,9 @@ Reproducibility
 
 -   **R-1**: I can create professional looking, reproducible analyses using RStudio projects, Quarto documents, and the `here` package <!-- we will want to add a target about file structure --> <!-- we will want to add a target about version control -->
 -   **R-2**: I can write well documented[^1] and tidy code[^2]
+    + You have not written functions yet, so you will not have any content for the "Example of function formatting" code block. 
 -   **R-3**: I can write robust programs[^3] that are resistant to changes in inputs
+    + You have not written functions yet, so you will not have any content for the "Example of function stops" code block. 
 :::::
 
 ::: {.column width="10%"}
@@ -103,7 +105,16 @@ Program Efficiency
 :::
 
 -   **PE-1**: I can write concise code which does not repeat itself.
+    + You have not yet learned about iteration, so you will not have any content for the "`map()` functions" code block. 
+- **PE-3:** I can use iteration to reduce repetition in my code.
+    + You have not yet learned about iteration, so you will not have any content for the code blocks related to the `map()` function.  
 -   **PE-4**: I can use modern tools[^4] when carrying out my analysis.
+
+::: {style="font-size: 1.5em; color: #34605f;"}
+Data Simulation & Statistical Models
+:::
+
+-   **DSSM-2**: I can conduct common statistical analyses in R
 :::::
 ::::::::::
 
