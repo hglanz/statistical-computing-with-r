@@ -10,42 +10,54 @@ editor: source
 execute: 
   error: true
   echo: true
+  eval: false
   message: false
   warning: false
 ---
 
-[Download .qmd starter file](LA7_functions.qmd)
+The goal of this lab is learn more about exploring missing data and writing
+modular code.
 
-[Download `BlackfootFish.csv`](BlackfootFish.csv)
+```{r}
+#| label: setup
+#| echo: false
 
-The goal of this lab is learn more about exploring missing data and writing modular code.
-
-```{r setup}
 library(tidyverse)
-fish <- read.csv("BlackfootFish.csv")
+
+fish <- read_csv(here::here("labs",
+                            "instructions", 
+                            "data", 
+                            "BlackfootFish.csv")
+                 )
 ```
 
 ## The Data
 
-This lab's data concerns mark-recapture data on four species of trout from the Blackfoot River outside of Helena, Montana. These four species are **rainbow trout (RBT)**, **westslope cutthroat trout (WCT)**, **bull trout**, and **brown trout**.
+This lab's data concerns mark-recapture data on four species of trout from the
+Blackfoot River outside of Helena, Montana. These four species are
+**rainbow trout (RBT)**, **westslope cutthroat trout (WCT)**, **bull trout**,
+and **brown trout**.
 
-![](https://github.com/earobinson95/stat331-calpoly/blob/master/lab-assignments/lab7/images/blackfoot_river.jpg?raw=true)
+![](https://github.com/earobinson95/stat331-calpoly/blob/master/lab-assignments/lab7/images/blackfoot_river.jpg?raw=true){fig-alt="A serene scene of the Blackfoot River in Montana, with a small raft carrying two people navigating the gentle current. The river winds through a landscape of rugged, rocky shores and lush, green pine forests. Rolling hills and distant mountains frame the background under a lightly clouded sky.}
 
-Mark-recapture is a common method used by ecologists to estimate a population's size when it is impossible to conduct a census (count every animal). This method works by *tagging* animals with a tracking device so that scientists can track their movement and presence.
+Mark-recapture is a common method used by ecologists to estimate a population's
+size when it is impossible to conduct a census (count every animal). This method
+works by *tagging* animals with a tracking device so that scientists can track
+their movement and presence.
 
 <center>
 
 ::: columns
 ::: {.column width="25%"}
-![](https://github.com/earobinson95/stat331-calpoly/blob/master/lab-assignments/lab7/images/grizzly.jpg?raw=true)
+![](https://github.com/earobinson95/stat331-calpoly/blob/master/lab-assignments/lab7/images/grizzly.jpg?raw=true){fig-alt="These images show three examples of animal tracking methods: On this image, a brown bear walks across a road, tagged with a small radio collar around its neck for monitoring. "}
 :::
 
 ::: {.column width="25%"}
-![](https://github.com/earobinson95/stat331-calpoly/blob/master/lab-assignments/lab7/images/condor.jpg?raw=true)
+![](https://github.com/earobinson95/stat331-calpoly/blob/master/lab-assignments/lab7/images/condor.jpg?raw=true){fig-alt="In this image, a California condor spreads its wings while perched on a rock, displaying a numbered wing tag and a small transmitter for tracking its movements."}
 :::
 
 ::: {.column width="25%"}
-![](https://github.com/earobinson95/stat331-calpoly/blob/master/lab-assignments/lab7/images/fish.PNG?raw=true)
+![](https://github.com/earobinson95/stat331-calpoly/blob/master/lab-assignments/lab7/images/fish.PNG?raw=true){fig-alt="In this image, an illustration of a fish, with an inset showing a surgically implanted tracking device that collects data on its location and environment."}
 :::
 :::
 
@@ -53,7 +65,9 @@ Mark-recapture is a common method used by ecologists to estimate a population's 
 
 ## Data Exploration
 
-The measurements of each captured fish were taken by a biologist on a raft in the river. The lack of a laboratory setting opens the door to the possibility of measurement errors.
+The measurements of each captured fish were taken by a biologist on a raft in
+the river. The lack of a laboratory setting opens the door to the possibility of
+measurement errors.
 
 **1. Let's look for missing values in the dataset. Output ONE table that answers BOTH of the following questions:**
 
@@ -61,22 +75,25 @@ The measurements of each captured fish were taken by a biologist on a raft in th
 + **What variable(s) have missing values present?**
 
 ::: callout-tip
-Hint: use `across()`.
+# You should use `across()`!
 :::
 
 ```{r}
-# Code for Q1.
+#| label: find-missing-values
+
 ```
 
 **2. Create ONE thoughtful visualization that explores the frequency of missing values across the different years, sections, and trips.**
 
 ```{r}
-# Code for Q2.
+#| label: visual-of-missing-values-over-time
+
 ```
 
 ## Rescaling the Data
 
-If I wanted to rescale every quantitative variable in my dataset so that they only have values between 0 and 1, I could use this formula:
+If I wanted to rescale every quantitative variable in my dataset so that they
+only have values between 0 and 1, I could use this formula:
 
 </br>
 
@@ -103,7 +120,9 @@ This process of duplicating an action multiple times can make it difficult to un
 
 **3. What is the mistake I made in the above rescaling code?**
 
-*When you find yourself copy-pasting lines of code, it's time to write a function, instead!*
+
+When you find yourself copy-pasting lines of code, it's time to write a
+function, instead!
 
 **4. Transform the repeated process above into a `rescale_01()` function. Your function should...**
 
@@ -111,15 +130,15 @@ This process of duplicating an action multiple times can make it difficult to un
 + **... return the rescaled vector.**
 
 ::: callout-tip
+# Efficiency 
 
-Think about the **efficiency** of your function. Are you calling the **same** function multiple times?
-
-Look into the function `range()`.
-
+Are you calling the **same** function multiple times? You might want to look 
+into the `range()` function. 
 :::
 
 ```{r}
-# Code for Q4 and Q5.
+#| label: write-rescale-function
+
 ```
 
 **5. Let's incorporate some input validation into your function. Modify your previous code so that the function stops if ...**
@@ -128,9 +147,10 @@ Look into the function `range()`.
 + **... the length of the input vector is not greater than 1.**
 
 ::: callout-tip
+# Modify Previous Code
 
-Do not create a new code chunk here -- simply add these stops to your function above!
-
+Do not create a new code chunk here -- simply add these stops to your function
+above!
 :::
 
 ## Test Your Function
@@ -150,19 +170,7 @@ Next, let's test the function on the `length` column of the `BlackfootFish` data
 **7. The code below makes a histogram of the original values of `length`. Add a plot of the rescaled values of `length`. Output your plots side-by-side, so the reader can confirm the only aspect that has changed is the scale.**
 
 ::: callout-warning
-
 This will require you to call your `rescale_01()` function within a `mutate()` statement in order to create a `length_scaled` variable.
-
-:::
-
-::: callout-tip
-
-1. Set the y-axis limits for both plots to go from 0 to 4000 to allow for direct comparison across plots.
-
-2. Pay attention to `binwidth`!
-
-3. Look for a Quarto code-chunk option to put the plots side-by-side.
-
 :::
 
 ```{r}
@@ -175,20 +183,38 @@ fish |>
 # Code for Q7 plot.
 ```
 
-## Use Variables within a Dataset
-
-Suppose you would like for your `rescale()` function to perform operations on a **variable within a dataset**. Ideally, your function would take in a dataframe and a variable name as inputs and return a dataframe where the variable has been rescaled.
-
-**8. Create a `rescale_column()` function that accepts two arguments: (1) a dataframe and (2) the name(s) of the variable(s) to be rescaled. The body of the function should call the original `rescale_01()` function you wrote previously. Your solution MUST use one of the `rlang` options from class.**
-
 ::: callout-tip
 
-If you are struggling with this task, I recommend looking [here](https://rlang.r-lib.org/reference/topic-defuse.html) and  at the slides from class on Wednesday!
+1. Set the y-axis limits for both plots to go from 0 to 4000 to allow for direct comparison across plots.
+
+2. Pay attention to `binwidth`!
+
+3. Use a Quarto code chunk option to put the plots side-by-side.
 
 :::
 
+## Use Variables within a Dataset
+
+Suppose you would like for your `rescale()` function to perform operations on a **variable within a dataset**. Ideally, your function would take in a data
+frame and a variable name as inputs and return a data frame where the variable
+has been rescaled.
+
+**8. Create a `rescale_column()` function that accepts two arguments:**
+
++ **a dataframe**
++ **the name(s) of the variable(s) to be rescaled**
+
+**The body of the function should call the original `rescale_01()` function you wrote previously. Your solution MUST use one of the `rlang` options from class.**
+
+::: callout-tip
+If you are struggling with this task, I recommend looking back over the 
+[data frame functions](https://r4ds.hadley.nz/functions.html#data-frame-functions)
+section of R for Data Science!
+:::
+
 ```{r}
-# Code for Q8.
+#| label: rescale-data-frame-function
+
 ```
 
 **9. Use your `rescale_column()` function to rescale *both* the `length` and `weight` columns.**
@@ -200,73 +226,6 @@ I expect that you carry out this process by calling the `rescale_column()` funct
 :::
 
 ```{r}
-# original values
-fish |> 
- select(length:weight) |> 
- head()
+#| label: rescale-two-columns
 
-# rescaled values
-
-# Code for Q9.
-
-```
-
-## Condition Index
-
-A frequently used measurement for fish health is a condition index ([Wikipedia](https://en.wikipedia.org/wiki/Condition_index_in_fish)). The following equation can be used to calculate the approximate condition index of a fish:
-
-$$\text{condition index} = \frac{weight}{length^3} \times 100$$
-
-**10. When calculating the condition index, fish length must be in centimeters and fish weight must be in grams. The weight data for the Blackfoot River fish were collected in grams, but the length data were collected in millimeters. Transform the length data to the correct units.**
-
-```{r}
-# Code for Q10.
-```
-
-**11. Collecting data of this sort can be very messy! Write a function that will replace unlikely `length` and `weight` measurements with `NA`. Your function should accept at least three inputs:**
-
-+ **a vector of measurements,**
-+ **the minimum reasonable value,**
-+ **the maximum reasonable value.**
-
-::: callout-tip
-
-If you are struggling with the structure of your function, I would suggest reading the [Mutating Function](https://r4ds.hadley.nz/functions.html#mutate-functions) from R4DS.
-
-:::
-
-```{r}
-# Code for Q11.
-```
-
-**12. After consulting the [Montana Record Table](https://fwp.mt.gov/fish/anglingData/records) for the 4 species of trout included in these data, I have conjectured that it is unlikely to have measurements for fish below 5 cm and above 80 cm in length or below 10 g and above 4,000 g in weight. Use your function to modify the `length` and `weight` columns of the `fish` dataset based on my cutoffs.**
-
-```{r}
-# Code for Q12.
-```
-
-**13. Write a function to calculate the condition index of a fish, given inputs of weight and length. Use your modified `fish` dataset**
-
-::: callout-warning
-
-Consider whether your function will accept vectors as inputs or if it will accept variable names as inputs!
-
-:::
-
-```{r}
-# Code for Q13.
-```
-
-**14. Make a thoughtful visualization of how fish conditions have varied over the duration of this study.**
-
-::: callout-warning
-
-### To be thoughtful...
-
-... you need to use at least a third variable!
-
-:::
-
-```{r}
-# Code for Q14.
 ```

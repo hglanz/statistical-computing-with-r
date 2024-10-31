@@ -13,68 +13,88 @@ execute:
   warning: false
 ---
 
-[Download starter .qmd template](PA7.qmd)
+You will write several small functions, then use them to unscramble a message. 
+Many of the functions have been started for you below, but **none** of them are
+complete as is.
 
-You will write several small functions, then use them to unscramble a message. Many of the functions have been started for you below, but **none** of them are complete as is.
+***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.***
 
-**1. Write code to manipulate the vector of numbers `nums`. Your code should divide each element in the vector by the smallest element and round the results to the nearest whole number.** *This code should not be a function.*
+<!-- The person who wins rock-paper-scissors starts as the Developer (typing and
+listening to instructions from the Coder)!  -->
+
+**1. Write code to manipulate the vector of numbers `nums`. Your code should divide each element in the vector by the smallest element and round the results to the nearest whole number.** Hint: This code should not be a function.
 
 ```{r}
+#| label: q1
+
 nums <- 3:12
 ```
 
 
-
-**2. Turn your code from Q1 into a function called `divide_and_round()`.** *Fill in the skeleton below.*
+**2. Turn your code from Q1 into a function called `divide_and_round()`.** Fill
+in the skeleton code below.
 
 ```{r}
+#| label: q2
+
 divide_and_round <- function(vec){
   
 }
 ```
 
-
 **3. Test your function by running the code below.**
 
 ```{r}
+#| label: q3
+
 test <- c(5:10, NA)
 divide_and_round(test)
 ```
 
-**4. Write code to manipulate the vector of numbers `nums`. Your code should, for each element, return `TRUE` if the number is NOT divisible by 9 or 12, and return `FALSE` otherwise.** *This code should not be a function.*
+<!-- Swap roles -- Developer becomes Coder, Coder becomes Developer! -->
+
+**4. Write code to manipulate the vector of numbers `nums`. Your code should, for each element, return `TRUE` if the number is NOT divisible by 9 or 12, and return `FALSE` otherwise.** Hint: This code should not be a function.
 
 ```{r}
-# Write your code for Q4 here.
+#| label: q4
+
 ```
 
 **5. Turn your code from Q4 into a function called `no_nines_or_twelves()`.**
 
 ```{r}
-# Write your code for Q5 here.
+#| label: q5
+
 ```
 
 **6. Test your function by running the code below.**
 
 ```{r}
-test <- c(3:12*5, NA)
+#| label: q6
+
+test <- c(seq(from = 15, to = 60, by = 5), 
+          NA)
+
 no_nines_or_twelves(test)
 ```
 
-**7. Write a function called `every_other()`. This function should take in a vector and return every other value in the vector. Include an optional argument called `start` which lets you choose where to start skipping; that is, if `start = 1`, the function returns the 1st, 3rd, 5th, etc. values and if `start = 2`, the function returns the 2nd, 4th, 6th, etc. values.** *Fill in the skeleton below.*
+<!-- Swap roles -- Developer becomes Coder, Coder becomes Developer! -->
 
-::: callout-warning
-**Do not** use a `for()` loop to do this! Accomplish this with the `seq_along()` function, bracket subsetting (`[]`), and modulus arithmetic (`%%`).
-:::
+**7. Write a function called `every_other()`. This function should take in a vector and return every other value in the vector. Include an optional argument called `start` which lets you choose where to start skipping; that is, if `start = 1`, the function returns the 1st, 3rd, 5th, etc. values and if `start = 2`, the function returns the 2nd, 4th, 6th, etc. values.** Fill in the skeleton below.
+
+Hint: **Do not** use a `for()` loop to do this! Accomplish this with the
+`seq_along()` function, bracket subsetting (`[]`), and modulus arithmetic
+(`%%`).
 
 ```{r}
+#| label: q7
+
 every_other <- function(vec){
   
   if(start == 2){
-
-    
+    vec[]
   } else if(start == 1) {
-
-    
+    vec[]
   }
   
 }
@@ -83,32 +103,42 @@ every_other <- function(vec){
 **8. Test your function by running the code below.**
 
 ```{r}
+#| label: q8
+
 test <- c(1:10)
 
 every_other(test)
 every_other(test, start = 2)
 ```
 
+<!-- Swap roles -- Developer becomes Coder, Coder becomes Developer! -->
+
 **9. Write a function called `shorten()`. This function should take in a vector, drop all values BEFORE the cumulative sum is greater than a provided number, and return the remaining values from the original vector.**
 
-::: callout-warning
-**Do not** use a `while()` loop to do this! Accomplish this with the `cumsum()` function and bracketing.
-:::
+Hint: **Do not** use a `while()` loop to do this! Accomplish this with the
+`cumsum()` function and bracketing.
 
 ```{r}
-# Write your code for Q9 here.
-```
+#| label: q9
 
+shorten <- function(x, sum){
+  
+}
+
+```
 
 **10. Write code to test your function.**
 
 ```{r}
-# Write code to test the shorten() function here.
+#| label: q10
+
+
 ```
 
 **11. Once you have written your four functions correctly, run the following code:**
 
 ```{r}
+#| label: q11
 my_vec <- c(39, 1.87, 48, 11, 8, 45, 21, 5, 12, 33, 9, 11, 108,
             4, 18, 5, 16, 17, 8, 48, 27, 24, 4, 22, 12, 27, 23,
             46, 42, 35, 15, 34, 36, 26, 18, 10, 18.21, 72.04,
@@ -141,7 +171,7 @@ my_vec <- sort(my_vec)
 my_vec
 ```
 
-::: callout-tip
+
 ### Canvas Submission
+
 If you have done everything correctly, your final vector will be six numbers long. Google these six numbers to find a TV show as your final answer and submit to Canvas.
-:::
