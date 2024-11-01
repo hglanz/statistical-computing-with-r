@@ -502,7 +502,7 @@ Read only Section 2 (Vector functions)!
 <p>In R, functions are defined (or assigned names) the same as other variables, using <code>&lt;-</code>, but we specify the arguments a function takes by using the <code>function()</code> statement. The contents of the function are contained within <code>{</code> and <code>}</code>. If the function returns a value, a <code>return()</code> statement can be used; alternately, if there is no return statement, the last computation in the function will be returned.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/week-7/annotating_function_syntax.png" class="img-fluid figure-img" alt=""></p>
+<p><img src="images/week-7/annotating_function_syntax.png" class="img-fluid figure-img" alt="The image describes the structure of writing functions in R. It explains that functions are defined using the syntax function_name <- function(function_parameter1, function_parameter2), where the word 'function' indicates the definition of a function. The parameters are enclosed within parentheses and listed as function_parameter1 and function_parameter2. The function body, which contains the operations or code the function executes, is enclosed in curly braces. The return(function_value) statement specifies what value the function should return. However, if no return statement is provided, the last line of the function body is returned automatically. The image uses color-coded annotations to explain each part of the function structure."></p>
 <figcaption>R syntax for defining functions. Portions of the command that indicate the function name, function scope, and return statement are highlighted.</figcaption>
 </figure>
 </div>
@@ -532,7 +532,7 @@ Read only Section 2 (Vector functions)!
 <p>In this example R function, when we call <code>goodpup(dog)</code>, <code>dog</code> is the argument. <code>name</code> is the parameter. What is happening inside the computer’s memory as <code>goodpup()</code> runs?</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/week-7/function_argument_parameters.png" class="img-fluid figure-img" alt=""></p>
+<p><img src="images/week-7/function_argument_parameters.png" class="img-fluid figure-img" alt="The image illustrates the concept of function environments versus the global environment in R. It starts by showing a variable dog in the global environment, set to 'Eddie', and a function goodpup defined as function(name) { paste(name, 'is a good pup!') }. When res <- goodpup(dog) is called, the function creates a temporary local environment where the variable name is assigned the value 'Eddie'. The paste function combines name with the string 'is a good pup!, returning 'Eddie is a good pup', which is then stored in res in the global environment. The image emphasizes that the local environment of the function only exists during the function call. The variable name is never defined in the global environment, meaning it cannot be accessed outside of the goodpup function. Annotations highlight that variables in the global environment, such as dog and res, are accessible globally, while local variables, like name, are temporary and exist solely within the function’s scope."></p>
 <figcaption>A sketch of the execution of the program <code>goodpup</code>, showing that <code>name</code> is only defined within the local environment that is created while <code>goodpup</code> is running. We can never access <code>name</code> in our global environment.</figcaption>
 </figure>
 </div>
@@ -852,7 +852,7 @@ myfun()</code></pre>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/week-7/function-scope.png" class="img-fluid figure-img" alt=""></p>
+<p><img src="images/week-7/function-scope.png" class="img-fluid figure-img" alt="The image demonstrates the difference between function environments and the global environment in R. It shows that in the global environment, the variable a is initially set to 10. When a function myfun() is called, it creates a local environment where a is assigned a new value of 20. This local value of a only exists within the scope of the function myfun() and does not affect the global variable a. The image highlights that even though a = 20 inside myfun(), this change does not apply outside the function. The global a remains unchanged at 10 unless explicitly modified in the global environment. The arrows visually represent how myfun() creates and uses a separate local environment where the variable a can be manipulated independently from the global a."></p>
 <figcaption>A sketch of the global environment as well as the environment within <code>myfun()</code>. Because <code>a = 20</code> inside <code>myfun()</code>, when we call <code>myfun()</code>, we get the value of <code>a</code> within that environment, instead of within the global environment.</figcaption>
 </figure>
 </div>
@@ -902,12 +902,7 @@ myfun()
 <p>What does this output?</p>
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/week-7/function-scope-environment.png" class="img-fluid figure-img" alt=""></p>
-<figcaption>When we define myfun, we create a template for an environment with variables and code to excecute. Each time <code>myfun()</code> is called, that template is used to create a new environment. This prevents successive calls to <code>myfun()</code> from affecting each other – which means <code>a = 1</code> every time.</figcaption>
-</figure>
-</div>
+<p><img src="images/week-7/function-scope-environment.png" class="img-fluid" alt="When we define myfun, we create a template for an environment with variables and code to excecute. Each time myfun() is called, that template is used to create a new environment. This prevents successive calls to myfun() from affecting each other – which means a = 1 every time.">{fig-alt=” The image explains how repeated calls to the myfun() function in R yield the same output because the function does not create or store an object in the global environment. The function myfun() uses an if-else statement: if the variable aa does not exist, it assigns aa the value 1; otherwise, it increments aa by 1. Each time myfun() is called, a new, independent copy of the function’s environment is created. The image depicts two separate calls to myfun(), both initializing aa to 1 because aa is not stored in either the function enviroment (where the function looks first) or in the global environment (where the function looks next) and therefore does not persist between calls. As a result, aa is always reset to 1 during each function invocation, with no accumulation occurring across different calls. The image emphasizes that the local environment created by the function is temporary and does not affect the global environment.”}</p>
 </div>
 <div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
 <div class="cell">
@@ -958,7 +953,7 @@ myfun()
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/week-7/function-scope-calling-environment.png" class="img-fluid figure-img" alt=""></p>
+<p><img src="images/week-7/function-scope-calling-environment.png" class="img-fluid figure-img" alt="The image demonstrates how a function's output can change based on different values of a global variable x in R. At the top, the image shows a simple function myfun() that adds 1 to x. Below, two scenarios illustrate the behavior of myfun(): In Calling Environment 1, x is initially set to 14 in the global environment. When myfun() is called, the function adds 1 to x, resulting in x = 15. In Calling Environment 2, x is set to 20 in the global environment. When myfun() is invoked, the function again adds 1 to x, producing x = 21. Arrows illustrate the flow from the global environment to the function call and back, emphasizing that the function modifies x based on its current global value in each calling environment. The image visually shows how the same function can yield different results depending on the initial value of x. To be clear, the global value of x is never changing, it is only the output of the myfun() function that is changing."></p>
 <figcaption>The state of the global environment at the time the function is called (that is, the state of the calling environment) can change the results of the function</figcaption>
 </figure>
 </div>
@@ -1086,7 +1081,7 @@ Questions 7 through 10
 <p>Now that you’re writing functions, it’s time to talk a bit about debugging techniques. This is a lifelong topic - as you become a more advanced programmer, you will need to develop more advanced debugging skills as well (because you’ll become more adept at screwing things up).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/51084276-ab7f-4c57-a0e7-5cf14a277359_rw_1920.png?h=825c5593149a63edef46664796766751" class="img-fluid figure-img" alt=""></p>
+<p><img src="https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/51084276-ab7f-4c57-a0e7-5cf14a277359_rw_1920.png?h=825c5593149a63edef46664796766751" class="img-fluid figure-img" alt="A cartoon of a fuzzy round monster face showing 10 different emotions experienced during the process of debugging code. The progression goes from (1) 'I got this' - looking determined and optimistic; (2) 'Huh. Really thought that was it.' - looking a bit baffled; (3) '...' - looking up at the ceiling in thought; (4) 'Fine. Restarting.' - looking a bit annoyed; (5) 'OH WTF.' Looking very frazzled and frustrated; (6) 'Zombie meltdown.' - looking like a full meltdown; (7) (blank) - sleeping; (8) 'A NEW HOPE!' - a happy looking monster with a lightbulb above; (9) 'insert awesome theme song' - looking determined and typing away; (10) 'I love coding' - arms raised in victory with a big smile, with confetti falling."></p>
 <figcaption>The faces of debugging (by Allison Horst)</figcaption>
 </figure>
 </div>
@@ -1173,7 +1168,7 @@ Questions 7 through 10
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/week-7/rubber_duck_cape.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="images/week-7/rubber_duck_cape.png" class="img-fluid figure-img" style="width:50.0%" alt="An image of a rubber duck with a red cape saying 'java'."></p>
 <figcaption>You may find it helpful to procure a rubber duck expert for each language you work in. I use color-your-own rubber ducks to endow my ducks with certain language expertise. Other people use plain rubber ducks and give them capes.</figcaption>
 </figure>
 </div>
@@ -1194,7 +1189,7 @@ Making Minimal Reproducible Examples
 <p>If all else has failed, and you can’t figure out what is causing your error, it’s probably time to ask for help. If you have a friend or buddy that knows the language you’re working in, by all means ask for help sooner - use them as a rubber duck if you have to. But when you ask for help online, often you’re asking people who are much more knowledgeable about the topic - members of R core browse StackOverflow and may drop in and help you out. Under those circumstances, it’s better to make the task of helping you as easy as possible because it shows respect for their time. The same thing goes for your supervisors and professors. 🙃</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/reprex.png" class="img-fluid figure-img" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/reprex.png" class="img-fluid figure-img" alt="A side-by-side comparison of a monster providing problematic code to tech support when it is on a bunch of crumpled, disorganized papers, with both monsters looking sad and very stressed (left), compared to victorious looking monsters celebrating when code is provided in a nice box with a bow labeled 'reprex'. Title text reads 'reprex: make reproducible examples. Help them help everyone!'"></p>
 <figcaption>The reprex R package will help you make a reproducible example (drawing by Allison Horst)</figcaption>
 </figure>
 </div>
