@@ -2,7 +2,8 @@
 library(tidyverse)
 library(readxl)
 
-set.seed(1234)
+set.seed(93401)
+
 
 # Read in consent forms
 consent_forms <- read_csv(here::here("group-activities", 
@@ -17,16 +18,16 @@ consent_forms <- read_csv(here::here("group-activities",
                            "No")
          )
 
-canvas_groups_week3 <- read_csv(here::here("group-activities", 
+canvas_groups_week7 <- read_csv(here::here("group-activities", 
                                            "group-formation", 
                                            "canvas-group-template.csv")
                                 )
 
 ## Form groups by shuffling within the Y / N consent groups
-weeks_3_groups <- sample(consent_forms, 
-                         replace = FALSE, 
-                         groups = consent_forms$consent, 
-                         orig.ids = FALSE) |> 
+weeks_7_groups <- consent_forms |> 
+  group_by(consent) |> 
+  sample(replace = FALSE) |> 
+  ungroup() |> 
   mutate(group_name = c(
     rep("Group 1", 2),
     rep("Group 2", 2),
@@ -49,20 +50,20 @@ weeks_3_groups <- sample(consent_forms,
     )
     ) |> 
   # select only columns to join on
-  select(email, 
+  select(email,
          group_name)
 
-final_canvas_groups_wk3 <- left_join(canvas_groups_week3, 
-                                     weeks_3_groups, 
+final_canvas_groups_wk7 <- left_join(canvas_groups_week7, 
+                                     weeks_7_groups, 
                                      by = join_by(login_id == email)
                                      ) |> 
   select(-group_name.x) |>
   rename(group_name = group_name.y)
 
-write_csv(final_canvas_groups_wk3, 
+write_csv(final_canvas_groups_wk7, 
           file = here::here("group-activities", 
                             "group-formation", 
-                            "Week 4 Practice Activity Groups.csv")
+                            "Week 7 Practice Activity Groups.csv")
           )  
 
 
