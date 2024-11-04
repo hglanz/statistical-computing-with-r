@@ -1,0 +1,528 @@
+---
+title: "Writing Data Frame / Plotting Functions"
+format: 
+  revealjs:
+    theme: default
+    auto-stretch: false
+editor: source
+embed-resources: true
+---
+
+```{r setup}
+#| include: false
+#| message: false
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## Wednesday, May 15
+
+Today we will...
+
++ Discuss Groupt Project + Group Contract
++ New Material
+  + Calling Functions on Datasets
+  + Thinking About Missing Data
++ Lab 7: Functions and Fish
+
+
+## Group Project Details
+
+Check out the Canvas page outlining the group project!
+
+<br>
+
++ Groups have been assigned.
++ Your group contract is due on Monday!
+
+
+# Calling Functions on Datasets
+
+
+## Last Time...
+
+We wrote a function called `find_car_make()` that takes in the name of a car and returns the “make” of the car (the company that created it).
+
++ `find_car_make("Toyota Camry")` returns "Toyota".
++ `find_car_make("Ford Anglica")` returns "Ford".
+
+```{r}
+#| echo: true
+find_car_make <- function(car_name){
+  make <- str_extract(string = car_name, 
+                      pattern = "[:alpha:]*")
+  return(make)
+}
+```
+
+
+## Pair Our Function with `dplyr`
+
+Consider the `mtcars` data.
+
+```{r}
+#| echo: true
+data(mtcars)
+head(mtcars, n = 3)
+```
+
+. . .
+
+Let's use our new function:
+
+```{r}
+#| echo: true
+mtcars |> 
+  rownames_to_column("make_model") |> 
+  mutate(make = find_car_make(make_model),
+         .after = make_model) |> 
+  head(n = 3)
+```
+
+
+## Recall the `penguins` Data
+
+```{r}
+#| echo: true
+library(palmerpenguins)
+data(penguins)
+penguins |> 
+  head()
+```
+
+
+## Function to Standardize Data
+
+We want to take in a vector of numbers and **standardize** it -- make all values be between 0 and 1.
+
+. . .
+
+```{r}
+#| echo: true
+std_to_01 <- function(var) {
+  stopifnot(is.numeric(var))
+  
+  num <- var - min(var, na.rm = TRUE)
+  denom <- max(var, na.rm = TRUE) - min(var, na.rm = TRUE)
+  
+  return(num / denom)
+}
+```
+
+
+## Standardizing Variables
+
+Is it a good idea to standardize (scale) variables in a data analysis?
+
+:::: columns
+::: column
+**Why standardize?**
+
++ Easier to compare across variables.
++ Easier to model -- standardizes the amount of variability.
+:::
+::: column
+**Why not standardize?**
+
++ More difficult to interpret the values.
+:::
+::::
+
+. . .
+
+E.g., a penguin with a bill length of 35 mm (std to 0.11) and a mass of 5500 g (std to 0.78).
+
+
+## Pair Our Function with `dplyr`
+
+Let's standardize penguin measurements.
+
+```{r}
+#| eval: false
+#| echo: true
+penguins |> 
+  mutate(bill_length_mm    = std_to_01(bill_length_mm), 
+         bill_depth_mm     = std_to_01(bill_depth_mm), 
+         flipper_length_mm = std_to_01(flipper_length_mm), 
+         body_mass_g       = std_to_01(body_mass_g))
+```
+
++ Ugh. Still copy-pasting!
+
+. . .
+
+Recall `across()`!
+
+```{r}
+#| echo: true
+penguins |> 
+  mutate(across(.cols = bill_length_mm:body_mass_g,
+                .fns = ~ std_to_01(.x))) |> 
+  slice_head(n = 4)
+```
+
+
+## Use variables as function arguments?
+
+```{r stdcol}
+#| echo: true
+std_column_01 <- function(data, variable) {
+  stopifnot(is.data.frame(data))
+  
+  data <- data |> 
+    mutate(variable = std_to_01(variable))
+  return(data)
+}
+```
+
+::: callout-note
+I used the existing function `std_to_01()` inside the new
+function for clarity!
+:::
+
+. . . 
+
+But it didn't work...
+
+```{r}
+#| error: true
+#| echo: true
+std_column_01(penguins, body_mass_g)
+```
+
+
+## Tidy Evaluation
+
+Functions using **unquoted** variable names as arguments are said to use
+***nonstandard evaluation*** or ***tidy evaluation***.
+
+:::: columns
+::: column
+**Tidy**:
+
+```{r}
+#| echo: true
+#| eval: false
+penguins |> 
+  pull(body_mass_g)
+```
+
+&emsp; OR
+
+```{r}
+#| echo: true
+#| eval: false
+penguins$body_mass_g
+```
+:::
+::: column
+**Untidy**: 
+
+```{r}
+#| echo: true
+#| eval: false
+penguins[, "body_mass_g"]
+```
+
+&emsp; OR
+
+```{r}
+#| echo: true
+#| eval: false
+penguins[["body_mass_g"]]
+```
+:::
+::::
+
+<br>
+
+. . .
+
+Tidy evaluation isn't naturally supported when writing your own functions.
+
+
+## Defused R Code
+
+When a piece of code is **defused**, R doesn't return its value like normal. 
+
++ Instead it returns an expression that describes how to evaluate it.
+
+. . .
+
+:::: columns
+::: column
+Evaluated code:
+
+```{r}
+#| echo: true
+1 + 1
+```
+:::
+::: column
+Defused code:
+
+```{r}
+#| echo: true
+expr(1 + 1)
+```
+:::
+::::
+
+. . .
+
+We produce defused code when we use tidy evaluation and our own functions don't know how to handle it.
+
+
+## Solution 1
+
+Don't use tidy evaluation in your own functions.
+
++ This is more complicated to read and use, but it's  safe.
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "4,8"
+std_column_01 <- function(data, variable) {
+  stopifnot(is.data.frame(data))
+  
+  data[[variable]] <- std_to_01(data[[variable]])
+  return(data)
+}
+
+std_column_01(penguins, "bill_length_mm")
+```
+
+
+## Solution 2: `rlang`
+
+Use the `rlang` package!
+
+:::: {.columns}
+::: {.column width="70%"}
++ This package provides operators that simplify writing functions around `tidyverse` pipelines. 
+:::
+::: {.column width="30%"}
+```{r}
+#| fig-align: center
+#| out-width: 50%
+knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/main/thumbs/rlang.png?raw=true")
+```
+:::
+::::
+
++ Read more about using this package for function writing [here](https://rlang.r-lib.org/reference/topic-defuse.html)!
+
+
+## Solution 2: `rlang`
+
+Two ways to get around the issue of defused code:
+
+1. Embrace Operator (`{{ }}`)
+  + With `{{ }}`, you can **transport** a variable from one function to another.
+
+. . .
+
+2. Defuse and Inject
+  + You can first use `enquo(arg)` to **defuse** the variable.
+  + Then use `!!arg` to **inject** the variable.
+
+
+## Solution 2: `rlang`
+
+If we use either of these solutions, we also need to use the **walrus operator** (`:=`).
+
++ This means we have to use `:=` instead of `=` in any `dplyr` verb containing one of these `rlang` fixes.
+
+
+## Recall Our Broken Function
+
+```{r}
+#| error: true
+#| echo: true
+std_column_01 <- function(data, variable) {
+  stopifnot(is.data.frame(data))
+  
+  data <- data |> 
+    mutate(variable = std_to_01(variable))
+  return(data)
+}
+
+std_column_01(penguins, body_mass_g)
+```
+
++ The code is defused, so `mutate()` doesn't know what `body_mass_g` is.
++ We need to modify `variable` to make this work correctly!
+
+
+## Fixing Our Broken Function
+
+::: panel-tabset
+
+### Embrace Operator
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "5"
+std_column_01 <- function(data, variable) {
+  stopifnot(is.data.frame(data))
+
+  data <- data |>
+    mutate({{variable}} := std_to_01({{variable}}))
+  return(data)
+}
+
+std_column_01(penguins, body_mass_g)
+```
+
+```{r}
+#| echo: false
+std_column_01 <- function(data, variable) {
+  stopifnot(is.data.frame(data))
+
+  data <- data |>
+    mutate({{variable}} := std_to_01({{variable}}))
+  return(data)
+}
+
+tmp <- penguins |> 
+  select(-flipper_length_mm)
+std_column_01(tmp, body_mass_g) |> 
+  head()
+```
+
+### Defuse + Inject
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "4,7"
+std_column_01 <- function(data, variable) {
+  stopifnot(is.data.frame(data))
+  
+  variable <- enquo(variable)
+
+  data <- data |>
+    mutate(!!variable := std_to_01(!!variable))
+  return(data)
+}
+
+std_column_01(penguins, body_mass_g)
+```
+
+
+```{r}
+#| echo: false
+std_column_01 <- function(data, variable) {
+  stopifnot(is.data.frame(data))
+  
+  variable <- enquo(variable)
+
+  data <- data |>
+    mutate(!!variable := std_to_01(!!variable))
+  return(data)
+}
+
+tmp <- penguins |> 
+  select(-flipper_length_mm)
+std_column_01(tmp, body_mass_g) |> 
+  head()
+```
+
+
+:::
+
+## Inject Multiple Variables
+
+What if I want to modify multiple columns?
+
++ Use `across()`!
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "5-6"
+std_column_01 <- function(data, variables) {
+  stopifnot(is.data.frame(data))
+  
+  data <- data |> 
+    mutate(across(.cols = {{variables}},
+                  .fns = ~ std_to_01(.x)))
+  return(data)
+}
+
+std_column_01(penguins, bill_length_mm:body_mass_g)
+```
+
+```{r}
+#| echo: false
+std_column_01 <- function(data, variables) {
+  stopifnot(is.data.frame(data))
+  
+  data <- data |> 
+    mutate(across({{variables}}, std_to_01))
+  return(data)
+}
+
+tmp <- penguins |> 
+  select(-flipper_length_mm)
+std_column_01(tmp, bill_length_mm:body_mass_g) |> 
+  head(n = 5)
+```
+
+
+# Missing Data
+
+
+## Types of Missing Data
+
+1. **Missing Completely at Random** (MCAR)
+    + *No difference* between missing and observed values.
+    + Missing observations are a random subset of all observations.
+2. **Missing at Random** (MAR)
+    + *Systematic difference* between missing and observed values, but can be entirely explained by other observed variables.
+3. **Missing Not at Random** (MNAR)
+    + Missingness is *directly* related to the unobserved value.
+
+
+## Types of Missing Data
+
+Consider a study of depression.
+
+1. **Missing Completely at Random** (MCAR)
+    + Some subjects have missing lab values because a batch of samples was processed improperly.
+2. **Missing at Random** (MAR)
+    + Subjects who *identify as men* are less likely to complete a survey on depression severity.
+3. **Missing Not at Random** (MNAR)
+    + Subjects *with more severe depression* are less likely to complete a survey on depression severity.
+
+
+## When we remove missing data...
+
+We implicitly assume observations are missing **completely** at random!
+
++ We might be mostly removing data from subjects who identify as men.
++ We might be mostly removing data from subjects with severe depression.
++ We are inadvertently making our data **less representative**.
+
+. . .
+
+**We need to take more care when dealing with missing values!**
+
+
+## Dealing with Missing Data
+
++ Look for patterns!
+    + Do observations with missing values have similar traits?
+
+. . .
+
++ Consider outside explanations!
+    + Why might missing data exist?
+    + Should we have a "missing" category in our analysis?
+
+. . .
+
++ Can we impute values?
+    + If depression is MCAR *within* gender, age, and education level, then the distribution of depression will be similar for people of the same gender, age, and education level.
