@@ -1,0 +1,953 @@
+---
+title: "Writing Vector Functions"
+format: 
+  revealjs:
+      theme: [simple, ../style.scss]
+      auto-stretch: false
+editor: source
+---
+
+```{r setup}
+#| include: false
+#| message: false
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## New Seating Chart
+
+<!-- Add image to slides -->
+<!-- ![]() -->
+
+## Tuesday, November 2
+
+Today we will...
+
++ Reminder: Midterm Portfolio Meetings
++ New Material
+  + Function Basics
+  + Variable Scope + Environment
++ PA 7: Writing Functions
+  
+# Midterm Portfolio Meetings
+
+## Midterm Portfolio Meetings
+
+::: {.incremental}
+- No in-person class on Thursday
+  + Remember the time you signed up for: [Google Sheet with Sign-up Times](https://docs.google.com/spreadsheets/d/1b4fUfPIT_05niJlpHNnne_y5HXXB-43Nzph6_FWZf80/edit?usp=sharing)    
+  + Deadline to sign-up (or move your time) is Tuesday at 5pm.
+- Meetings scheduled between 8am and 11am will be **in Dr. T's office (25-105)**. 
+- Meetings scheduled between 12pm and 3pm will be **in our classroom (this room)**.
+:::
+
+# Functions
+
+## Why write functions?
+
+Functions allow you to automate common tasks!
+
++ We've been using functions since Day 1, but when we write our own, we can
+**customize** them!
++ Have you found yourself copy-pasting code and only changing small parts?
+
+## Why write functions?
+
+**Writing functions has three big advantages over copy-paste:**
+
+1. Your code is easier to read.
+2. To change your analysis, simply change one function.
+3. You avoid mistakes.
+
+
+# Function Basics
+
+
+## Function Syntax
+
+<br>
+
+![](images/syntax.png){width=90% fig-alt=""}
+
+
+## Function Syntax
+
+![](images/func_structure.png)fig-alt=""
+
+
+## A (very) Simple Function
+
+Let's **define** a function.
+
++ You run the code to define the function just **once**.
+
+
+```{r my_fun}
+#| echo: true
+#| code-line-numbers: false
+
+add_two <- function(x){
+  x + 2
+}
+```
+
+<br>
+
+. . .
+
+Let's **call** the function!
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+add_two(5)
+```
+
+
+## Naming: `add_two`
+
+The **name** of the function is chosen by the author.
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+
+add_two <- function(x){
+  x + 2
+}
+```
+
+. . .
+
+::: {.callout-caution}
+## Function names have no inherent meaning.
+
+The name you give to a function does not affect what the function does.
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+add_three <- function(x){
+  x + 7
+}
+```
+
+</br>
+
+```{r}
+#| echo: true
+add_three(5)
+```
+:::
+
+## Arguments 
+
+The **argument(s)** of the function are chosen by the author.
+
++ Arguments are how we pass external values into the function.
++ They are temporary variables that only exist inside the function body.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.midi}
++ We give them general names:
+  + `x`, `y`, `z` -- vectors
+  + `df` -- data frame
+  + `i`, `j` -- indices
+:::
+:::
+::: {.column width="50%"}
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+
+add_two <- function(x){
+  x + 2
+}
+```
+
+:::
+::::
+
+## Arguments 
+
+::: panel-tabset
+
+### Optional arguments
+
+::: {.midi}
+If we supply a **default** value when *defining* the function, the argument is
+**optional** when *calling* the function.
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+add_something <- function(x, something = 2){
+  return(x + something)
+}
+```
+:::
+
+::: {.fragment}
+::: {.midi}
+If a value is not supplied, `something` defaults to 2.
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+add_something(x = 5)
+```
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+add_something(x = 5, something = 6)
+```
+:::
+:::
+
+### Required arguments
+
+::: {.midi}
+If we **do not** supply a default value when *defining* the function, the
+argument is **required** when *calling* the function.
+
+```{r}
+#| echo: true
+#| error: true
+#| code-line-numbers: false
+
+add_something <- function(x, something){
+  x + something
+}
+
+add_something(x = 2)
+```
+:::
+:::
+
+
+## Body: `{  }`
+
+The **body** of the function is where the action happens.
+
++ The body must be specified within a set of curly brackets.
++ The code in the body will be executed (in order) whenever the function is
+called.
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "2"
+add_two <- function(x){
+  x + 2
+}
+```
+
+
+## Output: `return()`
+
+Your function will *give back* what would normally *print out*...
+
+```{r}
+#| echo: true
+add_two <- function(x){
+  x + 2
+}
+```
+
+<br>
+
+:::: columns
+::: column
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+7 + 2
+```
+:::
+::: column
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+add_two(7)
+```
+:::
+::::
+
+<br>
+
+. . .
+
+...but it's better to be explicit and use `return()`*.
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "2"
+
+add_two <- function(x){
+  return(x + 2)
+}
+```
+
+## Function Style -- Using `return()`s
+
+::: {.midi}
+> ["Only use `return()` for early returns. Otherwise, rely on R to return the result of the last evaluated expression."](https://style.tidyverse.org/functions.html#return)
+:::
+
+. . .
+
+</br> 
+
+::: columns
+::: {.column width="45%"}
+::: {.midi}
+```{r}
+#| code-line-numbers: false
+#| echo: true
+
+# Good
+find_abs <- function(x) {
+  if (x > 0) {
+    return(x)
+  }
+  x * -1
+}
+
+```
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+::: {.midi}
+```{r}
+#| code-line-numbers: false
+#| echo: true
+
+# Bad
+add_two <- function(x, y) {
+  return(x + y)
+}
+```
+:::
+:::
+:::
+
+. . .
+
+::: {.midi}
+::: {.callout-tip}
+# I tend to disagree...
+
+I prefer to use `return()` statements because it saves me from accidentally 
+writing a function that outputs nothing. 
+:::
+:::
+
+## Output: `return()`
+
+::: {.midi}
+If you need to return **more than one object** from a function, wrap those
+objects in a **list**.
+:::
+
+::: {.small}
+```{r}
+#| echo: true
+#| eval: true
+#| code-line-numbers: "4"
+
+min_max <- function(x){
+  lowest <- min(x)
+  highest <- max(x)
+  return(list(lowest, highest))
+}
+
+vec <- c(346,
+         547,
+         865, 
+         112, 
+         58)
+
+min_max(vec)
+```
+:::
+
+## Input Validation
+
+
+When a function requires an input of a specific data type, check that the supplied argument is valid.
+
+::: panel-tabset
+
+### [`stopifnot()`]{.midi}
+::: {.midi}
+
+```{r}
+#| echo: true
+#| error: true
+#| code-line-numbers: "2"
+add_something <- function(x, something){
+  stopifnot(is.numeric(x))
+  return(x + something)
+}
+
+add_something(x = "statistics", something = 5)
+```
+:::
+
+### [`if() + stop()`]{.midi}
+
+::: {.midi}
+```{r}
+#| echo: true
+#| error: true
+#| code-line-numbers: "2-4"
+add_something <- function(x, something){
+  if(!is.numeric(x)){
+    stop("Please provide a numeric input for the x argument.")
+  }
+  return(x + something)
+}
+
+add_something(x = "statistics", something = 5)
+```
+:::
+
+### [Multiple validations]{.midi}
+
+::: {.midi}
+How would you modify the previous code to validate **both** `x` and 
+`something`? 
+
+Meaning, the function should check if **both** `x` and `something` are numeric. 
+:::
+:::
+
+## Multiple Validations
+
+::: panel-tabset
+
+## Option 1: `if()` + `stop()`
+
+```{r}
+#| echo: true
+#| error: true
+#| code-line-numbers: "2-4"
+
+add_something <- function(x, something){
+  if(!is.numeric(x) | !is.numeric(something)){
+    stop("Please provide numeric inputs for both arguments.")
+  }
+  return(x + something)
+}
+
+add_something(x = 2, something = "R")
+```
+
+## Option 2: `stopifnot()`
+
+```{r}
+#| echo: true
+#| error: true
+#| code-line-numbers: "2"
+
+add_something <- function(x, something){
+  stopifnot(is.numeric(x), is.numeric(something))
+  return(x + something)
+}
+
+add_something(x = 2, something = "R")
+```
+:::
+
+# Variable Scope + Environment
+
+
+## Variable Scope
+
+The location (environment) in which we can find and access a variable is called its **scope**.
+
++ We need to think about the scope of variables when we write functions.
++ What variables can we access **inside** a function?
++ What variables can we access **outside** a function?
+
+
+## Global Environment
+
++ The top right pane of Rstudio shows you the **global environment**.
+  + This is the *current state* of all objects you have created.
+  + These objects can be accessed **anywhere**.
+
+```{r}
+#| fig-align: center
+#| out-width: 80%
+#| fig-alt: "A screenshot of the Environment tab in the RStudio environment, which displays the set of objects created by the user that are stored in the global environment and can be used for analysis. This is where we've see the datasets we read in stored!"
+
+knitr::include_graphics("images/environment.jpg")
+```
+
+
+## Function Environment
+
++ The code inside a function executes in the **function environment**.
+  + Function arguments and any variables created inside the function only exist
+  inside the function.
+    + They **disappear** when the function code is complete.
++ What happens in the function environment **does not affect** things in the
+global environment.
+
+
+## Function Environment
+
+We **cannot** access variables created inside a function outside of the function.
+
+```{r}
+#| echo: true
+#| error: true
+#| code-line-numbers: false
+
+add_two <- function(x) {
+  my_result <- x + 2
+  return(my_result)
+}
+```
+
+</br>
+
+::: columns
+::: {.column width="45%"}
+```{r}
+#| echo: true
+#| error: true
+#| code-line-numbers: false
+
+add_two(9)
+```
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+::: {.fragment}
+```{r}
+#| echo: true
+#| error: true
+#| code-line-numbers: false
+
+my_result
+```
+:::
+:::
+:::
+
+## Name Masking
+
+::: {.midi}
+Name masking occurs when an object in the *function environment* has the
+**same name** as an object in the *global environment*.
+
+::: columns
+::: {.column width="45%"}
+```{r}
+#| echo: true
+#| code-line-numbers: "2"
+
+add_two <- function(x) {
+  my_result <- x + 2
+  return(my_result)
+}
+```
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+my_result <- 2000
+```
+:::
+:::
+:::
+
+. . .
+
+</br>
+
+::: {.midi}
+The `my_result` created **inside** the function is different from the
+`my_result` created **outside**.
+
+:::: columns
+::: column
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+add_two(5)
+```
+:::
+::: column
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+my_result
+```
+:::
+::::
+:::
+
+## Dynamic Lookup
+
+::: {.midi}
+Functions look for objects FIRST in the function environment and SECOND in the
+global environment.
+
+:::: columns
+::: column
+
++ If the object doesn't exist in either, the code will give an error.
+
+```{r}
+#| error: true
+#| echo: true
+#| code-line-numbers: false
+
+add_two <- function() {
+  return(x + 2)
+}
+
+add_two()
+```
+:::
+::: column
+::: {.fragment}
+
++ If it doesn't exist in the function environment, then it will look in the 
+global environment
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+x <- 10
+
+add_two()
+```
+:::
+:::
+::::
+:::
+
+. . .
+
+::: {.small}
+::: {.callout-warning}
+## It is not good practice to rely on global environment objects inside a function!
+:::
+:::
+
+# Debugging
+
+```{r}
+#| fig-align: center
+#| out-width: 75%
+#| fig-cap: "Image by Allison Horst"
+#| fig-alt: "A cartoon of a fuzzy round monster face showing 10 different emotions experienced during the process of debugging code. The progression goes from (1) 'I got this' - looking determined and optimistic; (2) 'Huh. Really thought that was it.' - looking a bit baffled; (3) '...' - looking up at the ceiling in thought; (4) 'Fine. Restarting.' - looking a bit annoyed; (5) 'OH WTF.' Looking very frazzled and frustrated; (6) 'Zombie meltdown.' - looking like a full meltdown; (7) (blank) - sleeping; (8) 'A NEW HOPE!' - a happy looking monster with a lightbulb above; (9) 'insert awesome theme song' - looking determined and typing away; (10) 'I love coding' - arms raised in victory with a big smile, with confetti falling."
+
+knitr::include_graphics("https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/51084276-ab7f-4c57-a0e7-5cf14a277359_rw_1920.png?h=825c5593149a63edef46664796766751")
+```
+
+
+## Debugging
+
+You **will** make mistakes (create bugs) when coding.
+
++ Unfortunately, it becomes more and more complicated to **debug** your code as your code gets more sophisticated.
++ This is especially true with functions!
+
+
+<!-- ## Debugging Strategies -->
+
+<!-- ::: {.small} -->
+<!-- + Interactive coding -->
+<!--   + Highlight lines within your function and run them one-by-one to see what -->
+<!--   happens. -->
+<!--   + You can run individual lines (or groups) of code by highlighting and hitting -->
+<!--   [Command + Return] or [Control + Enter].  -->
+<!-- ::: -->
+
+<!-- . . . -->
+
+<!-- ::: {.small} -->
+<!-- + `print()` debugging -->
+<!--   + Add `print()` statements throughout your code to make sure the values are what you expect. -->
+<!-- ::: -->
+
+<!-- . . . -->
+
+<!-- ::: {.small} -->
+<!-- + Rubber Ducking -->
+<!--   + Verbally explain your code line by line to a rubber duck (or a human). -->
+<!--   + This is what we do in our Practice Activities!!! -->
+<!-- ::: -->
+
+## Debugging Strategies
+
+When you have a concept that you want to turn into a function...
+
+::: {.incremental}
+1. Write a simple **example** of the code without the function framework.
+
+2. **Generalize** the example by assigning variables.
+
+3. **Write** the code into a function.
+
+4. **Call** the function on the desired arguments
+:::
+
+. . .
+
+**This structure allows you to address issues as you go.**
+
+
+## An Example
+
+Write a function called `find_car_make()` that takes in the name of a car and returns the “make” of the car (the company that created it).
+
++ `find_car_make("Toyota Camry")` should return "Toyota".
++ `find_car_make("Ford Anglica")` should return "Ford".
+
+
+## An Example
+
+::: panel-tabset
+
+### Simple Examples
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+make <- word(string = "Toyota Camry",
+             start = 1, 
+             end = 1)
+make
+
+make <- word(string = "Ford Anglica",
+             start = 1, 
+             end = 1)
+make
+```
+
+### Generalize
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+car_name <- "Toyota Camry"
+
+make <- word(string = car_name, 
+             start = 1, 
+             end = 1)
+make
+```
+
+### Write + Call Funciton
+
+Taking these examples, write a `find_car_make()` function that will output the
+maker / manufacturer of any car. 
+
+Once you've got a function written, can you add input validation to your
+function?
+:::
+
+## `find_car_make()`
+
+::: {.midi}
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+find_car_make <- function(car_name){
+  # Check if there is a space in the string (so there are separate parts)
+  stopifnot(
+    stringr::str_detect(car_name, pattern = "\\w")
+            )
+  # Grab the first word of the car name (assuming Toyota Camry style input)
+  make <- word(string = car_name, 
+               start = 1, 
+               end = 1)
+  
+  return(make)
+}
+```
+:::
+
+</br> 
+
+::: columns
+::: {.column width="45%"}
+::: {.midi}
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+find_car_make("Toyota Camry")
+```
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+::: {.midi}
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+find_car_make("Ford Anglica")
+```
+:::
+:::
+:::
+
+# [PA 7: Writing Functions](../../group-activities/week-7/PA-7-functions.qmd)
+
+![](images/number-tiles.png){fig-alt=""}
+
+## PA 7
+
+You will write several small functions, then use them to unscramble a message. 
+Many of the functions have been started for you, but **none** of them are
+complete as is.
+
+. . .
+
+::: columns
+::: {.column width="55%"}
+::: {.small}
+This activity will require knowledge of:
+
+- Summary functions
+- Function documentation (for optional arguments)
+- Function syntax
+- modulus division (and remainders)
+- `if ()` & `else if()` statements
+- Using `[]` and logical values to extract elements of a vector
+- Negating logical statements
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+</br>
+</br>
+
+[**None of us have all these abilities. Each of us has some of these abilities.**]{.midi}
+
+:::
+:::
+
+## Base R Resources
+
+::: columns
+::: {.column width="60%"}
+Every group should have a **base R** cheatsheet!
+
+::: {.fragment}
+::: {.small}
+**On the front middle**:
+
+- ***Selecting Vectors*** can refresh your memory on using `[]` to extract
+elements of a vector
+:::
+:::
+
+::: {.fragment}
+::: {.small}
+**On the front right**:
+
+- ***If Statements*** can help you write conditional checks / returns for your
+functions
+- ***Functions*** can help you remember the syntax for creating a function
+:::
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="35%"}
+![](images/base-r-cheatsheet.png){fig-alt="A Base R Cheat Sheet with various R programming syntax and examples. It covers topics such as reading and writing data (e.g., read.csv, write.csv), accessing help with R functions (e.g., ?mean), using control structures like for loops and if statements, defining functions, vector operations, using libraries, and working with different data types like lists, matrices, and data frames. There are examples of matrix operations, conditions, statistical functions (e.g., mean, sd), and plotting basics (e.g., plot, hist). The cheat sheet includes tips on environment management and converting between data types."}
+:::
+:::
+
+## Getting Started
+
+The partner who lives the furthest from SLO starts as the Developer (typing
+and listening to instructions from the Coder)!
+
+- The Coder **does not type**. 
+  * The collaborative editing feature should allow you to track what is being 
+  typed. 
+- The Developer **only types what they are told to type**. 
+
+## Submission
+
+> Submit the name of the television show the six numbers are asssociated with.
+
+- Each person will input the full name of the TV show into the PA 7 quiz. 
+- The person who last occupied the role of Developer will download and submit 
+the `PA-7-functions.html` file for the group.
+  + Only one submission per group!
+
+## [Lab 7](../../labs/instructions/lab-7-instructions.qmd) & [Challenge 7: Functions + Fish](../../labs/instructions/challenge-7-instructions.qmd)
+
+::: {.centered}
+![](https://github.com/earobinson95/stat331-calpoly/blob/master/lab-assignments/lab7/images/blackfoot_river.jpg?raw=true){fig-alt="A serene scene of the Blackfoot River in Montana, with a small raft carrying two people navigating the gentle current. The river winds through a landscape of rugged, rocky shores and lush, green pine forests. Rolling hills and distant mountains frame the background under a lightly clouded sky."}
+:::
+
+## To do...
+  
++ **PA 7: Functions**
+  + Due Thursday, 11/4 by 12:10pm
+  
++ **Attend Your Midterm Portfolio Meeting**
+  + [Your Scheduled time on Thursday](https://docs.google.com/spreadsheets/d/1b4fUfPIT_05niJlpHNnne_y5HXXB-43Nzph6_FWZf80/edit?usp=sharing)
+  
++ **Lab 7: Functions + Fish**
+  + Due Sunday, 11/10 at 11:59pm.
+  
