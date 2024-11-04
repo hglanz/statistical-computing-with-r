@@ -1,5 +1,6 @@
 ---
 title: "PA 7: Writing Functions"
+author: "Your group's names here!"
 format: 
   html:
     embed-resources: true
@@ -9,8 +10,6 @@ editor: source
 execute: 
   error: true
   echo: true
-  message: false
-  warning: false
 ---
 
 You will write several small functions, then use them to unscramble a message. 
@@ -19,7 +18,7 @@ complete as is.
 
 ***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.***
 
-<!-- The person who wins rock-paper-scissors starts as the Developer (typing and
+<!-- The person who who lives the furthest from SLO starts as the Developer (typing and
 listening to instructions from the Coder)!  -->
 
 **1. Write code to manipulate the vector of numbers `nums`. Your code should divide each element in the vector by the smallest element and round the results to the nearest whole number.** Hint: This code should not be a function.
@@ -127,18 +126,20 @@ shorten <- function(x, sum){
 
 ```
 
-**10. Write code to test your function.**
+**10. Test your function by running the code below.**
 
 ```{r}
 #| label: q10
 
-
+test <- 20:50 
+shorten(test, 350)
 ```
 
 **11. Once you have written your four functions correctly, run the following code:**
 
 ```{r}
 #| label: q11
+
 my_vec <- c(39, 1.87, 48, 11, 8, 45, 21, 5, 12, 33, 9, 11, 108,
             4, 18, 5, 16, 17, 8, 48, 27, 24, 4, 22, 12, 27, 23,
             46, 42, 35, 15, 34, 36, 26, 18, 10, 18.21, 72.04,
