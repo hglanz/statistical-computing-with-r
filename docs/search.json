@@ -1446,7 +1446,7 @@
     "href": "group-activities/week-7/PA-7-functions.html",
     "title": "PA 7: Writing Functions",
     "section": "",
-    "text": "You will write several small functions, then use them to unscramble a message. Many of the functions have been started for you below, but none of them are complete as is.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.\n\n1. Write code to manipulate the vector of numbers nums. Your code should divide each element in the vector by the smallest element and round the results to the nearest whole number. Hint: This code should not be a function.\n\nnums &lt;- 3:12\n\n2. Turn your code from Q1 into a function called divide_and_round(). Fill in the skeleton code below.\n\ndivide_and_round &lt;- function(vec){\n  \n}\n\n3. Test your function by running the code below.\n\ntest &lt;- c(5:10, NA)\ndivide_and_round(test)\n\nNULL\n\n\n\n4. Write code to manipulate the vector of numbers nums. Your code should, for each element, return TRUE if the number is NOT divisible by 9 or 12, and return FALSE otherwise. Hint: This code should not be a function.\n5. Turn your code from Q4 into a function called no_nines_or_twelves().\n6. Test your function by running the code below.\n\ntest &lt;- c(seq(from = 15, to = 60, by = 5), \n          NA)\n\nno_nines_or_twelves(test)\n\nError in no_nines_or_twelves(test): could not find function \"no_nines_or_twelves\"\n\n\n\n7. Write a function called every_other(). This function should take in a vector and return every other value in the vector. Include an optional argument called start which lets you choose where to start skipping; that is, if start = 1, the function returns the 1st, 3rd, 5th, etc. values and if start = 2, the function returns the 2nd, 4th, 6th, etc. values. Fill in the skeleton below.\nHint: Do not use a for() loop to do this! Accomplish this with the seq_along() function, bracket subsetting ([]), and modulus arithmetic (%%).\n\nevery_other &lt;- function(vec){\n  \n  if(start == 2){\n    vec[]\n  } else if(start == 1) {\n    vec[]\n  }\n  \n}\n\n8. Test your function by running the code below.\n\ntest &lt;- c(1:10)\n\nevery_other(test)\n\nError in start == 2: comparison (==) is possible only for atomic and list types\n\nevery_other(test, start = 2)\n\nError in every_other(test, start = 2): unused argument (start = 2)\n\n\n\n9. Write a function called shorten(). This function should take in a vector, drop all values BEFORE the cumulative sum is greater than a provided number, and return the remaining values from the original vector.\nHint: Do not use a while() loop to do this! Accomplish this with the cumsum() function and bracketing.\n\nshorten &lt;- function(x, sum){\n  \n}\n\n10. Write code to test your function.\n11. Once you have written your four functions correctly, run the following code:\n\nmy_vec &lt;- c(39, 1.87, 48, 11, 8, 45, 21, 5, 12, 33, 9, 11, 108,\n            4, 18, 5, 16, 17, 8, 48, 27, 24, 4, 22, 12, 27, 23,\n            46, 42, 35, 15, 34, 36, 26, 18, 10, 18.21, 72.04,\n            36.9, 41.81, 29, 89.75, 34.03, 20.18, 48.74, 15.76,\n            31.86, 83.6, 43.55, 39.99, 23.55, 8.54, 24.71, 22.02,\n            9.71, 62.14, 35.46, 16.61, 15.66, 21.29, 30.52,\n            201.07, 45.81, 7.85, 30.13, 34.14, 22.62, 10.2, 6.02,\n            30.12, 10.64, 31.72, 24.57, 14.43, 43.37, 89.93,\n            44.72, 51.32, 13.62, 45.56, 22.96, 7.05, 29.99, 41.38,\n            26.59, 23.04, 19.82, 50.73, 39.56, 43.79, 30.22, 85.85,\n            5.78, 78.85, 29.52, 66.27, 44.06, 27.28, 24.43, 64.32,\n            3.35, 67.45, 46.72, 48.44, 48.65, 33.3, 40.28, 19.04)\n\nmy_vec &lt;- every_other(my_vec, start = 2)\n\nError in every_other(my_vec, start = 2): unused argument (start = 2)\n\n# Should have 54 elements! \n\nmy_vec &lt;- divide_and_round(my_vec)\n\nmy_vec &lt;- every_other(my_vec, start = 1)\n\nError in every_other(my_vec, start = 1): unused argument (start = 1)\n\n# Should have 27 elements!\n\nmy_vec &lt;- shorten(my_vec, 350)\n# Should have 12 elements!\n\nmy_vec &lt;- my_vec[no_nines_or_twelves(my_vec)]\n\nError in no_nines_or_twelves(my_vec): could not find function \"no_nines_or_twelves\"\n\n# Should have 6 elements! \n\nmy_vec &lt;- sort(my_vec)\n\nmy_vec\n\nNULL\n\n\n\nCanvas Submission\nIf you have done everything correctly, your final vector will be six numbers long. Google these six numbers to find a TV show as your final answer and submit to Canvas."
+    "text": "You will write several small functions, then use them to unscramble a message. Many of the functions have been started for you below, but none of them are complete as is.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.\n\n1. Write code to manipulate the vector of numbers nums. Your code should divide each element in the vector by the smallest element and round the results to the nearest whole number. Hint: This code should not be a function.\n\nnums &lt;- 3:12\n\n2. Turn your code from Q1 into a function called divide_and_round(). Fill in the skeleton code below.\n\ndivide_and_round &lt;- function(vec){\n  \n}\n\n3. Test your function by running the code below.\n\ntest &lt;- c(5:10, NA)\ndivide_and_round(test)\n\nNULL\n\n\n\n4. Write code to manipulate the vector of numbers nums. Your code should, for each element, return TRUE if the number is NOT divisible by 9 or 12, and return FALSE otherwise. Hint: This code should not be a function.\n5. Turn your code from Q4 into a function called no_nines_or_twelves().\n6. Test your function by running the code below.\n\ntest &lt;- c(seq(from = 15, to = 60, by = 5), \n          NA)\n\nno_nines_or_twelves(test)\n\nError in no_nines_or_twelves(test): could not find function \"no_nines_or_twelves\"\n\n\n\n7. Write a function called every_other(). This function should take in a vector and return every other value in the vector. Include an optional argument called start which lets you choose where to start skipping; that is, if start = 1, the function returns the 1st, 3rd, 5th, etc. values and if start = 2, the function returns the 2nd, 4th, 6th, etc. values. Fill in the skeleton below.\nHint: Do not use a for() loop to do this! Accomplish this with the seq_along() function, bracket subsetting ([]), and modulus arithmetic (%%).\n\nevery_other &lt;- function(vec){\n  \n  if(start == 2){\n    vec[]\n  } else if(start == 1) {\n    vec[]\n  }\n  \n}\n\n8. Test your function by running the code below.\n\ntest &lt;- c(1:10)\n\nevery_other(test)\n\nError in start == 2: comparison (==) is possible only for atomic and list types\n\nevery_other(test, start = 2)\n\nError in every_other(test, start = 2): unused argument (start = 2)\n\n\n\n9. Write a function called shorten(). This function should take in a vector, drop all values BEFORE the cumulative sum is greater than a provided number, and return the remaining values from the original vector.\nHint: Do not use a while() loop to do this! Accomplish this with the cumsum() function and bracketing.\n\nshorten &lt;- function(x, sum){\n  \n}\n\n10. Test your function by running the code below.\n\ntest &lt;- 20:50 \nshorten(test, 350)\n\nNULL\n\n\n11. Once you have written your four functions correctly, run the following code:\n\nmy_vec &lt;- c(39, 1.87, 48, 11, 8, 45, 21, 5, 12, 33, 9, 11, 108,\n            4, 18, 5, 16, 17, 8, 48, 27, 24, 4, 22, 12, 27, 23,\n            46, 42, 35, 15, 34, 36, 26, 18, 10, 18.21, 72.04,\n            36.9, 41.81, 29, 89.75, 34.03, 20.18, 48.74, 15.76,\n            31.86, 83.6, 43.55, 39.99, 23.55, 8.54, 24.71, 22.02,\n            9.71, 62.14, 35.46, 16.61, 15.66, 21.29, 30.52,\n            201.07, 45.81, 7.85, 30.13, 34.14, 22.62, 10.2, 6.02,\n            30.12, 10.64, 31.72, 24.57, 14.43, 43.37, 89.93,\n            44.72, 51.32, 13.62, 45.56, 22.96, 7.05, 29.99, 41.38,\n            26.59, 23.04, 19.82, 50.73, 39.56, 43.79, 30.22, 85.85,\n            5.78, 78.85, 29.52, 66.27, 44.06, 27.28, 24.43, 64.32,\n            3.35, 67.45, 46.72, 48.44, 48.65, 33.3, 40.28, 19.04)\n\nmy_vec &lt;- every_other(my_vec, start = 2)\n\nError in every_other(my_vec, start = 2): unused argument (start = 2)\n\n# Should have 54 elements! \n\nmy_vec &lt;- divide_and_round(my_vec)\n\nmy_vec &lt;- every_other(my_vec, start = 1)\n\nError in every_other(my_vec, start = 1): unused argument (start = 1)\n\n# Should have 27 elements!\n\nmy_vec &lt;- shorten(my_vec, 350)\n# Should have 12 elements!\n\nmy_vec &lt;- my_vec[no_nines_or_twelves(my_vec)]\n\nError in no_nines_or_twelves(my_vec): could not find function \"no_nines_or_twelves\"\n\n# Should have 6 elements! \n\nmy_vec &lt;- sort(my_vec)\n\nmy_vec\n\nNULL\n\n\n\nCanvas Submission\nIf you have done everything correctly, your final vector will be six numbers long. Google these six numbers to find a TV show as your final answer and submit to Canvas."
   },
   {
     "objectID": "group-activities/week-3/PA-3-dplyr.html",
@@ -2647,7 +2647,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\nData Joins + Pivots\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\nWorking with Categorical Variables\nExtending Joins, Factors, Clean Variable Names\nPA4 Due by 12pm\nLab 4 Instructions\nLink to Assignmenton GitHub Classroom Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\nUsing stringr to Work with Strings\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\nUsing lubridate to Work with Dates\nPA5 Due by 12pm\nLab 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nPortfolio Week!\nTips for Starting Your Portfolio\n\n\nMidterm Portfolio Targets & Grade Expectations\n\n\n\nThurs, 10/31\nPortfolio Week!\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own simple (vector) functions\n\n\n\n\n\n\n\nThurs, 11/7\nWriting your own dataframe functions\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 Instructions\nChallenge 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\nData Joins + Pivots\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\nWorking with Categorical Variables\nExtending Joins, Factors, Clean Variable Names\nPA4 Due by 12pm\nLab 4 Instructions\nLink to Assignmenton GitHub Classroom Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\nUsing stringr to Work with Strings\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\nUsing lubridate to Work with Dates\nPA5 Due by 12pm\nLab 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nPortfolio Week!\nTips for Starting Your Portfolio\n\n\nMidterm Portfolio Targets & Grade Expectations\n\n\n\nThurs, 10/31\nPortfolio Week!\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own simple (vector) functions\nWriting Vector Functions\n\n\n\n\n\n\nThurs, 11/7\nWriting your own dataframe functions\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\n\n\n\n\n\n\n\nThurs, 11/14\n\n\n\nLab 8 Instructions\nChallenge 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nWebscraping\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nDistributions & Simulation\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -4518,7 +4518,7 @@
     "href": "slides/week-7/W7_functions.html#monday-may-13",
     "title": "Writing Functions",
     "section": "Monday, May 13",
-    "text": "Monday, May 13\nToday we will…\n\nRemember: Group Formation Survey due tonight!\nNew Material\n\nFunction Basics\nVariable Scope + Environment\n\nPA 7: Writing Functions"
+    "text": "Monday, May 13\nToday we will…\n\nReminder: Midterm Portfolio Meetings\nNew Material\n\nFunction Basics\nVariable Scope + Environment\n\nPA 7: Writing Functions"
   },
   {
     "objectID": "slides/week-7/W7_functions.html#why-write-functions",
@@ -4855,5 +4855,474 @@
     "title": "Writing Functions",
     "section": "To do…",
     "text": "To do…\n\nLab 7: Functions + Fish\n\nDue Saturday, 5/18 at 11:59pm.\n\nRead Chapter 8: Functional Programming\n\nCheck-in 8.1 due Monday 5/20 at 10:00am.\n\nFinal Project Group Contract\n\nDue Monday, 5/20 at 11:59pm."
+  },
+  {
+    "objectID": "slides/week-7/W7_functions.html#midterm-portfolio-meetings-1",
+    "href": "slides/week-7/W7_functions.html#midterm-portfolio-meetings-1",
+    "title": "Writing Functions",
+    "section": "Midterm Portfolio Meetings",
+    "text": "Midterm Portfolio Meetings\n\n\nNo in-person class on Thursday\n\nRemember the time you signed up for: Google Sheet with Sign-up Times\n\nDeadline to sign-up (or move your time) is Tuesday at 5pm.\n\nMeetings scheduled between 8am and 11am will be in Dr. T’s office (25-105).\nMeetings scheduled between 12pm and 3pm will be in our classroom (this room)."
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#tuesday-november-2",
+    "href": "slides/week-7/week-7-vector-functions.html#tuesday-november-2",
+    "title": "Writing Vector Functions",
+    "section": "Tuesday, November 2",
+    "text": "Tuesday, November 2\nToday we will…\n\nReminder: Midterm Portfolio Meetings\nNew Material\n\nFunction Basics\nVariable Scope + Environment\n\nPA 7: Writing Functions"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#midterm-portfolio-meetings-1",
+    "href": "slides/week-7/week-7-vector-functions.html#midterm-portfolio-meetings-1",
+    "title": "Writing Vector Functions",
+    "section": "Midterm Portfolio Meetings",
+    "text": "Midterm Portfolio Meetings\n\n\nNo in-person class on Thursday\n\nRemember the time you signed up for: Google Sheet with Sign-up Times\n\nDeadline to sign-up (or move your time) is Tuesday at 5pm.\n\nMeetings scheduled between 8am and 11am will be in Dr. T’s office (25-105).\nMeetings scheduled between 12pm and 3pm will be in our classroom (this room)."
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#why-write-functions",
+    "href": "slides/week-7/week-7-vector-functions.html#why-write-functions",
+    "title": "Writing Vector Functions",
+    "section": "Why write functions?",
+    "text": "Why write functions?\nFunctions allow you to automate common tasks!\n\nWe’ve been using functions since Day 1, but when we write our own, we can customize them!\nHave you found yourself copy-pasting code and only changing small parts?"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#function-syntax",
+    "href": "slides/week-7/week-7-vector-functions.html#function-syntax",
+    "title": "Writing Vector Functions",
+    "section": "Function Syntax",
+    "text": "Function Syntax"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#function-syntax-1",
+    "href": "slides/week-7/week-7-vector-functions.html#function-syntax-1",
+    "title": "Writing Vector Functions",
+    "section": "Function Syntax",
+    "text": "Function Syntax\nfig-alt=“”"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#a-very-simple-function",
+    "href": "slides/week-7/week-7-vector-functions.html#a-very-simple-function",
+    "title": "Writing Vector Functions",
+    "section": "A (very) Simple Function",
+    "text": "A (very) Simple Function\nLet’s define a function.\n\nYou run the code to define the function just once.\n\n\nadd_two &lt;- function(x){\n  x + 2\n}\n\n\n\nLet’s call the function!\n\nadd_two(5)\n\n[1] 7"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#naming-add_two--",
+    "href": "slides/week-7/week-7-vector-functions.html#naming-add_two--",
+    "title": "Writing Vector Functions",
+    "section": "Naming: add_two <-",
+    "text": "Naming: add_two &lt;-\nThe name of the function is chosen by the author.\n\nadd_two &lt;- function(x){\n  x + 2\n}\n\n\nCaution: Function names have no inherent meaning.\n\nThe name you give to a function does not affect what the function does.\n\n\nadd_three &lt;- function(x){\n  x + 7\n}\n\n\nadd_three(5)\n\n[1] 12"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#arguments",
+    "href": "slides/week-7/week-7-vector-functions.html#arguments",
+    "title": "Writing Vector Functions",
+    "section": "Arguments",
+    "text": "Arguments\nThe argument(s) of the function are chosen by the author.\n\nArguments are how we pass external values into the function.\nThey are temporary variables that only exist inside the function body.\n\n\n\n\n\n\nWe give them general names:\n\nx, y, z – vectors\ndf – data frame\ni, j – indices\n\n\n\n\n\n\nadd_two &lt;- function(x){\n  x + 2\n}"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#arguments-1",
+    "href": "slides/week-7/week-7-vector-functions.html#arguments-1",
+    "title": "Writing Vector Functions",
+    "section": "Arguments",
+    "text": "Arguments\n\nOptional argumentsRequired arguments\n\n\n\nIf we supply a default value when defining the function, the argument is optional when calling the function.\n\nadd_something &lt;- function(x, something = 2){\n  return(x + something)\n}\n\n\n\n\nIf a value is not supplied, something defaults to 2.\n\nadd_something(x = 5)\n\n[1] 7\n\n\n\nadd_something(x = 5, something = 6)\n\n[1] 11\n\n\n\n\n\n\n\nIf we do not supply a default value when defining the function, the argument is required when calling the function.\n\nadd_something &lt;- function(x, something){\n  x + something\n}\n\nadd_something(x = 2)\n\nError in add_something(x = 2): argument \"something\" is missing, with no default"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#body",
+    "href": "slides/week-7/week-7-vector-functions.html#body",
+    "title": "Writing Vector Functions",
+    "section": "Body: {  }",
+    "text": "Body: {  }\nThe body of the function is where the action happens.\n\nThe body must be specified within a set of curly brackets.\nThe code in the body will be executed (in order) whenever the function is called.\n\n\nadd_two &lt;- function(x){\n  x + 2\n}"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#output-return",
+    "href": "slides/week-7/week-7-vector-functions.html#output-return",
+    "title": "Writing Vector Functions",
+    "section": "Output: return()",
+    "text": "Output: return()\nYour function will give back what would normally print out…\n\nadd_two &lt;- function(x){\n  x + 2\n}\n\n\n\n\n\n7 + 2\n\n[1] 9\n\n\n\n\nadd_two(7)\n\n[1] 9\n\n\n\n\n\n…but it’s better to be explicit and use return()*.\n\nadd_two &lt;- function(x){\n  return(x + 2)\n}"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#output-return-1",
+    "href": "slides/week-7/week-7-vector-functions.html#output-return-1",
+    "title": "Writing Vector Functions",
+    "section": "Output: return()",
+    "text": "Output: return()\n\nIf you need to return more than one object from a function, wrap those objects in a list.\n\n\n\nmin_max &lt;- function(x){\n  lowest &lt;- min(x)\n  highest &lt;- max(x)\n  return(list(lowest, highest))\n}\n\nvec &lt;- c(346,\n         547,\n         865, \n         112, \n         58)\n\nmin_max(vec)\n\n[[1]]\n[1] 58\n\n[[2]]\n[1] 865"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#input-validation",
+    "href": "slides/week-7/week-7-vector-functions.html#input-validation",
+    "title": "Writing Vector Functions",
+    "section": "Input Validation",
+    "text": "Input Validation\nWhen a function requires an input of a specific data type, check that the supplied argument is valid.\n\nstopifnot()if() + stop()Multiple validations\n\n\n\n\nadd_something &lt;- function(x, something){\n  stopifnot(is.numeric(x))\n  return(x + something)\n}\n\nadd_something(x = \"statistics\", something = 5)\n\nError in add_something(x = \"statistics\", something = 5): is.numeric(x) is not TRUE\n\n\n\n\n\n\n\nadd_something &lt;- function(x, something){\n  if(!is.numeric(x)){\n    stop(\"Please provide a numeric input for the x argument.\")\n  }\n  return(x + something)\n}\n\nadd_something(x = \"statistics\", something = 5)\n\nError in add_something(x = \"statistics\", something = 5): Please provide a numeric input for the x argument.\n\n\n\n\n\n\nHow would you modify the previous code to validate both x and something?\nMeaning, the function should check if both x and something are numeric."
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#variable-scope",
+    "href": "slides/week-7/week-7-vector-functions.html#variable-scope",
+    "title": "Writing Vector Functions",
+    "section": "Variable Scope",
+    "text": "Variable Scope\nThe location (environment) in which we can find and access a variable is called its scope.\n\nWe need to think about the scope of variables when we write functions.\nWhat variables can we access inside a function?\nWhat variables can we access outside a function?"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#global-environment",
+    "href": "slides/week-7/week-7-vector-functions.html#global-environment",
+    "title": "Writing Vector Functions",
+    "section": "Global Environment",
+    "text": "Global Environment\n\nThe top right pane of Rstudio shows you the global environment.\n\nThis is the current state of all objects you have created.\nThese objects can be accessed anywhere."
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#function-environment",
+    "href": "slides/week-7/week-7-vector-functions.html#function-environment",
+    "title": "Writing Vector Functions",
+    "section": "Function Environment",
+    "text": "Function Environment\n\nThe code inside a function executes in the function environment.\n\nFunction arguments and any variables created inside the function only exist inside the function.\n\nThey disappear when the function code is complete.\n\n\nWhat happens in the function environment does not affect things in the global environment."
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#function-environment-1",
+    "href": "slides/week-7/week-7-vector-functions.html#function-environment-1",
+    "title": "Writing Vector Functions",
+    "section": "Function Environment",
+    "text": "Function Environment\nWe cannot access variables created inside a function outside of the function.\n\nadd_two &lt;- function(x) {\n  my_result &lt;- x + 2\n  return(my_result)\n}\n\n\n\n\n\nadd_two(9)\n\n[1] 11\n\n\n\n\n\n\n\nmy_result\n\nError in eval(expr, envir, enclos): object 'my_result' not found"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#name-masking",
+    "href": "slides/week-7/week-7-vector-functions.html#name-masking",
+    "title": "Writing Vector Functions",
+    "section": "Name Masking",
+    "text": "Name Masking\n\nName masking occurs when an object in the function environment has the same name as an object in the global environment.\n\n\n\nadd_two &lt;- function(x) {\n  my_result &lt;- x + 2\n  return(my_result)\n}\n\n\n\n\n\nmy_result &lt;- 2000\n\n\n\n\n\n\nThe my_result created inside the function is different from the my_result created outside.\n\n\n\nadd_two(5)\n\n[1] 7\n\n\n\n\nmy_result\n\n[1] 2000"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#dynamic-lookup",
+    "href": "slides/week-7/week-7-vector-functions.html#dynamic-lookup",
+    "title": "Writing Vector Functions",
+    "section": "Dynamic Lookup",
+    "text": "Dynamic Lookup\n\nFunctions look for objects FIRST in the function environment and SECOND in the global environment.\n\n\n\nIf the object doesn’t exist in either, the code will give an error.\n\n\nadd_two &lt;- function() {\n  return(x + 2)\n}\n\nadd_two()\n\nError in add_two(): object 'x' not found\n\n\n\n\n\nIf it doesn’t exist in the function environment, then it will look in the global environment\n\n\nx &lt;- 10\n\nadd_two()\n\n[1] 12\n\n\n\n\n\n\n\n\n\n\n\n\n\nIt is not good practice to rely on global environment objects inside a function!"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#debugging-1",
+    "href": "slides/week-7/week-7-vector-functions.html#debugging-1",
+    "title": "Writing Vector Functions",
+    "section": "Debugging",
+    "text": "Debugging\nYou will make mistakes (create bugs) when coding.\n\nUnfortunately, it becomes more and more complicated to debug your code as your code gets more sophisticated.\nThis is especially true with functions!"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#debugging-strategies",
+    "href": "slides/week-7/week-7-vector-functions.html#debugging-strategies",
+    "title": "Writing Vector Functions",
+    "section": "Debugging Strategies",
+    "text": "Debugging Strategies\nWhen you have a concept that you want to turn into a function…\n\n\nWrite a simple example of the code without the function framework.\nGeneralize the example by assigning variables.\nWrite the code into a function.\nCall the function on the desired arguments\n\n\n\nThis structure allows you to address issues as you go."
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#debugging-strategies-1",
+    "href": "slides/week-7/week-7-vector-functions.html#debugging-strategies-1",
+    "title": "Writing Vector Functions",
+    "section": "Debugging Strategies",
+    "text": "Debugging Strategies\nWhen you have a concept that you want to turn into a function…\n\n\nWrite a simple example of the code without the function framework.\nGeneralize the example by assigning variables.\nWrite the code into a function.\nCall the function on the desired arguments\n\n\n\nThis structure allows you to address issues as you go."
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#an-example",
+    "href": "slides/week-7/week-7-vector-functions.html#an-example",
+    "title": "Writing Vector Functions",
+    "section": "An Example",
+    "text": "An Example\nWrite a function called find_car_make() that takes in the name of a car and returns the “make” of the car (the company that created it).\n\nfind_car_make(\"Toyota Camry\") should return “Toyota”.\nfind_car_make(\"Ford Anglica\") should return “Ford”."
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#an-example-1",
+    "href": "slides/week-7/week-7-vector-functions.html#an-example-1",
+    "title": "Writing Vector Functions",
+    "section": "An Example",
+    "text": "An Example\n\nSimple ExamplesGeneralizeWrite + Call Funciton\n\n\n\nmake &lt;- word(string = \"Toyota Camry\",\n             start = 1, \n             end = 1)\nmake\n\n[1] \"Toyota\"\n\nmake &lt;- word(string = \"Ford Anglica\",\n             start = 1, \n             end = 1)\nmake\n\n[1] \"Ford\"\n\n\n\n\n\ncar_name &lt;- \"Toyota Camry\"\n\nmake &lt;- word(string = car_name, \n             start = 1, \n             end = 1)\nmake\n\n[1] \"Toyota\"\n\n\n\n\nTaking these examples, write a find_car_make() function that will output the maker / manufacturer of any car.\nOnce you’ve got a function written, can you add input validation to your function?"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#pa-7-writing-functions",
+    "href": "slides/week-7/week-7-vector-functions.html#pa-7-writing-functions",
+    "title": "Writing Vector Functions",
+    "section": "PA 7: Writing Functions",
+    "text": "PA 7: Writing Functions\nYou will write a few small functions and use them to unscramble a message!"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#to-do",
+    "href": "slides/week-7/week-7-vector-functions.html#to-do",
+    "title": "Writing Vector Functions",
+    "section": "To do…",
+    "text": "To do…\n\nPA 7: Functions\n\nDue Thursday, 11/4 by 12:10pm\n\nAttend Your Midterm Portfolio Meeting\n\nYour Scheduled time on Thursday\n\nLab 7: Functions + Fish\n\nDue Sunday, 11/10 at 11:59pm."
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#lab-7-functions-fish",
+    "href": "slides/week-7/week-7-vector-functions.html#lab-7-functions-fish",
+    "title": "Writing Vector Functions",
+    "section": "Lab 7: Functions + Fish",
+    "text": "Lab 7: Functions + Fish"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#to-do-1",
+    "href": "slides/week-7/week-7-vector-functions.html#to-do-1",
+    "title": "Writing Vector Functions",
+    "section": "To do…",
+    "text": "To do…\n\nLab 7: Functions + Fish\n\nDue Saturday, 5/18 at 11:59pm.\n\nRead Chapter 8: Functional Programming\n\nCheck-in 8.1 due Monday 5/20 at 10:00am.\n\nFinal Project Group Contract\n\nDue Monday, 5/20 at 11:59pm."
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#why-write-functions-1",
+    "href": "slides/week-7/week-7-vector-functions.html#why-write-functions-1",
+    "title": "Writing Vector Functions",
+    "section": "Why write functions?",
+    "text": "Why write functions?\nWriting functions has three big advantages over copy-paste:\n\nYour code is easier to read.\nTo change your analysis, simply change one function.\nYou avoid mistakes."
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#naming-add_two",
+    "href": "slides/week-7/week-7-vector-functions.html#naming-add_two",
+    "title": "Writing Vector Functions",
+    "section": "Naming: add_two",
+    "text": "Naming: add_two\nThe name of the function is chosen by the author.\n\nadd_two &lt;- function(x){\n  x + 2\n}\n\n\n\n\n\n\n\n\nFunction names have no inherent meaning.\n\n\nThe name you give to a function does not affect what the function does.\n\nadd_three &lt;- function(x){\n  x + 7\n}\n\n\n\nadd_three(5)\n\n[1] 12"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#using-returns",
+    "href": "slides/week-7/week-7-vector-functions.html#using-returns",
+    "title": "Writing Vector Functions",
+    "section": "Using return()s",
+    "text": "Using return()s\n\n“Only use return() for early returns. Otherwise, rely on R to return the result of the last evaluated expression.”"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#multiple-validations-1",
+    "href": "slides/week-7/week-7-vector-functions.html#multiple-validations-1",
+    "title": "Writing Vector Functions",
+    "section": "Multiple Validations",
+    "text": "Multiple Validations\n\nOption 1: if() + stop()Option 2: stopifnot()\n\n\n\nadd_something &lt;- function(x, something){\n  if(!is.numeric(x) | !is.numeric(something)){\n    stop(\"Please provide numeric inputs for both arguments.\")\n  }\n  return(x + something)\n}\n\nadd_something(x = 2, something = \"R\")\n\nError in add_something(x = 2, something = \"R\"): Please provide numeric inputs for both arguments.\n\n\n\n\n\nadd_something &lt;- function(x, something){\n  stopifnot(is.numeric(x), is.numeric(something))\n  return(x + something)\n}\n\nadd_something(x = 2, something = \"R\")\n\nError in add_something(x = 2, something = \"R\"): is.numeric(something) is not TRUE"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#find_car_make",
+    "href": "slides/week-7/week-7-vector-functions.html#find_car_make",
+    "title": "Writing Vector Functions",
+    "section": "find_car_make()",
+    "text": "find_car_make()\n\n\nfind_car_make &lt;- function(car_name){\n  # Check if there is a space in the string (so there are separate parts)\n  stopifnot(\n    stringr::str_detect(car_name, pattern = \"\\\\w\")\n            )\n  # Grab the first word of the car name (assuming Toyota Camry style input)\n  make &lt;- word(string = car_name, \n               start = 1, \n               end = 1)\n  \n  return(make)\n}\n\n\n\n\n\n\n\nfind_car_make(\"Toyota Camry\")\n\n[1] \"Toyota\"\n\n\n\n\n\n\n\n\nfind_car_make(\"Ford Anglica\")\n\n[1] \"Ford\""
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#pa-7",
+    "href": "slides/week-7/week-7-vector-functions.html#pa-7",
+    "title": "Writing Vector Functions",
+    "section": "PA 7",
+    "text": "PA 7\nYou will write several small functions, then use them to unscramble a message. Many of the functions have been started for you, but none of them are complete as is.\n\n\n\n\nThis activity will require knowledge of:\n\nSummary functions\nFunction documentation (for optional arguments)\nFunction syntax\nmodulus division (and remainders)\nif () & else if() statements\nUsing [] and logical values to extract elements of a vector\nNegating logical statements\n\n\n\n\n\n \nNone of us have all these abilities. Each of us has some of these abilities."
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#lubridate-resources",
+    "href": "slides/week-7/week-7-vector-functions.html#lubridate-resources",
+    "title": "Writing Vector Functions",
+    "section": "lubridate Resources",
+    "text": "lubridate Resources\n\n\nEvery group should have a lubridate cheatsheet!\n\nOn the Front:\n\nMiddle Column – functions related to “getting components” of dates\nBottom Right – functions related to time zones\n\n\n\n\nOn the Back:\n\nLeft Column – functions related to adding / subtracting “periods” to / from dates\nRight Column – functions related to creating and using intervals of time"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#task-card",
+    "href": "slides/week-7/week-7-vector-functions.html#task-card",
+    "title": "Writing Vector Functions",
+    "section": "Task Card",
+    "text": "Task Card\nEvery group should have a task card!\n\n\n\nOn the Front\n\nthe expectations of each role\nthe norms of collaborating\n\n\n\n\n\nOn the Back\n\n\nlubridate functions for different tasks you may encounter"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#getting-started",
+    "href": "slides/week-7/week-7-vector-functions.html#getting-started",
+    "title": "Writing Vector Functions",
+    "section": "Getting Started",
+    "text": "Getting Started\nThe partner who lives the furthest from SLO starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#submission",
+    "href": "slides/week-7/week-7-vector-functions.html#submission",
+    "title": "Writing Vector Functions",
+    "section": "Submission",
+    "text": "Submission\n\nSubmit the name of the television show the six numbers are asssociated with.\n\n\nEach person will input the full name of the TV show into the PA 7 quiz.\nThe person who last occupied the role of Developer will download and submit the PA-7-functions.html file for the group.\n\nOnly one submission per group!"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#base-r-resources",
+    "href": "slides/week-7/week-7-vector-functions.html#base-r-resources",
+    "title": "Writing Vector Functions",
+    "section": "Base R Resources",
+    "text": "Base R Resources\n\n\nEvery group should have a base R cheatsheet!\n\n\nOn the front middle:\n\nSelecting Vectors can refresh your memory on using [] to extract elements of a vector\n\n\n\n\n\nOn the front right:\n\nIf Statements can help you write conditional checks / returns for your functions\nFunctions can help you remember the syntax for creating a function"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html",
+    "href": "slides/week-7/week-7-vector-functions.html",
+    "title": "Writing Vector Functions",
+    "section": "",
+    "text": "Today we will…\n\nReminder: Midterm Portfolio Meetings\nNew Material\n\nFunction Basics\nVariable Scope + Environment\n\nPA 7: Writing Functions"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#lab-7-challenge-7-functions-fish",
+    "href": "slides/week-7/week-7-vector-functions.html#lab-7-challenge-7-functions-fish",
+    "title": "Writing Vector Functions",
+    "section": "Lab 7 & Challenge 7: Functions + Fish",
+    "text": "Lab 7 & Challenge 7: Functions + Fish"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#new-seating-chart",
+    "href": "slides/week-7/week-7-vector-functions.html#new-seating-chart",
+    "title": "Writing Vector Functions",
+    "section": "New Seating Chart",
+    "text": "New Seating Chart"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#function-style-using-returns",
+    "href": "slides/week-7/week-7-vector-functions.html#function-style-using-returns",
+    "title": "Writing Vector Functions",
+    "section": "Function Style – Using return()s",
+    "text": "Function Style – Using return()s\n\n\n“Only use return() for early returns. Otherwise, rely on R to return the result of the last evaluated expression.”\n\n\n\n\n\n\n\n\n# Good\nfind_abs &lt;- function(x) {\n  if (x &gt; 0) {\n    return(x)\n  }\n  x * -1\n}\n\n\n\n\n\n\n\n# Bad\nadd_two &lt;- function(x, y) {\n  return(x + y)\n}\n\n\n\n\n\n\n\n\n\n\n\n\nI tend to disagree…\n\n\nI prefer to use return() statements because it saves me from accidentally writing a function that outputs nothing."
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html",
+    "href": "slides/week-7/week-7-data-frame-functions.html",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "",
+    "text": "Today we will…\n\nDiscuss Groupt Project + Group Contract\nNew Material\n\nCalling Functions on Datasets\nThinking About Missing Data\n\nLab 7: Functions and Fish"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#wednesday-may-15",
+    "href": "slides/week-7/week-7-data-frame-functions.html#wednesday-may-15",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "",
+    "text": "Today we will…\n\nDiscuss Groupt Project + Group Contract\nNew Material\n\nCalling Functions on Datasets\nThinking About Missing Data\n\nLab 7: Functions and Fish"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#group-project-details",
+    "href": "slides/week-7/week-7-data-frame-functions.html#group-project-details",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Group Project Details",
+    "text": "Group Project Details\nCheck out the Canvas page outlining the group project!\n\n\nGroups have been assigned.\nYour group contract is due on Monday!"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#last-time",
+    "href": "slides/week-7/week-7-data-frame-functions.html#last-time",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Last Time…",
+    "text": "Last Time…\nWe wrote a function called find_car_make() that takes in the name of a car and returns the “make” of the car (the company that created it).\n\nfind_car_make(\"Toyota Camry\") returns “Toyota”.\nfind_car_make(\"Ford Anglica\") returns “Ford”.\n\n\nfind_car_make &lt;- function(car_name){\n  make &lt;- str_extract(string = car_name, \n                      pattern = \"[:alpha:]*\")\n  return(make)\n}"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#pair-our-function-with-dplyr",
+    "href": "slides/week-7/week-7-data-frame-functions.html#pair-our-function-with-dplyr",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Pair Our Function with dplyr",
+    "text": "Pair Our Function with dplyr\nConsider the mtcars data.\n\ndata(mtcars)\nhead(mtcars, n = 3)\n\n               mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\n\n\n. . .\nLet’s use our new function:\n\nmtcars |&gt; \n  rownames_to_column(\"make_model\") |&gt; \n  mutate(make = find_car_make(make_model),\n         .after = make_model) |&gt; \n  head(n = 3)\n\n     make_model   make  mpg cyl disp  hp drat    wt  qsec vs am gear carb\n1     Mazda RX4  Mazda 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\n2 Mazda RX4 Wag  Mazda 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\n3    Datsun 710 Datsun 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#recall-the-penguins-data",
+    "href": "slides/week-7/week-7-data-frame-functions.html#recall-the-penguins-data",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Recall the penguins Data",
+    "text": "Recall the penguins Data\n\nlibrary(palmerpenguins)\ndata(penguins)\npenguins |&gt; \n  head()\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#function-to-standardize-data",
+    "href": "slides/week-7/week-7-data-frame-functions.html#function-to-standardize-data",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Function to Standardize Data",
+    "text": "Function to Standardize Data\nWe want to take in a vector of numbers and standardize it – make all values be between 0 and 1.\n. . .\n\nstd_to_01 &lt;- function(var) {\n  stopifnot(is.numeric(var))\n  \n  num &lt;- var - min(var, na.rm = TRUE)\n  denom &lt;- max(var, na.rm = TRUE) - min(var, na.rm = TRUE)\n  \n  return(num / denom)\n}"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#standardizing-variables",
+    "href": "slides/week-7/week-7-data-frame-functions.html#standardizing-variables",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Standardizing Variables",
+    "text": "Standardizing Variables\nIs it a good idea to standardize (scale) variables in a data analysis?\n\n\nWhy standardize?\n\nEasier to compare across variables.\nEasier to model – standardizes the amount of variability.\n\n\nWhy not standardize?\n\nMore difficult to interpret the values.\n\n\n\n. . .\nE.g., a penguin with a bill length of 35 mm (std to 0.11) and a mass of 5500 g (std to 0.78)."
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#pair-our-function-with-dplyr-1",
+    "href": "slides/week-7/week-7-data-frame-functions.html#pair-our-function-with-dplyr-1",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Pair Our Function with dplyr",
+    "text": "Pair Our Function with dplyr\nLet’s standardize penguin measurements.\n\npenguins |&gt; \n  mutate(bill_length_mm    = std_to_01(bill_length_mm), \n         bill_depth_mm     = std_to_01(bill_depth_mm), \n         flipper_length_mm = std_to_01(flipper_length_mm), \n         body_mass_g       = std_to_01(body_mass_g))\n\n\nUgh. Still copy-pasting!\n\n. . .\nRecall across()!\n\npenguins |&gt; \n  mutate(across(.cols = bill_length_mm:body_mass_g,\n                .fns = ~ std_to_01(.x))) |&gt; \n  slice_head(n = 4)\n\n# A tibble: 4 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;\n1 Adelie  Torgersen          0.255         0.667             0.153       0.292\n2 Adelie  Torgersen          0.269         0.512             0.237       0.306\n3 Adelie  Torgersen          0.298         0.583             0.390       0.153\n4 Adelie  Torgersen         NA            NA                NA          NA    \n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#use-variables-as-function-arguments",
+    "href": "slides/week-7/week-7-data-frame-functions.html#use-variables-as-function-arguments",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Use variables as function arguments?",
+    "text": "Use variables as function arguments?\n\nstd_column_01 &lt;- function(data, variable) {\n  stopifnot(is.data.frame(data))\n  \n  data &lt;- data |&gt; \n    mutate(variable = std_to_01(variable))\n  return(data)\n}\n\n\n\n\n\n\n\nNote\n\n\n\nI used the existing function std_to_01() inside the new function for clarity!\n\n\n. . .\nBut it didn’t work…\n\nstd_column_01(penguins, body_mass_g)\n\nError in `mutate()`:\nℹ In argument: `variable = std_to_01(variable)`.\nCaused by error:\n! object 'body_mass_g' not found"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#tidy-evaluation",
+    "href": "slides/week-7/week-7-data-frame-functions.html#tidy-evaluation",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Tidy Evaluation",
+    "text": "Tidy Evaluation\nFunctions using unquoted variable names as arguments are said to use nonstandard evaluation or tidy evaluation.\n\n\nTidy:\n\npenguins |&gt; \n  pull(body_mass_g)\n\n  OR\n\npenguins$body_mass_g\n\n\nUntidy:\n\npenguins[, \"body_mass_g\"]\n\n  OR\n\npenguins[[\"body_mass_g\"]]\n\n\n\n\n. . .\nTidy evaluation isn’t naturally supported when writing your own functions."
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#defused-r-code",
+    "href": "slides/week-7/week-7-data-frame-functions.html#defused-r-code",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Defused R Code",
+    "text": "Defused R Code\nWhen a piece of code is defused, R doesn’t return its value like normal.\n\nInstead it returns an expression that describes how to evaluate it.\n\n. . .\n\n\nEvaluated code:\n\n1 + 1\n\n[1] 2\n\n\n\nDefused code:\n\nexpr(1 + 1)\n\n1 + 1\n\n\n\n\n. . .\nWe produce defused code when we use tidy evaluation and our own functions don’t know how to handle it."
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#solution-1",
+    "href": "slides/week-7/week-7-data-frame-functions.html#solution-1",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Solution 1",
+    "text": "Solution 1\nDon’t use tidy evaluation in your own functions.\n\nThis is more complicated to read and use, but it’s safe.\n\n\nstd_column_01 &lt;- function(data, variable) {\n  stopifnot(is.data.frame(data))\n  \n  data[[variable]] &lt;- std_to_01(data[[variable]])\n  return(data)\n}\n\nstd_column_01(penguins, \"bill_length_mm\")"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#solution-2-rlang",
+    "href": "slides/week-7/week-7-data-frame-functions.html#solution-2-rlang",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Solution 2: rlang",
+    "text": "Solution 2: rlang\nUse the rlang package!\n\n\n\nThis package provides operators that simplify writing functions around tidyverse pipelines.\n\n\n\nknitr::include_graphics(\"https://github.com/rstudio/hex-stickers/blob/main/thumbs/rlang.png?raw=true\")\n\n\n\n\n\n\n\n\n\n\n\nRead more about using this package for function writing here!"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#solution-2-rlang-1",
+    "href": "slides/week-7/week-7-data-frame-functions.html#solution-2-rlang-1",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Solution 2: rlang",
+    "text": "Solution 2: rlang\nTwo ways to get around the issue of defused code:\n\nEmbrace Operator ({ })\n\n\nWith { }, you can transport a variable from one function to another.\n\n. . .\n\nDefuse and Inject\n\n\nYou can first use enquo(arg) to defuse the variable.\nThen use !!arg to inject the variable."
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#solution-2-rlang-2",
+    "href": "slides/week-7/week-7-data-frame-functions.html#solution-2-rlang-2",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Solution 2: rlang",
+    "text": "Solution 2: rlang\nIf we use either of these solutions, we also need to use the walrus operator (:=).\n\nThis means we have to use := instead of = in any dplyr verb containing one of these rlang fixes."
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#recall-our-broken-function",
+    "href": "slides/week-7/week-7-data-frame-functions.html#recall-our-broken-function",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Recall Our Broken Function",
+    "text": "Recall Our Broken Function\n\nstd_column_01 &lt;- function(data, variable) {\n  stopifnot(is.data.frame(data))\n  \n  data &lt;- data |&gt; \n    mutate(variable = std_to_01(variable))\n  return(data)\n}\n\nstd_column_01(penguins, body_mass_g)\n\nError in `mutate()`:\nℹ In argument: `variable = std_to_01(variable)`.\nCaused by error:\n! object 'body_mass_g' not found\n\n\n\nThe code is defused, so mutate() doesn’t know what body_mass_g is.\nWe need to modify variable to make this work correctly!"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#fixing-our-broken-function",
+    "href": "slides/week-7/week-7-data-frame-functions.html#fixing-our-broken-function",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Fixing Our Broken Function",
+    "text": "Fixing Our Broken Function\n\nEmbrace OperatorDefuse + Inject\n\n\n\nstd_column_01 &lt;- function(data, variable) {\n  stopifnot(is.data.frame(data))\n\n  data &lt;- data |&gt;\n    mutate({{variable}} := std_to_01({{variable}}))\n  return(data)\n}\n\nstd_column_01(penguins, body_mass_g)\n\n\n\n# A tibble: 6 × 7\n  species island    bill_length_mm bill_depth_mm body_mass_g sex     year\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7       0.292 male    2007\n2 Adelie  Torgersen           39.5          17.4       0.306 female  2007\n3 Adelie  Torgersen           40.3          18         0.153 female  2007\n4 Adelie  Torgersen           NA            NA        NA     &lt;NA&gt;    2007\n5 Adelie  Torgersen           36.7          19.3       0.208 female  2007\n6 Adelie  Torgersen           39.3          20.6       0.264 male    2007\n\n\n\n\n\nstd_column_01 &lt;- function(data, variable) {\n  stopifnot(is.data.frame(data))\n  \n  variable &lt;- enquo(variable)\n\n  data &lt;- data |&gt;\n    mutate(!!variable := std_to_01(!!variable))\n  return(data)\n}\n\nstd_column_01(penguins, body_mass_g)\n\n\n\n# A tibble: 6 × 7\n  species island    bill_length_mm bill_depth_mm body_mass_g sex     year\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7       0.292 male    2007\n2 Adelie  Torgersen           39.5          17.4       0.306 female  2007\n3 Adelie  Torgersen           40.3          18         0.153 female  2007\n4 Adelie  Torgersen           NA            NA        NA     &lt;NA&gt;    2007\n5 Adelie  Torgersen           36.7          19.3       0.208 female  2007\n6 Adelie  Torgersen           39.3          20.6       0.264 male    2007"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#inject-multiple-variables",
+    "href": "slides/week-7/week-7-data-frame-functions.html#inject-multiple-variables",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Inject Multiple Variables",
+    "text": "Inject Multiple Variables\nWhat if I want to modify multiple columns?\n\nUse across()!\n\n\nstd_column_01 &lt;- function(data, variables) {\n  stopifnot(is.data.frame(data))\n  \n  data &lt;- data |&gt; \n    mutate(across(.cols = {{variables}},\n                  .fns = ~ std_to_01(.x)))\n  return(data)\n}\n\nstd_column_01(penguins, bill_length_mm:body_mass_g)\n\n\n\n# A tibble: 5 × 7\n  species island    bill_length_mm bill_depth_mm body_mass_g sex     year\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt;\n1 Adelie  Torgersen          0.255         0.667       0.292 male    2007\n2 Adelie  Torgersen          0.269         0.512       0.306 female  2007\n3 Adelie  Torgersen          0.298         0.583       0.153 female  2007\n4 Adelie  Torgersen         NA            NA          NA     &lt;NA&gt;    2007\n5 Adelie  Torgersen          0.167         0.738       0.208 female  2007"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#types-of-missing-data",
+    "href": "slides/week-7/week-7-data-frame-functions.html#types-of-missing-data",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Types of Missing Data",
+    "text": "Types of Missing Data\n\nMissing Completely at Random (MCAR)\n\nNo difference between missing and observed values.\nMissing observations are a random subset of all observations.\n\nMissing at Random (MAR)\n\nSystematic difference between missing and observed values, but can be entirely explained by other observed variables.\n\nMissing Not at Random (MNAR)\n\nMissingness is directly related to the unobserved value."
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#types-of-missing-data-1",
+    "href": "slides/week-7/week-7-data-frame-functions.html#types-of-missing-data-1",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Types of Missing Data",
+    "text": "Types of Missing Data\nConsider a study of depression.\n\nMissing Completely at Random (MCAR)\n\nSome subjects have missing lab values because a batch of samples was processed improperly.\n\nMissing at Random (MAR)\n\nSubjects who identify as men are less likely to complete a survey on depression severity.\n\nMissing Not at Random (MNAR)\n\nSubjects with more severe depression are less likely to complete a survey on depression severity."
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#when-we-remove-missing-data",
+    "href": "slides/week-7/week-7-data-frame-functions.html#when-we-remove-missing-data",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "When we remove missing data…",
+    "text": "When we remove missing data…\nWe implicitly assume observations are missing completely at random!\n\nWe might be mostly removing data from subjects who identify as men.\nWe might be mostly removing data from subjects with severe depression.\nWe are inadvertently making our data less representative.\n\n. . .\nWe need to take more care when dealing with missing values!"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html#dealing-with-missing-data",
+    "href": "slides/week-7/week-7-data-frame-functions.html#dealing-with-missing-data",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "Dealing with Missing Data",
+    "text": "Dealing with Missing Data\n\nLook for patterns!\n\nDo observations with missing values have similar traits?\n\n\n. . .\n\nConsider outside explanations!\n\nWhy might missing data exist?\nShould we have a “missing” category in our analysis?\n\n\n. . .\n\nCan we impute values?\n\nIf depression is MCAR within gender, age, and education level, then the distribution of depression will be similar for people of the same gender, age, and education level."
   }
 ]
