@@ -16,8 +16,7 @@ library(palmerpenguins)
 
 ## New Seating Chart
 
-<!-- Add image to slides -->
-<!-- ![]() -->
+![](images/week-7-seats.png)
 
 ## Tuesday, November 2
 
