@@ -6,6 +6,7 @@ project:
     - "!/labs/student/"
     - "!/videos/"
     - "!/group-activities/group-formation"
+    - "!/portfolio/midterm-portfolio-checklist.docx"
 
 website:
   page-navigation: true
