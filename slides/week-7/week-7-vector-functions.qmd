@@ -71,7 +71,7 @@ Functions allow you to automate common tasks!
 
 ## Function Syntax
 
-![](images/func_structure.png)fig-alt=""
+![](images/func_structure.png){fig-alt=""}
 
 
 ## A (very) Simple Function
