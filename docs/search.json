@@ -3586,7 +3586,7 @@
     "href": "labs/instructions/lab-7-instructions.html#the-data",
     "title": "Lab 7: Functions + Fish",
     "section": "The Data",
-    "text": "The Data\nThis lab’s data concerns mark-recapture data on four species of trout from the Blackfoot River outside of Helena, Montana. These four species are rainbow trout (RBT), westslope cutthroat trout (WCT), bull trout, and brown trout.\n{fig-alt=“A serene scene of the Blackfoot River in Montana, with a small raft carrying two people navigating the gentle current. The river winds through a landscape of rugged, rocky shores and lush, green pine forests. Rolling hills and distant mountains frame the background under a lightly clouded sky.}\nMark-recapture is a common method used by ecologists to estimate a population’s size when it is impossible to conduct a census (count every animal). This method works by tagging animals with a tracking device so that scientists can track their movement and presence."
+    "text": "The Data\nThis lab’s data concerns mark-recapture data on four species of trout from the Blackfoot River outside of Helena, Montana. These four species are rainbow trout (RBT), westslope cutthroat trout (WCT), bull trout, and brown trout.\n\nMark-recapture is a common method used by ecologists to estimate a population’s size when it is impossible to conduct a census (count every animal). This method works by tagging animals with a tracking device so that scientists can track their movement and presence."
   },
   {
     "objectID": "labs/instructions/lab-7-instructions.html#data-exploration",
@@ -3971,8 +3971,8 @@
     "objectID": "slides/week-7/week-7-data-frame-functions.html#wednesday-may-15",
     "href": "slides/week-7/week-7-data-frame-functions.html#wednesday-may-15",
     "title": "Writing Data Frame / Plotting Functions",
-    "section": "Wednesday, May 15",
-    "text": "Wednesday, May 15\nToday we will…\n\nDiscuss Groupt Project + Group Contract\nNew Material\n\nCalling Functions on Datasets\nThinking About Missing Data\n\nLab 7: Functions and Fish"
+    "section": "",
+    "text": "Today we will…\n\nDiscuss Groupt Project + Group Contract\nNew Material\n\nCalling Functions on Datasets\nThinking About Missing Data\n\nLab 7: Functions and Fish"
   },
   {
     "objectID": "slides/week-7/week-7-data-frame-functions.html#group-project-details",
@@ -3993,7 +3993,7 @@
     "href": "slides/week-7/week-7-data-frame-functions.html#pair-our-function-with-dplyr",
     "title": "Writing Data Frame / Plotting Functions",
     "section": "Pair Our Function with dplyr",
-    "text": "Pair Our Function with dplyr\nConsider the mtcars data.\n\ndata(mtcars)\nhead(mtcars, n = 3)\n\n               mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\n\n\n\nLet’s use our new function:\n\nmtcars |&gt; \n  rownames_to_column(\"make_model\") |&gt; \n  mutate(make = find_car_make(make_model),\n         .after = make_model) |&gt; \n  head(n = 3)\n\n     make_model   make  mpg cyl disp  hp drat    wt  qsec vs am gear carb\n1     Mazda RX4  Mazda 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\n2 Mazda RX4 Wag  Mazda 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\n3    Datsun 710 Datsun 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1"
+    "text": "Pair Our Function with dplyr\nConsider the mtcars data.\n\ndata(mtcars)\nhead(mtcars, n = 3)\n\n               mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\n\n\n. . .\nLet’s use our new function:\n\nmtcars |&gt; \n  rownames_to_column(\"make_model\") |&gt; \n  mutate(make = find_car_make(make_model),\n         .after = make_model) |&gt; \n  head(n = 3)\n\n     make_model   make  mpg cyl disp  hp drat    wt  qsec vs am gear carb\n1     Mazda RX4  Mazda 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\n2 Mazda RX4 Wag  Mazda 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\n3    Datsun 710 Datsun 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1"
   },
   {
     "objectID": "slides/week-7/week-7-data-frame-functions.html#recall-the-penguins-data",
@@ -4007,42 +4007,42 @@
     "href": "slides/week-7/week-7-data-frame-functions.html#function-to-standardize-data",
     "title": "Writing Data Frame / Plotting Functions",
     "section": "Function to Standardize Data",
-    "text": "Function to Standardize Data\nWe want to take in a vector of numbers and standardize it – make all values be between 0 and 1.\n\n\nstd_to_01 &lt;- function(var) {\n  stopifnot(is.numeric(var))\n  \n  num &lt;- var - min(var, na.rm = TRUE)\n  denom &lt;- max(var, na.rm = TRUE) - min(var, na.rm = TRUE)\n  \n  return(num / denom)\n}"
+    "text": "Function to Standardize Data\nWe want to take in a vector of numbers and standardize it – make all values be between 0 and 1.\n. . .\n\nstd_to_01 &lt;- function(var) {\n  stopifnot(is.numeric(var))\n  \n  num &lt;- var - min(var, na.rm = TRUE)\n  denom &lt;- max(var, na.rm = TRUE) - min(var, na.rm = TRUE)\n  \n  return(num / denom)\n}"
   },
   {
     "objectID": "slides/week-7/week-7-data-frame-functions.html#standardizing-variables",
     "href": "slides/week-7/week-7-data-frame-functions.html#standardizing-variables",
     "title": "Writing Data Frame / Plotting Functions",
     "section": "Standardizing Variables",
-    "text": "Standardizing Variables\nIs it a good idea to standardize (scale) variables in a data analysis?\n\n\nWhy standardize?\n\nEasier to compare across variables.\nEasier to model – standardizes the amount of variability.\n\n\nWhy not standardize?\n\nMore difficult to interpret the values.\n\n\n\nE.g., a penguin with a bill length of 35 mm (std to 0.11) and a mass of 5500 g (std to 0.78)."
+    "text": "Standardizing Variables\nIs it a good idea to standardize (scale) variables in a data analysis?\n\n\nWhy standardize?\n\nEasier to compare across variables.\nEasier to model – standardizes the amount of variability.\n\n\nWhy not standardize?\n\nMore difficult to interpret the values.\n\n\n\n. . .\nE.g., a penguin with a bill length of 35 mm (std to 0.11) and a mass of 5500 g (std to 0.78)."
   },
   {
     "objectID": "slides/week-7/week-7-data-frame-functions.html#pair-our-function-with-dplyr-1",
     "href": "slides/week-7/week-7-data-frame-functions.html#pair-our-function-with-dplyr-1",
     "title": "Writing Data Frame / Plotting Functions",
     "section": "Pair Our Function with dplyr",
-    "text": "Pair Our Function with dplyr\nLet’s standardize penguin measurements.\n\npenguins |&gt; \n  mutate(bill_length_mm    = std_to_01(bill_length_mm), \n         bill_depth_mm     = std_to_01(bill_depth_mm), \n         flipper_length_mm = std_to_01(flipper_length_mm), \n         body_mass_g       = std_to_01(body_mass_g))\n\n\nUgh. Still copy-pasting!\n\n\nRecall across()!\n\npenguins |&gt; \n  mutate(across(.cols = bill_length_mm:body_mass_g,\n                .fns = ~ std_to_01(.x))) |&gt; \n  slice_head(n = 4)\n\n# A tibble: 4 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;\n1 Adelie  Torgersen          0.255         0.667             0.153       0.292\n2 Adelie  Torgersen          0.269         0.512             0.237       0.306\n3 Adelie  Torgersen          0.298         0.583             0.390       0.153\n4 Adelie  Torgersen         NA            NA                NA          NA    \n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+    "text": "Pair Our Function with dplyr\nLet’s standardize penguin measurements.\n\npenguins |&gt; \n  mutate(bill_length_mm    = std_to_01(bill_length_mm), \n         bill_depth_mm     = std_to_01(bill_depth_mm), \n         flipper_length_mm = std_to_01(flipper_length_mm), \n         body_mass_g       = std_to_01(body_mass_g))\n\n\nUgh. Still copy-pasting!\n\n. . .\nRecall across()!\n\npenguins |&gt; \n  mutate(across(.cols = bill_length_mm:body_mass_g,\n                .fns = ~ std_to_01(.x))) |&gt; \n  slice_head(n = 4)\n\n# A tibble: 4 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;\n1 Adelie  Torgersen          0.255         0.667             0.153       0.292\n2 Adelie  Torgersen          0.269         0.512             0.237       0.306\n3 Adelie  Torgersen          0.298         0.583             0.390       0.153\n4 Adelie  Torgersen         NA            NA                NA          NA    \n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
   },
   {
     "objectID": "slides/week-7/week-7-data-frame-functions.html#use-variables-as-function-arguments",
     "href": "slides/week-7/week-7-data-frame-functions.html#use-variables-as-function-arguments",
     "title": "Writing Data Frame / Plotting Functions",
     "section": "Use variables as function arguments?",
-    "text": "Use variables as function arguments?\n\nstd_column_01 &lt;- function(data, variable) {\n  stopifnot(is.data.frame(data))\n  \n  data &lt;- data |&gt; \n    mutate(variable = std_to_01(variable))\n  return(data)\n}\n\n\n\n\n\n\n\nNote\n\n\nI used the existing function std_to_01() inside the new function for clarity!\n\n\n\n\nBut it didn’t work…\n\nstd_column_01(penguins, body_mass_g)\n\nError in `mutate()`:\nℹ In argument: `variable = std_to_01(variable)`.\nCaused by error:\n! object 'body_mass_g' not found"
+    "text": "Use variables as function arguments?\n\nstd_column_01 &lt;- function(data, variable) {\n  stopifnot(is.data.frame(data))\n  \n  data &lt;- data |&gt; \n    mutate(variable = std_to_01(variable))\n  return(data)\n}\n\n\n\n\n\n\n\nNote\n\n\n\nI used the existing function std_to_01() inside the new function for clarity!\n\n\n. . .\nBut it didn’t work…\n\nstd_column_01(penguins, body_mass_g)\n\nError in `mutate()`:\nℹ In argument: `variable = std_to_01(variable)`.\nCaused by error:\n! object 'body_mass_g' not found"
   },
   {
     "objectID": "slides/week-7/week-7-data-frame-functions.html#tidy-evaluation",
     "href": "slides/week-7/week-7-data-frame-functions.html#tidy-evaluation",
     "title": "Writing Data Frame / Plotting Functions",
     "section": "Tidy Evaluation",
-    "text": "Tidy Evaluation\nFunctions using unquoted variable names as arguments are said to use nonstandard evaluation or tidy evaluation.\n\n\nTidy:\n\npenguins |&gt; \n  pull(body_mass_g)\n\n  OR\n\npenguins$body_mass_g\n\n\nUntidy:\n\npenguins[, \"body_mass_g\"]\n\n  OR\n\npenguins[[\"body_mass_g\"]]\n\n\n\n\nTidy evaluation isn’t naturally supported when writing your own functions."
+    "text": "Tidy Evaluation\nFunctions using unquoted variable names as arguments are said to use nonstandard evaluation or tidy evaluation.\n\n\nTidy:\n\npenguins |&gt; \n  pull(body_mass_g)\n\n  OR\n\npenguins$body_mass_g\n\n\nUntidy:\n\npenguins[, \"body_mass_g\"]\n\n  OR\n\npenguins[[\"body_mass_g\"]]\n\n\n\n\n. . .\nTidy evaluation isn’t naturally supported when writing your own functions."
   },
   {
     "objectID": "slides/week-7/week-7-data-frame-functions.html#defused-r-code",
     "href": "slides/week-7/week-7-data-frame-functions.html#defused-r-code",
     "title": "Writing Data Frame / Plotting Functions",
     "section": "Defused R Code",
-    "text": "Defused R Code\nWhen a piece of code is defused, R doesn’t return its value like normal.\n\nInstead it returns an expression that describes how to evaluate it.\n\n\n\n\nEvaluated code:\n\n1 + 1\n\n[1] 2\n\n\n\nDefused code:\n\nexpr(1 + 1)\n\n1 + 1\n\n\n\n\n\nWe produce defused code when we use tidy evaluation and our own functions don’t know how to handle it."
+    "text": "Defused R Code\nWhen a piece of code is defused, R doesn’t return its value like normal.\n\nInstead it returns an expression that describes how to evaluate it.\n\n. . .\n\n\nEvaluated code:\n\n1 + 1\n\n[1] 2\n\n\n\nDefused code:\n\nexpr(1 + 1)\n\n1 + 1\n\n\n\n\n. . .\nWe produce defused code when we use tidy evaluation and our own functions don’t know how to handle it."
   },
   {
     "objectID": "slides/week-7/week-7-data-frame-functions.html#solution-1",
@@ -4056,14 +4056,14 @@
     "href": "slides/week-7/week-7-data-frame-functions.html#solution-2-rlang",
     "title": "Writing Data Frame / Plotting Functions",
     "section": "Solution 2: rlang",
-    "text": "Solution 2: rlang\nUse the rlang package!\n\n\n\nThis package provides operators that simplify writing functions around tidyverse pipelines.\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead more about using this package for function writing here!"
+    "text": "Solution 2: rlang\nUse the rlang package!\n\n\n\nThis package provides operators that simplify writing functions around tidyverse pipelines.\n\n\n\nknitr::include_graphics(\"https://github.com/rstudio/hex-stickers/blob/main/thumbs/rlang.png?raw=true\")\n\n\n\n\n\n\n\n\n\n\n\nRead more about using this package for function writing here!"
   },
   {
     "objectID": "slides/week-7/week-7-data-frame-functions.html#solution-2-rlang-1",
     "href": "slides/week-7/week-7-data-frame-functions.html#solution-2-rlang-1",
     "title": "Writing Data Frame / Plotting Functions",
     "section": "Solution 2: rlang",
-    "text": "Solution 2: rlang\nTwo ways to get around the issue of defused code:\n\nEmbrace Operator ({ })\n\n\nWith { }, you can transport a variable from one function to another.\n\n\n\nDefuse and Inject\n\n\nYou can first use enquo(arg) to defuse the variable.\nThen use !!arg to inject the variable."
+    "text": "Solution 2: rlang\nTwo ways to get around the issue of defused code:\n\nEmbrace Operator ({ })\n\n\nWith { }, you can transport a variable from one function to another.\n\n. . .\n\nDefuse and Inject\n\n\nYou can first use enquo(arg) to defuse the variable.\nThen use !!arg to inject the variable."
   },
   {
     "objectID": "slides/week-7/week-7-data-frame-functions.html#solution-2-rlang-2",
@@ -4112,14 +4112,14 @@
     "href": "slides/week-7/week-7-data-frame-functions.html#when-we-remove-missing-data",
     "title": "Writing Data Frame / Plotting Functions",
     "section": "When we remove missing data…",
-    "text": "When we remove missing data…\nWe implicitly assume observations are missing completely at random!\n\nWe might be mostly removing data from subjects who identify as men.\nWe might be mostly removing data from subjects with severe depression.\nWe are inadvertently making our data less representative.\n\n\nWe need to take more care when dealing with missing values!"
+    "text": "When we remove missing data…\nWe implicitly assume observations are missing completely at random!\n\nWe might be mostly removing data from subjects who identify as men.\nWe might be mostly removing data from subjects with severe depression.\nWe are inadvertently making our data less representative.\n\n. . .\nWe need to take more care when dealing with missing values!"
   },
   {
     "objectID": "slides/week-7/week-7-data-frame-functions.html#dealing-with-missing-data",
     "href": "slides/week-7/week-7-data-frame-functions.html#dealing-with-missing-data",
     "title": "Writing Data Frame / Plotting Functions",
     "section": "Dealing with Missing Data",
-    "text": "Dealing with Missing Data\n\nLook for patterns!\n\nDo observations with missing values have similar traits?\n\n\n\n\nConsider outside explanations!\n\nWhy might missing data exist?\nShould we have a “missing” category in our analysis?\n\n\n\n\n\nCan we impute values?\n\nIf depression is MCAR within gender, age, and education level, then the distribution of depression will be similar for people of the same gender, age, and education level."
+    "text": "Dealing with Missing Data\n\nLook for patterns!\n\nDo observations with missing values have similar traits?\n\n\n. . .\n\nConsider outside explanations!\n\nWhy might missing data exist?\nShould we have a “missing” category in our analysis?\n\n\n. . .\n\nCan we impute values?\n\nIf depression is MCAR within gender, age, and education level, then the distribution of depression will be similar for people of the same gender, age, and education level."
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#thursday-october-24",
@@ -4904,5 +4904,26 @@
     "title": "Using stringr to Work with Strings",
     "section": "To do…",
     "text": "To do…\n\nPA 5.1: Scrambled Message\n\nDue Thursday, October 24 at 12:10pm\n\nCheck-in 5.2: Functions from lubridate\n\nDue Thursday, October 24 at 12:10pm"
+  },
+  {
+    "objectID": "slides/week-7/week-7-data-frame-functions.html",
+    "href": "slides/week-7/week-7-data-frame-functions.html",
+    "title": "Writing Data Frame / Plotting Functions",
+    "section": "",
+    "text": "Today we will…\n\nDiscuss Groupt Project + Group Contract\nNew Material\n\nCalling Functions on Datasets\nThinking About Missing Data\n\nLab 7: Functions and Fish"
+  },
+  {
+    "objectID": "labs/instructions/lab-9-instructions.html",
+    "href": "labs/instructions/lab-9-instructions.html",
+    "title": "Untitled",
+    "section": "",
+    "text": "Perhaps you have seen the Random Babies applet? Suppose one night at a hospital four mothers each give birth to a baby. The hospital is not very organized and looses track of which mother gave birth to each baby, and essentially returns the babies to the mothers at random. Here, we are interested in the number of babies that are correctly returned to their respective mothers.\n1. Simulate the distribution of the number of babies that are correctly returned. Use 10000 simulations.\n\n\n\n\n\n\nTip\n\n\n\nWrite a function to accomplish one simulation, then use map_df to save results out.\n\n\n\nrandomBabies &lt;- function(nBabies){\n  # fill out the function body\n}\n\n# map_df code\n\n2. Create a barplot showing the simulated distribution (proportion).\n\n\n\n\n\n\nTip\n\n\n\nUseful code:\n\ngeom_bar(mapping = aes(y = after_stat(count) / sum(after_stat(count))\n                       )\n         )\n\n\n\n\n# code for 2"
+  },
+  {
+    "objectID": "labs/instructions/lab-9-instructions.html#random-babies-simulation",
+    "href": "labs/instructions/lab-9-instructions.html#random-babies-simulation",
+    "title": "Untitled",
+    "section": "",
+    "text": "Perhaps you have seen the Random Babies applet? Suppose one night at a hospital four mothers each give birth to a baby. The hospital is not very organized and looses track of which mother gave birth to each baby, and essentially returns the babies to the mothers at random. Here, we are interested in the number of babies that are correctly returned to their respective mothers.\n1. Simulate the distribution of the number of babies that are correctly returned. Use 10000 simulations.\n\n\n\n\n\n\nTip\n\n\n\nWrite a function to accomplish one simulation, then use map_df to save results out.\n\n\n\nrandomBabies &lt;- function(nBabies){\n  # fill out the function body\n}\n\n# map_df code\n\n2. Create a barplot showing the simulated distribution (proportion).\n\n\n\n\n\n\nTip\n\n\n\nUseful code:\n\ngeom_bar(mapping = aes(y = after_stat(count) / sum(after_stat(count))\n                       )\n         )\n\n\n\n\n# code for 2"
   }
 ]
