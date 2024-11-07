@@ -1,6 +1,5 @@
 ---
 title: "Lab 7: Functions + Fish"
-author: "Your name"
 format: 
   html:
     embed-resources: true
@@ -38,7 +37,7 @@ Blackfoot River outside of Helena, Montana. These four species are
 **rainbow trout (RBT)**, **westslope cutthroat trout (WCT)**, **bull trout**,
 and **brown trout**.
 
-![](https://github.com/earobinson95/stat331-calpoly/blob/master/lab-assignments/lab7/images/blackfoot_river.jpg?raw=true){fig-alt="A serene scene of the Blackfoot River in Montana, with a small raft carrying two people navigating the gentle current. The river winds through a landscape of rugged, rocky shores and lush, green pine forests. Rolling hills and distant mountains frame the background under a lightly clouded sky.}
+![](https://github.com/earobinson95/stat331-calpoly/blob/master/lab-assignments/lab7/images/blackfoot_river.jpg?raw=true){fig-alt="A serene scene of the Blackfoot River in Montana, with a small raft carrying two people navigating the gentle current. The river winds through a landscape of rugged, rocky shores and lush, green pine forests. Rolling hills and distant mountains frame the background under a lightly clouded sky."}
 
 Mark-recapture is a common method used by ecologists to estimate a population's
 size when it is impossible to conduct a census (count every animal). This method
