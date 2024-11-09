@@ -76,12 +76,14 @@ website:
             text: "Week 4, Part 2 - Factors"
           - href: weeks/week-5-strings-dates.qmd
             text: "Week 5 - Strings & Dates"
-          #- href: weeks/week-6.qmd
-          #   text: "Week 6"
-          # - href: weeks/week-7.qmd
-          #   text: "Week 7"
-          # - href: weeks/week-8.qmd
-          #   text: "Week 8"
+          - href: portfolio/midterm-portfolio-targets.qmd
+            text: "Week 6 - Midterm Portfolio Week"
+          - href: weeks/week-7-vector-functions.qmd
+            text: "Week 7, Part 1 -- Vector Functions"
+          - href: weeks/week-7-data-frame-functions.qmd
+            text: "Week 7, Part 1 -- Data Frame Functions"
+          - href: weeks/week-8-iteration.qmd
+            text: "Week 8 - Iteration"
           # - href: weeks/week-9.qmd
           #   text: "Week 9"
           # - href: weeks/week-10.qmd
@@ -100,6 +102,16 @@ website:
             text: "Challenge 3 Instructions"
           - href: labs/instructions/lab-4-instructions.qmd
             text: "Lab 4 & Challenge 4 Instructions"
+          - href: labs/instructions/lab-5-instructions.qmd
+            text: "Lab 5 Instructions"
+          - href: labs/instructions/lab-7-instructions.qmd
+            text: "Lab 7 Instructions"
+          - href: labs/instructions/challenge-7-instructions.qmd
+            text: "Challenge 7 Instructions"
+          # - href: labs/instructions/lab-8-instructions.qmd
+          #   text: "Lab 8 Instructions"
+          # - href: labs/instructions/lab-9-instructions.qmd
+          #   text: "Lab 9 Instructions"
       - section: "Gallary of Student Work"
         contents:
           - href: labs/exemplars/student-work.qmd
@@ -108,6 +120,8 @@ website:
         contents:
           - href: portfolio/portfolio-instructions.qmd
             text: Portfolio Instructions
+          - href: portfolio/midterm-portfolio-targets.qmd
+            text: Midterm Portfolio Learning Targets   
 
 format:
   html:
