@@ -1,0 +1,3 @@
+What happens when you use the map functions on vectors that aren’t lists? What does map(1:5, runif) do? Why?
+
+What does map(-2:2, rnorm, n = 5) do? Why? What does map_dbl(-2:2, rnorm, n = 5) do? Why?
