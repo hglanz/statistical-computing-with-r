@@ -43,7 +43,8 @@ tasks
 
 # Iteration across data frame columns with `across()`
 
-Often we will have to perform the same data wrangling on many variables (e.g., rounding numbers)
+Often we will have to perform the same data wrangling on many variables (e.g.,
+rounding numbers)
 
 ```{r}
 #| eval: true
@@ -57,7 +58,8 @@ diamonds %>%
     )
 ```
 
-`dplyr` provides the `across()` function for performing these repeated function calls:
+`dplyr` provides the `across()` function for performing these repeated function
+calls:
 
 ```{r}
 #| eval: true
@@ -81,7 +83,8 @@ diamonds %>%
 ```
 
 When we look at the documentation for `across()`, we see that the `.cols`
-argument specifies which variables we want to transform, and it has a `<tidy-select>` tag. This means that the syntax we use for `.cols` follows the 
+argument specifies which variables we want to transform, and it has a 
+`<tidy-select>` tag. This means that the syntax we use for `.cols` follows the
 rules we learned about last week! 
 
 ::: {.callout-tip}
@@ -93,11 +96,17 @@ section at the bottom. Click the "Run examples" link to view the output for all
 the examples.
 :::
 
-### `r emo::ji("check")`: Check-in 8.1: Connecting `across()` with `pivot_wider()` and `pivot_longer()`
+### `r emo::ji("check")`: Check-in 8.1: Connecting `across()` with
+`pivot_wider()` and `pivot_longer()`
 
-1. Fill in the code below to convert all numeric columns into character columns.
+1. Fill in the code below to convert all numeric columns in the `diamonds`
+dataset into character columns.
 
 ```{r}
+diamonds |> 
+  mutate(across(.cols = ____, 
+                .fns = ____)
+         )
 
 ```
 
@@ -106,17 +115,33 @@ units of millimeters are displayed (e.g., "4.0 mm").
 
 ```{r}
 
-make_unit_string <- function(x, unit){
-  str_c(x, unit)
-}
-
+diamonds %>%
+    mutate(
+      across(.cols = ____, 
+             .fns = ~ str_c(____, "mm", sep = " ")
+             )
+      )
 
 ```
 
-3. Fill in the code below that accomplishes #2 using a `pivot_longer()` 
-followed by a `pivot_wider()`. 
+3. Fill in the code below that accomplishes #2 using a `pivot_longer()` followed
+by a `pivot_wider()`. 
 
 ```{r}
+
+diamonds %>%
+  # Add a unique identifier for each row
+  # Needed because there is an x, y, z for each combination of carat, cut, color, clarity
+  mutate(row_id = row_number()) %>%  
+  pivot_longer(cols = ____, 
+               names_to = "dimension",
+               values_to = "value") %>%
+  mutate(
+    ____ = str_c(____, "mm", sep = " ")
+         ) %>%
+  pivot_wider(____ = "dimension", 
+              values_from = "value") %>%
+  select(-row_id) 
 
 ```
 
