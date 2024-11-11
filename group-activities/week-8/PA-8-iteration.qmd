@@ -196,25 +196,28 @@ make_phrase <- function(day_num, adjective, item, verb, location) {
   location <- str_replace_na(location, replacement = "")
 
   ## Step 2: Convert numeric day to English day (1 = one, 2 = two)
-  day_num <- english::as.english(day_num)
+  day_word <- english::as.english(day_num)
   
   ## Step 3: If the day number is larger than 1, the gift items need pluralized!
-  if (){
-    gift <- pluralize_gift()
-  }
+  item <- if_else(num > 1, 
+                  ____,
+                  ____)
   
   ## Step 4: For the first day, replace day_num with "a" or "an"
-  ## "a partridge in a pear tree" OR "an eagle in a nest" 
-  if (day_num == 1){
-     day_num <- if_else(
-      # If the gift starts with a vowel, add "an" to the beginning
-      str_detect(gift, pattern = "^[aeiou]"), 
-      "an",
-      "a")
-    }
+  # Does the item start in a vowel?
+  begin_vowel <- str_detect(item, "^[aeiou]") 
+  
+  day_word <- case_when(
+    # If the gift starts with a vowel, add "an" to the beginning
+    num == 1 & begin_vowel ~ "an",
+    # If the gift DOES NOT start with a vowel, add "a" to the beginning
+    num == 1 & !begin_vowel ~ "a",
+    ## If the day IS NOT 1, then day_word should default to what was made before
+    .default = day_word
+    )
   
   ## Step 5: Glue all of the pieces together into one string and return!
-  phrase <- glue::glue({day_num}, {adjective}, {gift}, {verb}, {location}) 
+  phrase <- glue("{day_word} {adjective} {item} {verb} {location}")  
   # Remove whitespace from start and end, and replace all internal whitespace
   # with a single space.
   phrase <- str_squish(phrase)
