@@ -421,13 +421,13 @@ A data frame is just a list of columns -- `map()` will apply a function to every
 . . .
 
 ::: columns
-::: {.column width="60%"}
+::: {.column width="65%"}
 ```{r}
 #| code-line-numbers: false
 
 penguins |> 
   select(where(is.numeric)) |>
-  map(~ mean(.x, na.rm = TRUE))
+  map(.f = ~ mean(.x, na.rm = TRUE))
 ```
 
 :::
@@ -435,7 +435,7 @@ penguins |>
 ::: {.column width="5%"}
 :::
 
-::: {.column width="35%"}
+::: {.column width="30%"}
 ::: {.fragment}
 Use a lambda function (with `~` and `.x`), just like in `across()`!
 :::
@@ -468,7 +468,7 @@ Calculate the mean of each column.
 
 penguins |> 
   select(bill_length_mm:body_mass_g) |> 
-  map_dbl(~ mean(.x, na.rm = TRUE))
+  map_dbl(.f = ~ mean(.x, na.rm = TRUE))
 ```
 
 </br>
@@ -484,7 +484,7 @@ Calculate the number of `NA`s in each column.
 #| code-line-numbers: false
 
 penguins |> 
-  map_int(~ sum(is.na(.x)))
+  map_int(.f = ~ sum(is.na(.x)))
 ```
 
 Output is a **vector of integers**.
@@ -499,7 +499,7 @@ Calculate the number of `NA`s in each column.
 #| code-line-numbers: false
 
 penguins |> 
-  map_lgl(~ sum(is.na(.x)))
+  map_lgl(.f = ~ sum(is.na(.x)))
 ```
 
 R returns an error if the output is of the wrong type!
@@ -576,7 +576,7 @@ map_func(df)
 
 ### Compare
 
-::: {.midi}
+::: {.small}
 ```{r}
 #| echo: true
 #| eval: false
