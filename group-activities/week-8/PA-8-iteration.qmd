@@ -8,6 +8,7 @@ editor: source
 execute: 
   echo: true
   eval: false
+  error: true
   message: false
   warning: false
 ---
@@ -90,8 +91,8 @@ The gifts in the `xmas` dataset are listed in singular. For example, on day five
 the narrator receives "five golden rings", but the entry in the `xmas` data set
 for the `gift` on day five simply says `"ring"`.
 
-Using the skeleton of the `pluralize_gift()` function, complete the code so that
-the function takes a gift and returns the appropriate plural.
+Using the skeleton of the `pluralize_gift()` function, fill in the `____` so
+that the function takes a gift and returns the appropriate plural.
 
 Here are some tips for completing this task:
 
@@ -112,18 +113,18 @@ example, the word "goose" should not appear anywhere in the function.
 pluralize_gift <- function(gift){
 
   # Check if the word ends in a y
-  if(){
+  if(____){
     # Replace the y at the end with an ies
-    gift <- str_replace()
+    gift <- str_replace(____)
     } 
   # Check for a oo (goose)
-  else if(){ 
+  else if(____){ 
     # Replace the oo with a ee
-    gift <- str_replace()
+    gift <- str_replace(____)
     } 
   else{
     # Add an s to the end of the gift
-    gift <- str_c()
+    gift <- str_c(____)
     }
 
   return(gift)
@@ -195,29 +196,30 @@ make_phrase <- function(day_num, adjective, gift, verb, location) {
   ____ <- ____
 
   ## Step 2: Convert numeric day to English day (1 = one, 2 = two)
-  day_word <- english::as.english(day_num)
+  day_word <- english::as.english(day_num) |> 
+    as.character()
   
   ## Step 3: If the day number is larger than 1, the gifts need pluralized!
-  gift <- if_else(num > 1, 
+  gift <- if_else(day_num > 1, 
                   ____,
                   ____)
   
   ## Step 4: For the first day, replace day_num with "a" or "an"
   
   # Does the item start in a vowel?
-  begin_vowel <- str_detect(gift, pattern = ) 
+  begin_vowel <- str_detect(gift, pattern = ____) 
   
   day_word <- case_when(
     # If the gift starts with a vowel, add "an" to the beginning
-    num == 1 & begin_vowel ~ ____,
+    day_num == 1 & begin_vowel ~ ____,
     # If the gift DOES NOT start with a vowel, add "a" to the beginning
-    num == 1 & !begin_vowel ~ ____,
+    day_num == 1 & !begin_vowel ~ ____,
     ## If the day IS NOT 1, then day_word should default to what was made before
     .default = ____
     )
   
   ## Step 5: Glue all of the pieces together into one string and return!
-  phrase <- glue("{day_word} {adjective} {item} {verb} {location}")  
+  phrase <- glue("{day_word} {adjective} {gift} {verb} {location}")  
   
   # Step 6: Remove whitespace from gluing the string together
   phrase <- str_squish(phrase)
@@ -242,7 +244,7 @@ the `make_phrase()` function is a character (string).
 xmas_small |> 
   mutate(full_phrase = pmap_chr(.l = list(day_num   = day,
                                           adjective = adjective, 
-                                          item      = gift_item, 
+                                          gift      = gift_item, 
                                           verb      = verb, 
                                           location  = location
                                           ), 
@@ -286,3 +288,15 @@ xmas |>
 Revise the `pluralize_gift()` function to be a vectorized function! Hint, you 
 will need to translate the `if()`. `else if()`, and `else()` code into different
 cases for the `case_when()` function. 
+
+```{r}
+#| label: pluralize-gift-function-vectorized
+
+
+```
+
+Try out your vectorized function! 
+
+```{r}
+pluralize_gift(xmas$gift_item)
+```
