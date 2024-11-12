@@ -5455,5 +5455,12 @@
     "title": "Using stringr to Work with Strings",
     "section": "To do…",
     "text": "To do…\n\nPA 5.1: Scrambled Message\n\nDue Thursday, October 24 at 12:10pm\n\nCheck-in 5.2: Functions from lubridate\n\nDue Thursday, October 24 at 12:10pm"
+  },
+  {
+    "objectID": "slides/week-8/iteration-part-1.html#pa-8",
+    "href": "slides/week-8/iteration-part-1.html#pa-8",
+    "title": "Iteration",
+    "section": "PA 8",
+    "text": "PA 8\n\nYou will write two functions, one helper function and one body function, to assist you in singing phrases from the 12 Days of Christmas.\nMany of the functions have been started for you, but none of them are complete as is.\n\n\n\n\n\nThis activity will require knowledge of:\n\ndetecting patterns in strings\nreplacing patterns in strings\nconditional operations (if, else if, else)\nfunction syntax\nfunction arguments\n\n\n\n\n\n \nNone of us have all these abilities. Each of us has some of these abilities."
   }
 ]

@@ -761,7 +761,7 @@ glue('My name is {name}.')
 
 This will be a handy function (and package) for putting our song together!
 
-## PA 7
+## PA 8
 
 ::: {.midi}
 You will write **two** functions, one helper function and one body function, to 
