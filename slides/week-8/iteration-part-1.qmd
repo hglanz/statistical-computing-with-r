@@ -29,6 +29,11 @@ library(glue)
   + Functional Programming: the `map()` family
 + PA 8: The Twelve Days of Christmas Starter Functions
 
+# It's Week 8...
+
+. . .
+
+> How are you taking care of yourself?
 
 # Performing Repeated Tasks
 
