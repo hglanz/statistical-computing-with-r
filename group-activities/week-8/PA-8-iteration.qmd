@@ -4,11 +4,8 @@ format:
   html:
     embed-resources: true
     code-tools: true
-    toc: true
-    number-sections: true
 editor: source
 execute: 
-  error: true
   echo: true
   eval: false
   message: false
@@ -23,7 +20,8 @@ library(tidyverse)
 
 ## Introduction 
 
-The song *"12 Days of Christmas"*, written around 1780, tells the tale of many gifts a person receives in the days leading up to Christmas ([link to lyrics](https://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)). You may want to listen to the song.
+The song *"12 Days of Christmas"*, written around 1780, tells the tale of many
+gifts a person receives in the days leading up to Christmas. 
 
 These gifts repeat and compound; on the first day, the narrator receives
 
@@ -44,11 +42,18 @@ On the twelfth day, they receive
     Two Turtle Doves
     And a Partridge in a Pear Tree
 
-This week, your task will be to write functions that automatically sing this very repetitive song. In the practice activity, we will start by writing two helper functions which we will use in the lab to write a function to sing this entire song.
+This week, your task will be to write functions that automatically sing this
+very repetitive song. In the practice activity, we will start by writing two
+helper functions which we will use later to write a function which sings the 
+entire song.
+
+***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.***
 
 # Data set
 
-Run the code provided to load in a data set called `xmas` that contains the crucial information about the gifts in the song. We will use this data set to test out our functions as we work on them.
+Run the code provided to load in a data set called `xmas` that contains the
+crucial information about the gifts in the song. We will use this data set to
+test out our functions as we work on them.
 
 ```{r}
 #| label: read-in-data
@@ -57,7 +62,7 @@ xmas <- read.csv("https://github.com/earobinson95/stat331-calpoly/raw/master/pra
   janitor::clean_names()
 ```
 
-While we're at it, let's make a smaller verision of the `xmas` data set. This 
+While we're at it, let's make a smaller version of the `xmas` data set. This 
 way we can try out our functions on the small version first *before* we test
 them on the full data set.
 
@@ -76,12 +81,14 @@ duplicate code; use earlier, smaller functions inside your larger functions.
 vectorized and non-vectorized functions **not** on getting the output to look
 as nice as possible. 
 
+<!-- The person who who lives the furthest from SLO starts as the Developer (typing and
+listening to instructions from the Coder)!  -->
 
 # Step 1 -- Pluralizing the Gifts 
 
 The gifts in the `xmas` dataset are listed in singular. For example, on day five
-the narrator receives "five golden rings", but the entry in the data set for the
-gift on day five simply says "ring".
+the narrator receives "five golden rings", but the entry in the `xmas` data set
+for the `gift` on day five simply says `"ring"`.
 
 Using the skeleton of the `pluralize_gift()` function, complete the code so that
 the function takes a gift and returns the appropriate plural.
@@ -92,17 +99,8 @@ Here are some tips for completing this task:
 may assume that in other data sets, there will be **no** additional special
 cases besides these types. 
 
-- The following small examples may be useful to you:
-
-```{r}
-my_names <- c("Kimberly", "Trini", "Jason", "Billy", "Zach", "Tommy")
-str_c(my_names, "s", sep = "")
-str_replace(my_names, "y$", "ies")
-```
-
 - Your  should **absolutely not** "hard-code" anything into this function. For
-example, the word "rings" should not appear anywhere in the function. I should
-be able to give your function any gift and get back the plural of that gift.
+example, the word "goose" should not appear anywhere in the function. 
 
 ```{r}
 #| label: pluralize-gift-function
@@ -114,18 +112,18 @@ be able to give your function any gift and get back the plural of that gift.
 pluralize_gift <- function(gift){
 
   # Check if the word ends in a y
-  if(str_detect(gift, pattern = "y$")){
+  if(){
     # Replace the y at the end with an ies
-    gift <- str_replace(gift, "y$", "ies")
+    gift <- str_replace()
     } 
   # Check for a oo (goose)
-  else if(str_detect(gift, pattern = "oo")){ 
+  else if(){ 
     # Replace the oo with a ee
-    gift <- str_replace(gift, "oo", "ee")
+    gift <- str_replace()
     } 
   else{
     # Add an s to the end of the gift
-    gift <- str_c(gift, "s", sep = "")
+    gift <- str_c()
     }
 
   return(gift)
@@ -135,8 +133,7 @@ pluralize_gift <- function(gift){
 
 ### Test Your Function
 
-Try your function out on the smaller and then larger gift data set. Consider: is this function *vectorized*? It does not have to be, but you can try it out if
-you want!
+Try your function out on the smaller and then larger gift data set. 
 
 ```{r}
 #| label: pluralize-test 
@@ -151,11 +148,13 @@ map_chr(.x = xmas$gift_item,
         .f = ~ pluralize_gift(gift = .x)
         )
 ```
-:::
+
+<!-- Swap roles -- Developer becomes Coder, Coder becomes Developer! -->
 
 # Step 2 -- Creating sentences
 
-Write a function called `make_phrase()` that takes as input the necessary information, and returns a phrase. For example,
+Next we will write a function called `make_phrase()` that takes as input the
+necessary information, and returns a phrase. For example,
 
     make_phrase(day_num   = 4, 
                 adjective = "calling",
@@ -188,38 +187,39 @@ Here are some tips for completing this task:
 ```{r}
 #| label: phrase-function
 
-make_phrase <- function(day_num, adjective, item, verb, location) {
+make_phrase <- function(day_num, adjective, gift, verb, location) {
   
-  ## Step 1: Replace NAs with blank strings
+  ## Step 1: Replace NAs with empty strings
   adjective <- str_replace_na(adjective, replacement = "")
-  verb <- str_replace_na(verb, replacement = "")
-  location <- str_replace_na(location, replacement = "")
+  ____ <- ____
+  ____ <- ____
 
   ## Step 2: Convert numeric day to English day (1 = one, 2 = two)
   day_word <- english::as.english(day_num)
   
-  ## Step 3: If the day number is larger than 1, the gift items need pluralized!
-  item <- if_else(num > 1, 
+  ## Step 3: If the day number is larger than 1, the gifts need pluralized!
+  gift <- if_else(num > 1, 
                   ____,
                   ____)
   
   ## Step 4: For the first day, replace day_num with "a" or "an"
+  
   # Does the item start in a vowel?
-  begin_vowel <- str_detect(item, "^[aeiou]") 
+  begin_vowel <- str_detect(gift, pattern = ) 
   
   day_word <- case_when(
     # If the gift starts with a vowel, add "an" to the beginning
-    num == 1 & begin_vowel ~ "an",
+    num == 1 & begin_vowel ~ ____,
     # If the gift DOES NOT start with a vowel, add "a" to the beginning
-    num == 1 & !begin_vowel ~ "a",
+    num == 1 & !begin_vowel ~ ____,
     ## If the day IS NOT 1, then day_word should default to what was made before
-    .default = day_word
+    .default = ____
     )
   
   ## Step 5: Glue all of the pieces together into one string and return!
   phrase <- glue("{day_word} {adjective} {item} {verb} {location}")  
-  # Remove whitespace from start and end, and replace all internal whitespace
-  # with a single space.
+  
+  # Step 6: Remove whitespace from gluing the string together
   phrase <- str_squish(phrase)
 
   return(phrase)
@@ -280,6 +280,8 @@ xmas |>
 ```
 
 ### If you finished early...
+
+<!-- Swap roles -- Developer becomes Coder, Coder becomes Developer! -->
 
 Revise the `pluralize_gift()` function to be a vectorized function! Hint, you 
 will need to translate the `if()`. `else if()`, and `else()` code into different

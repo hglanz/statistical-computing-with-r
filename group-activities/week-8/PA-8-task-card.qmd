@@ -1,0 +1,99 @@
+---
+title: "PA 8 Task Card -- 12 Days of Christmas"
+format: docx
+execute: 
+  eval: false
+---
+
+In this practice activity you and your partner will write two helper functions which we will use later to write a function which sings the entire 12 Days of Christmas song.
+
+***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.***
+
+## `stringr`
+
++------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| **Task**                                                                                                         | **stringr**                                              |
++------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| Test if the string contains a pattern                                                                            | `str_detect(string, pattern = ...)`                      |
++------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| Replace `pattern` with `replacement`                                                                             | `str_replace(string, pattern = ...,  replacement = ...)` |
++------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| Combine multiple character vectors into a single character vector                                                | `str_c(..., sep = "")`                                   |
++------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| Replace NA values with a specified character / string value                                                      | `str_replace_na(string, replacement = "")`               |
++------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| Strip whitespace from start/end **and** replace multiple whitespace characters with a single whitespace charater | `str_squish(x)`                                          |
++------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| Reference values of characters when creating a string                                                            | `name <- "Dr. Theobold"`                                 |
+|                                                                                                                  |                                                          |
+|                                                                                                                  | `glue('My name is {name}.')`                             |
++------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+
+## Regex (as input into `stringr` functions)
+
++--------------------------+-----------------------------------------------------------+
+| Task                     | Regular Expression                                        |
++==========================+===========================================================+
+| Starts with a z          | `"^z"`                                                    |
++--------------------------+-----------------------------------------------------------+
+| Ends with a w            | `"w$"`                                                    |
++--------------------------+-----------------------------------------------------------+
+| Find a set of characters | `"[abc]"` — matches any single character `a`, `b`, or `c` |
++--------------------------+-----------------------------------------------------------+
+
+You may find the following small example useful:
+
+```{r}
+my_names <- c("Kimberly", "Trini", "Jason", "Billy", "Zach", "Tommy")
+str_c(my_names, "s", sep = "")
+str_replace(my_names, "y$", "ies")
+str_replace(my_names, "mm", "nn")
+
+```
+
+\pagebreak
+
+## Conditional Operations
+
+### Two Conditions
+
+-   Vectorized
+
+```{r}
+if_else(x >= 0,
+        "Positive or zero", 
+        "Negative"
+        )
+```
+
+-   Not Vectorized
+
+```{r}
+if(x >= 0){
+  return("Positive or zero")
+} else{
+  return("Negative")
+}
+```
+
+### Three or More Conditions
+
+-   Vectorized
+
+```{r}
+case_when(x > 0 ~ "Greater than 0!", 
+          x < 0 ~ "Less than 0!", 
+          .default = "Equal to 0!")
+```
+
+-   Not Vectorized
+
+```{r}
+if(x > 0) {
+  return("Greater than 0!")
+  } else if (x < 0) {
+    return("Less than 0!")
+  } else {
+      return("Equal to 0!")
+    }
+```
