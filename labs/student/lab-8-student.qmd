@@ -1,16 +1,9 @@
 ---
 title: "Lab 8: Searching for Places to `map()`"
-format: 
-  html:
-    code-tools: true
-    toc: true
+author: "Your name here!"
+format: html
 editor: source
-execute: 
-  error: true
-  echo: true
-  eval: false
-  message: false
-  warning: false
+embed-resources: true
 ---
 
 ```{r}
@@ -22,21 +15,21 @@ library(tidyverse)
 For this week's lab, we will be revisiting questions from previous lab
 assignments, with the purpose of using functions from the `map()` family to 
 iterate over certain tasks. To do this, we will need to load in the data from 
-Lab 2, Lab 3, and Lab 7. I've included **all** the datasets in the `data`
+Lab 2, Lab 3, and Lab 7. I've included **all** three datasets in the `data`
 folder, so all you need to do is read them in. 🙃 
 
 ```{r}
-#| label: read-in-old-datad
+#| label: read-in-old-data
 
 # Data from Lab 2
-surveys <- read_csv(here::here("labs", "instructions", "data", "surveys.csv"))
+surveys <- read_csv(here::here("data", "surveys.csv"))
 
 # Data from Lab 3
-evals <- read_csv(here::here("labs", "instructions", "data", "teacher_evals.csv")) |> 
+evals <- read_csv(here::here("data", "teacher_evals.csv")) |> 
   rename(sex = gender)
 
 # Data from Lab 7
-fish <- read_csv(here::here("labs", "instructions", "data", "BlackfootFish.csv"))
+fish <- read_csv(here::here("data", "BlackfootFish.csv"))
 ```
 
 ## Lab 2
