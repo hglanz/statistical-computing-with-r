@@ -1,5 +1,5 @@
 ---
-title: "Lab 8: Searching for Places to `map()`"
+title: "Lab 8: Searching for Efficiency"
 format: 
   html:
     code-tools: true
@@ -7,7 +7,7 @@ format:
 editor: source
 execute: 
   error: true
-  echo: true
+  echo: false
   eval: false
   message: false
   warning: false
@@ -86,6 +86,8 @@ every demographic.
 ![](images/lab-8-table-to-recreate.png)
 
 ::: {.callout-tip}
+# Same classification as Challenge 3
+
 I'm using the `sen_level` classification from Challenge 3
 
 - `"junior"` = `seniority` is 4 or less (inclusive)
@@ -99,6 +101,8 @@ I'm using the `sen_level` classification from Challenge 3
 ```
 
 ::: {.callout-tip}
+# Extending you thinking...
+
 If you are interested in exploring my table fomatting, I specifically used the 
 `kable()` function from the **knitr** package to first get an HTML table. Then
 I styled that table using the `kable_styling()` function from the **kableExtra**
