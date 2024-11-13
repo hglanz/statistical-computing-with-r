@@ -108,8 +108,8 @@ website:
             text: "Lab 7 Instructions"
           - href: labs/instructions/challenge-7-instructions.qmd
             text: "Challenge 7 Instructions"
-          # - href: labs/instructions/lab-8-instructions.qmd
-          #   text: "Lab 8 Instructions"
+          - href: labs/instructions/lab-8-instructions.qmd
+            text: "Lab 8 Instructions"
           # - href: labs/instructions/lab-9-instructions.qmd
           #   text: "Lab 9 Instructions"
       - section: "Gallary of Student Work"
