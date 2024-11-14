@@ -573,12 +573,11 @@
 </section>
 <section id="could-you-remove-your-legend" class="slide level2">
 <h2>Could you remove your legend?</h2>
-<p><strong>With annotations</strong></p>
 <div class="small">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>plot <span class="ot">&lt;-</span> fish <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="20-30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>plot <span class="ot">&lt;-</span> fish <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a></a>  <span class="fu">group_by</span>(year, section, trip) <span class="sc">|&gt;</span></span>
 <span id="cb5-3"><a></a>  <span class="fu">summarize</span>(<span class="at">missing_count =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(weight)), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb5-4"><a></a>  <span class="fu">mutate</span>(<span class="at">trip =</span> <span class="fu">case_when</span>(</span>
@@ -588,26 +587,31 @@
 <span id="cb5-8"><a></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb5-9"><a></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
 <span id="cb5-10"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb5-11"><a></a>    <span class="at">title =</span> <span class="st">"Missing Data in Measurements of Trout Species (Blackfoot River)"</span>,</span>
+<span id="cb5-11"><a></a>    <span class="at">title =</span> <span class="st">"Missing Fish Weights for Trout Species on the Blackfoot River"</span>,</span>
 <span id="cb5-12"><a></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb5-13"><a></a>    <span class="at">subtitle =</span> <span class="st">"Weight Values"</span>,</span>
-<span id="cb5-14"><a></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb5-15"><a></a>    <span class="at">color =</span> <span class="st">"Section"</span>) <span class="sc">+</span></span>
-<span id="cb5-16"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> trip) <span class="sc">+</span></span>
-<span id="cb5-17"><a></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-13"><a></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb5-14"><a></a>    <span class="at">color =</span> <span class="st">"Section"</span>) <span class="sc">+</span></span>
+<span id="cb5-15"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> trip) <span class="sc">+</span></span>
+<span id="cb5-16"><a></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-17"><a></a></span>
 <span id="cb5-18"><a></a></span>
-<span id="cb5-19"><a></a></span>
-<span id="cb5-20"><a></a>annotate_text <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">year =</span> <span class="fu">c</span>(<span class="dv">1995</span>, <span class="dv">1992</span>), </span>
-<span id="cb5-21"><a></a>                            <span class="at">missing_count =</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">50</span>),</span>
-<span id="cb5-22"><a></a>                            <span class="at">trip =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Trip 2"</span>, <span class="st">"Trip 2"</span>), </span>
-<span id="cb5-23"><a></a>                                          <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Trip 1"</span>,<span class="st">"Trip 2"</span>), </span>
-<span id="cb5-24"><a></a>                                          ), </span>
-<span id="cb5-25"><a></a>                            <span class="at">section =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Johnsrud"</span>, <span class="st">"Scottybrown"</span>), </span>
-<span id="cb5-26"><a></a>                                             <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Johnsrud"</span>, <span class="st">"Scottybrown"</span>))</span>
-<span id="cb5-27"><a></a>                            )</span>
-<span id="cb5-28"><a></a>plot <span class="sc">+</span> </span>
-<span id="cb5-29"><a></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> annotate_text, <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"Johnsrud"</span>, <span class="st">"Scottybrown"</span>)) <span class="sc">+</span> </span>
-<span id="cb5-30"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-19"><a></a>annotate_text <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">year =</span> <span class="fu">c</span>(<span class="dv">1994</span>, <span class="dv">1993</span>), </span>
+<span id="cb5-20"><a></a>                            <span class="at">missing_count =</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">40</span>),</span>
+<span id="cb5-21"><a></a>                            <span class="at">trip =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Trip 2"</span>, <span class="st">"Trip 2"</span>), </span>
+<span id="cb5-22"><a></a>                                          <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Trip 1"</span>,<span class="st">"Trip 2"</span>), </span>
+<span id="cb5-23"><a></a>                                          ), </span>
+<span id="cb5-24"><a></a>                            <span class="at">section =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Johnsrud"</span>, <span class="st">"ScottyBrown"</span>), </span>
+<span id="cb5-25"><a></a>                                             <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Johnsrud"</span>, <span class="st">"ScottyBrown"</span>))</span>
+<span id="cb5-26"><a></a>                            )</span>
+<span id="cb5-27"><a></a>plot <span class="sc">+</span> </span>
+<span id="cb5-28"><a></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> annotate_text, <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"Johnsrud"</span>, <span class="st">"ScottyBrown"</span>)) <span class="sc">+</span> </span>
+<span id="cb5-29"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>, </span>
+<span id="cb5-30"><a></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
+<span id="cb5-31"><a></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
+<span id="cb5-32"><a></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
+<span id="cb5-33"><a></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb5-34"><a></a>        <span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>)</span>
+<span id="cb5-35"><a></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>

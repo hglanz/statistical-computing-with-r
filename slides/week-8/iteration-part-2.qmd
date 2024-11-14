@@ -354,12 +354,11 @@ fish |>
 
 ## Could you remove your legend?
 
-**With annotations**
-
 ::: {.small}
 ```{r}
 #| echo: true
 #| code-fold: true
+#| code-line-numbers: "20-30"
 
 plot <- fish |>
   group_by(year, section, trip) |>
@@ -371,26 +370,31 @@ plot <- fish |>
   geom_line(linewidth = 1) +
   scale_color_brewer(palette = "Set2") +
   labs(
-    title = "Missing Data in Measurements of Trout Species (Blackfoot River)",
+    title = "Missing Fish Weights for Trout Species on the Blackfoot River",
     x = "Year",
-    subtitle = "Weight Values",
     y = "",
     color = "Section") +
   facet_wrap(~ trip) +
   theme_minimal()
 
 
-annotate_text <- data.frame(year = c(1995, 1992), 
-                            missing_count = c(150, 50),
+annotate_text <- data.frame(year = c(1994, 1993), 
+                            missing_count = c(150, 40),
                             trip = factor(c("Trip 2", "Trip 2"), 
                                           levels = c("Trip 1","Trip 2"), 
                                           ), 
-                            section = factor(c("Johnsrud", "Scottybrown"), 
-                                             levels = c("Johnsrud", "Scottybrown"))
+                            section = factor(c("Johnsrud", "ScottyBrown"), 
+                                             levels = c("Johnsrud", "ScottyBrown"))
                             )
 plot + 
-  geom_text(data = annotate_text, label = c("Johnsrud", "Scottybrown")) + 
-  theme(legend.position = "none")
+  geom_text(data = annotate_text, label = c("Johnsrud", "ScottyBrown")) + 
+  theme(legend.position = "none", 
+        plot.title = element_text(size = 12), 
+        axis.text.x = element_text(size = 12), 
+        axis.text.y = element_text(size = 12), 
+        axis.title = element_text(size = 12),
+        strip.text.x = element_text(size = 12)
+        )
 ```
 :::
 
