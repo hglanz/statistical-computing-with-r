@@ -73,6 +73,7 @@ list output back into a data frame.
 ```
 
 Next up, we're going revisit Question 7 which asked:
+
 > What are the demographics of the instructors in this study? Investigate the
 > variables `academic_degree`, `seniority`, and `sex` and summarize your
 > findings in ~3 complete sentences.

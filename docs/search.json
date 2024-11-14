@@ -5737,5 +5737,33 @@
     "title": "Using map() to Simulate Data",
     "section": "",
     "text": "Today we will…"
+  },
+  {
+    "objectID": "group-activities/week-8/PA-8-task-card.html",
+    "href": "group-activities/week-8/PA-8-task-card.html",
+    "title": "PA 8 Task Card – 12 Days of Christmas",
+    "section": "",
+    "text": "In this practice activity you and your partner will write two helper functions which we will use later to write a function which sings the entire 12 Days of Christmas song.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group."
+  },
+  {
+    "objectID": "group-activities/week-8/PA-8-task-card.html#stringr",
+    "href": "group-activities/week-8/PA-8-task-card.html#stringr",
+    "title": "PA 8 Task Card – 12 Days of Christmas",
+    "section": "stringr",
+    "text": "stringr\n\n\n\n\n\n\n\nTask\nstringr\n\n\nTest if the string contains a pattern\nstr_detect(string, pattern = ...)\n\n\nReplace pattern with replacement\nstr_replace(string, pattern = ...,  replacement = ...)\n\n\nCombine multiple character vectors into a single character vector\nstr_c(..., sep = \"\")\n\n\nReplace NA values with a specified character / string value\nstr_replace_na(string, replacement = \"\")\n\n\nStrip whitespace from start/end and replace multiple whitespace characters with a single whitespace charater\nstr_squish(x)\n\n\nReference values of characters when creating a string\nname &lt;- \"Dr. Theobold\"\nglue('My name is {name}.')"
+  },
+  {
+    "objectID": "group-activities/week-8/PA-8-task-card.html#regex-as-input-into-stringr-functions",
+    "href": "group-activities/week-8/PA-8-task-card.html#regex-as-input-into-stringr-functions",
+    "title": "PA 8 Task Card – 12 Days of Christmas",
+    "section": "Regex (as input into stringr functions)",
+    "text": "Regex (as input into stringr functions)\n\n\n\n\n\n\n\nTask\nRegular Expression\n\n\n\n\nStarts with a z\n\"^z\"\n\n\nEnds with a w\n\"w$\"\n\n\nFind a set of characters\n\"[abc]\" — matches any single character a, b, or c\n\n\n\nYou may find the following small example useful:\n\nmy_names &lt;- c(\"Kimberly\", \"Trini\", \"Jason\", \"Billy\", \"Zach\", \"Tommy\")\nstr_c(my_names, \"s\", sep = \"\")\nstr_replace(my_names, \"y$\", \"ies\")\nstr_replace(my_names, \"mm\", \"nn\")"
+  },
+  {
+    "objectID": "group-activities/week-8/PA-8-task-card.html#conditional-operations",
+    "href": "group-activities/week-8/PA-8-task-card.html#conditional-operations",
+    "title": "PA 8 Task Card – 12 Days of Christmas",
+    "section": "Conditional Operations",
+    "text": "Conditional Operations\n\nTwo Conditions\n\nVectorized\n\n\nif_else(x &gt;= 0,\n        \"Positive or zero\", \n        \"Negative\"\n        )\n\n\nNot Vectorized\n\n\nif(x &gt;= 0){\n  return(\"Positive or zero\")\n} else{\n  return(\"Negative\")\n}\n\n\n\nThree or More Conditions\n\nVectorized\n\n\ncase_when(x &gt; 0 ~ \"Greater than 0!\", \n          x &lt; 0 ~ \"Less than 0!\", \n          .default = \"Equal to 0!\")\n\n\nNot Vectorized\n\n\nif(x &gt; 0) {\n  return(\"Greater than 0!\")\n  } else if (x &lt; 0) {\n    return(\"Less than 0!\")\n  } else {\n      return(\"Equal to 0!\")\n    }"
   }
 ]
