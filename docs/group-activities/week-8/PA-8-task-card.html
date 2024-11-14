@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Untitled – Introduction to Statistical Computing in R</title>
+<title>PA 8 Task Card – 12 Days of Christmas – Introduction to Statistical Computing in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Untitled</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">PA 8 Task Card – 12 Days of Christmas</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -413,16 +413,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link active" data-scroll-target="#application-exercise">Application exercise</a></li>
+  <li><a href="#stringr" id="toc-stringr" class="nav-link active" data-scroll-target="#stringr"><code>stringr</code></a></li>
+  <li><a href="#regex-as-input-into-stringr-functions" id="toc-regex-as-input-into-stringr-functions" class="nav-link" data-scroll-target="#regex-as-input-into-stringr-functions">Regex (as input into <code>stringr</code> functions)</a></li>
+  <li><a href="#conditional-operations" id="toc-conditional-operations" class="nav-link" data-scroll-target="#conditional-operations">Conditional Operations</a>
+  <ul class="collapse">
+  <li><a href="#two-conditions" id="toc-two-conditions" class="nav-link" data-scroll-target="#two-conditions">Two Conditions</a></li>
+  <li><a href="#three-or-more-conditions" id="toc-three-or-more-conditions" class="nav-link" data-scroll-target="#three-or-more-conditions">Three or More Conditions</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/groupworthy-data-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/groupworthy-data-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="PA-8-task-card.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Untitled</h1>
+<h1 class="title">PA 8 Task Card – 12 Days of Christmas</h1>
 </div>
 
 
@@ -439,109 +445,134 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="application-exercise" class="level2">
-<h2 class="anchored" data-anchor-id="application-exercise">Application exercise</h2>
-<div class="callout callout-style-default callout-tip callout-titled" title="Reminder to reflect">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>In this practice activity you and your partner will write two helper functions which we will use later to write a function which sings the entire 12 Days of Christmas song.</p>
+<p><strong><em>This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.</em></strong></p>
+<section id="stringr" class="level2">
+<h2 class="anchored" data-anchor-id="stringr"><code>stringr</code></h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 66%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Task</strong></td>
+<td><strong>stringr</strong></td>
+</tr>
+<tr class="even">
+<td>Test if the string contains a pattern</td>
+<td><code>str_detect(string, pattern = ...)</code></td>
+</tr>
+<tr class="odd">
+<td>Replace <code>pattern</code> with <code>replacement</code></td>
+<td><code>str_replace(string, pattern = ...,  replacement = ...)</code></td>
+</tr>
+<tr class="even">
+<td>Combine multiple character vectors into a single character vector</td>
+<td><code>str_c(..., sep = "")</code></td>
+</tr>
+<tr class="odd">
+<td>Replace NA values with a specified character / string value</td>
+<td><code>str_replace_na(string, replacement = "")</code></td>
+</tr>
+<tr class="even">
+<td>Strip whitespace from start/end <strong>and</strong> replace multiple whitespace characters with a single whitespace charater</td>
+<td><code>str_squish(x)</code></td>
+</tr>
+<tr class="odd">
+<td>Reference values of characters when creating a string</td>
+<td><p><code>name &lt;- "Dr. Theobold"</code></p>
+<p><code>glue('My name is {name}.')</code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="regex-as-input-into-stringr-functions" class="level2">
+<h2 class="anchored" data-anchor-id="regex-as-input-into-stringr-functions">Regex (as input into <code>stringr</code> functions)</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Regular Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Starts with a z</td>
+<td><code>"^z"</code></td>
+</tr>
+<tr class="even">
+<td>Ends with a w</td>
+<td><code>"w$"</code></td>
+</tr>
+<tr class="odd">
+<td>Find a set of characters</td>
+<td><code>"[abc]"</code> — matches any single character <code>a</code>, <code>b</code>, or <code>c</code></td>
+</tr>
+</tbody>
+</table>
+<p>You may find the following small example useful:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Kimberly"</span>, <span class="st">"Trini"</span>, <span class="st">"Jason"</span>, <span class="st">"Billy"</span>, <span class="st">"Zach"</span>, <span class="st">"Tommy"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(my_names, <span class="st">"s"</span>, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace</span>(my_names, <span class="st">"y$"</span>, <span class="st">"ies"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace</span>(my_names, <span class="st">"mm"</span>, <span class="st">"nn"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-title-container flex-fill">
-Reminder to reflect
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>As you work through this application exercise, make note: what is challenging? What feels comfortable? What insights do you gain from collaborating with others? What ideas/strategies do you want to remember going forward?</p>
-</div>
-</div>
-<p><strong>Goal:</strong> In the <code>diamonds</code> dataset, we want to understand the relationship between <code>price</code> and size (<code>carat</code>). We want to explore variation along two choices:</p>
-<ol type="1">
-<li>The variables included in the model. We’ll explore 3 sets of variables:
+<div style="page-break-after: always;"></div>
+</section>
+<section id="conditional-operations" class="level2">
+<h2 class="anchored" data-anchor-id="conditional-operations">Conditional Operations</h2>
+<section id="two-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="two-conditions">Two Conditions</h3>
 <ul>
-<li>No further variables (just <code>price</code> and <code>carat</code>)</li>
-<li>Adjusting for <code>cut</code></li>
-<li>Adjusting for <code>cut</code> and <code>clarity</code></li>
-<li>Adjusting for <code>cut</code>, <code>clarity</code>, and <code>color</code></li>
-</ul></li>
-<li>Whether or not to remove outliers in the <code>carat</code> variable. We’ll define outliers as cases whose <code>carat</code> is over 3 SDs away from the mean.</li>
-</ol>
-<p><strong>Exercise 1:</strong> Use <code>crossing()</code> to create the data frame of argument combinations for our analyses. Note that you can create a list of <strong>formula</strong> objects in R with <code>c(y ~ x1, y ~ x1 + x2)</code>.</p>
-<details>
-<summary>
-Solution
-</summary>
+<li>Vectorized</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df_arg_combos <span class="ot">&lt;-</span> <span class="fu">crossing</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">mod_formula =</span> <span class="fu">c</span>(price <span class="sc">~</span> carat, </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                    price <span class="sc">~</span> carat <span class="sc">+</span> cut,  </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                    price <span class="sc">~</span> carat <span class="sc">+</span> cut <span class="sc">+</span> clarity,  </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                    price <span class="sc">~</span> carat <span class="sc">+</span> cut <span class="sc">+</span> clarity <span class="sc">+</span> color),</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">remove_outliers =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df_arg_combos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">if_else</span>(x <span class="sc">&gt;=</span> <span class="dv">0</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Positive or zero"</span>, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Negative"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</details>
-<p><strong>Exercise 2:</strong> Write a function that removes outliers in a dataset. The user should be able to supply the dataset, the variable to remove outliers in, and a threshold on the number of SDs away from the mean used to define outliers.</p>
-<details>
-<summary>
-Solution
-</summary>
+<ul>
+<li>Not Vectorized</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>remove_outliers <span class="ot">&lt;-</span> <span class="cf">function</span>(df, what_var, sd_thresh) {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    df <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mutate</span>(<span class="at">zscore =</span> ({{ what_var }} <span class="sc">-</span> <span class="fu">mean</span>({{ what_var}}, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))<span class="sc">/</span><span class="fu">sd</span>({{ what_var }}, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter</span>(zscore <span class="sc">&lt;=</span> sd_thresh)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;=</span> <span class="dv">0</span>){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="st">"Positive or zero"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span>{</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="st">"Negative"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</details>
-<p><strong>Exercise 3:</strong> Write a function that implements the analysis versions specifically for the <code>diamonds</code> dataset. The user will not specify the dataset as an argument but will input the model formula and whether or not to remove outliers (cases whose <code>carat</code> is over 3 SDs away from the mean).</p>
-<details>
-<summary>
-Solution
-</summary>
+</section>
+<section id="three-or-more-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="three-or-more-conditions">Three or More Conditions</h3>
+<ul>
+<li>Vectorized</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fit_model <span class="ot">&lt;-</span> <span class="cf">function</span>(mod_formula, remove_outliers) {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (remove_outliers) {</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        diamonds_clean <span class="ot">&lt;-</span> <span class="fu">remove_outliers</span>(diamonds, <span class="at">what_var =</span> carat, <span class="at">sd_thresh =</span> <span class="dv">3</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        diamonds_clean <span class="ot">&lt;-</span> diamonds</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lm</span>(mod_formula, <span class="at">data =</span> diamonds_clean)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">case_when</span>(x <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"Greater than 0!"</span>, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>          x <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"Less than 0!"</span>, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">.default =</span> <span class="st">"Equal to 0!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</details>
-<!-- **Exercise 4:** Write a `for` loop that stores the fitted linear models from all versions of the analysis. -->
-<!-- Note that you can pull out the contents of a single data frame column in many ways. For a data frame `df` with a variable named `x`: -->
-<!-- - `df$x` -->
-<!-- - `df %>% pull(x)` -->
-<!-- - `df[["x"]]` -->
-<!-- <details> -->
-<!--   <summary>Solution</summary> -->
-<!-- ```{r} -->
-<!-- lin_mod_res_for <- vector(mode = "list", length = nrow(df_arg_combos)) -->
-<!-- for (i in seq_along(lin_mod_res_for)) { -->
-<!--     this_formula <- df_arg_combos$mod_formula[[i]] # Double [[ for the **list** of formulas -->
-<!--     this_remove_outliers <- df_arg_combos$remove_outliers[i] # Single [ for the **atomic vector** of logicals -->
-<!--     lin_mod_res_for[[i]] <- fit_model( -->
-<!--         mod_formula = this_formula, -->
-<!--         remove_outliers = this_remove_outliers -->
-<!--     ) -->
-<!-- } -->
-<!-- ``` -->
-<!-- </details> -->
-<p><strong>Exercise 5:</strong> Use <code>pmap()</code> from <code>purrr</code> to replicate what you did with the <code>for</code> loop.</p>
-<details>
-<summary>
-Solution
-</summary>
+<ul>
+<li>Not Vectorized</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lin_mod_res_pmap <span class="ot">&lt;-</span> <span class="fu">pmap</span>(df_arg_combos, fit_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="st">"Greater than 0!"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"Less than 0!"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(<span class="st">"Equal to 0!"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</details>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
