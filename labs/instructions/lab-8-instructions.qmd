@@ -1,122 +1,127 @@
 ---
-title: "Untitled"
+title: "Lab 8: Searching for Efficiency"
+format: 
+  html:
+    code-tools: true
+    toc: true
+editor: source
 execute: 
+  error: true
+  echo: false
   eval: false
+  message: false
+  warning: false
 ---
 
-**Goal:** In the `diamonds` dataset, we want to understand the relationship
-between `price` and size (`carat`). We want to explore variation along two choices:
-
-1.  The variables included in the model. We'll explore 3 sets of variables:
-    -   No further variables (just `price` and `carat`)
-    -   Adjusting for `cut`
-    -   Adjusting for `cut` and `clarity`
-    -   Adjusting for `cut`, `clarity`, and `color`
-    
-2.  Whether or not to remove outliers in the `carat` variable. We'll define
-outliers as cases whose `carat` is over 3 SDs away from the mean.
-
 ```{r}
-diamonds <- ggplot2::diamonds
+#| label: pacakges
+
+library(tidyverse)
 ```
 
-**Exercise 1:** Use `crossing()` to create the data frame of argument
-combinations for our analyses. Note that you can create a list of **formula**
-objects in R with `c(y ~ x1, y ~ x1 + x2)`.
+For this week's lab, we will be revisiting questions from previous lab
+assignments, with the purpose of using functions from the `map()` family to 
+iterate over certain tasks. To do this, we will need to load in the data from 
+Lab 2, Lab 3, and Lab 7. I've included **all** the datasets in the `data`
+folder, so all you need to do is read them in. 🙃 
 
 ```{r}
-df_arg_combos <- tidytable::crossing(
-  mod_formula = c(price ~ carat, 
-                  price ~ carat + cut,  
-                  price ~ carat + cut + clarity,  
-                  price ~ carat + cut + clarity + color),
-  remove_outliers = c(TRUE, FALSE)
-  )
+#| label: read-in-old-datad
 
-df_arg_combos
+# Data from Lab 2
+surveys <- read_csv(here::here("labs", "instructions", "data", "surveys.csv"))
+
+# Data from Lab 3
+evals <- read_csv(here::here("labs", "instructions", "data", "teacher_evals.csv")) |> 
+  rename(sex = gender)
+
+# Data from Lab 7
+fish <- read_csv(here::here("labs", "instructions", "data", "BlackfootFish.csv"))
 ```
 
+## Lab 2
 
-**Exercise 2:** Write a function that removes outliers in a dataset. The user
-should be able to supply the dataset, the variable to remove outliers in, and a
-threshold on the number of SDs away from the mean used to define outliers.
+First up, we're going to revisit Question 3 from Lab 2. This question asked:
 
-```{r}
-remove_outliers <- function(df, var, sd_thresh) {
-    df %>% 
-        mutate(zscore = ({{ var }} - mean({{ var }}, 
-                                               na.rm = TRUE)
-                         ) / sd({{ var }}, 
-                                na.rm = TRUE)
-               ) %>%
-        filter(zscore <= sd_thresh)
-}
-```
+> What are the data types of the variables in this dataset?
 
-**Exercise 3:** Write a function that implements the analysis versions
-specifically for the `diamonds` dataset. The user will not specify the dataset
-as an argument but will input the model formula and whether or not to remove
-outliers (cases whose `carat` is over 3 SDs away from the mean).
-
+**1. Using `map_chr()`, produce a nicely formatted table of the data type of each variable in the `surveys` dataset.** Specifically, the table should have 15 columns, one for
+each variable, with the datatype of that variable immediately below it's name. 
 
 ```{r}
-fit_model <- function(mod_formula, remove_outliers) {
-  
-    if (remove_outliers) {
-        diamonds_clean <- remove_outliers(diamonds, 
-                                          var = carat, 
-                                          sd_thresh = 3)
-    } else {
-        diamonds_clean <- diamonds
-    }
-    
-    lm(mod_formula, data = diamonds_clean)
-}
-```
+#| label: map-data-types-of-surveys
 
-**Exercise 4:** Write a `for` loop that stores the fitted linear models from all
-versions of the analysis.
-
-Note that you can pull out the contents of a single data frame column in many
-ways. For a data frame `df` with a variable named `x`:
-
-- `df$x`
-
-- `df %>% pull(x)`
-
-- `df[["x"]]`
-
-
-```{r}
-
-lin_mod_res_for <- vector(mode = "list", length = nrow(df_arg_combos))
-
-for (i in seq_along(lin_mod_res_for)) {
-
-  # Double [[ for the **list** of formulas
-  this_formula <- df_arg_combos$mod_formula[[i]] 
-
-  # Single [ for the **atomic vector** of logicals
-  this_remove_outliers <- df_arg_combos$remove_outliers[i] 
-
-  lin_mod_res_for[[i]] <- fit_model(mod_formula = this_formula,
-                                    remove_outliers = this_remove_outliers)
-}
 
 ```
 
+## Lab 3
 
-**Exercise 5:** Use `pmap()` from `purrr` to replicate what you did with the
-`for()` loop.
+Now, were on to Lab 3 where we will revisit two questions. 
+
+In the original version of Lab 3, Question 5 asked you to:
+
+> Change data types in whichever way you see fit (e.g., is the instructor ID
+> really a numeric data type?)
+
+**2. Using `map_at()`, convert the `teacher_id`, `weekday`, `academic_degree`, `seniority`, and `gender` columns to factors.** Hint: You will need to use `bind_cols()` to transform the 
+list output back into a data frame. 
 
 ```{r}
-pmap(df_arg_combos, fit_model) %>% 
-  map(.f = broom::glance) %>% 
-  map_dbl("adj.r.squared") %>% 
-  as_tibble()  %>% 
-  bind_cols(df_arg_combos) %>% 
-  mutate(model = as.character(mod_formula), 
-         .after = mod_formula) %>% 
-  select(-mod_formula)
+#| label: map-to-mutate-columns
+
+
+```
+
+Next up, we're going revisit Question 7 which asked:
+> What are the demographics of the instructors in this study? Investigate the
+> variables `academic_degree`, `seniority`, and `sex` and summarize your
+> findings in ~3 complete sentences.
+
+Many people created **multiple** tables of counts for each of these
+demographics, but in this exercise we are going to create **one** table with 
+every demographic.
+
+**3. Using `pivot_longer()` and `pivot_wider()`, recreate the table below.** 
+
+![](images/lab-8-table-to-recreate.png)
+
+::: {.callout-tip}
+# Same classification as Challenge 3
+
+I'm using the `sen_level` classification from Challenge 3
+
+- `"junior"` = `seniority` is 4 or less (inclusive)
+- `"senior"` = `seniority` is more than 4 
+:::
+
+```{r}
+#| label: double-pivot-for-summary-table
+
+
+```
+
+::: {.callout-tip}
+# Extending you thinking...
+
+If you are interested in exploring my table fomatting, I specifically used the 
+`kable()` function from the **knitr** package to first get an HTML table. Then
+I styled that table using the `kable_styling()` function from the **kableExtra**
+package. 
+:::
+
+## Lab 7
+
+For our last problem, we will revisit a question from the most recent lab. 
+Question 1 asked you to use `across()` to make a table which summarized: 
+
+> What variable(s) have missing values present?  
+> How many observations have missing values?
+
+**4. Using `map_int()`, produce a nicely formatted table of the number of missing values for each variable in the `fish` data.** 
+
+```{r}
+#| label: map-missing-values-of-fish
+
+
 ```
 
