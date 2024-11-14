@@ -117,6 +117,8 @@ rescale_column <- function(df, cols){
 
 **How would you check if the input `cols` were columns that existed in `df`?**
 
+# Take Advanced R in the Spring! 
+
 <!-- # Function Checks for Data Frames -- Columns -->
 
 ```{r}
