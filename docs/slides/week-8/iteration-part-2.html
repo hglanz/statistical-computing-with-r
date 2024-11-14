@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>Introduction to Statistical Computing in R – Iterating over Multiple Inputs”</title>
+  <title>Introduction to Statistical Computing in R – Cool Plots &amp; Searching for Efficiency</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -390,7 +390,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Iterating over Multiple Inputs”</h1>
+  <h1 class="title">Cool Plots &amp; Searching for Efficiency</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -399,167 +399,386 @@
 <section class="slide level2">
 
 <p>Today we will…</p>
+<div class="midi">
 <ul>
-<li>Midterm Exam (extra point on SA and OEA)</li>
-<li>New Material
+<li>Review Lab 9
 <ul>
-<li>The <code>map2()</code> Family</li>
+<li>Function Checks</li>
+<li>Creative Plots</li>
+<li>Additional Tools for Creativity / Clarity</li>
+</ul></li>
+<li>Lab 7 Peer Review
+<ul>
+<li>Function Style</li>
+<li><code>if()</code> Style</li>
 </ul></li>
 <li>Work Time
 <ul>
-<li>Lab 8: The Twelve Days of Christmas</li>
-<li>PC3: Project Proposal + Data</li>
+<li>Lab 8: Searching for Efficiency</li>
 </ul></li>
 </ul>
+</div>
 </section>
-<section id="the-map2-family" class="slide level2">
-<h2>The <code>map2()</code> Family</h2>
-<p>These functions allow us to iterate over <strong>two</strong> lists at the same time.</p>
+<section>
+<section id="lab-9" class="title-slide slide level1 center">
+<h1>Lab 9</h1>
 
-<img data-src="images/map2.png" class="r-stretch"></section>
-<section id="the-map2-family-1" class="slide level2">
-<h2>The <code>map2()</code> Family</h2>
-<p>These functions include:</p>
-<ul>
-<li><code>map2()</code></li>
-<li><code>map2_chr()</code></li>
-<li><code>map2_lgl()</code></li>
-<li><code>map2_int()</code></li>
-<li><code>map2_dbl()</code></li>
-</ul>
-<p>Each function has <strong>two</strong> list arguments, denoted <code>.x</code> and <code>.y</code>, and a function argument.</p>
 </section>
-<section id="small-map2-example" class="slide level2">
-<h2>Small <code>map2()</code> Example</h2>
-<p>Find the minimum.</p>
-</section>
-<section id="big-map2-example" class="slide level2">
-<h2>Big <code>map2()</code> Example</h2>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">The Problem</a></li><li><a href="#tabset-1-2">Split Data</a></li><li><a href="#tabset-1-3">Fit Model</a></li><li><a href="#tabset-1-4">Predict</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<ul>
-<li>Regress vehicle MPG on vehicle weight.</li>
-<li>Do the regression <em>separately</em> for 4-, 6-, and 8-cylinder vehicles.</li>
-</ul>
-</div>
-<div id="tabset-1-2">
-
-</div>
-<div id="tabset-1-3">
-<p>Fit a linear regression model to each subset of the data.</p>
-<ul>
-<li>Regress vehicle MPG on vehicle weight.</li>
-<li>We are fitting <strong>three</strong> separate models.</li>
-</ul>
-</div>
-<div id="tabset-1-4">
-<p>Predict vehicle MPG from observed vehicle weight.</p>
-<ul>
-<li>The <code>predict()</code> function needs <strong>two</strong> inputs.</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="nest-and-unnest" class="slide level2">
-<h2><code>nest()</code> and <code>unnest()</code></h2>
-<ul>
-<li>We can pair functions from the <code>map()</code> family very nicely with two <code>tidyr</code> functions: <code>nest()</code> and <code>unnest()</code>.</li>
-<li>These allow us to easily map functions onto subsets of the data.</li>
-</ul>
-</section>
-<section id="nest" class="slide level2">
-<h2><code>nest()</code></h2>
-<p><strong>Nest</strong> subsets of the data (as tibbles) inside a tibble.</p>
-<ul>
-<li>Specify the column(s) to create subsets on.</li>
-</ul>
-<div class="columns">
-<div class="column" style="width:50%;">
+<section id="vectorized-function-checks" class="slide level2">
+<h2>Vectorized Function Checks</h2>
+<div class="midi">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb1-2"><a></a>  <span class="fu">nest</span>(<span class="at">cyl_data =</span> <span class="sc">-</span>cyl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>rescale_01 <span class="ot">&lt;-</span> <span class="cf">function</span>(vec) {</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.numeric</span>(vec)) {</span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"Input vector is not numeric"</span>)</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">length</span>(vec) <span class="sc">&lt;=</span> <span class="dv">1</span>) {</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"Input vector length must have at least two elements"</span>)</span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>  range <span class="ot">&lt;-</span> <span class="fu">range</span>(vec, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>((vec <span class="sc">-</span> range[<span class="dv">1</span>]) <span class="sc">/</span> (range[<span class="dv">2</span>] <span class="sc">-</span> range[<span class="dv">1</span>]))</span>
+<span id="cb1-14"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div><div class="column" style="width:50%;">
+</div>
+<div class="fragment">
+<p><strong>How would you transform these input checks so the <code>rescale_01()</code> function is vectorized?</strong></p>
+</div>
+</section>
+<section id="function-checks-for-data-frames" class="slide level2">
+<h2>Function Checks for Data Frames</h2>
+<div class="midi">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>rescale_column <span class="ot">&lt;-</span> <span class="cf">function</span>(df, var) {</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="at">.cols =</span> {{ var }}, <span class="at">.fns =</span> <span class="sc">~</span><span class="fu">rescale_01</span>(..x)</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>                         )</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>                  )</span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(df)</span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>How would you check if the input <code>df</code> was a data frame?</strong></p>
+</div>
+</section>
+<section id="function-checks-for-data-frames-columns" class="slide level2">
+<h2>Function Checks for Data Frames – Columns</h2>
+<div class="midi">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>rescale_column <span class="ot">&lt;-</span> <span class="cf">function</span>(df, cols){</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">stopifnot</span>(<span class="fu">is.data.frame</span>(df))</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="fu">across</span>(<span class="at">.cols =</span> {{ cols }}, <span class="at">.fns =</span> <span class="sc">~</span><span class="fu">rescale_01</span>(.x)</span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>                         )</span>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a>                  )</span>
+<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(df)</span>
+<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>How would you check if the input <code>cols</code> were columns that existed in <code>df</code>?</strong></p>
+<!-- # Function Checks for Data Frames -- Columns -->
+</div>
+</section></section>
+<section>
+<section id="plots-from-lab-7" class="title-slide slide level1 center">
+<h1>Plots from Lab 7</h1>
 
+</section>
+<section id="stacked-bars-with-color" class="slide level2">
+<h2>Stacked Bars with Color!</h2>
+<div class="columns">
+<div class="column" style="width:75%;">
+<p><img data-src="images/student-1.png"></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:20%;">
+<div class="fragment">
+<p>Notice how their facets have more informative titles?</p>
+</div>
 </div></div>
 </section>
-<section id="unnest" class="slide level2">
-<h2><code>unnest()</code></h2>
-<p><strong>Un-nest</strong> the data by row binding the subsets back together.</p>
-<ul>
-<li>Specify the column(s) that contains the subsets.</li>
-</ul>
+<section id="more-stacked-bars-with-color" class="slide level2">
+<h2>More Stacked Bars with Color!</h2>
+<div class="columns">
+<div class="column" style="width:75%;">
+<p><img data-src="images/student-4.png"></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:20%;">
+<div class="fragment">
+<p>Notice how every year with measurements is displayed?</p>
+</div>
+</div></div>
+</section>
+<section id="combining-year-and-trip" class="slide level2">
+<h2>Combining Year and Trip</h2>
+<p><img data-src="images/student-2.png" style="width:80.0%"></p>
+</section>
+<section id="faceting-by-year" class="slide level2">
+<h2>Faceting by Year!</h2>
+<p><img data-src="images/student-3.png"></p>
+</section>
+<section id="a-line-plot-with-colors" class="slide level2">
+<h2>A Line Plot with Colors!</h2>
+<p><img data-src="images/student-5.png" style="width:80.0%"></p>
+</section>
+<section id="do-you-want-your-legend-on-the-left" class="slide level2">
+<h2>Do you want your legend on the left?</h2>
+<div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a></a>  <span class="fu">nest</span>(<span class="at">cyl_data =</span> <span class="sc">-</span>cyl) <span class="sc">|&gt;</span> </span>
-<span id="cb2-3"><a></a>  <span class="fu">unnest</span>(cyl_data) <span class="sc">|&gt;</span> </span>
-<span id="cb2-4"><a></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>fish <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">group_by</span>(year, section, trip) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a></a>  <span class="fu">summarize</span>(<span class="at">missing_count =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(weight)), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a></a>  <span class="fu">mutate</span>(<span class="at">trip =</span> <span class="fu">case_when</span>(</span>
+<span id="cb4-5"><a></a>    trip <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Trip 1"</span>,</span>
+<span id="cb4-6"><a></a>    trip <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"Trip 2"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb4-7"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> missing_count, <span class="at">color =</span> section)) <span class="sc">+</span></span>
+<span id="cb4-8"><a></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
+<span id="cb4-10"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-11"><a></a>    <span class="at">title =</span> <span class="st">"Number of Missing Weight Measurements of Trout Species (Blackfoot River)"</span>,</span>
+<span id="cb4-12"><a></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb4-13"><a></a>    <span class="at">subtitle =</span> <span class="st">"Across Sections of River and Trip Number"</span>,</span>
+<span id="cb4-14"><a></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb4-15"><a></a>    <span class="at">color =</span> <span class="st">"Section"</span>) <span class="sc">+</span></span>
+<span id="cb4-16"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> trip) <span class="sc">+</span></span>
+<span id="cb4-17"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb4-18"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="iteration-part-2_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="big-map2-example-again" class="slide level2">
-<h2>Big <code>map2()</code> Example (Again)</h2>
-<div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1"><code>nest()</code></a></li><li><a href="#tabset-2-2"><code>lm()</code></a></li><li><a href="#tabset-2-3"><code>predict()</code></a></li><li><a href="#tabset-2-4"><code>unnest()</code></a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1">
-
+<section id="could-you-remove-your-legend" class="slide level2">
+<h2>Could you remove your legend?</h2>
+<p><strong>With annotations</strong></p>
+<div class="small">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>plot <span class="ot">&lt;-</span> fish <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">group_by</span>(year, section, trip) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a></a>  <span class="fu">summarize</span>(<span class="at">missing_count =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(weight)), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a></a>  <span class="fu">mutate</span>(<span class="at">trip =</span> <span class="fu">case_when</span>(</span>
+<span id="cb5-5"><a></a>    trip <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Trip 1"</span>,</span>
+<span id="cb5-6"><a></a>    trip <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"Trip 2"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> missing_count, <span class="at">color =</span> section)) <span class="sc">+</span></span>
+<span id="cb5-8"><a></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
+<span id="cb5-10"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-11"><a></a>    <span class="at">title =</span> <span class="st">"Missing Data in Measurements of Trout Species (Blackfoot River)"</span>,</span>
+<span id="cb5-12"><a></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb5-13"><a></a>    <span class="at">subtitle =</span> <span class="st">"Weight Values"</span>,</span>
+<span id="cb5-14"><a></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb5-15"><a></a>    <span class="at">color =</span> <span class="st">"Section"</span>) <span class="sc">+</span></span>
+<span id="cb5-16"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> trip) <span class="sc">+</span></span>
+<span id="cb5-17"><a></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-18"><a></a></span>
+<span id="cb5-19"><a></a></span>
+<span id="cb5-20"><a></a>annotate_text <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">year =</span> <span class="fu">c</span>(<span class="dv">1995</span>, <span class="dv">1992</span>), </span>
+<span id="cb5-21"><a></a>                            <span class="at">missing_count =</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">50</span>),</span>
+<span id="cb5-22"><a></a>                            <span class="at">trip =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Trip 2"</span>, <span class="st">"Trip 2"</span>), </span>
+<span id="cb5-23"><a></a>                                          <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Trip 1"</span>,<span class="st">"Trip 2"</span>), </span>
+<span id="cb5-24"><a></a>                                          ), </span>
+<span id="cb5-25"><a></a>                            <span class="at">section =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Johnsrud"</span>, <span class="st">"Scottybrown"</span>), </span>
+<span id="cb5-26"><a></a>                                             <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Johnsrud"</span>, <span class="st">"Scottybrown"</span>))</span>
+<span id="cb5-27"><a></a>                            )</span>
+<span id="cb5-28"><a></a>plot <span class="sc">+</span> </span>
+<span id="cb5-29"><a></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> annotate_text, <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"Johnsrud"</span>, <span class="st">"Scottybrown"</span>)) <span class="sc">+</span> </span>
+<span id="cb5-30"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="iteration-part-2_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+</figure>
 </div>
-<div id="tabset-2-2">
-
-</div>
-<div id="tabset-2-3">
-
-</div>
-<div id="tabset-2-4">
-
 </div>
 </div>
 </div>
 </section>
-<section id="lab-8-the-twelve-days-of-christmas" class="slide level2">
-<h2><a href="https://zoerehnberg.github.io/STAT331-S23/lab_assignments/lab8/LA8_fprogram.html">Lab 8: The Twelve Days of Christmas</a></h2>
-<ol type="1">
-<li>Write a <code>sing_day()</code> function.</li>
-</ol>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="could-you-remove-your-legend-1" class="slide level2">
+<h2>Could you remove your legend?</h2>
+<div class="small">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="13-16,22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(ggtext)</span>
+<span id="cb6-2"><a></a></span>
+<span id="cb6-3"><a></a>fish <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a></a>  <span class="fu">group_by</span>(year, section, trip) <span class="sc">|&gt;</span></span>
+<span id="cb6-5"><a></a>  <span class="fu">summarize</span>(<span class="at">missing_count =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(weight)), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-6"><a></a>  <span class="fu">mutate</span>(<span class="at">trip =</span> <span class="fu">case_when</span>(</span>
+<span id="cb6-7"><a></a>    trip <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Trip 1"</span>,</span>
+<span id="cb6-8"><a></a>    trip <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"Trip 2"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb6-9"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> missing_count, <span class="at">color =</span> section)) <span class="sc">+</span></span>
+<span id="cb6-10"><a></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-11"><a></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
+<span id="cb6-12"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-13"><a></a>    <span class="at">title =</span> <span class="fu">str_c</span>(<span class="st">"Missing Fish Weights for the "</span>,</span>
+<span id="cb6-14"><a></a>      <span class="st">"&lt;span style = 'color:#66C2A5'&gt;**Johnsrud**&lt;/span&gt;"</span>,</span>
+<span id="cb6-15"><a></a>      <span class="st">" and &lt;span style = 'color:#FC8D62'&gt;**ScottyBrown**&lt;/span&gt;"</span>,</span>
+<span id="cb6-16"><a></a>      <span class="st">" Sections of the Blackfoot River"</span>),</span>
+<span id="cb6-17"><a></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb6-18"><a></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb6-19"><a></a>    <span class="at">color =</span> <span class="st">"Section"</span>) <span class="sc">+</span></span>
+<span id="cb6-20"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> trip) <span class="sc">+</span></span>
+<span id="cb6-21"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb6-22"><a></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(<span class="at">size =</span> <span class="dv">16</span>), </span>
+<span id="cb6-23"><a></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb6-24"><a></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
+<span id="cb6-25"><a></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), </span>
+<span id="cb6-26"><a></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb6-27"><a></a>        <span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>)</span>
+<span id="cb6-28"><a></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="iteration-part-2_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+</figure>
 </div>
-<p><strong>Tip</strong></p>
 </div>
-<div class="callout-content">
+</div>
+</div>
+</section></section>
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="large">
+<p>Other Cool Stuff People Have Done!</p>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
+<p><img data-src="images/student-gallery.png" style="width:40.0%"></p>
+</div></div>
+</section>
+
+<section>
+<section id="lab-7-peer-review" class="title-slide slide level1 center">
+<h1>Lab 7 Peer Review</h1>
+
+</section>
+<section id="function-formatting" class="slide level2">
+<h2>Function Formatting</h2>
 <ul>
-<li>Start with a small example and test it on a single day <strong>outside of the function</strong>.</li>
-<li><code>str_flatten()</code> might be useful – find its arguments in the documentation.</li>
+<li>There should be a new line after the opening {</li>
+<li>The closing } should be on its own line</li>
+<li>The body of the function should be indented</li>
+<li>The code uses whitespace around all commas and arithmetic operators</li>
+<li>The code uses new lines (returns) to eliminate character wrapping</li>
 </ul>
-</div>
-</div>
-</div>
-<ol start="2" type="1">
-<li>Iterate your <code>sing_day()</code> function over all days.</li>
-<li>Style your output!</li>
-</ol>
 </section>
-<section id="to-do" class="slide level2">
-<h2>To do…</h2>
+<section id="good" class="slide level2">
+<h2>Good</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>rescale_01 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(x)) {</span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"Input must be a numeric vector"</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(x) <span class="sc">&lt;=</span> <span class="dv">1</span>) {</span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"Length of the input vector is not greater than 1"</span>)</span>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-9"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-10"><a aria-hidden="true" tabindex="-1"></a>  get_range <span class="ot">&lt;-</span> <span class="fu">range</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-11"><a aria-hidden="true" tabindex="-1"></a>  (x <span class="sc">-</span> get_range[<span class="dv">1</span>]) <span class="sc">/</span> (get_range[<span class="dv">2</span>] <span class="sc">-</span> get_range[<span class="dv">1</span>])</span>
+<span id="cb7-12"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="not-so-good" class="slide level2">
+<h2>Not so good</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>rescale_01 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) </span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(x)) {</span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"Input must be a numeric vector"</span>)</span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(x) <span class="sc">&lt;=</span> <span class="dv">1</span>) {</span>
+<span id="cb8-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"Length of the input vector is not greater than 1"</span>)</span>
+<span id="cb8-9"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-10"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-11"><a aria-hidden="true" tabindex="-1"></a>  get_range <span class="ot">&lt;-</span> <span class="fu">range</span>(x, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb8-12"><a aria-hidden="true" tabindex="-1"></a>  (x<span class="sc">-</span>get_range[<span class="dv">1</span>]) <span class="sc">/</span> (get_range[<span class="dv">2</span>]<span class="sc">-</span>get_range[<span class="dv">1</span>])}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="if-on-a-single-line" class="slide level2">
+<h2><code>if()</code> on a single line?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>rescale_01 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(x)) <span class="fu">stop</span>(<span class="st">"Input must be a numeric vector"</span>)</span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(x) <span class="sc">&lt;=</span> <span class="dv">1</span>) <span class="fu">stop</span>(<span class="st">"Length of the input vector is not greater than 1"</span>)</span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>  get_range <span class="ot">&lt;-</span> <span class="fu">range</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a>  (x <span class="sc">-</span> get_range[<span class="dv">1</span>]) <span class="sc">/</span> (get_range[<span class="dv">2</span>] <span class="sc">-</span> get_range[<span class="dv">1</span>])</span>
+<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This technically works because the <code>stop()</code> is on the <strong>same line</strong> as <code>if()</code>.</p>
+<div class="fragment">
+<p>But what if you have <strong>multiple</strong> things that happen if the condition is met?</p>
+</div>
+</section>
+<section id="if-on-multiple-lines" class="slide level2">
+<h2><code>if()</code> on multiple lines</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>pluralize_gift <span class="ot">&lt;-</span> <span class="cf">function</span>(gift){</span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check if the word ends in a y</span></span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_detect</span>(gift, <span class="st">"y$"</span>)){</span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># Replace the y at the end with an ies</span></span>
+<span id="cb10-7"><a aria-hidden="true" tabindex="-1"></a>    gift <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(gift, </span>
+<span id="cb10-8"><a aria-hidden="true" tabindex="-1"></a>                        <span class="at">pattern =</span> <span class="st">"y"</span>,</span>
+<span id="cb10-9"><a aria-hidden="true" tabindex="-1"></a>                        <span class="at">replacement =</span> <span class="st">"ies"</span>)</span>
+<span id="cb10-10"><a aria-hidden="true" tabindex="-1"></a>    } </span>
+<span id="cb10-11"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check for a oo (goose)</span></span>
+<span id="cb10-12"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span>(<span class="fu">str_detect</span>(gift,<span class="st">"oo"</span>)){ </span>
+<span id="cb10-13"><a aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># Replace the oo with a ee</span></span>
+<span id="cb10-15"><a aria-hidden="true" tabindex="-1"></a>    gift <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(gift, </span>
+<span id="cb10-16"><a aria-hidden="true" tabindex="-1"></a>                        <span class="at">pattern =</span> <span class="st">"oo"</span>,</span>
+<span id="cb10-17"><a aria-hidden="true" tabindex="-1"></a>                        <span class="at">replacement =</span> <span class="st">"ee"</span>)</span>
+<span id="cb10-18"><a aria-hidden="true" tabindex="-1"></a>    } </span>
+<span id="cb10-19"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>{</span>
+<span id="cb10-20"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add an s to the end of the gift</span></span>
+<span id="cb10-21"><a aria-hidden="true" tabindex="-1"></a>    gift <span class="ot">&lt;-</span> <span class="fu">str_c</span>(gift, <span class="at">replacement =</span> <span class="st">"s"</span>)</span>
+<span id="cb10-22"><a aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb10-23"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-24"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(gift)</span>
+<span id="cb10-25"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-26"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section id="lab-8-searching-for-efficiency" class="title-slide slide level1 center">
+<h1><a href="../../labs/instructions/lab-8-instructions.html">Lab 8: Searching for Efficiency</a></h1>
+<blockquote>
+<p>Revisit previous lab problems through the lens of efficiency</p>
+</blockquote>
 <ul>
-<li><strong>Lab 8: The Twelve Days of Christmas</strong>
-<ul>
-<li>Due Saturday, 5/25 at 11:59pm.</li>
-</ul></li>
-<li><strong>Project Proposal + Data</strong>
-<ul>
-<li>Due Tuesday, 5/28 at 11:59pm.</li>
-</ul></li>
-<li>Read <strong>Chapter 9: Regression &amp; Simulation</strong>
-<ul>
-<li>Check-in 9.1 &amp; 9.2 due Tuesday, 5/28 at 10:00am.</li>
-</ul></li>
+<li class="fragment">Use functions from <code>map()</code> instead of <code>across()</code></li>
+<li class="fragment">Reduce separate pipelines into a single pipeline</li>
 </ul>
 
 <div class="quarto-auto-generated-content">
