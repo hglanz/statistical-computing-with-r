@@ -727,13 +727,14 @@
 <h2><code>if()</code> on a single line?</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>rescale_01 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(x)) <span class="fu">stop</span>(<span class="st">"Input must be a numeric vector"</span>)</span>
-<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(x) <span class="sc">&lt;=</span> <span class="dv">1</span>) <span class="fu">stop</span>(<span class="st">"Length of the input vector is not greater than 1"</span>)</span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.numeric</span>(x)) <span class="fu">stop</span>(<span class="st">"Input vector must be numeric."</span>)</span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">length</span>(x) <span class="sc">&lt;=</span> <span class="dv">1</span>) <span class="fu">stop</span>(<span class="st">"Input vector requires more than one element."</span>)</span>
 <span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>  get_range <span class="ot">&lt;-</span> <span class="fu">range</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a>  (x <span class="sc">-</span> get_range[<span class="dv">1</span>]) <span class="sc">/</span> (get_range[<span class="dv">2</span>] <span class="sc">-</span> get_range[<span class="dv">1</span>])</span>
-<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>  range_1 <span class="ot">&lt;-</span> <span class="fu">range</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a>  (x <span class="sc">-</span> range_1[<span class="dv">1</span>]) <span class="sc">/</span> (range_1[<span class="dv">2</span>] <span class="sc">-</span> range_1[<span class="dv">1</span>])</span>
+<span id="cb9-9"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This technically works because the <code>stop()</code> is on the <strong>same line</strong> as <code>if()</code>.</p>
 <div class="fragment">

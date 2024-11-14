@@ -5715,7 +5715,7 @@
     "href": "slides/week-8/iteration-part-2.html#if-on-a-single-line",
     "title": "Cool Plots & Searching for Efficiency",
     "section": "if() on a single line?",
-    "text": "if() on a single line?\n\nrescale_01 &lt;- function(x) {\n  if (!is.numeric(x)) stop(\"Input must be a numeric vector\")\n  \n  if (length(x) &lt;= 1) stop(\"Length of the input vector is not greater than 1\")\n  \n  get_range &lt;- range(x, na.rm = TRUE)\n  (x - get_range[1]) / (get_range[2] - get_range[1])\n}\n\nThis technically works because the stop() is on the same line as if().\n\nBut what if you have multiple things that happen if the condition is met?"
+    "text": "if() on a single line?\n\nrescale_01 &lt;- function(x) {\n  \n  if(!is.numeric(x)) stop(\"Input vector must be numeric.\")\n  if(length(x) &lt;= 1) stop(\"Input vector requires more than one element.\")\n  \n  range_1 &lt;- range(x, na.rm = TRUE)\n  \n  (x - range_1[1]) / (range_1[2] - range_1[1])\n}\n\nThis technically works because the stop() is on the same line as if().\n\nBut what if you have multiple things that happen if the condition is met?"
   },
   {
     "objectID": "slides/week-8/iteration-part-2.html#if-on-multiple-lines",
