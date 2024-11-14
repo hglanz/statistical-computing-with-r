@@ -261,7 +261,7 @@ dataset.
 xmas <- xmas |> 
   mutate(full_phrase = pmap_chr(.l = list(day_num   = ______,
                                           adjective = ______, 
-                                          item      = ______, 
+                                          gift      = ______, 
                                           verb      = ______, 
                                           location  = ______
                                           ), 
