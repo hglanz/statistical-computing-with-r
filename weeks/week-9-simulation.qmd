@@ -1,0 +1,168 @@
+---
+title: "Distributions and Simulation"
+format: 
+  html:
+    code-fold: true
+    code-tools: true
+number-sections: true
+number-depth: 2
+bibliography: references.bib
+editor: source
+execute: 
+  echo: true
+  include: true
+  eval: false
+---
+
+```{r}
+#| include: false
+#| echo: false
+#| eval: true
+
+library(tidyverse)
+library(lubridate)
+library(palmerpenguins)
+
+```
+
+In statistics, we often want to simulate data (or create fake data) for a variety of purposes. For example, in your first statistics course, you may have flipped coins to "simulate" a 50-50 chance. This week, we will learn how to simulate data from statistical distributions using R.
+
+------------------------------------------------------------------------
+
+#### `r emo::ji("play button")` Watch Videos: 17 minutes
+
+#### `r emo::ji("book")` Readings: 15-20 minutes
+
+#### `r emo::ji("check")` Check-ins: 1 
+
+------------------------------------------------------------------------
+
+## Simulation in R
+
+### `r emo::ji("book")` [Required Reading: *R Programming for Data Science* : Simulation](https://bookdown.org/rdpeng/rprogdatascience/simulation.html)
+
+::: column-margin
+{{< video https://www.youtube.com/embed/J5XQaxmznNE >}} 
+:::
+
+### `r emo::ji("check")`: Check-in 9: The `r`, `p`, `q`, and `d` functions
+
+**Question 1:** What does the output of `pnorm(-4, mean = 2, sd = 4)` mean?
+
+::: callout-tip
+Drawing pictures of the relevant distribution may help.
+:::
+
+**Question 2:** Why does `rnorm(mean = 0, sd = 1)` give an error?
+
+### Setting a Random Number Seed
+
+Functions like `rnorm()` rely on something called pseudo-randomness. Because 
+computers can never be *truly* random, complicated processes are implemented to
+make "random" number generation be so unpredictable as to behave like true
+randomness.
+
+This means that projects involving simulation are harder to make
+**reproducible**. For example, here are two identical lines of code that give
+different results!
+
+```{r}
+rnorm(1, mean = 0, sd = 1)
+```
+
+```{r}
+rnorm(1, mean = 0, sd = 1)
+```
+
+Fortunately, pseudo-randomness depends on a **seed**, which is an arbitrary
+number where the randomizing process starts. Normally, R will choose the seed
+for you, from a pre-generated vector:
+
+```{r}
+head(.Random.seed)
+```
+
+However, you can also choose your own seed using the `set.seed()` function. This
+guarantees your results will be consistent across runs (and hopefully 
+computers):
+
+```{r}
+set.seed(1234)
+rnorm(1, mean = 0, sd = 1)
+```
+
+```{r}
+set.seed(1234)
+rnorm(1, mean = 0, sd = 1)
+```
+
+Of course, it doesn't mean the results will be the same in every subsequent run
+if you forget or reset the seed in between each line of code!
+
+```{r}
+set.seed(1234)
+rnorm(1, mean = 0, sd = 1)
+
+## Calling rnorm() again without a seed "resets" the seed! 
+rnorm(1, mean = 0, sd = 1)
+```
+
+It is very important to always set a seed at the **beginning** of a Quarto
+document that contains any random steps, so that your rendered results are
+consistent.
+
+::: {.callout-caution}
+Note, though, that this only guarantees your rendered results will be the same
+*if the code has not changed*.
+
+Changing up any part of the code will re-randomize everything that comes after
+it!
+:::
+
+When writing up a report which includes results from a random generation process, in order to ensure reproducibility in your document, use `` `r ` `` to include your output within your written description with [inline code](https://bookdown.org/yihui/rmarkdown-cookbook/r-code.html).
+
+</details>
+
+<details class="ex">
+
+<summary>Reproducibility: inline code example</summary>
+
+```{r}
+my_rand <- rnorm(1, mean = 0, sd = 1)
+my_rand
+```
+Using `r knitr::inline_expr('my_rand')` will display the result within my text: 
+
+My random number is `r my_rand`.
+
+Alternatively, you could have put the `rnorm` code directly into the inline text `r knitr::inline_expr('rnorm(1, mean = 0, sd = 1)')`, but this can get messy if you have a result that requires a larger chunk of code.
+
+</details>
+
+## Plotting Distributions
+
+Here is the code that made one of the plots from the lecture video:
+
+```{r}
+#| message: false
+#| warning: false
+
+my_samples <- tibble(height = rnorm(n = 100, 
+                                    mean = 67, 
+                                    sd = 3)
+                     )
+
+my_samples %>%
+  ggplot(aes(x = height)) +
+  geom_histogram(aes(y = ..density..), 
+                 binwidth = 1.75, fill = "grey") +
+  stat_function(fun = ~ dnorm(., mean = 67, sd = 3), 
+                col = "cornflowerblue", lwd = 2) + 
+  xlim(c(55, 80))
+```
+
+::: callout-note
+# Adding a distribution to a plot
+
+Notice how I'm using `stat_function()` to add a specific function to the plot. Here, I'm using the `dnorm()` function, with a specified `mean` and `sd`.
+:::
