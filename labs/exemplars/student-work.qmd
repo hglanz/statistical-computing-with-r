@@ -13,7 +13,6 @@ execute:
 library(tidyverse)
 ```
 
-
 # Challenge 2
 
 ```{r}
@@ -93,9 +92,7 @@ teacher_evals_clean <- teacher_evals |>
   filter(no_participants >= 10)
 ```
 
-
-This code is brought to us by a student who wishes to remain anonymous. What I
-appreciated about their code is both their efficiency and their concise output!
+This code is brought to us by a student who wishes to remain anonymous. What I appreciated about their code is both their efficiency and their concise output!
 
 **3. Provide a brief overview (\~4 sentences) of the dataset.**
 
@@ -221,10 +218,9 @@ median_inc <- ca_childcare |>
 
 **4. Let's consider the median household income of each region, and how that income has changed over time. Create a table with ten rows, one for each region, and two columns, one for 2008 and one for 2018. The cells should contain the `median` of the median household income (expressed in 2018 dollars) of the `region` and the `study_year`. Arrange the rows by 2018 values.**
 
-This code is brought to us by Oliver Lane & Cassandra Miller! What I appreciate
-about their code is how their tables have descriptive titles! 
+This code is brought to us by Oliver Lane & Cassandra Miller! What I appreciate about their code is how their tables have descriptive titles!
 
-**Oliver's Code**: 
+**Oliver's Code**:
 
 ```{r}
 ca_childcare |>
@@ -237,7 +233,7 @@ ca_childcare |>
   arrange(desc(median_income_2018))
 ```
 
-**Cassandra's Code**: 
+**Cassandra's Code**:
 
 ```{r}
 median_income_by_region <- ca_childcare |> 
@@ -248,15 +244,11 @@ median_income_by_region <- ca_childcare |>
 
 ```
 
-
 **5. Which California `region` had the lowest `median` full-time median weekly price for center-based childcare for infants in 2018? Does this `region` correspond to the `region` with the lowest `median` income in 2018 that you found in Q4?**
 
-This code is brought to us by Eva Moylan & Tillman Erb! What I appreciate
-about their code is how they went above and beyond by including **both** the 
-median price of center-based childcare for infants **and** median household
-income for each region. 
+This code is brought to us by Eva Moylan & Tillman Erb! What I appreciate about their code is how they went above and beyond by including **both** the median price of center-based childcare for infants **and** median household income for each region.
 
-**Eva's Code**: 
+**Eva's Code**:
 
 ```{r}
 ca_childcare |>
@@ -272,7 +264,7 @@ ca_childcare |>
   slice_min(mc_infant_2018) #Superior CA has the lowest med childcare for infants in 2018
 ```
 
-**Tillman's Code**: 
+**Tillman's Code**:
 
 ```{r}
 ca_childcare |>
@@ -286,10 +278,7 @@ ca_childcare |>
 
 **6. The following plot shows, for all ten regions, the change over time of the full-time median price for center-based childcare for infants, toddlers, and preschoolers. Recreate the plot. You do not have to replicate the exact colors or theme, but your plot should have the same content, including the order of the facets and legend, reader-friendly labels, axes breaks, and a loess smoother.**
 
-This code is brought to us by Isabel Villafuerte! What I appreciate
-about their code is the reordering of the facets and legend, adding dollar 
-signs to the y-axis labels, and dodging the x-axis labels (a clever way to not
-need to remove some labels!). 
+This code is brought to us by Isabel Villafuerte! What I appreciate about their code is the reordering of the facets and legend, adding dollar signs to the y-axis labels, and dodging the x-axis labels (a clever way to not need to remove some labels!).
 
 ```{r}
 ca_childcare |>
@@ -333,8 +322,7 @@ ggplot(mapping = aes (x = study_year,
 
 **7. Create a scatterplot showing the relationship between median household income (expressed in 2018 dollars) and the full-time median weekly price charged for center-based childcare for an infant in California. Overlay a linear regression line (lm) to show the trend.**
 
-This code is brought to us by Oliver Lane & Cassandra Miller! What I appreciate
-about their plot is their use of color, themes, and thoughtful plot titles! 
+This code is brought to us by Oliver Lane & Cassandra Miller! What I appreciate about their plot is their use of color, themes, and thoughtful plot titles!
 
 ```{r}
 ggplot(ca_childcare, aes(x = mhi_2018, y = mc_infant)) +
@@ -351,3 +339,125 @@ ggplot(ca_childcare, aes(x = mhi_2018, y = mc_infant)) +
     plot.title = element_text(hjust = 0.5, face = "bold") 
   )
 ```
+
+# Lab 7
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: data-for-lab-7
+
+fish <- read_csv(here::here("labs", 
+                            "instructions", 
+                            "data", 
+                            "BlackfootFish.csv")
+                 )
+```
+
+**2. Create ONE thoughtful visualization that explores the frequency of missing values across the different years, sections, and trips.**
+
+This code is brought to us by Christopher Hawkins. I really like how Christopher
+thought outside the box and combined the year and the trip number to a single
+variable on the y-axis (with a descriptive plot title!). 
+
+```{r}
+fish |>
+  group_by(year, section, trip) |>
+  summarize(missing_weight = sum(is.na(weight)), .groups = "drop") |>
+  # Create a combined label for year and trip
+  mutate(year_trip = paste(year, trip, sep = "-")) |>
+  # Plotting the data
+  ggplot(mapping = aes(x = missing_weight, y = year_trip, fill = section)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(
+    title = "Count of Missing Values in Weight by Year, Section, and Trip",
+    subtitle = "Year-Trip #",
+    x = "Count of Missing Weight Values",
+    y = "",
+    fill = "Section"
+  ) +
+  theme_minimal()
+```
+
+This code is brought to us by Alex Lung! What I really appreciate about Alex's 
+plot is how **every** year that there were measurements is displayed on the plot. 
+
+```{r}
+fish |>
+  filter(is.na(weight)) |>
+  mutate(trip = factor(trip, levels = c("1", "2")), 
+         trip = fct_recode(trip, 
+                           `Trip 1` = "1",
+                           `Trip 2` = "2")
+         )|>
+  group_by(year, 
+           section, 
+           trip) |>
+  summarise(missing_count = n(), 
+            .groups = 'drop') |>
+  ggplot(aes(x = factor(year), 
+             y = missing_count, 
+             fill = section)) +
+  geom_bar(stat = "identity", 
+           position = "stack") +
+  facet_wrap(~ trip, ncol = 2) +
+  theme_bw() +
+  labs(
+    x = "Year",
+    y = "",
+    subtitle = "Number of Missing Values",
+    fill = "Section",
+    title = "Frequency of Missing Values in 'Weight' by Year, Section, and Trip"
+  ) +
+  scale_fill_manual(values = c("Johnsrud" = "steelblue", "ScottyBrown" = "gray"))  # Adjusted color for ScottyBrown
+```
+
+This code is brought to us by a student who wishes to remain anonymous. I think 
+a line plot is a great approach here to see the changes in missing values over
+time, plus they use some great colors! 
+
+```{r}
+fish |>
+  group_by(year, section, trip) |>
+  summarize(missing_count = sum(is.na(weight)), .groups = "drop") |>
+  mutate(trip = case_when(
+    trip == 1 ~ "Trip 1",
+    trip == 2 ~ "Trip 2")) |>
+  ggplot(aes(x = year, y = missing_count, color = section)) +
+  geom_line(size = 1) +
+  scale_color_brewer(palette = "Set2") +
+  labs(
+    title = "Missing Data in Measurements of Trout Species (Blackfoot River)",
+    x = "Year",
+    subtitle = "Weight Values",
+    y = "",
+    color = "Section") +
+  facet_wrap(~ trip) +
+  theme_minimal()
+```
+
+This code is brought to us by Cassandra Miller! Cassandra also used a line plot, 
+with great facet labels and a great plot title! 
+
+```{r}
+fish |>   
+  filter(is.na(weight)) |>   
+  group_by(year, section, trip) |>   
+  mutate(trip = recode(trip, 
+                       '1' = 'Trip 1',
+                       '2' = 'Trip 2')) |>   
+  summarise(Missing_amount = n(), .groups = 'drop') |>   
+  ggplot(aes(x = year, y = Missing_amount, color = section)) +   
+  geom_line() +   
+  facet_wrap(~trip) +   
+  theme_minimal() +   
+  labs(
+    x = 'Year',
+    y = '',
+    title = 'Frequency of Missing Values Across Various Years, Sections and Trips',
+    subtitle = 'Count of Missing Values Across Years',
+    color = 'Section'
+  )
+```
+
