@@ -357,7 +357,29 @@ fish <- read_csv(here::here("labs",
 
 **2. Create ONE thoughtful visualization that explores the frequency of missing values across the different years, sections, and trips.**
 
-This code is brought to us by Christopher Hawkins. I really like how Christopher
+This code is brought to us by Tillman Erb! I appreciate Tillman's use of 
+non-standard colors and facet titles that are clear to the reader. 
+
+```{r}
+fish |>
+  filter(if_any(.cols = everything(), .fns = is.na)) |>
+  mutate(trip = as.character(trip),
+         trip = fct_recode(trip,
+      "Trip 1" = "1",
+      "Trip 2" = "2")) |>
+  ggplot(mapping = aes(x = year, fill = section)) +
+  facet_grid(~ trip) + 
+  geom_bar() +
+  scale_fill_viridis_d() + 
+  labs(x = "Year",
+       y = NULL,
+       title = "Missing observation frequency by section, trip and year",
+       subtitle = "Number of missing observations",
+       color = "Section")
+```
+
+
+This code is brought to us by Christopher Hawkins! I really like how Christopher
 thought outside the box and combined the year and the trip number to a single
 variable on the y-axis (with a descriptive plot title!). 
 
@@ -380,8 +402,7 @@ fish |>
   theme_minimal()
 ```
 
-This code is brought to us by Alex Lung! What I really appreciate about Alex's 
-plot is how **every** year that there were measurements is displayed on the plot. 
+This visualization is brought to us by Siwuthara Prak! What I really appreciate about this plot is how it plots **every** year that there were measurements. 
 
 ```{r}
 fish |>
@@ -402,7 +423,7 @@ fish |>
   geom_bar(stat = "identity", 
            position = "stack") +
   facet_wrap(~ trip, ncol = 2) +
-  theme_bw() +
+  theme_bw(base_size = 8) +
   labs(
     x = "Year",
     y = "",
@@ -411,6 +432,37 @@ fish |>
     title = "Frequency of Missing Values in 'Weight' by Year, Section, and Trip"
   ) +
   scale_fill_manual(values = c("Johnsrud" = "steelblue", "ScottyBrown" = "gray"))  # Adjusted color for ScottyBrown
+```
+
+This code is brought to us by Alex Lung! I love the idea of faceting by year, since it gets at the same idea as Siwuthara's plot, where the reader can see
+**every** year there are data values for. Alex also uses some fun (non-standard) colors! 
+
+```{r}
+fish |> 
+  #Make sure it is rows lacking wight data
+  filter(is.na(weight)) |>
+  #Alter into a usable distincter variable
+  mutate(trip = as.factor(trip)) |>
+  group_by(year, section, trip) |>
+  summarise(Missing_Count = n(), .groups = "drop") |>
+  ggplot(aes(x = section, y = Missing_Count, fill = trip)) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ year, ncol = 5) +
+  labs(
+    title = "Frequency of Missing Weight Values by Year, Section, and Trip",
+    subtitle = "Count of Missing Values",
+    x = "Section",
+    y = "",
+    fill = "Trip"
+  ) +
+  theme_bw(base_size = 8) +  
+  theme(
+    strip.text = element_text(size = 12),
+    aspect.ratio = 0.6,
+    panel.grid.major = element_blank(), 
+    panel.grid.minor = element_blank()
+  ) +
+  scale_fill_manual(values = c("darkcyan", "cyan2"))
 ```
 
 This code is brought to us by a student who wishes to remain anonymous. I think 
@@ -459,5 +511,53 @@ fish |>
     subtitle = 'Count of Missing Values Across Years',
     color = 'Section'
   )
+```
+
+**5. Let's incorporate some input validation into your function. Modify your previous code so that the function stops if ...**
+
++ **... the input vector is not numeric.**
++ **... the length of the input vector is not greater than 1.**
+
+This code is brought to us by Daniel Bush! I thought it was really clever to
+add an additional check to see if the min and the max values were identical. 
+
+```{r}
+rescale_01 <- function(vector) {   
+  stopifnot(is.numeric(vector),
+            length(vector) > 1)  
+
+  range_vals <- range(vector, na.rm = TRUE)
+  min_val <- range_vals[1]  
+  max_val <- range_vals[2]
+  
+  if (min_val == max_val) {     
+    return(rep(NA,
+               length(vector)))  
+  }     
+    rescaled_vector <- (vector - min_val) / (max_val - min_val)      
+
+  return(rescaled_vector) 
+}
+```
+
+This code is brought to us by Tillman! I was very impressed with the
+addition of a `na.rm` argument (that's optional!), to control the
+output of the final vector. 
+
+```{r}
+rescale_01 <- function(vec, na.rm = TRUE) {
+  if (!is.numeric(vec[1])){
+    stop("Error: vector provided is not numeric")
+  } else if (length(vec) <= 1) {
+    stop("Error: vector length must be greater than 1")
+  }
+  vec_range <- range(vec, na.rm = TRUE, finite = TRUE)
+  vec <- (vec - vec_range[1]) / 
+           (vec_range[2] - vec_range[1])
+  if (na.rm){
+    vec <- vec[!is.na(vec)]
+    }
+  return(vec)
+}
 ```
 
