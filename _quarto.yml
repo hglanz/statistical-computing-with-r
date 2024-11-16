@@ -84,8 +84,8 @@ website:
             text: "Week 7, Part 1 -- Data Frame Functions"
           - href: weeks/week-8-iteration.qmd
             text: "Week 8 - Iteration"
-          # - href: weeks/week-9.qmd
-          #   text: "Week 9"
+          - href: weeks/week-9-simulation.qmd
+            text: "Week 9 - Simulating Data"
           # - href: weeks/week-10.qmd
           #   text: "Week 10"
       - section: "Labs"
