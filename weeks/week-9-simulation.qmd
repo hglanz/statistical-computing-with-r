@@ -1,9 +1,6 @@
 ---
 title: "Distributions and Simulation"
-format: 
-  html:
-    code-fold: true
-    code-tools: true
+format: html
 number-sections: true
 number-depth: 2
 bibliography: references.bib
@@ -11,13 +8,13 @@ editor: source
 execute: 
   echo: true
   include: true
-  eval: false
 ---
 
 ```{r}
 #| include: false
 #| echo: false
-#| eval: true
+#| message: false
+#| warning: false
 
 library(tidyverse)
 library(lubridate)
@@ -25,7 +22,13 @@ library(palmerpenguins)
 
 ```
 
-In statistics, we often want to simulate data (or create fake data) for a variety of purposes. For example, in your first statistics course, you may have flipped coins to "simulate" a 50-50 chance. This week, we will learn how to simulate data from statistical distributions using R.
+Welcome to the final week of content! This week you will learn about simulating
+data in R. By the end of the week you should:
+
+- know functions for simulating some of the common distributions (e.g., Normal, 
+t, Chi-Square, Binomial)
+- know what each of the `r`, `p`, `d`, and `q` functions do when simulating 
+data from different statistical distributions
 
 ------------------------------------------------------------------------
 
@@ -37,6 +40,11 @@ In statistics, we often want to simulate data (or create fake data) for a variet
 
 ------------------------------------------------------------------------
 
+In statistics, we often want to simulate data (or create fake data) for a 
+variety of purposes. For example, in your first statistics course, you may have
+flipped coins to "simulate" a 50-50 chance. This week, we will learn how to
+simulate data from statistical distributions using R.
+
 ## Simulation in R
 
 ### `r emo::ji("book")` [Required Reading: *R Programming for Data Science* : Simulation](https://bookdown.org/rdpeng/rprogdatascience/simulation.html)
@@ -45,7 +53,7 @@ In statistics, we often want to simulate data (or create fake data) for a variet
 {{< video https://www.youtube.com/embed/J5XQaxmznNE >}} 
 :::
 
-### `r emo::ji("check")`: Check-in 9: The `r`, `p`, `q`, and `d` functions
+### `r emo::ji("check")`: Check-in 9.1: Distributions & Simulation
 
 **Question 1:** What does the output of `pnorm(-4, mean = 2, sd = 4)` mean?
 
@@ -54,6 +62,14 @@ Drawing pictures of the relevant distribution may help.
 :::
 
 **Question 2:** Why does `rnorm(mean = 0, sd = 1)` give an error?
+
+**Question 3:** What does `map(-2:2, rnorm, n = 5)` do? 
+
+**Question 4:** Why does `map_chr(-2:2, rnorm, n = 5)` result in an error?
+
+**Question 5:** The output of `map(1:5, runif)` is a [vector \ list] with \_\_\_
+elements. The third element is a [vector / list] with \_\_\_ random draw(s) from a
+Uniform distribution with `min =` \_\_\_ and `max =` \_\_\_. 
 
 ### Setting a Random Number Seed
 
@@ -88,11 +104,13 @@ computers):
 
 ```{r}
 set.seed(1234)
+
 rnorm(1, mean = 0, sd = 1)
 ```
 
 ```{r}
 set.seed(1234)
+
 rnorm(1, mean = 0, sd = 1)
 ```
 
@@ -101,6 +119,7 @@ if you forget or reset the seed in between each line of code!
 
 ```{r}
 set.seed(1234)
+
 rnorm(1, mean = 0, sd = 1)
 
 ## Calling rnorm() again without a seed "resets" the seed! 
@@ -119,25 +138,28 @@ Changing up any part of the code will re-randomize everything that comes after
 it!
 :::
 
-When writing up a report which includes results from a random generation process, in order to ensure reproducibility in your document, use `` `r ` `` to include your output within your written description with [inline code](https://bookdown.org/yihui/rmarkdown-cookbook/r-code.html).
+When writing up a report which includes results from a random generation
+process, in order to ensure reproducibility in your document, use `` `{r}` `` or `` `r` `` to
+include your output within your written description with [inline code](https://quarto.org/docs/computations/inline-code.html).
 
-</details>
-
-<details class="ex">
-
-<summary>Reproducibility: inline code example</summary>
+::: {.callout-note collapse=TRUE}
+# Reproducibility: inline code example
 
 ```{r}
+#| eval: true
 my_rand <- rnorm(1, mean = 0, sd = 1)
 my_rand
 ```
-Using `r knitr::inline_expr('my_rand')` will display the result within my text: 
 
-My random number is `r my_rand`.
+Using `{r} knitr::inline_expr('my_rand', syntax = "md")` will display the result within my text: 
 
-Alternatively, you could have put the `rnorm` code directly into the inline text `r knitr::inline_expr('rnorm(1, mean = 0, sd = 1)')`, but this can get messy if you have a result that requires a larger chunk of code.
+My random number is `{r} my_rand`.
 
-</details>
+Alternatively, you could have put the `rnorm` code directly into the inline text
+`{r} knitr::inline_expr('rnorm(1, mean = 0, sd = 1)', syntax = "md")`, but this can get messy if
+you have a result that requires a larger chunk of code.
+
+::: 
 
 ## Plotting Distributions
 

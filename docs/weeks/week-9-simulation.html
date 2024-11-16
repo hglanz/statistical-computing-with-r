@@ -105,7 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -416,16 +416,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#simulation-in-r" id="toc-simulation-in-r" class="nav-link active" data-scroll-target="#simulation-in-r"><span class="header-section-number">1</span> Simulation in R</a>
   <ul class="collapse">
   <li><a href="#required-reading-r-programming-for-data-science-simulation" id="toc-required-reading-r-programming-for-data-science-simulation" class="nav-link" data-scroll-target="#required-reading-r-programming-for-data-science-simulation">📖 Required Reading: <em>R Programming for Data Science</em> : Simulation</a></li>
-  <li><a href="#required-video-simulating-data-in-r-17-minutes" id="toc-required-video-simulating-data-in-r-17-minutes" class="nav-link" data-scroll-target="#required-video-simulating-data-in-r-17-minutes">▶️ Required Video – Simulating Data in R (17 minutes)</a></li>
-  <li><a href="#check-in-9-the-r-p-q-and-d-functions" id="toc-check-in-9-the-r-p-q-and-d-functions" class="nav-link" data-scroll-target="#check-in-9-the-r-p-q-and-d-functions">✅: Check-in 9: The <code>r</code>, <code>p</code>, <code>q</code>, and <code>d</code> functions</a></li>
+  <li><a href="#check-in-9.1-distributions-simulation" id="toc-check-in-9.1-distributions-simulation" class="nav-link" data-scroll-target="#check-in-9.1-distributions-simulation">✅: Check-in 9.1: Distributions &amp; Simulation</a></li>
+  <li><a href="#setting-a-random-number-seed" id="toc-setting-a-random-number-seed" class="nav-link" data-scroll-target="#setting-a-random-number-seed">Setting a Random Number Seed</a></li>
   </ul></li>
-  <li><a href="#setting-a-random-number-seed" id="toc-setting-a-random-number-seed" class="nav-link" data-scroll-target="#setting-a-random-number-seed"><span class="header-section-number">2</span> Setting a Random Number Seed</a></li>
-  <li><a href="#plotting-distributions" id="toc-plotting-distributions" class="nav-link" data-scroll-target="#plotting-distributions"><span class="header-section-number">3</span> Plotting Distributions</a></li>
+  <li><a href="#plotting-distributions" id="toc-plotting-distributions" class="nav-link" data-scroll-target="#plotting-distributions"><span class="header-section-number">2</span> Plotting Distributions</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/groupworthy-data-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -446,6 +445,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>Welcome to the final week of content! This week you will learn about simulating data in R. By the end of the week you should:</p>
+<ul>
+<li>know functions for simulating some of the common distributions (e.g., Normal, t, Chi-Square, Binomial)</li>
+<li>know what each of the <code>r</code>, <code>p</code>, <code>d</code>, and <code>q</code> functions do when simulating data from different statistical distributions</li>
+</ul>
 <hr>
 <section id="watch-videos-17-minutes" class="level4">
 <h4 class="anchored" data-anchor-id="watch-videos-17-minutes">▶️ Watch Videos: 17 minutes</h4>
@@ -456,17 +460,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="check-ins-1" class="level4">
 <h4 class="anchored" data-anchor-id="check-ins-1">✅ Check-ins: 1</h4>
 <hr>
+<p>In statistics, we often want to simulate data (or create fake data) for a variety of purposes. For example, in your first statistics course, you may have flipped coins to “simulate” a 50-50 chance. This week, we will learn how to simulate data from statistical distributions using R.</p>
 </section>
-<section id="simulation-in-r" class="level2" data-number="1">
+<section id="simulation-in-r" class="level2 page-columns page-full" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="simulation-in-r"><span class="header-section-number">1</span> Simulation in R</h2>
-<section id="required-reading-r-programming-for-data-science-simulation" class="level3">
+<section id="required-reading-r-programming-for-data-science-simulation" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="required-reading-r-programming-for-data-science-simulation">📖 <a href="https://bookdown.org/rdpeng/rprogdatascience/simulation.html">Required Reading: <em>R Programming for Data Science</em> : Simulation</a></h3>
-</section>
-<section id="required-video-simulating-data-in-r-17-minutes" class="level3">
-<h3 class="anchored" data-anchor-id="required-video-simulating-data-in-r-17-minutes">▶️ <a href="https://www.youtube.com/watch?v=J5XQaxmznNE">Required Video – Simulating Data in R (17 minutes)</a></h3>
-</section>
-<section id="check-in-9-the-r-p-q-and-d-functions" class="level3">
-<h3 class="anchored" data-anchor-id="check-in-9-the-r-p-q-and-d-functions">✅: Check-in 9: The <code>r</code>, <code>p</code>, <code>q</code>, and <code>d</code> functions</h3>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/J5XQaxmznNE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div></div></section>
+<section id="check-in-9.1-distributions-simulation" class="level3">
+<h3 class="anchored" data-anchor-id="check-in-9.1-distributions-simulation">✅: Check-in 9.1: Distributions &amp; Simulation</h3>
 <p><strong>Question 1:</strong> What does the output of <code>pnorm(-4, mean = 2, sd = 4)</code> mean?</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -482,59 +487,130 @@ Tip
 </div>
 </div>
 <p><strong>Question 2:</strong> Why does <code>rnorm(mean = 0, sd = 1)</code> give an error?</p>
+<p><strong>Question 3:</strong> What does <code>map(-2:2, rnorm, n = 5)</code> do?</p>
+<p><strong>Question 4:</strong> Why does <code>map_chr(-2:2, rnorm, n = 5)</code> result in an error?</p>
+<p><strong>Question 5:</strong> The output of <code>map(1:5, runif)</code> is a [vector &nbsp;list] with ___ elements. The third element is a [vector / list] with ___ random draw(s) from a Uniform distribution with <code>min =</code> ___ and <code>max =</code> ___.</p>
 </section>
-</section>
-<section id="setting-a-random-number-seed" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="setting-a-random-number-seed"><span class="header-section-number">2</span> Setting a Random Number Seed</h2>
+<section id="setting-a-random-number-seed" class="level3">
+<h3 class="anchored" data-anchor-id="setting-a-random-number-seed">Setting a Random Number Seed</h3>
 <p>Functions like <code>rnorm()</code> rely on something called pseudo-randomness. Because computers can never be <em>truly</em> random, complicated processes are implemented to make “random” number generation be so unpredictable as to behave like true randomness.</p>
 <p>This means that projects involving simulation are harder to make <strong>reproducible</strong>. For example, here are two identical lines of code that give different results!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.9008237</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.231884</code></pre>
+</div>
 </div>
 <p>Fortunately, pseudo-randomness depends on a <strong>seed</strong>, which is an arbitrary number where the randomizing process starts. Normally, R will choose the seed for you, from a pre-generated vector:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(.Random.seed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(.Random.seed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]       10403           7 -1893834270  1489074877  -549923529 -1180608034</code></pre>
 </div>
-<p>However, you can also choose your own seed using the <code>set.seed()</code> function. This guarantees your results will be consistent:</p>
+</div>
+<p>However, you can also choose your own seed using the <code>set.seed()</code> function. This guarantees your results will be consistent across runs (and hopefully computers):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.207066</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.207066</code></pre>
+</div>
 </div>
 <p>Of course, it doesn’t mean the results will be the same in every subsequent run if you forget or reset the seed in between each line of code!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Calling rnorm() again without a seed "resets" the seed! </span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.207066</code></pre>
 </div>
-<p>It is very important to always set a seed at the <strong>beginning</strong> of a Quarto document that contains any random steps, so that your knitted results are consistent.</p>
-<p>Note, though, that this only guarantees your knitted results will be the same <em>if the code has not changed</em>.</p>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Calling rnorm() again without a seed "resets" the seed! </span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2774292</code></pre>
+</div>
+</div>
+<p>It is very important to always set a seed at the <strong>beginning</strong> of a Quarto document that contains any random steps, so that your rendered results are consistent.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note, though, that this only guarantees your rendered results will be the same <em>if the code has not changed</em>.</p>
 <p>Changing up any part of the code will re-randomize everything that comes after it!</p>
+</div>
+</div>
+<p>When writing up a report which includes results from a random generation process, in order to ensure reproducibility in your document, use <code>`{r}`</code> or <code>`r`</code> to include your output within your written description with <a href="https://quarto.org/docs/computations/inline-code.html">inline code</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reproducibility: inline code example
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>my_rand <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>my_rand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.084441</code></pre>
+</div>
+</div>
+<p>Using `r my_rand` will display the result within my text:</p>
+<p>My random number is 1.0844412.</p>
+<p>Alternatively, you could have put the <code>rnorm</code> code directly into the inline text `r rnorm(1, mean = 0, sd = 1)`, but this can get messy if you have a result that requires a larger chunk of code.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="plotting-distributions" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="plotting-distributions"><span class="header-section-number">3</span> Plotting Distributions</h2>
+</section>
+<section id="plotting-distributions" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="plotting-distributions"><span class="header-section-number">2</span> Plotting Distributions</h2>
 <p>Here is the code that made one of the plots from the lecture video:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_samples <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">height =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span>, </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">mean =</span> <span class="dv">67</span>, </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">sd =</span> <span class="dv">3</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                     )</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>my_samples <span class="sc">%&gt;%</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> height)) <span class="sc">+</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..), </span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">binwidth =</span> <span class="fl">1.75</span>, <span class="at">fill =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="sc">~</span> <span class="fu">dnorm</span>(., <span class="at">mean =</span> <span class="dv">67</span>, <span class="at">sd =</span> <span class="dv">3</span>), </span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">col =</span> <span class="st">"cornflowerblue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">55</span>, <span class="dv">80</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my_samples <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">height =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span>, </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">mean =</span> <span class="dv">67</span>, </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">sd =</span> <span class="dv">3</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                     )</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>my_samples <span class="sc">%&gt;%</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> height)) <span class="sc">+</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..), </span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">binwidth =</span> <span class="fl">1.75</span>, <span class="at">fill =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="sc">~</span> <span class="fu">dnorm</span>(., <span class="at">mean =</span> <span class="dv">67</span>, <span class="at">sd =</span> <span class="dv">3</span>), </span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">col =</span> <span class="st">"cornflowerblue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">55</span>, <span class="dv">80</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-9-simulation_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
