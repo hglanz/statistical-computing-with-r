@@ -357,8 +357,7 @@ fish <- read_csv(here::here("labs",
 
 **2. Create ONE thoughtful visualization that explores the frequency of missing values across the different years, sections, and trips.**
 
-This code is brought to us by Tillman Erb! I appreciate Tillman's use of 
-non-standard colors and facet titles that are clear to the reader. 
+This code is brought to us by Tillman Erb! I appreciate Tillman's use of non-standard colors and facet titles that are clear to the reader.
 
 ```{r}
 fish |>
@@ -378,10 +377,7 @@ fish |>
        color = "Section")
 ```
 
-
-This code is brought to us by Christopher Hawkins! I really like how Christopher
-thought outside the box and combined the year and the trip number to a single
-variable on the y-axis (with a descriptive plot title!). 
+This code is brought to us by Christopher Hawkins! I really like how Christopher thought outside the box and combined the year and the trip number to a single variable on the y-axis (with a descriptive plot title!).
 
 ```{r}
 fish |>
@@ -402,7 +398,7 @@ fish |>
   theme_minimal()
 ```
 
-This visualization is brought to us by Siwuthara Prak! What I really appreciate about this plot is how it plots **every** year that there were measurements. 
+This visualization is brought to us by Siwuthara Prak! What I really appreciate about this plot is how it plots **every** year that there were measurements.
 
 ```{r}
 fish |>
@@ -434,8 +430,7 @@ fish |>
   scale_fill_manual(values = c("Johnsrud" = "steelblue", "ScottyBrown" = "gray"))  # Adjusted color for ScottyBrown
 ```
 
-This code is brought to us by Alex Lung! I love the idea of faceting by year, since it gets at the same idea as Siwuthara's plot, where the reader can see
-**every** year there are data values for. Alex also uses some fun (non-standard) colors! 
+This code is brought to us by Alex Lung! I love the idea of faceting by year, since it gets at the same idea as Siwuthara's plot, where the reader can see **every** year there are data values for. Alex also uses some fun (non-standard) colors!
 
 ```{r}
 fish |> 
@@ -465,9 +460,7 @@ fish |>
   scale_fill_manual(values = c("darkcyan", "cyan2"))
 ```
 
-This code is brought to us by a student who wishes to remain anonymous. I think 
-a line plot is a great approach here to see the changes in missing values over
-time, plus they use some great colors! 
+This code is brought to us by a student who wishes to remain anonymous. I think a line plot is a great approach here to see the changes in missing values over time, plus they use some great colors!
 
 ```{r}
 fish |>
@@ -489,8 +482,7 @@ fish |>
   theme_minimal()
 ```
 
-This code is brought to us by Cassandra Miller! Cassandra also used a line plot, 
-with great facet labels and a great plot title! 
+This code is brought to us by Cassandra Miller! Cassandra also used a line plot, with great facet labels and a great plot title!
 
 ```{r}
 fish |>   
@@ -515,11 +507,26 @@ fish |>
 
 **5. Let's incorporate some input validation into your function. Modify your previous code so that the function stops if ...**
 
-+ **... the input vector is not numeric.**
-+ **... the length of the input vector is not greater than 1.**
+-   **... the input vector is not numeric.**
+-   **... the length of the input vector is not greater than 1.**
 
-This code is brought to us by Daniel Bush! I thought it was really clever to
-add an additional check to see if the min and the max values were identical. 
+This code is brought to us by Ryan Chen! I was excited to see that Ryan figured out how to add messages to the `stopifnot()` function!
+
+```{r}
+rescale_01 <- function(vec){
+  # validate input vector
+  stopifnot("Error: Input vector must be numeric" = is.numeric(vec),
+            "Error: Input vector must contain more than one element" = length(x) > 1)
+  
+  min_val = min(vec,
+                na.rm = TRUE)
+  max_val = max(vec,
+                na.rm = TRUE)
+  return((vec - min_val) / (max_val - min_val))
+}
+```
+
+This code is brought to us by Daniel Bush! I thought it was really clever to add an additional check to see if the min and the max values were identical.
 
 ```{r}
 rescale_01 <- function(vector) {   
@@ -540,9 +547,7 @@ rescale_01 <- function(vector) {
 }
 ```
 
-This code is brought to us by Tillman! I was very impressed with the
-addition of a `na.rm` argument (that's optional!), to control the
-output of the final vector. 
+This code is brought to us by Tillman! I was very impressed with the addition of a `na.rm` argument (that's optional!), to control the output of the final vector.
 
 ```{r}
 rescale_01 <- function(vec, na.rm = TRUE) {
@@ -560,4 +565,3 @@ rescale_01 <- function(vec, na.rm = TRUE) {
   return(vec)
 }
 ```
-
