@@ -1,5 +1,5 @@
 ---
-title: "Simulation + Linear Regression"
+title: "Simulating Data in R"
 format: 
   revealjs:
       theme: [simple, ../style.scss]

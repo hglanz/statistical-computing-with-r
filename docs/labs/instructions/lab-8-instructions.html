@@ -292,6 +292,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Week 8 - Iteration</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-9-simulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 9 - Simulating Data</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -460,7 +466,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Change data types in whichever way you see fit (e.g., is the instructor ID really a numeric data type?)</p>
 </blockquote>
 <p><strong>2. Using <code>map_at()</code>, convert the <code>teacher_id</code>, <code>weekday</code>, <code>academic_degree</code>, <code>seniority</code>, and <code>gender</code> columns to factors.</strong> Hint: You will need to use <code>bind_cols()</code> to transform the list output back into a data frame.</p>
-<p>Next up, we’re going revisit Question 7 which asked: &gt; What are the demographics of the instructors in this study? Investigate the &gt; variables <code>academic_degree</code>, <code>seniority</code>, and <code>sex</code> and summarize your &gt; findings in ~3 complete sentences.</p>
+<p>Next up, we’re going revisit Question 7 which asked:</p>
+<blockquote class="blockquote">
+<p>What are the demographics of the instructors in this study? Investigate the variables <code>academic_degree</code>, <code>seniority</code>, and <code>sex</code> and summarize your findings in ~3 complete sentences.</p>
+</blockquote>
 <p>Many people created <strong>multiple</strong> tables of counts for each of these demographics, but in this exercise we are going to create <strong>one</strong> table with every demographic.</p>
 <p><strong>3. Using <code>pivot_longer()</code> and <code>pivot_wider()</code>, recreate the table below.</strong></p>
 <p><img src="images/lab-8-table-to-recreate.png" class="img-fluid"></p>
