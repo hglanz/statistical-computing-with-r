@@ -17,7 +17,7 @@ library(tidyverse)
 
 # Same Seating Chart!
 
-![](../week-7/images/week-7-seats.png)
+![](../week-7/images/week-7-seats.png){width=70%}
 
 ## Tuesday, November 19
 
