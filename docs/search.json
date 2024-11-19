@@ -2728,7 +2728,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\nData Joins + Pivots\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\nWorking with Categorical Variables\nExtending Joins, Factors, Clean Variable Names\nPA4 Due by 12pm\nLab 4 Instructions\nLink to Assignmenton GitHub Classroom Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\nUsing stringr to Work with Strings\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\nUsing lubridate to Work with Dates\nPA5 Due by 12pm\nLab 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nPortfolio Week!\nTips for Starting Your Portfolio\n\n\nMidterm Portfolio Targets & Grade Expectations\n\n\n\nThurs, 10/31\nPortfolio Week!\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own simple (vector) functions\nWriting Vector Functions\n\n\n\n\n\n\nThurs, 11/7\nWriting your own dataframe functions\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\nIntroduction to Iteration\n\n\n\n\n\n\nThurs, 11/14\n\nCool Plots & Searching for Efficiency\n\nLab 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nSimulating Data\n\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nIntro to Webscraping\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\nData Joins + Pivots\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\nWorking with Categorical Variables\nExtending Joins, Factors, Clean Variable Names\nPA4 Due by 12pm\nLab 4 Instructions\nLink to Assignmenton GitHub Classroom Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\nUsing stringr to Work with Strings\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\nUsing lubridate to Work with Dates\nPA5 Due by 12pm\nLab 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nPortfolio Week!\nTips for Starting Your Portfolio\n\n\nMidterm Portfolio Targets & Grade Expectations\n\n\n\nThurs, 10/31\nPortfolio Week!\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own simple (vector) functions\nWriting Vector Functions\n\n\n\n\n\n\nThurs, 11/7\nWriting your own dataframe functions\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\nIntroduction to Iteration\n\n\n\n\n\n\nThurs, 11/14\n\nCool Plots & Searching for Efficiency\n\nLab 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nSimulating Data\nSimulating Data in R\n\n\n\n\n\n\nThurs, 11/21\n\n\n\nLab 9 Instructions\nChallenge 9 Instructions\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nIntro to Webscraping\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -5483,7 +5483,7 @@
     "href": "labs/instructions/lab-8-instructions.html#lab-3",
     "title": "Lab 8: Searching for Efficiency",
     "section": "Lab 3",
-    "text": "Lab 3\nNow, were on to Lab 3 where we will revisit two questions.\nIn the original version of Lab 3, Question 5 asked you to:\n\nChange data types in whichever way you see fit (e.g., is the instructor ID really a numeric data type?)\n\n2. Using map_at(), convert the teacher_id, weekday, academic_degree, seniority, and gender columns to factors. Hint: You will need to use bind_cols() to transform the list output back into a data frame.\nNext up, we’re going revisit Question 7 which asked: &gt; What are the demographics of the instructors in this study? Investigate the &gt; variables academic_degree, seniority, and sex and summarize your &gt; findings in ~3 complete sentences.\nMany people created multiple tables of counts for each of these demographics, but in this exercise we are going to create one table with every demographic.\n3. Using pivot_longer() and pivot_wider(), recreate the table below.\n\n\n\n\n\n\n\nSame classification as Challenge 3\n\n\n\nI’m using the sen_level classification from Challenge 3\n\n\"junior\" = seniority is 4 or less (inclusive)\n\"senior\" = seniority is more than 4\n\n\n\n\n\n\n\n\n\nExtending you thinking…\n\n\n\nIf you are interested in exploring my table fomatting, I specifically used the kable() function from the knitr package to first get an HTML table. Then I styled that table using the kable_styling() function from the kableExtra package.",
+    "text": "Lab 3\nNow, were on to Lab 3 where we will revisit two questions.\nIn the original version of Lab 3, Question 5 asked you to:\n\nChange data types in whichever way you see fit (e.g., is the instructor ID really a numeric data type?)\n\n2. Using map_at(), convert the teacher_id, weekday, academic_degree, seniority, and gender columns to factors. Hint: You will need to use bind_cols() to transform the list output back into a data frame.\nNext up, we’re going revisit Question 7 which asked:\n\nWhat are the demographics of the instructors in this study? Investigate the variables academic_degree, seniority, and sex and summarize your findings in ~3 complete sentences.\n\nMany people created multiple tables of counts for each of these demographics, but in this exercise we are going to create one table with every demographic.\n3. Using pivot_longer() and pivot_wider(), recreate the table below.\n\n\n\n\n\n\n\nSame classification as Challenge 3\n\n\n\nI’m using the sen_level classification from Challenge 3\n\n\"junior\" = seniority is 4 or less (inclusive)\n\"senior\" = seniority is more than 4\n\n\n\n\n\n\n\n\n\nExtending you thinking…\n\n\n\nIf you are interested in exploring my table fomatting, I specifically used the kable() function from the knitr package to first get an HTML table. Then I styled that table using the kable_styling() function from the kableExtra package.",
     "crumbs": [
       "Labs",
       "Lab 8 Instructions"
@@ -5582,21 +5582,21 @@
     "href": "slides/week-8/iteration-part-2.html#vectorized-function-checks",
     "title": "Cool Plots & Searching for Efficiency",
     "section": "Vectorized Function Checks",
-    "text": "Vectorized Function Checks\n\n\nrescale_01 &lt;- function(vec) {\n  \n  if(!is.numeric(vec)) {\n    stop(\"Input vector is not numeric\")\n  }\n  \n  if(length(vec) &lt;= 1) {\n    stop(\"Input vector length must have at least two elements\")\n  }\n  \n  range &lt;- range(vec, na.rm = TRUE)\n  \n  return((vec - range[1]) / (range[2] - range[1]))\n}\n\n\n\nHow would you transform these input checks so the rescale_01() function is vectorized?"
+    "text": "Vectorized Function Checks\n\n\nrescale_01 &lt;- function(vec) {\n  \n  if(!is.numeric(vec)) {\n    stop(\"Input vector is not numeric\")\n  }\n  \n  if(length(vec) &lt;= 1) {\n    stop(\"Input vector length must have at least two elements\")\n  }\n  \n  range &lt;- range(vec, na.rm = TRUE)\n  \n  return((vec - range[1]) / (range[2] - range[1]))\n}\n\n\n. . .\nHow would you transform these input checks so the rescale_01() function is vectorized?"
   },
   {
     "objectID": "slides/week-8/iteration-part-2.html#function-checks-for-data-frames",
     "href": "slides/week-8/iteration-part-2.html#function-checks-for-data-frames",
     "title": "Cool Plots & Searching for Efficiency",
     "section": "Function Checks for Data Frames",
-    "text": "Function Checks for Data Frames\n\n\nrescale_column &lt;- function(df, var) {\n  \n  df &lt;- df |&gt;\n    dplyr::mutate(across(.cols = {{ var }}, .fns = ~rescale_01(..x)\n                         )\n                  )\n  \n  return(df)\n}\n\n\n\nHow would you check if the input df was a data frame?"
+    "text": "Function Checks for Data Frames\n\n\nrescale_column &lt;- function(df, var) {\n  \n  df &lt;- df |&gt;\n    dplyr::mutate(across(.cols = {{ var }}, .fns = ~rescale_01(..x)\n                         )\n                  )\n  \n  return(df)\n}\n\n\n. . .\nHow would you check if the input df was a data frame?"
   },
   {
     "objectID": "slides/week-8/iteration-part-2.html#function-checks-for-data-frames-columns",
     "href": "slides/week-8/iteration-part-2.html#function-checks-for-data-frames-columns",
     "title": "Cool Plots & Searching for Efficiency",
     "section": "Function Checks for Data Frames – Columns",
-    "text": "Function Checks for Data Frames – Columns\n\n\nrescale_column &lt;- function(df, cols){\n  \n  stopifnot(is.data.frame(df))\n  \n  df &lt;- df |&gt;\n    dplyr::mutate(across(.cols = {{ cols }}, .fns = ~rescale_01(.x)\n                         )\n                  )\n  \n  return(df)\n}\n\n\n\nHow would you check if the input cols were columns that existed in df?"
+    "text": "Function Checks for Data Frames – Columns\n\n\nrescale_column &lt;- function(df, cols){\n  \n  stopifnot(is.data.frame(df))\n  \n  df &lt;- df |&gt;\n    dplyr::mutate(across(.cols = {{ cols }}, .fns = ~rescale_01(.x)\n                         )\n                  )\n  \n  return(df)\n}\n\n\n. . .\nHow would you check if the input cols were columns that existed in df?"
   },
   {
     "objectID": "slides/week-8/iteration-part-2.html#function-checks-for-data-frames-columns-1",
@@ -5715,7 +5715,7 @@
     "href": "slides/week-8/iteration-part-2.html#if-on-a-single-line",
     "title": "Cool Plots & Searching for Efficiency",
     "section": "if() on a single line?",
-    "text": "if() on a single line?\n\nrescale_01 &lt;- function(x) {\n  \n  if(!is.numeric(x)) stop(\"Input vector must be numeric.\")\n  if(length(x) &lt;= 1) stop(\"Input vector requires more than one element.\")\n  \n  range_1 &lt;- range(x, na.rm = TRUE)\n  \n  (x - range_1[1]) / (range_1[2] - range_1[1])\n}\n\nThis technically works because the stop() is on the same line as if().\n\nBut what if you have multiple things that happen if the condition is met?"
+    "text": "if() on a single line?\n\nrescale_01 &lt;- function(x) {\n  \n  if(!is.numeric(x)) stop(\"Input vector must be numeric.\")\n  if(length(x) &lt;= 1) stop(\"Input vector requires more than one element.\")\n  \n  range_1 &lt;- range(x, na.rm = TRUE)\n  \n  (x - range_1[1]) / (range_1[2] - range_1[1])\n}\n\nThis technically works because the stop() is on the same line as if().\n. . .\nBut what if you have multiple things that happen if the condition is met?"
   },
   {
     "objectID": "slides/week-8/iteration-part-2.html#if-on-multiple-lines",
@@ -5771,7 +5771,7 @@
     "href": "weeks/week-9-simulation.html#simulation-in-r",
     "title": "Distributions and Simulation",
     "section": "1 Simulation in R",
-    "text": "1 Simulation in R\n\n📖 Required Reading: R Programming for Data Science : Simulation\n\n\n\n\n\n✅: Check-in 9.1: Distributions & Simulation\nQuestion 1: What does the output of pnorm(-4, mean = 2, sd = 4) mean?\n\n\n\n\n\n\nTip\n\n\n\nDrawing pictures of the relevant distribution may help.\n\n\nQuestion 2: Why does rnorm(mean = 0, sd = 1) give an error?\nQuestion 3: What does map(-2:2, rnorm, n = 5) do?\nQuestion 4: Why does map_chr(-2:2, rnorm, n = 5) result in an error?\nQuestion 5: The output of map(1:5, runif) is a [vector  list] with ___ elements. The third element is a [vector / list] with ___ random draw(s) from a Uniform distribution with min = ___ and max = ___.\n\n\nSetting a Random Number Seed\nFunctions like rnorm() rely on something called pseudo-randomness. Because computers can never be truly random, complicated processes are implemented to make “random” number generation be so unpredictable as to behave like true randomness.\nThis means that projects involving simulation are harder to make reproducible. For example, here are two identical lines of code that give different results!\n\nrnorm(1, mean = 0, sd = 1)\n\n[1] -0.9008237\n\n\n\nrnorm(1, mean = 0, sd = 1)\n\n[1] -1.231884\n\n\nFortunately, pseudo-randomness depends on a seed, which is an arbitrary number where the randomizing process starts. Normally, R will choose the seed for you, from a pre-generated vector:\n\nhead(.Random.seed)\n\n[1]       10403           7 -1893834270  1489074877  -549923529 -1180608034\n\n\nHowever, you can also choose your own seed using the set.seed() function. This guarantees your results will be consistent across runs (and hopefully computers):\n\nset.seed(1234)\n\nrnorm(1, mean = 0, sd = 1)\n\n[1] -1.207066\n\n\n\nset.seed(1234)\n\nrnorm(1, mean = 0, sd = 1)\n\n[1] -1.207066\n\n\nOf course, it doesn’t mean the results will be the same in every subsequent run if you forget or reset the seed in between each line of code!\n\nset.seed(1234)\n\nrnorm(1, mean = 0, sd = 1)\n\n[1] -1.207066\n\n## Calling rnorm() again without a seed \"resets\" the seed! \nrnorm(1, mean = 0, sd = 1)\n\n[1] 0.2774292\n\n\nIt is very important to always set a seed at the beginning of a Quarto document that contains any random steps, so that your rendered results are consistent.\n\n\n\n\n\n\nCaution\n\n\n\nNote, though, that this only guarantees your rendered results will be the same if the code has not changed.\nChanging up any part of the code will re-randomize everything that comes after it!\n\n\nWhen writing up a report which includes results from a random generation process, in order to ensure reproducibility in your document, use `{r}` or `r` to include your output within your written description with inline code.\n\n\n\n\n\n\nReproducibility: inline code example\n\n\n\n\n\n\nmy_rand &lt;- rnorm(1, mean = 0, sd = 1)\nmy_rand\n\n[1] 1.084441\n\n\nUsing `r my_rand` will display the result within my text:\nMy random number is 1.0844412.\nAlternatively, you could have put the rnorm code directly into the inline text `r rnorm(1, mean = 0, sd = 1)`, but this can get messy if you have a result that requires a larger chunk of code.",
+    "text": "1 Simulation in R\n\n📖 Required Reading: R Programming for Data Science : Simulation\n\n\n\n\n\n✅: Check-in 9.1: Distributions & Simulation\nQuestion 1: What does the output of pnorm(-4, mean = 2, sd = 4) mean?\n\n\n\n\n\n\nTip\n\n\n\nDrawing pictures of the relevant distribution may help.\n\n\nQuestion 2: Why does rnorm(mean = 0, sd = 1) give an error?\nQuestion 3: What does map(-2:2, rnorm, n = 5) do?\nQuestion 4: Why does map_chr(-2:2, rnorm, n = 5) result in an error?\nQuestion 5: The output of map(1:5, runif) is a [vector  list] with ___ elements. The third element is a [vector / list] with ___ random draw(s) from a Uniform distribution with min = ___ and max = ___.\n\n\nSetting a Random Number Seed\nFunctions like rnorm() rely on something called pseudo-randomness. Because computers can never be truly random, complicated processes are implemented to make “random” number generation be so unpredictable as to behave like true randomness.\nThis means that projects involving simulation are harder to make reproducible. For example, here are two identical lines of code that give different results!\n\nrnorm(1, mean = 0, sd = 1)\n\n[1] 0.2807665\n\n\n\nrnorm(1, mean = 0, sd = 1)\n\n[1] -1.222641\n\n\nFortunately, pseudo-randomness depends on a seed, which is an arbitrary number where the randomizing process starts. Normally, R will choose the seed for you, from a pre-generated vector:\n\nhead(.Random.seed)\n\n[1]       10403           7  2141451296 -1578102082   333928137   843412603\n\n\nHowever, you can also choose your own seed using the set.seed() function. This guarantees your results will be consistent across runs (and hopefully computers):\n\nset.seed(1234)\n\nrnorm(1, mean = 0, sd = 1)\n\n[1] -1.207066\n\n\n\nset.seed(1234)\n\nrnorm(1, mean = 0, sd = 1)\n\n[1] -1.207066\n\n\nOf course, it doesn’t mean the results will be the same in every subsequent run if you forget or reset the seed in between each line of code!\n\nset.seed(1234)\n\nrnorm(1, mean = 0, sd = 1)\n\n[1] -1.207066\n\n## Calling rnorm() again without a seed \"resets\" the seed! \nrnorm(1, mean = 0, sd = 1)\n\n[1] 0.2774292\n\n\nIt is very important to always set a seed at the beginning of a Quarto document that contains any random steps, so that your rendered results are consistent.\n\n\n\n\n\n\nCaution\n\n\n\nNote, though, that this only guarantees your rendered results will be the same if the code has not changed.\nChanging up any part of the code will re-randomize everything that comes after it!\n\n\nWhen writing up a report which includes results from a random generation process, in order to ensure reproducibility in your document, use `{r}` or `r` to include your output within your written description with inline code.\n\n\n\n\n\n\nReproducibility: inline code example\n\n\n\n\n\n\nmy_rand &lt;- rnorm(1, mean = 0, sd = 1)\nmy_rand\n\n[1] 1.084441\n\n\nUsing `r my_rand` will display the result within my text:\nMy random number is 1.0844412.\nAlternatively, you could have put the rnorm code directly into the inline text `r rnorm(1, mean = 0, sd = 1)`, but this can get messy if you have a result that requires a larger chunk of code.",
     "crumbs": [
       "Weekly materials",
       "Week 9 - Simulating Data"
@@ -5805,5 +5805,299 @@
       "Weekly materials",
       "Week 9 - Simulating Data"
     ]
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#tuesday-november-19",
+    "href": "slides/week-9/data-simulation-part-1.html#tuesday-november-19",
+    "title": "Simulating Data in R",
+    "section": "Tuesday, November 19",
+    "text": "Tuesday, November 19\nToday we will…\n\nNew Material\n\nStatistical Distributions\nSimulating Data\n\nPA 9: Instrument Con"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#statistical-distributions-1",
+    "href": "slides/week-9/data-simulation-part-1.html#statistical-distributions-1",
+    "title": "Simulating Data in R",
+    "section": "Statistical Distributions",
+    "text": "Statistical Distributions\nRecall from your statistics classes…\n\nRandom VariableDistribution\n\n\nA random variable is a value we don’t know until we take a sample.\n\nCoin flip: could be heads (0) or tails (1)\nPerson’s height: could be anything from 0 feet to 10 feet.\nAnnual income of a US worker: could be anything from $0 to $1.6 billion\n\n\n\nThe distribution of a random variable tells us its possible values and how likely they are.\n\n\n\nCoin flip: 50% chance of heads and tails.\nHeights follow a bell curve centered at 5 foot 7.\nMost American workers make under $100,000."
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#statistical-distributions-with-names",
+    "href": "slides/week-9/data-simulation-part-1.html#statistical-distributions-with-names",
+    "title": "Simulating Data in R",
+    "section": "Statistical Distributions with Names!",
+    "text": "Statistical Distributions with Names!\n\nunifnormtchisqbinom\n\n\nUniform Distribution\n\n\n\nWhen you know the range of values, but not much else.\nAll values in the range are equally likely to occur.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNormal Distribution\n\n\n\nWhen you expect values to fall near the center.\nFrequency of values follows a bell shaped curve.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nt-Distribution\n\n\n\nA slightly wider bell curve.\nBasically used in the same context as the normal distribution, but more common with real data (when the standard deviation is unknown).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChi-Square Distribution\n\n\n\nSomewhat skewed, and only allows values above zero.\nUsed in testing count data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBinomial Distribution\n\n\n\nAppears when you have two possible outcomes, and you are counting how many times each outcome occurred."
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#how-do-we-use-distributions",
+    "href": "slides/week-9/data-simulation-part-1.html#how-do-we-use-distributions",
+    "title": "Simulation + Linear Regression",
+    "section": "How do we use distributions?",
+    "text": "How do we use distributions?\n\nFind the probability of an event.\n\nIf I flip 10 coins, what are the chances I get all heads?\n\nEstimate a proportion of a population.\n\nAbout what proportion of people are above 6 feet tall?\n\nQuantify the evidence in your data.\n\nIn my survey of 100 people, 67 said they were voting for Measure A. How confident am I that Measure A will pass?"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#distribution-functionns-in-r",
+    "href": "slides/week-9/data-simulation-part-1.html#distribution-functionns-in-r",
+    "title": "Simulation + Linear Regression",
+    "section": "Distribution Functionns in R",
+    "text": "Distribution Functionns in R\n\nrpqd\n\n\nr is for random sampling.\n\nGenerate random values from a distribution.\nWe use this to simulate data (create pretend observations).\n\n\n\n\nrunif(n = 3, min = 10, max = 20)\n\n[1] 15.01912 16.95304 14.46226\n\nrnorm(n = 3)\n\n[1] 0.45708680 1.46247165 0.04053375\n\nrnorm(n = 3, mean = -100, sd = 50)\n\n[1] -140.86741  -66.57094  -83.54019\n\n\n\n\nrt(n = 3, df = 11)\n\n[1] 0.9264068 2.3148137 0.3339167\n\nrbinom(n = 3, size = 10, prob = 0.7)\n\n[1] 7 9 6\n\nrchisq(n = 3, df = 11)\n\n[1] 10.76405 11.74762 18.37931\n\n\n\n\n\np is for probability.\n\nCompute the chances of observing a value less than x.\nWe use this for calculating p-values.\n\n\n\n\npnorm(q = 1.5)\n\n[1] 0.9331928\n\npnorm(q = 70, mean = 67, sd = 3)\n\n[1] 0.8413447\n\n\n\n\n1 - pnorm(q = 70, mean = 67, sd = 3)\n\n[1] 0.1586553\n\npnorm(q = 70, mean = 67, sd = 3, lower.tail = FALSE)\n\n[1] 0.1586553\n\n\n\n\n\nq is for quantile.\n\nGiven a probability \\(p\\), compute \\(x\\) such that \\(P(X &lt; x) = p\\).\nThe q functions are “backwards” of the p functions.\n\n\nqnorm(p = 0.95)\n\n[1] 1.644854\n\nqnorm(p = 0.95, mean = 67, sd = 3)\n\n[1] 71.93456\n\n\n\n\nd is for density.\n\nCompute the height of a distribution curve at a given \\(x\\).\nFor discrete dist: probability of getting exactly \\(x\\).\nFor continuous dist: usually meaningless.\n\nProbability of exactly 12 heads in 20 coin tosses, with a 70% chance of tails?\n\ndbinom(x = 12, size = 20, prob = 0.3)\n\n[1] 0.003859282"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#empirical-vs.-theoretical-distributions",
+    "href": "slides/week-9/data-simulation-part-1.html#empirical-vs.-theoretical-distributions",
+    "title": "Simulation + Linear Regression",
+    "section": "Empirical vs. Theoretical Distributions",
+    "text": "Empirical vs. Theoretical Distributions\n\nEmpirical DistributionTheoretical Distributions\n\n\nEmpirical: the observed data.\n\n\nCode\ndata %&gt;%\n  ggplot(aes(x = height)) +\n  geom_histogram(aes(y = ..density..), bins = 10, color = \"white\") \n\n\n\n\n\n\n\n\n\n\n\nTheoretical: the distribution curve.\n\n\nCode\ndata %&gt;%\n  ggplot(aes(x = height)) +\n  stat_function(fun = ~dnorm(.x, mean = 67, sd = 3),\n                col = \"steelblue\", lwd = 2) +\n  stat_function(fun = ~dnorm(.x, mean = 67, sd = 2),\n                col = \"orange2\", lwd = 2)"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#plotting-both-distributions",
+    "href": "slides/week-9/data-simulation-part-1.html#plotting-both-distributions",
+    "title": "Simulation + Linear Regression",
+    "section": "Plotting Both Distributions",
+    "text": "Plotting Both Distributions\n\n geom_histogram  dnorm  ..density.. \n\n\n\n\n\ndata |&gt; \n  ggplot(aes(x = height)) +\n  geom_histogram(bins = 10, color = \"white\")\n\n\n\n\n\n\n\n\n\n\nPlot your data.\n\n\n\n\n\n\n\ndata |&gt; \n  ggplot(aes(x = height)) +\n  geom_histogram(bins = 10, color = \"white\") +\n  stat_function(fun = ~ dnorm(.x, mean = 67, sd = 3),\n                color = \"steelblue\", lwd = 2)\n\n\n\n\n\n\n\n\n\n\nAdd a density curve.\n\n\n\n\n\n\n\ndata |&gt; \n  ggplot(aes(x = height)) +\n  geom_histogram(aes(y = ..density..),\n                 bins = 10, color = \"white\") +\n  stat_function(fun = ~ dnorm(.x, mean = 67, sd = 3),\n                color = \"steelblue\", lwd = 2)\n\n\n\n\n\n\n\n\n\n\nChange the y-axis of the histogram to match the y-axis of the density."
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#simulate-a-dataset",
+    "href": "slides/week-9/data-simulation-part-1.html#simulate-a-dataset",
+    "title": "Simulating Data in R",
+    "section": "Simulate a Dataset",
+    "text": "Simulate a Dataset\n\nThe Ideaset.seed()tibblevisualize\n\n\nWe can generate fake data based on the assumption that a variable follows a certain distribution.\n\nWe randomly sample observations from the distribution.\n\n\nage &lt;- runif(1000, min = 15, max = 75)\n\n\n\nSince there is randomness involved, we will get a different result each time we run the code.\n\n\n\nrunif(3, min = 15, max = 75)\n\n[1] 32.94482 74.59062 55.11581\n\n\n\n\nrunif(3, min = 15, max = 75)\n\n[1] 46.33388 19.46952 27.70553\n\n\n\n\n\nTo make a reproducible random sample, we first set the seed:\n\n\n\nset.seed(94301)\nrunif(3, min = 15, max = 75)\n\n[1] 59.68333 30.27768 38.29962\n\n\n\n\nset.seed(94301)\nrunif(3, min = 15, max = 75)\n\n[1] 59.68333 30.27768 38.29962\n\n\n\n\n\n\n\nset.seed(435)\n\nfake_data &lt;- tibble(names   = charlatan::ch_name(1000),\n        height  = rnorm(1000, mean = 67, sd = 3),\n        age     = runif(1000, min = 15, max = 75),\n        measure = rbinom(1000, size = 1, prob = 0.6)) |&gt; \n  mutate(supports_measure_A = ifelse(measure == 1, \"yes\", \"no\"))\n\nhead(fake_data)\n\n# A tibble: 6 × 5\n  names                 height   age measure supports_measure_A\n  &lt;chr&gt;                  &lt;dbl&gt; &lt;dbl&gt;   &lt;int&gt; &lt;chr&gt;             \n1 Elbridge Kautzer        67.4  66.3       1 yes               \n2 Brandon King            65.0  61.5       0 no                \n3 Phyllis Thompson        68.1  53.8       1 yes               \n4 Humberto Corwin         67.5  33.9       1 yes               \n5 Theresia Koelpin        71.4  16.1       1 yes               \n6 Hayden O'Reilly-Johns   66.2  37.0       0 no                \n\n\n\n\nCheck to see the ages look uniformly distributed.\n\n\n\nCode\nfake_data |&gt; \n  ggplot(mapping = aes(x = age,\n                       fill = supports_measure_A)) +\n  geom_histogram(show.legend = F) +\n  facet_wrap(~ supports_measure_A,\n             ncol = 1) +\n  scale_fill_brewer(palette = \"Paired\") +\n  theme_bw() +\n  labs(x = \"Age (years)\",\n       y = \"\",\n       subtitle = \"Number of Individuals Supportng Measure A for Different Ages\",)"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#simulate-multiple-datasets",
+    "href": "slides/week-9/data-simulation-part-1.html#simulate-multiple-datasets",
+    "title": "Simulation + Linear Regression",
+    "section": "Simulate Multiple Datasets",
+    "text": "Simulate Multiple Datasets\n\nFunctionParametersSimulatePlot\n\n\nWrite a function to simulate height data from a population with some mean and SD height.\n\nht_func &lt;- function(n = 200, avg, std){\n  tibble(person = 1:n,\n         ht = rnorm(n = n, mean = avg, sd = std))\n}\n\nht_func(n = 5, avg = 66, std = 3)\n\n# A tibble: 5 × 2\n  person    ht\n   &lt;int&gt; &lt;dbl&gt;\n1      1  62.5\n2      2  64.9\n3      3  71.2\n4      4  67.0\n5      5  69.1\n\n\n\n\nCreate a mean and SD height for each population.\n\nexpand_grid(mean_ht = seq(from = 60, to = 78, by = 6),\n            std_ht  = c(3, 6))\n\n# A tibble: 8 × 2\n  mean_ht std_ht\n    &lt;dbl&gt;  &lt;dbl&gt;\n1      60      3\n2      60      6\n3      66      3\n4      66      6\n5      72      3\n6      72      6\n7      78      3\n8      78      6\n\n\n\n\nSimulate datasets with different mean and SD heights.\n\n\nCode\nexpand_grid(mean_ht = seq(from = 60, to = 78, by = 6),\n            std_ht  = c(3, 6)) |&gt; \n  mutate(ht_data = pmap(list(avg = mean_ht,\n                             std  = std_ht),\n                        ht_func)) |&gt;\n  unnest(cols = ht_data) |&gt; \n  head()\n\n\n# A tibble: 6 × 4\n  mean_ht std_ht person    ht\n    &lt;dbl&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;dbl&gt;\n1      60      3      1  57.2\n2      60      3      2  56.0\n3      60      3      3  55.3\n4      60      3      4  59.7\n5      60      3      5  61.5\n6      60      3      6  58.7\n\n\n\n\nConsider the samples simulated from each population.\n\n\nCode\nfake_ht_data |&gt; \n  ggplot(aes(x = ht)) +\n  geom_histogram(color = \"white\") +\n  facet_grid(std_ht ~ mean_ht) +\n  labs(x = \"Height (in)\",\n       y = \"\",\n       subtitle = \"Frequency\",\n       title = \"Simulated Height Data from 8 Populations\")"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#draw-a-random-sample",
+    "href": "slides/week-9/data-simulation-part-1.html#draw-a-random-sample",
+    "title": "Simulation + Linear Regression",
+    "section": "Draw a Random Sample",
+    "text": "Draw a Random Sample\nUse sample() to take a random sample of values from a vector.\n\nmy_vec &lt;- c(\"dog\", \"cat\", \"bunny\", \"horse\", \"goat\", \"chicken\")\n\nsample(x = my_vec, size = 3)\n\n[1] \"cat\"  \"goat\" \"dog\" \n\nset.seed(1)\nsample(x = my_vec, size = 5, replace = T)\n\n[1] \"dog\"   \"horse\" \"dog\"   \"cat\"   \"goat\""
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#draw-a-random-sample-1",
+    "href": "slides/week-9/data-simulation-part-1.html#draw-a-random-sample-1",
+    "title": "Simulation + Linear Regression",
+    "section": "Draw a Random Sample",
+    "text": "Draw a Random Sample\nUse sample_n() to take a random sample of observations (rows) from a dataset.\n\nfake_data |&gt; \n  sample_n(size = 3)\n\n# A tibble: 3 × 5\n  names                    height   age measure supports_measure_A\n  &lt;chr&gt;                     &lt;dbl&gt; &lt;dbl&gt;   &lt;int&gt; &lt;chr&gt;             \n1 Dr. Rutherford Gutmann I   70.6  65.1       1 yes               \n2 Vance Baumbach             70.1  34.3       1 yes               \n3 Daron Macejkovic           61.7  33.9       0 no"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#example-birthday-simulation",
+    "href": "slides/week-9/data-simulation-part-1.html#example-birthday-simulation",
+    "title": "Simulation + Linear Regression",
+    "section": "Example: Birthday Simulation",
+    "text": "Example: Birthday Simulation\nSuppose there is a group of 50 people.\n\nSimulate the approximate probability that at least two people have the same birthday (same day of the year, not considering year of birth or leap years)."
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#example-birthday-simulation-1",
+    "href": "slides/week-9/data-simulation-part-1.html#example-birthday-simulation-1",
+    "title": "Simulation + Linear Regression",
+    "section": "Example: Birthday Simulation",
+    "text": "Example: Birthday Simulation\nWrite a function to …\n\n… simulate the birthdays of 50 people.\n… count how many birthdays are shared.\n… return whether or not a shared birthday exists.\n\n\nbDays &lt;- function(n = 50){\n  bday_data &lt;- tibble(person = 1:n,\n                      bday   = sample(1:365, size = n, replace = T))\n  \n  double_bdays &lt;- bday_data |&gt; \n    count(bday) |&gt; \n    filter(n &gt;= 2) |&gt; \n    nrow()\n  \n  return(double_bdays &gt; 0)\n}"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#example-birthday-simulation-2",
+    "href": "slides/week-9/data-simulation-part-1.html#example-birthday-simulation-2",
+    "title": "Simulation + Linear Regression",
+    "section": "Example: Birthday Simulation",
+    "text": "Example: Birthday Simulation\nUse a map() function to simulate 1000 datasets.\n\nWhat proportion of these datasets contain at least two people with the same birthday?\n\n\nsim_results &lt;- map_lgl(.x = 1:1000,\n                       .f = ~ bDays(n = 50))\n\nsum(sim_results)/1000\n\n[1] 0.967"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#in-line-code",
+    "href": "slides/week-9/data-simulation-part-1.html#in-line-code",
+    "title": "Simulation + Linear Regression",
+    "section": "In-line Code",
+    "text": "In-line Code\nWe can automatically include code output in the written portion of a Quarto document using `r `.\n\nThis ensures reproducibility when you have results from a random generation process.\n\n\nmy_rand &lt;- rnorm(1, mean = 0, sd = 1)\nmy_rand\n\n[1] 0.5819984\n\n\nType this: My random number is `r my_rand`.\nTo get this: My random number is 0.5819984."
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#distribution-functions-in-r",
+    "href": "slides/week-9/data-simulation-part-1.html#distribution-functions-in-r",
+    "title": "Simulating Data in R",
+    "section": "Distribution Functions in R",
+    "text": "Distribution Functions in R\n\nrpqd\n\n\nr is for random sampling.\n\nGenerate random values from a distribution.\nWe use this to simulate data (create pretend observations).\n\n\n\n\nrunif(n = 3, min = 10, max = 20)\n\n[1] 12.76805 12.43247 13.86344\n\nrnorm(n = 3)\n\n[1]  1.085568 -1.013050 -1.009345\n\nrnorm(n = 3, mean = -100, sd = 50)\n\n[1] -218.22589   24.29219 -159.05680\n\n\n\n\nrt(n = 3, df = 11)\n\n[1]  0.76289106 -0.08866702  0.45013585\n\nrbinom(n = 3, size = 10, prob = 0.7)\n\n[1] 8 7 6\n\nrchisq(n = 3, df = 11)\n\n[1] 11.971750  3.255465  9.327559\n\n\n\n\n\np is for probability.\n\nCompute the chances of observing a value less than x.\nWe use this for calculating p-values.\n\n\n\n\npnorm(q = 1.5)\n\n[1] 0.9331928\n\npnorm(q = 70, mean = 67, sd = 3)\n\n[1] 0.8413447\n\n\n\n\n1 - pnorm(q = 70, mean = 67, sd = 3)\n\n[1] 0.1586553\n\npnorm(q = 70, mean = 67, sd = 3, lower.tail = FALSE)\n\n[1] 0.1586553\n\n\n\n\n\nq is for quantile.\n\nGiven a probability \\(p\\), compute \\(x\\) such that \\(P(X &lt; x) = p\\).\nThe q functions are “backwards” of the p functions.\n\n\nqnorm(p = 0.95)\n\n[1] 1.644854\n\nqnorm(p = 0.95, mean = 67, sd = 3)\n\n[1] 71.93456\n\n\n\n\nd is for density.\n\nCompute the height of a distribution curve at a given \\(x\\).\nFor discrete dist: probability of getting exactly \\(x\\).\nFor continuous dist: usually meaningless.\n\nProbability of exactly 12 heads in 20 coin tosses, with a 70% chance of tails?\n\ndbinom(x = 12, size = 20, prob = 0.3)\n\n[1] 0.003859282"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#simulate-multiple-datasets",
+    "href": "slides/week-9/data-simulation-part-2.html#simulate-multiple-datasets",
+    "title": "Using map() to Simulate Data",
+    "section": "Simulate Multiple Datasets",
+    "text": "Simulate Multiple Datasets\n\nFunctionParametersSimulatePlot\n\n\nWrite a function to simulate height data from a population with some mean and SD height.\n\nht_func &lt;- function(n = 200, avg, std){\n  tibble(person = 1:n,\n         ht = rnorm(n = n, mean = avg, sd = std))\n}\n\nht_func(n = 5, avg = 66, std = 3)\n\n# A tibble: 5 × 2\n  person    ht\n   &lt;int&gt; &lt;dbl&gt;\n1      1  62.5\n2      2  64.9\n3      3  71.2\n4      4  67.0\n5      5  69.1\n\n\n\n\nCreate a mean and SD height for each population.\n\nexpand_grid(mean_ht = seq(from = 60, to = 78, by = 6),\n            std_ht  = c(3, 6))\n\n# A tibble: 8 × 2\n  mean_ht std_ht\n    &lt;dbl&gt;  &lt;dbl&gt;\n1      60      3\n2      60      6\n3      66      3\n4      66      6\n5      72      3\n6      72      6\n7      78      3\n8      78      6\n\n\n\n\nSimulate datasets with different mean and SD heights.\n\n\nCode\nexpand_grid(mean_ht = seq(from = 60, to = 78, by = 6),\n            std_ht  = c(3, 6)) |&gt; \n  mutate(ht_data = pmap(list(avg = mean_ht,\n                             std  = std_ht),\n                        ht_func)) |&gt;\n  unnest(cols = ht_data) |&gt; \n  head()\n\n\n# A tibble: 6 × 4\n  mean_ht std_ht person    ht\n    &lt;dbl&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;dbl&gt;\n1      60      3      1  57.2\n2      60      3      2  56.0\n3      60      3      3  55.3\n4      60      3      4  59.7\n5      60      3      5  61.5\n6      60      3      6  58.7\n\n\n\n\nConsider the samples simulated from each population.\n\n\nCode\nfake_ht_data |&gt; \n  ggplot(aes(x = ht)) +\n  geom_histogram(color = \"white\") +\n  facet_grid(std_ht ~ mean_ht) +\n  labs(x = \"Height (in)\",\n       y = \"\",\n       subtitle = \"Frequency\",\n       title = \"Simulated Height Data from 8 Populations\")"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#draw-a-random-sample",
+    "href": "slides/week-9/data-simulation-part-2.html#draw-a-random-sample",
+    "title": "Using map() to Simulate Data",
+    "section": "Draw a Random Sample",
+    "text": "Draw a Random Sample\nUse sample() to take a random sample of values from a vector.\n\nmy_vec &lt;- c(\"dog\", \"cat\", \"bunny\", \"horse\", \"goat\", \"chicken\")\n\nsample(x = my_vec, size = 3)\n\n[1] \"cat\"  \"goat\" \"dog\" \n\nset.seed(1)\nsample(x = my_vec, size = 5, replace = T)\n\n[1] \"dog\"   \"horse\" \"dog\"   \"cat\"   \"goat\""
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#draw-a-random-sample-1",
+    "href": "slides/week-9/data-simulation-part-2.html#draw-a-random-sample-1",
+    "title": "Using map() to Simulate Data",
+    "section": "Draw a Random Sample",
+    "text": "Draw a Random Sample\nUse sample_n() to take a random sample of observations (rows) from a dataset.\n\nfake_data |&gt; \n  sample_n(size = 3)\n\n# A tibble: 3 × 5\n  names                    height   age measure supports_measure_A\n  &lt;chr&gt;                     &lt;dbl&gt; &lt;dbl&gt;   &lt;int&gt; &lt;chr&gt;             \n1 Dr. Rutherford Gutmann I   70.6  65.1       1 yes               \n2 Vance Baumbach             70.1  34.3       1 yes               \n3 Daron Macejkovic           61.7  33.9       0 no"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#example-birthday-simulation",
+    "href": "slides/week-9/data-simulation-part-2.html#example-birthday-simulation",
+    "title": "Using map() to Simulate Data",
+    "section": "Example: Birthday Simulation",
+    "text": "Example: Birthday Simulation\nSuppose there is a group of 50 people.\n\nSimulate the approximate probability that at least two people have the same birthday (same day of the year, not considering year of birth or leap years)."
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#example-birthday-simulation-1",
+    "href": "slides/week-9/data-simulation-part-2.html#example-birthday-simulation-1",
+    "title": "Using map() to Simulate Data",
+    "section": "Example: Birthday Simulation",
+    "text": "Example: Birthday Simulation\nWrite a function to …\n\n… simulate the birthdays of 50 people.\n… count how many birthdays are shared.\n… return whether or not a shared birthday exists.\n\n\nbDays &lt;- function(n = 50){\n  bday_data &lt;- tibble(person = 1:n,\n                      bday   = sample(1:365, size = n, replace = T))\n  \n  double_bdays &lt;- bday_data |&gt; \n    count(bday) |&gt; \n    filter(n &gt;= 2) |&gt; \n    nrow()\n  \n  return(double_bdays &gt; 0)\n}"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#example-birthday-simulation-2",
+    "href": "slides/week-9/data-simulation-part-2.html#example-birthday-simulation-2",
+    "title": "Using map() to Simulate Data",
+    "section": "Example: Birthday Simulation",
+    "text": "Example: Birthday Simulation\nUse a map() function to simulate 1000 datasets.\n\nWhat proportion of these datasets contain at least two people with the same birthday?\n\n\nsim_results &lt;- map_lgl(.x = 1:1000,\n                       .f = ~ bDays(n = 50))\n\nsum(sim_results)/1000\n\n[1] 0.967"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#the-map2-family",
+    "href": "slides/week-9/data-simulation-part-2.html#the-map2-family",
+    "title": "Using map() to Simulate Data",
+    "section": "The map2() Family",
+    "text": "The map2() Family\nThese functions allow us to iterate over two lists at the same time."
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#the-map2-family-1",
+    "href": "slides/week-9/data-simulation-part-2.html#the-map2-family-1",
+    "title": "Using map() to Simulate Data",
+    "section": "The map2() Family",
+    "text": "The map2() Family\nThese functions include:\n\nmap2()\nmap2_chr()\nmap2_lgl()\nmap2_int()\nmap2_dbl()\n\nEach function has two list arguments, denoted .x and .y, and a function argument."
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#small-map2-example",
+    "href": "slides/week-9/data-simulation-part-2.html#small-map2-example",
+    "title": "Using map() to Simulate Data",
+    "section": "Small map2() Example",
+    "text": "Small map2() Example\nFind the minimum.\n\na &lt;- c(1, 2, 4)\nb &lt;- c(6, 5, 3)\n\nmap2_chr(a, b,\n         ~ str_glue(\"The minimum of {.x} and {.y} is {min(.x, .y)}.\"))\n\n[1] \"The minimum of 1 and 6 is 1.\" \"The minimum of 2 and 5 is 2.\"\n[3] \"The minimum of 4 and 3 is 3.\""
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#big-map2-example",
+    "href": "slides/week-9/data-simulation-part-2.html#big-map2-example",
+    "title": "Using map() to Simulate Data",
+    "section": "Big map2() Example",
+    "text": "Big map2() Example\n\nThe ProblemSplit DataFit ModelPredict\n\n\n\nRegress vehicle MPG on vehicle weight.\nDo the regression separately for 4-, 6-, and 8-cylinder vehicles.\n\n\n\n\n(by_cyl &lt;- mtcars |&gt;\n   split(mtcars$cyl))\n\n$`4`\n                mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nDatsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\nMerc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\nMerc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\nFiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\nHonda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\nToyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\nToyota Corona  21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\nFiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\nPorsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\nLotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\nVolvo 142E     21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2\n\n$`6`\n                mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nMazda RX4      21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag  21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\nHornet 4 Drive 21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\nValiant        18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\nMerc 280       19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\nMerc 280C      17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\nFerrari Dino   19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n\n$`8`\n                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nHornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\nDuster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\nMerc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\nMerc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\nMerc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\nCadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\nLincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\nChrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\nDodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\nAMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\nCamaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\nPontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\nFord Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\nMaserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n\n\n\n\nFit a linear regression model to each subset of the data.\n\nRegress vehicle MPG on vehicle weight.\nWe are fitting three separate models.\n\n\nmods &lt;- by_cyl |&gt;\n  map(~ lm(mpg ~ wt, data = .x))\n\n\n\nPredict vehicle MPG from observed vehicle weight.\n\nThe predict() function needs two inputs.\n\n\nmap2(mods, by_cyl, predict)\n\n$`4`\n    Datsun 710      Merc 240D       Merc 230       Fiat 128    Honda Civic \n      26.47010       21.55719       21.78307       27.14774       30.45125 \nToyota Corolla  Toyota Corona      Fiat X1-9  Porsche 914-2   Lotus Europa \n      29.20890       25.65128       28.64420       27.48656       31.02725 \n    Volvo 142E \n      23.87247 \n\n$`6`\n     Mazda RX4  Mazda RX4 Wag Hornet 4 Drive        Valiant       Merc 280 \n      21.12497       20.41604       19.47080       18.78968       18.84528 \n     Merc 280C   Ferrari Dino \n      18.84528       20.70795 \n\n$`8`\n  Hornet Sportabout          Duster 360          Merc 450SE          Merc 450SL \n           16.32604            16.04103            14.94481            15.69024 \n        Merc 450SLC  Cadillac Fleetwood Lincoln Continental   Chrysler Imperial \n           15.58061            12.35773            11.97625            12.14945 \n   Dodge Challenger         AMC Javelin          Camaro Z28    Pontiac Firebird \n           16.15065            16.33700            15.44907            15.43811 \n     Ford Pantera L       Maserati Bora \n           16.91800            16.04103"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#nest-and-unnest",
+    "href": "slides/week-9/data-simulation-part-2.html#nest-and-unnest",
+    "title": "Using map() to Simulate Data",
+    "section": "nest() and unnest()",
+    "text": "nest() and unnest()\n\nWe can pair functions from the map() family very nicely with two tidyr functions: nest() and unnest().\nThese allow us to easily map functions onto subsets of the data."
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#nest",
+    "href": "slides/week-9/data-simulation-part-2.html#nest",
+    "title": "Using map() to Simulate Data",
+    "section": "nest()",
+    "text": "nest()\nNest subsets of the data (as tibbles) inside a tibble.\n\nSpecify the column(s) to create subsets on.\n\n\n\n\nmtcars |&gt; \n  nest(cyl_data = -cyl)\n\n# A tibble: 3 × 2\n    cyl cyl_data          \n  &lt;dbl&gt; &lt;list&gt;            \n1     6 &lt;tibble [7 × 10]&gt; \n2     4 &lt;tibble [11 × 10]&gt;\n3     8 &lt;tibble [14 × 10]&gt;\n\n\n\n\nmtcars |&gt; \n  nest(cg_data = -c(cyl,gear))\n\n# A tibble: 8 × 3\n    cyl  gear cg_data          \n  &lt;dbl&gt; &lt;dbl&gt; &lt;list&gt;           \n1     6     4 &lt;tibble [4 × 9]&gt; \n2     4     4 &lt;tibble [8 × 9]&gt; \n3     6     3 &lt;tibble [2 × 9]&gt; \n4     8     3 &lt;tibble [12 × 9]&gt;\n5     4     3 &lt;tibble [1 × 9]&gt; \n6     4     5 &lt;tibble [2 × 9]&gt; \n7     8     5 &lt;tibble [2 × 9]&gt; \n8     6     5 &lt;tibble [1 × 9]&gt;"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#unnest",
+    "href": "slides/week-9/data-simulation-part-2.html#unnest",
+    "title": "Using map() to Simulate Data",
+    "section": "unnest()",
+    "text": "unnest()\nUn-nest the data by row binding the subsets back together.\n\nSpecify the column(s) that contains the subsets.\n\n\nmtcars |&gt; \n  nest(cyl_data = -cyl) |&gt; \n  unnest(cyl_data) |&gt; \n  head()\n\n# A tibble: 6 × 11\n    cyl   mpg  disp    hp  drat    wt  qsec    vs    am  gear  carb\n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1     6  21    160    110  3.9   2.62  16.5     0     1     4     4\n2     6  21    160    110  3.9   2.88  17.0     0     1     4     4\n3     6  21.4  258    110  3.08  3.22  19.4     1     0     3     1\n4     6  18.1  225    105  2.76  3.46  20.2     1     0     3     1\n5     6  19.2  168.   123  3.92  3.44  18.3     1     0     4     4\n6     6  17.8  168.   123  3.92  3.44  18.9     1     0     4     4"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#big-map2-example-again",
+    "href": "slides/week-9/data-simulation-part-2.html#big-map2-example-again",
+    "title": "Using map() to Simulate Data",
+    "section": "Big map2() Example (Again)",
+    "text": "Big map2() Example (Again)\n\nnest()lm()predict()unnest()\n\n\n\nmtcars |&gt;\n  nest(cyl_data = -cyl)\n\n# A tibble: 3 × 2\n    cyl cyl_data          \n  &lt;dbl&gt; &lt;list&gt;            \n1     6 &lt;tibble [7 × 10]&gt; \n2     4 &lt;tibble [11 × 10]&gt;\n3     8 &lt;tibble [14 × 10]&gt;\n\n\n\n\n\nmtcars |&gt;\n  nest(cyl_data = -cyl) |&gt;\n  mutate(mod = map(cyl_data, \n                   ~ lm(mpg ~ wt, data = .x)))\n\n# A tibble: 3 × 3\n    cyl cyl_data           mod   \n  &lt;dbl&gt; &lt;list&gt;             &lt;list&gt;\n1     6 &lt;tibble [7 × 10]&gt;  &lt;lm&gt;  \n2     4 &lt;tibble [11 × 10]&gt; &lt;lm&gt;  \n3     8 &lt;tibble [14 × 10]&gt; &lt;lm&gt;  \n\n\n\n\n\nmtcars |&gt;\n  nest(cyl_data = -cyl) |&gt;\n  mutate(mod = map(cyl_data, \n                   ~ lm(mpg ~ wt, data = .x)),\n         pred_mpg = map2(.x = mod,\n                         .y = cyl_data, \n                         .f = ~ predict(object = .x, data = .y)))\n\n# A tibble: 3 × 4\n    cyl cyl_data           mod    pred_mpg  \n  &lt;dbl&gt; &lt;list&gt;             &lt;list&gt; &lt;list&gt;    \n1     6 &lt;tibble [7 × 10]&gt;  &lt;lm&gt;   &lt;dbl [7]&gt; \n2     4 &lt;tibble [11 × 10]&gt; &lt;lm&gt;   &lt;dbl [11]&gt;\n3     8 &lt;tibble [14 × 10]&gt; &lt;lm&gt;   &lt;dbl [14]&gt;\n\n\n\n\n\nmtcars |&gt;\n  nest(cyl_data = -cyl) |&gt;\n  mutate(mod = map(cyl_data, \n                   ~ lm(mpg ~ wt, data = .x)),\n         pred_mpg = map2(.x = mod,\n                         .y = cyl_data,\n                         .f = ~ predict(object = .x, data = .y))) |&gt; \n  select(-mod) |&gt; \n  unnest(cols = c(cyl_data, pred_mpg)) |&gt; \n  select(cyl, wt, mpg, pred_mpg)\n\n# A tibble: 32 × 4\n     cyl    wt   mpg pred_mpg\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;\n 1     6  2.62  21       21.1\n 2     6  2.88  21       20.4\n 3     6  3.22  21.4     19.5\n 4     6  3.46  18.1     18.8\n 5     6  3.44  19.2     18.8\n 6     6  3.44  17.8     18.8\n 7     6  2.77  19.7     20.7\n 8     4  2.32  22.8     26.5\n 9     4  3.19  24.4     21.6\n10     4  3.15  22.8     21.8\n# ℹ 22 more rows"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-2.html#in-line-code",
+    "href": "slides/week-9/data-simulation-part-2.html#in-line-code",
+    "title": "Using map() to Simulate Data",
+    "section": "In-line Code",
+    "text": "In-line Code\nWe can automatically include code output in the written portion of a Quarto document using `r `.\n\nThis ensures reproducibility when you have results from a random generation process.\n\n\nmy_rand &lt;- rnorm(1, mean = 0, sd = 1)\nmy_rand\n\n[1] 0.5819984\n\n\nType this: My random number is `r my_rand`.\nTo get this: My random number is 0.5819984."
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#pa-9",
+    "href": "slides/week-9/data-simulation-part-1.html#pa-9",
+    "title": "Simulating Data in R",
+    "section": "PA 9",
+    "text": "PA 9\n\nIn this practice activity you and your partner will write a function to simulate the weight of various band instruments, with the goal of identifying whether a particular shipment of instruments has a “reasonable” weight.\n\n\n\n\n\nThis activity will require knowledge of:\n\nnamed distributions\nprobability calculations related to distributions\nfunction documentation\nfunction syntax\nfunction arguments\n\n\n\n\n\n \nNone of us have all these abilities. Each of us has some of these abilities."
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#task-card",
+    "href": "slides/week-9/data-simulation-part-1.html#task-card",
+    "title": "Simulating Data in R",
+    "section": "Task Card",
+    "text": "Task Card\nEvery group should have a task card!\n\nThe table on distributions provides pictures on what each function (e.g., p, d, q) means\nThe list of distributions should help you decide what function to use (e.g., pchisq())"
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#getting-started",
+    "href": "slides/week-9/data-simulation-part-1.html#getting-started",
+    "title": "Simulating Data in R",
+    "section": "Getting Started",
+    "text": "Getting Started\nThe person who whose birthday is closest to today starts as the Coder (giving instructions on what to type to the Developer)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
+  },
+  {
+    "objectID": "slides/week-9/data-simulation-part-1.html#submission",
+    "href": "slides/week-9/data-simulation-part-1.html#submission",
+    "title": "Simulating Data in R",
+    "section": "Submission",
+    "text": "Submission\nYou and your partner together should address the following questions:\n\nHow many of these samples had a weight less than or equal to Professor Hill’s shipment?\nDo you beleive Professor Hill ordered genuine instruments?"
+  },
+  {
+    "objectID": "group-activities/week-9/PA-9.html",
+    "href": "group-activities/week-9/PA-9.html",
+    "title": "PA 9: Instrument Con",
+    "section": "",
+    "text": "Professor Harold Hill wanders into your small town. He claims to be selling top-quality instruments for a marching band. He begins selling his instruments to all the children in town.\nYou are suspicious of Professor Hill, and think that perhaps he is selling instruments made of sub-par materials to scam the townsfolk.\nYou do some research on the weights of properly crafted brass instruments, and you learn the following facts:"
+  },
+  {
+    "objectID": "group-activities/week-9/PA-9.html#warm-up",
+    "href": "group-activities/week-9/PA-9.html#warm-up",
+    "title": "PA 9: Instrument Con",
+    "section": "Warm-up",
+    "text": "Warm-up\n\n1. What is the 95th percentile for trumpet weight?\n2. What is the 10th percentile for trombone weight?\n3. About what percent of trombones do you expect to be more than 5 pounds?\n\n4. About what percent of reed instruments do you expect to be more than 5 pounds?\n5. Simulate 100 random trombone weights. How many of them were below 4 pounds?"
+  },
+  {
+    "objectID": "group-activities/week-9/PA-9.html#catching-a-con",
+    "href": "group-activities/week-9/PA-9.html#catching-a-con",
+    "title": "PA 9: Instrument Con",
+    "section": "Catching a Con",
+    "text": "Catching a Con\nYou manage to intercept a shipping notice for a delivery to Professor Hill. It says the following:\nWells Fargo Shipment 1957\n\nTo:  Harold Hill, Mason City, Iowa\nFrom:  Music Factory, Gary, Indiana\n\nItems included:\n    Trombones: 76\n    Cornets: 110\n    Saxophones: 542\n    Clarinets: 318\n    Bassoons: 175\n    \nTotal Shipped Weight: 4532 lbs.\nThis is your chance to catch Professor Hill in his lie!\n\n6. Write a function that samples the correct number of trombones, cornets (trumpets), and reed instruments (saxophones, clarinets, bassoons), and then returns the total weight of the shipment.\n\nmusic_man &lt;- function(n_tromb, n_cor, n_reed){\n  \n  trombones &lt;- rnorm(n_tromb, ...)\n  cornets   &lt;- ...\n  reeds     &lt;- ...\n  \n  ...\n  \n  return()\n  \n}\n\n\n7. Use the function you just wrote to create random samples of the total weight of 1000 possible shipments. Do not change the seed in the code provided below!\n\nset.seed(1957)\n\nmy_weights &lt;- map_dbl(.x = 1:1000, \n                      .f = ~ music_man(n_tromb = 76, ...)\n                      )\n\nError in `map_dbl()`:\nℹ In index: 1.\nCaused by error in `music_man()`:\n! '...' used in an incorrect context"
+  },
+  {
+    "objectID": "group-activities/week-9/PA-9.html#canvas-submission",
+    "href": "group-activities/week-9/PA-9.html#canvas-submission",
+    "title": "PA 9: Instrument Con",
+    "section": "Canvas submission",
+    "text": "Canvas submission\nYou and your partner together should address the following questions:\n\nHow many of these samples had a weight less than or equal to Professor Hill’s shipment?\nDo you beleive Professor Hill ordered genuine instruments?"
+  },
+  {
+    "objectID": "group-activities/week-9/PA-9-task-card.html",
+    "href": "group-activities/week-9/PA-9-task-card.html",
+    "title": "PA 9 Task Card – Instrument Con",
+    "section": "",
+    "text": "In this practice activity you and your partner will write a function to simulate the weight of various band instruments, with the goal of identifying whether a particular shipment of instruments has a “reasonable” weight.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group."
+  },
+  {
+    "objectID": "group-activities/week-9/PA-9-task-card.html#four-types-of-calculations",
+    "href": "group-activities/week-9/PA-9-task-card.html#four-types-of-calculations",
+    "title": "PA 9 Task Card – Instrument Con",
+    "section": "Four Types of Calculations",
+    "text": "Four Types of Calculations\n\n\n\n\n\n\n\np – stands for probability (left tail area for a given value of \\(x\\)).\n\n\n\nd – stands for density (of the distribution at a given value of \\(x\\)).\n\n\n\nq – stands for quantile (for a given probability).\n\n\n\nr – stands for random (for generating data)."
+  },
+  {
+    "objectID": "group-activities/week-9/PA-9-task-card.html#distributions",
+    "href": "group-activities/week-9/PA-9-task-card.html#distributions",
+    "title": "PA 9 Task Card – Instrument Con",
+    "section": "Distributions",
+    "text": "Distributions\n\nThe Normal distribution functions end with norm.\n\npnorm(), rnorm(), qnorm(), and dnorm()\n\nThe Uniform distribution functions end with unif.\n\npunif(), runif(), qunif(), and dunif()\n\nThe Chi-square distribution functions end with chisq.\n\npchisq(), rchisq(), qchisq(), and dchisq()"
   }
 ]
