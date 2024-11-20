@@ -63,7 +63,7 @@ In the original version of Lab 3, Question 5 asked you to:
 > Change data types in whichever way you see fit (e.g., is the instructor ID
 > really a numeric data type?)
 
-**2. Using `map_at()`, convert the `teacher_id`, `weekday`, `academic_degree`, `seniority`, and `gender` columns to factors.** Hint: You will need to use `bind_cols()` to transform the 
+**2. Using `map_at()`, convert the `teacher_id`, `weekday`, `academic_degree`, `seniority`, and `sex` columns to factors.** Hint: You will need to use `bind_cols()` to transform the 
 list output back into a data frame. 
 
 ```{r}
