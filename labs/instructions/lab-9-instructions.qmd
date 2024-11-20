@@ -4,12 +4,18 @@ title: "Untitled"
 
 ## Random Babies Simulation
 
-Perhaps you have seen the [Random Babies applet](https://www.rossmanchance.com/applets/2021/randombabies/RandomBabies.html)? Suppose one night at a hospital four mothers each give birth to a baby. The hospital is not very organized and looses track of which mother gave birth to each baby, and essentially returns the babies to the mothers at random. Here, we are interested in the number of babies that are correctly returned to their respective mothers.
+Perhaps you have seen the [Random Babies applet](https://www.rossmanchance.com/applets/2021/randombabies/RandomBabies.html)? 
+Suppose one night at a hospital four mothers each give birth to a baby. The
+hospital is not very organized and looses track of which mother gave birth to
+each baby, and essentially returns the babies to the mothers at random. Here, we
+are interested in the number of babies that are correctly returned to their
+respective mothers.
 
-**1. Simulate the distribution of the number of babies that are correctly returned. Use 10000 simulations.**
+**1. Simulate the distribution of the number of babies that are correctly returned. Use 10,000 simulations.**
 
 ::: callout-tip
-Write a function to accomplish one simulation, then use `map_df` to save results out.
+Write a function to accomplish one simulation, then use `map_df()` to run 10,000 
+simulations
 :::
 
 ```{r}
@@ -37,3 +43,8 @@ geom_bar(mapping = aes(y = after_stat(count) / sum(after_stat(count))
 ```{r}
 # code for 2
 ```
+
+## Central Limit Theorem
+
+
+## Law of Large Numbers
