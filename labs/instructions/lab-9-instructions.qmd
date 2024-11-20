@@ -1,39 +1,66 @@
 ---
-title: "Untitled"
+title: "Lab 9: Data Simulation Exploration"
+format: 
+  html:
+    code-tools: true
+    toc: true
+editor: source
+execute: 
+  error: true
+  echo: false
+  eval: false
+  message: false
+  warning: false
 ---
 
 ## Random Babies Simulation
 
 Perhaps you have seen the [Random Babies applet](https://www.rossmanchance.com/applets/2021/randombabies/RandomBabies.html)? 
-Suppose one night at a hospital four mothers each give birth to a baby. The
-hospital is not very organized and looses track of which mother gave birth to
-each baby, and essentially returns the babies to the mothers at random. Here, we
-are interested in the number of babies that are correctly returned to their
-respective mothers.
+Suppose one night at a hospital four babies are born. The hospital is not very
+organized and looses track of which baby belongs to each parent(s), so they 
+decide to return the babies to parents at random. Here, we are interested in the
+number of babies that are correctly returned to their respective parent(s).
 
 **1. Simulate the distribution of the number of babies that are correctly returned. Use 10,000 simulations.**
 
 ::: callout-tip
-Write a function to accomplish one simulation, then use `map_df()` to run 10,000 
-simulations
+Write a function to accomplish one simulation, then use `map_int()` to run
+10,000 simulations. 
+
+Keep in mind that your function needs to output a single number (not data frame) 
+for it to be compatible with `map_int()`!
 :::
 
 ```{r}
+#| label: function-simulation-for-random-babies
+
 randomBabies <- function(nBabies){
-  # fill out the function body
+  tibble(baby_mama = 1:nBabies,
+         returned_baby = sample(baby_mama, 4, replace = F)
+         ) |> 
+    mutate(correct_baby = if_else(baby_mama == returned_baby, TRUE, FALSE)
+           ) |> 
+    summarize(
+      ncorrect = sum(correct_baby)
+              ) |> 
+    pull(ncorrect)
 }
 
-# map_df code
-
+results <- map_int(.x = 1:10000,
+                  .f = ~ randomBabies(4)
+                  )
 ```
 
-**2. Create a barplot showing the simulated distribution (proportion).**
+**2. Create a barplot showing the simulated distribution (proportion).** I've
+provided some starter code for you which converts your `results` object
+into a data frame, but you need to fill in the rest!
 
 ::: callout-tip
 Useful code:
 
 ```{r}
 #| eval: false
+
 geom_bar(mapping = aes(y = after_stat(count) / sum(after_stat(count))
                        )
          )
@@ -41,10 +68,92 @@ geom_bar(mapping = aes(y = after_stat(count) / sum(after_stat(count))
 :::
 
 ```{r}
-# code for 2
+#| label: function-simulation-for-random-babies
+
+results |> 
+  enframe(name = "simulation_number", value = "ncorrect") |> 
+  ggplot(aes(x = ncorrect)) +
+  geom_bar(mapping = aes(y = after_stat(count) / sum(after_stat(count))
+                         )
+           ) +
+  labs(x = "Number of Babies Returned to Correct Parent(s)",
+       y = "", 
+       title = "Proportion of Simulated Outcomes for Babies Being Randomly Given to Four Parent(s)") +
+  theme(plot.title = element_text(size = 12))
 ```
 
 ## Central Limit Theorem
 
+You have encountered the Central Limit Theorem in your previous statistics 
+classes, whether or not is has been explicitly discussed. The Central Limit 
+Theorem states that: 
 
-## Law of Large Numbers
+> The sampling distribution of the mean will always be normally distributed, as
+> long as the sample size is large enough, regardless of the underlying 
+> distribution of the population. 
+
+Remember back to your first statistics class when you had to check if the 
+sample size was larger than 30 when testing if groups had different means? 
+That's because of the Central Limit Theorem! Under certain conditions 
+(e.g., sample size) the Central Limit Theorem ensures that the distribution 
+of sample means will be approximately Normal, which means that we can calculate
+a p-value using known properties of the Normal Distribution! 
+
+Let's explore the Central Limit Theorem a bit! 
+
+**Write a function that simulates 100 observations from a Normal Distribution and outputs the mean of those observations. Your function should allow the user to input the mean and standard deviation of the Normal Distribution.**
+
+```{r}
+
+simulate_norm_means <- function(mean, sd){
+  
+}
+```
+
+
+```{r}
+simulate_norm_means <- function(n, mean, sd){
+  map_dbl(.x = 1:n, 
+          .f = ~rnorm(n = 100, mean = mean, sd = sd) |> mean()
+          )
+}
+```
+
+**Make a grid**
+
+```{r}
+all_sims <- crossing(n = c(10, 100, 1000, 10000), 
+         mean = 5, 
+         sd = 2) |> 
+  mutate(simulated_means = pmap(.l = list(n = n, 
+                                          mean = mean, 
+                                          sd = sd), 
+                                .f = simulate_norm_means)
+         ) |> 
+  unnest(cols = simulated_means) |> 
+  rename(sample_size = n) |> 
+  mutate(sample_size = as.factor(sample_size), 
+         sample_size = fct_recode(sample_size, 
+                                  `10 Means from 100 draws from a Normal Distribution` = "10", 
+                                  `100 Means from 100 draws from a Normal Distribution` = "100", 
+                                  `1,000 Means from 100 draws from a Normal Distribution` = "1000", 
+                                  `10,000 Means from 100 draws from a Normal Distribution` = "10000"), 
+         fct_relevel(sample_size, 
+                     "10 Means from 100 draws from a Normal Distribution", 
+                     "100 Means from 100 draws from a Normal Distribution", 
+                     "1,000 Means from 100 draws from a Normal Distribution", 
+                     "10,000 Means from 100 draws from a Normal Distribution")
+         )
+
+```
+
+
+```{r}
+ggplot(data = all_sims, 
+       mapping = aes(x = simulated_means)) +
+  geom_histogram(binwidth = 0.05) +
+  facet_wrap(~ sample_size, 
+             scales = "free_y")
+```
+
+
