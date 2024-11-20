@@ -399,12 +399,13 @@
 <section>
 <section id="same-seating-chart" class="title-slide slide level1 center">
 <h1>Same Seating Chart!</h1>
-<p><img data-src="../week-7/images/week-7-seats.png"></p>
+<p><img data-src="../week-7/images/week-7-seats.png" style="width:70.0%"></p>
 </section>
 <section id="tuesday-november-19" class="slide level2">
 <h2>Tuesday, November 19</h2>
 <p>Today we will…</p>
 <ul>
+<li>Plan for Week 9 &amp; 10</li>
 <li>New Material
 <ul>
 <li>Statistical Distributions</li>
@@ -413,6 +414,42 @@
 <li>PA 9: Instrument Con</li>
 </ul>
 </section></section>
+<section id="week-9" class="title-slide slide level1 center">
+<h1>Week 9</h1>
+<div class="fragment">
+<ul>
+<li>PA 9 (today)</li>
+<li>Lab 9 &amp; Challenge 9 (last ones!)</li>
+<li>Revisions on Lab 7 (due Friday)</li>
+<li>Code Review Lab 8 (due Sunday)</li>
+</ul>
+</div>
+</section>
+
+<section id="week-10" class="title-slide slide level1 center">
+<h1>Week 10</h1>
+<div class="fragment">
+<ul>
+<li>Final Portfolio Week!</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>No revisions will be accepted on Lab 8 or Lab 9. You can, however, talk with me during class about any revisions you’ve made. :)</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <section>
 <section id="statistical-distributions" class="title-slide slide level1 center">
 <h1>Statistical Distributions</h1>
@@ -433,7 +470,7 @@
 </ul>
 </div>
 <div id="tabset-1-2">
-<p>The <strong>distribution</strong> of a random variable tells us its <strong>possible values</strong> and <strong>how likely they are</strong>.</p>
+<p>The <strong>distribution</strong> of a random variable tells us its <strong>possible values</strong> and <strong>how likely they are to occur</strong>.</p>
 <div class="columns">
 <div class="column" style="width:73%;">
 <ul>
@@ -499,7 +536,7 @@
 <div class="column">
 <ul>
 <li>A slightly <strong>wider</strong> bell curve.</li>
-<li>Basically used in the same context as the <strong>normal distribution</strong>, but more common with real data (when the <em>standard deviation</em> is unknown).</li>
+<li>Basically used in the same context as the <strong>Normal distribution</strong>, but more common with real data (when the <em>standard deviation</em> is unknown).</li>
 </ul>
 </div><div class="column">
 <div class="cell">
@@ -537,9 +574,12 @@
 <p><strong>Binomial Distribution</strong></p>
 <div class="columns">
 <div class="column">
+<div class="midi">
 <ul>
 <li>Appears when you have <strong>two possible outcomes</strong>, and you are <strong>counting</strong> how many times each outcome occurred.</li>
+<li>This is a <em>discrete</em> distribution, as there can only be whole number values!</li>
 </ul>
+</div>
 </div><div class="column">
 <div class="cell">
 <div class="cell-output-display">
@@ -562,39 +602,45 @@
 <div class="tab-content">
 <div id="tabset-3-1">
 <p><code>r</code> is for <strong>random sampling</strong>.</p>
+<div class="midi">
 <ul>
 <li>Generate random values from a distribution.</li>
 <li>We use this to <strong>simulate</strong> data (create pretend observations).</li>
 </ul>
+</div>
 <div class="columns">
 <div class="column">
+<div class="midi">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">min =</span> <span class="dv">10</span>, <span class="at">max =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 12.76805 12.43247 13.86344</code></pre>
+<pre><code>[1] 18.15007 14.11976 17.97457</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  1.085568 -1.013050 -1.009345</code></pre>
+<pre><code>[1] -1.1870619  1.7135969 -0.7684311</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">mean =</span> <span class="sc">-</span><span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -218.22589   24.29219 -159.05680</code></pre>
+<pre><code>[1] -170.4145 -143.8366  -77.0706</code></pre>
+</div>
 </div>
 </div>
 </div><div class="column">
+<div class="midi">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">rt</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">df =</span> <span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  0.76289106 -0.08866702  0.45013585</code></pre>
+<pre><code>[1] 0.7902426 0.6496226 0.6371634</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">prob =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 8 7 6</code></pre>
+<pre><code>[1] 9 7 6</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">rchisq</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">df =</span> <span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 11.971750  3.255465  9.327559</code></pre>
+<pre><code>[1] 14.514977  5.529515 13.450288</code></pre>
+</div>
 </div>
 </div>
 </div></div>
@@ -649,11 +695,13 @@
 </div>
 <div id="tabset-3-4">
 <p><code>d</code> is for <strong>density</strong>.</p>
+<div class="midi">
 <ul>
 <li>Compute the <em>height</em> of a distribution curve at a given <span class="math inline">\(x\)</span>.</li>
 <li>For <strong>discrete</strong> dist: probability of getting <strong>exactly</strong> <span class="math inline">\(x\)</span>.</li>
 <li>For <strong>continuous</strong> dist: usually meaningless.</li>
 </ul>
+</div>
 <p>Probability of <em>exactly</em> 12 heads in 20 coin tosses, with a 70% chance of tails?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="at">x =</span> <span class="dv">12</span>, <span class="at">size =</span> <span class="dv">20</span>, <span class="at">prob =</span> <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -776,57 +824,71 @@
 </div>
 </div>
 <div id="tabset-4-2">
+<div class="midi">
 <p>Since there is randomness involved, we will get a different result each time we run the code.</p>
+</div>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="midi">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">3</span>, <span class="at">min =</span> <span class="dv">15</span>, <span class="at">max =</span> <span class="dv">75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 32.94482 74.59062 55.11581</code></pre>
+<pre><code>[1] 51.12011 48.62721 73.48332</code></pre>
+</div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
+<div class="midi">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">3</span>, <span class="at">min =</span> <span class="dv">15</span>, <span class="at">max =</span> <span class="dv">75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 46.33388 19.46952 27.70553</code></pre>
+<pre><code>[1] 48.79667 72.64916 29.31348</code></pre>
+</div>
 </div>
 </div>
 </div></div>
 <p><br></p>
 <div class="fragment">
+<div class="midi">
 <p>To make a <strong>reproducible</strong> random sample, we first <strong>set the seed</strong>:</p>
+</div>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="midi">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">94301</span>)</span>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">93401</span>)</span>
 <span id="cb32-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">3</span>, <span class="at">min =</span> <span class="dv">15</span>, <span class="at">max =</span> <span class="dv">75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 59.68333 30.27768 38.29962</code></pre>
+<pre><code>[1] 20.84739 51.61768 42.68515</code></pre>
+</div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
+<div class="midi">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">94301</span>)</span>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">93401</span>)</span>
 <span id="cb34-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">3</span>, <span class="at">min =</span> <span class="dv">15</span>, <span class="at">max =</span> <span class="dv">75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 59.68333 30.27768 38.29962</code></pre>
+<pre><code>[1] 20.84739 51.61768 42.68515</code></pre>
+</div>
 </div>
 </div>
 </div></div>
 </div>
 </div>
 <div id="tabset-4-3">
+<div class="small">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36" data-code-line-numbers="4-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a><span class="fu">set.seed</span>(<span class="dv">435</span>)</span>
 <span id="cb36-2"><a></a></span>
 <span id="cb36-3"><a></a>fake_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">names   =</span> charlatan<span class="sc">::</span><span class="fu">ch_name</span>(<span class="dv">1000</span>),</span>
-<span id="cb36-4"><a></a>        <span class="at">height  =</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">67</span>, <span class="at">sd =</span> <span class="dv">3</span>),</span>
-<span id="cb36-5"><a></a>        <span class="at">age     =</span> <span class="fu">runif</span>(<span class="dv">1000</span>, <span class="at">min =</span> <span class="dv">15</span>, <span class="at">max =</span> <span class="dv">75</span>),</span>
-<span id="cb36-6"><a></a>        <span class="at">measure =</span> <span class="fu">rbinom</span>(<span class="dv">1000</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fl">0.6</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb36-7"><a></a>  <span class="fu">mutate</span>(<span class="at">supports_measure_A =</span> <span class="fu">ifelse</span>(measure <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"yes"</span>, <span class="st">"no"</span>))</span>
-<span id="cb36-8"><a></a></span>
-<span id="cb36-9"><a></a><span class="fu">head</span>(fake_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-4"><a></a>                    <span class="at">height  =</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">67</span>, <span class="at">sd =</span> <span class="dv">3</span>),</span>
+<span id="cb36-5"><a></a>                    <span class="at">age     =</span> <span class="fu">runif</span>(<span class="dv">1000</span>, <span class="at">min =</span> <span class="dv">15</span>, <span class="at">max =</span> <span class="dv">75</span>),</span>
+<span id="cb36-6"><a></a>                    <span class="at">measure =</span> <span class="fu">rbinom</span>(<span class="dv">1000</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fl">0.6</span>)</span>
+<span id="cb36-7"><a></a>                    ) <span class="sc">|&gt;</span> </span>
+<span id="cb36-8"><a></a>  <span class="fu">mutate</span>(<span class="at">supports_measure_A =</span> <span class="fu">ifelse</span>(measure <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"yes"</span>, <span class="st">"no"</span>))</span>
+<span id="cb36-9"><a></a></span>
+<span id="cb36-10"><a></a><span class="fu">head</span>(fake_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 5
   names                 height   age measure supports_measure_A
@@ -837,6 +899,7 @@
 4 Humberto Corwin         67.5  33.9       1 yes               
 5 Theresia Koelpin        71.4  16.1       1 yes               
 6 Hayden O'Reilly-Johns   66.2  37.0       0 no                </code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -872,8 +935,8 @@
 </div>
 </section></section>
 <section>
-<section id="pa-9.1-instrument-con" class="title-slide slide level1 center">
-<h1><a href="../../group-activities/week-9/PA-9.html">PA 9.1: Instrument Con</a></h1>
+<section id="pa-9-instrument-con" class="title-slide slide level1 center">
+<h1><a href="../../group-activities/week-9/PA-9.html">PA 9: Instrument Con</a></h1>
 <blockquote>
 <p>Is the instrument salesman selling fake instruments?</p>
 </blockquote>
@@ -928,6 +991,8 @@
 <p>You and your partner together should address the following questions:</p>
 <blockquote>
 <p>How many of these samples had a weight less than or equal to Professor Hill’s shipment?</p>
+</blockquote>
+<blockquote>
 <p>Do you beleive Professor Hill ordered genuine instruments?</p>
 </blockquote>
 

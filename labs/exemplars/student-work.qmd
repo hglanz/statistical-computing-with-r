@@ -565,3 +565,33 @@ rescale_01 <- function(vec, na.rm = TRUE) {
   return(vec)
 }
 ```
+
+```{r}
+#| label: checking-errors
+#| echo: false
+
+rescale_01 <- function(vec) {
+  
+  stopifnot("Input vector is not numeric" = is.numeric(vec), 
+            "Input vector length must have at least two elements" = length(vec) > 1)
+  
+  range <- range(vec, na.rm = TRUE)
+  
+  return((vec - range[1]) / (range[2] - range[1])) 
+}
+  
+
+x <- c(1:25, NA)
+
+rescale_01(x)
+
+y <- letters
+
+rescale_01(y)
+
+z <- 2
+
+rescale_01(z)
+
+```
+
