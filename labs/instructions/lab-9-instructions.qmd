@@ -7,7 +7,6 @@ format:
 editor: source
 execute: 
   error: true
-  echo: false
   eval: false
   message: false
   warning: false
@@ -168,7 +167,7 @@ Hint: Make sure your facets have descriptive names! You might also want to free
 the y-axis of the plots, since there are substantial differences in the sample
 sizes between the simulations. 
 
-**For extra pizzaz, add a vertical line for true mean (for a Chi-Square the mean is the degrees of freedom).**
+**For extra pizzazz, add a vertical line for true mean (for a Chi-Square the mean is the degrees of freedom).**
 
 ```{r}
 #| label: plot-of-simulated Means
