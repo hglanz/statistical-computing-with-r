@@ -1,5 +1,5 @@
 ---
-title: "Using `map()` to Simulate Data"
+title: "Simulating Probabilities & Datasets"
 format: 
   revealjs:
       theme: [simple, ../style.scss]
@@ -27,56 +27,284 @@ fake_data <- tibble(names   = charlatan::ch_name(1000),
 Today we will...
 
 -   New Material
-    -   The `map2()` Family
-    -   `nest()`ing Data Frames
+    -   Thinking through a probability simulation task
+    -   Four Steps to Simulate Datasets
+    -   In-line R Code
+    -   Survey on Experiences in STAT 331 / 531
 -   Work Time
     -   Lab 9
+    -   Challenge 9
 
-## Simulate Multiple Datasets
 
-::: panel-tabset
+# The Birthday Problem
 
-### Function
+> What the probability that at least two people in a group of randomly selected
+people share a birthday?
 
-Write a function to simulate height data from a population with some mean and SD height.
+## Our Task
+
+Simulate the approximate probability that at least two people have the same
+birthday (same day of the year, not considering year of birth or leap years).
+
+
+## Writing a function to...
+
++ simulate the birthdays of 50 people.
++ count how many birthdays are shared.
++ return whether or not a shared birthday exists.
+
+
+## Step 1 -- simulate the birthdays of 50 people
 
 ```{r}
 #| code-line-numbers: false
 
-ht_func <- function(n = 200, avg, std){
+get_shared_birthdays <- function(n = 50){
+  
+  bday_data <- tibble(person = 1:n,
+                      bday   = sample(1:365, 
+                                      size = n, 
+                                      replace = TRUE)
+                      )
+}
+```
+
+. . .
+
+::: {.callout-tip}
+# Why did I set `replace = TRUE` for the `sample()` function?
+:::
+
+## Step 2 -- count how many birthdays are shared
+
+```{r}
+#| code-line-numbers: "9-12"
+
+get_shared_birthdays <- function(n = 50){
+  
+  bday_data <- tibble(person = 1:n,
+                      bday   = sample(1:365, 
+                                      size = n, 
+                                      replace = TRUE)
+                      )
+  
+  double_bdays <- bday_data |> 
+    count(bday) |> 
+    filter(n >= 2) |> 
+    nrow()
+  
+}
+```
+
+## Step 3 -- return whether or not a shared birthday exists
+
+::: {.small}
+```{r}
+#| code-line-numbers: "13"
+
+get_shared_birthdays <- function(n = 50){
+  bday_data <- tibble(person = 1:n,
+                      bday   = sample(1:365, 
+                                      size = n, 
+                                      replace = T)
+                      )
+  
+  double_bdays <- bday_data |> 
+    count(bday) |> 
+    filter(n >= 2) |> 
+    nrow()
+  
+  return(double_bdays > 0)
+}
+```
+:::
+
+. . .
+
+::: {.callout-tip}
+# What type of output is this function returning? 
+:::
+
+## Using Function to Simulate Many Probabilities
+
+Use a `map()` function to simulate 1000 datasets.
+
+::: {.midi}
+```{r}
+#| code-line-numbers: false
+sim_results <- map_lgl(.x = 1:1000,
+                       .f = ~ get_shared_birthdays(n = 50))
+
+```
+:::
+
+. . .
+
+</br>
+
++ What proportion of these datasets contain at least two people with the same
+birthday?
+
+::: {.midi}
+```{r}
+#| code-line-numbers: false
+
+sum(sim_results) / 1000
+```
+:::
+
+
+
+# Four Steps to Simualate Datasets
+
+## Simulate Multiple Datasets - Step 1
+
+::: {.small}
+Write a function to simulate height data from a population with some mean and SD
+height. 
+
+The user should be able to input:
+
+- how many observations to simulate
+- the mean and standard deviation of the Normal distribution to use when 
+simulating
+
+::: {.callout-tip}
+## Pencil out your function! 
+:::
+:::
+
+
+
+::: columns
+::: {.column width="60%"}
+::: {.fragment}
+::: {.small}
+```{r}
+#| code-line-numbers: false
+
+sim_ht <- function(n = 200, avg, std){
   tibble(person = 1:n,
          ht = rnorm(n = n, mean = avg, sd = std))
 }
-
-ht_func(n = 5, avg = 66, std = 3)
 ```
+:::
+:::
+:::
 
-### Parameters
+::: {.column width="5%"}
+:::
 
-Create a mean and SD height for each population.
+::: {.column width="35%"}
+::: {.fragment}
+::: {.small}
+```{r}
+#| code-line-numbers: false
+
+sim_ht(n = 5, 
+        avg = 66, 
+        std = 3)
+```
+:::
+:::
+:::
+:::
+
+
+
+## Simulate Multiple Datasets - Step 2
+
+Create a set of parameters (mean and SD) for each population.
 
 ```{r}
-expand_grid(mean_ht = seq(from = 60, to = 78, by = 6),
+#| code-line-numbers: false
+
+crossing(mean_ht = seq(from = 60, to = 78, by = 6),
             std_ht  = c(3, 6))
 ```
 
-### Simulate
+## Simulate Multiple Datasets - Step 3
 
 Simulate datasets with different mean and SD heights.
 
+::: {.small}
 ```{r}
-#| code-fold: true
+#| code-line-numbers: "4-7"
 
 crossing(mean_ht = seq(from = 60, to = 78, by = 6),
          std_ht  = c(3, 6)
          ) |> 
  mutate(ht_data = pmap(.l = list(avg = mean_ht, std = std_ht), 
-                       .f = ht_func
+                       .f = sim_ht
+                       )
+        )
+```
+:::
+
+. . .
+
+::: {.small}
+::: {.callout-tip}
+# Why am I getting a tibble in the `ht_data` column?
+:::
+:::
+
+## Simulate Multiple Datasets - Step 4
+
+Extract the contents of each list!
+
+::: {.small}
+```{r}
+#| code-line-numbers: "8"
+#| eval: false
+
+crossing(mean_ht = seq(from = 60, to = 78, by = 6),
+         std_ht  = c(3, 6)
+         ) |> 
+ mutate(ht_data = pmap(.l = list(avg = mean_ht, std = std_ht), 
+                       .f = sim_ht
                        )
         ) |> 
   unnest(cols = ht_data) |> 
   slice_sample(n = 10)
 ```
+:::
+
+::: columns
+::: {.column width="50%"}
+::: {.small}
+```{r}
+#| echo: false
+#| eval: true
+
+crossing(mean_ht = seq(from = 60, to = 78, by = 6),
+         std_ht  = c(3, 6)
+         ) |> 
+ mutate(ht_data = pmap(.l = list(avg = mean_ht, std = std_ht), 
+                       .f = sim_ht
+                       )
+        ) |> 
+  unnest(cols = ht_data) |> 
+  slice_head(n = 10)
+```
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+::: {.midi}
+::: {.fragment}
+Why do I now have `person` and `ht` columns?
+:::
+
+::: {.fragment}
+How many rows should I have for each `mean_ht`, `std_ht` combo?
+:::
+:::
+:::
+:::
 
 ## `nest()` and `unnest()`
 
@@ -94,15 +322,21 @@ functions: `nest()` and `unnest()`.
 ::: {.column width="50%"}
 ```{r}
 #| echo: true
+#| code-line-numbers: false
+#| eval: false
+
 mtcars |> 
-  nest(cyl_data = -cyl)
+  nest(.by = cyl)
 ```
 :::
 
 ::: {.column width="50%"}
 ```{r}
+#| code-line-numbers: false
+#| echo: false
+
 mtcars |> 
-  nest(cg_data = -c(cyl,gear))
+  nest(.by = cyl)
 ```
 :::
 :::
@@ -113,27 +347,57 @@ mtcars |>
 
 -   Specify the column(s) that contains the subsets.
 
+::: columns
+::: {.column width="40%"}
+::: {.small}
 ```{r}
 #| echo: true
+#| eval: false
+#| code-line-numbers: false
+
 mtcars |> 
-  nest(cyl_data = -cyl) |> 
-  unnest(cyl_data) |> 
-  head()
+  nest(.by = cyl) |> 
+  unnest(data) |> 
+  slice_head(n = 10)
 ```
+:::
+:::
 
+::: {.column width="5%"}
+:::
 
-### Plot
-
-Consider the samples simulated from each population.
-
+::: {.column width="55%"}
+::: {.small}
 ```{r}
 #| echo: false
-fake_ht_data <- expand_grid(mean_ht = seq(from = 60, to = 78, by = 6),
-                          std_ht  = c(3, 6)) |> 
-  mutate(ht_data = pmap(list(avg = mean_ht,
-                             std  = std_ht),
-                        ht_func)) |>
-  unnest(cols = c(ht_data))
+#| code-line-numbers: false
+
+mtcars |> 
+  nest(.by = cyl) |> 
+  unnest(data) |> 
+  slice_head(n = 10)
+```
+:::
+:::
+:::
+
+## Simulate Multiple Datasets - Step 5
+
+Plot the samples simulated from each population.
+
+::: {.small}
+```{r}
+#| echo: false
+#| code-line-numbers: false
+
+fake_ht_data <- crossing(mean_ht = seq(from = 60, to = 78, by = 6),
+         std_ht  = c(3, 6)
+         ) |> 
+ mutate(ht_data = pmap(.l = list(avg = mean_ht, std = std_ht), 
+                       .f = sim_ht
+                       )
+        ) |> 
+  unnest(cols = ht_data)
 ```
 
 ```{r}
@@ -141,101 +405,69 @@ fake_ht_data <- expand_grid(mean_ht = seq(from = 60, to = 78, by = 6),
 #| fig-width: 8
 #| fig-height: 4
 #| fig-align: center
+
 fake_ht_data |> 
-  ggplot(aes(x = ht)) +
+  mutate(across(.cols = mean_ht:std_ht, 
+                .fns = ~as.character(.x)), 
+         mean_ht = fct_recode(mean_ht, 
+                              `Mean = 60` = "60", 
+                              `Mean = 66` = "66", 
+                              `Mean = 72` = "72", 
+                              `Mean = 78` = "78"), 
+         std_ht = fct_recode(std_ht, 
+                             `Std = 3` = "3", 
+                             `Std = 6` = "6")
+         ) |> 
+  ggplot(mapping = aes(x = ht)) +
   geom_histogram(color = "white") +
   facet_grid(std_ht ~ mean_ht) +
   labs(x = "Height (in)",
        y = "",
-       subtitle = "Frequency",
-       title = "Simulated Height Data from 8 Populations")
+       subtitle = "Frequency of Observations",
+       title = "Simulated Heights from Eight Different Populations")
 ```
 :::
 
-## Draw a Random Sample
-
-Use `sample()` to take a random sample of values from a vector.
-
-```{r}
-my_vec <- c("dog", "cat", "bunny", "horse", "goat", "chicken")
-
-sample(x = my_vec, size = 3)
-
-set.seed(1)
-sample(x = my_vec, size = 5, replace = T)
-```
-
-
-## Draw a Random Sample
-
-Use `sample_n()` to take a random sample of observations (rows) from a dataset.
-
-```{r}
-fake_data |> 
-  sample_n(size = 3)
-```
-
-
-## Example: Birthday Simulation
-
-Suppose there is a group of 50 people.
-
-+ Simulate the approximate probability that at least two people have the same birthday (same day of the year, not considering year of birth or leap years).
-
-
-## Example: Birthday Simulation
-
-Write a function to ...
-
-+ ... simulate the birthdays of 50 people.
-+ ... count how many birthdays are shared.
-+ ... return whether or not a shared birthday exists.
-
-```{r}
-bDays <- function(n = 50){
-  bday_data <- tibble(person = 1:n,
-                      bday   = sample(1:365, size = n, replace = T))
-  
-  double_bdays <- bday_data |> 
-    count(bday) |> 
-    filter(n >= 2) |> 
-    nrow()
-  
-  return(double_bdays > 0)
-}
-```
-
-
-## Example: Birthday Simulation
-
-Use a `map()` function to simulate 1000 datasets.
-
-+ What proportion of these datasets contain at least two people with the same birthday?
-
-```{r}
-sim_results <- map_lgl(.x = 1:1000,
-                       .f = ~ bDays(n = 50))
-
-sum(sim_results)/1000
-```
-
-
-
-
-
 ## In-line Code
 
-We can automatically include code output in the written portion of a Quarto document using `` `r ` ``.
+We can automatically include code output in the written portion of a Quarto
+document using `` `r` ``.
 
-+ This ensures reproducibility when you have results from a random generation process.
+. . .
+
+</br> 
 
 ```{r}
+#| code-line-numbers: false
+
 my_rand <- rnorm(1, mean = 0, sd = 1)
 my_rand
 ```
 
-Type this: `` My random number is `r knitr::inline_expr("my_rand")`. ``
+</br> 
+
+Type this: My random number is `` `r knitr::inline_expr("my_rand")` ``.
 
 To get this: My random number is `r my_rand`.
 
-# [Lab 9: Baby Names](https://zoerehnberg.github.io/STAT331-S23/lab_assignments/lab9/LA9_regression.html)
+# [Lab 9: Data Simulation Exploration](../../labs/instructions/lab-9-instructions.qmd)
+
+- One **required** probability simulation
+- One *optional* dataset simulation
+
+# [Challenge 9: Formatting Nice Tables](../../labs/instructions/challenge-9-instructions.qmd)
+
+- Change tables from Lab 8 using `kable()`
+- Change table(s) from Lab 9 using `gt()`
+
+# [Survey on Experiences in STAT 331 / 531](https://forms.gle/wtXGQTFq5yzrX32W6)
+
+::: {.midi}
+Anonymous Google Form: <https://forms.gle/wtXGQTFq5yzrX32W6>
+:::
+
+. . .
+
+::: {.midi}
+> If we get an 85% completion rate I will bring pizza to class next Thursday. 
+:::
