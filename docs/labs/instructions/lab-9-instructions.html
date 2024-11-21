@@ -420,7 +420,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#random-babies-simulation" id="toc-random-babies-simulation" class="nav-link active" data-scroll-target="#random-babies-simulation">Random Babies Simulation</a></li>
-  <li><a href="#central-limit-theorem" id="toc-central-limit-theorem" class="nav-link" data-scroll-target="#central-limit-theorem">Central Limit Theorem</a></li>
+  <li><a href="#central-limit-theorem-optional-somewhat-spicy" id="toc-central-limit-theorem-optional-somewhat-spicy" class="nav-link" data-scroll-target="#central-limit-theorem-optional-somewhat-spicy">Central Limit Theorem – Optional &amp; Somewhat Spicy</a></li>
+  <li><a href="#challenge-9" id="toc-challenge-9" class="nav-link" data-scroll-target="#challenge-9">Challenge 9</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/groupworthy-data-science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -494,16 +495,46 @@ Tip
 </div>
 </div>
 </section>
-<section id="central-limit-theorem" class="level2">
-<h2 class="anchored" data-anchor-id="central-limit-theorem">Central Limit Theorem</h2>
+<section id="central-limit-theorem-optional-somewhat-spicy" class="level2">
+<h2 class="anchored" data-anchor-id="central-limit-theorem-optional-somewhat-spicy">Central Limit Theorem – Optional &amp; Somewhat Spicy</h2>
 <p>You have encountered the Central Limit Theorem in your previous statistics classes, whether or not is has been explicitly discussed. The Central Limit Theorem states that:</p>
 <blockquote class="blockquote">
 <p>The sampling distribution of the mean will always be normally distributed, as long as the sample size is large enough, regardless of the underlying distribution of the population.</p>
 </blockquote>
-<p>Remember back to your first statistics class when you had to check if the sample size was larger than 30 when testing if groups had different means? That’s because of the Central Limit Theorem! Under certain conditions (e.g., sample size) the Central Limit Theorem ensures that the distribution of sample means will be approximately Normal, which means that we can calculate a p-value using known properties of the Normal Distribution!</p>
-<p>Let’s explore the Central Limit Theorem a bit!</p>
-<p><strong>Write a function that simulates 100 observations from a Normal Distribution and outputs the mean of those observations. Your function should allow the user to input the mean and standard deviation of the Normal Distribution.</strong></p>
-<p><strong>Make a grid</strong></p>
+<p>Remember back to your first statistics class when you had to check if the sample size was larger than 30 when testing if groups had different means? That’s because of the Central Limit Theorem! Under certain conditions (e.g., sample size) the Central Limit Theorem ensures that the distribution of sample means will be approximately Normal, regardless of how skewed the underlying distribution of the population may be.</p>
+<p>A fundamental misunderstanding of the Central Limit Theorem is that it states that as a sample size gets larger, the population will be normally distributed. This is not the case, so let’s do some exploring!</p>
+<p><strong>4. Write a function that simulates a specified number of sample means, for samples of size 100 drawn from a Chi-Squared distribution. Your function should allow the user to input:</strong></p>
+<ul>
+<li><strong>the number of means to simulate</strong></li>
+<li><strong>the degrees of freedom of the Chi-Squared distribution used to simulate data</strong></li>
+</ul>
+<p>I’ve provided some skeleton code to get you started. :)</p>
+<p><strong>5. Next, let’s use the <code>crossing()</code> function to make a grid with inputs we want to pass into the <code>simulate_means()</code> function. Specifically, we want to explore the following values:</strong></p>
+<ul>
+<li><strong><code>n</code> = 10, 100, 1000, 10000</strong></li>
+<li><strong><code>df</code> = 10</strong></li>
+</ul>
+<p><strong>6. Now, use a <code>p_map()</code> to create a new column of simulated means (using the <code>simulate_means()</code> function), for every value in your <code>grid</code>.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will want to use the <code>unnest()</code> function to extract the results of the <code>p_map()</code> (stored in the <code>simulated_means</code> column).</p>
+</div>
+</div>
+<p><strong>7. Create a table of the means from each of the simulations (10, 100, 1000, and 10000).</strong> Hint: Make sure your columns have descriptive names!</p>
+<p><strong>8. Create a plot showing the distribution of simulated means from each of the simulations. Each simulation (10, 100, 1000, and 10000) should be its own facet!</strong> Hint: Make sure your facets have descriptive names! You might also want to free the y-axis of the plots, since there are substantial differences in the sample sizes between the simulations.</p>
+<p><strong>For extra pizzaz, add a vertical line for true mean (for a Chi-Square the mean is the degrees of freedom).</strong></p>
+</section>
+<section id="challenge-9" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-9">Challenge 9</h2>
+<p>Instructions for the challenge can be found on the course website or through the link in Canvas!</p>
 
 
 <!-- -->
@@ -1141,41 +1172,39 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Random Babies Simulation</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Perhaps you have seen the <span class="co">[</span><span class="ot">Random Babies applet</span><span class="co">](https://www.rossmanchance.com/applets/2021/randombabies/RandomBabies.html)</span>? </span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Suppose one night at a hospital four babies are born. The hospital is not very</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>organized and looses track of which baby belongs to each parent(s), so they </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>decide to return the babies to parents at random. Here, we are interested in the</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>number of babies that are correctly returned to their respective parent(s).</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>**1. Simulate the distribution of the number of babies that are correctly returned. Use 10,000 simulations.**</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Random Babies Simulation</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Write a function to accomplish one simulation, then use <span class="in">`map_int()`</span> to run</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>10,000 simulations. </span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Keep in mind that your function needs to output a single number (not data frame) </span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>for it to be compatible with <span class="in">`map_int()`</span>!</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Perhaps you have seen the <span class="co">[</span><span class="ot">Random Babies applet</span><span class="co">](https://www.rossmanchance.com/applets/2021/randombabies/RandomBabies.html)</span>? </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Suppose one night at a hospital four babies are born. The hospital is not very</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>organized and looses track of which baby belongs to each parent(s), so they </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>decide to return the babies to parents at random. Here, we are interested in the</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>number of babies that are correctly returned to their respective parent(s).</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>**1. Simulate the distribution of the number of babies that are correctly returned. Use 10,000 simulations.**</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: function-simulation-for-random-babies</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>randomBabies <span class="ot">&lt;-</span> <span class="cf">function</span>(nBabies){</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">baby_mama =</span> <span class="dv">1</span><span class="sc">:</span>nBabies,</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>         <span class="at">returned_baby =</span> <span class="fu">sample</span>(baby_mama, <span class="dv">4</span>, <span class="at">replace =</span> F)</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">|&gt;</span> </span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">correct_baby =</span> <span class="fu">if_else</span>(baby_mama <span class="sc">==</span> returned_baby, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>           ) <span class="sc">|&gt;</span> </span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      <span class="at">ncorrect =</span> <span class="fu">sum</span>(correct_baby)</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>              ) <span class="sc">|&gt;</span> </span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(ncorrect)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>Write a function to accomplish one simulation, then use <span class="in">`map_int()`</span> to run</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>10,000 simulations. </span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Keep in mind that your function needs to output a single number (not data frame) </span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>for it to be compatible with <span class="in">`map_int()`</span>!</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: function-simulation-for-random-babies</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>randomBabies <span class="ot">&lt;-</span> <span class="cf">function</span>(nBabies){</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  ...</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">map_int</span>(<span class="at">.x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>,</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>                  <span class="at">.f =</span> <span class="sc">~</span> <span class="fu">randomBabies</span>(<span class="dv">4</span>)</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>                  <span class="at">.f =</span> </span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>                  )</span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
@@ -1222,7 +1251,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="fu">## Central Limit Theorem</span></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="fu">## Central Limit Theorem -- Optional &amp; Somewhat Spicy</span></span>
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>You have encountered the Central Limit Theorem in your previous statistics </span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>classes, whether or not is has been explicitly discussed. The Central Limit </span>
@@ -1236,65 +1265,80 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>sample size was larger than 30 when testing if groups had different means? </span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>That's because of the Central Limit Theorem! Under certain conditions </span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>(e.g., sample size) the Central Limit Theorem ensures that the distribution </span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>of sample means will be approximately Normal, which means that we can calculate</span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>a p-value using known properties of the Normal Distribution! </span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>of sample means will be approximately Normal, regardless of how skewed the </span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>underlying distribution of the population may be. </span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>Let's explore the Central Limit Theorem a bit! </span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>**Write a function that simulates 100 observations from a Normal Distribution and outputs the mean of those observations. Your function should allow the user to input the mean and standard deviation of the Normal Distribution.**</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>A fundamental misunderstanding of the Central Limit Theorem is that it states </span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>that as a sample size gets larger, the population will be normally distributed. </span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>This is not the case, so let's do some exploring!  </span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>simulate_norm_means <span class="ot">&lt;-</span> <span class="cf">function</span>(mean, sd){</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>simulate_norm_means <span class="ot">&lt;-</span> <span class="cf">function</span>(n, mean, sd){</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_dbl</span>(<span class="at">.x =</span> <span class="dv">1</span><span class="sc">:</span>n, </span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>          <span class="at">.f =</span> <span class="sc">~</span><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">mean =</span> mean, <span class="at">sd =</span> sd) <span class="sc">|&gt;</span> <span class="fu">mean</span>()</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>          )</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>**4. Write a function that simulates a specified number of sample means, for samples of size 100 drawn from a Chi-Squared distribution. Your function should allow the user to input:**</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**the number of means to simulate**</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**the degrees of freedom of the Chi-Squared distribution used to simulate data** </span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>I've provided some skeleton code to get you started. :) </span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>simulate_means <span class="ot">&lt;-</span> <span class="cf">function</span>(n, df){</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_dbl</span>(<span class="at">.x =</span> , </span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>          <span class="at">.f =</span> <span class="sc">~</span><span class="fu">rchisq</span>(<span class="at">n =</span> <span class="dv">100</span>, ...) <span class="sc">%&gt;%</span> <span class="fu">mean</span>()</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>**5. Next, let's use the `crossing()` function to make a grid with inputs we want to pass into the `simulate_means()` function. Specifically, we want to explore the following values:**</span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>**Make a grid**</span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>all_sims <span class="ot">&lt;-</span> <span class="fu">crossing</span>(<span class="at">n =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>), </span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>         <span class="at">mean =</span> <span class="dv">5</span>, </span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>         <span class="at">sd =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">simulated_means =</span> <span class="fu">pmap</span>(<span class="at">.l =</span> <span class="fu">list</span>(<span class="at">n =</span> n, </span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">mean =</span> mean, </span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">sd =</span> sd), </span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>                                <span class="at">.f =</span> simulate_norm_means)</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">|&gt;</span> </span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(<span class="at">cols =</span> simulated_means) <span class="sc">|&gt;</span> </span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">sample_size =</span> n) <span class="sc">|&gt;</span> </span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample_size =</span> <span class="fu">as.factor</span>(sample_size), </span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>         <span class="at">sample_size =</span> <span class="fu">fct_recode</span>(sample_size, </span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">`</span><span class="at">10 Means from 100 draws from a Normal Distribution</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"10"</span>, </span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">`</span><span class="at">100 Means from 100 draws from a Normal Distribution</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"100"</span>, </span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">`</span><span class="at">1,000 Means from 100 draws from a Normal Distribution</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"1000"</span>, </span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">`</span><span class="at">10,000 Means from 100 draws from a Normal Distribution</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"10000"</span>), </span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>         <span class="fu">fct_relevel</span>(sample_size, </span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"10 Means from 100 draws from a Normal Distribution"</span>, </span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"100 Means from 100 draws from a Normal Distribution"</span>, </span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"1,000 Means from 100 draws from a Normal Distribution"</span>, </span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"10,000 Means from 100 draws from a Normal Distribution"</span>)</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>         )</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span>**`n` = 10, 100, 1000, 10000**</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span>**`df` = 10**</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>grid <span class="ot">&lt;-</span> <span class="fu">crossing</span>(<span class="at">n =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>), </span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>                 <span class="at">df =</span> <span class="dv">5</span>)</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>**6. Now, use a `p_map()` to create a new column of simulated means (using the `simulate_means()` function), for every value in your `grid`.**</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>You will want to use the <span class="in">`unnest()`</span> function to extract the results of the</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="in">`p_map()`</span> (stored in the <span class="in">`simulated_means`</span> column). </span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>all_simulations <span class="ot">&lt;-</span> grid <span class="sc">|&gt;</span> </span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">simulated_means =</span> <span class="fu">pmap</span>(<span class="at">.l =</span> <span class="fu">list</span>(), </span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>                                <span class="at">.f =</span> simulate_means)</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">|&gt;</span> </span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>() </span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>**7. Create a table of the means from each of the simulations (10, 100, 1000, and 10000).** </span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>Hint: Make sure your columns have descriptive names!</span>
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> all_sims, </span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> simulated_means)) <span class="sc">+</span></span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sample_size, </span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>             <span class="at">scales =</span> <span class="st">"free_y"</span>)</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: table-of-simulated Means</span></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>**8. Create a plot showing the distribution of simulated means from each of the simulations. Each simulation (10, 100, 1000, and 10000) should be its own facet!**</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>Hint: Make sure your facets have descriptive names! You might also want to free</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>the y-axis of the plots, since there are substantial differences in the sample</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>sizes between the simulations. </span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>**For extra pizzaz, add a vertical line for true mean (for a Chi-Square the mean is the degrees of freedom).**</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: plot-of-simulated Means</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="fu">## Challenge 9</span></span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>Instructions for the challenge can be found on the course website or through </span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>the link in Canvas! </span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -13,6 +13,12 @@ execute:
   warning: false
 ---
 
+```{r}
+#| label: setup
+
+
+```
+
 ## Random Babies Simulation
 
 Perhaps you have seen the [Random Babies applet](https://www.rossmanchance.com/applets/2021/randombabies/RandomBabies.html)? 
@@ -35,19 +41,11 @@ for it to be compatible with `map_int()`!
 #| label: function-simulation-for-random-babies
 
 randomBabies <- function(nBabies){
-  tibble(baby_mama = 1:nBabies,
-         returned_baby = sample(baby_mama, 4, replace = F)
-         ) |> 
-    mutate(correct_baby = if_else(baby_mama == returned_baby, TRUE, FALSE)
-           ) |> 
-    summarize(
-      ncorrect = sum(correct_baby)
-              ) |> 
-    pull(ncorrect)
+  ...
 }
 
 results <- map_int(.x = 1:10000,
-                  .f = ~ randomBabies(4)
+                  .f = 
                   )
 ```
 
@@ -148,24 +146,21 @@ You will want to use the `unnest()` function to extract the results of the
 :::
 
 ```{r}
-all_simulations <- grid %>% 
-  
-  mutate(simulated_means = pmap(.l = list(n = n, 
-                                          mean = mean, 
-                                          sd = sd), 
-                                .f = simulate_norm_means)
+all_simulations <- grid |> 
+  mutate(simulated_means = pmap(.l = list(), 
+                                .f = simulate_means)
          ) |> 
-  unnest(cols = simulated_means) 
+  unnest() 
 
 ```
 
-**7. Create a table of the means from each of the simulations (10, 100, 1000, and 10000).** Hint: Make sure your columns have descriptive names!
+**7. Create a table of the means from each of the simulations (10, 100, 1000, and 10000).** 
+Hint: Make sure your columns have descriptive names!
 
 ```{r}
-all_simulations |>
-  group_by(n) %>% 
-  summarise(sim_mean = mean(simulated_means)) %>% 
-  pivot_wider(names_from = n, values_from = sim_mean)
+#| label: table-of-simulated Means
+
+
 ```
 
 **8. Create a plot showing the distribution of simulated means from each of the simulations. Each simulation (10, 100, 1000, and 10000) should be its own facet!**
@@ -173,29 +168,16 @@ Hint: Make sure your facets have descriptive names! You might also want to free
 the y-axis of the plots, since there are substantial differences in the sample
 sizes between the simulations. 
 
-```{r}
-  rename(sample_size = n) |> 
-  mutate(sample_size = as.factor(sample_size), 
-         sample_size = fct_recode(sample_size, 
-                                  `10 Means from 100 draws from a Normal Distribution` = "10", 
-                                  `100 Means from 100 draws from a Normal Distribution` = "100", 
-                                  `1,000 Means from 100 draws from a Normal Distribution` = "1000", 
-                                  `10,000 Means from 100 draws from a Normal Distribution` = "10000"), 
-         fct_relevel(sample_size, 
-                     "10 Means from 100 draws from a Normal Distribution", 
-                     "100 Means from 100 draws from a Normal Distribution", 
-                     "1,000 Means from 100 draws from a Normal Distribution", 
-                     "10,000 Means from 100 draws from a Normal Distribution")
-         )
-```
-
+**For extra pizzaz, add a vertical line for true mean (for a Chi-Square the mean is the degrees of freedom).**
 
 ```{r}
-ggplot(data = all_sims, 
-       mapping = aes(x = simulated_means)) +
-  geom_histogram(binwidth = 0.05) +
-  facet_wrap(~ sample_size, 
-             scales = "free_y")
+#| label: plot-of-simulated Means
+
+
 ```
 
+## Challenge 9
+
+Instructions for the challenge can be found on the course website or through 
+the link in Canvas! 
 
