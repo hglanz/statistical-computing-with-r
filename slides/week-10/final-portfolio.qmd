@@ -20,55 +20,34 @@ None of the lab assignements had a setting where a `full_join()` was appropriate
 -   find 1-2 **high quality** examples (quality \> quantity)
 -   find examples that hit on **multiple** learning targets at the same time
 
-<!-- ## For example.. -->
+## For example...
 
-<!-- ::: {.small} -->
-<!-- the code below could be used to demonstrate proficiency -->
-<!-- with:  -->
+::: {.small}
+the code below could be used to demonstrate proficiency
+with:
 
-<!-- ::: columns -->
-<!-- ::: {.column width="45%"} -->
-<!-- - WD-2 -- in two places (`select()` and `starts_with()`)! -->
-<!-- - WD-7 -->
-<!-- ::: -->
+- PE-2 (writing functions)
+- R-2 (well documented code)
+- DSSM-1 (simulating data)
 
-<!-- ::: {.column width="5%"} -->
-<!-- ::: -->
+```{r}
+#| echo: true
+#| eval: false
+#| label: example-student-code
+#| code-line-numbers: false
 
-<!-- ::: {.column width="50%"} -->
-<!-- - WD-4 -->
-<!-- - R-2 (tidy code) -->
-<!-- - PE-4 (the `|>` is a "modern tool") -->
-
-<!-- ::: -->
-<!-- ::: -->
-
-<!-- ```{r} -->
-<!-- #| echo: true -->
-<!-- #| eval: false -->
-<!-- #| label: example-student-code -->
-<!-- #| code-line-numbers: false -->
-
-<!-- ca_childcare |> -->
-<!--   select(study_year, -->
-<!--          mc_infant, -->
-<!--          mc_toddler, -->
-<!--          mc_preschool, -->
-<!--          region -->
-<!--          ) |> -->
-<!--   pivot_longer(cols = starts_with("mc_"),  -->
-<!--                names_to = "age",  -->
-<!--                values_to = "median_income" -->
-<!--                ) |>  -->
-<!--   mutate(age = fct_relevel(age,  -->
-<!--                           "mc_infant", -->
-<!--                           "mc_toddler", -->
-<!--                           "mc_preschool") -->
-<!--         ) |>  -->
-<!--   knitr::kable() |>  -->
-<!--   kableExtra::kable_styling(bootstrap_options = "striped") -->
-<!-- ``` -->
-<!-- ::: -->
+randomBabies <- function(nBabies) {
+  # Create a vector representing the parents
+  parents <- 1:nBabies
+  
+  # Shuffle the babies randomly
+  babies <- sample(parents)
+  
+  # Count how many babies are correctly returned
+  sum(parents == babies)
+}
+```
+:::
 
 # Creativity
 
