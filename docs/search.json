@@ -3013,7 +3013,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\nData Joins + Pivots\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\nWorking with Categorical Variables\nExtending Joins, Factors, Clean Variable Names\nPA4 Due by 12pm\nLab 4 Instructions\nLink to Assignmenton GitHub Classroom Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\nUsing stringr to Work with Strings\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\nUsing lubridate to Work with Dates\nPA5 Due by 12pm\nLab 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nPortfolio Week!\nTips for Starting Your Portfolio\n\n\nMidterm Portfolio Targets & Grade Expectations\n\n\n\nThurs, 10/31\nPortfolio Week!\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own simple (vector) functions\nWriting Vector Functions\n\n\n\n\n\n\nThurs, 11/7\nWriting your own dataframe functions\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\nIntroduction to Iteration\n\n\n\n\n\n\nThurs, 11/14\n\nCool Plots & Searching for Efficiency\n\nLab 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nSimulating Data\nSimulating Data in R\n\n\n\n\n\n\nThurs, 11/21\n\nSimulating Probabilities & Datasets\n\nLab 9 Instructions\nChallenge 9 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nIntro to Webscraping\n\n\n\n\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic & Preview Activities\nLecture Slides\nPractice Activity\nLab & Challenge\nPortfolio\n\n\n\n\n0\nMon, 9/23\nCourse Set-up\n\n\n\n\n\n\n1\nTues, 9/24\nIntro to R & RStudio\nIntro to Quarto\nWelcome to STAT 331 & Intro to R\nBroken Circles Group Warm-up\nCreating Pair Programming Norms\nData Cleaning, Visualization Puzzle\n\n\n\n\n\nThurs, 9/26\nIntro to Version Control\nIntro to Quarto & Version Control\n\nLab 1 & Challenge 1 Instructions\nLink to Assignment on GitHub Classroom (due 9/29)\n\n\n\n2\nTuesday, 10/1\nData Visualization with ggplot2\nData Import & R Projects\nBasics of Graphics\nLook for email from Posit Cloud to access PA2\n\n\n\n\n\nThurs, 10/3\n\nTidy Data, Importing Data & More Advanced Graphics\nPA 2 Due by 12pm\nLab 2 Instructions\nChallenge 2 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSun, 10/6\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n3\nTues, 10/8\nData Wrangling with dplyr\nData Wrangling with dplyr\nLook for email from Posit Cloud to access PA3\n\n\n\n\n\nThurs, 10/10\n\nExtending Data Wrangling Verbs\nPA3 Due by 12pm\nLab 3 Instructions\nChallenge 3 Instructions\nLink to Assignment on GitHub Classroom\n\n\n\n\nSunday, 10/13\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\nLab 2 Peer Code Review Due (Guidelines)\n\n\n\n4\nTues, 10/15\nData Joins and Transformations with tidyr\nData Joins + Pivots\nLook for email from Posit Cloud to access PA4\n\n\n\n\n\nThurs, 10/17\nWorking with Categorical Variables\nExtending Joins, Factors, Clean Variable Names\nPA4 Due by 12pm\nLab 4 Instructions\nLink to Assignmenton GitHub Classroom Repository\n\n\n\n\nSun, 10/20\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm\nLab 3 Peer Code Review Due (Guidelines)\n\n\n\n5\nTues, 10/22\nWorking with Strings\nUsing stringr to Work with Strings\nLook for email from Posit Cloud to access PA5\n\n\n\n\n\nThurs, 10/24\nWorking with Dates\nUsing lubridate to Work with Dates\nPA5 Due by 12pm\nLab 5 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 10/27\n\n\n\nLab 5 & Challenge 5 Due by 11:59pm\nLab 4 Peer Code Review Due (Guidelines)\n\n\n\n6\nTues, 10/29\nPortfolio Week!\nTips for Starting Your Portfolio\n\n\nMidterm Portfolio Targets & Grade Expectations\n\n\n\nThurs, 10/31\nPortfolio Week!\n\n\n\nPortfolio Instructions\n\n\n\nSun, 11/3\n\n\n\nLab 5 Peer Code Review Due (Guidelines)\nMidterm Portfolio Due\n\n\n7\nTues, 11/5\nWriting your own simple (vector) functions\nWriting Vector Functions\n\n\n\n\n\n\nThurs, 11/7\nWriting your own dataframe functions\n\n\nLab 7 Instructions\nChallenge 7 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/10\n\n\n\nLab 7 & Challenge 7 Due by 11:59pm\n\n\n\n8\nTues, 11/12\nIntroduction to Iteration\nIntroduction to Iteration\n\n\n\n\n\n\nThurs, 11/14\n\nCool Plots & Searching for Efficiency\n\nLab 8 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/17\n\n\n\nLab 8 & Challenge 8 Due by 11:59pm\nLab 7 Peer Code Review Due (Guidelines)\n\n\n\n9\nTues, 11/19\nSimulating Data\nSimulating Data in R\n\n\n\n\n\n\nThurs, 11/21\n\nSimulating Probabilities & Datasets\n\nLab 9 Instructions\nChallenge 9 Instructions\nLink to GitHub Repository\n\n\n\n\nSun, 11/24\n\n\n\nLab 9 & Challenge 9 Due by 11:59pm\nLab 8 Peer Code Review Due (Guidelines)\n\n\n\n10\nFall Break\n\n\n\n\n\n\n\n11\nTues, 12/3\nPortfolio Party\nGuidance on Final Portfolios\n\n\nPortfolio Instructions\nList of Every Learning Target\n\n\n\nThurs, 12/5\nPortfolio Party\n\n\nLab 9 Peer Code Review Due (Guidelines)\n\n\n\n\nSat, 12/7\n\n\n\n\nFinal Portfolio Due\n\n\nFinals Week\nMon, 12/9, 10:10am - 1pm\n10-minute Portfolio Conferences",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -5847,5 +5847,61 @@
     "title": "Simulating Probabilities & Datasets",
     "section": "Using Function to Simulate Many Probabilities",
     "text": "Using Function to Simulate Many Probabilities\nUse a map() function to simulate 1000 datasets.\n\n\nsim_results &lt;- map_lgl(.x = 1:1000,\n                       .f = ~ get_shared_birthdays(n = 50))\n\n\n\n\n\nWhat proportion of these datasets contain at least two people with the same birthday?\n\n\n\nsum(sim_results) / 1000\n\n[1] 0.965"
+  },
+  {
+    "objectID": "slides/week-10/final-portfolio.html#when-locating-code",
+    "href": "slides/week-10/final-portfolio.html#when-locating-code",
+    "title": "Final Portfolio Week",
+    "section": "When locating code…",
+    "text": "When locating code…\n\nfind 1-2 high quality examples (quality &gt; quantity)\nfind examples that hit on multiple learning targets at the same time"
+  },
+  {
+    "objectID": "slides/week-10/final-portfolio.html#includes-thoughtful-reflections-on-why-revisions-are-being-requested.",
+    "href": "slides/week-10/final-portfolio.html#includes-thoughtful-reflections-on-why-revisions-are-being-requested.",
+    "title": "Final Portfolio Week",
+    "section": "“Includes thoughtful reflections on why revisions are being requested.”",
+    "text": "“Includes thoughtful reflections on why revisions are being requested.”\n\nFeel free to include reflections you are proud of!"
+  },
+  {
+    "objectID": "slides/week-10/final-portfolio.html#determining-your-grade-1",
+    "href": "slides/week-10/final-portfolio.html#determining-your-grade-1",
+    "title": "Final Portfolio Week",
+    "section": "Determining Your Grade",
+    "text": "Determining Your Grade\n\nI believe my grade equivalent to course work evidenced below to be an __.\n\n\nYour goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content proficiency, evidence of continued learning, and growth as a team member that goes with a particular grade."
+  },
+  {
+    "objectID": "slides/week-10/final-portfolio.html#plus-minus-modifiers",
+    "href": "slides/week-10/final-portfolio.html#plus-minus-modifiers",
+    "title": "Final Portfolio Week",
+    "section": "Plus / Minus Modifiers",
+    "text": "Plus / Minus Modifiers\n\n\n\n+\n\nYou’ve met all the criteria for the letter grade along with a significant amount, but not all, of the criteria for the next letter grade up.\n\n\n\n\n\n\n-\n\nYou have met the requirements for a letter grade but only in a way that you believe is a bare minimum.\nYou’ve met almost all the requirements for the letter grade except for a small number of minor criteria."
+  },
+  {
+    "objectID": "slides/week-10/final-portfolio.html#what-if-you-dont-agree",
+    "href": "slides/week-10/final-portfolio.html#what-if-you-dont-agree",
+    "title": "Final Portfolio Week",
+    "section": "What if you don’t agree?",
+    "text": "What if you don’t agree?\nThere are two ways this might happen.\n\n\n\n\nYou ask for a grade that is higher than the evidence supports.\n\n\nThat is, you grade yourself too highly. For example, you believe you earned an A in the course, but I do not feel the evidence you’ve provided supports this grade.\n\n\nIn this case, I’ll ask you to explain how you would modify a portion of the code you’ve included in your portfolio to be more efficient.\n\n\n\n\n\n\n\n\n\nIf your response communicates that you understand this key concept, I will award you the grade you proposed.\n\n\nIf your response communicates that you do not understand this key concept, I will award you the highest grade I believe the evidence in your portfolio supports."
+  },
+  {
+    "objectID": "slides/week-10/final-portfolio.html#what-if-we-dont-agree",
+    "href": "slides/week-10/final-portfolio.html#what-if-we-dont-agree",
+    "title": "Final Portfolio Week",
+    "section": "What if we don’t agree?",
+    "text": "What if we don’t agree?\nThere are two ways this might happen.\n\n\n\n\nYou ask for a grade that is higher than the evidence supports.\n\n\nThat is, you grade yourself too highly. For example, you believe you earned an A in the course, but I do not feel the evidence you’ve provided supports this grade.\n\n\nIn this case, I’ll ask you to explain how you would modify a portion of the code you’ve included in your portfolio to be more efficient.\n\n\n\n\n\n\n\n \n\n\nIf your response communicates that you understand this key concept, I will award you the grade you proposed.\n\n \n\nIf your response communicates that you do not understand this key concept, I will award you the highest grade I believe the evidence in your portfolio supports."
+  },
+  {
+    "objectID": "slides/week-10/final-portfolio.html#what-if-we-dont-agree-1",
+    "href": "slides/week-10/final-portfolio.html#what-if-we-dont-agree-1",
+    "title": "Final Portfolio Week",
+    "section": "What if we don’t agree?",
+    "text": "What if we don’t agree?\n\n\n\nYou ask for a grade that was lower than your actual performance indicates.\n\n\n\n\nThat is, you “lowball” yourself, for example you say you earned a B+ when in fact I think you earned an A-.\n\n\n\n\n\n  \n\n\nIn this case, I will tell you what grade I believe you have earned and why."
+  },
+  {
+    "objectID": "slides/week-10/final-portfolio.html#modification-to-learning-targets",
+    "href": "slides/week-10/final-portfolio.html#modification-to-learning-targets",
+    "title": "Final Portfolio Week",
+    "section": "Modification to Learning Targets",
+    "text": "Modification to Learning Targets\nNone of the lab assignements had a setting where a full_join() was appropriate.\n\nRemove the full_join() section of your reflection_template.qmd file"
   }
 ]

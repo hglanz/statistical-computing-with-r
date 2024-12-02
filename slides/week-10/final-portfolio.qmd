@@ -1,0 +1,259 @@
+---
+title: "Final Portfolio Week"
+format: 
+  revealjs:
+      theme: [simple, ../style.scss]
+      auto-stretch: false
+editor: source
+execute:
+  echo: true
+---
+
+## Modification to Learning Targets
+
+None of the lab assignements had a setting where a `full_join()` was appropriate.
+
+> Remove the `full_join()` section of your `reflection_template.qmd` file
+
+## When locating code...
+
+-   find 1-2 **high quality** examples (quality \> quantity)
+-   find examples that hit on **multiple** learning targets at the same time
+
+<!-- ## For example.. -->
+
+<!-- ::: {.small} -->
+<!-- the code below could be used to demonstrate proficiency -->
+<!-- with:  -->
+
+<!-- ::: columns -->
+<!-- ::: {.column width="45%"} -->
+<!-- - WD-2 -- in two places (`select()` and `starts_with()`)! -->
+<!-- - WD-7 -->
+<!-- ::: -->
+
+<!-- ::: {.column width="5%"} -->
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- - WD-4 -->
+<!-- - R-2 (tidy code) -->
+<!-- - PE-4 (the `|>` is a "modern tool") -->
+
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- ```{r} -->
+<!-- #| echo: true -->
+<!-- #| eval: false -->
+<!-- #| label: example-student-code -->
+<!-- #| code-line-numbers: false -->
+
+<!-- ca_childcare |> -->
+<!--   select(study_year, -->
+<!--          mc_infant, -->
+<!--          mc_toddler, -->
+<!--          mc_preschool, -->
+<!--          region -->
+<!--          ) |> -->
+<!--   pivot_longer(cols = starts_with("mc_"),  -->
+<!--                names_to = "age",  -->
+<!--                values_to = "median_income" -->
+<!--                ) |>  -->
+<!--   mutate(age = fct_relevel(age,  -->
+<!--                           "mc_infant", -->
+<!--                           "mc_toddler", -->
+<!--                           "mc_preschool") -->
+<!--         ) |>  -->
+<!--   knitr::kable() |>  -->
+<!--   kableExtra::kable_styling(bootstrap_options = "striped") -->
+<!-- ``` -->
+<!-- ::: -->
+
+# Creativity
+
+. . .
+
+Here are some places where you can demonstrate creativity in a visualization:
+
+- colors
+- removing a legend 
+  * (annotations or colors in title)
+- non-standard plot layout
+  * **not** non-standard plots (e.g., heatmaps)
+
+# Creativity
+
+. . .
+
+Here are some places where you can demonstrate creativity in a table:
+
+- font
+- shading
+- border
+- table title / subtitle
+- spanner labels
+- footnotes / source notes
+
+# Revising Your Thinking
+
+## "Includes thoughtful reflections on why revisions are being requested."
+
+> Feel free to include reflections you are proud of! 
+
+# Extending Your Thinking
+
+> You are making an argument about how you have extended your 
+> thinking---"pushing yourself" looks different for everyone, but you need 
+> to justify why your code went above and beyond. 
+
+# Determining Your Grade
+
+## Determining Your Grade
+
+> I believe my grade equivalent to course work evidenced below to be an __.
+
+. . .
+
+Your goal is to argue, convincingly and with concrete evidence, that you have
+met the criteria for both content proficiency, evidence of continued learning, 
+and growth as a team member that goes with a particular grade. 
+
+## Plus / Minus Modifiers
+
+::: columns
+::: {.column width="48%"}
+::: {.fragment}
+**+**
+
+- You’ve met all the criteria for the letter grade along with a significant
+amount, but not all, of the criteria for the next letter grade up. 
+:::
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+::: {.fragment}
+**-** 
+
+- You have met the requirements for a letter grade but only in a way that you
+believe is a bare minimum. 
+- You’ve met almost all the requirements for the letter grade except for a small
+number of minor criteria.
+:::
+:::
+:::
+
+
+## What if we don't agree?
+
+There are two ways this might happen.
+
+
+::: columns
+::: {.column width="48%"}
+:::{.fragment}
+::: {.small}
+***You ask for a grade that is higher than the evidence supports.***
+
+</br>
+
+::: {.fragment}
+That is, you grade yourself too highly. For example, you believe you earned an A
+in the course, but I do not feel the evidence you’ve provided supports this
+grade.
+
+</br>
+
+::: {.fragment}
+In this case, I’ll ask you to explain how you would modify a portion of the 
+code you've included in your portfolio to be more efficient. 
+:::
+:::
+:::
+:::
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+
+</br>
+</br> 
+
+::: {.small}
+::: {.fragment}
+If your response communicates that you understand this key concept, I will award
+you the grade you proposed. 
+:::
+
+</br> 
+</br> 
+
+::: {.fragment}
+If your response communicates that you **do not** understand this key concept, I 
+will award you the highest grade I believe the evidence in your portfolio 
+supports. 
+:::
+:::
+:::
+:::
+
+## What if we don't agree?
+
+::: columns
+::: {.column width="40%"}
+::: {.small}
+***You ask for a grade that was lower than your actual performance indicates.***
+:::
+
+</br>
+
+:::{.fragment}
+::: {.small}
+That is, you "lowball" yourself, for example you say you earned a B+ when in 
+fact I think you earned an A-.
+:::
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+
+</br>
+</br>
+</br>
+
+::: {.fragment}
+::: {.small}
+In this case, I will tell you what grade I believe you have earned and why.
+:::
+:::
+:::
+:::
+
+
+# Final Portfolio Meetings
+
+. . .
+
+> Will occur from 9am - 4pm on Tuesday of Finals Week.  
+> (1-4pm is our original exam time)
+
+. . .
+
+</br> 
+
+Sign-up for your time here: [link to Google Sheet](https://docs.google.com/spreadsheets/d/1NT73H9sA57jiASJUjuCOHxf6EhXTmCCy0IPLXAycbXE/edit?usp=sharing)
+
+::: {.callout-warning}
+# The sign-up will close at 5pm on Thursday.
+:::
+
+
+
