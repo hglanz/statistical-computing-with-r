@@ -9,9 +9,35 @@ execute:
   echo: true
 ---
 
+# Lab 8 Peer Review
+
+> Past due! 
+
+# Lab 9 Peer Review
+
+> Due by Wednesday! 
+
+# Creativity in Tables
+
+## Think about Font
+
+![](images/tab-with-different-fonts.png){fig-alt="A table of proportions of correctly returned babies (from last week's lab assignment on simulating data). The table uses times new roman (a serif) font for the title and calibri (a sanserif font) for the body. The use of different fonts in different places makes the table less visually appealing."}
+
+## Make Your Font Consistent
+
+![](images/tab-with-same-font.png){fig-alt="A table of proportions of correctly returned babies (from last week's lab assignment on simulating data). The table uses calibri (a san serif font) for both the title of the table and the body of the table. The use of a consistent font makes the table more visually appealing."}
+
+. . .
+
+::: {.callout-tip}
+# San serif fonts (e.g., calibri, arial) are more accessible than serif fonts (e.g., times new roman).
+:::
+
 ## Modification to Learning Targets
 
-None of the lab assignements had a setting where a `full_join()` was appropriate.
+</br>
+
+None of the lab assignments had a setting where a `full_join()` was appropriate.
 
 > Remove the `full_join()` section of your `reflection_template.qmd` file
 

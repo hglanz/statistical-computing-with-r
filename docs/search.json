@@ -5902,7 +5902,7 @@
     "href": "slides/week-10/final-portfolio.html#modification-to-learning-targets",
     "title": "Final Portfolio Week",
     "section": "Modification to Learning Targets",
-    "text": "Modification to Learning Targets\nNone of the lab assignements had a setting where a full_join() was appropriate.\n\nRemove the full_join() section of your reflection_template.qmd file"
+    "text": "Modification to Learning Targets\n\nNone of the lab assignments had a setting where a full_join() was appropriate.\n\nRemove the full_join() section of your reflection_template.qmd file"
   },
   {
     "objectID": "slides/week-10/final-portfolio.html#for-example..",
@@ -5917,5 +5917,26 @@
     "title": "Final Portfolio Week",
     "section": "For example…",
     "text": "For example…\n\nthe code below could be used to demonstrate proficiency with:\n\nPE-2 (writing functions)\nR-2 (well documented code)\nDSSM-1 (simulating data)\n\n\nrandomBabies &lt;- function(nBabies) {\n  # Create a vector representing the parents\n  parents &lt;- 1:nBabies\n  \n  # Shuffle the babies randomly\n  babies &lt;- sample(parents)\n  \n  # Count how many babies are correctly returned\n  sum(parents == babies)\n}"
+  },
+  {
+    "objectID": "slides/week-10/final-portfolio.html#think-about-font",
+    "href": "slides/week-10/final-portfolio.html#think-about-font",
+    "title": "Final Portfolio Week",
+    "section": "Think about Font",
+    "text": "Think about Font"
+  },
+  {
+    "objectID": "slides/week-10/final-portfolio.html#make-your-table-consistent",
+    "href": "slides/week-10/final-portfolio.html#make-your-table-consistent",
+    "title": "Final Portfolio Week",
+    "section": "Make Your Table Consistent",
+    "text": "Make Your Table Consistent"
+  },
+  {
+    "objectID": "slides/week-10/final-portfolio.html#make-your-font-consistent",
+    "href": "slides/week-10/final-portfolio.html#make-your-font-consistent",
+    "title": "Final Portfolio Week",
+    "section": "Make Your Font Consistent",
+    "text": "Make Your Font Consistent\n\n\n\n\n\n\n\n\nSan serif fonts (e.g., calibri, arial) are more accessible than serif fonts (e.g., times new roman)."
   }
 ]
