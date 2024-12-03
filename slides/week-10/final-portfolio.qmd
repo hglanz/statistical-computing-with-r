@@ -260,5 +260,13 @@ Sign-up for your time here: [link to Google Sheet](https://docs.google.com/sprea
 # The sign-up will close at 5pm on Thursday.
 :::
 
+## Final Portfolio Deadline
 
+The link to your Final Portfolio repository is due by Sunday at 11:59pm. 
+
+::: {.callout-warning}
+# Deadline extensions will not be accepted. 
+
+If you do not submit a Final Portfolio by the deadline, [I will use your Midterm Portfolio as well as completion of assignments from Week 7 - 10 to guide my decision.](https://atheobold.github.io/groupworthy-data-science/portfolio/portfolio-instructions.html#q-what-if-you-do-not-submit-a-final-portfolio)
+:::
 
