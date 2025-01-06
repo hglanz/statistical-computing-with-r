@@ -370,7 +370,7 @@ checking the Canvas page on a regular basis.
 There is an abundance of free online resources for learning programming and R. Our primary resource will be the text linked above. However,
 there is a compilation of various other resources that I can happily endorse. These are listed below.
 
--   <https://manncz.github.io/stat331-calpoly-text/>.
+-   <https://manncz.github.io/stat331-calpoly-text/
 
 This text was constructed by [Dr. Emily Robinson](https://github.com/earobinson95) and was modified from material by [Dr. Susan
 VanderPlas](https://github.com/srvanderplas). See [Statistical Computing
