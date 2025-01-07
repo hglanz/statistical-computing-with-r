@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -36,12 +36,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dd01fc8b47943ccb281ee7996e9eafb5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-760729c915d1dde12ab269fcb4c0541b.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -409,22 +409,14 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><a href="hhttps://statistics.calpoly.edu/allison-theobold"><strong>Dr.&nbsp;Allison Theobold</strong></a> (she / they) is an Assistant Professor of Statistics at Cal Poly in beautiful San Luis Obispo, California. Allison received her doctorate in Statistics, with an emphasis in Statistics Education, from Montana State University. Allison’s work focuses on innovation in statistics and data science education, with an emphasis on equitable pedagogy and learning trajectories. Allison is also interested in exploring pedagogical approaches for enhancing retention of under-represented students in STEM, including creating inclusive discoursive spaces and equitable group collaborations.</p>
+<p><a href="https://statistics.calpoly.edu/hunter-glanz"><strong>Dr.&nbsp;Hunter Glanz</strong></a> (he / him) is an Associate Professor of Statistics at Cal Poly in beautiful San Luis Obispo, California. Hunter received his doctorate in Statistics from Boston University. Hunter’s work focuses on innovation in statistics and data science education.</p>
 </div><div class="column" style="width:5%;">
 
-</div><div class="column" style="width:45%;">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><img src="../images/a-skiing.JPG" class="img-fluid quarto-figure quarto-figure-right figure-img" style="float:right;padding: 0 0 0 10px;" alt="Dr. Theobold standing at the top of a snowy mountain with skis and poles!" width="225"></p>
-</figure>
-</div>
-</div>
+</div><!-- ::: {.column width="45%"} --><!-- ![](/images/a-skiing.JPG){fig-alt="Dr. Theobold standing at the top of a snowy mountain with skis and poles!" fig-align="right" style="float:right;padding: 0 0 0 10px;" width="225"} --><!-- ::: -->
 </div>
 <p><br></p>
 <div class="columns">
-<div class="column" style="width:40%;">
-<p><a href="https://csumb.edu/directory/811679643/"><strong>Dr.&nbsp;Judith Canner</strong></a> (she / her) is a Professor Statistics and Department Chair of the Deparmtent of Mathematics &amp; Statistics at CSU Monterey Bay.</p>
-</div><div class="column" style="width:5%;">
+<!-- ::: {.column width="40%"} --><!-- [**Dr. Judith Canner**](https://csumb.edu/directory/811679643/) (she / her) is a Professor Statistics and Department Chair of the Deparmtent of Mathematics & Statistics at CSU Monterey Bay. --><!-- ::: --><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:55%;">
 
@@ -660,8 +652,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -772,7 +762,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

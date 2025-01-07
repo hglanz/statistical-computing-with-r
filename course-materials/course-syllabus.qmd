@@ -274,7 +274,7 @@ classday_cal
 
 **Room:** 180-272 (Baker Center - Math & Science)
 
-**Office Hours** are held in my office (25-211) during the following
+**Office Hours** are held in my office (25-111) during the following
 times:
 
 <!-- ::: column-margin -->
@@ -473,7 +473,7 @@ times and your highest score will be kept, so you should get close to
 
 #### Practice Activities
 
-Most Monday's, you will be given a Practice Activity to complete, to get
+Most Tuesdays, you will be given a Practice Activity to complete, to get
 the hang of the week’s necessary `R` skills. These activities will
 always result in a single, straightforward correct answer, that you will
 submit via Canvas (two attempts, the average score being kept).
@@ -490,9 +490,9 @@ Your typical homework assignments will be weekly labs. You will follow
 each lab's instructions to complete tasks in `R` and submit a rendered
 .html Quarto document to Canvas.
 
-Most weeks, there will be class time on Wednesdays dedicated to working
+Most weeks, there will be class time on Thursdays dedicated to working
 on completing lab assignments. While you will work with peers during
-class time on Wednesdays, you will be expected to submit your own
+class time on Thursdays, you will be expected to submit your own
 individual work for the final submission.
 
 -   Labs are due on **Sundays at 11:59pm**.
