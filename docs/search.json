@@ -1544,7 +1544,7 @@
     "href": "slides/week-1/week-1-intro-R.html#on-a-personal-note",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "On a personal note…",
-    "text": "On a personal note…\n\n\nI prefer you refer to me as “Dr. Theobold”, or “Dr. T”, or “Professor Theobold.”\nPlease don’t call me “Allison” or “Professor.”\n\n\nI use they / them pronouns. If you are not sure what this means, I’d encourage you to read more about gender identity and pronouns. 🙂"
+    "text": "On a personal note…\n\n\nI prefer you refer to me as “Dr. Glanz”, or “Dr. G”, or “Professor Glanz.”\n\n\n\nI use he / him pronouns. If you are not sure what this means, I’d encourage you to read more about gender identity and pronouns. 🙂"
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#our-classroom-learning-assistant",
@@ -1565,14 +1565,14 @@
     "href": "slides/week-1/week-1-intro-R.html#beginning-of-the-week",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "Beginning of the Week",
-    "text": "Beginning of the Week\n\nBefore Tuesday’s ClassDuring Class on TuesdayAfter Tuesday’s Class\n\n\n\nLook over the coursework page\nRead the required chapter(s)\nWatch the required video(s)\nComplete the Check-ins\n\n\n\n\nReview chapter content\nAsk clarifying questions\nDiscuss example analyses\nWork in pairs to complete the Practice Activity\n\n\n\n\nFinish whatever remains of the Practice Activity\nComplete any additional reading / videos / Check-ins"
+    "text": "Beginning of the Week\n\nBefore Tuesday’s ClassDuring Class on TuesdayAfter Tuesday’s Class\n\n\n\nLook over the coursework page\nRead the required chapter(s)\nWatch the required video(s)\nComplete the Check-ins\n\n\n\n\nReview chapter content\nAsk clarifying questions\nDiscuss example analyses \n\n\n\n\n\nComplete any additional reading / videos / Check-ins"
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#end-of-the-week",
     "href": "slides/week-1/week-1-intro-R.html#end-of-the-week",
     "title": "Intro to STAT 331 / 531 + Intro to R",
     "section": "End of the Week",
-    "text": "End of the Week\n\nDuring Class on ThursdayAfter Thursday’s Class\n\n\n\nDebrief Practice Activity\nWarm-up review\nStart Lab Assignment\n\n\n\n\nFinish remaining problems of the Lab Assignment\nComplete Challenge Assignment\n\n\n\n\n\n\n\nLabs & Challenges Due Sunday by Midnight\n\n\nTo keep everyone on track with the coursework, your Lab and Challenges are due by midnight every Sunday. You are permitted to request up to four (4) deadline extensions by filling out the deadline extension form."
+    "text": "End of the Week\n\nDuring Class on ThursdayAfter Thursday’s Class\n\n\n\n\nWarm-up review\nStart Lab Assignment\n\n\n\n\nFinish remaining problems of the Lab Assignment\nComplete Challenge Assignment\n\n\n\n\n\n\n\nLabs & Challenges Due Sunday by Midnight\n\n\nTo keep everyone on track with the coursework, your Lab and Challenges are due by midnight every Sunday."
   },
   {
     "objectID": "slides/week-1/week-1-intro-R.html#data-types",
@@ -2228,7 +2228,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#verifying-your-connection",
     "title": "Scripts, Notebooks & Version Control",
     "section": "Verifying Your Connection",
-    "text": "Verifying Your Connection\n\n\nOpen RStudio and run the following code in your console (lower left pane):\n\n\n\n\n\nusethis::git_sitrep()\n\n\n\nYou should see something like:\n\n── GitHub user \n• Default GitHub host: 'https://github.com'\n• Personal access token for 'https://github.com': '&lt;discovered&gt;'\n• GitHub user: 'atheobold'\n• Token scopes: 'admin:org, admin:public_key, delete:packages, delete_repo, gist, notifications, repo, user, workflow, write:packages'\n• Email(s): 'atheobol@calpoly.edu (primary)', 'theobold.allison970@gmail.com', '12439090+atheobold@users.noreply.github.com'\nℹ No active usethis project\n\n\n\nIf that is not the case, Dr. Theobold will help you troubleshoot in 5-minutes!"
+    "text": "Verifying Your Connection\n\n\nOpen RStudio and run the following code in your console (lower left pane):\n\n\n\n\n\nusethis::git_sitrep()\n\n\n\nYou should see something like:\n\n── GitHub user \n• Default GitHub host: 'https://github.com'\n• Personal access token for 'https://github.com': '&lt;discovered&gt;'\n• GitHub user: 'atheobold'\n• Token scopes: 'admin:org, admin:public_key, delete:packages, delete_repo, gist, notifications, repo, user, workflow, write:packages'\n• Email(s): 'atheobol@calpoly.edu (primary)', 'theobold.allison970@gmail.com', '12439090+atheobold@users.noreply.github.com'\nℹ No active usethis project\n\n\n\nIf that is not the case, Dr. Glanz will help you troubleshoot!"
   },
   {
     "objectID": "slides/week-1/week-1-intro-version-control.html#once-youve-cloned-the-repo",
@@ -2242,7 +2242,7 @@
     "href": "slides/week-1/week-1-intro-version-control.html#to-do",
     "title": "Scripts, Notebooks & Version Control",
     "section": "To do…",
-    "text": "To do…\n\nLab 1: Introduction to Quarto\n\nDue Sunday (9/29) at 11:59pm\n\nChallenge 1: Modifying Your Quarto Document\n\nDue Sunday (9/29) at 11:59pm\n\nComplete the Week 2 Coursework\n\nCheck-ins 2.1, 2.2, 2.3 due Tuesday (10/1) by the start of class"
+    "text": "To do…\n\nLab 1: Introduction to Quarto\n\nDue Sunday (1/12) at 11:59pm\n\nChallenge 1: Modifying Your Quarto Document\n\nDue Sunday (1/12) at 11:59pm\n\nComplete the Week 2 Coursework\n\nCheck-ins 2.1, 2.2, 2.3 due Tuesday (1/14) by the start of class"
   },
   {
     "objectID": "weeks/week-1-r-rstudio.html",
@@ -6066,5 +6066,26 @@
       "Course information",
       "Syllabus"
     ]
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#tuesday-january-7",
+    "href": "slides/week-1/week-1-intro-R.html#tuesday-january-7",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Tuesday, January 7",
+    "text": "Tuesday, January 7\nToday we will…\n\nWelcome to Stat 331 / 531: Statistical Computing in R\nIntroductions (Me + You)\nCourse Layout\nBasics of R"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-R.html#hi-im-dr.-glanz",
+    "href": "slides/week-1/week-1-intro-R.html#hi-im-dr.-glanz",
+    "title": "Intro to STAT 331 / 531 + Intro to R",
+    "section": "Hi, I’m Dr. Glanz!",
+    "text": "Hi, I’m Dr. Glanz!\n\n\n\n\nI am originally from San Diego, but went to college at Cal Poly and grad school in Boston.\nMy favorite things are spending time with friends, drinking coffee, and data science!\n\n\n\n\n\n\n\n\n\n\n\nI love dogs!\nI’ve been programming in R, SAS and Python since being at Cal Poly in 205!\nI absolutely love teaching this course!"
+  },
+  {
+    "objectID": "slides/week-1/week-1-intro-version-control.html#thursday-january-9",
+    "href": "slides/week-1/week-1-intro-version-control.html#thursday-january-9",
+    "title": "Scripts, Notebooks & Version Control",
+    "section": "Thursday, January 9",
+    "text": "Thursday, January 9\nToday we will…\n\n\nAnswer Clarifying Questions:\n\nSyllabus?\n\nNew Material\n\nScripts + Notebooks\nVersion Control\n\nLab 1: Introduction to Quarto\nChallenge 1: Modifying your Quarto Document"
   }
 ]
