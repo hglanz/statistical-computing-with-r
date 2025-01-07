@@ -8,7 +8,7 @@ editor: source
 
 # Week 1 Day 1
 
-## Tuesday, September 24
+## Tuesday, January 7
 
 Today we will...
 
@@ -16,29 +16,29 @@ Today we will...
 -   Introductions (Me + You)
 -   Course Layout
 -   Basics of R
--   [Group collaboration warm-up](../../group-activities/week-1/data-cleaning-viz-steps.qmd)
--   [Data wrangling / visualization puzzle](../../group-activities/week-1/broken-circles.qmd)
+<!-- -   [Group collaboration warm-up](../../group-activities/week-1/data-cleaning-viz-steps.qmd) -->
+<!-- -   [Data wrangling / visualization puzzle](../../group-activities/week-1/broken-circles.qmd) -->
 
 
 # Introductions
 
-## Hi, I'm Dr. Theobold!
+## Hi, I'm Dr. Glanz!
 
 ::: columns
 ::: {.column width="50%"}
 ::: {.small}
--   I am originally from Colorado, but went to grad school in Montana.
+-   I am originally from San Diego, but went to college at Cal Poly and grad school in Boston.
 
--   My favorite things are being outside, drinking coffee, and watching women's basketball.
+-   My favorite things are spending time with friends, drinking coffee, and data science!
 :::
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="45%"}
-![](images/yoesmite.jpeg){fig-alt="A picture of my wife and I backpacking in Yosemite. We are standing in front of a large blue lake (called Thousand Islands Lake), with some snow covered, scraggly peaks in the background." width="85%"} 
-:::
+<!-- ::: {.column width="45%"} -->
+<!-- ![](images/yoesmite.jpeg){fig-alt="A picture of my wife and I backpacking in Yosemite. We are standing in front of a large blue lake (called Thousand Islands Lake), with some snow covered, scraggly peaks in the background." width="85%"}  -->
+<!-- ::: -->
 :::
 
 . . .
@@ -46,9 +46,9 @@ Today we will...
 ::: columns
 ::: {.column width="50%"}
 ::: {.small}
--   I love cats!
+-   I love dogs!
 
--   I've been programming in R since 2014! 
+-   I've been programming in R, SAS and Python since being at Cal Poly in 205! 
 
 -   I absolutely love teaching this course!
 :::
@@ -57,45 +57,45 @@ Today we will...
 ::: {.column width="5%"}
 :::
 
-::: {.column width="45%"}
-![](images/kitties.jpg){fig-alt="A picture of my two kitties, snuggling on the couch. Both kitties are facing each other, with their noses touching." width="85%"}
-:::
+<!-- ::: {.column width="45%"} -->
+<!-- ![](images/kitties.jpg){fig-alt="A picture of my two kitties, snuggling on the couch. Both kitties are facing each other, with their noses touching." width="85%"} -->
+<!-- ::: -->
 :::
 
 ## On a personal note...
 
 ::: columns
 ::: {.column width="50%"}
-I prefer you refer to me as "Dr. Theobold", or "Dr. T", or "Professor Theobold."
+I prefer you refer to me as "Dr. Glanz", or "Dr. G", or "Professor Glanz."
 
-Please don't call me "Allison" or "Professor."
+<!-- Please don't call me "Allison" or "Professor." -->
 
 </br>
 
 ::: fragment
-I use they / them pronouns. If you are not sure what this means, I'd encourage you to [read more about gender identity and pronouns](https://www.npr.org/2021/06/02/996319297/gender-identity-pronouns-expression-guide-lgbtq). 🙂
+I use he / him pronouns. If you are not sure what this means, I'd encourage you to [read more about gender identity and pronouns](https://www.npr.org/2021/06/02/996319297/gender-identity-pronouns-expression-guide-lgbtq). 🙂
 :::
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="45%"}
-![](images/rainbow-smoothie.jpg){fig-alt="A picture of a very pink fruit smoothie, with sprinkles on top."}
+<!-- ::: {.column width="45%"} -->
+<!-- ![](images/rainbow-smoothie.jpg){fig-alt="A picture of a very pink fruit smoothie, with sprinkles on top."} -->
+<!-- ::: -->
 :::
-:::
 
-## Our Classroom Learning Assistant!
+<!-- ## Our Classroom Learning Assistant! -->
 
-We will be joined in class by Jasmine.
+<!-- We will be joined in class by Jasmine. -->
 
-. . .
+<!-- . . . -->
 
-Jasmine is...
+<!-- Jasmine is... -->
 
-- a forth-year Statistics major pursuing a Data Science minor,
-- originally from Irvine, CA,
-- someone who loves sushi, hanging out with friends, watching Netflix, and working out. 
+<!-- - a forth-year Statistics major pursuing a Data Science minor, -->
+<!-- - originally from Irvine, CA, -->
+<!-- - someone who loves sushi, hanging out with friends, watching Netflix, and working out.  -->
 
 ## You!
 
@@ -122,11 +122,11 @@ Please read the intros of your classmates so you can discover who you will be le
 -   Review chapter content
 -   Ask clarifying questions
 -   Discuss example analyses
--   Work in pairs to complete the [**Practice Activity**]{style="color: #34605f;"}
+<!-- -   Work in pairs to complete the [**Practice Activity**]{style="color: #34605f;"} -->
 
 ## After Tuesday's Class
 
--   Finish whatever remains of the [**Practice Activity**]{style="color: #0F4C81;"}
+<!-- -   Finish whatever remains of the [**Practice Activity**]{style="color: #0F4C81;"} -->
 -   Complete any additional reading / videos / [**Check-ins**]{style="color: #b76352;"}
 :::
 
@@ -135,7 +135,7 @@ Please read the intros of your classmates so you can discover who you will be le
 ::: panel-tabset
 ## During Class on Thursday
 
--   Debrief [**Practice Activity**]{style="color: #0F4C81;"}
+<!-- -   Debrief [**Practice Activity**]{style="color: #0F4C81;"} -->
 -   Warm-up review
 -   Start [**Lab Assignment**]{style="color: #D4D4D4;"}
 
@@ -147,7 +147,7 @@ Please read the intros of your classmates so you can discover who you will be le
 ::: callout-note
 # Labs & Challenges Due Sunday by Midnight
 
-To keep everyone on track with the coursework, your Lab and Challenges are due by midnight every Sunday. You are permitted to request **up to four (4)** deadline extensions by filling out the [deadline extension form](https://forms.gle/acaTcG3uEajvNaAK8).
+To keep everyone on track with the coursework, your Lab and Challenges are due by midnight every Sunday.
 :::
 :::
 
@@ -332,95 +332,95 @@ x | y
 ```
 :::
 
-# Group Programming Warm-up 
+<!-- # Group Programming Warm-up  -->
 
-## [Broken Circles](../../group-activities/week-1/broken-circles.qmd)
-::: columns
-::: {.column width="40%"}
-::: {.small}
-To set the stage for your future group collaborations, we will complete an 
-activity that explores how working in groups can be more / less successful. 
+<!-- ## [Broken Circles](../../group-activities/week-1/broken-circles.qmd) -->
+<!-- ::: columns -->
+<!-- ::: {.column width="40%"} -->
+<!-- ::: {.small} -->
+<!-- To set the stage for your future group collaborations, we will complete an  -->
+<!-- activity that explores how working in groups can be more / less successful.  -->
 
-Let's start by dividing the class into groups of 6 students. 
-:::
-:::
+<!-- Let's start by dividing the class into groups of 6 students.  -->
+<!-- ::: -->
+<!-- ::: -->
 
-::: {.column width="5%"}
-:::
+<!-- ::: {.column width="5%"} -->
+<!-- ::: -->
 
-::: {.column width="55%"}
-![](images/broken-circles.JPG){fig-alt="An image of whit e circles with slices cut out. The pieces are labeled A, B, C, D, and E to indicate how they should be assembled to create a complete circle."}
-:::
-:::
+<!-- ::: {.column width="55%"} -->
+<!-- ![](images/broken-circles.JPG){fig-alt="An image of whit e circles with slices cut out. The pieces are labeled A, B, C, D, and E to indicate how they should be assembled to create a complete circle."} -->
+<!-- ::: -->
+<!-- ::: -->
 
-## Activity Guidelines
+<!-- ## Activity Guidelines -->
 
-1. No talking or other noises!
-2. No pointing or hand signals!
-3. No taking pieces. You may only give pieces to others.
+<!-- 1. No talking or other noises! -->
+<!-- 2. No pointing or hand signals! -->
+<!-- 3. No taking pieces. You may only give pieces to others. -->
 
-**Your group is finished once [everyone]{.underline} has a complete circle.**
+<!-- **Your group is finished once [everyone]{.underline} has a complete circle.** -->
 
-## Discussion 
+<!-- ## Discussion  -->
 
-- What do you think this game was about? What was its purpose?
-- What did your group did that made you cooperate more successfully?
-- What did your group did that made cooperation harder?
-- What are some behaviors that could be implemented in the future to make
-cooperation easier?
+<!-- - What do you think this game was about? What was its purpose? -->
+<!-- - What did your group did that made you cooperate more successfully? -->
+<!-- - What did your group did that made cooperation harder? -->
+<!-- - What are some behaviors that could be implemented in the future to make -->
+<!-- cooperation easier? -->
 
-# A Data Puzzle
+<!-- # A Data Puzzle -->
 
-# A Data Puzzle
+<!-- # A Data Puzzle -->
 
-> Arrange the different pieces (tables and graphs) based on the actions that led
-> to each new table / graph.
+<!-- > Arrange the different pieces (tables and graphs) based on the actions that led -->
+<!-- > to each new table / graph. -->
 
-. . .
+<!-- . . . -->
 
-</br> 
+<!-- </br>  -->
 
-Once you have arranged each of the tables and graphs, answer the following
-questions:
+<!-- Once you have arranged each of the tables and graphs, answer the following -->
+<!-- questions: -->
 
-1. What is the most common type of work location - remote or in-person? 
-2. Does work location type vary by company size?
+<!-- 1. What is the most common type of work location - remote or in-person?  -->
+<!-- 2. Does work location type vary by company size? -->
 
-# Groupworthy Data Science
+<!-- # Groupworthy Data Science -->
 
-# Groupworthy Data Science
+<!-- # Groupworthy Data Science -->
 
-> The purpose of the study is to understand how an instructor's pedagogy impacts
-> the equity of group collaborations, specifically as they relate to pair 
-> programming. 
+<!-- > The purpose of the study is to understand how an instructor's pedagogy impacts -->
+<!-- > the equity of group collaborations, specifically as they relate to pair  -->
+<!-- > programming.  -->
 
-## Consent to Participate
+<!-- ## Consent to Participate -->
 
-::: {.small}
-- If you agree to participate... 
+<!-- ::: {.small} -->
+<!-- - If you agree to participate...  -->
 
-  + you will be recorded once a week for 10-weeks while participating in pair         programming to complete collaborative tasks. 
+<!--   + you will be recorded once a week for 10-weeks while participating in pair         programming to complete collaborative tasks.  -->
 
-  + you will complete a pre- and post-survey about your prior computing
-  experiences and your attitudes toward data science.
-:::
+<!--   + you will complete a pre- and post-survey about your prior computing -->
+<!--   experiences and your attitudes toward data science. -->
+<!-- ::: -->
 
-. . .
+<!-- . . . -->
 
-</br>
+<!-- </br> -->
 
-::: {.small}
-Your participation in this research will not affect your course grade. 
-:::
+<!-- ::: {.small} -->
+<!-- Your participation in this research will not affect your course grade.  -->
+<!-- ::: -->
 
-. . .
+<!-- . . . -->
 
-::: {.callout-warning}
-# Consent Form 
+<!-- ::: {.callout-warning} -->
+<!-- # Consent Form  -->
 
-Please complete the consent form (<https://forms.gle/oax73hoe7uRSVLYw8>) by 
-Monday, 9/30. 
-:::
+<!-- Please complete the consent form (<https://forms.gle/oax73hoe7uRSVLYw8>) by  -->
+<!-- Monday, 9/30.  -->
+<!-- ::: -->
 
 
 # Before class on Thursday...
@@ -431,8 +431,8 @@ Monday, 9/30.
 
 -   **Check-ins 1.6 - 1.9**: Getting version control set-up
 
-    -   Due Thursday (9/26) by the start of class
+    -   Due Friday (1/10)
 
 - Introduce yourself on Discord!
 
-    - Due by Friday (9/27)
+    - Due by Friday (1/10)

@@ -15,16 +15,13 @@ library(liver)
 data(cereal)
 ```
 
-## Thursday, September 26
+## Thursday, January 9
 
 Today we will...
 
 ::: {.small}
--   Changes to Student Hours
 -   Answer Clarifying Questions:
     -   Syllabus?
-    -   Ungrading?
-    -   Participating in Dr. Theobold's research on group collaborations?
 -   New Material
     -   Scripts + Notebooks
     -   Version Control
@@ -32,99 +29,88 @@ Today we will...
 -   Challenge 1: Modifying your Quarto Document
 :::
 
-# Changes to Student Hours
-
-# Changes to Student Hours
-
-</br> 
-
-New Student Hours are:
-
-> Wednesdays from 4pm - 5pm  
-> Thursdays from 2pm - 3pm
-
 # Questions about the Syllabus
 
-## What does "ungrading" mean?
+<!-- ## What does "ungrading" mean? -->
 
-> "Ungrading is a pedagogical practice which entirely removes grades
-as a focus of the course. Instead, ungrading exclusively focuses
-on providing students with feedback aimed at helping them build
-proficiency to accomplish the course’s learning goals."
+<!-- > "Ungrading is a pedagogical practice which entirely removes grades -->
+<!-- as a focus of the course. Instead, ungrading exclusively focuses -->
+<!-- on providing students with feedback aimed at helping them build -->
+<!-- proficiency to accomplish the course’s learning goals." -->
 
-## How does this system work?
+<!-- ## How does this system work? -->
 
-::: {.incremental}
-- Each problem on an assignment is marked for proficiency (e.g., success, 
-growing). 
-  + These marks are not attached to a grade outcome (e.g., A, B, C, D).
+<!-- ::: {.incremental} -->
+<!-- - Each problem on an assignment is marked for proficiency (e.g., success,  -->
+<!-- growing).  -->
+<!--   + These marks are not attached to a grade outcome (e.g., A, B, C, D). -->
 
-- Grades are defined from a set of criteria, co-developed between you and me. 
-  + At the end of the course, you propose the grade you believe you’ve earned
-  based on a portfolio of your work and the criteria we established.
-:::
+<!-- - Grades are defined from a set of criteria, co-developed between you and me.  -->
+<!--   + At the end of the course, you propose the grade you believe you’ve earned -->
+<!--   based on a portfolio of your work and the criteria we established. -->
+<!-- ::: -->
 
-# A reminder about my research...
+<!-- # A reminder about my research... -->
 
-# Groupworthy Data Science
+<!-- # Groupworthy Data Science -->
 
-> The purpose of the study is to understand how an instructor's pedagogy impacts
-> the equity of group collaborations, specifically as they relate to pair 
-> programming. 
+<!-- > The purpose of the study is to understand how an instructor's pedagogy impacts -->
+<!-- > the equity of group collaborations, specifically as they relate to pair  -->
+<!-- > programming.  -->
 
-## Consent to Participate
+<!-- ## Consent to Participate -->
 
-::: {.small}
-- If you agree to participate... 
+<!-- ::: {.small} -->
+<!-- - If you agree to participate...  -->
 
-  + you will be recorded once a week for 10-weeks while participating in pair 
-  programming to complete collaborative tasks. 
+<!--   + you will be recorded once a week for 10-weeks while participating in pair  -->
+<!--   programming to complete collaborative tasks.  -->
 
-  + you will complete a pre- and post-survey about your prior computing
-  experiences and your attitudes toward data science.
-:::
+<!--   + you will complete a pre- and post-survey about your prior computing -->
+<!--   experiences and your attitudes toward data science. -->
+<!-- ::: -->
 
-. . .
+<!-- . . . -->
 
-</br>
+<!-- </br> -->
 
-::: {.small}
-Your participation in this research will not affect your course grade. 
-:::
+<!-- ::: {.small} -->
+<!-- Your participation in this research will not affect your course grade.  -->
+<!-- ::: -->
 
-. . .
+<!-- . . . -->
 
-::: {.callout-warning}
-# Consent Form 
+<!-- ::: {.callout-warning} -->
+<!-- # Consent Form  -->
 
-Please complete the consent form (<https://forms.gle/oax73hoe7uRSVLYw8>) by 
-Monday, 9/30. 
-:::
+<!-- Please complete the consent form (<https://forms.gle/oax73hoe7uRSVLYw8>) by  -->
+<!-- Monday, 9/30.  -->
+<!-- ::: -->
 
-## My Collaborator
-::: columns
-::: {.column width="70%"}
-Judith Canner, Professor of Statistics
+<!-- ## My Collaborator -->
+<!-- ::: columns -->
+<!-- ::: {.column width="70%"} -->
+<!-- Judith Canner, Professor of Statistics -->
 
-::: {.small}
-- Joined faculty at CSUMB in 2010
-- Is CSUMB's Statistics and Data Science Program Coordinator.
-- Favorite classes to teach are Data Visualization and Statistical Computing.
-- Learned how to program in R in 2005 when my PhD adviser handed me some code
-and said "modify this."
-- Goal is to see statistics and data science education that is accessible to
-everyone!
-:::
-:::
+<!-- ::: {.small} -->
+<!-- - Joined faculty at CSUMB in 2010 -->
+<!-- - Is CSUMB's Statistics and Data Science Program Coordinator. -->
+<!-- - Favorite classes to teach are Data Visualization and Statistical Computing. -->
+<!-- - Learned how to program in R in 2005 when my PhD adviser handed me some code -->
+<!-- and said "modify this." -->
+<!-- - Goal is to see statistics and data science education that is accessible to -->
+<!-- everyone! -->
+<!-- ::: -->
+<!-- ::: -->
 
-::: {.column width="2%"}
-:::
+<!-- ::: {.column width="2%"} -->
+<!-- ::: -->
 
-::: {.column width="28%"}
-![](images/judith-graduation.png)
-![](images/judith-spain.png)
-:::
-:::
+<!-- ::: {.column width="28%"} -->
+<!-- ![](images/judith-graduation.png) -->
+<!-- ![](images/judith-spain.png) -->
+<!-- ::: -->
+<!-- ::: -->
 
 # Scripts + Notebooks
 
@@ -553,7 +539,7 @@ You should see something like:
 
 . . .
 
-If that is not the case, Dr. Theobold will help you troubleshoot in 5-minutes!
+If that is not the case, Dr. Glanz will help you troubleshoot!
 
 # Accessing Lab 1 
 
@@ -590,9 +576,9 @@ Step 7: Push your change
 ## To do...
 
 -   **Lab 1: Introduction to Quarto**
-    -   Due Sunday (9/29) at 11:59pm
+    -   Due Sunday (1/12) at 11:59pm
 -   **Challenge 1: Modifying Your Quarto Document**
-    -   Due Sunday (9/29) at 11:59pm
+    -   Due Sunday (1/12) at 11:59pm
 -   **Complete the Week 2 Coursework**
-    -   **Check-ins 2.1, 2.2, 2.3** due Tuesday (10/1) by the start of class
+    -   **Check-ins 2.1, 2.2, 2.3** due Tuesday (1/14) by the start of class
   

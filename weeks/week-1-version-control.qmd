@@ -147,7 +147,7 @@ GitHub account.
 Copy and paste the link to your GitHub profile into the Canvas quiz. 
 
 + Your GitHub profile link should look like -- https://github.com/USERNAME
-+ Here is mine! [https://github.com/atheobold](https://github.com/atheobold)
++ Here is mine! [https://github.com/hglanz](https://github.com/hglanz)
 
 ::: {.callout-tip}
 # (Optional) Register for the Student Developer Pack 
