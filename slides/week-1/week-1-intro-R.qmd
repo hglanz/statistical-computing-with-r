@@ -48,7 +48,7 @@ Today we will...
 ::: {.small}
 -   I love dogs!
 
--   I've been programming in R, SAS and Python since being at Cal Poly in 205! 
+-   I've been programming in R, SAS and Python since being at Cal Poly in 2005! 
 
 -   I absolutely love teaching this course!
 :::
