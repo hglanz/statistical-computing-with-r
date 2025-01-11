@@ -1085,7 +1085,7 @@
     "href": "slides/week-2/week-2-ggplot.html#submission",
     "title": "Basics of Graphics",
     "section": "Submission",
-    "text": "Submission\n\nWhen you have completed the visualization tasks, you will work as a group to answer the five questions posed at the end of the document.\nEach person will input the answers to these questions in the PA2 Canvas quiz.\nThe person who last occupied the role of Developer will download and submit the PA-2.html file for the group.\n\nOnly one submission per group!"
+    "text": "Submission\n\nWhen you have completed the visualization tasks, you will work as a group to answer the five questions posed at the end of the document.\nEach person will input the answers to these questions in the PA2 Canvas quiz.\nEach person also needs to submit their PA-2.html file on Canvas."
   },
   {
     "objectID": "slides/week-3/week-3-dplyr-pt2.html#thursday-october-10",
@@ -6098,5 +6098,12 @@
       "Course information",
       "Support"
     ]
+  },
+  {
+    "objectID": "slides/week-2/week-2-ggplot.html#tuesday-january-14",
+    "href": "slides/week-2/week-2-ggplot.html#tuesday-january-14",
+    "title": "Basics of Graphics",
+    "section": "Tuesday, January 14",
+    "text": "Tuesday, January 14\nToday we will…\n\nAccessing Practice Activities\nNew Material\n\nTidy Data\nLoad External Data\nGraphics (and ggplot2)\n\nPA 2: Using Data Visualization to Find the Penguins"
   }
 ]

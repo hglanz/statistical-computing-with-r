@@ -12,7 +12,7 @@ editor: source
 library(tidyverse)
 ```
 
-## Tuesday, October 1
+## Tuesday, January 14
 
 Today we will...
 
@@ -22,22 +22,22 @@ Today we will...
   + Load External Data
   + Graphics (and `ggplot2`)
 + PA 2: Using Data Visualization to Find the Penguins
-   + Peer Programming
+   <!-- + Peer Programming -->
 
 <!-- Be sure to update with new Posit Cloud assignment link! -->
 
-# Accessing Practice Activities
+<!-- # Accessing Practice Activities -->
 
-We are using Posit Cloud for collaborative coding, so you and your partner 
-can type in the **same** document at the **same** time. 
+<!-- We are using Posit Cloud for collaborative coding, so you and your partner  -->
+<!-- can type in the **same** document at the **same** time.  -->
 
-::: {.small}
-Take 3-minutes to: 
+<!-- ::: {.small} -->
+<!-- Take 3-minutes to:  -->
 
-- Open the email you were sent (from me and / or Posit Cloud)
-- Click on the link to join your workspace
-- Log-in to Posit Cloud
-:::
+<!-- - Open the email you were sent (from me and / or Posit Cloud) -->
+<!-- - Click on the link to join your workspace -->
+<!-- - Log-in to Posit Cloud -->
+<!-- ::: -->
 
 # Grammar of Graphics
 
@@ -1177,21 +1177,21 @@ Every group should have a **ggplot2** cheatsheet!
 :::
 :::
 
-## Opening the Practice Activity in Posit Cloud
+<!-- ## Opening the Practice Activity in Posit Cloud -->
 
-The partner whose family name starts first alphabetically starts as the
-Developer! 
+<!-- The partner whose family name starts first alphabetically starts as the -->
+<!-- Developer!  -->
 
-Both of you need to do the following:
+<!-- Both of you need to do the following: -->
 
-::: {.small}
-- Open the email you were sent (from me and / or Posit Cloud)
-- Click on the link to join your workspace
-- Log-in to Posit Cloud
-- Open the PA 2: Using Data Visualization to Find the Penguins project
-- Open the `PA2-ggplot.qmd` file
-- Get started! 
-:::
+<!-- ::: {.small} -->
+<!-- - Open the email you were sent (from me and / or Posit Cloud) -->
+<!-- - Click on the link to join your workspace -->
+<!-- - Log-in to Posit Cloud -->
+<!-- - Open the PA 2: Using Data Visualization to Find the Penguins project -->
+<!-- - Open the `PA2-ggplot.qmd` file -->
+<!-- - Get started!  -->
+<!-- ::: -->
 
 ## Submission
 
@@ -1199,9 +1199,10 @@ Both of you need to do the following:
 answer the five questions posed at the end of the document. 
 
 - Each person will input the answers to these questions in the PA2 Canvas quiz.
-- The person who last occupied the role of Developer will download and submit
-the `PA-2.html` file for the group.
-  + Only one submission per group!
+- Each person also needs to submit their `PA-2.html` file on Canvas.
+<!-- - The person who last occupied the role of Developer will download and submit -->
+<!-- the `PA-2.html` file for the group. -->
+<!--   + Only one submission per group! -->
 
 # Wrap-up
 
