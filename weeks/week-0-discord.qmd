@@ -160,7 +160,7 @@ You'll submit these exercises online, so that class time can be customized based
 
 ### Practice Activities
 
-*Usually due Wednesdays at midnight*
+*Usually due Thursdays at 12pm*
 
 During class, you'll be working with your classmates to complete Practice Activities, which take your Preview Activities a step further. You will collaborate with your team to solve a puzzle, requiring that you accomplish a series of tasks, each of which applies the statistical computing concepts from that week. The purpose of in-class time is for you to be doing statistical computing, with me there to guide you if / when you get lost.
 
