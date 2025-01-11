@@ -9,18 +9,18 @@ This page contains an outline of the topics, content, and assignments for the qu
 
 <table>
 <colgroup>
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 16%" />
-<col style="width: 11%" />
-<col style="width: 23%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 16%" />
-<col style="width: 11%" />
-<col style="width: 23%" />
-<col style="width: 11%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -89,7 +89,7 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td><p><a href="/weeks/week-2-ggplot.qmd" title="Data Visualization with ggplot2">Data Visualization with ggplot2</a></p>
 <p><a href="/weeks/week-2-projects-data-import.qmd" title="Data Import &amp; R Projects">Data Import &amp; R Projects</a></p></td>
 <td><p><a href="/slides/week-2/week-2-ggplot.qmd" title="Basics of Graphics">Basics of Graphics</a></p></td>
-<td><p><a href="/group-activities/week-2/PA-2-ggplot.qmd" title="PA 2 Instructions/File">PA 2 Instructions/File</a></p></td>
+<td><p><a href="/group-activities/week-2/PA-2-ggplot.qmd" title="PA 2 Instructions/File">PA 2 Instructions</a></p></td>
 <td></td>
 <td></td>
 <td></td>
