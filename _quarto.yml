@@ -6,19 +6,19 @@ project:
     - "!/labs/student/"
     - "!/videos/"
     - "!/group-activities/group-formation"
-    - "!/portfolio/midterm-portfolio-checklist.docx"
+    # - "!/portfolio/midterm-portfolio-checklist.docx"
 
 website:
   page-navigation: true
   title: "Introduction to Statistical Computing in R"
   description: "Homepage for STAT 331 at Cal Poly"
-  site-url: "https://github.com/atheobold/groupworthy-data-science"
-  repo-url: https://github.com/atheobold/groupworthy-data-science
+  site-url: "https://github.com/hglanz/statistical-computing-with-r"
+  repo-url: https://github.com/hglanz/statistical-computing-with-r
   repo-actions: [issue]
 
   page-footer:
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
-    left: "&copy; Copyright 2024, Allison Theobold & Judith Canner"
+    left: "&copy; Copyright 2024, Hunter Glanz (original by Allison Theobold & Judith Canner)"
     background: "#D9E3E4"
 
   sidebar:
@@ -28,7 +28,7 @@ website:
     align: center
     tools:
       - icon: github
-        href: https://github.com/atheobold/groupworthy-data-science
+        href: https://github.com/hglanz/statistical-computing-with-r
         text: "GitHub organization"
       - icon: person-fill
         href: https://canvas.calpoly.edu
@@ -68,24 +68,24 @@ website:
             text: "Week 2, Part 1 - ggplot"
           - href: weeks/week-2-projects-data-import.qmd
             text: "Week 2, Part 2 - Data Import"
-          - href: weeks/week-3-dplyr.qmd
-            text: "Week 3 - dplyr"
-          - href: weeks/week-4-reshaping-joining.qmd
-            text: "Week 4, Part 1 - Data Transformation"
-          - href: weeks/week-4-factors.qmd
-            text: "Week 4, Part 2 - Factors"
-          - href: weeks/week-5-strings-dates.qmd
-            text: "Week 5 - Strings & Dates"
-          - href: portfolio/midterm-portfolio-targets.qmd
-            text: "Week 6 - Midterm Portfolio Week"
-          - href: weeks/week-7-vector-functions.qmd
-            text: "Week 7, Part 1 -- Vector Functions"
-          - href: weeks/week-7-data-frame-functions.qmd
-            text: "Week 7, Part 1 -- Data Frame Functions"
-          - href: weeks/week-8-iteration.qmd
-            text: "Week 8 - Iteration"
-          - href: weeks/week-9-simulation.qmd
-            text: "Week 9 - Simulating Data"
+          # - href: weeks/week-3-dplyr.qmd
+          #   text: "Week 3 - dplyr"
+          # - href: weeks/week-4-reshaping-joining.qmd
+          #   text: "Week 4, Part 1 - Data Transformation"
+          # - href: weeks/week-4-factors.qmd
+          #   text: "Week 4, Part 2 - Factors"
+          # - href: weeks/week-5-strings-dates.qmd
+          #   text: "Week 5 - Strings & Dates"
+          # - href: portfolio/midterm-portfolio-targets.qmd
+          #   text: "Week 6 - Midterm Portfolio Week"
+          # - href: weeks/week-7-vector-functions.qmd
+          #   text: "Week 7, Part 1 -- Vector Functions"
+          # - href: weeks/week-7-data-frame-functions.qmd
+          #   text: "Week 7, Part 1 -- Data Frame Functions"
+          # - href: weeks/week-8-iteration.qmd
+          #   text: "Week 8 - Iteration"
+          # - href: weeks/week-9-simulation.qmd
+          #   text: "Week 9 - Simulating Data"
           # - href: weeks/week-10.qmd
           #   text: "Week 10"
       - section: "Labs"
@@ -96,32 +96,32 @@ website:
             text: "Lab 2 Instructions"
           - href: labs/instructions/challenge-2-instructions.qmd
             text: "Challenge 2 Instructions"
-          - href: labs/instructions/lab-3-instructions.qmd
-            text: "Lab 3 Instructions"
-          - href: labs/instructions/challenge-3-instructions.qmd
-            text: "Challenge 3 Instructions"
-          - href: labs/instructions/lab-4-instructions.qmd
-            text: "Lab 4 & Challenge 4 Instructions"
-          - href: labs/instructions/lab-5-instructions.qmd
-            text: "Lab 5 Instructions"
-          - href: labs/instructions/lab-7-instructions.qmd
-            text: "Lab 7 Instructions"
-          - href: labs/instructions/challenge-7-instructions.qmd
-            text: "Challenge 7 Instructions"
-          - href: labs/instructions/lab-8-instructions.qmd
-            text: "Lab 8 Instructions"
+          # - href: labs/instructions/lab-3-instructions.qmd
+          #   text: "Lab 3 Instructions"
+          # - href: labs/instructions/challenge-3-instructions.qmd
+          #   text: "Challenge 3 Instructions"
+          # - href: labs/instructions/lab-4-instructions.qmd
+          #   text: "Lab 4 & Challenge 4 Instructions"
+          # - href: labs/instructions/lab-5-instructions.qmd
+          #   text: "Lab 5 Instructions"
+          # - href: labs/instructions/lab-7-instructions.qmd
+          #   text: "Lab 7 Instructions"
+          # - href: labs/instructions/challenge-7-instructions.qmd
+          #   text: "Challenge 7 Instructions"
+          # - href: labs/instructions/lab-8-instructions.qmd
+          #   text: "Lab 8 Instructions"
           # - href: labs/instructions/lab-9-instructions.qmd
           #   text: "Lab 9 Instructions"
-      - section: "Gallary of Student Work"
-        contents:
-          - href: labs/exemplars/student-work.qmd
-            text: "Exemplary Student Work"
-      - section: "Portfolio"
-        contents:
-          - href: portfolio/portfolio-instructions.qmd
-            text: Portfolio Instructions
-          - href: portfolio/midterm-portfolio-targets.qmd
-            text: Midterm Portfolio Learning Targets   
+      # - section: "Gallary of Student Work"
+      #   contents:
+      #     - href: labs/exemplars/student-work.qmd
+      #       text: "Exemplary Student Work"
+      # - section: "Portfolio"
+      #   contents:
+      #     - href: portfolio/portfolio-instructions.qmd
+      #       text: Portfolio Instructions
+      #     - href: portfolio/midterm-portfolio-targets.qmd
+      #       text: Midterm Portfolio Learning Targets   
 
 format:
   html:

@@ -1,1 +1,1 @@
-Sitemap: https://github.com/atheobold/groupworthy-data-science/sitemap.xml
+Sitemap: https://github.com/hglanz/statistical-computing-with-r/sitemap.xml
