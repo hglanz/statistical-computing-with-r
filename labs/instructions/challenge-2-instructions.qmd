@@ -166,6 +166,8 @@ For Lab 2 you will submit **only** your HTML file. Your HTML file is required to
 -   include your source code (`code-tools: true`)
 -   include all your code and output (`echo: true`)
 
-**If any of the options are not included, your Lab 2 or Challenge 2 assignment will receive an "Incomplete" and you will be required to submit a revision.**
+<!-- **If any of the options are not included, your Lab 2 or Challenge 2 assignment will receive an "Incomplete" and you will be required to submit a revision.** -->
 
-In addition, your document should not have any warnings or messages output in your HTML document. **If your HTML contains warnings or messages, you will receive an "Incomplete" for document formatting and you will be required to submit a revision.**
+In addition, your document should not have any warnings or messages output in your HTML document. 
+
+<!-- **If your HTML contains warnings or messages, you will receive an "Incomplete" for document formatting and you will be required to submit a revision.** -->
