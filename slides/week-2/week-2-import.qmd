@@ -15,12 +15,12 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-## Thursday, October 1
+## Thursday, January 16
 
 Today we will...
 
 ::: {.small}
-+ Debrief PA 1
++ Debrief PA 2
 + Debrief Lab 1 
   + Content Related to Lab 2
 + New Material
@@ -33,7 +33,7 @@ Today we will...
 :::
 <!-- Be sure to update with new GH Classroom assignment link! -->
 
-# PA 1: Using Data Visualization to Find the Penguins
+# PA 2: Using Data Visualization to Find the Penguins
 
 ## Multiple Categorical Variables
 
@@ -121,35 +121,35 @@ embed-resources: true
 
 :::
 
-# Lab 1
+<!-- # Lab 1 -->
 
-## Grading / Feedback
+<!-- ## Grading / Feedback -->
 
-::: {.small}
-+ Each question will earn a score of "Success" or "Growing".
-  * Questions marked "Growing" will receive feedback on how to improve your
-  solution.
-  * These questions can be resubmitted for additional feedback. 
-:::
+<!-- ::: {.small} -->
+<!-- + Each question will earn a score of "Success" or "Growing". -->
+<!--   * Questions marked "Growing" will receive feedback on how to improve your -->
+<!--   solution. -->
+<!--   * These questions can be resubmitted for additional feedback.  -->
+<!-- ::: -->
 
-. . .
+<!-- . . . -->
 
-::: {.small}
-+ Earning a "Success" doesn't necessarily mean your solution is without error.
-  * You may still receive feedback on how to improve your solution.
-  * These questions cannot be resubmitted for additional feedback.
-:::
+<!-- ::: {.small} -->
+<!-- + Earning a "Success" doesn't necessarily mean your solution is without error. -->
+<!--   * You may still receive feedback on how to improve your solution. -->
+<!--   * These questions cannot be resubmitted for additional feedback. -->
+<!-- ::: -->
 
-## Growing Points
+<!-- ## Growing Points -->
 
-::: {.incremental}
-- Q2: **All** your code should be visible! 
-- Q9: Captions should include more information than what is already present in
-the plot!
-- Q11: There's no need to save intermediate objects if they are never used later! 
-:::
+<!-- ::: {.incremental} -->
+<!-- - Q2: **All** your code should be visible!  -->
+<!-- - Q9: Captions should include more information than what is already present in -->
+<!-- the plot! -->
+<!-- - Q11: There's no need to save intermediate objects if they are never used later!  -->
+<!-- ::: -->
 
-## How this translates into Lab 2...
+## Comments from Lab 1 for Lab 2...
 
 ::: {.incremental}
 - Every lab and challenge is expected to use code-folding. 
@@ -654,16 +654,16 @@ You can also take a look at other [ways to find nice color palettes](https://lis
 
 # [Lab 2: Exploring Rodents with ggplot2](../../labs/instructions/lab-2-instructions.qmd) & [Challenge 2: Spicing things up with ggplot2](../../labs/instructions/challenge-2-instructions.qmd)
 
-## Peer Code Review
+<!-- ## Peer Code Review -->
 
-Starting with Lab 2, your labs **will** have an appearance / code format 
-portion. 
+<!-- Starting with Lab 2, your labs **will** have an appearance / code format  -->
+<!-- portion.  -->
 
-- Review the [code formatting guidelines](../../code-review/code-review-guidelines.qmd)
-*before* you submit your lab!
+<!-- - Review the [code formatting guidelines](../../code-review/code-review-guidelines.qmd) -->
+<!-- *before* you submit your lab! -->
 
-- Each week, you will be assigned one of your peer's labs to review their code
-formatting.
+<!-- - Each week, you will be assigned one of your peer's labs to review their code -->
+<!-- formatting. -->
 
 ## On the Use of External Resources...
 
@@ -723,10 +723,10 @@ outside of these materials require direct references.
 ## To do...
 
 + **Lab 2: Exploring rodents with ggplot2**
-  + due Sunday, October 6 at 11:59pm
+  + due Sunday, January 19 at 11:59pm
   
 + **Lab 2: Spicing things up with ggplot2**
-  + due Sunday, October 6 at 11:59pm
+  + due Sunday, January 19 at 11:59pm
   
 + **Complete Week 3 Coursework: Data Wrangling with dplyr**
-  + **Check-ins 3.1 and 3.2** due Tuesday, October 8 at 12pm
+  + **Check-ins 3.1 and 3.2** due Thursday, January 23 at 12pm
