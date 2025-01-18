@@ -8,26 +8,6 @@ This page contains an outline of the topics, content, and assignments for the qu
 <!-- TODO: Switch to spreadsheet for content (like Mine and Maria do) -->
 
 <table>
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-</colgroup>
 <thead>
 <tr class="header">
 <th><p>Week</p></th>

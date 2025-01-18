@@ -290,7 +290,7 @@
   </url>
   <url>
     <loc>https://github.com/hglanz/statistical-computing-with-r/index.html</loc>
-    <lastmod>2025-01-18T17:13:52.039Z</lastmod>
+    <lastmod>2025-01-18T17:39:22.640Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/hglanz/statistical-computing-with-r/weeks/week-3-dplyr.html</loc>
@@ -307,5 +307,9 @@
   <url>
     <loc>https://github.com/hglanz/statistical-computing-with-r/labs/instructions/lab-3-instructions.html</loc>
     <lastmod>2025-01-06T21:17:25.006Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/hglanz/statistical-computing-with-r/labs/instructions/challenge-3-instructions.html</loc>
+    <lastmod>2025-01-06T21:17:24.851Z</lastmod>
   </url>
 </urlset>
