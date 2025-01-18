@@ -68,8 +68,8 @@ website:
             text: "Week 2, Part 1 - ggplot"
           - href: weeks/week-2-projects-data-import.qmd
             text: "Week 2, Part 2 - Data Import"
-          # - href: weeks/week-3-dplyr.qmd
-          #   text: "Week 3 - dplyr"
+          - href: weeks/week-3-dplyr.qmd
+            text: "Week 3 - dplyr"
           # - href: weeks/week-4-reshaping-joining.qmd
           #   text: "Week 4, Part 1 - Data Transformation"
           # - href: weeks/week-4-factors.qmd
@@ -96,10 +96,10 @@ website:
             text: "Lab 2 Instructions"
           - href: labs/instructions/challenge-2-instructions.qmd
             text: "Challenge 2 Instructions"
-          # - href: labs/instructions/lab-3-instructions.qmd
-          #   text: "Lab 3 Instructions"
-          # - href: labs/instructions/challenge-3-instructions.qmd
-          #   text: "Challenge 3 Instructions"
+          - href: labs/instructions/lab-3-instructions.qmd
+            text: "Lab 3 Instructions"
+          - href: labs/instructions/challenge-3-instructions.qmd
+            text: "Challenge 3 Instructions"
           # - href: labs/instructions/lab-4-instructions.qmd
           #   text: "Lab 4 & Challenge 4 Instructions"
           # - href: labs/instructions/lab-5-instructions.qmd
