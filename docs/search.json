@@ -382,7 +382,7 @@
     "href": "slides/week-3/week-3-dplyr-pt1.html#submission",
     "title": "Data Wrangling with dplyr",
     "section": "Submission",
-    "text": "Submission\n\nSubmit the full name of the college Ephelia will attend to the Canvas Quiz.\n\n\nEach person will input the full name of the college in the PA3 Canvas quiz.\nThe person who last occupied the role of Developer will download and submit the PA-3.html file for the group.\n\nOnly one submission per group!"
+    "text": "Submission\n\nSubmit the full name of the college Ephelia will attend to the Canvas Quiz.\n\n\nEach person will input the full name of the college in the PA3 Canvas quiz.\nEach person will submit the PA-3.html file."
   },
   {
     "objectID": "slides/week-4/week-4-joins-2.html#thursday-october-17",
@@ -6119,5 +6119,12 @@
     "title": "Tidy Data, Importing Data & More Advanced Graphics",
     "section": "Comments from Lab 1 for Lab 2…",
     "text": "Comments from Lab 1 for Lab 2…\n\n\nEvery lab and challenge is expected to use code-folding.\nThere should be no messages / warnings output in your final rendered HTML.\nYou should reduce the amount of “intermediate object junk” in your workspace.\n\nAsk yourself, do I need to use this later?\nIf the answer is no, then you should not save that object."
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt1.html#thursday-january-23",
+    "href": "slides/week-3/week-3-dplyr-pt1.html#thursday-january-23",
+    "title": "Data Wrangling with dplyr",
+    "section": "Thursday, January 23",
+    "text": "Thursday, January 23\nToday we will…\n\nNew Material\n\nIntroduce the dplyr package.\nUse dplyr verbs to manipulate data.\n\nPA 3: Identify the Mystery College"
   }
 ]

@@ -13,7 +13,7 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-## Tuesday, October 8
+## Thursday, January 23
 
 Today we will...
 
@@ -1391,32 +1391,32 @@ Every group should have a **dplyr** cheatsheet!
 :::
 :::
 
-## Task Card
+<!-- ## Task Card -->
 
-Every group should have a **task card**! 
+<!-- Every group should have a **task card**!  -->
 
-. . .
+<!-- . . . -->
 
-::: columns
-::: {.column width="45%"}
-**On the Front**
+<!-- ::: columns -->
+<!-- ::: {.column width="45%"} -->
+<!-- **On the Front** -->
 
-- the expectations of each role
-- the norms of collaborating
-:::
+<!-- - the expectations of each role -->
+<!-- - the norms of collaborating -->
+<!-- ::: -->
 
-::: {.column width="5%"}
-:::
+<!-- ::: {.column width="5%"} -->
+<!-- ::: -->
 
-::: {.column width="45%"}
-::: {.fragment}
-**On the Back**
+<!-- ::: {.column width="45%"} -->
+<!-- ::: {.fragment} -->
+<!-- **On the Back** -->
 
-- advice for dealing with code errors 
-- guidelines for formatting `dplyr` code
-:::
-:::
-:::
+<!-- - advice for dealing with code errors  -->
+<!-- - guidelines for formatting `dplyr` code -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: -->
 
 ## Pair Programming Expectations
 
@@ -1470,29 +1470,29 @@ During your collaboration, you and your partner will alternate between two roles
 :::
 :::
 
-## How does this look in Posit Cloud?
+<!-- ## How does this look in Posit Cloud? -->
 
-::: {.small}
-First, both of you will do the following:
+<!-- ::: {.small} -->
+<!-- First, both of you will do the following: -->
 
-- Join your Practice Activity workspace in Posit Cloud
-  * If you were sent a new email, you were added to a different group!
-- Log-in to Posit Cloud
-- Open the PA 3: Identify the Mystery College project
-- Open the `PA3-dplyr.qmd` file
-:::
+<!-- - Join your Practice Activity workspace in Posit Cloud -->
+<!--   * If you were sent a new email, you were added to a different group! -->
+<!-- - Log-in to Posit Cloud -->
+<!-- - Open the PA 3: Identify the Mystery College project -->
+<!-- - Open the `PA3-dplyr.qmd` file -->
+<!-- ::: -->
 
-. . .
+<!-- . . . -->
 
-::: {.small}
-Then, the partner whose birthday is closest to January 1st starts as the 
-Developer (typing and listening to instructions from the Coder)!
+<!-- ::: {.small} -->
+<!-- Then, the partner whose birthday is closest to January 1st starts as the  -->
+<!-- Developer (typing and listening to instructions from the Coder)! -->
 
-- The Coder **does not type**. 
-  * The collaborative editing feature should allow you to track what is being 
-  typed. 
-- The Developer **only types what they are told to type**. 
-:::
+<!-- - The Coder **does not type**.  -->
+<!--   * The collaborative editing feature should allow you to track what is being  -->
+<!--   typed.  -->
+<!-- - The Developer **only types what they are told to type**.  -->
+<!-- ::: -->
 
 ## Why are we switching?
 
@@ -1529,8 +1529,5 @@ You **are** permitted to use:
 > Submit the full name of the college Ephelia will attend to the Canvas Quiz.
 
 - Each person will input the full name of the college in the PA3 Canvas quiz.
-- The person who last occupied the role of Developer will download and submit
-the `PA-3.html` file for the group.
-  + Only one submission per group!
+- Each person will submit the `PA-3.html` file.
 
-# Exit Ticket
