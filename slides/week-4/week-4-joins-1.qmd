@@ -17,40 +17,40 @@ library(ggridges)
 library(readxl)
 ```
 
-## Tuesday, October 15
+## Tuesday, January 28
 
 Today we will discuss...
 
--   Discord & Tokens
--   Grade Expectations 
-    + Survey on Canvas
+<!-- -   Discord & Tokens -->
+<!-- -   Grade Expectations  -->
+<!--     + Survey on Canvas -->
 -   New Material
     -   Pivoting data with `tidyr`
     -   Joining data with `dplyr`
 -   [PA 4: Military Spending](../../group-activities/week-4/PA4-tidyr.qmd)
 
-# Discord & Deadline Extension Tokens
+<!-- # Discord & Deadline Extension Tokens -->
 
-# Discord & Deadline Extension Tokens
+<!-- # Discord & Deadline Extension Tokens -->
 
-> If you answer / respond to another student's question on Discord, you will 
-> earn one additional "token" (3-day deadline extension request). 
+<!-- > If you answer / respond to another student's question on Discord, you will  -->
+<!-- > earn one additional "token" (3-day deadline extension request).  -->
 
-# Grade Expectations
+<!-- # Grade Expectations -->
 
-# Grade Expectations
+<!-- # Grade Expectations -->
 
-> The [course syllabus](../../course-materials/course-syllabus.qmd#sec-grades)
-> has been updated to reflect the grade criteria you all proposed. 
+<!-- > The [course syllabus](../../course-materials/course-syllabus.qmd#sec-grades) -->
+<!-- > has been updated to reflect the grade criteria you all proposed.  -->
 
-# Grade Expectations
+<!-- # Grade Expectations -->
 
-> The [course syllabus](../../course-materials/course-syllabus.qmd#sec-grades)
-> has been updated to reflect the grade criteria you all proposed. 
+<!-- > The [course syllabus](../../course-materials/course-syllabus.qmd#sec-grades) -->
+<!-- > has been updated to reflect the grade criteria you all proposed.  -->
 
-You have until Sunday [to vote](https://canvas.calpoly.edu/courses/138158/quizzes/247752) 
-on whether you agree with the proposed criteria, and to suggest ways these
-criteria could be revised.
+<!-- You have until Sunday [to vote](https://canvas.calpoly.edu/courses/138158/quizzes/247752)  -->
+<!-- on whether you agree with the proposed criteria, and to suggest ways these -->
+<!-- criteria could be revised. -->
 
 # Data Layouts
 
@@ -1039,7 +1039,7 @@ Today you will be tidying messy data to explore the relationship between countri
 
 ::: columns
 ::: {.column width="60%"}
-Every group should have a **dplyr** cheatsheet!
+Everyone should have a **dplyr** cheatsheet!
 
 **On the Back**: The Combine Tables section gives advice on joining two datasets
 
@@ -1058,7 +1058,7 @@ Every group should have a **dplyr** cheatsheet!
 
 ::: columns
 ::: {.column width="60%"}
-Every group should have a **tidyr** cheatsheet!
+Everyone should have a **tidyr** cheatsheet!
 
 **On the Front**: The Reshape Data section gives advice on pivoting a dataset
 from wide to long
@@ -1073,33 +1073,33 @@ from wide to long
 :::
 :::
 
-## Task Card
+<!-- ## Task Card -->
 
-Every group should have a **task card**! 
+<!-- Every group should have a **task card**!  -->
 
-. . .
+<!-- . . . -->
 
-::: columns
-::: {.column width="40%"}
-**On the Front**
+<!-- ::: columns -->
+<!-- ::: {.column width="40%"} -->
+<!-- **On the Front** -->
 
-- the expectations of each role
-- the norms of collaborating
-:::
+<!-- - the expectations of each role -->
+<!-- - the norms of collaborating -->
+<!-- ::: -->
 
-::: {.column width="5%"}
-:::
+<!-- ::: {.column width="5%"} -->
+<!-- ::: -->
 
-::: {.column width="55%"}
-::: {.fragment}
-**On the Back**
+<!-- ::: {.column width="55%"} -->
+<!-- ::: {.fragment} -->
+<!-- **On the Back** -->
 
-- code and pictures for performing an `anti_join()`
-- code and pictures for pivoting a dataset from wide to long
-- guidelines for formatting `dplyr` and `tidyr` code
-:::
-:::
-:::
+<!-- - code and pictures for performing an `anti_join()` -->
+<!-- - code and pictures for pivoting a dataset from wide to long -->
+<!-- - guidelines for formatting `dplyr` and `tidyr` code -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: -->
 
 ## Pair Programming Expectations
 
@@ -1141,10 +1141,10 @@ Every group should have a **task card**!
 ::: {.small}
 First, both of you will do the following:
 
-- Join your Practice Activity workspace in Posit Cloud
-  * You are in a new group, so you should have a new workspace!
-- Log-in to Posit Cloud
-- Open the PA 4: Military Spending project
+<!-- - Join your Practice Activity workspace in Posit Cloud -->
+<!--   * You are in a new group, so you should have a new workspace! -->
+<!-- - Log-in to Posit Cloud -->
+<!-- - Open the PA 4: Military Spending project -->
 - Open the `PA4-dplyr.qmd` file
 :::
 
@@ -1180,8 +1180,5 @@ You **are** permitted to use:
 
 - Each person will input your responses to Canvas Questions 1, 2, and 3 into 
 the PA4 Canvas quiz.
-- The person who last occupied the role of Developer will download and submit
-the `PA-4.html` file for the group.
-  + Only one submission per group!
+- Each person will submit the `PA-4.html` file.
 
-# Exit Ticket
