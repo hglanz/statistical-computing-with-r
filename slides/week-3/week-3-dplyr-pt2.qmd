@@ -13,172 +13,172 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-## Thursday, October 10
+## Thursday, January 23
 
 Today we will...
 
 ::: {.small}
-+ Debrief PA 3
-+ Debrief Lab 2 & Challenge 2 
-+ Discuss Lab 2 Peer Review
-+ Outline Grade Expectations for Syllabus
+<!-- + Debrief PA 3 -->
+<!-- + Debrief Lab 2 & Challenge 2  -->
+<!-- + Discuss Lab 2 Peer Review -->
+<!-- + Outline Grade Expectations for Syllabus -->
 + New Material
     -   Extend `dplyr` verbs to have more functionality
 + [Lab 3: Teacher Evaluations](../../labs/instructions/lab-3-instructions.qmd)
 :::
 
-# PA 3: Identify the Mystery College
+<!-- # PA 3: Identify the Mystery College -->
 
-## Efficient Coding
+<!-- ## Efficient Coding -->
 
-For the final problem, many groups' code looked like this:
+<!-- For the final problem, many groups' code looked like this: -->
 
-```{r}
-#| label: example-code-from-PA3
-#| eval: false
-#| echo: true
-#| code-line-numbers: false
+<!-- ```{r} -->
+<!-- #| label: example-code-from-PA3 -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- #| code-line-numbers: false -->
 
-colleges_clean |> 
-  filter(REGION == 7) |>
-  filter(ADM_RATE > median(ADM_RATE)) |>
-  filter(TUITION_DIFF != 0) |>
-  filter(SAT_AVG %% 2 == 1) |>
-  filter(STABBR != "ID") |>
-  filter(UGDS < 10000) |>
-  filter(STABBR != "MT") |> 
-  slice_min(order_by = ADM_RATE) 
-```
+<!-- colleges_clean |>  -->
+<!--   filter(REGION == 7) |> -->
+<!--   filter(ADM_RATE > median(ADM_RATE)) |> -->
+<!--   filter(TUITION_DIFF != 0) |> -->
+<!--   filter(SAT_AVG %% 2 == 1) |> -->
+<!--   filter(STABBR != "ID") |> -->
+<!--   filter(UGDS < 10000) |> -->
+<!--   filter(STABBR != "MT") |>  -->
+<!--   slice_min(order_by = ADM_RATE)  -->
+<!-- ``` -->
 
-. . .
+<!-- . . . -->
 
-</br> 
+<!-- </br>  -->
 
-**Is there a more "efficient" way do this?**
+<!-- **Is there a more "efficient" way do this?** -->
 
-## A few words about `drop_na()`
+<!-- ## A few words about `drop_na()` -->
 
--   Easy tool to remove missing values
--   Unilaterally removes **any** row with a missing value for **any** variable
--   **But** you can specify what columns it should look at for missing values!
+<!-- -   Easy tool to remove missing values -->
+<!-- -   Unilaterally removes **any** row with a missing value for **any** variable -->
+<!-- -   **But** you can specify what columns it should look at for missing values! -->
 
-```{r}
-#| echo: true
-#| eval: false
-#| code-line-numbers: false
-#| label: drop-na-example-with-specified-columns
+<!-- ```{r} -->
+<!-- #| echo: true -->
+<!-- #| eval: false -->
+<!-- #| code-line-numbers: false -->
+<!-- #| label: drop-na-example-with-specified-columns -->
 
-colleges_clean |> 
-  drop_na(REGION, 
-          ADM_RATE, 
-          TUITION_DIFF, 
-          SAT_AVG, 
-          STABBR, 
-          UGDS)
-```
-
-
-# Lab 2 & Challenge 2 
-
-## Grading / Feedback & Revisions
-
-::: {.small}
-+ Each question will earn a score of "Success" or "Growing".
-  * Questions marked "Growing" will receive feedback on how to improve your
-  solution.
-  * These questions can be resubmitted for additional feedback. 
-:::
-
-. . .
-
-::: {.small}
-+ Earning a "Success" doesn't necessarily mean your solution is without error.
-  * You may still receive feedback on how to improve your solution.
-  * These questions cannot be resubmitted for additional feedback.
-:::
-
-. . .
-
-::: {.small}
-+ **Revisions for Lab 2 & Challenge 2 are due next Friday (October 18th)**
-  * You must submit your revised HTML to the original Lab 2 / Challenge 2 
-  assignment portal. 
-  * You must include reflections on what you learned by completing the
-  revisions.
-:::
-
-## Lab 2 Growing Points
-
-::: {.small}
-- Q1: Loading in data with the `here()` function
-  + In this class, we use a [package oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) to 
-  read in the data.
-  + We **do not** specify relative paths to read in our data. 
-:::
-
-. . .
-
-::: {.small}
-- Q5: Adding transparency 
-  + Only **variables** being mapped to aesthetics are inserted into the `aes()`
-  function!
-  + Hard coded values (e.g., `alpha = 0.5`) belong outside the `aes()` function. 
-:::
-
-. . .
-
-::: {.small}
-- Report formatting: No messages or warnings should be output in the HTML
-document!
-  + Use code chunk options and `execute` options to suppress these messages and
-  warnings. 
-:::
-
-## [Don't make people tilt their head](https://youtu.be/h5cTacaWE6I?si=4DLb2OQoLpLFJGGQ)
-
-![](images/tilt-head.png){alt-text="The image shows a comparison between two bar charts with a horizontal arrow pointing from the left chart to the right chart, indicating a transformation. The left chart is a vertical bar chart with various car categories on the x-axis (2seater, compact, midsize, minivan, pickup, subcompact, SUV) and values on the y-axis ranging from 0 to 60. The x-axis labels are tilted, making them harder to read. The right chart is a horizontal bar chart with the same car categories listed along the y-axis and values on the x-axis. This arrangement makes the labels easier to read. The transformation suggests an improvement in readability by switching from a vertical to a horizontal bar chart."}
-
-# Peer Code Review
-
-# Peer Code Review
-
-> Each of you was assigned one student's lab to provide feedback on their code
-> formatting. 
-
-# Peer Code Review
-
-> Your feedback is to be provided in the comment box!
-
-## What feedback would you give?
-
-```{r}
-#| eval: false
-#| echo: true
-#| code-line-numbers: false
-
-ggplot(data = surveys, mapping = aes(x=hindfoot_length,y= weight)) +  
-  geom_jitter(alpha=.2,color='tomato')+ facet_wrap(~species)+geom_boxplot(outlier.shape = NA)+labs(
-    title ='Weight to hindfoot comparison'
-  )+ xlab('length (mm)')+ylab('Weight(g)')
-```
+<!-- colleges_clean |>  -->
+<!--   drop_na(REGION,  -->
+<!--           ADM_RATE,  -->
+<!--           TUITION_DIFF,  -->
+<!--           SAT_AVG,  -->
+<!--           STABBR,  -->
+<!--           UGDS) -->
+<!-- ``` -->
 
 
-# Grade Expectations
+<!-- # Lab 2 & Challenge 2  -->
 
-## Defining Grades in 331
+<!-- ## Grading / Feedback & Revisions -->
 
--   A: **Superior** Attainment of Course Objectives
+<!-- ::: {.small} -->
+<!-- + Each question will earn a score of "Success" or "Growing". -->
+<!--   * Questions marked "Growing" will receive feedback on how to improve your -->
+<!--   solution. -->
+<!--   * These questions can be resubmitted for additional feedback.  -->
+<!-- ::: -->
 
--   B: **Good** Attainment of Course Objectives
+<!-- . . . -->
 
--   C: **Acceptable** Attainment of Course Objectives
+<!-- ::: {.small} -->
+<!-- + Earning a "Success" doesn't necessarily mean your solution is without error. -->
+<!--   * You may still receive feedback on how to improve your solution. -->
+<!--   * These questions cannot be resubmitted for additional feedback. -->
+<!-- ::: -->
 
--   D: **Poor** Attainment of Course Objectives
+<!-- . . . -->
 
-. . .
+<!-- ::: {.small} -->
+<!-- + **Revisions for Lab 2 & Challenge 2 are due next Friday (October 18th)** -->
+<!--   * You must submit your revised HTML to the original Lab 2 / Challenge 2  -->
+<!--   assignment portal.  -->
+<!--   * You must include reflections on what you learned by completing the -->
+<!--   revisions. -->
+<!-- ::: -->
 
-We need to define criteria for each of these grades based on the [four objectives of this course](../../course-materials/course-syllabus.qmd)---learning targets, 
-revising thinking, extending thinking, collaborating with peers. 
+<!-- ## Lab 2 Growing Points -->
+
+<!-- ::: {.small} -->
+<!-- - Q1: Loading in data with the `here()` function -->
+<!--   + In this class, we use a [package oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) to  -->
+<!--   read in the data. -->
+<!--   + We **do not** specify relative paths to read in our data.  -->
+<!-- ::: -->
+
+<!-- . . . -->
+
+<!-- ::: {.small} -->
+<!-- - Q5: Adding transparency  -->
+<!--   + Only **variables** being mapped to aesthetics are inserted into the `aes()` -->
+<!--   function! -->
+<!--   + Hard coded values (e.g., `alpha = 0.5`) belong outside the `aes()` function.  -->
+<!-- ::: -->
+
+<!-- . . . -->
+
+<!-- ::: {.small} -->
+<!-- - Report formatting: No messages or warnings should be output in the HTML -->
+<!-- document! -->
+<!--   + Use code chunk options and `execute` options to suppress these messages and -->
+<!--   warnings.  -->
+<!-- ::: -->
+
+<!-- ## [Don't make people tilt their head](https://youtu.be/h5cTacaWE6I?si=4DLb2OQoLpLFJGGQ) -->
+
+<!-- ![](images/tilt-head.png){alt-text="The image shows a comparison between two bar charts with a horizontal arrow pointing from the left chart to the right chart, indicating a transformation. The left chart is a vertical bar chart with various car categories on the x-axis (2seater, compact, midsize, minivan, pickup, subcompact, SUV) and values on the y-axis ranging from 0 to 60. The x-axis labels are tilted, making them harder to read. The right chart is a horizontal bar chart with the same car categories listed along the y-axis and values on the x-axis. This arrangement makes the labels easier to read. The transformation suggests an improvement in readability by switching from a vertical to a horizontal bar chart."} -->
+
+<!-- # Peer Code Review -->
+
+<!-- # Peer Code Review -->
+
+<!-- > Each of you was assigned one student's lab to provide feedback on their code -->
+<!-- > formatting.  -->
+
+<!-- # Peer Code Review -->
+
+<!-- > Your feedback is to be provided in the comment box! -->
+
+<!-- ## What feedback would you give? -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #| echo: true -->
+<!-- #| code-line-numbers: false -->
+
+<!-- ggplot(data = surveys, mapping = aes(x=hindfoot_length,y= weight)) +   -->
+<!--   geom_jitter(alpha=.2,color='tomato')+ facet_wrap(~species)+geom_boxplot(outlier.shape = NA)+labs( -->
+<!--     title ='Weight to hindfoot comparison' -->
+<!--   )+ xlab('length (mm)')+ylab('Weight(g)') -->
+<!-- ``` -->
+
+
+<!-- # Grade Expectations -->
+
+<!-- ## Defining Grades in 331 -->
+
+<!-- -   A: **Superior** Attainment of Course Objectives -->
+
+<!-- -   B: **Good** Attainment of Course Objectives -->
+
+<!-- -   C: **Acceptable** Attainment of Course Objectives -->
+
+<!-- -   D: **Poor** Attainment of Course Objectives -->
+
+<!-- . . . -->
+
+<!-- We need to define criteria for each of these grades based on the [four objectives of this course](../../course-materials/course-syllabus.qmd)---learning targets,  -->
+<!-- revising thinking, extending thinking, collaborating with peers.  -->
 
 # Extending `dplyr` verbs
 
@@ -648,8 +648,8 @@ Exploring teacher evaluations during COVID-19
 ## To do...
 
 -   **Lab 3: Student Evaluations of Teaching**
-    -   Due Sunday, 10/13 at 11:59pm
+    -   Due Sunday, 1/26 at 11:59pm
 -   **Challenge 3: Extending Teaching Evaluation Investigations**
-    -   Due Sunday, 10/13 at 11:59pm
+    -   Due Sunday, 1/26 at 11:59pm
 -   **Read Chapter 4: Data Joins and Transformations**
-    -   **Check-in 4.1 + 4.2** due Tuesday 10/15 at 12pm
+    -   **Check-in 4.1 + 4.2** due Tuesday 1/28 at 12pm

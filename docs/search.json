@@ -1260,7 +1260,7 @@
     "href": "slides/week-3/week-3-dplyr-pt2.html#to-do",
     "title": "Extending Data Wrangling Verbs",
     "section": "To do…",
-    "text": "To do…\n\nLab 3: Student Evaluations of Teaching\n\nDue Sunday, 10/13 at 11:59pm\n\nChallenge 3: Extending Teaching Evaluation Investigations\n\nDue Sunday, 10/13 at 11:59pm\n\nRead Chapter 4: Data Joins and Transformations\n\nCheck-in 4.1 + 4.2 due Tuesday 10/15 at 12pm"
+    "text": "To do…\n\nLab 3: Student Evaluations of Teaching\n\nDue Sunday, 1/26 at 11:59pm\n\nChallenge 3: Extending Teaching Evaluation Investigations\n\nDue Sunday, 1/26 at 11:59pm\n\nRead Chapter 4: Data Joins and Transformations\n\nCheck-in 4.1 + 4.2 due Tuesday 1/28 at 12pm"
   },
   {
     "objectID": "slides/week-9/data-simulation-part-1.html#tuesday-november-19",
@@ -6126,5 +6126,12 @@
     "title": "Data Wrangling with dplyr",
     "section": "Thursday, January 23",
     "text": "Thursday, January 23\nToday we will…\n\nNew Material\n\nIntroduce the dplyr package.\nUse dplyr verbs to manipulate data.\n\nPA 3: Identify the Mystery College"
+  },
+  {
+    "objectID": "slides/week-3/week-3-dplyr-pt2.html#thursday-january-23",
+    "href": "slides/week-3/week-3-dplyr-pt2.html#thursday-january-23",
+    "title": "Extending Data Wrangling Verbs",
+    "section": "Thursday, January 23",
+    "text": "Thursday, January 23\nToday we will…\n\n\n\n\n\n\nNew Material\n\nExtend dplyr verbs to have more functionality\n\nLab 3: Teacher Evaluations"
   }
 ]
