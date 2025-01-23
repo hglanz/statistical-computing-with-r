@@ -101,7 +101,7 @@ website:
           - href: labs/instructions/challenge-3-instructions.qmd
             text: "Challenge 3 Instructions"
           - href: labs/instructions/lab-4-instructions.qmd
-            text: "Lab 4  Instructions"
+            text: "Lab 4 Instructions"
           # - href: labs/instructions/lab-5-instructions.qmd
           #   text: "Lab 5 Instructions"
           # - href: labs/instructions/lab-7-instructions.qmd
