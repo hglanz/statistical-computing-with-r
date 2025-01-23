@@ -634,7 +634,7 @@
     "href": "slides/week-4/week-4-joins-2.html#to-do",
     "title": "Extending Joins, Factors, Clean Variable Names",
     "section": "To do…",
-    "text": "To do…\n\nLab 4: Childcare Costs in California\n\nDue Sunday (10/20) at 11:59pm\n\nRead Chapter 5: Strings + Dates\n\nCheck-in 5.1 due Tuesday (10/22) at 12:10pm\nCheck-in 5.2 due Thursday (10/24) at 12:10pm"
+    "text": "To do…\n\nLab 4: Childcare Costs in California\n\nDue Sunday (2/2) at 11:59pm\n\nRead Chapter 5: Strings + Dates\n\nCheck-in 5.1 due Tuesday (2/4) at 12pm\nCheck-in 5.2 due Thursday (2/6) at 12pm"
   },
   {
     "objectID": "slides/week-8/iteration-part-1.html#today-we-will",
@@ -1659,7 +1659,7 @@
     "text": "You can access the Lab 4 materials through the Lab 4 assignment on GitHub Classroom. We’re going to follow the same steps as last week to make your own copy of this repository:\n\n\n\n\n\n\n\nSame process as last week!\n\n\n\n\n\nUse these steps to make a copy of the Lab repository: List of Steps to Copy the Lab Assignment from GitHub Classroom\n\n\n\n\n\n\nNow, find the lab-4-student.qmd file in the “Files” tab in the lower right hand corner. Click on this file to open it.\nAt the top of the document (in the YAML) there is an author line that says \"Your name here!\". Change this to be your name and save your file either by clicking on the blue floppy disk or with a shortcut (command / control + s).\n\n\n\nNow for our last step, we need to commit the files to our repo.\n\nClick the “Git” tab in upper right pane\nCheck the “Staged” box for the lab-4-student.qmd file\nClick “Commit”\nIn the box that opens, type a message in “Commit message”, such as “Added my name”.\nClick “Commit”.\nClick the green “Push” button to send your local changes to GitHub.\n\nRStudio will display something like:\n&gt;&gt;&gt; /usr/bin/git push origin HEAD:refs/heads/main\nTo https://github.com/atheobold/introduction-to-quarto-allison-theobold.git\n   3a2171f..6d58539  HEAD -&gt; main",
     "crumbs": [
       "Labs",
-      "Lab 4 & Challenge 4 Instructions"
+      "Lab 4 Instructions"
     ]
   },
   {
@@ -1670,7 +1670,7 @@
     "text": "You can access the Lab 4 materials through the Lab 4 assignment on GitHub Classroom. We’re going to follow the same steps as last week to make your own copy of this repository:\n\n\n\n\n\n\n\nSame process as last week!\n\n\n\n\n\nUse these steps to make a copy of the Lab repository: List of Steps to Copy the Lab Assignment from GitHub Classroom",
     "crumbs": [
       "Labs",
-      "Lab 4 & Challenge 4 Instructions"
+      "Lab 4 Instructions"
     ]
   },
   {
@@ -1681,7 +1681,7 @@
     "text": "Now, find the lab-4-student.qmd file in the “Files” tab in the lower right hand corner. Click on this file to open it.\nAt the top of the document (in the YAML) there is an author line that says \"Your name here!\". Change this to be your name and save your file either by clicking on the blue floppy disk or with a shortcut (command / control + s).",
     "crumbs": [
       "Labs",
-      "Lab 4 & Challenge 4 Instructions"
+      "Lab 4 Instructions"
     ]
   },
   {
@@ -1692,7 +1692,7 @@
     "text": "Now for our last step, we need to commit the files to our repo.\n\nClick the “Git” tab in upper right pane\nCheck the “Staged” box for the lab-4-student.qmd file\nClick “Commit”\nIn the box that opens, type a message in “Commit message”, such as “Added my name”.\nClick “Commit”.\nClick the green “Push” button to send your local changes to GitHub.\n\nRStudio will display something like:\n&gt;&gt;&gt; /usr/bin/git push origin HEAD:refs/heads/main\nTo https://github.com/atheobold/introduction-to-quarto-allison-theobold.git\n   3a2171f..6d58539  HEAD -&gt; main",
     "crumbs": [
       "Labs",
-      "Lab 4 & Challenge 4 Instructions"
+      "Lab 4 Instructions"
     ]
   },
   {
@@ -1703,7 +1703,7 @@
     "text": "California Childcare Costs\nLet’s start by focusing only on California.\n2. Create a ca_childcare dataset of childcare costs in California, containing (1) county information and (2) all information from the childcare_costs dataset. Hint: There are 58 counties in CA and 11 years in the dataset. Therefore, your new dataset should have 53 x 11 = 638 observations.\n3. Using a function from the forcats package, complete the code below to create a new variable where each county is categorized into one of the ten (10) Census regions in California. Use the Region description (from the plot), not the Region number.\nHint: This is probably a good place to use ChatGPT to reduce on tedious work. But you do need to know how to prompt ChatGPT to make it useful!\n\n\n\n\n\n\nTip\n\n\n\nI have provided you with code that eliminates the word “County” from each of the county names in your ca_childcare dataset. You should keep this line of code and pipe into the rest of your data manipulations.\nYou will learn about the str_remove() function from the stringr package next week!\n\n\n\nca_childcare &lt;- ca_childcare |&gt; \n  mutate(county_name = str_remove(county_name, \" County\")) |&gt;\n  ...\n\n4. Let’s consider the median household income of each region, and how that income has changed over time. Create a table with ten rows, one for each region, and two columns, one for 2008 and one for 2018. The cells should contain the median of the median household income (expressed in 2018 dollars) of the region and the study_year. Arrange the rows by 2018 values.\n\n\n\n\n\n\nTip\n\n\n\nThis will require transforming your data! Sketch out what you want the data to look like before you begin to code. You should be starting with your California dataset that contains the regions!\n\n\n5. Which California region had the lowest median full-time median weekly price for center-based childcare for infants in 2018? Does this region correspond to the region with the lowest median income in 2018 that you found in Q4?\n\n\n\n\n\n\nWarning\n\n\n\nThe code should give me the EXACT answer. This means having the code output the exact row(s) and variable(s) necessary for providing the solution.\n\n\n6. The following plot shows, for all ten regions, the change over time of the full-time median price for center-based childcare for infants, toddlers, and preschoolers. Recreate the plot. You do not have to replicate the exact colors or theme, but your plot should have the same content, including the order of the facets and legend, reader-friendly labels, axes breaks, and a loess smoother.\n\n\n\n\n\n\nTip\n\n\n\nThis will require transforming your data! Sketch out what you want the data to look like before you begin to code. You should be starting with your California dataset that contains the regions.\nYou will also be required to use functions from forcats to change the labels and the ordering of your factor levels.\nRemember to avoid “object junk” in your environment!\n\n\n\n\n\nPlot to recreate",
     "crumbs": [
       "Labs",
-      "Lab 4 & Challenge 4 Instructions"
+      "Lab 4 Instructions"
     ]
   },
   {
@@ -1714,7 +1714,7 @@
     "text": "Median Household Income vs. Childcare Costs for Infants\n\n\n\n\n\n\nRefresher on Linear Regression\n\n\n\nWhile a second course in statistics is a pre-requisite for this class, here is a refresher on simple linear regression with a single predictor.\n\n\n7. Create a scatterplot showing the relationship between median household income (expressed in 2018 dollars) and the full-time median weekly price charged for center-based childcare for an infant in California. Overlay a linear regression line (lm) to show the trend.\n8. Look up the documentation for lm() and fit a linear regression model to the relationship shown in your plot above.\n\n# complete the code provided\nreg_mod1 &lt;- lm()\nsummary(reg_mod1)\n\n9. Using the output from summary(), write out the estimated regression line (recall: \\(y = mx + b\\)).\n10. Do you have evidence to conclude there is a relationship between the median household income and the median weekly cost of center-based childcare for infants in California? Cite values from your summary() output to support your claim!",
     "crumbs": [
       "Labs",
-      "Lab 4 & Challenge 4 Instructions"
+      "Lab 4 Instructions"
     ]
   },
   {
@@ -1725,7 +1725,7 @@
     "text": "There is no Challenge this week!\nPlease take this time to try your best to recreate the plot I provided in Question 6!\n\nCan you match my colors?\nCan you get the legend in the same order?\nCan you get the facet names to match and be in the same order?\n\nCould you even make the plot better? Could you add dollar signs to the y-axis labels? I might suggest you look into the scales package.",
     "crumbs": [
       "Labs",
-      "Lab 4 & Challenge 4 Instructions"
+      "Lab 4 Instructions"
     ]
   },
   {
@@ -3009,7 +3009,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\nWeek\n\n\n\n\nDate\n\n\n\n\nTopic & Preview Activities\n\n\n\n\nLecture Slides\n\n\n\n\nPractice Activity\n\n\n\n\nLab & Challenge\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n0\n\n\n\n\nTues, 1/7\n\n\n\n\nCourse Set-up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\n\n\n\n\nTues, 1/7\n\n\n\n\nIntro to R & RStudio\n\n\nIntro to Quarto\n\n\n\n\nWelcome to STAT 331 & Intro to R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThurs, 1/9\n\n\n\n\nIntro to Version Control\n\n\n\n\nIntro to Quarto & Version Control\n\n\n\n\n\n\nLab 1 & Challenge 1 Instructions\n\n\nLink to Assignment on GitHub Classroom (due 1/12)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\n\n\n\n\nTuesday, 1/14\n\n\n\n\nData Visualization with ggplot2\n\n\nData Import & R Projects\n\n\n\n\nBasics of Graphics\n\n\n\n\nPA 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThurs, 1/16\n\n\n\n\n\n\nTidy Data, Importing Data & More Advanced Graphics\n\n\n\n\nPA 2 Due by 12pm\n\n\n\n\nLab 2 Instructions\n\n\nChallenge 2 Instructions\n\n\nLink to Assignment on GitHub Classroom\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSun, 1/19\n\n\n\n\n\n\n\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\n\n\n\n\nThurs, 1/23\n\n\n\n\nData Wrangling with dplyr\n\n\n\n\nData Wrangling with dplyr\n\n\n\n\nPA 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThurs, 1/23\n\n\n\n\n\n\nExtending Data Wrangling Verbs\n\n\n\n\nPA3 Due 1/25\n\n\n\n\nLab 3 Instructions\n\n\nChallenge 3 Instructions\n\n\nLink to Assignment on GitHub Classroom\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSunday, 1/26\n\n\n\n\n\n\n\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\n\n\n\n\nDate\n\n\n\n\nTopic & Preview Activities\n\n\n\n\nLecture Slides\n\n\n\n\nPractice Activity\n\n\n\n\nLab & Challenge\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n0\n\n\n\n\nTues, 1/7\n\n\n\n\nCourse Set-up\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\n\n\n\n\nTues, 1/7\n\n\n\n\nIntro to R & RStudio\n\n\nIntro to Quarto\n\n\n\n\nWelcome to STAT 331 & Intro to R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThurs, 1/9\n\n\n\n\nIntro to Version Control\n\n\n\n\nIntro to Quarto & Version Control\n\n\n\n\n\n\nLab 1 & Challenge 1 Instructions\n\n\nLink to Assignment on GitHub Classroom (due 1/12)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\n\n\n\n\nTuesday, 1/14\n\n\n\n\nData Visualization with ggplot2\n\n\nData Import & R Projects\n\n\n\n\nBasics of Graphics\n\n\n\n\nPA 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThurs, 1/16\n\n\n\n\n\n\nTidy Data, Importing Data & More Advanced Graphics\n\n\n\n\nPA 2 Due by 12pm\n\n\n\n\nLab 2 Instructions\n\n\nChallenge 2 Instructions\n\n\nLink to Assignment on GitHub Classroom\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSun, 1/19\n\n\n\n\n\n\n\n\n\n\nLab 2 & Challenge 2 Due by 11:59pm\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\n\n\n\n\nThurs, 1/23\n\n\n\n\nData Wrangling with dplyr\n\n\n\n\nData Wrangling with dplyr\n\n\n\n\nPA 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThurs, 1/23\n\n\n\n\n\n\nExtending Data Wrangling Verbs\n\n\n\n\nPA3 Due 1/25\n\n\n\n\nLab 3 Instructions\n\n\nChallenge 3 Instructions\n\n\nLink to Assignment on GitHub Classroom\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSunday, 1/26\n\n\n\n\n\n\n\n\n\n\nLab 3 & Challenge 3 Due by 11:59pm\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\n\n\n\n\nTues, 1/28\n\n\n\n\nData Joins and Transformations with tidyr\n\n\n\n\nData Joins + Pivots\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThurs, 1/30\n\n\n\n\nWorking with Categorical Variables\n\n\n\n\nExtending Joins, Factors, Clean Variable Names\n\n\n\n\nPA4 Due by 12pm\n\n\n\n\nLab 4 Instructions\n\n\nLink to Assignment on GitHub Classroom Repository\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSun, 2/2\n\n\n\n\n\n\n\n\n\n\nLab 4 & Challenge 4 Due by 11:59pm",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -3849,7 +3849,7 @@
     "href": "group-activities/week-4/PA-4-tidyr.html",
     "title": "PA 4: Military Spending",
     "section": "",
-    "text": "library(readxl) \nlibrary(tidyverse)\nToday you will be tidying messy data to explore the relationship between countries of the world and military spending. You can find the gov_spending_per_capita.xlsx data included in the data folder.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group."
+    "text": "library(readxl) \nlibrary(tidyverse)\nToday you will be tidying messy data to explore the relationship between countries of the world and military spending. You can find the gov_spending_per_capita.xlsx data included in the data folder.\nThis task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them."
   },
   {
     "objectID": "group-activities/week-4/PA-4-tidyr.html#data-description",
@@ -3863,7 +3863,7 @@
     "href": "group-activities/week-4/PA-4-tidyr.html#data-import",
     "title": "PA 4: Military Spending",
     "section": "Data Import",
-    "text": "Data Import\nFirst, you should notice that there are ten different sheets included in the dataset. We are interested in the sheet labeled “Share of Govt. spending”, which contains information about the share of all government spending that is allocated to the military.\nNext, you’ll notice that there are notes about the data in the first six rows. Ugh! Also notice that the last six rows are footnotes about the data. Ugh!\nRather than copying this one sheet into a new Excel file and deleting the first and last few rows, let’s learn something new about the read_xlsx() function!\nThe read_xlsx() function has several useful arguments:\n\nsheet: specify the name of the sheet that you want to use. The name must be passed in as a string (in quotations)!\nskip: specify the number of rows you want to skip before reading in the data.\nn_max: specify the maximum number of rows of data to read in.\n\n1. Modify the code below (potentially including the file path) to read the military expenditures data into your workspace.\n\nmilitary &lt;- read_xlsx(here::here(\"data\", \n                                 \"gov_spending_per_capita.xlsx\"), \n                      sheet = , \n                      skip  = , \n                      n_max = )\n\nError: `path` does not exist: '/Users/allisontheobold/Documents/Research/IUSE/groupworthy-data-science/data/gov_spending_per_capita.xlsx'\n\n\nI would highly recommend you open the dataset in Excel, so you can see the data layout! ## Data Cleaning\nIn addition to NAs, missing values were coded in two other ways.\n2. What are the two ways missing values were coded?\nHint: information in the top 6 rows of the excel sheet will help you answer this question.\n3. Now that we know how missing values were coded, let’s read in the data again. This time use the na argument to specify the values that need to be replaced with NAs.\nHint: You need to specify the values to replace with NAs as a character string (e.g., c(\"a\", \"b\"))\n\nmilitary &lt;- read_xlsx(here::here(\"data\", \n                                 \"gov_spending_per_capita.xlsx\"), \n                      sheet = , \n                      skip  = , \n                      n_max = , \n                      na = c()\n                      )\n\nError: `path` does not exist: '/Users/allisontheobold/Documents/Research/IUSE/groupworthy-data-science/data/gov_spending_per_capita.xlsx'\n\n\n\nIf you give the Country column a look, you’ll see there are names of continents and regions included. These names are only included to make it simpler to find countries, as they contain no data.\nLuckily for us, these region names were also stored in the “Regional totals” sheet. We can use the Region column of this dataset to filter out the names we don’t want.\nRun the code below to read in the “Regional totals” data.\n\ncont_region &lt;- read_xlsx(here::here(\"data\", \n                                    \"gov_spending_per_capita.xlsx\"), \n                      sheet = \"Regional totals\", \n                      skip = 14) |&gt; \n  filter(Region != \"World total (including Iraq)\", \n         Region != \"World total (excluding Iraq)\")\n\nError: `path` does not exist: '/Users/allisontheobold/Documents/Research/IUSE/groupworthy-data-science/data/gov_spending_per_capita.xlsx'\n\n\nA clever way to filter out observations you don’t want is with an anti_join(). This function will return all of the rows of one dataset without a match in another dataset.\n4. Use the anti_join() function to filter out the Country values we don’t want in the military_clean data. The by argument needs to be filled with the name(s) of the variables that the two datasets should be joined with.\nHint: To join by different variables in data1 and data2 you need to use by = join_by(a == b), which will match data1$a to data2$b.\n\nCanvas Question #1\n5. Complete the code below to figure out what four regions were NOT removed from the military_clean data set?\nHint: the regions that were not removed have missing values for every column except Country.\n\nmilitary_clean |&gt; \n  filter(if_all(.cols = , \n                .fns = )\n         )\n\nError in eval(expr, envir, enclos): object 'military_clean' not found"
+    "text": "Data Import\nFirst, you should notice that there are ten different sheets included in the dataset. We are interested in the sheet labeled “Share of Govt. spending”, which contains information about the share of all government spending that is allocated to the military.\nNext, you’ll notice that there are notes about the data in the first six rows. Ugh! Also notice that the last six rows are footnotes about the data. Ugh!\nRather than copying this one sheet into a new Excel file and deleting the first and last few rows, let’s learn something new about the read_xlsx() function!\nThe read_xlsx() function has several useful arguments:\n\nsheet: specify the name of the sheet that you want to use. The name must be passed in as a string (in quotations)!\nskip: specify the number of rows you want to skip before reading in the data.\nn_max: specify the maximum number of rows of data to read in.\n\n1. Modify the code below (potentially including the file path) to read the military expenditures data into your workspace.\n\nmilitary &lt;- read_xlsx(here::here(\"data\", \n                                 \"gov_spending_per_capita.xlsx\"), \n                      sheet = , \n                      skip  = , \n                      n_max = )\n\nError: `path` does not exist: 'F:/Dropbox/Hunter/FlashDrive-64GB/CalPoly-prof/STAT331/Glanz/Winter2025/statistical-computing-with-r/data/gov_spending_per_capita.xlsx'\n\n\nI would highly recommend you open the dataset in Excel, so you can see the data layout! ## Data Cleaning\nIn addition to NAs, missing values were coded in two other ways.\n2. What are the two ways missing values were coded?\nHint: information in the top 6 rows of the excel sheet will help you answer this question.\n3. Now that we know how missing values were coded, let’s read in the data again. This time use the na argument to specify the values that need to be replaced with NAs.\nHint: You need to specify the values to replace with NAs as a character string (e.g., c(\"a\", \"b\"))\n\nmilitary &lt;- read_xlsx(here::here(\"data\", \n                                 \"gov_spending_per_capita.xlsx\"), \n                      sheet = , \n                      skip  = , \n                      n_max = , \n                      na = c()\n                      )\n\nError: `path` does not exist: 'F:/Dropbox/Hunter/FlashDrive-64GB/CalPoly-prof/STAT331/Glanz/Winter2025/statistical-computing-with-r/data/gov_spending_per_capita.xlsx'\n\n\n\nIf you give the Country column a look, you’ll see there are names of continents and regions included. These names are only included to make it simpler to find countries, as they contain no data.\nLuckily for us, these region names were also stored in the “Regional totals” sheet. We can use the Region column of this dataset to filter out the names we don’t want.\nRun the code below to read in the “Regional totals” data.\n\ncont_region &lt;- read_xlsx(here::here(\"data\", \n                                    \"gov_spending_per_capita.xlsx\"), \n                      sheet = \"Regional totals\", \n                      skip = 14) |&gt; \n  filter(Region != \"World total (including Iraq)\", \n         Region != \"World total (excluding Iraq)\")\n\nError: `path` does not exist: 'F:/Dropbox/Hunter/FlashDrive-64GB/CalPoly-prof/STAT331/Glanz/Winter2025/statistical-computing-with-r/data/gov_spending_per_capita.xlsx'\n\n\nA clever way to filter out observations you don’t want is with an anti_join(). This function will return all of the rows of one dataset without a match in another dataset.\n4. Use the anti_join() function to filter out the Country values we don’t want in the military_clean data. The by argument needs to be filled with the name(s) of the variables that the two datasets should be joined with.\nHint: To join by different variables in data1 and data2 you need to use by = join_by(a == b), which will match data1$a to data2$b.\n\nCanvas Question #1\n5. Complete the code below to figure out what four regions were NOT removed from the military_clean data set?\nHint: the regions that were not removed have missing values for every column except Country.\n\nmilitary_clean |&gt; \n  filter(if_all(.cols = , \n                .fns = )\n         )\n\nError: object 'military_clean' not found"
   },
   {
     "objectID": "group-activities/week-4/PA-4-tidyr.html#data-organization",
@@ -5379,14 +5379,14 @@
     "href": "slides/week-4/week-4-joins-1.html#dplyr-resources",
     "title": "Data Joins + Pivots",
     "section": "dplyr Resources",
-    "text": "dplyr Resources\n\n\nEvery group should have a dplyr cheatsheet!\nOn the Back: The Combine Tables section gives advice on joining two datasets\n\nThe “Filtering Join” section will be helpful when performing an anti_join()!"
+    "text": "dplyr Resources\n\n\nEveryone should have a dplyr cheatsheet!\nOn the Back: The Combine Tables section gives advice on joining two datasets\n\nThe “Filtering Join” section will be helpful when performing an anti_join()!"
   },
   {
     "objectID": "slides/week-4/week-4-joins-1.html#tidyr-resources",
     "href": "slides/week-4/week-4-joins-1.html#tidyr-resources",
     "title": "Data Joins + Pivots",
     "section": "tidyr Resources",
-    "text": "tidyr Resources\n\n\nEvery group should have a tidyr cheatsheet!\nOn the Front: The Reshape Data section gives advice on pivoting a dataset from wide to long"
+    "text": "tidyr Resources\n\n\nEveryone should have a tidyr cheatsheet!\nOn the Front: The Reshape Data section gives advice on pivoting a dataset from wide to long"
   },
   {
     "objectID": "slides/week-4/week-4-joins-1.html#task-card",
@@ -5407,7 +5407,7 @@
     "href": "slides/week-4/week-4-joins-1.html#getting-started",
     "title": "Data Joins + Pivots",
     "section": "Getting Started",
-    "text": "Getting Started\n\nFirst, both of you will do the following:\n\nJoin your Practice Activity workspace in Posit Cloud\n\nYou are in a new group, so you should have a new workspace!\n\nLog-in to Posit Cloud\nOpen the PA 4: Military Spending project\nOpen the PA4-dplyr.qmd file\n\n\n\n\nThen, the partner who woke up the earliest today starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
+    "text": "Getting Started\n\nFirst, both of you will do the following:\n\n\n\n\n\nOpen the PA4-dplyr.qmd file\n\n\n\n\nThen, the partner who woke up the earliest today starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
   },
   {
     "objectID": "slides/week-4/week-4-joins-1.html#external-resources",
@@ -5421,7 +5421,7 @@
     "href": "slides/week-4/week-4-joins-1.html#submission",
     "title": "Data Joins + Pivots",
     "section": "Submission",
-    "text": "Submission\n\nEach person will input your responses to Canvas Questions 1, 2, and 3 into the PA4 Canvas quiz.\nThe person who last occupied the role of Developer will download and submit the PA-4.html file for the group.\n\nOnly one submission per group!"
+    "text": "Submission\n\nEach person will input your responses to Canvas Questions 1, 2, and 3 into the PA4 Canvas quiz.\nEach person will submit the PA-4.html file."
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#monday-april-29",
@@ -6121,5 +6121,19 @@
     "title": "Extending Data Wrangling Verbs",
     "section": "Thursday, January 23",
     "text": "Thursday, January 23\nToday we will…\n\n\n\n\n\n\nNew Material\n\nExtend dplyr verbs to have more functionality\n\nLab 3: Teacher Evaluations"
+  },
+  {
+    "objectID": "slides/week-4/week-4-joins-1.html#tuesday-january-28",
+    "href": "slides/week-4/week-4-joins-1.html#tuesday-january-28",
+    "title": "Data Joins + Pivots",
+    "section": "Tuesday, January 28",
+    "text": "Tuesday, January 28\nToday we will discuss…\n\n\n\n\nNew Material\n\nPivoting data with tidyr\nJoining data with dplyr\n\nPA 4: Military Spending"
+  },
+  {
+    "objectID": "slides/week-4/week-4-joins-2.html#thursday-january-30",
+    "href": "slides/week-4/week-4-joins-2.html#thursday-january-30",
+    "title": "Extending Joins, Factors, Clean Variable Names",
+    "section": "Thursday, January 30",
+    "text": "Thursday, January 30\nToday we will…\n\n\n\n\nDebrief PA 4\n\nDescribe the Code\nClean Column Names\n\n\nDebrief Lab 3 & Challenge 3\n\nCommon Themes\nPackage Lifecycle Stages\nExpectations for Tools Used \n\n\n\n\n\n\n\n\nNew Material\n\nExtensions to Relational Data\nFactors with forcats\n\nLab 4: Childcare Costs in California"
   }
 ]

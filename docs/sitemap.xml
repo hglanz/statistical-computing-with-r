@@ -290,7 +290,7 @@
   </url>
   <url>
     <loc>https://github.com/hglanz/statistical-computing-with-r/index.html</loc>
-    <lastmod>2025-01-18T18:23:22.895Z</lastmod>
+    <lastmod>2025-01-23T23:17:04.451Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/hglanz/statistical-computing-with-r/weeks/week-3-dplyr.html</loc>
@@ -319,5 +319,21 @@
   <url>
     <loc>https://github.com/hglanz/statistical-computing-with-r/weeks/week-4-factors.html</loc>
     <lastmod>2025-01-06T21:17:25.854Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/hglanz/statistical-computing-with-r/slides/week-4/week-4-joins-1.html</loc>
+    <lastmod>2025-01-18T18:46:01.361Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/hglanz/statistical-computing-with-r/slides/week-4/week-4-joins-2.html</loc>
+    <lastmod>2025-01-23T23:34:00.568Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/hglanz/statistical-computing-with-r/group-activities/week-4/PA-4-tidyr.html</loc>
+    <lastmod>2025-01-23T23:36:15.005Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/hglanz/statistical-computing-with-r/labs/instructions/lab-4-instructions.html</loc>
+    <lastmod>2025-01-18T18:46:00.837Z</lastmod>
   </url>
 </urlset>
