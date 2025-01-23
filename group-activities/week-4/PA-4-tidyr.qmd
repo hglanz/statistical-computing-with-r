@@ -1,6 +1,6 @@
 ---
 title: "PA 4: Military Spending"
-author: "The names of your group members go here!"
+author: "Name here!"
 format: html
 embed-resources: true
 code-tools: true
@@ -24,7 +24,7 @@ Today you will be tidying messy data to explore the relationship between
 countries of the world and military spending. You can find the
 `gov_spending_per_capita.xlsx` data included in the `data` folder. 
 
-***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. In order to produce the best product possible, you will need to use the skills of each member of your group.***
+***This task is complex. It requires many different types of abilities. Everyone will be good at some of these abilities but nobody will be good at all of them. ***
 
 <!-- The person whose woke up first today starts as the Developer (typing and
 listening to instructions from the Coder)!  -->
