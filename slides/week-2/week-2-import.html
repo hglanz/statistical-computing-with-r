@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tidy Data, Importing Data &amp; More Advanced Graphics – Introduction to Statistical Computing in R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-dd01fc8b47943ccb281ee7996e9eafb5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-760729c915d1dde12ab269fcb4c0541b.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Tidy Data, Importing Data &amp; More Advanced Graphics</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/r-flowers.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/hglanz/statistical-computing-with-r" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+    <a href="https://canvas.calpoly.edu" title="Cal Poly Canvas" class="quarto-navigation-tool px-1" aria-label="Cal Poly Canvas"><i class="bi bi-person-fill"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course-materials/course-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course-materials/course-syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course-materials/course-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course-materials/course-team.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching team</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course-materials/computing-access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Access</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course-materials/course_resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Weekly materials</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-0-discord.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 0 - Course Set-up</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-1-r-rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1, Part 1 - R &amp; RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-1-quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1, Part 2 - Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-1-version-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1, Part 3 - Version Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-2-ggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2, Part 1 - ggplot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-2-projects-data-import.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2, Part 2 - Data Import</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-3-dplyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3 - dplyr</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/instructions/lab-1-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1 &amp; Challenge 1 Instructions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/instructions/lab-2-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2 Instructions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/instructions/challenge-2-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 2 Instructions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/instructions/lab-3-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3 Instructions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/instructions/challenge-3-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 3 Instructions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#thursday-january-16" id="toc-thursday-january-16" class="nav-link active" data-scroll-target="#thursday-january-16">Thursday, January 16</a></li>
+  <li><a href="#pa-2-using-data-visualization-to-find-the-penguins" id="toc-pa-2-using-data-visualization-to-find-the-penguins" class="nav-link" data-scroll-target="#pa-2-using-data-visualization-to-find-the-penguins">PA 2: Using Data Visualization to Find the Penguins</a>
+  <ul class="collapse">
+  <li><a href="#multiple-categorical-variables" id="toc-multiple-categorical-variables" class="nav-link" data-scroll-target="#multiple-categorical-variables">Multiple Categorical Variables</a></li>
+  <li><a href="#somethings-i-also-noticed" id="toc-somethings-i-also-noticed" class="nav-link" data-scroll-target="#somethings-i-also-noticed">Somethings I also noticed…</a></li>
+  <li><a href="#did-you-notice-that-your-figures-were-not-included-in-the-html-your-group-submitted-to-canvas" id="toc-did-you-notice-that-your-figures-were-not-included-in-the-html-your-group-submitted-to-canvas" class="nav-link" data-scroll-target="#did-you-notice-that-your-figures-were-not-included-in-the-html-your-group-submitted-to-canvas">Did you notice that your figures were not included in the HTML your group submitted to Canvas?</a></li>
+  <li><a href="#comments-from-lab-1-for-lab-2" id="toc-comments-from-lab-1-for-lab-2" class="nav-link" data-scroll-target="#comments-from-lab-1-for-lab-2">Comments from Lab 1 for Lab 2…</a></li>
+  </ul></li>
+  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data">Tidy Data</a>
+  <ul class="collapse">
+  <li><a href="#tidy-data-1" id="toc-tidy-data-1" class="nav-link" data-scroll-target="#tidy-data-1">Tidy Data</a></li>
+  <li><a href="#same-data-different-formats" id="toc-same-data-different-formats" class="nav-link" data-scroll-target="#same-data-different-formats">Same Data, Different Formats</a></li>
+  <li><a href="#connection-to-ggplot" id="toc-connection-to-ggplot" class="nav-link" data-scroll-target="#connection-to-ggplot">Connection to ggplot</a></li>
+  <li><a href="#tidy-data-2" id="toc-tidy-data-2" class="nav-link" data-scroll-target="#tidy-data-2">Tidy Data</a></li>
+  </ul></li>
+  <li><a href="#working-with-external-data" id="toc-working-with-external-data" class="nav-link" data-scroll-target="#working-with-external-data">Working with External Data</a>
+  <ul class="collapse">
+  <li><a href="#common-types-of-data-files" id="toc-common-types-of-data-files" class="nav-link" data-scroll-target="#common-types-of-data-files">Common Types of Data Files</a></li>
+  <li><a href="#common-types-of-data-files-1" id="toc-common-types-of-data-files-1" class="nav-link" data-scroll-target="#common-types-of-data-files-1">Common Types of Data Files</a></li>
+  <li><a href="#loading-external-data" id="toc-loading-external-data" class="nav-link" data-scroll-target="#loading-external-data">Loading External Data</a></li>
+  <li><a href="#loading-external-data-1" id="toc-loading-external-data-1" class="nav-link" data-scroll-target="#loading-external-data-1">Loading External Data</a></li>
+  <li><a href="#whats-the-difference" id="toc-whats-the-difference" class="nav-link" data-scroll-target="#whats-the-difference">What’s the difference?</a></li>
+  </ul></li>
+  <li><a href="#graphics" id="toc-graphics" class="nav-link" data-scroll-target="#graphics">Graphics</a></li>
+  <li><a href="#graphics-1" id="toc-graphics-1" class="nav-link" data-scroll-target="#graphics-1">Graphics</a></li>
+  <li><a href="#pre-attentive-features" id="toc-pre-attentive-features" class="nav-link" data-scroll-target="#pre-attentive-features">Pre-attentive Features</a>
+  <ul class="collapse">
+  <li><a href="#pre-attentive-features-1" id="toc-pre-attentive-features-1" class="nav-link" data-scroll-target="#pre-attentive-features-1">Pre-attentive Features</a></li>
+  <li><a href="#pre-attentive-features-2" id="toc-pre-attentive-features-2" class="nav-link" data-scroll-target="#pre-attentive-features-2">Pre-attentive Features</a></li>
+  <li><a href="#pre-attentive-features-3" id="toc-pre-attentive-features-3" class="nav-link" data-scroll-target="#pre-attentive-features-3">Pre-attentive Features</a></li>
+  <li><a href="#pre-attentive-features-4" id="toc-pre-attentive-features-4" class="nav-link" data-scroll-target="#pre-attentive-features-4">Pre-attentive Features</a></li>
+  <li><a href="#gestalt-principles" id="toc-gestalt-principles" class="nav-link" data-scroll-target="#gestalt-principles">Gestalt Principles</a></li>
+  <li><a href="#double-encoding" id="toc-double-encoding" class="nav-link" data-scroll-target="#double-encoding">Double Encoding</a></li>
+  <li><a href="#no-double-encoding" id="toc-no-double-encoding" class="nav-link" data-scroll-target="#no-double-encoding">No Double Encoding</a></li>
+  </ul></li>
+  <li><a href="#color" id="toc-color" class="nav-link" data-scroll-target="#color">Color</a>
+  <ul class="collapse">
+  <li><a href="#color-1" id="toc-color-1" class="nav-link" data-scroll-target="#color-1">Color</a></li>
+  <li><a href="#color-guidelines" id="toc-color-guidelines" class="nav-link" data-scroll-target="#color-guidelines">Color Guidelines</a></li>
+  <li><a href="#color-guidelines-1" id="toc-color-guidelines-1" class="nav-link" data-scroll-target="#color-guidelines-1">Color Guidelines</a></li>
+  <li><a href="#color-guidelines-2" id="toc-color-guidelines-2" class="nav-link" data-scroll-target="#color-guidelines-2">Color Guidelines</a></li>
+  <li><a href="#color-guidelines-3" id="toc-color-guidelines-3" class="nav-link" data-scroll-target="#color-guidelines-3">Color Guidelines</a></li>
+  <li><a href="#color-guidelines-4" id="toc-color-guidelines-4" class="nav-link" data-scroll-target="#color-guidelines-4">Color Guidelines</a></li>
+  <li><a href="#color-guidelines-5" id="toc-color-guidelines-5" class="nav-link" data-scroll-target="#color-guidelines-5">Color Guidelines</a></li>
+  <li><a href="#color-in-ggplot2" id="toc-color-in-ggplot2" class="nav-link" data-scroll-target="#color-in-ggplot2">Color in ggplot2</a></li>
+  </ul></li>
+  <li><a href="#lab-2-exploring-rodents-with-ggplot2-challenge-2-spicing-things-up-with-ggplot2" id="toc-lab-2-exploring-rodents-with-ggplot2-challenge-2-spicing-things-up-with-ggplot2" class="nav-link" data-scroll-target="#lab-2-exploring-rodents-with-ggplot2-challenge-2-spicing-things-up-with-ggplot2">Lab 2: Exploring Rodents with ggplot2 &amp; Challenge 2: Spicing things up with ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#on-the-use-of-external-resources" id="toc-on-the-use-of-external-resources" class="nav-link" data-scroll-target="#on-the-use-of-external-resources">On the Use of External Resources…</a></li>
+  <li><a href="#things-you-should-know-about-chatgpt" id="toc-things-you-should-know-about-chatgpt" class="nav-link" data-scroll-target="#things-you-should-know-about-chatgpt">Things You Should Know About ChatGPT…</a></li>
+  <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do">To do…</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/hglanz/statistical-computing-with-r/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week-2-import.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tidy Data, Importing Data &amp; More Advanced Graphics</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="thursday-january-16" class="level2">
+<h2 class="anchored" data-anchor-id="thursday-january-16">Thursday, January 16</h2>
+<p>Today we will…</p>
+<div class="small">
+<ul>
+<li>Debrief PA 2</li>
+<li>Debrief Lab 1
+<ul>
+<li>Content Related to Lab 2</li>
+</ul></li>
+<li>New Material
+<ul>
+<li>Tidy Data</li>
+<li>Load External Data</li>
+<li>Graphical Perception</li>
+<li>Colors in ggplot</li>
+</ul></li>
+<li><a href="https://classroom.github.com/a/4e-4Et4D">Lab 2: Exploring Rodents with ggplot2</a>
+<ul>
+<li>Using External Resources</li>
+</ul></li>
+</ul>
+</div>
+<!-- Be sure to update with new GH Classroom assignment link! -->
+</section>
+<section id="pa-2-using-data-visualization-to-find-the-penguins" class="level1">
+<h1>PA 2: Using Data Visualization to Find the Penguins</h1>
+<section id="multiple-categorical-variables" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-categorical-variables">Multiple Categorical Variables</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Colors &amp; Shapes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Colors &amp; Facets</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="small">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> species, <span class="at">shape =</span> island )) <span class="sc">+</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relashonship Between Bill Length and Bill Depth"</span>, <span class="at">x =</span> <span class="st">"Bill Length (mm)"</span> , <span class="at">y =</span> <span class="st">"Bill Depth (mm)"</span>,)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week-2-import_files/figure-html/student-code-step-8-shapes-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="small">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> bill_depth_mm, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>island) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Length"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>, </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Changes in Bill Depth versus Length"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week-2-import_files/figure-html/student-code-step-8-facets-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="somethings-i-also-noticed" class="level2">
+<h2 class="anchored" data-anchor-id="somethings-i-also-noticed">Somethings I also noticed…</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Code chunk options need to have a space before the option (<code>#| label:</code> not <code>#|label:</code>).</li>
+<li>Make sure your code is visible (<code>echo: true</code>)!</li>
+<li>Make sure you remove the <code>messages</code> and <code>warnings</code> from your final document!<br>
+</li>
+</ul>
+</div>
+</section>
+<section id="did-you-notice-that-your-figures-were-not-included-in-the-html-your-group-submitted-to-canvas" class="level2">
+<h2 class="anchored" data-anchor-id="did-you-notice-that-your-figures-were-not-included-in-the-html-your-group-submitted-to-canvas">Did you notice that your figures were not included in the HTML your group submitted to Canvas?</h2>
+<p>. . .</p>
+<div class="small">
+<p>By default, Quarto <strong>does not</strong> embed plots in the HTML document. Instead, it creates a “PA-2-files” folder which stores all your plots.</p>
+</div>
+<p>. . .</p>
+<div class="small">
+<p>So, when you submit your HTML file, your plots are not included! How do we fix this????</p>
+</div>
+<p>. . .</p>
+<div class="small">
+<p>Add an <code>embed-resources: true</code> line to your YAML (at the beginning of your document)!</p>
+<pre><code>---
+title: "PA 2: Using Data Visualization to Find the Penguins"
+author: "Dr. T!"
+format: html
+editor: source
+embed-resources: true
+---</code></pre>
+</div>
+<!-- # Lab 1 -->
+<!-- ## Grading / Feedback -->
+<!-- ::: {.small} -->
+<!-- + Each question will earn a score of "Success" or "Growing". -->
+<!--   * Questions marked "Growing" will receive feedback on how to improve your -->
+<!--   solution. -->
+<!--   * These questions can be resubmitted for additional feedback.  -->
+<!-- ::: -->
+<!-- . . . -->
+<!-- ::: {.small} -->
+<!-- + Earning a "Success" doesn't necessarily mean your solution is without error. -->
+<!--   * You may still receive feedback on how to improve your solution. -->
+<!--   * These questions cannot be resubmitted for additional feedback. -->
+<!-- ::: -->
+<!-- ## Growing Points -->
+<!-- ::: {.incremental} -->
+<!-- - Q2: **All** your code should be visible!  -->
+<!-- - Q9: Captions should include more information than what is already present in -->
+<!-- the plot! -->
+<!-- - Q11: There's no need to save intermediate objects if they are never used later!  -->
+<!-- ::: -->
+</section>
+<section id="comments-from-lab-1-for-lab-2" class="level2">
+<h2 class="anchored" data-anchor-id="comments-from-lab-1-for-lab-2">Comments from Lab 1 for Lab 2…</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Every lab and challenge is expected to use code-folding.</li>
+<li>There should be no messages / warnings output in your final rendered HTML.</li>
+<li>You should reduce the amount of “intermediate object junk” in your workspace.
+<ul class="incremental">
+<li>Ask yourself, do I need to use this later?</li>
+<li>If the answer is no, then you should not save that object.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="tidy-data" class="level1">
+<h1>Tidy Data</h1>
+<section id="tidy-data-1" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-data-1">Tidy Data</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/85520b8f-4629-4763-8a2a-9ceff27458bf_rw_1920.jpg?h=21007b20ac00cf37318dca645c215453" class="img-fluid figure-img" alt="An educational graphic explaining 'Tidy Data' with text and a simple table. The main text at the top reads, 'TIDY DATA is a standard way of mapping the meaning of a dataset to its structure,' followed by the attribution to Hadley Wickham. Below, it explains the concept of tidy data: 'In tidy data: each variable forms a column, each observation forms a row, each cell is a single measurement.' To the right, there is a small table with three columns labeled 'id,' 'name,' and 'color,' demonstrating how each column is a variable and each row is an observation. The table contains entries such as 'floof' (gray), 'max' (black), and 'panda' (calico). The image ends with a citation for Hadley Wickham's 2014 paper on Tidy Data."></p>
+<figcaption>Artwork by Allison Horst</figcaption>
+</figure>
+</div>
+</section>
+<section id="same-data-different-formats" class="level2">
+<h2 class="anchored" data-anchor-id="same-data-different-formats">Same Data, Different Formats</h2>
+<p>Different formats of the data are <strong>tidy</strong> in different ways.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Option 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Option 2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Team</th>
+<th style="text-align: right;">Points</th>
+<th style="text-align: right;">Assists</th>
+<th style="text-align: right;">Rebounds</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">99</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">31</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Team</th>
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">Points</td>
+<td style="text-align: right;">88</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">Assists</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">Rebounds</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">Points</td>
+<td style="text-align: right;">91</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">Assists</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">Rebounds</td>
+<td style="text-align: right;">28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">Points</td>
+<td style="text-align: right;">99</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">Assists</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">Rebounds</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Points</td>
+<td style="text-align: right;">94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Assists</td>
+<td style="text-align: right;">28</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Rebounds</td>
+<td style="text-align: right;">31</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="connection-to-ggplot" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-ggplot">Connection to ggplot</h2>
+<p>Let’s make a plot of each team’s statistics!</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Option 1 - Wide Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Option 2 - Long Data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="small">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> bb_wide, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Team)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Points, </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> <span class="st">"Points"</span>), </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Assists, </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> <span class="st">"Assists"</span>), </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Rebounds, </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> <span class="st">"Rebounds"</span>), </span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span> </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkred"</span>, <span class="st">"steelblue"</span>, <span class="st">"forestgreen"</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Statistic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week-2-import_files/figure-html/plot-with-wide-data-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="small">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> bb_long, </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Team, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Value, </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">color =</span> Statistic)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkred"</span>, <span class="st">"steelblue"</span>, <span class="st">"forestgreen"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Statistic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week-2-import_files/figure-html/plot-with-long-data-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="tidy-data-2" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-data-2">Tidy Data</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/40488240-4609-4dc3-8920-693e078b55ce_rw_1920.jpg?h=2e96a7e21e19c43867546498da026649" class="img-fluid figure-img" alt="An illustration featuring a cute, cartoonish scene with three characters sitting on a bench. In the center, there is a smiling blue rectangular character resembling a tidy data table, holding an ice cream cone. On either side of the table are two round, fluffy creatures: one pink on the left and one green on the right, both also holding ice cream cones. Above the characters, the text reads 'make friends with tidy data.' The overall tone of the image is friendly and inviting, encouraging positive feelings toward tidy data."></p>
+<figcaption>Artwork by Allison Horst</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="working-with-external-data" class="level1">
+<h1>Working with External Data</h1>
+<section id="common-types-of-data-files" class="level2">
+<h2 class="anchored" data-anchor-id="common-types-of-data-files">Common Types of Data Files</h2>
+<p>Look at the <strong>file extension</strong> for the type of data file.</p>
+<p>. . .</p>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><code>.csv</code> : “comma-separated values”</p>
+</div><div class="column" style="width:30%;">
+<pre><code>Name, Age
+Bob, 49
+Joe, 40</code></pre>
+</div>
+</div>
+<p>. . .</p>
+<p><code>.xls</code>, <code>.xlsx</code>: Microsoft Excel spreadsheet</p>
+<ul>
+<li>Common approach: save as <code>.csv</code></li>
+<li>Nicer approach: use the <code>readxl</code> package</li>
+</ul>
+<p>. . .</p>
+<p><code>.txt</code>: plain text</p>
+<ul>
+<li>Could have any sort of delimiter…</li>
+<li>Need to let R know what to look for!</li>
+</ul>
+</section>
+<section id="common-types-of-data-files-1" class="level2">
+<h2 class="anchored" data-anchor-id="common-types-of-data-files-1">Common Types of Data Files</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">File A</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">File B</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">File C</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false">Sources</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p><img src="images/csv_file.png" class="img-fluid"></p>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p><img src="images/tsv_file.png" class="img-fluid"></p>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<p><img src="images/pipe_file.png" class="img-fluid"></p>
+</div>
+<div id="tabset-4-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-4-tab">
+<ul>
+<li><a href="https://people.sc.fsu.edu/~jburkardt/data/csv/csv.html">File A</a></li>
+<li><a href="https://github.com/ccusa/Disaster_Vulnerability_Map/blob/master/sample-data.tsv">File B</a></li>
+<li><a href="https://chadbaldwin.net/2021/03/24/quick-parse-csv-file.html">File C</a></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="loading-external-data" class="level2">
+<h2 class="anchored" data-anchor-id="loading-external-data">Loading External Data</h2>
+<p>Using <strong>base</strong> <code>R</code> functions:</p>
+<ul>
+<li><p><code>read.csv()</code> is for reading in <code>.csv</code> files.</p></li>
+<li><p><code>read.table()</code> and <code>read.delim()</code> are for any data with “columns” (you specify the separator).</p></li>
+</ul>
+</section>
+<section id="loading-external-data-1" class="level2">
+<h2 class="anchored" data-anchor-id="loading-external-data-1">Loading External Data</h2>
+<p>The <strong>tidyverse</strong> has some cleaned-up versions in the <code>readr</code> and <code>readxl</code> packages:</p>
+<div class="small">
+<ul>
+<li><p><code>read_csv()</code> is for comma-separated data.</p></li>
+<li><p><code>read_tsv()</code> is for tab-separated data.</p></li>
+<li><p><code>read_table()</code> is for white-space-separated data.</p></li>
+<li><p><code>read_delim()</code> is any data with “columns” (you specify the separator). The above are special cases.</p></li>
+<li><p><code>read_xls()</code> and <code>read_xlsx()</code> are specifically for dealing with Excel files.</p></li>
+</ul>
+</div>
+<p>Remember to load the <code>readr</code> and <code>readxl</code> packages first!</p>
+</section>
+<section id="whats-the-difference" class="level2">
+<h2 class="anchored" data-anchor-id="whats-the-difference">What’s the difference?</h2>
+<div class="columns">
+<div class="column" style="width:47%;">
+<p><img src="images/read.csv_doc.png" class="img-fluid"></p>
+</div><div class="column" style="width:3%;">
+
+</div><div class="column" style="width:48%;">
+<p><img src="images/read_csv_doc.png" class="img-fluid"></p>
+</div>
+</div>
+<!-- # Reading in Data -->
+<!-- ![](images/here-horst.png){fig-alt="A cartoon showing two paths side-by-side. On the left is a scary spooky forest, with spiderwebs and gnarled trees, with file paths written on the branches like '~/mmm/nope.csv' and 'setwd(/haha/good/luck/)', with a scared looking cute fuzzy monster running out of it. On the right is a bright, colorful path with flowers, rainbow and sunshine, with signs saying 'here!' and 'it’s all right here!' A monster facing away from us in a backpack and walking stick is looking toward the right path. Stylized text reads 'here: find your path.'"} -->
+</section>
+</section>
+<section id="graphics" class="level1">
+<h1>Graphics</h1>
+</section>
+<section id="graphics-1" class="level1">
+<h1>Graphics</h1>
+<ul>
+<li><p><strong>Structure:</strong> boxplot, scatterplot, etc.</p></li>
+<li><p><strong>Aesthetics:</strong> features such as color, shape, and size that map other variables to structural features.</p></li>
+</ul>
+<p><strong>Both</strong> the structure and aesthetics should help viewers interpret the information.</p>
+</section>
+<section id="pre-attentive-features" class="level1">
+<h1>Pre-attentive Features</h1>
+<section id="pre-attentive-features-1" class="level2">
+<h2 class="anchored" data-anchor-id="pre-attentive-features-1">Pre-attentive Features</h2>
+<p><br></p>
+<p>The next slide will have one point that is not like the others.</p>
+<p><br></p>
+<p>Raise your hand when you notice it.</p>
+</section>
+<section id="pre-attentive-features-2" class="level2">
+<h2 class="anchored" data-anchor-id="pre-attentive-features-2">Pre-attentive Features</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/pre-atten1.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/pre-atten1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A white background scattered with various green triangles and a single green circle. The triangles are evenly spaced but randomly oriented and positioned, with no apparent pattern or alignment. The single circle stands out among the triangles due to its different shape."></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="pre-attentive-features-3" class="level2">
+<h2 class="anchored" data-anchor-id="pre-attentive-features-3">Pre-attentive Features</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/pre-atten2.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/pre-atten2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A white background scattered with various red circles and a single green circle. The circles are evenly spaced but randomly oriented and positioned, with no apparent pattern or alignment. The single circle stands out among the other circles due to its different color."></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="pre-attentive-features-4" class="level2">
+<h2 class="anchored" data-anchor-id="pre-attentive-features-4">Pre-attentive Features</h2>
+<blockquote class="blockquote">
+<p>features that we see and perceive before we even think about it</p>
+</blockquote>
+<ul>
+<li><p>They will jump out at us in less than 250 ms.</p></li>
+<li><p>E.g., color, form, movement, spatial location.</p></li>
+</ul>
+<p>. . .</p>
+<p>There is a <strong>hierarchy</strong> of features:</p>
+<ul>
+<li>Color is stronger than shape.</li>
+<li>Combinations of pre-attentive features may <strong>not</strong> be pre-attentive due to interference.</li>
+</ul>
+</section>
+<section id="gestalt-principles" class="level2">
+<h2 class="anchored" data-anchor-id="gestalt-principles">Gestalt Principles</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Gestalt Hierarchy</th>
+<th>Graphical Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Enclosure</td>
+<td>Facets</td>
+</tr>
+<tr class="even">
+<td>2. Connection</td>
+<td>Lines</td>
+</tr>
+<tr class="odd">
+<td>3. Proximity</td>
+<td>White Space</td>
+</tr>
+<tr class="even">
+<td>4. Similarity</td>
+<td>Color/Shape</td>
+</tr>
+</tbody>
+</table>
+<p>. . .</p>
+<p><br></p>
+<div class="small">
+<p>Implications for practice:</p>
+<ul>
+<li>Know that we perceive some groups before others.</li>
+<li>Design to facilitate and emphasize the most important comparisons.</li>
+</ul>
+</div>
+</section>
+<section id="double-encoding" class="level2">
+<h2 class="anchored" data-anchor-id="double-encoding">Double Encoding</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/double.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/double.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="no-double-encoding" class="level2">
+<h2 class="anchored" data-anchor-id="no-double-encoding">No Double Encoding</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/no_double.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/no_double.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="color" class="level1">
+<h1><a href="https://www.youtube.com/watch?v=zALBl5f1ib4">Color</a></h1>
+<section id="color-1" class="level2">
+<h2 class="anchored" data-anchor-id="color-1">Color</h2>
+<ul>
+<li>Color, hue, and intensity are pre-attentive features, and bigger contrasts lead to faster detection.
+<ul>
+<li><strong>Hue</strong>: main color family (red, orange, yellow…)</li>
+<li><strong>Intensity</strong>: amount of color</li>
+</ul></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/hue.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/hue.png" class="img-fluid figure-img" style="width:90.0%" alt="This image is a color wheel that displays the concept of 'Hue.' The wheel is divided into 12 segments, each representing a different color. The colors transition smoothly around the wheel, moving from yellow to yellow-orange, orange, red-orange, red, red-violet, violet, blue-violet, blue, blue-green, green, and yellow-green. The word 'HUE' is written in the center of the wheel, indicating that the image is meant to illustrate the variety of hues that make up the color spectrum."></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:70%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/intensity.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/intensity.png" class="img-fluid figure-img" alt="This image illustrates the concept of color intensity. It shows a yellow square labeled 'YELLOW (HUE)' on the left, a gray square labeled 'GRAY' in the middle, and a square of desaturated yellow labeled 'LESS INTENSE' on the right. The image conveys that adding gray to a pure hue, such as yellow, results in a color that is less intense or more muted. The mathematical symbols '+' and '=' are used to show the combination of the yellow hue with gray, leading to a less intense color."></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="color-guidelines" class="level2">
+<h2 class="anchored" data-anchor-id="color-guidelines">Color Guidelines</h2>
+<ul>
+<li><p>Do not use rainbow color gradients!</p></li>
+<li><p>Be conscious of what certain colors “mean”.</p>
+<ul>
+<li>Good idea to use red for “good” and green for “bad”?</li>
+</ul></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:44%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/rainbow.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rainbow.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="This image is a color-coded map of Texas, showing the percentage of people in each county who identify as white. The map uses a rainbow gradient scale to represent different percentages: red and orange for lower percentages (0% to 25%), transitioning through yellow and green (around 50%), to blue and purple for higher percentages (75% to 100%). Each county in Texas is colored according to where it falls on this scale, indicating the variation in racial identification across the state. The legend at the bottom of the map clarifies the percentage range associated with each color."></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:40%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/red_green.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/red_green.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="This image is a bar chart comparing the energy sources of six countries: Mexico, Brazil, Turkey, Russia, Indonesia, and China. Each bar represents a country and is divided into two color-coded segments: red for 'Low-carbon sources' and green for 'Fossil fuels sources.' The chart shows the proportion of energy generated from each source in each country. The purpose of this image is not to demonstrate what fuels each country is using but to highlight how the graph uses red and green hues to separate the two types of fuel. Not only are these colors are difficult for some people's eyes to differentiate, but the plot has swapped what we would ordinarily think of as 'good' and 'bad' colors with fuels that are worse and better for the planet."></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="color-guidelines-1" class="level2">
+<h2 class="anchored" data-anchor-id="color-guidelines-1">Color Guidelines</h2>
+<p>For <strong>categorical</strong> data, try not to use more than 7 colors:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/small_gradient.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/small_gradient.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%" alt="This image is a rectangular strip divided into seven equal vertical sections, each filled with a different solid color. The colors from left to right are: Red, Blue, Green, Purple, Orange, Yellow, Brown. Each section is distinctly separated by thin black lines, with no gradients or transitions between the colors. The image represents a simple color spectrum or palette."></p>
+</figure>
+</div>
+</div>
+</div>
+<p>. . .</p>
+<p>If you need to, you can use <code>colorRampPalette()</code> from the <code>RColorBrewer</code> package to produce larger palettes:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/big_gradient.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/big_gradient.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="This image is a rectangular strip divided into 19 equal vertical sections, each filled with a different solid color. The colors from left to right are red, maroon, dark blue, teal, green, light green, gray, purple, dark maroon, orange, light orange, yellow, light yellow, gold, brown, pink, light pink, mauve, and light gray. Each section is distinctly separated by thin black lines, with no gradients or transitions between the colors. The image represents an extended color spectrum or palette with a nuanced range of colors."></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="color-guidelines-2" class="level2">
+<h2 class="anchored" data-anchor-id="color-guidelines-2">Color Guidelines</h2>
+<ul>
+<li>For <strong>quantitative</strong> data, use mappings from data to color that are <strong>numerically and perceptually uniform</strong>.
+<ul>
+<li>Relative discriminability of two colors should be proportional to the difference between the corresponding data values.</li>
+</ul></li>
+</ul>
+</section>
+<section id="color-guidelines-3" class="level2">
+<h2 class="anchored" data-anchor-id="color-guidelines-3">Color Guidelines</h2>
+<p><strong>To make your graphic color deficiency friendly…</strong></p>
+<ul>
+<li>use <strong>double encoding</strong> - when you use color, <strong>also</strong> use another aesthetic (line type, shape, facet, etc.).</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/double.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/double.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="This image features a pattern of small shapes scattered across a white background. The shapes are orange triangles and green circles, distributed randomly throughout the image. The triangles and circles do not overlap and are spaced unevenly, creating a dispersed, non-repetitive pattern. The image appears to represent a simple, abstract design with two distinct shapes and colors."></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="color-guidelines-4" class="level2">
+<h2 class="anchored" data-anchor-id="color-guidelines-4">Color Guidelines</h2>
+<p><strong>To make your graphic color deficiency friendly…</strong></p>
+<ul>
+<li>with a unidirectional scale (e.g., all + values), use a <strong>monochromatic</strong> color gradient.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/blues.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/blues.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="This image features a horizontal gradient transitioning smoothly from light to dark blue. On the left side, the gradient starts with a very light, almost white blue and gradually deepens in color, moving through medium blue tones in the center, and finally ending with a deep, dark blue on the right side. The gradient creates a seamless transition across the spectrum of blue hues, visually representing the full range of the color from light to dark."></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>with a bidirectional scale (e.g., + and - values), use a <strong>purple-white-orange</strong> color gradient. Transition through white!</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/PuOr.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/PuOr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="This image features a horizontal gradient transitioning between two different color families. On the left side, the gradient starts with a deep purple and gradually lightens to a pale lavender near the center. The gradient then transitions to white in the middle, which serves as a dividing point between the two color families. From the center to the right, the gradient shifts into warm tones, moving from a light peach to a deeper orange, and finally ending with a rich brown on the far right. This gradient smoothly blends the cool purples with the warm oranges, creating a balanced and visually appealing transition between the two color spectrums."></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="color-guidelines-5" class="level2">
+<h2 class="anchored" data-anchor-id="color-guidelines-5">Color Guidelines</h2>
+<p><strong>To make your graphic color deficiency friendly…</strong></p>
+<ul>
+<li>print your chart out in black and white – if you can still read it, it will be safe for all users.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/nyt_color.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/nyt_color.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="This image is a bar chart titled 'How Often Teens Say They Use Each Platform,' depicting the frequency of usage of various social media platforms by teenagers. The platforms listed from top to bottom are YouTube, TikTok, Snapchat, Instagram, and Facebook. Each platform's usage is broken down into six categories, represented as different segments in the bar: Almost constantly (dark blue), Several times a day (medium blue), About once a day (light blue), Less often (lightest blue), Don’t use (gray)."></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/nyt_bw.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/nyt_bw.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="This image is a copy of the previous image, but the blue tones have been replaced with grey tones."></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="color-in-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="color-in-ggplot2">Color in ggplot2</h2>
+<p>There are several packages with color scheme options:</p>
+<ul>
+<li>Rcolorbrewer</li>
+<li>ggsci</li>
+<li>viridis</li>
+<li>wesanderson</li>
+</ul>
+<p>These packages have color palettes that are aesthetically pleasing and, in many cases, color deficiency friendly.</p>
+<p>You can also take a look at other <a href="https://lisacharlottemuth.com/2016/04/22/Colors-for-DataVis/">ways to find nice color palettes</a>.</p>
+</section>
+</section>
+<section id="lab-2-exploring-rodents-with-ggplot2-challenge-2-spicing-things-up-with-ggplot2" class="level1">
+<h1><a href="../../labs/instructions/lab-2-instructions.html">Lab 2: Exploring Rodents with ggplot2</a> &amp; <a href="../../labs/instructions/challenge-2-instructions.html">Challenge 2: Spicing things up with ggplot2</a></h1>
+<!-- ## Peer Code Review -->
+<!-- Starting with Lab 2, your labs **will** have an appearance / code format  -->
+<!-- portion.  -->
+<!-- - Review the [code formatting guidelines](../../code-review/code-review-guidelines.qmd) -->
+<!-- *before* you submit your lab! -->
+<!-- - Each week, you will be assigned one of your peer's labs to review their code -->
+<!-- formatting. -->
+<section id="on-the-use-of-external-resources" class="level2">
+<h2 class="anchored" data-anchor-id="on-the-use-of-external-resources">On the Use of External Resources…</h2>
+<div class="small">
+<p>Part of learning to program is learning from a variety of resources. Thus, I expect you will use resources that you find on the internet.</p>
+<p>In this class the assumed knowledge is the course materials, including the course textbook, coursework pages, and course slides. Any functions / code used outside of these materials require direct references.</p>
+</div>
+<p>. . .</p>
+<div class="small">
+<ul>
+<li>If you used Google:
+<ul>
+<li>paste the link to the resource in a code comment next to where you used that resource</li>
+</ul></li>
+<li>If you used ChatGPT:
+<ul>
+<li>indicate somewhere in the problem that you used ChatGPT</li>
+<li>paste the link to your chat (using the Share button from ChatGPT)</li>
+</ul></li>
+</ul>
+</div>
+<!-- Additionally, you are permitted and encouraged to work with your peers as you -->
+<!-- complete lab assignments, but **you are expected to do your own work**. Copying -->
+<!-- from each other is cheating, and letting people copy from you is also cheating. -->
+<!-- Please don't do either of those things. -->
+</section>
+<section id="things-you-should-know-about-chatgpt" class="level2">
+<h2 class="anchored" data-anchor-id="things-you-should-know-about-chatgpt">Things You Should Know About ChatGPT…</h2>
+<p>. . .</p>
+<div class="small">
+<ul>
+<li>GPT uses machine learning to predict what words to give you
+<ul>
+<li>This method is entirely probabilistic, meaning, the same question may produce different answers for different people.</li>
+</ul></li>
+</ul>
+</div>
+<p>. . .</p>
+<div class="small">
+<ul>
+<li>The answers GPT gives rely a lot on the context you provide (or don’t provide)
+<ul>
+<li>It is good to give lots of background information (e.g., what R package you are using)</li>
+</ul></li>
+</ul>
+</div>
+<p>. . .</p>
+<div class="small">
+<ul>
+<li>ChatGPT is a pretty decent tutor.
+<ul>
+<li>Did you use GPT to help you with some code?</li>
+<li>Do you not understand what the code is doing?</li>
+<li>Ask GPT to explain code to you!</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="to-do" class="level2">
+<h2 class="anchored" data-anchor-id="to-do">To do…</h2>
+<ul>
+<li><strong>Lab 2: Exploring rodents with ggplot2</strong>
+<ul>
+<li>due Sunday, January 19 at 11:59pm</li>
+</ul></li>
+<li><strong>Lab 2: Spicing things up with ggplot2</strong>
+<ul>
+<li>due Sunday, January 19 at 11:59pm</li>
+</ul></li>
+<li><strong>Complete Week 3 Coursework: Data Wrangling with dplyr</strong>
+<ul>
+<li><strong>Check-ins 3.1 and 3.2</strong> due Thursday, January 23 at 12pm</li>
+</ul></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/github\.com\/hglanz\/statistical-computing-with-r");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2024, Hunter Glanz (original by Allison Theobold &amp; Judith Canner)</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/hglanz/statistical-computing-with-r/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
