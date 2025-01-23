@@ -1,21 +1,21 @@
 ---
 title: "Statistical Computing in R"
-tbl-colwidths: [5,15,30,20,20,20,20]
+tbl-colwidths: [5,15,30,20,20,20]
 ---
 
 This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.
 
 <!-- TODO: Switch to spreadsheet for content (like Mine and Maria do) -->
 
-<table>
+<table style="width:100%;">
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 0%" />
 <col style="width: 0%" />
 <col style="width: 0%" />
 <col style="width: 0%" />
