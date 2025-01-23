@@ -31,7 +31,7 @@ movies_genres <- read_csv("data/movies_genres.csv")
 roles <- read_csv("data/roles.csv")
 ```
 
-## Thursday, October 17
+## Thursday, January 30
 
 Today we will...
 
@@ -45,7 +45,7 @@ Today we will...
   + Common Themes
   + Package Lifecycle Stages
   + Expectations for Tools Used
-  + Reminder about Lab 3 Peer Review
+  <!-- + Reminder about Lab 3 Peer Review -->
 :::
 :::
 
@@ -312,11 +312,11 @@ accomplish a given task.
 :::
 :::
 
-# Don't Forget to Complete Your Lab 3 Code Review
+<!-- # Don't Forget to Complete Your Lab 3 Code Review -->
 
-> Make sure your feedback follows the [code review guidelines](../../code-review/code-review-guidelines.qmd). 
+<!-- > Make sure your feedback follows the [code review guidelines](../../code-review/code-review-guidelines.qmd).  -->
 
-> Insert your review into the comment box! 
+<!-- > Insert your review into the comment box!  -->
 
 # Extensions to Relational Data
 
@@ -1290,8 +1290,8 @@ full_eras |>
 ## To do...
 
 -   **Lab 4: Childcare Costs in California**
-    -   Due Sunday (10/20) at 11:59pm
+    -   Due Sunday (2/2) at 11:59pm
 -   **Read Chapter 5: Strings + Dates**
-    -   **Check-in 5.1** due Tuesday (10/22) at 12:10pm
-    -   **Check-in 5.2** due Thursday (10/24) at 12:10pm
+    -   **Check-in 5.1** due Tuesday (2/4) at 12pm
+    -   **Check-in 5.2** due Thursday (2/6) at 12pm
 
