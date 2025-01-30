@@ -18,12 +18,12 @@ library(liver)
 data(cereal)
 ```
 
-## Monday, April 29
+## Tuesday, February 4
 
 Today we will...
 
-+ New layout this week 
-+ What you can expect in Week 6
+<!-- + New layout this week  -->
+<!-- + What you can expect in Week 6 -->
 + New material
   + String variables
   + Functions for working with strings
@@ -47,17 +47,17 @@ Today we will...
 - Lab Assignment Solving a Murder Mystery
   + Using `dplyr` + `stringr` + `ludridate`
   
-# Week 6 Layout
+<!-- # Week 6 Layout -->
 
-# Week 6 Layout
+<!-- # Week 6 Layout -->
 
-- Tuesday: Writing Basic Functions
-  + Practice Activity
-  
-. . .
+<!-- - Tuesday: Writing Basic Functions -->
+<!--   + Practice Activity -->
 
-- Thursday: Midterm Portfolio Work Session
-  + Midterm Portfolios Due Sunday, November 3
+<!-- . . . -->
+
+<!-- - Thursday: Midterm Portfolio Work Session -->
+<!--   + Midterm Portfolios Due Sunday, November 3 -->
 
 <!-- ## Comments from Week 4 -->
 
@@ -1423,38 +1423,38 @@ Every group should have a **stringr** cheatsheet!
 :::
 :::
 
-## Task Card
+<!-- ## Task Card -->
 
-Every group should have a **task card**! 
+<!-- Every group should have a **task card**!  -->
 
-. . .
+<!-- . . . -->
 
-::: columns
-::: {.column width="40%"}
-**On the Front**
+<!-- ::: columns -->
+<!-- ::: {.column width="40%"} -->
+<!-- **On the Front** -->
 
-- the expectations of each role
-- the norms of collaborating
-:::
+<!-- - the expectations of each role -->
+<!-- - the norms of collaborating -->
+<!-- ::: -->
 
-::: {.column width="5%"}
-:::
+<!-- ::: {.column width="5%"} -->
+<!-- ::: -->
 
-::: {.column width="55%"}
-::: {.fragment}
-**On the Back**
+<!-- ::: {.column width="55%"} -->
+<!-- ::: {.fragment} -->
+<!-- **On the Back** -->
 
-::: {.small}
-- `stringr` functions for different tasks you may encounter
-- Regular expressions for different tasks you may encounter
-  + Matching patterns (e.g., `[:punct:]`, `\\w`)
-  + Special characters (e.g., `^`, `$`)
-  + Creating groups of characters (e.g., `[Kk]`)
-  + Repeated patters (e.g., `?`, `+`, `{2}`)
-:::
-:::
-:::
-:::
+<!-- ::: {.small} -->
+<!-- - `stringr` functions for different tasks you may encounter -->
+<!-- - Regular expressions for different tasks you may encounter -->
+<!--   + Matching patterns (e.g., `[:punct:]`, `\\w`) -->
+<!--   + Special characters (e.g., `^`, `$`) -->
+<!--   + Creating groups of characters (e.g., `[Kk]`) -->
+<!--   + Repeated patters (e.g., `?`, `+`, `{2}`) -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: -->
 
 ## Pair Programming Expectations
 
@@ -1496,9 +1496,9 @@ Every group should have a **task card**!
 ::: {.small}
 First, both of you will do the following:
 
-- Join your Practice Activity workspace in Posit Cloud
-- Log-in to Posit Cloud
-- Open the PA 5: Decode Secret Message project
+<!-- - Join your Practice Activity workspace in Posit Cloud -->
+<!-- - Log-in to Posit Cloud -->
+<!-- - Open the PA 5: Decode Secret Message project -->
 - Open the `PA-5-stringr.qmd` file
 :::
 
@@ -1533,14 +1533,11 @@ You **are** permitted to use:
 > Submit the name of the movie the quote is from. 
 
 - Each person will input the full name of the movie the scrambled message is from into the PA5 quiz. 
-- The person who last occupied the role of Developer will download and submit the `PA-5.html` file for the group.
-  + Only one submission per group!
-
-# Exit Ticket
+- Each person will submit the `PA-5.html`.
 
 ## To do...
 
 + **PA 5.1: Scrambled Message**
-  + Due Thursday, October 24 at 12:10pm
+  + Due Thursday, February 6 at 12:00pm
 + Check-in 5.2: Functions from `lubridate`
-  + Due Thursday, October 24 at 12:10pm
+  + Due Thursday, February 6 at 12:00pm

@@ -5700,7 +5700,7 @@
     "href": "slides/week-5/week-5-strings.html#getting-started",
     "title": "Using stringr to Work with Strings",
     "section": "Getting Started",
-    "text": "Getting Started\n\nFirst, both of you will do the following:\n\nJoin your Practice Activity workspace in Posit Cloud\nLog-in to Posit Cloud\nOpen the PA 5: Decode Secret Message project\nOpen the PA-5-stringr.qmd file\n\n\n\n\nThen, the partner who has the most pets starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
+    "text": "Getting Started\n\nFirst, both of you will do the following:\n\n\n\n\nOpen the PA-5-stringr.qmd file\n\n\n\n\nThen, the partner who has the most pets starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#external-resources",
@@ -5714,14 +5714,14 @@
     "href": "slides/week-5/week-5-strings.html#submission",
     "title": "Using stringr to Work with Strings",
     "section": "Submission",
-    "text": "Submission\n\nSubmit the name of the movie the quote is from.\n\n\nEach person will input the full name of the movie the scrambled message is from into the PA5 quiz.\nThe person who last occupied the role of Developer will download and submit the PA-5.html file for the group.\n\nOnly one submission per group!"
+    "text": "Submission\n\nSubmit the name of the movie the quote is from.\n\n\nEach person will input the full name of the movie the scrambled message is from into the PA5 quiz.\nEach person will submit the PA-5.html."
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#to-do",
     "href": "slides/week-5/week-5-strings.html#to-do",
     "title": "Using stringr to Work with Strings",
     "section": "To do…",
-    "text": "To do…\n\nPA 5.1: Scrambled Message\n\nDue Thursday, October 24 at 12:10pm\n\nCheck-in 5.2: Functions from lubridate\n\nDue Thursday, October 24 at 12:10pm"
+    "text": "To do…\n\nPA 5.1: Scrambled Message\n\nDue Thursday, February 6 at 12:00pm\n\nCheck-in 5.2: Functions from lubridate\n\nDue Thursday, February 6 at 12:00pm"
   },
   {
     "objectID": "slides/week-9/data-simulation-part-2.html#simulate-multiple-datasets---step-1",
@@ -6127,5 +6127,12 @@
     "title": "Extending Joins, Factors, Clean Variable Names",
     "section": "Thursday, January 30",
     "text": "Thursday, January 30\nToday we will…\n\n\n\n\nDebrief PA 4\n\nDescribe the Code\nClean Column Names\n\n\nDebrief Lab 3 & Challenge 3\n\nCommon Themes\nPackage Lifecycle Stages\nExpectations for Tools Used \n\n\n\n\n\n\n\n\nNew Material\n\nExtensions to Relational Data\nFactors with forcats\n\nLab 4: Childcare Costs in California"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#tuesday-february-4",
+    "href": "slides/week-5/week-5-strings.html#tuesday-february-4",
+    "title": "Using stringr to Work with Strings",
+    "section": "Tuesday, February 4",
+    "text": "Tuesday, February 4\nToday we will…\n\n\n\nNew material\n\nString variables\nFunctions for working with strings\nRegular expressions\n\nPA 5.1: Scrambled Message"
   }
 ]
