@@ -3096,77 +3096,49 @@
     "href": "labs/instructions/lab-5-instructions.html",
     "title": "Lab 5: Murder in SQL City",
     "section": "",
-    "text": "For this lab, you will be joining and filtering related datasets to solve a murder mystery!",
-    "crumbs": [
-      "Labs",
-      "Lab 5 Instructions"
-    ]
+    "text": "For this lab, you will be joining and filtering related datasets to solve a murder mystery!"
   },
   {
     "objectID": "labs/instructions/lab-5-instructions.html#step-1-making-a-copy-from-github-classroom",
     "href": "labs/instructions/lab-5-instructions.html#step-1-making-a-copy-from-github-classroom",
     "title": "Lab 5: Murder in SQL City",
     "section": "1.1 Step 1: Making a Copy from GitHub Classroom",
-    "text": "1.1 Step 1: Making a Copy from GitHub Classroom\nYou can access the Lab 5 materials through the Lab 5 GitHub Repository.\nThis week, to get a copy of the repository, we’re going to follow a slightly different process. Use these steps to fork your own copy of the Lab 5 repository, then clone that repository into RStudio: List of Steps to Fork GitHub Repository",
-    "crumbs": [
-      "Labs",
-      "Lab 5 Instructions"
-    ]
+    "text": "1.1 Step 1: Making a Copy from GitHub Classroom\nYou can access the Lab 5 materials through the Lab 5 GitHub Repository.\nThis week, to get a copy of the repository, we’re going to follow a slightly different process. Use these steps to fork your own copy of the Lab 5 repository, then clone that repository into RStudio: List of Steps to Fork GitHub Repository"
   },
   {
     "objectID": "labs/instructions/lab-5-instructions.html#step-2-making-a-small-change",
     "href": "labs/instructions/lab-5-instructions.html#step-2-making-a-small-change",
     "title": "Lab 5: Murder in SQL City",
     "section": "1.2 Step 2: Making a Small Change",
-    "text": "1.2 Step 2: Making a Small Change\nNow, find the lab-5-student.qmd file in the “Files” tab in the lower right hand corner. Click on this file to open it.\nAt the top of the document (in the YAML) there is an author line that says \"Your name here!\". Change this to be your name and save your file either by clicking on the blue floppy disk or with a shortcut (command / control + s).",
-    "crumbs": [
-      "Labs",
-      "Lab 5 Instructions"
-    ]
+    "text": "1.2 Step 2: Making a Small Change\nNow, find the lab-5-student.qmd file in the “Files” tab in the lower right hand corner. Click on this file to open it.\nAt the top of the document (in the YAML) there is an author line that says \"Your name here!\". Change this to be your name and save your file either by clicking on the blue floppy disk or with a shortcut (command / control + s)."
   },
   {
     "objectID": "labs/instructions/lab-5-instructions.html#step-3-pushing-your-lab-to-github",
     "href": "labs/instructions/lab-5-instructions.html#step-3-pushing-your-lab-to-github",
     "title": "Lab 5: Murder in SQL City",
     "section": "1.3 Step 3: Pushing Your Lab to GitHub",
-    "text": "1.3 Step 3: Pushing Your Lab to GitHub\nNow for our last step, we need to commit the files to our repo.",
-    "crumbs": [
-      "Labs",
-      "Lab 5 Instructions"
-    ]
+    "text": "1.3 Step 3: Pushing Your Lab to GitHub\nNow for our last step, we need to commit the files to our repo."
   },
   {
     "objectID": "labs/instructions/lab-5-instructions.html#step-4-lets-get-started",
     "href": "labs/instructions/lab-5-instructions.html#step-4-lets-get-started",
     "title": "Lab 5: Murder in SQL City",
     "section": "1.4 Step 4: Let’s get started!",
-    "text": "1.4 Step 4: Let’s get started!",
-    "crumbs": [
-      "Labs",
-      "Lab 5 Instructions"
-    ]
+    "text": "1.4 Step 4: Let’s get started!"
   },
   {
     "objectID": "labs/instructions/lab-5-instructions.html#access-the-data",
     "href": "labs/instructions/lab-5-instructions.html#access-the-data",
     "title": "Lab 5: Murder in SQL City",
     "section": "3.1 Access the Data",
-    "text": "3.1 Access the Data\nThis code chunk will read in all of the tables of data for you. Don’t modify or remove this!\n\nlibrary(tidyverse)\n\n# If purrr is not detected, install the package\nif (!\"purrr\" %in% installed.packages()) install.packages(\"purrr\")\n\nsource(\"https://raw.githubusercontent.com/atheobold/groupworthy-data-science/main/labs/instructions/lab-5-setup.R\")",
-    "crumbs": [
-      "Labs",
-      "Lab 5 Instructions"
-    ]
+    "text": "3.1 Access the Data\nThis code chunk will read in all of the tables of data for you. Don’t modify or remove this!\n\nlibrary(tidyverse)\n\n# If purrr is not detected, install the package\nif (!\"purrr\" %in% installed.packages()) install.packages(\"purrr\")\n\nsource(\"https://raw.githubusercontent.com/atheobold/groupworthy-data-science/main/labs/instructions/lab-5-setup.R\")"
   },
   {
     "objectID": "labs/instructions/lab-5-instructions.html#solve-the-crime",
     "href": "labs/instructions/lab-5-instructions.html#solve-the-crime",
     "title": "Lab 5: Murder in SQL City",
     "section": "3.2 Solve the Crime",
-    "text": "3.2 Solve the Crime\n\n3.2.1 Crime Scene Report\nDetective Wickham reaches out to you…\n\nA crime has taken place and I need your help! There was a murder in SQL City sometime on January 15, 2018. Could you retrieve the crime scene report from the police department’s database and follow the clues to find the person responsible for the murder?!\n\n\n# Code for looking at the relevant crime scene report.\n\nFollow the evidence to the person responsible for the murder, building a report as you go.\n\n\n\n\n\n\nCaution\n\n\n\nMake sure you check for interviews with any suspects!\n\n\n\n\n\n\n\n\nAnd the final suspect is…\n\n\n\nput the name of the person responsible for the murder here.",
-    "crumbs": [
-      "Labs",
-      "Lab 5 Instructions"
-    ]
+    "text": "3.2 Solve the Crime\n\n3.2.1 Crime Scene Report\nDetective Wickham reaches out to you…\n\nA crime has taken place and I need your help! There was a murder in SQL City sometime on January 15, 2018. Could you retrieve the crime scene report from the police department’s database and follow the clues to find the person responsible for the murder?!\n\n\n# Code for looking at the relevant crime scene report.\n\nFollow the evidence to the person responsible for the murder, building a report as you go.\n\n\n\n\n\n\nCaution\n\n\n\nMake sure you check for interviews with any suspects!\n\n\n\n\n\n\n\n\nAnd the final suspect is…\n\n\n\nput the name of the person responsible for the murder here."
   },
   {
     "objectID": "labs/instructions/lab-1-instructions.html",
