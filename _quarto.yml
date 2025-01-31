@@ -74,8 +74,8 @@ website:
             text: "Week 4, Part 1 - Data Transformation"
           - href: weeks/week-4-factors.qmd
             text: "Week 4, Part 2 - Factors"
-          # - href: weeks/week-5-strings-dates.qmd
-          #   text: "Week 5 - Strings & Dates"
+          - href: weeks/week-5-strings-dates.qmd
+            text: "Week 5 - Strings & Dates"
           # - href: portfolio/midterm-portfolio-targets.qmd
           #   text: "Week 6 - Midterm Portfolio Week"
           # - href: weeks/week-7-vector-functions.qmd
@@ -102,8 +102,8 @@ website:
             text: "Challenge 3 Instructions"
           - href: labs/instructions/lab-4-instructions.qmd
             text: "Lab 4 Instructions"
-          # - href: labs/instructions/lab-5-instructions.qmd
-          #   text: "Lab 5 Instructions"
+          - href: labs/instructions/lab-5-instructions.qmd
+            text: "Lab 5 Instructions"
           # - href: labs/instructions/lab-7-instructions.qmd
           #   text: "Lab 7 Instructions"
           # - href: labs/instructions/challenge-7-instructions.qmd
