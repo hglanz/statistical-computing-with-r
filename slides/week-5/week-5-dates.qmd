@@ -16,30 +16,30 @@ library(palmerpenguins)
 ```
 
 
-## Thursday, October 24
+## Thursday, February 6
 
 Today we will...
 
--   Reminder About Lab 3 / Challenge 3 Revisions
+<!-- -   Reminder About Lab 3 / Challenge 3 Revisions -->
 -   Debrief Lab 4
-    + Lab 4 Peer Code Review
--   Midterm Portfolio
-    + What to Expect
-    + How to Get Started
+    <!-- + Lab 4 Peer Code Review -->
+<!-- -   Midterm Portfolio -->
+<!--     + What to Expect -->
+<!--     + How to Get Started -->
 -   New Material
     -   Working with Date & Time Variables
 -   [PA 5.2: Jewel Heist](../../group-activities/week-5/PA-5-dates.qmd)    
 
-# Lab 3 / Challenge 3 Revisions
+<!-- # Lab 3 / Challenge 3 Revisions -->
 
-# Lab 3 / Challenge 3 Revisions
+<!-- # Lab 3 / Challenge 3 Revisions -->
 
-> Revisions are due by Friday
+<!-- > Revisions are due by Friday -->
 
-. . .
+<!-- . . . -->
 
-Any problem receiving a "Growing" can be revised and submitted for additional
-feedback
+<!-- Any problem receiving a "Growing" can be revised and submitted for additional -->
+<!-- feedback -->
 
 # Lab 4
 
@@ -163,46 +163,46 @@ lowest_child_care_price_2018
 :::
 
 
-# Don't forget to complete your Lab 4 code review!
+<!-- # Don't forget to complete your Lab 4 code review! -->
 
-# Don't forget to complete your Lab 4 code review!
+<!-- # Don't forget to complete your Lab 4 code review! -->
 
-</br> 
+<!-- </br>  -->
 
-> Make sure your feedback follows the [code review guidelines](../../code-review/code-review-guidelines.qmd). 
+<!-- > Make sure your feedback follows the [code review guidelines](../../code-review/code-review-guidelines.qmd).  -->
 
-> Insert your review into the comment box! 
+<!-- > Insert your review into the comment box!  -->
 
-# Midterm Portfolios
+<!-- # Midterm Portfolios -->
 
-## What to Expect
+<!-- ## What to Expect -->
 
-You will create a Midterm Portfolio, with code covering the
-learning targets we have covered thus far in the course. 
+<!-- You will create a Midterm Portfolio, with code covering the -->
+<!-- learning targets we have covered thus far in the course.  -->
 
-. . .
+<!-- . . . -->
 
-- Your code will be pulled from your Lab and Challenge
-assignments. 
+<!-- - Your code will be pulled from your Lab and Challenge -->
+<!-- assignments.  -->
 
-. . .
+<!-- . . . -->
 
-- You will write reflections on how you've:
-  + revised your thinking
-  + extended your thinking
-  + supported and collaborated with your peers
-  
-## Getting Started
+<!-- - You will write reflections on how you've: -->
+<!--   + revised your thinking -->
+<!--   + extended your thinking -->
+<!--   + supported and collaborated with your peers -->
 
-::: {.incremental}
-1. Follow [these directions](https://scribehow.com/shared/Forking_a_GitHub_Repository__TKGOvrrYQ1GMfYCafxercg) to fork a copy of the [Final Portfolio repository](https://github.com/atheobold/STAT331_portfolio_template). 
+<!-- ## Getting Started -->
 
-2. Clone the repository into RStudio. 
+<!-- ::: {.incremental} -->
+<!-- 1. Follow [these directions](https://scribehow.com/shared/Forking_a_GitHub_Repository__TKGOvrrYQ1GMfYCafxercg) to fork a copy of the [Final Portfolio repository](https://github.com/atheobold/STAT331_portfolio_template).  -->
 
-3. Open the `reflection_template.qmd` file and give it a read!
+<!-- 2. Clone the repository into RStudio.  -->
 
-4. Start finding excerpts of code you wrote for the Labs or Challenges that fit each learning target. 
-:::
+<!-- 3. Open the `reflection_template.qmd` file and give it a read! -->
+
+<!-- 4. Start finding excerpts of code you wrote for the Labs or Challenges that fit each learning target.  -->
+<!-- ::: -->
 
 # Date + Time Variables
 
@@ -696,38 +696,38 @@ from dates
 :::
 :::
 
-## Task Card
+<!-- ## Task Card -->
 
-Every group should have a **task card**! 
+<!-- Every group should have a **task card**!  -->
 
-. . .
+<!-- . . . -->
 
-::: columns
-::: {.column width="40%"}
-**On the Front**
+<!-- ::: columns -->
+<!-- ::: {.column width="40%"} -->
+<!-- **On the Front** -->
 
-- the expectations of each role
-- the norms of collaborating
-:::
+<!-- - the expectations of each role -->
+<!-- - the norms of collaborating -->
+<!-- ::: -->
 
-::: {.column width="5%"}
-:::
+<!-- ::: {.column width="5%"} -->
+<!-- ::: -->
 
-::: {.column width="55%"}
-::: {.fragment}
-**On the Back**
+<!-- ::: {.column width="55%"} -->
+<!-- ::: {.fragment} -->
+<!-- **On the Back** -->
 
-::: {.small}
-- `lubridate` functions for different tasks you may encounter
+<!-- ::: {.small} -->
+<!-- - `lubridate` functions for different tasks you may encounter -->
 
-:::
+<!-- ::: -->
 
-::: {.small}
+<!-- ::: {.small} -->
 
-:::
-:::
-:::
-:::
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: -->
 
 ## Getting Started
 
@@ -744,9 +744,7 @@ and listening to instructions from the Coder)!
 > Submit the name of the thief to the Canvas Quiz.
 
 - Each person will input the full name of the thief into the PA 5.2 quiz. 
-- The person who last occupied the role of Developer will download and submit 
-the `PA-5-dates.html` file for the group.
-  + Only one submission per group!
+- Each person will submit the `PA-5-dates.html` file.
 
 # [Lab 5: Murder in SQL City](../../labs/instructions/challenge-5-instructions.qmd)
 
@@ -766,4 +764,4 @@ the `PA-5-dates.html` file for the group.
 ## To do...
 
 -   **Lab 5: Murder in SQL City**
-    + due Sunday, October 27 at 11:59pm
+    + due Sunday, February 9 at 11:59pm

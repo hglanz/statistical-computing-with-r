@@ -4748,7 +4748,7 @@
     "href": "slides/week-5/week-5-dates.html#getting-started",
     "title": "Using lubridate to Work with Dates",
     "section": "Getting Started",
-    "text": "Getting Started\n\n\nFollow these directions to fork a copy of the Final Portfolio repository.\nClone the repository into RStudio.\nOpen the reflection_template.qmd file and give it a read!\nStart finding excerpts of code you wrote for the Labs or Challenges that fit each learning target."
+    "text": "Getting Started\nThe partner who got the most sleep starts as the Developer (typing and listening to instructions from the Coder)!\n\nThe Coder does not type.\n\nThe collaborative editing feature should allow you to track what is being typed.\n\nThe Developer only types what they are told to type."
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#why-are-dates-and-times-tricky",
@@ -4818,14 +4818,14 @@
     "href": "slides/week-5/week-5-dates.html#how-old-am-i",
     "title": "Using lubridate to Work with Dates",
     "section": "How old am I?",
-    "text": "How old am I?\n\ntoday() - mdy(01141989)\n\nTime difference of 13094 days\n\n\n\n\nHow long did it take me to type this slide?\n\nbegin &lt;- mdy_hms(\"10/21/2024 20:40:34\")\nfinish &lt;- mdy_hms(\"10/21/2024 20:43:11\")\n\nfinish - begin\n\nTime difference of 2.616667 mins"
+    "text": "How old am I?\n\ntoday() - mdy(01141989)\n\nTime difference of 13165 days\n\n\n\n\nHow long did it take me to type this slide?\n\nbegin &lt;- mdy_hms(\"10/21/2024 20:40:34\")\nfinish &lt;- mdy_hms(\"10/21/2024 20:43:11\")\n\nfinish - begin\n\nTime difference of 2.616667 mins"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#durations-and-periods",
     "href": "slides/week-5/week-5-dates.html#durations-and-periods",
     "title": "Using lubridate to Work with Dates",
     "section": "Durations and Periods",
-    "text": "Durations and Periods\n\n\nDurations will always give the time span in an exact number of seconds.\n\nas.duration(\n  today() - mdy(01141989)\n            )\n\n[1] \"1131321600s (~35.85 years)\"\n\n\n\n\n\n\nPeriods will give the time span in more approximate, but human readable times.\n\nas.period(\n  today() - mdy(01141989)\n  )\n\n[1] \"13094d 0H 0M 0S\""
+    "text": "Durations and Periods\n\n\nDurations will always give the time span in an exact number of seconds.\n\nas.duration(\n  today() - mdy(01141989)\n            )\n\n[1] \"1137456000s (~36.04 years)\"\n\n\n\n\n\n\nPeriods will give the time span in more approximate, but human readable times.\n\nas.period(\n  today() - mdy(01141989)\n  )\n\n[1] \"13165d 0H 0M 0S\""
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#durations-and-periods-1",
@@ -4888,14 +4888,14 @@
     "href": "slides/week-5/week-5-dates.html#submission",
     "title": "Using lubridate to Work with Dates",
     "section": "Submission",
-    "text": "Submission\n\nSubmit the name of the thief to the Canvas Quiz.\n\n\nEach person will input the full name of the thief into the PA 5.2 quiz.\nThe person who last occupied the role of Developer will download and submit the PA-5-dates.html file for the group.\n\nOnly one submission per group!"
+    "text": "Submission\n\nSubmit the name of the thief to the Canvas Quiz.\n\n\nEach person will input the full name of the thief into the PA 5.2 quiz.\nEach person will submit the PA-5-dates.html file."
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#to-do",
     "href": "slides/week-5/week-5-dates.html#to-do",
     "title": "Using lubridate to Work with Dates",
     "section": "To do…",
-    "text": "To do…\n\nLab 5: Murder in SQL City\n\ndue Sunday, October 27 at 11:59pm"
+    "text": "To do…\n\nLab 5: Murder in SQL City\n\ndue Sunday, February 9 at 11:59pm"
   },
   {
     "objectID": "slides/week-7/week-7-vector-functions.html#new-seating-chart",
@@ -6134,5 +6134,12 @@
     "title": "Using stringr to Work with Strings",
     "section": "Tuesday, February 4",
     "text": "Tuesday, February 4\nToday we will…\n\n\n\nNew material\n\nString variables\nFunctions for working with strings\nRegular expressions\n\nPA 5.1: Scrambled Message"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#thursday-february-6",
+    "href": "slides/week-5/week-5-dates.html#thursday-february-6",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Thursday, February 6",
+    "text": "Thursday, February 6\nToday we will…\n\n\nDebrief Lab 4    \nNew Material\n\nWorking with Date & Time Variables\n\nPA 5.2: Jewel Heist"
   }
 ]
