@@ -5014,7 +5014,7 @@
     "href": "slides/week-7/week-7-vector-functions.html#function-environment-1",
     "title": "Writing Vector Functions",
     "section": "Function Environment",
-    "text": "Function Environment\nWe cannot access variables created inside a function outside of the function.\n\nadd_two &lt;- function(x) {\n  my_result &lt;- x + 2\n  return(my_result)\n}\n\n\n\n\n\nadd_two(9)\n\n[1] 11\n\n\n\n\n\n\n\nmy_result\n\nError in eval(expr, envir, enclos): object 'my_result' not found"
+    "text": "Function Environment\nWe cannot access variables created inside a function outside of the function.\n\nadd_two &lt;- function(x) {\n  my_result &lt;- x + 2\n  return(my_result)\n}\n\n\n\n\n\nadd_two(9)\n\n[1] 11\n\n\n\n\n\n\n\nmy_result\n\nError: object 'my_result' not found"
   },
   {
     "objectID": "slides/week-7/week-7-vector-functions.html#name-masking",
@@ -5091,7 +5091,7 @@
     "href": "slides/week-7/week-7-vector-functions.html#submission",
     "title": "Writing Vector Functions",
     "section": "Submission",
-    "text": "Submission\n\nSubmit the name of the television show the six numbers are asssociated with.\n\n\nEach person will input the full name of the TV show into the PA 7 quiz.\nThe person who last occupied the role of Developer will download and submit the PA-7-functions.html file for the group.\n\nOnly one submission per group!"
+    "text": "Submission\n\nSubmit the name of the television show the six numbers are associated with.\n\n\nEach person will input the full name of the TV show into the PA 7 quiz.\nEach person will submit the PA-7-functions.html file."
   },
   {
     "objectID": "slides/week-7/week-7-vector-functions.html#lab-7-challenge-7-functions-fish",
@@ -5105,7 +5105,7 @@
     "href": "slides/week-7/week-7-vector-functions.html#to-do",
     "title": "Writing Vector Functions",
     "section": "To do…",
-    "text": "To do…\n\nPA 7: Functions\n\nDue Thursday, 11/4 by 12:10pm\n\nAttend Your Midterm Portfolio Meeting\n\nYour Scheduled time on Thursday\n\nLab 7: Functions + Fish\n\nDue Sunday, 11/10 at 11:59pm."
+    "text": "To do…\n\nPA 7: Functions\n\nDue Thursday, 2/20 by 12pm\n\n\n\n\n\nLab 7: Functions + Fish\n\nDue Sunday, 2/23 at 11:59pm."
   },
   {
     "objectID": "slides/week-4/week-4-joins-1.html#tuesday-october-15",
@@ -6113,5 +6113,12 @@
     "title": "Using lubridate to Work with Dates",
     "section": "Thursday, February 6",
     "text": "Thursday, February 6\nToday we will…\n\n\nDebrief Lab 4    \nNew Material\n\nWorking with Date & Time Variables\n\nPA 5.2: Jewel Heist"
+  },
+  {
+    "objectID": "slides/week-7/week-7-vector-functions.html#tuesday-february-18",
+    "href": "slides/week-7/week-7-vector-functions.html#tuesday-february-18",
+    "title": "Writing Vector Functions",
+    "section": "Tuesday, February 18",
+    "text": "Tuesday, February 18\nToday we will…\n\n\nNew Material\n\nFunction Basics\nVariable Scope + Environment\n\nPA 7: Writing Functions"
   }
 ]

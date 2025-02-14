@@ -14,31 +14,27 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-## New Seating Chart
-
-![](images/week-7-seats.png)
-
-## Tuesday, November 2
+## Tuesday, February 18
 
 Today we will...
 
-+ Reminder: Midterm Portfolio Meetings
+<!-- + Reminder: Midterm Portfolio Meetings -->
 + New Material
   + Function Basics
   + Variable Scope + Environment
 + PA 7: Writing Functions
   
-# Midterm Portfolio Meetings
+<!-- # Midterm Portfolio Meetings -->
 
-## Midterm Portfolio Meetings
+<!-- ## Midterm Portfolio Meetings -->
 
-::: {.incremental}
-- No in-person class on Thursday
-  + Remember the time you signed up for: [Google Sheet with Sign-up Times](https://docs.google.com/spreadsheets/d/1b4fUfPIT_05niJlpHNnne_y5HXXB-43Nzph6_FWZf80/edit?usp=sharing)    
-  + Deadline to sign-up (or move your time) is Tuesday at 5pm.
-- Meetings scheduled between 8am and 11am will be **in Dr. T's office (25-105)**. 
-- Meetings scheduled between 12pm and 3pm will be **in our classroom (this room)**.
-:::
+<!-- ::: {.incremental} -->
+<!-- - No in-person class on Thursday -->
+<!--   + Remember the time you signed up for: [Google Sheet with Sign-up Times](https://docs.google.com/spreadsheets/d/1b4fUfPIT_05niJlpHNnne_y5HXXB-43Nzph6_FWZf80/edit?usp=sharing)     -->
+<!--   + Deadline to sign-up (or move your time) is Tuesday at 5pm. -->
+<!-- - Meetings scheduled between 8am and 11am will be **in Dr. T's office (25-105)**.  -->
+<!-- - Meetings scheduled between 12pm and 3pm will be **in our classroom (this room)**. -->
+<!-- ::: -->
 
 # Functions
 
@@ -926,12 +922,10 @@ and listening to instructions from the Coder)!
 
 ## Submission
 
-> Submit the name of the television show the six numbers are asssociated with.
+> Submit the name of the television show the six numbers are associated with.
 
 - Each person will input the full name of the TV show into the PA 7 quiz. 
-- The person who last occupied the role of Developer will download and submit 
-the `PA-7-functions.html` file for the group.
-  + Only one submission per group!
+- Each person will submit the `PA-7-functions.html` file.
 
 ## [Lab 7](../../labs/instructions/lab-7-instructions.qmd) & [Challenge 7: Functions + Fish](../../labs/instructions/challenge-7-instructions.qmd)
 
@@ -942,11 +936,11 @@ the `PA-7-functions.html` file for the group.
 ## To do...
   
 + **PA 7: Functions**
-  + Due Thursday, 11/4 by 12:10pm
+  + Due Thursday, 2/20 by 12pm
   
-+ **Attend Your Midterm Portfolio Meeting**
-  + [Your Scheduled time on Thursday](https://docs.google.com/spreadsheets/d/1b4fUfPIT_05niJlpHNnne_y5HXXB-43Nzph6_FWZf80/edit?usp=sharing)
+<!-- + **Attend Your Midterm Portfolio Meeting** -->
+<!--   + [Your Scheduled time on Thursday](https://docs.google.com/spreadsheets/d/1b4fUfPIT_05niJlpHNnne_y5HXXB-43Nzph6_FWZf80/edit?usp=sharing) -->
   
 + **Lab 7: Functions + Fish**
-  + Due Sunday, 11/10 at 11:59pm.
+  + Due Sunday, 2/23 at 11:59pm.
   
