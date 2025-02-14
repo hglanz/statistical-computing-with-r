@@ -3840,66 +3840,42 @@
     "href": "labs/instructions/lab-7-instructions.html",
     "title": "Lab 7: Functions + Fish",
     "section": "",
-    "text": "The goal of this lab is learn more about exploring missing data and writing modular code.",
-    "crumbs": [
-      "Labs",
-      "Lab 7 Instructions"
-    ]
+    "text": "The goal of this lab is learn more about exploring missing data and writing modular code."
   },
   {
     "objectID": "labs/instructions/lab-7-instructions.html#the-data",
     "href": "labs/instructions/lab-7-instructions.html#the-data",
     "title": "Lab 7: Functions + Fish",
     "section": "The Data",
-    "text": "The Data\nThis lab’s data concerns mark-recapture data on four species of trout from the Blackfoot River outside of Helena, Montana. These four species are rainbow trout (RBT), westslope cutthroat trout (WCT), bull trout, and brown trout.\n\nMark-recapture is a common method used by ecologists to estimate a population’s size when it is impossible to conduct a census (count every animal). This method works by tagging animals with a tracking device so that scientists can track their movement and presence.",
-    "crumbs": [
-      "Labs",
-      "Lab 7 Instructions"
-    ]
+    "text": "The Data\nThis lab’s data concerns mark-recapture data on four species of trout from the Blackfoot River outside of Helena, Montana. These four species are rainbow trout (RBT), westslope cutthroat trout (WCT), bull trout, and brown trout.\n\nMark-recapture is a common method used by ecologists to estimate a population’s size when it is impossible to conduct a census (count every animal). This method works by tagging animals with a tracking device so that scientists can track their movement and presence."
   },
   {
     "objectID": "labs/instructions/lab-7-instructions.html#data-exploration",
     "href": "labs/instructions/lab-7-instructions.html#data-exploration",
     "title": "Lab 7: Functions + Fish",
     "section": "Data Exploration",
-    "text": "Data Exploration\nThe measurements of each captured fish were taken by a biologist on a raft in the river. The lack of a laboratory setting opens the door to the possibility of measurement errors.\n1. Let’s look for missing values in the dataset. Output ONE table that answers BOTH of the following questions:\n\nHow many observations have missing values?\nWhat variable(s) have missing values present?\n\n\n\n\n\n\n\nYou should use across()!\n\n\n\n\n\n\n2. Create ONE thoughtful visualization that explores the frequency of missing values across the different years, sections, and trips.",
-    "crumbs": [
-      "Labs",
-      "Lab 7 Instructions"
-    ]
+    "text": "Data Exploration\nThe measurements of each captured fish were taken by a biologist on a raft in the river. The lack of a laboratory setting opens the door to the possibility of measurement errors.\n1. Let’s look for missing values in the dataset. Output ONE table that answers BOTH of the following questions:\n\nHow many observations have missing values?\nWhat variable(s) have missing values present?\n\n\n\n\n\n\n\nYou should use across()!\n\n\n\n\n\n\n2. Create ONE thoughtful visualization that explores the frequency of missing values across the different years, sections, and trips."
   },
   {
     "objectID": "labs/instructions/lab-7-instructions.html#rescaling-the-data",
     "href": "labs/instructions/lab-7-instructions.html#rescaling-the-data",
     "title": "Lab 7: Functions + Fish",
     "section": "Rescaling the Data",
-    "text": "Rescaling the Data\nIf I wanted to rescale every quantitative variable in my dataset so that they only have values between 0 and 1, I could use this formula:\n\n\\[y_{scaled} = \\frac{y_i - min\\{y_1, y_2,..., y_n\\}}{max\\{y_1, y_2,..., y_n\\}\n- min\\{y_1, y_2,..., y_n\\}}\\]\n\nI might write the following R code to carry out the rescaling procedure for the length and weight columns of the BlackfoorFish data:\n\nfish &lt;- fish |&gt; \n  mutate(length = (length - min(length, na.rm = TRUE)) / \n           (max(length, na.rm = TRUE) - min(length, na.rm = TRUE)), \n         weight = (weight - min(weight, na.rm = TRUE)) / \n           (max(weight, na.rm = TRUE) - min(length, na.rm = TRUE)))\n\nThis process of duplicating an action multiple times can make it difficult to understand the intent of the process. Additionally, it can make it very difficult to spot mistakes.\n3. What is the mistake I made in the above rescaling code?\nWhen you find yourself copy-pasting lines of code, it’s time to write a function, instead!\n4. Transform the repeated process above into a rescale_01() function. Your function should…\n\n… take a single vector as input.\n… return the rescaled vector.\n\n\n\n\n\n\n\nEfficiency\n\n\n\nAre you calling the same function multiple times? You might want to look into the range() function.\n\n\n5. Let’s incorporate some input validation into your function. Modify your previous code so that the function stops if …\n\n… the input vector is not numeric.\n… the length of the input vector is not greater than 1.\n\n\n\n\n\n\n\nModify Previous Code\n\n\n\nDo not create a new code chunk here – simply add these stops to your function above!",
-    "crumbs": [
-      "Labs",
-      "Lab 7 Instructions"
-    ]
+    "text": "Rescaling the Data\nIf I wanted to rescale every quantitative variable in my dataset so that they only have values between 0 and 1, I could use this formula:\n\n\\[y_{scaled} = \\frac{y_i - min\\{y_1, y_2,..., y_n\\}}{max\\{y_1, y_2,..., y_n\\}\n- min\\{y_1, y_2,..., y_n\\}}\\]\n\nI might write the following R code to carry out the rescaling procedure for the length and weight columns of the BlackfoorFish data:\n\nfish &lt;- fish |&gt; \n  mutate(length = (length - min(length, na.rm = TRUE)) / \n           (max(length, na.rm = TRUE) - min(length, na.rm = TRUE)), \n         weight = (weight - min(weight, na.rm = TRUE)) / \n           (max(weight, na.rm = TRUE) - min(length, na.rm = TRUE)))\n\nThis process of duplicating an action multiple times can make it difficult to understand the intent of the process. Additionally, it can make it very difficult to spot mistakes.\n3. What is the mistake I made in the above rescaling code?\nWhen you find yourself copy-pasting lines of code, it’s time to write a function, instead!\n4. Transform the repeated process above into a rescale_01() function. Your function should…\n\n… take a single vector as input.\n… return the rescaled vector.\n\n\n\n\n\n\n\nEfficiency\n\n\n\nAre you calling the same function multiple times? You might want to look into the range() function.\n\n\n5. Let’s incorporate some input validation into your function. Modify your previous code so that the function stops if …\n\n… the input vector is not numeric.\n… the length of the input vector is not greater than 1.\n\n\n\n\n\n\n\nModify Previous Code\n\n\n\nDo not create a new code chunk here – simply add these stops to your function above!"
   },
   {
     "objectID": "labs/instructions/lab-7-instructions.html#test-your-function",
     "href": "labs/instructions/lab-7-instructions.html#test-your-function",
     "title": "Lab 7: Functions + Fish",
     "section": "Test Your Function",
-    "text": "Test Your Function\n6. Run the code below to test your function. Verify that the maximum of your rescaled vector is 1 and the minimum is 0!\n\nx &lt;- c(1:25, NA)\n\nrescaled &lt;- rescale_01(x)\nmin(rescaled, na.rm = TRUE)\nmax(rescaled, na.rm = TRUE)\n\nNext, let’s test the function on the length column of the BlackfootFish data.\n7. The code below makes a histogram of the original values of length. Add a plot of the rescaled values of length. Output your plots side-by-side, so the reader can confirm the only aspect that has changed is the scale.\n\n\n\n\n\n\nWarning\n\n\n\nThis will require you to call your rescale_01() function within a mutate() statement in order to create a length_scaled variable.\n\n\n\nfish |&gt;  \n  ggplot(aes(x = length)) + \n  geom_histogram(binwidth = 45) +\n  labs(x = \"Original Values of Fish Length (mm)\") +\n  scale_y_continuous(limits = c(0,4000))\n\n# Code for Q7 plot.\n\n\n\n\n\n\n\nTip\n\n\n\n\nSet the y-axis limits for both plots to go from 0 to 4000 to allow for direct comparison across plots.\nPay attention to binwidth!\nUse a Quarto code chunk option to put the plots side-by-side.",
-    "crumbs": [
-      "Labs",
-      "Lab 7 Instructions"
-    ]
+    "text": "Test Your Function\n6. Run the code below to test your function. Verify that the maximum of your rescaled vector is 1 and the minimum is 0!\n\nx &lt;- c(1:25, NA)\n\nrescaled &lt;- rescale_01(x)\nmin(rescaled, na.rm = TRUE)\nmax(rescaled, na.rm = TRUE)\n\nNext, let’s test the function on the length column of the BlackfootFish data.\n7. The code below makes a histogram of the original values of length. Add a plot of the rescaled values of length. Output your plots side-by-side, so the reader can confirm the only aspect that has changed is the scale.\n\n\n\n\n\n\nWarning\n\n\n\nThis will require you to call your rescale_01() function within a mutate() statement in order to create a length_scaled variable.\n\n\n\nfish |&gt;  \n  ggplot(aes(x = length)) + \n  geom_histogram(binwidth = 45) +\n  labs(x = \"Original Values of Fish Length (mm)\") +\n  scale_y_continuous(limits = c(0,4000))\n\n# Code for Q7 plot.\n\n\n\n\n\n\n\nTip\n\n\n\n\nSet the y-axis limits for both plots to go from 0 to 4000 to allow for direct comparison across plots.\nPay attention to binwidth!\nUse a Quarto code chunk option to put the plots side-by-side."
   },
   {
     "objectID": "labs/instructions/lab-7-instructions.html#use-variables-within-a-dataset",
     "href": "labs/instructions/lab-7-instructions.html#use-variables-within-a-dataset",
     "title": "Lab 7: Functions + Fish",
     "section": "Use Variables within a Dataset",
-    "text": "Use Variables within a Dataset\nSuppose you would like for your rescale() function to perform operations on a variable within a dataset. Ideally, your function would take in a data frame and a variable name as inputs and return a data frame where the variable has been rescaled.\n8. Create a rescale_column() function that accepts two arguments:\n\na dataframe\nthe name(s) of the variable(s) to be rescaled\n\nThe body of the function should call the original rescale_01() function you wrote previously. Your solution MUST use one of the rlang options from class.\n\n\n\n\n\n\nTip\n\n\n\nIf you are struggling with this task, I recommend looking back over the data frame functions section of R for Data Science!\n\n\n9. Use your rescale_column() function to rescale both the length and weight columns.\n\n\n\n\n\n\nWarning\n\n\n\nI expect that you carry out this process by calling the rescale_column() function only ONE time!",
-    "crumbs": [
-      "Labs",
-      "Lab 7 Instructions"
-    ]
+    "text": "Use Variables within a Dataset\nSuppose you would like for your rescale() function to perform operations on a variable within a dataset. Ideally, your function would take in a data frame and a variable name as inputs and return a data frame where the variable has been rescaled.\n8. Create a rescale_column() function that accepts two arguments:\n\na dataframe\nthe name(s) of the variable(s) to be rescaled\n\nThe body of the function should call the original rescale_01() function you wrote previously. Your solution MUST use one of the rlang options from class.\n\n\n\n\n\n\nTip\n\n\n\nIf you are struggling with this task, I recommend looking back over the data frame functions section of R for Data Science!\n\n\n9. Use your rescale_column() function to rescale both the length and weight columns.\n\n\n\n\n\n\nWarning\n\n\n\nI expect that you carry out this process by calling the rescale_column() function only ONE time!"
   },
   {
     "objectID": "group-activities/week-5/PA-5-dates.html",
