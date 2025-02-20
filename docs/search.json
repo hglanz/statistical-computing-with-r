@@ -3640,7 +3640,7 @@
     "href": "labs/instructions/lab-8-instructions.html",
     "title": "Lab 8: Searching for Efficiency",
     "section": "",
-    "text": "For this week’s lab, we will be revisiting questions from previous lab assignments, with the purpose of using functions from the map() family to iterate over certain tasks. To do this, we will need to load in the data from Lab 2, Lab 3, and Lab 7. I’ve included all the datasets in the data folder, so all you need to do is read them in. 🙃",
+    "text": "For this week’s lab, we will be revisiting questions from previous lab assignments, with the purpose of using functions from the map() family to iterate over certain tasks.",
     "crumbs": [
       "Labs",
       "Lab 8 Instructions"
