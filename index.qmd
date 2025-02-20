@@ -11,37 +11,42 @@ This page contains an outline of the topics, content, and assignments for the qu
 <colgroup>
 <col style="width: 9%" />
 <col style="width: 11%" />
-<col style="width: 20%" />
+<col style="width: 16%" />
 <col style="width: 19%" />
 <col style="width: 15%" />
-<col style="width: 18%" />
-<col style="width: 11%" />
-<col style="width: 20%" />
-<col style="width: 19%" />
-<col style="width: 15%" />
-<col style="width: 18%" />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
-<col />
+<col style="width: 21%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -78,6 +83,11 @@ This page contains an outline of the topics, content, and assignments for the qu
 <th><p></p></th>
 <th><p></p></th>
 <th><p></p></th>
+<th><p></p></th>
+<th><p></p></th>
+<th><p></p></th>
+<th><p></p></th>
+<th><p></p></th>
 </tr>
 </thead>
 <tbody>
@@ -85,6 +95,11 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td><p>0</p></td>
 <td><p>Tues, 1/7</p></td>
 <td><p><a href="/weeks/week-0-discord.qmd" title="Course Set-up Instructions">Course Set-up</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -151,6 +166,11 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -187,6 +207,11 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>2</p></td>
@@ -195,6 +220,11 @@ This page contains an outline of the topics, content, and assignments for the qu
 <p><a href="/weeks/week-2-projects-data-import.qmd" title="Data Import &amp; R Projects">Data Import &amp; R Projects</a></p></td>
 <td><p><a href="/slides/week-2/week-2-ggplot.qmd" title="Basics of Graphics">Basics of Graphics</a></p></td>
 <td><p><a href="/group-activities/week-2/PA-2-ggplot.qmd" title="PA 2 Instructions/File">PA 2</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -260,6 +290,11 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -295,6 +330,11 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><p>3</p></td>
@@ -302,6 +342,11 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td><p><a href="/weeks/week-3-dplyr.qmd" title="Data Wrangling with dplyr">Data Wrangling with dplyr</a></p></td>
 <td><p><a href="/slides/week-3/week-3-dplyr-pt1.qmd" title="Data Wrangling with dplyr">Data Wrangling with dplyr</a></p></td>
 <td><p><a href="/group-activities/week-3/PA-3-dplyr.qmd" title="PA 3">PA 3</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -367,6 +412,11 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -402,12 +452,22 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>4</p></td>
 <td><p>Tues, 1/28</p></td>
 <td><p><a href="/weeks/week-4-reshaping-joining.qmd" title="Data Joins and Transformations with tidyr">Data Joins and Transformations with tidyr</a></p></td>
 <td><p><a href="/slides/week-4/week-4-joins-1.qmd" title="Data Joins + Pivots">Data Joins + Pivots</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -473,6 +533,11 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -508,12 +573,22 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><p>5</p></td>
 <td><p>Tues, 2/4</p></td>
 <td><p><a href="/weeks/week-5-strings-dates.qmd" title="Working with Strings">Working with Strings</a></p></td>
 <td><p><a href="/slides/week-5/week-5-strings.qmd" title="Using stringr to Work with Strings">Using <code>stringr</code> to Work with Strings</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -579,6 +654,11 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -614,6 +694,11 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>7</p></td>
@@ -621,6 +706,11 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td><p><a href="/weeks/week-7-vector-functions.qmd" title="Writing your own simple (vector) functions">Writing your own simple (vector) functions</a></p></td>
 <td><p><a href="/slides/week-7/week-7-vector-functions.qmd" title="Writing Vector Functions">Writing Vector Functions</a></p></td>
 <td><p>PA7 Due 2/20 by 12pm</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -685,6 +775,11 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -720,9 +815,99 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>8</p></td>
+<td><p>Tues, 2/25</p></td>
+<td><p><a href="/weeks/week-8-iteration.qmd" title="Introduction to Iteration">Introduction to Iteration</a></p></td>
+<td><p><a href="/slides/week-8/iteration-part-1.qmd" title="Introduction to Iteration">Introduction to Iteration</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><p>Thurs, 2/27</p></td>
+<td></td>
+<td><p><a href="/slides/week-8/iteration-part-2.qmd" title="Cool Plots &amp; Searching for Efficiency">Cool Plots &amp; Searching for Efficiency</a></p></td>
+<td></td>
+<td><p><a href="/labs/instructions/lab-8-instructions.qmd" title="Lab 8 Instructions">Lab 8 Instructions</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td></td>
+<td><p>Sun, 3/2</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Lab 8 &amp; Challenge 8 Due by 11:59pm</p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -762,141 +947,6 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
 <td></td>
 <td></td>
 <td></td>
@@ -965,8 +1015,18 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1035,8 +1095,18 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1105,8 +1175,18 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1175,8 +1255,18 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1245,8 +1335,18 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1315,8 +1415,18 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1385,8 +1495,18 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1455,8 +1575,18 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1525,8 +1655,178 @@ This page contains an outline of the topics, content, and assignments for the qu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
