@@ -10,18 +10,18 @@ editor: source
 Today we will...
 
 ::: {.midi}
--   Review Lab 9
+-   Review Lab 7
     + Function Checks
     + Creative Plots
     + Additional Tools for Creativity / Clarity
--   Lab 7 Peer Review
-    + Function Style
-    + `if()` Style
+<!-- -   Lab 7 Peer Review -->
+<!--     + Function Style -->
+<!--     + `if()` Style -->
 -   Work Time
     + Lab 8: Searching for Efficiency
 :::
 
-# Lab 9
+# Lab 7
 
 ```{r}
 #| echo: false
@@ -438,24 +438,24 @@ fish |>
 :::
 
 
-# 
+<!-- #  -->
 
-::: columns
-::: {.column width="40%"}
-::: {.large}
-Other Cool Stuff People Have Done!
-:::
-:::
+<!-- ::: columns -->
+<!-- ::: {.column width="40%"} -->
+<!-- ::: {.large} -->
+<!-- Other Cool Stuff People Have Done! -->
+<!-- ::: -->
+<!-- ::: -->
 
-::: {.column width="5%"}
-:::
+<!-- ::: {.column width="5%"} -->
+<!-- ::: -->
 
-::: {.column width="55%"}
-![](images/student-gallery.png){width=40%}
-:::
-:::
+<!-- ::: {.column width="55%"} -->
+<!-- ![](images/student-gallery.png){width=40%} -->
+<!-- ::: -->
+<!-- ::: -->
 
-# Lab 7 Peer Review
+<!-- # Lab 7 Peer Review -->
 
 ## Function Formatting
 
