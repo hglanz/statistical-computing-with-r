@@ -15,11 +15,7 @@ execute:
 library(tidyverse)
 ```
 
-# Same Seating Chart!
-
-![](../week-7/images/week-7-seats.png){width=70%}
-
-## Tuesday, November 19
+## Tuesday, March 4
 
 Today we will...
 
@@ -35,22 +31,22 @@ Today we will...
 
 - PA 9 (today)
 - Lab 9 & Challenge 9 (last ones!)
-- Revisions on Lab 7 (due Friday) 
-- Code Review Lab 8 (due Sunday)
+<!-- - Revisions on Lab 7 (due Friday)  -->
+<!-- - Code Review Lab 8 (due Sunday) -->
 
 # Week 10
 
 . . .
 
-- Final Portfolio Week!
+- Final Exam and Project Week!
 
 . . .
 
-::: {.callout-warning}
+<!-- ::: {.callout-warning} -->
 
-No revisions will be accepted on Lab 8 or Lab 9. You can, however, talk with me
-during class about any revisions you've made. :) 
-:::
+<!-- No revisions will be accepted on Lab 8 or Lab 9. You can, however, talk with me -->
+<!-- during class about any revisions you've made. :)  -->
+<!-- ::: -->
 
 # Statistical Distributions
 
@@ -569,15 +565,15 @@ This activity will require knowledge of:
 :::
 :::
 
-## Task Card
+<!-- ## Task Card -->
 
-Every group should have a **task card**!
+<!-- Every group should have a **task card**! -->
 
-- The table on distributions provides pictures on what each function (e.g., 
-`p`, `d`, `q`) means
+<!-- - The table on distributions provides pictures on what each function (e.g.,  -->
+<!-- `p`, `d`, `q`) means -->
 
-- The list of distributions should help you decide what function to use (e.g., 
-`pchisq()`)
+<!-- - The list of distributions should help you decide what function to use (e.g.,  -->
+<!-- `pchisq()`) -->
 
 ## Getting Started
 
