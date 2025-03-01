@@ -30,7 +30,7 @@ Today we will...
     -   Thinking through a probability simulation task
     -   Four Steps to Simulate Datasets
     -   In-line R Code
-    -   Survey on Experiences in STAT 331 / 531
+    <!-- -   Survey on Experiences in STAT 331 / 531 -->
 -   Work Time
     -   Lab 9
     -   Challenge 9
@@ -460,14 +460,14 @@ To get this: My random number is `r my_rand`.
 - Change tables from Lab 8 using `kable()`
 - Change table(s) from Lab 9 using `gt()`
 
-# [Survey on Experiences in STAT 331 / 531](https://forms.gle/wtXGQTFq5yzrX32W6)
+<!-- # [Survey on Experiences in STAT 331 / 531](https://forms.gle/wtXGQTFq5yzrX32W6) -->
 
-::: {.midi}
-Anonymous Google Form: <https://forms.gle/wtXGQTFq5yzrX32W6>
-:::
+<!-- ::: {.midi} -->
+<!-- Anonymous Google Form: <https://forms.gle/wtXGQTFq5yzrX32W6> -->
+<!-- ::: -->
 
-. . .
+<!-- . . . -->
 
-::: {.midi}
-> If we get an 85% completion rate I will bring pizza to class next Thursday. 
-:::
+<!-- ::: {.midi} -->
+<!-- > If we get an 85% completion rate I will bring pizza to class next Thursday.  -->
+<!-- ::: -->
