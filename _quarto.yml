@@ -84,8 +84,8 @@ website:
             text: "Week 7, Part 1 -- Data Frame Functions"
           - href: weeks/week-8-iteration.qmd
             text: "Week 8 - Iteration"
-          # - href: weeks/week-9-simulation.qmd
-          #   text: "Week 9 - Simulating Data"
+          - href: weeks/week-9-simulation.qmd
+            text: "Week 9 - Simulating Data"
           # - href: weeks/week-10.qmd
           #   text: "Week 10"
       - section: "Labs"
@@ -110,8 +110,8 @@ website:
             text: "Challenge 7 Instructions"
           - href: labs/instructions/lab-8-instructions.qmd
             text: "Lab 8 Instructions"
-          # - href: labs/instructions/lab-9-instructions.qmd
-          #   text: "Lab 9 Instructions"
+          - href: labs/instructions/lab-9-instructions.qmd
+            text: "Lab 9 Instructions"
       # - section: "Gallary of Student Work"
       #   contents:
       #     - href: labs/exemplars/student-work.qmd
